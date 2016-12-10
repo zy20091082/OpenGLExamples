@@ -251,8 +251,10 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = WFRBN668F6;
 				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include/;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
 				"OTHER_CFLAGS[arch=*]" = "-Wno-deprecated";
 				"OTHER_CPLUSPLUSFLAGS[arch=*]" = "-Wno-deprecated";
+				"OTHER_LDFLAGS[arch=*]" = "-lGLEW";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -262,8 +264,10 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = WFRBN668F6;
 				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
 				"OTHER_CFLAGS[arch=*]" = "-Wno-deprecated";
 				"OTHER_CPLUSPLUSFLAGS[arch=*]" = "-Wno-deprecated";
+				"OTHER_LDFLAGS[arch=*]" = "-lGLEW";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
