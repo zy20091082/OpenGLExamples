@@ -49,7 +49,7 @@ int main(int argc,char **argv)
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(50,25);
 	glutInitWindowSize(480,480);
-	glutCreateWindow("First example 'Example-001 (Old Mode)'");
+	glutCreateWindow("The 'Example-001' Example, based on the (Old Mode) OpenGL");
 	glutDisplayFunc(draw);
 	glutMainLoop();
 	return EXIT_SUCCESS;

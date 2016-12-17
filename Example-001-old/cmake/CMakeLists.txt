@@ -38,7 +38,6 @@ if(APPLE OR CMAKE_HOST_APPLE)
 	find_package(GLEW REQUIRED)
 	message(STATUS "The path of the 'include' folder for the 'GLEW' package: " ${GLEW_INCLUDE_DIR})
 	message(STATUS "The library file(s) for the 'GLEW' package: " ${GLEW_LIBRARIES})
-	message("")
 
 elseif(UNIX OR CMAKE_HOST_UNIX)
 
@@ -59,7 +58,6 @@ elseif(UNIX OR CMAKE_HOST_UNIX)
 	find_package(GLEW REQUIRED)
 	message(STATUS "The path of the 'include' folder for the 'GLEW' package: " ${GLEW_INCLUDE_DIR})
 	message(STATUS "The libraries for the 'GLEW' package: " ${GLEW_LIBRARIES})
-	message("")
 
 elseif(WIN32 OR CMAKE_HOST_WIN32)
 
