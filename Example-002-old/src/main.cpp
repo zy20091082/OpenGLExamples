@@ -43,23 +43,6 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	glutInit(&argc,argv);
-	
-	//#ifdef __APPLE__
-	
-		/* We assume to exploit the GLUT version in conjunction with the XCode. Thus, the following functions are not defined:
-		 *
-		 * -) glutInitContextVersion()
-		 * -) glutInitContextProfile() */
-
-	//#else
-	
-		/* Here, we are not using the GLUT version, provided by the XCode. Thus, the functions, mentioned above, should be defined. */
-	//	glutInitContextVersion(4,3);
-	//	glutInitContextProfile(GLUT_COMPATIBILITY_PROFILE);
-
-	// #endif
-	
-	/* If we arrive here, we can continue! */
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(50,25);
 	glutInitWindowSize(480,480);
@@ -93,10 +76,10 @@ void draw()
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0, 0.0, 0.0);
   	glBegin(GL_POLYGON);
-    glVertex3f(30.0, 20.0, 0.0);
-    glVertex3f(80.0, 20.0, 0.0);
-    glVertex3f(80.0, 80.0, 0.0);
-    glVertex3f(20.0, 80.0, 0.0);
+	glVertex3f(30.0, 20.0, 0.0);
+	glVertex3f(80.0, 20.0, 0.0);
+	glVertex3f(80.0, 80.0, 0.0);
+	glVertex3f(20.0, 80.0, 0.0);
    	glEnd();
 	glFlush(); 
 }
@@ -134,4 +117,4 @@ void manageKeys(unsigned char key, int x, int y)
     	break;
 	}	
 }
-	
+
