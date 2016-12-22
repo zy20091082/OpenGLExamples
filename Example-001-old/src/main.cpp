@@ -32,10 +32,10 @@
 
 #endif
 
-/// This function draws a new window with the black background, and nothing else.
+/// This function draws the black background in the OpenGL window of interest.
 void draw(void)
 {
-	/* We set a black background for the new window! */
+	/* We draw the black background in the OpenGL window of interest. */
 	glClearColor(0.0f,0.0f,0.0f,1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 	glFlush();
