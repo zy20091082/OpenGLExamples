@@ -71,10 +71,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws a new window with the black background, and nothing else.
+/// This function draws a red triangle in the OpenGL window of interest.
 void draw()
 {
-	/* We draw a quadrilateral in the window! */
+	/* We draw a red triangle in the OpenGL window of interest! */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0, 0.0, 0.0);
   	glBegin(GL_POLYGON);
@@ -85,10 +85,10 @@ void draw()
 	glFlush(); 
 }
 
-/// This function initializes the window. It draws a white background. */
+/// This function initializes the OpenGL window of interest. */
 void initialize() 
 {
-	/* We initialize everything! */
+	/* We initialize the OpenGL window of interest! */
 	cout<<endl<<"\tThis is the 'Example-006' Example, based on the (Old Mode) OpenGL"<<endl;
 	cout<<"\tIt shows the polygon with the maximum number 7 of sides, obtained as the intersection of a triangle with the viewing box"<<endl<<endl;
 	cout<<"\t\t-) the viewing box (orthographic projection): [0,100] x [0,100] x [-1,1]"<<endl<<endl;
@@ -97,7 +97,7 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0); 
 }
 
-// Keyboard input processing routine.
+/// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
 	/* We are interested only in the 'q' - 'Q' - 'Esc' keys */
