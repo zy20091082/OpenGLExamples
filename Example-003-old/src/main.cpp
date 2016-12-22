@@ -73,10 +73,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws a new window with the black background, and nothing else.
+/// This function draws a red quadrilateral in the OpenGL window of interest.
 void draw()
 {
-	/* We draw a quadrilateral in the window! */
+	/* We draw a red quadrilateral in the OpenGL window of interest. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0, 0.0, 0.0);
   	glBegin(GL_POLYGON);
@@ -88,9 +88,10 @@ void draw()
 	glFlush(); 
 }
 
-/// This function initializes the window. It draws a white background. */
+/// This function initializes the OpenGL window of interest. */
 void initialize() 
 {
+	/* We initialize the OpenGL window of interest */
 	left=0.0;
 	right=100.0;
 	bottom=0.0;
@@ -102,10 +103,10 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0); 
 }
 
-// Keyboard input processing routine.
+/// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
-	/* We are interested only in the 'q' - 'Q' - 'Esc' keys */
+	/* We are interested only in the 'q' - 'Q' - 'Esc' - '0' - '1' - '2' - '3' - '4' - '5' keys */
 	switch (key)
 	{
 		case 113:
