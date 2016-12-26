@@ -72,10 +72,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws two quadrilaterals in the OpenGL window of interest.
+/// This function draws a triangle strip in the OpenGL window of interest by using the face and the mode rendering, chosen by the user.
 void draw()
 {
-	/* We draw a triangle strip */
+	/* We draw a triangle strip in the OpenGL window of interest by using the face and the mode rendering, chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(10.0);
 	glLineWidth(2.0);
