@@ -71,10 +71,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws two quadrilaterals in the OpenGL window of interest.
+/// This function draws a polygon, such that a color is assigned with each of its vertices, in the OpenGL window of interest.
 void draw()
 {
-	/* We draw two quadrilaterals in the OpenGL window of interest! */
+	/* We draw a polygon, such that a color is assigned with each of its vertices, in the OpenGL window of interest. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glBegin(GL_POLYGON);
 	glColor3f(1.0,0.0,0.0);
