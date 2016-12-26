@@ -72,10 +72,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws two quadrilaterals in the OpenGL window of interest.
+/// This function draws the scene in the OpenGL window of interest by using the primitive, chosen by the user.
 void draw()
 {
-	/* We draw several points in a cloud! */
+	/* We draw the scene by using the primitive, chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(10.0);
 	glLineWidth(2.0);
