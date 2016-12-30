@@ -40,7 +40,7 @@ void resize(int w,int h);
 void manageKeys(unsigned char key, int x, int y);
 
 /* Global variables */
-GLfloat left,right,bottom,top,near,far;
+GLfloat left_value,right_value,bottom_value,top_value,near_value,far_value;
 
 /// The main function for the <i>'Example-004 (Old Mode)'</i> example.
 int main(int argc,char **argv)
@@ -68,7 +68,7 @@ void resize(int w, int h)
 	glViewport(0, 0, w, h);
    	glMatrixMode(GL_PROJECTION);
    	glLoadIdentity();
-   	glOrtho(left,right,bottom,top,near,far);
+   	glOrtho(left_value,right_value,bottom_value,top_value,near_value,far_value);
    	glMatrixMode(GL_MODELVIEW);
    	glLoadIdentity();
 }
@@ -100,12 +100,12 @@ void draw()
 void initialize() 
 {
 	/* We initialize the OpenGL window of interest. */
-	left=0.0;
-	right=100.0;
-	bottom=0.0;
-	top=100.0;
-	near=-1.0;
-	far=1.0;
+	left_value=0.0;
+	right_value=100.0;
+	bottom_value=0.0;
+	top_value=100.0;
+	near_value=-1.0;
+	far_value=1.0;
 	std::cout<<std::endl<<"\tDrawing two quadrilaterals in the scene"<<std::endl<<std::endl;
 	std::cout<<"\t\tQuadrilateral #0 (in red) with vertices (20,20,0) - (80,20,0) - (80,80,0) - (20,80,0) "<<std::endl;
 	std::cout<<"\t\tQuadrilateral #1 (in green) with vertices (120,120,0) - (180,120,0) - (180,180,0) - (120,180,0) "<<std::endl;
@@ -145,12 +145,12 @@ void manageKeys(unsigned char key, int x, int y)
 		/* The key is '0' - initial configuration #0: glOrtho(0,100,0,100,-1,1) */
 		std::cout<<std::endl<<"\tApplying the initial configuration #0 with the viewing box [0,100] x [0,100] x [-1,1]"<<std::endl;
 		std::cout.flush();
-		left=0.0;
-		right=100.0;
-		bottom=0.0;
-		top=100.0;
-		near=-1.0;
-		far=1.0;
+		left_value=0.0;
+		right_value=100.0;
+		bottom_value=0.0;
+		top_value=100.0;
+		near_value=-1.0;
+		far_value=1.0;
 		resize(480,480);
 		glutReshapeWindow(480,480);
 		glutPostRedisplay();
@@ -161,12 +161,12 @@ void manageKeys(unsigned char key, int x, int y)
 		/* The key is '1' - configuration #1: glOrtho(-100,100,-100,100,-1,1) */
 		std::cout<<std::endl<<"\tApplying the configuration #1 with the viewing box [0,200] x [0,200] x [-1,1]"<<std::endl;
 		std::cout.flush();
-		left=0.0;
-		right=200.0;
-		bottom=0;
-		top=200.0;
-		near=-1;
-		far=1.0;
+		left_value=0.0;
+		right_value=200.0;
+		bottom_value=0;
+		top_value=200.0;
+		near_value=-1;
+		far_value=1.0;
 		resize(480,480);
 		glutReshapeWindow(480,480);
 		glutPostRedisplay();
