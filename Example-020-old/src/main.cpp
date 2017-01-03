@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: December 2016
+ * Last update: January 2016
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -71,7 +71,7 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws two triangle strips, forming a double (square) annulus, in the OpenGL window of interest.
+/// This function draws only one triangle strip, forming a double (square) annulus, in the OpenGL window of interest.
 void draw()
 {
 	/* We draw only one triangle strip, forming the double (square) annulus of interest (in red and in the wireframe mode). */
