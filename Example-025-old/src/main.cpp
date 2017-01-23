@@ -15,10 +15,19 @@
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
+#if defined(_MSC_VER)
+
+	/* We are using the Microsoft Visual Studio, thus we must fix the bug, regarding the 'min()' and the 'max()' template functions. */
+	#define NOMINMAX
+	#include <algorithm>
+	using namespace std;
+
+#endif
 #include <cstdlib>
 #include <iostream>
 #include <cmath>
 using namespace std;
+
 #ifdef __APPLE__
 
 	/* We are using a MacOSX platform (Macintosh) */
@@ -99,8 +108,8 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThe x-range for the parabola of interest: ["<<xmin<<","<<xmax<<"]"<<endl<<endl;
 	vmin=evaluateParabola(xmin);
 	vmax=evaluateParabola(xmax);
-	ymin=min(min(vmin,vmax),yv);
-	ymax=max(max(vmin,vmax),yv);
+	ymin=min((float)min(vmin,vmax),yv);
+	ymax=max((float)max(vmin,vmax),yv);
 	cout<<"\tThe y-range for the parabola of interest: ["<<ymin<<","<<ymax<<"]"<<endl<<endl;
 	h=fabs(ymin-ymax);
 	
