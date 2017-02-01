@@ -38,13 +38,13 @@ using namespace std;
 
 #endif
 
-/// The number of the longitudinal slices in the hemisphere of interest.
+/// The number of the longitudinal slices in the 'Dome' shape (portion of a hemisphere) of interest.
 unsigned int long_slices_num=3;
 
-/// The number of the latitudinal slides in the hemisphere of interest.
+/// The number of the latitudinal slides in the 'Dome' shape (portion of a hemisphere) of interest.
 unsigned int lat_slices_num=3;
 
-/// The radius for the hemisphere of interest.
+/// The radius for the 'Dome' shape (portion of a hemisphere) of interest.
 float radius=5.0;
 
 /// The rotation angle along the x-axis.
@@ -91,12 +91,12 @@ void initialize()
 	long_slices_num=3;
 	lat_slices_num=3;
 	radius=5.0;
-	cout<<"\tWe draw the wireframe version of a hemisphere with radius R="<<radius<<". It is possible to:"<<endl<<endl;
+	cout<<"\tWe draw the wireframe version of the 'Dome' shape (portion of a hemisphere) with radius R="<<radius<<". It is possible to:"<<endl<<endl;
 	cout<<"\t-) modify the number of the latitudinal slices by pressing the 'q' (decrease) and the 'Q' (increase) keys"<<endl;
 	cout<<"\t-) modify the number of the longitudinal slices by pressing the 'p' (decrease) and the 'P' (increase) keys"<<endl;
-	cout<<"\t-) rotate the hemisphere along the x-axis by pressing the 'x' (decrease the angle) and the 'X' (increase the angle) keys"<<endl;
-	cout<<"\t-) rotate the hemisphere along the y-axis by pressing the 'y' (decrease the angle) and the 'Y' (increase the angle) keys"<<endl;
-	cout<<"\t-) rotate the hemisphere along the z-axis by pressing the 'z' (decrease the angle) and the 'Z' (increase the angle) keys"<<endl<<endl;
+	cout<<"\t-) rotate the 'Dome' shape (portion of a hemisphere) along the x-axis by pressing the 'x' (decrease the angle) and the 'X' (increase the angle) keys"<<endl;
+	cout<<"\t-) rotate the 'Dome' shape (portion of a hemisphere) along the y-axis by pressing the 'y' (decrease the angle) and the 'Y' (increase the angle) keys"<<endl;
+	cout<<"\t-) rotate the 'Dome' shape (portion of a hemisphere) along the z-axis by pressing the 'z' (decrease the angle) and the 'Z' (increase the angle) keys"<<endl<<endl;
 	cout.flush();
 }
 
@@ -211,12 +211,12 @@ void resize(int w, int h)
    	glFrustum(-5.0, 5.0, -5.0, 5.0, 5.0, 100.0);
 }
 
-/// This function draws a portion of the <i>'Hemisphere'</i> shape in the OpenGL window of interest by using the preferences, chosen by the user.
+/// This function draws a portion of the <i>'Dome'</i> shape in the OpenGL window of interest by using the preferences, chosen by the user.
 void draw()
 {
 	float delta_p,delta_q;
 
-	/* Now, we draw a portion of the 'Hemisphere' shape in the OpenGL window of interest by using the preferences, chosen by the user. */
+	/* Now, we draw a portion of the 'Dome' shape in the OpenGL window of interest by using the preferences, chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glMatrixMode(GL_MODELVIEW);
    	glLoadIdentity();
@@ -247,7 +247,7 @@ void draw()
 	
 	/* If we arrive here, we have finished! */
 	glFlush();
-	cout<<"\tApproximated and drawn the 'Hemisphere' shape by using "<<lat_slices_num<<" latitudinal slices and "<<long_slices_num<<" longitudinal slices, rotation angle around the x-axis: "<<Xangle<<", rotation angle around the y-axis: "<<Yangle;
+	cout<<"\tApproximated and drawn the 'Dome' shape by using "<<lat_slices_num<<" latitudinal slices and "<<long_slices_num<<" longitudinal slices, rotation angle around the x-axis: "<<Xangle<<", rotation angle around the y-axis: "<<Yangle;
 	cout<<", rotation angle around the z-axis: "<<Zangle<<endl;
 	cout.flush();
 }
