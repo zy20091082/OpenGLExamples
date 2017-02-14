@@ -38,13 +38,13 @@ using namespace std;
 
 #endif
 
-/// The number of the longitudinal slices in the hemisphere of interest.
+/// The number of the longitudinal slices in the <i>'Hemisphere'</i> shape of interest.
 unsigned int long_slices_num=3;
 
-/// The number of the latitudinal slides in the hemisphere of interest.
+/// The number of the latitudinal slides in the <i>'Hemisphere'</i> shape of interest.
 unsigned int lat_slices_num=3;
 
-/// The radius for the hemisphere of interest.
+/// The radius for the <i>'Hemisphere'</i> shape of interest.
 float radius=5.0;
 
 /// The rotation angle along the x-axis.
@@ -91,12 +91,12 @@ void initialize()
 	long_slices_num=3;
 	lat_slices_num=3;
 	radius=5.0;
-	cout<<"\tWe draw the wireframe version of a hemisphere with radius R="<<radius<<". It is possible to:"<<endl<<endl;
+	cout<<"\tWe draw the wireframe version of the 'Hemisphere' shape with radius R="<<radius<<". It is possible to:"<<endl<<endl;
 	cout<<"\t-) modify the number of the latitudinal slices by pressing the 'q' (decrease) and the 'Q' (increase) keys"<<endl;
 	cout<<"\t-) modify the number of the longitudinal slices by pressing the 'p' (decrease) and the 'P' (increase) keys"<<endl;
-	cout<<"\t-) rotate the hemisphere along the x-axis by pressing the 'x' (decrease the angle) and the 'X' (increase the angle) keys"<<endl;
-	cout<<"\t-) rotate the hemisphere along the y-axis by pressing the 'y' (decrease the angle) and the 'Y' (increase the angle) keys"<<endl;
-	cout<<"\t-) rotate the hemisphere along the z-axis by pressing the 'z' (decrease the angle) and the 'Z' (increase the angle) keys"<<endl<<endl;
+	cout<<"\t-) rotate the 'Hemisphere' shape along the x-axis by pressing the 'x' (decrease the angle) and the 'X' (increase the angle) keys"<<endl;
+	cout<<"\t-) rotate the 'Hemisphere' shape along the y-axis by pressing the 'y' (decrease the angle) and the 'Y' (increase the angle) keys"<<endl;
+	cout<<"\t-) rotate the 'Hemisphere' shape along the z-axis by pressing the 'z' (decrease the angle) and the 'Z' (increase the angle) keys"<<endl<<endl;
 	cout.flush();
 }
 
