@@ -103,14 +103,14 @@ void initialize()
 	radiusY=3.0;
 	radiusZ=5.0;
 	mode=GL_LINE;
-	cout<<"\tWe draw the wireframe version of an ellissoid with radius Rx="<<radiusX<<", radius Ry="<<radiusY<<", and radius Rz="<<radiusZ<<endl<<endl;
+	cout<<"\tWe draw the wireframe version of the 'Ellissoid' shape with radius Rx="<<radiusX<<", radius Ry="<<radiusY<<", and radius Rz="<<radiusZ<<endl<<endl;
 	cout<<"\tSpecifically, it is possible to:"<<endl<<endl;
-	cout<<"\t-) modify the number of the latitudinal slices by pressing the 'q' (decrease) and the 'Q' (increase) keys"<<endl;
-	cout<<"\t-) modify the number of the longitudinal slices by pressing the 'p' (decrease) and the 'P' (increase) keys"<<endl;
-	cout<<"\t-) modify the rendering mode (wireframe or filled) by pressing the 'm' key"<<endl;
-	cout<<"\t-) rotate the ellissoid along the x-axis by pressing the 'x' (decrease the angle) and the 'X' (increase the angle) keys"<<endl;
-	cout<<"\t-) rotate the ellissoid along the y-axis by pressing the 'y' (decrease the angle) and the 'Y' (increase the angle) keys"<<endl;
-	cout<<"\t-) rotate the ellissoid along the z-axis by pressing the 'z' (decrease the angle) and the 'Z' (increase the angle) keys"<<endl<<endl;
+	cout<<"\t-) modify the number of the latitudinal slices in the 'Ellissoid' shape by pressing the 'q' (decrease) and the 'Q' (increase) keys"<<endl;
+	cout<<"\t-) modify the number of the longitudinal slices in the 'Ellissoid' shape by pressing the 'p' (decrease) and the 'P' (increase) keys"<<endl;
+	cout<<"\t-) modify the rendering mode (wireframe or filled) for the 'Ellissoid' shape by pressing the 'm' key"<<endl;
+	cout<<"\t-) rotate the 'Ellissoid' shape along the x-axis by pressing the 'x' (decrease the angle) and the 'X' (increase the angle) keys"<<endl;
+	cout<<"\t-) rotate the 'Ellissoid' shape along the y-axis by pressing the 'y' (decrease the angle) and the 'Y' (increase the angle) keys"<<endl;
+	cout<<"\t-) rotate the 'Ellissoid' shape along the z-axis by pressing the 'z' (decrease the angle) and the 'Z' (increase the angle) keys"<<endl<<endl;
 	cout.flush();
 }
 
@@ -250,33 +250,34 @@ void draw()
 	glColor3f(0,0,1);
 	glLineWidth(1);
 	glPointSize(5);
-	delta_p=(2.0*PI)/(long_slices_num-1);
-	delta_q=PI/(2.0*(lat_slices_num-1));
+	delta_p=(2.0*PI)/(long_slices_num);
+	delta_q=PI/(2.0*lat_slices_num);
 	for(unsigned int j=0;j<lat_slices_num;j++)
 	{
-		float psij=j*delta_q,ppsi_j=(j+1)*delta_q;
+		float psij=(float)j*delta_q,ppsi_j=(float)(j+1)*delta_q;
 		
-		/* We draw the superior part! */
+		/* Now, we consider the current latitudinal slice in the superior part of the 'Hemisphere' shape (a quad strip). */
 		glColor3f(0,0,1);
 		glBegin(GL_QUAD_STRIP);
 		for(unsigned int i=0;i<=long_slices_num;i++)
 		{
-			float tetha_i=i*delta_p;
+			float tetha_i=(float)i*delta_p;
 			glVertex3f(radiusX*cos(ppsi_j)*cos(tetha_i),radiusY*sin(ppsi_j),radiusZ*cos(ppsi_j)*sin(tetha_i));
 			glVertex3f(radiusX*cos(psij)*cos(tetha_i),radiusY*sin(psij),radiusZ*cos(psij)*sin(tetha_i));
 		}
 		
-		/* Nnow, we can draw the inferior part of the ellissoid! */
+		/* Now, we consider the current latitudinal slice in the inferior part of the 'Hemisphere' shape (a quad strip). */
 		glEnd();
 		glColor3f(1,0,0);
 		glBegin(GL_QUAD_STRIP);
 		for(unsigned int i=0;i<=long_slices_num;i++)
 		{
-			float tetha_i=i*delta_p;
+			float tetha_i=(float)i*delta_p;
 			glVertex3f(radiusX*cos(ppsi_j)*cos(tetha_i),-radiusY*sin(ppsi_j),radiusZ*cos(ppsi_j)*sin(tetha_i));
 			glVertex3f(radiusX*cos(psij)*cos(tetha_i),-radiusY*sin(psij),radiusZ*cos(psij)*sin(tetha_i));
 		}
 		
+		/* Finally, we finalize the current latitudinal slice in the inferior part of the 'Hemisphere' shape (a quad strip). */
 		glEnd();
 	}
 	
