@@ -92,8 +92,8 @@ void initialize()
 	lat_slices_num=3;
 	radius=5.0;
 	cout<<"\tWe draw the wireframe version of the 'Dome' shape (portion of a hemisphere) with radius R="<<radius<<". It is possible to:"<<endl<<endl;
-	cout<<"\t-) modify the number of the latitudinal slices by pressing the 'q' (decrease) and the 'Q' (increase) keys"<<endl;
-	cout<<"\t-) modify the number of the longitudinal slices by pressing the 'p' (decrease) and the 'P' (increase) keys"<<endl;
+	cout<<"\t-) modify the number of the latitudinal slices in the 'Dome' shape (portion of a hemisphere) by pressing the 'q' (decrease) and the 'Q' (increase) keys"<<endl;
+	cout<<"\t-) modify the number of the longitudinal slices in the 'Dome' shape (portion of a hemisphere) by pressing the 'p' (decrease) and the 'P' (increase) keys"<<endl;
 	cout<<"\t-) rotate the 'Dome' shape (portion of a hemisphere) along the x-axis by pressing the 'x' (decrease the angle) and the 'X' (increase the angle) keys"<<endl;
 	cout<<"\t-) rotate the 'Dome' shape (portion of a hemisphere) along the y-axis by pressing the 'y' (decrease the angle) and the 'Y' (increase the angle) keys"<<endl;
 	cout<<"\t-) rotate the 'Dome' shape (portion of a hemisphere) along the z-axis by pressing the 'z' (decrease the angle) and the 'Z' (increase the angle) keys"<<endl<<endl;
@@ -228,20 +228,21 @@ void draw()
 	glColor3f(0,0,1);
 	glLineWidth(1);
 	glPointSize(5);
-	delta_p=(2.0*PI)/(long_slices_num-1);
-	delta_q=PI/(4.0*(lat_slices_num-1));
+	delta_p=(2.0*PI)/(long_slices_num);
+	delta_q=PI/(3.0*lat_slices_num);
 	for(unsigned int j=0;j<lat_slices_num;j++)
 	{
-		float psij=j*delta_q,ppsi_j=(j+1)*delta_q;
+		/* Now, we consider the current latitudinal slice of the 'Dome' shape (a quad strip). */
+		float psij=(float)j*delta_q,ppsi_j=(float)(j+1)*delta_q;
 		glBegin(GL_QUAD_STRIP);
 		for(unsigned int i=0;i<=long_slices_num;i++)
 		{
-			float tetha_i=i*delta_p;
-			
+			float tetha_i=(float)i*delta_p;
 			glVertex3f(radius*cos(ppsi_j)*cos(tetha_i),radius*sin(ppsi_j),radius*cos(ppsi_j)*sin(tetha_i));
 			glVertex3f(radius*cos(psij)*cos(tetha_i),radius*sin(psij),radius*cos(psij)*sin(tetha_i));
 		}
 		
+		/* Now, we finalize the current latitudinal slice of the 'Dome' shape (a quad strip). */
 		glEnd();
 	}
 	
