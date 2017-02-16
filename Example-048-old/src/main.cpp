@@ -202,18 +202,31 @@ void initialize()
 	long_slices_num=3;
 	lat_slices_num=3;
 	radius=5.0;
-	cout<<"\tWe draw the wireframe version of the hemisphere portion of interest with radius R="<<radius<<". It is possible to:"<<endl<<endl;
-	cout<<"\t-) modify the number of the latitudinal slices by pressing the 'q' (decrease) and the 'Q' (increase) keys"<<endl;
-	cout<<"\t-) modify the number of the longitudinal slices by pressing the 'p' (decrease) and the 'P' (increase) keys"<<endl;
-	cout<<"\t-) rotate the hemisphere along the x-axis by pressing the 'x' (decrease the angle) and the 'X' (increase the angle) keys"<<endl;
-	cout<<"\t-) rotate the hemisphere along the y-axis by pressing the 'y' (decrease the angle) and the 'Y' (increase the angle) keys"<<endl;
-	cout<<"\t-) rotate the hemisphere along the z-axis by pressing the 'z' (decrease the angle) and the 'Z' (increase the angle) keys"<<endl<<endl;
+	cout<<"\tWe draw the wireframe version of the 'Hemisphere Portion' shape with radius R="<<radius<<". It is possible to:"<<endl<<endl;
+	cout<<"\t-) modify the number of the latitudinal slices in the 'Hemisphere Portion' shape by pressing the 'q' (decrease) and the 'Q' (increase) keys"<<endl;
+	cout<<"\t-) modify the number of the longitudinal slices in the 'Hemisphere Portion' shape by pressing the 'p' (decrease) and the 'P' (increase) keys"<<endl;
+	cout<<"\t-) rotate the 'Hemisphere Portion' shape along the x-axis by pressing the 'x' (decrease the angle) and the 'X' (increase the angle) keys"<<endl;
+	cout<<"\t-) rotate the 'Hemisphere Portion' shape along the y-axis by pressing the 'y' (decrease the angle) and the 'Y' (increase the angle) keys"<<endl;
+	cout<<"\t-) rotate the 'Hemisphere Portion' shape along the z-axis by pressing the 'z' (decrease the angle) and the 'Z' (increase the angle) keys"<<endl<<endl;
 	cout.flush();
 }
 
 /// This function draws the <i>'Hemisphere Portion'</i> shape in the OpenGL window of interest by using the preferences, chosen by the user.
 void draw()
 {
+	/* Now, we draw the 'Hemisphere Portion' shape in the OpenGL window of interest by using the preferences, chosen by the user. */
+	glClear(GL_COLOR_BUFFER_BIT);
+	glMatrixMode(GL_MODELVIEW);
+   	glLoadIdentity();
+   	glTranslatef(0.0, 0.0, -10.0);
+   	glRotatef(Zangle, 0.0, 0.0, 1.0);
+   	glRotatef(Yangle, 0.0, 1.0, 0.0);
+  	glRotatef(Xangle, 1.0, 0.0, 0.0);
+	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
+	glColor3f(0,0,1);
+	glLineWidth(1);
+	glPointSize(5);
+	
 	float delta_p,delta_q;
 
 	/* Now, we draw the 'Hemisphere Portion' shape in the OpenGL window of interest by using the preferences, chosen by the user. */
@@ -228,24 +241,23 @@ void draw()
 	glColor3f(0,0,1);
 	glLineWidth(1);
 	glPointSize(5);
-	delta_p=(PI)/(4.0*(long_slices_num-1));
-	delta_q=PI/(2.0*(lat_slices_num-1));
-	for(unsigned int j=0;j<lat_slices_num-1;j++)
+	delta_p=PI/(2.0*long_slices_num);
+	delta_q=PI/(2.0*lat_slices_num);
+	for(unsigned int j=0;j<lat_slices_num;j++)
 	{
-		float psij=j*delta_q,ppsi_j=(j+1)*delta_q;
-		
-		/* Here, we consider the current slice of the 'Hemisphere Portion' shape! */
+		/* Now, we consider the current latitudinal slice of the 'Hemisphere Portion' shape (a quad strip). */
+		float psij=(float)j*delta_q,ppsi_j=(float)(j+1)*delta_q;
 		glBegin(GL_QUAD_STRIP);
 		glVertex3f(0,radius*sin(ppsi_j),0);
 		glVertex3f(0,radius*sin(psij),0);
-		for(unsigned int i=0;i<long_slices_num;i++)
+		for(unsigned int i=0;i<=long_slices_num;i++)
 		{
-			float tetha_i=i*delta_p;
+			float tetha_i=(float)i*delta_p;
 			glVertex3f(radius*cos(ppsi_j)*cos(tetha_i),radius*sin(ppsi_j),radius*cos(ppsi_j)*sin(tetha_i));
 			glVertex3f(radius*cos(psij)*cos(tetha_i),radius*sin(psij),radius*cos(psij)*sin(tetha_i));
-		}	
+		}
 		
-		/* Now, if we arrive here, then we close the current slice of the 'Hemisphere Portion' shape! */
+		/* Now, we finalize the current latitudinal slice of the 'Hemisphere Portion' shape (a quad strip). */
 		glVertex3f(0,radius*sin(ppsi_j),0);
 		glVertex3f(0,radius*sin(psij),0);
 		glEnd();
@@ -256,7 +268,7 @@ void draw()
 	glVertex3f(0,0,0);
 	for(unsigned int i=0;i<long_slices_num;i++)
 	{
-		float tetha_i=i*delta_p;
+		float tetha_i=(float)i*delta_p;
 		glVertex3f(radius*cos(tetha_i),0,radius*sin(tetha_i));
 	}
 	
