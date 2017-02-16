@@ -103,8 +103,8 @@ void initialize()
 	glEnableClientState(GL_VERTEX_ARRAY);
 	computePoints();
 	cout<<"\tWe draw the wireframe version of the 'Hemisphere' shape with radius R="<<radius<<" by using the 'vertex array' technique, implemented throgh several 'glDrawElements()' statements. It is possible to:"<<endl<<endl;
-	cout<<"\t-) modify the number of the latitudinal slices by pressing the 'q' (decrease) and the 'Q' (increase) keys"<<endl;
-	cout<<"\t-) modify the number of the longitudinal slices by pressing the 'p' (decrease) and the 'P' (increase) keys"<<endl;
+	cout<<"\t-) modify the number of the latitudinal slices in the 'Hemisphere' shape by pressing the 'q' (decrease) and the 'Q' (increase) keys"<<endl;
+	cout<<"\t-) modify the number of the longitudinal slices in the 'Hemisphere' shape by pressing the 'p' (decrease) and the 'P' (increase) keys"<<endl;
 	cout<<"\t-) rotate the 'Hemisphere' shape along the x-axis by pressing the 'x' (decrease the angle) and the 'X' (increase the angle) keys"<<endl;
 	cout<<"\t-) rotate the 'Hemisphere' shape along the y-axis by pressing the 'y' (decrease the angle) and the 'Y' (increase the angle) keys"<<endl;
 	cout<<"\t-) rotate the 'Hemisphere' shape along the z-axis by pressing the 'z' (decrease the angle) and the 'Z' (increase the angle) keys"<<endl<<endl;
@@ -323,17 +323,17 @@ void computePoints()
 	inds=NULL;
 	inds=new uint[2*(long_slices_num+1)];
 	for(unsigned int h=0;h<2*(long_slices_num+1);h++) inds[h]=h;
-	delta_p=(2.0*PI)/(long_slices_num-1);
-	delta_q=PI/(2.0*(lat_slices_num-1));
+	delta_p=(2.0*PI)/(long_slices_num);
+	delta_q=PI/(2.0*lat_slices_num);
 	vertices=new GLfloat* [lat_slices_num];
 	for(unsigned int j=0;j<lat_slices_num;j++)
 	{
-		/* Now, we consider the current slice of the 'Hemisphere' shape */
-		float psij=j*delta_q,ppsi_j=(j+1)*delta_q;
+		/* Now, we consider the current latitudinal slice of the 'Hemisphere' shape (a quad strip). */
+		float psij=(float)j*delta_q,ppsi_j=(float)(j+1)*delta_q;
 		vertices[j]=new GLfloat[6*(long_slices_num+1)];
 		for(unsigned int i=0;i<=long_slices_num;i++)
 		{
-			float tetha_i=i*delta_p;
+			float tetha_i=(float)i*delta_p;
 			vertices[j][6*i+0]=radius*cos(ppsi_j)*cos(tetha_i);
 			vertices[j][6*i+1]=radius*sin(ppsi_j);
 			vertices[j][6*i+2]=radius*cos(ppsi_j)*sin(tetha_i);
