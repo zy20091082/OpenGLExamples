@@ -92,12 +92,22 @@ void initialize()
 	lat_slices_num=3;
 	radius=5.0;
 	cout<<"\tWe draw the wireframe version of the 'Hemisphere' shape with radius R="<<radius<<". It is possible to:"<<endl<<endl;
-	cout<<"\t-) modify the number of the latitudinal slices by pressing the 'q' (decrease) and the 'Q' (increase) keys"<<endl;
-	cout<<"\t-) modify the number of the longitudinal slices by pressing the 'p' (decrease) and the 'P' (increase) keys"<<endl;
+	cout<<"\t-) modify the number of the latitudinal slices in the 'Hemisphere' shape by pressing the 'q' (decrease) and the 'Q' (increase) keys"<<endl;
+	cout<<"\t-) modify the number of the longitudinal slices the 'Hemisphere' shape by pressing the 'p' (decrease) and the 'P' (increase) keys"<<endl;
 	cout<<"\t-) rotate the 'Hemisphere' shape along the x-axis by pressing the 'x' (decrease the angle) and the 'X' (increase the angle) keys"<<endl;
 	cout<<"\t-) rotate the 'Hemisphere' shape along the y-axis by pressing the 'y' (decrease the angle) and the 'Y' (increase the angle) keys"<<endl;
 	cout<<"\t-) rotate the 'Hemisphere' shape along the z-axis by pressing the 'z' (decrease the angle) and the 'Z' (increase the angle) keys"<<endl<<endl;
 	cout.flush();
+}
+
+/// This function updates the viewport for the scene when it is resized. */
+void resize(int w, int h)
+{
+	/* We update the projections and the modeling matrices! */
+	glViewport(0, 0, w, h);
+   	glMatrixMode(GL_PROJECTION);
+   	glLoadIdentity();
+   	glFrustum(-5.0, 5.0, -5.0, 5.0, 5.0, 100.0);
 }
 
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
@@ -201,16 +211,6 @@ void manageKeys(unsigned char key, int x, int y)
 	}
 }
 
-/// This function updates the viewport for the scene when it is resized. */
-void resize(int w, int h)
-{
-	/* We update the projections and the modeling matrices! */
-	glViewport(0, 0, w, h);
-   	glMatrixMode(GL_PROJECTION);
-   	glLoadIdentity();
-   	glFrustum(-5.0, 5.0, -5.0, 5.0, 5.0, 100.0);
-}
-
 /// This function draws the <i>'Hemisphere'</i> shape in the OpenGL window of interest by using the preferences, chosen by the user.
 void draw()
 {
@@ -228,21 +228,21 @@ void draw()
 	glColor3f(0,0,1);
 	glLineWidth(1);
 	glPointSize(5);
-	delta_p=(2.0*PI)/(long_slices_num-1);
-	delta_q=PI/(2.0*(lat_slices_num-1));
+	delta_p=(2.0*PI)/(long_slices_num);
+	delta_q=PI/(2.0*lat_slices_num);
 	for(unsigned int j=0;j<lat_slices_num;j++)
 	{
-		/* Now, we consider the current slice of the 'Hemisphere' shape */
-		float psij=j*delta_q,ppsi_j=(j+1)*delta_q;
+		/* Now, we consider the current latitudinal slice of the 'Hemisphere' shape (a quad strip). */
+		float psij=(float)j*delta_q,ppsi_j=(float)(j+1)*delta_q;
 		glBegin(GL_QUAD_STRIP);
 		for(unsigned int i=0;i<=long_slices_num;i++)
 		{
-			float tetha_i=i*delta_p;
+			float tetha_i=(float)i*delta_p;
 			glVertex3f(radius*cos(ppsi_j)*cos(tetha_i),radius*sin(ppsi_j),radius*cos(ppsi_j)*sin(tetha_i));
 			glVertex3f(radius*cos(psij)*cos(tetha_i),radius*sin(psij),radius*cos(psij)*sin(tetha_i));
 		}
 		
-		/* Now, we finalize the current slice of the 'Hemisphere' shape */
+		/* Now, we finalize the current latitudinal slice of the 'Hemisphere' shape (a quad strip). */
 		glEnd();
 	}
 	
