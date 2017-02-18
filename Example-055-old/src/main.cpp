@@ -38,6 +38,11 @@ using namespace std;
 
 #endif
 
+/* Now, we fix the definition of the 'uint' alias. */
+#ifndef uint
+	typedef unsigned int uint;
+#endif
+
 /// The number of the longitudinal slices in the <i>'Hemisphere'</i> shape of interest.
 unsigned int long_slices_num=3;
 
