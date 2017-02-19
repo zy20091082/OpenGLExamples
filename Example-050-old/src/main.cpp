@@ -55,6 +55,8 @@ void manageKeys(unsigned char key, int x, int y);
 void draw();
 void resize(int w,int h);
 float evaluateSlide(float v);
+void computePoints();
+void destroyPoints();
 
 /// The main function for the <i>'Example-050 (Old Mode)'</i> example.
 int main(int argc,char **argv)
@@ -95,7 +97,7 @@ void manageKeys(unsigned char key, int x, int y)
 	{
 		case 27:
 	
-		/* The key is 'Esc' */
+		/* The key is 'Esc', thus we can exit! */
 		cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
@@ -103,7 +105,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 'q':
 		
-		/* The key is 'Esc' */
+		/* The key is 'q', thus we can exit! */
 		cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
@@ -111,7 +113,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 'Q':
 		
-		/* The key is 'Esc' */
+		/* The key is 'Q', thus we can exit! */
 		cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
