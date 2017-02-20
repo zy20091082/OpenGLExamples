@@ -55,8 +55,6 @@ void manageKeys(unsigned char key, int x, int y);
 void draw();
 void resize(int w,int h);
 float evaluateSlide(float v);
-void computePoints();
-void destroyPoints();
 
 /// The main function for the <i>'Example-050 (Old Mode)'</i> example.
 int main(int argc,char **argv)
@@ -200,7 +198,7 @@ void initialize()
 	Zangle=0.0;
 	num_samples=3;
 	cout<<"\tWe draw the wireframe version of the 'Slide' shape of interest. It is possible to::"<<endl<<endl;
-	cout<<"\t-) modify the number of the samples by pressing the '-' (decrease) and the '+' (increase) keys"<<endl;
+	cout<<"\t-) modify the number of the samples in the 'Slide' shape by pressing the '-' (decrease) and the '+' (increase) keys"<<endl;
 	cout<<"\t-) rotate the 'Slide' shape along the x-axis by pressing the 'x' (decrease the angle) and the 'X' (increase the angle) keys"<<endl;
 	cout<<"\t-) rotate the 'Slide' shape along the y-axis by pressing the 'y' (decrease the angle) and the 'Y' (increase the angle) keys"<<endl;
 	cout<<"\t-) rotate the 'Slide' shape along the z-axis by pressing the 'z' (decrease the angle) and the 'Z' (increase the angle) keys"<<endl<<endl;
