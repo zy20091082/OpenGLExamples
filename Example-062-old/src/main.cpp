@@ -22,6 +22,9 @@
 #include <cfloat>
 #define PI 3.14159265358979324
 using namespace std;
+#ifndef uint
+	typedef unsigned int uint;
+#endif
 #ifdef __APPLE__
 
 	/* We are using a MacOSX platform (Macintosh) */
