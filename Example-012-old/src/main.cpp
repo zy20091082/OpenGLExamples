@@ -40,6 +40,7 @@ void initialize();
 void resize(int w,int h);
 void manageKeys(unsigned char key, int x, int y);
 GLenum face,mode;
+bool eol=false;
 
 /// The main function for the <i>'Example-012 (Old Mode)'</i> example.
 int main(int argc,char **argv)
@@ -72,10 +73,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws a triangle strip in the OpenGL window of interest by using the face and the mode rendering, chosen by the user.
+/// This function draws a custom shape, approximated by a triangle strip, in the OpenGL window of interest by using the rendering preferences, chosen by the user.
 void draw()
 {
-	/* We draw a triangle strip in the OpenGL window of interest by using the face and the mode rendering, chosen by the user. */
+	/* We draw a custom shape, approximated by a triangle strip, in the OpenGL window of interest by using the rendering preferences, chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(10.0);
 	glLineWidth(2.0);
@@ -99,7 +100,7 @@ void initialize()
 {
 	/* We initialize the OpenGL window of interest! */
 	cout<<endl<<"\tThis is the 'Example-012' Example, based on the (Old Mode) OpenGL"<<endl;
-	cout<<"\tIt draws a triangle strip in the scene, and it allows to modify its rendering as follows:"<<endl<<endl;
+	cout<<"\tIt draws a custom shape, approximated by a triangle strip, in the scene, and it allows to modify its rendering as follows:"<<endl<<endl;
 	cout<<"\t-) only the 'front' side of the triangles in the triangle strip is rendered by pressing the 'f' and 'F' keys"<<endl;
 	cout<<"\t-) only the 'back' side of the triangles in the triangle strip is rendered by pressing the 'b' and 'B' keys"<<endl;
 	cout<<"\t-) both the sides of the triangles in the triangle strip are rendered by pressing the 't' and 'T' keys"<<endl;
@@ -111,6 +112,7 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	face=GL_FRONT;
 	mode=GL_FILL;
+	eol=false;
 }
 
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
@@ -122,7 +124,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case 'q':
 	
 		/* The key is 'q' */
-		cout<<endl;
+		if(eol) cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
 		break;
@@ -130,7 +132,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case 'Q':
 	
 		/* The key is 'Q' */
-		cout<<endl;
+		if(eol) cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
 		break;
@@ -138,7 +140,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case 27:
 	
 		/* The key is 'Esc' */
-		cout<<endl;
+		if(eol) cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
 		break;
@@ -147,8 +149,9 @@ void manageKeys(unsigned char key, int x, int y)
 
 		/* The key is 'F' */
 		face=GL_FRONT;
-		cout<<"\tRendering only the front side of the triangle strip"<<endl;
+		cout<<"\tRendering only the 'front' side of the triangles in the triangle strip"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
@@ -156,8 +159,9 @@ void manageKeys(unsigned char key, int x, int y)
 
 		/* The key is 'f' */
 		face=GL_FRONT;
-		cout<<"\tRendering only the front side of the triangle strip"<<endl;
+		cout<<"\tRendering only the 'front' side of the triangles in the triangle strip"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
@@ -165,8 +169,9 @@ void manageKeys(unsigned char key, int x, int y)
 
 		/* The key is 'B' */
 		face=GL_BACK;
-		cout<<"\tRendering only the back side of the triangle strip"<<endl;
+		cout<<"\tRendering only the 'back' side of the triangles in the triangle strip"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
@@ -174,8 +179,9 @@ void manageKeys(unsigned char key, int x, int y)
 
 		/* The key is 'b' */
 		face=GL_BACK;
-		cout<<"\tRendering only the back side of the triangle strip"<<endl;
+		cout<<"\tRendering only the 'back' side of the triangles in the triangle strip"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
@@ -183,8 +189,9 @@ void manageKeys(unsigned char key, int x, int y)
 
 		/* The key is 'T' */
 		face=GL_FRONT_AND_BACK;
-		cout<<"\tRendering both the front and the back side of the triangle strip"<<endl;
+		cout<<"\tRendering both the 'front' and the 'back' sides of the triangles in the triangle strip"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
@@ -192,8 +199,9 @@ void manageKeys(unsigned char key, int x, int y)
 
 		/* The key is 't' */
 		face=GL_FRONT_AND_BACK;
-		cout<<"\tRendering both the front and the back side of the triangle strip"<<endl;
+		cout<<"\tRendering both the 'front' and the 'back' sides of the triangles in the triangle strip"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
@@ -201,8 +209,9 @@ void manageKeys(unsigned char key, int x, int y)
 
 		/* The key is 'I' */
 		mode=GL_FILL;
-		cout<<"\tRendering completely the triangle strip (filled)"<<endl;
+		cout<<"\tRendering completely the triangles in the triangle strip (filled version)"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
@@ -210,8 +219,9 @@ void manageKeys(unsigned char key, int x, int y)
 
 		/* The key is 'i' */
 		mode=GL_FILL;
-		cout<<"\tRendering completely the triangle strip (filled)"<<endl;
+		cout<<"\tRendering completely the triangles in the triangle strip (filled version)"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
@@ -219,8 +229,9 @@ void manageKeys(unsigned char key, int x, int y)
 
 		/* The key is 'L' */
 		mode=GL_LINE;
-		cout<<"\tRendering only the lines of the triangle strip (wireframe)"<<endl;
+		cout<<"\tRendering only the edges of the triangles in the triangle strip (wireframe version)"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
@@ -228,8 +239,9 @@ void manageKeys(unsigned char key, int x, int y)
 
 		/* The key is 'l' */
 		mode=GL_LINE;
-		cout<<"\tRendering only the lines of the triangle strip (wireframe)"<<endl;
+		cout<<"\tRendering only the edges of the triangles in the triangle strip (wireframe version)"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
@@ -237,8 +249,9 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is 'P' */
 		mode=GL_POINT;
-		cout<<"\tRendering only the vertices of the triangle strip"<<endl;
+		cout<<"\tRendering only the vertices of the triangles in the triangle strip"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
@@ -246,8 +259,9 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is 'p' */
 		mode=GL_POINT;
-		cout<<"\tRendering only the vertices of the triangle strip"<<endl;
+		cout<<"\tRendering only the vertices of the triangles in the triangle strip"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
