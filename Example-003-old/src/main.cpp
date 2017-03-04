@@ -3,7 +3,7 @@
 *
 * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
 *
-* Last update: December 2016
+* Last update: March 2017
 *
 * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
 * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
@@ -99,6 +99,7 @@ void initialize()
 	near_value = -1.0;
 	far_value = 1.0;
 	std::cout << std::endl << "\tDrawing a quadrilateral with vertices (30,20,0) - (80,20,0) - (80,80,0) - (20,80,0) " << std::endl;
+	std::cout << "\tIt is possible to apply several viewport configurations by using the '0-5' keys"<< std::endl;
 	std::cout.flush();
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 }
