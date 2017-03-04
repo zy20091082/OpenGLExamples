@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: December 2016
+ * Last update: March 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -128,9 +128,9 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	cout<<endl<<"\tThis is the 'Example-008' Example, based on the (Old Mode) OpenGL"<<endl;
 	cout<<"\tTwo quadrilaterals with a not empty intersection are drawn, and their rendering order can be changed as follows:"<<endl<<endl;
-	cout<<"\t\t-) the red quadrilateral is defined before in the code (inferior rendering level)"<<endl;
-	cout<<"\t\t-) the blue quadrilateral is defined after in the code (superior rendering level)"<<endl<<endl;
-	cout<<"\tIt is possible to change the rendering order of these quadrilaterals by using the key '0' and '1'"<<endl<<endl;
+	cout<<"\t\t-) the quadrilateral in 'red' is defined before in the code (inferior rendering level)"<<endl;
+	cout<<"\t\t-) the quadrilateral in 'blue' is defined after in the code (superior rendering level)"<<endl<<endl;
+	cout<<"\tIt is possible to change the rendering order of these quadrilaterals by using the '0' and '1' keys"<<endl<<endl;
 	cout.flush();
 	choice=0;
 	glClearColor(1.0, 1.0, 1.0, 0.0); 
