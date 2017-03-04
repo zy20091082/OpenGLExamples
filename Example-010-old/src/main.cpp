@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: December 2016
+ * Last update: March 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -97,7 +97,14 @@ void draw()
 void initialize() 
 {
 	/* We initialize the OpenGL window of interest! */
-	cout<<endl<<"\tThis is the 'Example-010' Example, based on the (Old Mode) OpenGL"<<endl<<endl;
+	cout<<endl<<"\tThis is the 'Example-010' Example, based on the (Old Mode) OpenGL"<<endl;
+	cout<<"\tIt allows to exploit several primitives for drawing the scene, based on a cloud of 2D points. It is possible to draw:"<<endl<<endl;
+	cout<<"\t-) several independent points by pressing the '0' key"<<endl;
+	cout<<"\t-) several independent lines by pressing the '1' key"<<endl;
+	cout<<"\t-) an open line strip by pressing the '2' key"<<endl;
+	cout<<"\t-) a closed line loop by pressing the '3' key"<<endl;
+	cout<<"\t-) several independent triangles by pressing the '4' key"<<endl;
+	cout<<"\t-) a unique polygon by pressing the '5' key"<<endl<<endl;
 	cout.flush();
 	glClearColor(1.0, 1.0, 1.0, 0.0); 
 	rendering=GL_POINTS;
@@ -109,7 +116,7 @@ void manageKeys(unsigned char key, int x, int y)
 	/* We are interested only in the 'q' - 'Q' - 'Esc' - '0' - '1' - '2' - '3' - '4' - '5' keys */
 	switch (key)
 	{
-		case 113:
+		case 'q':
 	
 		/* The key is 'q' */
 		cout<<endl;
@@ -117,7 +124,7 @@ void manageKeys(unsigned char key, int x, int y)
 		exit(EXIT_SUCCESS);
 		break;
 		
-		case 81:
+		case 'Q':
 	
 		/* The key is 'Q' */
 		cout<<endl;
@@ -133,58 +140,58 @@ void manageKeys(unsigned char key, int x, int y)
 		exit(EXIT_SUCCESS);
 		break;
 		
-		case 48:
+		case '0':
 		
 		/* The key is '0', thus the GL_POINTS primitive is required. */
 		rendering=GL_POINTS;
 		glutPostRedisplay();
-		cout<<"\tUsing the GL_POINTS primitive for drawing the scene"<<endl;
+		cout<<"\tUsing the GL_POINTS primitive for drawing several independents points in the scene"<<endl;
 		cout.flush();
 		break;
 		
-		case 49:
+		case '1':
 		
 		/* The key is '1', thus the GL_LINES primitive is required. */
 		rendering=GL_LINES;
 		glutPostRedisplay();
-		cout<<"\tUsing the GL_LINES primitive for drawing the scene"<<endl;
+		cout<<"\tUsing the GL_LINES primitive for drawing several independent lines in the scene"<<endl;
 		cout.flush();
 		break;
 		
-		case 50:
+		case '2':
 		
 		/* The key is '2', thus the GL_LINE_STRIP primitive is required. */
 		rendering=GL_LINE_STRIP;
 		glutPostRedisplay();
-		cout<<"\tUsing the GL_LINE_STRIP primitive for drawing the scene"<<endl;
+		cout<<"\tUsing the GL_LINE_STRIP primitive for drawing an open line strip in the scene"<<endl;
 		cout.flush();
 		break;
 		
-		case 51:
+		case '3':
 		
 		/* The key is '3', thus the GL_LINE_LOOP primitive is required. */
 		rendering=GL_LINE_LOOP;
 		glutPostRedisplay();
-		cout<<"\tUsing the GL_LINE_LOOP primitive for drawing the scene"<<endl;
+		cout<<"\tUsing the GL_LINE_LOOP primitive for drawing a closed line loop in the scene"<<endl;
 		cout.flush();
 		break;
 		
-		case 52:
+		case '5':
 		
-		/* The key is '4', thus the GL_POLYGON primitive is required. */
+		/* The key is '5', thus the GL_POLYGON primitive is required. */
 		rendering=GL_POLYGON;
 		glutPostRedisplay();
-		cout<<"\tUsing the GL_POLYGON primitive for drawing the scene"<<endl;
+		cout<<"\tUsing the GL_POLYGON primitive for drawing a polygon in the scene"<<endl;
 		cout.flush();
 		break;
 		
-		case 53:
+		case '4':
 		
-		/* The key is '5', thus the GL_TRIANGLES primitive is required. */
+		/* The key is '4', thus the GL_TRIANGLES primitive is required. */
 		rendering=GL_TRIANGLES;
 		glutPostRedisplay();
 		glutPostRedisplay();
-		cout<<"\tUsing the GL_TRIANGLES primitive for drawing the scene"<<endl;
+		cout<<"\tUsing the GL_TRIANGLES primitive for drawing several independent triangles in the scene"<<endl;
 		cout.flush();
 		break;
 		
