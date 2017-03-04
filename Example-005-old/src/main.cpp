@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: December 2016
+ * Last update: March 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -95,9 +95,9 @@ void initialize()
 	cout<<"\t\t-) the viewing box (orthographic projection): [0,100] x [0,100] x [-1,1]"<<endl<<endl;
 	cout<<"\t\t-) the triangle with vertices (x,20,0) - (80,20,0) - (80,80,0)"<<endl<<endl;
 	cout.flush();
-	cout<<"\tHere, the viewing box is not modified. Instead, the triangle is modified by moving the coordinate 'x' along the x-axis"<<endl<<endl;
-	cout<<"\t\tthe key '+' increases 'x' by 1.0"<<endl;
-	cout<<"\t\tthe key '-' decreases 'x' by 1.0"<<endl;
+	cout<<"\tHere, the viewing box is not modified. Instead, the triangle is modified by moving the 'x' coordinate along the x-axis"<<endl<<endl;
+	cout<<"\t\tthe key '+' increases the 'x' coordinate by 1.0"<<endl;
+	cout<<"\t\tthe key '-' decreases the 'x' coordinate by 1.0"<<endl;
 	cout<<"\t\tthe key '=' sets 'x' as the initial value '20'"<<endl<<endl;
 	xcoord=20.0;
 	glClearColor(1.0, 1.0, 1.0, 0.0); 
@@ -134,7 +134,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '+' */
 		xcoord=xcoord+(GLfloat)1.0;
-		cout<<"\tIncreased the coordinate 'x' as "<<xcoord<<endl;
+		cout<<"\tIncreased the 'x' coordinate as "<<xcoord<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;
@@ -143,7 +143,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-' */
 		xcoord=xcoord-(GLfloat)1.0;
-		cout<<"\tDecreased the coordinate 'x' as "<<xcoord<<endl;
+		cout<<"\tDecreased the 'x' coordinate as "<<xcoord<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;
@@ -152,7 +152,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '=' */
 		xcoord=20.0;
-		cout<<"\tReinitialized the coordinate 'x' to the default value "<<xcoord<<endl;
+		cout<<"\tReinitialized the 'x' coordinate to the default value "<<xcoord<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;
