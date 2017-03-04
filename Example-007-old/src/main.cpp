@@ -192,7 +192,7 @@ void draw()
 void initialize() 
 {
 	/* We initialize the OpenGL window of interest! */
-	cout<<endl<<"\tThis is the 'Example-007' Example, based on the (Old Mode) OpenGL"<<endl;
+	cout<<endl<<"\tThis is the 'Example-007' Example, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws 12 quadrilateral by using several colors."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
