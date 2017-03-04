@@ -73,10 +73,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws a red triangle in the OpenGL window of interest.
+/// This function draws a triangle in the OpenGL window of interest.
 void draw()
 {
-	/* We draw a triangle in the OpenGL window of interest! */
+	/* We draw a 'red' triangle in the OpenGL window of interest! */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0, 0.0, 0.0);
   	glBegin(GL_POLYGON);
@@ -91,15 +91,15 @@ void draw()
 void initialize() 
 {
 	/* We initialize the OpenGL window of interest! */
-	cout<<endl<<"\tThis is the 'Example-005' Example, based on the (Old Mode) OpenGL"<<endl;
+	cout<<endl<<"\tThis is the 'Example-005' Example, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws a polygon in 'red', obtained as the intersection between the following elements:"<<endl<<endl;
-	cout<<"\t\t-) the viewing box (orthographic projection): [0,100] x [0,100] x [-1,1]"<<endl;
-	cout<<"\t\t-) the triangle with vertices (x,20,0) - (80,20,0) - (80,80,0)"<<endl<<endl;
+	cout<<"\t\t-) The viewing box (orthographic projection): [0,100] x [0,100] x [-1,1]."<<endl;
+	cout<<"\t\t-) The triangle with vertices (x,20,0) - (80,20,0) - (80,80,0)."<<endl<<endl;
 	cout.flush();
 	cout<<"\tHere, the viewing box is not modified. Instead, the triangle is modified by moving the 'x' coordinate along the x-axis as follows:"<<endl<<endl;
-	cout<<"\t\t-) the '+' key increases the 'x' coordinate by 1.0"<<endl;
-	cout<<"\t\t-) the '-' key decreases the 'x' coordinate by 1.0"<<endl;
-	cout<<"\t\t-) the '=' key sets 'x' as its initial value '20'"<<endl<<endl;
+	cout<<"\t\t-) the '+' key increases the 'x' coordinate by 1.0."<<endl;
+	cout<<"\t\t-) the '-' key decreases the 'x' coordinate by 1.0."<<endl;
+	cout<<"\t\t-) the '=' key sets 'x' as its initial value '20'."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	xcoord=20.0;
 	eol=false;
@@ -137,7 +137,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '+' */
 		xcoord=xcoord+(GLfloat)1.0;
-		cout<<"\tIncreased the 'x' coordinate as "<<xcoord<<endl;
+		cout<<"\tIncreased the 'x' coordinate as "<<xcoord<<"."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -147,7 +147,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-' */
 		xcoord=xcoord-(GLfloat)1.0;
-		cout<<"\tDecreased the 'x' coordinate as "<<xcoord<<endl;
+		cout<<"\tDecreased the 'x' coordinate as "<<xcoord<<"."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -158,7 +158,7 @@ void manageKeys(unsigned char key, int x, int y)
 		/* The key is '=' */
 		xcoord=20.0;
 		eol=true;
-		cout<<"\tReinitialized the 'x' coordinate to the default value "<<xcoord<<endl;
+		cout<<"\tReinitialized the 'x' coordinate to the default value "<<xcoord<<"."<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;
