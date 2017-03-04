@@ -38,8 +38,8 @@ using namespace std;
 void initialize() 
 {
 	/* We initialize the OpenGL window of interest! */
-	cout<<endl<<"\tThis is the 'Example-001' Example, based on the (Old Mode) OpenGL"<<endl;
-	cout<<"\tIt creates a basic OpenGL window by providing no interaction with the user"<<endl<<endl;
+	cout<<endl<<"\tThis is the 'Example-001' Example, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tIt creates a basic OpenGL window by providing no interaction with the user."<<endl<<endl;
 	cout.flush();
 }
 
