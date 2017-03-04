@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: December 2016
+ * Last update: March 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -71,10 +71,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws four rectangles in the OpenGL window of interest.
+/// This function draws 6 rectangles by using several rendering settings in the OpenGL window of interest.
 void draw()
 {
-	/* We draw four rectangles in the OpenGL window of interest. */
+	/* We draw 6 rectangles, defined through the 'glRectf' primitive function, by using several rendering settings in the OpenGL window of interest. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(10.0);
 	glLineWidth(2.0);
@@ -101,8 +101,9 @@ void draw()
 void initialize() 
 {
 	/* We initialize the OpenGL window of interest! */
-	cout<<endl<<"\tThis is the 'Example-017' Example, based on the (Old Mode) OpenGL"<<endl<<endl;
-	cout<<"\tDrawing several rectangles by using the 'glRectf' (primitive) function under several polygon face and mode renderings"<<endl<<endl;
+	cout<<endl<<"\tThis is the 'Example-017' Example, based on the (Old Mode) OpenGL"<<endl;
+	cout<<"\tIt draws 6 rectangles, defined through the 'glRectf' primitive function, by using several rendering settings"<<endl<<endl;
+	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 }
@@ -113,13 +114,13 @@ void manageKeys(unsigned char key, int x, int y)
 	/* We are interested only in the 'q' - 'Q' - 'Esc' keys */
 	switch (key)
 	{
-		case 113:
+		case 'q':
 	
 		/* The key is 'q' */
 		exit(EXIT_SUCCESS);
 		break;
 		
-		case 81:
+		case 'Q':
 	
 		/* The key is 'Q' */
 		exit(EXIT_SUCCESS);

@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: December 2016
+ * Last update: March 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -41,6 +41,7 @@ void resize(int w,int h);
 void manageKeys(unsigned char key, int x, int y);
 int iconvex;
 int inconvex;
+bool eol=false;
 float convex_points[][3]={
 			{ 20.0,20.0,0.0},
 			{ 50,20,0 },
@@ -86,12 +87,12 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws several polygons in the OpenGL window of interest.
+/// This function draws several convex and not convex polygons in the OpenGL window of interest.
 void draw()
 {
 	int pp,jj;
 
-	/* We draw several polygons in the OpenGL window of interest. */
+	/* We draw several convex and not convex polygons in the OpenGL window of interest. */
 	pp = (iconvex%5);
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(10.0);
@@ -148,44 +149,54 @@ void draw()
 void initialize() 
 {
 	/* We initialize the OpenGL window of interest! */
-	cout<<endl<<"\tThis is the 'Example-018' Example, based on the (Old Mode) OpenGL"<<endl<<endl;
-	cout<<"\tDrawing several convex and not-convex polygons under several polygon face and mode renderings."<<endl;
-	cout<<"\tIf we cycle over the order of their vertices (by pressing the '+' key), then there will be 'strange' situations when rendering not-convex polygons (GL_FILL mode)"<<endl<<endl;
+	cout<<endl<<"\tThis is the 'Example-018' Example, based on the (Old Mode) OpenGL"<<endl;
+	cout<<"\tIt draws several convex and not-convex polygons by using different rendering settings, and allows to cycle the order of the vertices for the polygons of interest by pressing the '+' key."<<endl;
+	cout<<"\tIn particular, there may be 'strange' situations, expecially when rendering not-convex polygons in the 'filled' mode."<<endl<<endl;
+	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	iconvex=0;
 	inconvex=0;
+	eol=false;
 }
 
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
-	/* We are interested only in the 'q' - 'Q' - 'Esc' keys */
+	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' keys */
 	switch (key)
 	{
-		case 113:
+		case 'q':
 	
 		/* The key is 'q' */
+		if(eol) cout<<endl;
+		cout.flush();
 		exit(EXIT_SUCCESS);
 		break;
 		
-		case 81:
+		case 'Q':
 	
 		/* The key is 'Q' */
+		if(eol) cout<<endl;
+		cout.flush();
 		exit(EXIT_SUCCESS);
 		break;
 		
 		case 27:
 	
 		/* The key is 'Esc' */
+		if(eol) cout<<endl;
+		cout.flush();
 		exit(EXIT_SUCCESS);
 		break;
 		
-		case 43:
+		case '+':
 		
 		/* The key is '+' */
 		iconvex=iconvex+1;
 		inconvex=inconvex+1;
+		eol=true;
+		cout<<"\tCycling the order of the vertices for the convex and not convex polygons of interest"<<endl;
 		glutPostRedisplay();		
 		break;
 

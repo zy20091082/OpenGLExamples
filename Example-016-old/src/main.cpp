@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: December 2016
+ * Last update: March 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -40,6 +40,7 @@ void initialize();
 void resize(int w,int h);
 void manageKeys(unsigned char key, int x, int y);
 GLenum face,mode;
+bool eol=false;
 
 /// The main function for the <i>'Example-016 (Old Mode)'</i> example.
 int main(int argc,char **argv)
@@ -72,10 +73,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws two triangle fans in the OpenGL window of interest by using the face and the mode rendering, chosen by the user.
+/// This function draws the <i>'Square Annulus'</i> shape, approximated by 2 triangle fans, in the OpenGL window of interest by using the rendering preferences, chosen by the user.
 void draw()
 {
-	/* We draw two triangle fans in the OpenGL window of interest by using the face and the mode rendering, chosen by the user. */
+	/* We draw the 'Square Annulus' shape, approximated by 2 triangle fans, in the OpenGL window of interest by using the rendering preferences, chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(10.0);
 	glLineWidth(2.0);
@@ -109,11 +110,20 @@ void draw()
 void initialize() 
 {
 	/* We initialize the OpenGL window of interest! */
-	cout<<endl<<"\tThis is the 'Example-016' Example, based on the (Old Mode) OpenGL"<<endl<<endl;
+	cout<<endl<<"\tThis is the 'Example-016' Example, based on the (Old Mode) OpenGL"<<endl;
+	cout<<"\tIt draws the 'Square Annulus' shape, approximated by 2 triangle fans, in the scene, and it allows to modify its rendering as follows:"<<endl<<endl;
+	cout<<"\t-) only the 'front' side of the triangles in two triangle fans is rendered by pressing the 'f' and 'F' keys"<<endl;
+	cout<<"\t-) only the 'back' side of the triangles in two triangle fans is rendered by pressing the 'b' and 'B' keys"<<endl;
+	cout<<"\t-) both the sides of the triangles in two triangle fans are rendered by pressing the 't' and 'T' keys"<<endl;
+	cout<<"\t-) only the vertices of the triangles in two triangle fans are rendered by pressing the 'p' and 'P' keys"<<endl;
+	cout<<"\t-) only the edges of the triangles in two triangle fans (wireframe version) are rendered by pressing the 'l' and the 'L' keys"<<endl;
+	cout<<"\t-) the triangles in two triangle fans are entirely rendered (filled version) by pressing the 'i' and 'I' keys"<<endl<<endl;
+	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	face=GL_FRONT_AND_BACK;
 	mode=GL_FILL;
+	eol=false;
 }
 
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
@@ -122,18 +132,18 @@ void manageKeys(unsigned char key, int x, int y)
 	/* We are interested only in the 'q' - 'Q' - 'Esc' - 'f' - 'F' - 'b' - 'F' - 't' - 'T' - 'i' - 'I' - 'l' - 'L' - 'P' - 'p' keys */
 	switch (key)
 	{
-		case 113:
+		case 'q':
 	
 		/* The key is 'q' */
-		cout<<endl;
+		if(eol) cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
 		break;
 		
-		case 81:
+		case 'Q':
 	
 		/* The key is 'Q' */
-		cout<<endl;
+		if(eol) cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
 		break;
@@ -141,116 +151,128 @@ void manageKeys(unsigned char key, int x, int y)
 		case 27:
 	
 		/* The key is 'Esc' */
-		cout<<endl;
+		if(eol) cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
 		break;
 		
-		case 70:
+		case 'F':
 
 		/* The key is 'F' */
 		face=GL_FRONT;
-		cout<<"\tRendering only the front side of two triangle fans"<<endl;
+		cout<<"\tRendering only the 'front' side of the triangles in two triangle fans"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
-		case 102:
+		case 'f':
 
 		/* The key is 'f' */
 		face=GL_FRONT;
-		cout<<"\tRendering only the front side of two triangle fans"<<endl;
+		cout<<"\tRendering only the 'front' side of the triangles in two triangle fans"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
-		case 66:
+		case 'B':
 
 		/* The key is 'B' */
 		face=GL_BACK;
-		cout<<"\tRendering only the back side of two triangle fans"<<endl;
+		cout<<"\tRendering only the 'back' side of the triangles in two triangle fans"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
-		case 98:
+		case 'b':
 
 		/* The key is 'b' */
 		face=GL_BACK;
-		cout<<"\tRendering only the back side of two triangle fans"<<endl;
+		cout<<"\tRendering only the 'back' side of the triangles in two triangle fans"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
-		case 84:
+		case 'T':
 
 		/* The key is 'T' */
 		face=GL_FRONT_AND_BACK;
-		cout<<"\tRendering both the front and the back side of two triangle fans"<<endl;
+		cout<<"\tRendering both the 'front' and the 'back' sides of the triangles in two triangle fans"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
-		case 116:
+		case 't':
 
 		/* The key is 't' */
 		face=GL_FRONT_AND_BACK;
-		cout<<"\tRendering both the front and the back side of two triangle fans"<<endl;
+		cout<<"\tRendering both the 'front' and the 'back' sides of the triangles in two triangle fans"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
-		case 73:
+		case 'I':
 
 		/* The key is 'I' */
 		mode=GL_FILL;
 		cout<<"\tRendering completely two triangle fans (filled)"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
-		case 105:
+		case 'i':
 
 		/* The key is 'i' */
 		mode=GL_FILL;
 		cout<<"\tRendering completely two triangle fans (filled)"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
-		case 76:
+		case 'L':
 
 		/* The key is 'L' */
 		mode=GL_LINE;
-		cout<<"\tRendering only the lines of two triangle fans (wireframe)"<<endl;
+		cout<<"\tRendering only the edges of the triangles in two triangle fans (wireframe version)"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
-		case 108:
+		case 'l':
 
 		/* The key is 'l' */
 		mode=GL_LINE;
-		cout<<"\tRendering only the lines of two triangle fans (wireframe)"<<endl;
+		cout<<"\tRendering only the edges of the triangles in two triangle fans (wireframe version)"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
-		case 80:
+		case 'P':
 		
 		/* The key is 'P' */
 		mode=GL_POINT;
-		cout<<"\tRendering only the vertices of two triangle fans"<<endl;
+		cout<<"\tRendering only the vertices of the triangles in two triangle fans"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
-		case 112:
+		case 'p':
 		
 		/* The key is 'p' */
 		mode=GL_POINT;
-		cout<<"\tRendering only the vertices of two triangle fans"<<endl;
+		cout<<"\tRendering only the vertices of the triangles in two triangle fans"<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		

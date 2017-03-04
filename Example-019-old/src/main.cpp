@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: December 2016
+ * Last update: March 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -71,10 +71,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws two triangle strips, forming a double (square) annulus, in the OpenGL window of interest.
+/// This function draws two versions of the <i>'Double Square Annulus'</i> shape, approximated by 2 triangle strips, in the OpenGL window of interest.
 void draw()
 {
-	/* We draw two triangle strips, forming the double (square) annulus of interest. We start from the first triangle strip (in red and in the wireframe mode). */
+	/* We draw two versions of the <i>'Double Square Annulus'</i> shape, approximated by 2 triangle strips, in the OpenGL window of interest. We start from the first triangle strip (in red and in the wireframe mode). */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0,0.0,0.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
@@ -145,8 +145,10 @@ void draw()
 void initialize() 
 {
 	/* We initialize the OpenGL window of interest! */
-	cout<<endl<<"\tThis is the 'Example-019' Example, based on the (Old Mode) OpenGL"<<endl<<endl;
-	cout<<"\tDrawing the double (square) annulus by using 2 triangle strips (respectively, in red and blue)"<<endl<<endl;
+	cout<<endl<<"\tThis is the 'Example-019' Example, based on the (Old Mode) OpenGL"<<endl;
+	cout<<"\tIt draws 2 versions of the 'Double Square Annulus' shape, approximated by 2 triangle strips (shown, respectively, in red and in blue)."<<endl;
+	cout<<"\tIn the 'filled' version, the triangles of the triangle strips are completely rendered. Instead, only the edges of the triangle strips are completely rendered in the 'wireframe' version."<<endl<<endl;
+	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 }
@@ -157,13 +159,13 @@ void manageKeys(unsigned char key, int x, int y)
 	/* We are interested only in the 'q' - 'Q' - 'Esc' keys */
 	switch (key)
 	{
-		case 113:
+		case 'q':
 	
 		/* The key is 'q' */
 		exit(EXIT_SUCCESS);
 		break;
 		
-		case 81:
+		case 'Q':
 	
 		/* The key is 'Q' */
 		exit(EXIT_SUCCESS);
