@@ -36,6 +36,7 @@ using namespace std;
 
 /* Prototypes for all functions of interest! */
 GLfloat xcoord;
+bool eol=false;
 void draw();
 void initialize();
 void resize(int w,int h);
@@ -91,15 +92,17 @@ void initialize()
 {
 	/* We initialize the OpenGL window of interest! */
 	cout<<endl<<"\tThis is the 'Example-005' Example, based on the (Old Mode) OpenGL"<<endl;
-	cout<<"\tIt shows the polygon, obtained as the intersection of a triangle with the viewing box"<<endl<<endl;
-	cout<<"\t\t-) the viewing box (orthographic projection): [0,100] x [0,100] x [-1,1]"<<endl<<endl;
+	cout<<"\tIt draws a polygon in 'red', obtained as the intersection between the following elements:"<<endl<<endl;
+	cout<<"\t\t-) the viewing box (orthographic projection): [0,100] x [0,100] x [-1,1]"<<endl;
 	cout<<"\t\t-) the triangle with vertices (x,20,0) - (80,20,0) - (80,80,0)"<<endl<<endl;
 	cout.flush();
-	cout<<"\tHere, the viewing box is not modified. Instead, the triangle is modified by moving the 'x' coordinate along the x-axis"<<endl<<endl;
-	cout<<"\t\tthe key '+' increases the 'x' coordinate by 1.0"<<endl;
-	cout<<"\t\tthe key '-' decreases the 'x' coordinate by 1.0"<<endl;
-	cout<<"\t\tthe key '=' sets 'x' as the initial value '20'"<<endl<<endl;
+	cout<<"\tHere, the viewing box is not modified. Instead, the triangle is modified by moving the 'x' coordinate along the x-axis as follows:"<<endl<<endl;
+	cout<<"\t\t-) the '+' key increases the 'x' coordinate by 1.0"<<endl;
+	cout<<"\t\t-) the '-' key decreases the 'x' coordinate by 1.0"<<endl;
+	cout<<"\t\t-) the '=' key sets 'x' as its initial value '20'"<<endl<<endl;
+	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	xcoord=20.0;
+	eol=false;
 	glClearColor(1.0, 1.0, 1.0, 0.0); 
 }
 
@@ -109,49 +112,52 @@ void manageKeys(unsigned char key, int x, int y)
 	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' - "=" keys */
 	switch (key)
 	{
-		case 113:
+		case 'q':
 	
 		/* The key is 'q' */
-		cout<<endl;
+		if(eol) cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
 		
-		case 81:
+		case 'Q':
 	
 		/* The key is 'Q' */
-		cout<<endl;
+		if(eol) cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
 		
 		case 27:
 	
 		/* The key is 'Esc' */
-		cout<<endl;
+		if(eol) cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
 		
-		case 43:
+		case '+':
 		
 		/* The key is '+' */
 		xcoord=xcoord+(GLfloat)1.0;
 		cout<<"\tIncreased the 'x' coordinate as "<<xcoord<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
-		case 45:
+		case '-':
 		
 		/* The key is '-' */
 		xcoord=xcoord-(GLfloat)1.0;
 		cout<<"\tDecreased the 'x' coordinate as "<<xcoord<<endl;
 		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
-		case 61:
+		case '=':
 		
 		/* The key is '=' */
 		xcoord=20.0;
+		eol=true;
 		cout<<"\tReinitialized the 'x' coordinate to the default value "<<xcoord<<endl;
 		cout.flush();
 		glutPostRedisplay();

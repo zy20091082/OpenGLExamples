@@ -42,6 +42,7 @@ void manageKeys(unsigned char key, int x, int y);
 
 /* Global variables */
 GLfloat left_value,right_value,bottom_value,top_value,near_value,far_value;
+bool eol=false;
 
 /// The main function for the <i>'Example-004 (Old Mode)'</i> example.
 int main(int argc,char **argv)
@@ -108,13 +109,14 @@ void initialize()
 	near_value=-1.0;
 	far_value=1.0;
 	cout<<endl<<"\tThis is the 'Example-004' Example, based on the (Old Mode) OpenGL"<<endl;
-	cout<<endl<<"\tIt draws the following quadrilaterals in the scene:"<<endl<<endl;
-	cout<<"\t\t- Quadrilateral #0 (in red) with vertices (20,20,0) - (80,20,0) - (80,80,0) - (20,80,0) "<<endl;
-	cout<<"\t\t- Quadrilateral #1 (in green) with vertices (120,120,0) - (180,120,0) - (180,180,0) - (120,180,0) "<<endl<<endl;
+	cout<<"\tIt draws the following quadrilaterals in the scene:"<<endl<<endl;
+	cout<<"\t\t-) Quadrilateral #0 (in red) with vertices (20,20,0) - (80,20,0) - (80,80,0) - (20,80,0) "<<endl;
+	cout<<"\t\t-) Quadrilateral #1 (in green) with vertices (120,120,0) - (180,120,0) - (180,180,0) - (120,180,0) "<<endl<<endl;
 	cout<<"\tby using two different viewports (chosen by pressing the '0' and '1' keys)"<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
-	glClearColor(1.0, 1.0, 1.0, 0.0); 
+	glClearColor(1.0, 1.0, 1.0, 0.0);
+	eol=false;
 }
 
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
@@ -123,24 +125,24 @@ void manageKeys(unsigned char key, int x, int y)
 	/* We are interested only in the 'q' - 'Q' - 'Esc' - '0' - '1' keys */
 	switch (key)
 	{
-		case 113:
+		case 'q':
 	
 		/* The key is 'q' */
-		cout<<endl;
+		if(eol) cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
 		
-		case 81:
+		case 'Q':
 	
 		/* The key is 'Q' */
-		cout<<endl;
+		if(eol) cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
 		
 		case 27:
 	
 		/* The key is 'Esc' */
-		cout<<endl;
+		if(eol) cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
 		
@@ -149,6 +151,7 @@ void manageKeys(unsigned char key, int x, int y)
 		/* The key is '0' - initial configuration #0: glOrtho(0,100,0,100,-1,1) */
 		cout<<"\tApplying the initial configuration #0 with the viewing box [0,100] x [0,100] x [-1,1]"<<endl;
 		cout.flush();
+		eol=true;
 		left_value=0.0;
 		right_value=100.0;
 		bottom_value=0.0;
@@ -165,6 +168,7 @@ void manageKeys(unsigned char key, int x, int y)
 		/* The key is '1' - configuration #1: glOrtho(-100,100,-100,100,-1,1) */
 		cout<<"\tApplying the configuration #1 with the viewing box [0,200] x [0,200] x [-1,1]"<<endl;
 		cout.flush();
+		eol=true;
 		left_value=0.0;
 		right_value=200.0;
 		bottom_value=0;
