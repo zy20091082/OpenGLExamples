@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: December 2016
+ * Last update: March 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -100,7 +100,14 @@ void draw()
 void initialize() 
 {
 	/* We initialize the OpenGL window of interest! */
-	cout<<endl<<"\tThis is the 'Example-011' Example, based on the (Old Mode) OpenGL"<<endl<<endl;
+	cout<<endl<<"\tThis is the 'Example-011' Example, based on the (Old Mode) OpenGL"<<endl;
+	cout<<"\tIt draws a polygon in the scene, and it allows to modify its rendering as follows:"<<endl<<endl;
+	cout<<"\t-) only the 'front' side of the polygon is rendered by pressing the 'f' and 'F' keys"<<endl;
+	cout<<"\t-) only the 'back' side of the polygon is rendered by pressing the 'b' and 'B' keys"<<endl;
+	cout<<"\t-) both the sides of the polygon are rendered by pressing the 't' and 'T' keys"<<endl;
+	cout<<"\t-) only the vertices of the polygon are rendered by pressing the 'p' and 'P' keys"<<endl;
+	cout<<"\t-) only the edges of the polygon (wireframe version) are rendered by pressing the 'l' and the 'L' keys"<<endl;
+	cout<<"\t-) the polygon is entirely rendered (filled version) by pressing the 'i' and 'I' keys"<<endl<<endl;
 	cout.flush();
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	face=GL_FRONT;
@@ -113,7 +120,7 @@ void manageKeys(unsigned char key, int x, int y)
 	/* We are interested only in the 'q' - 'Q' - 'Esc' - 'f' - 'F' - 'b' - 'F' - 't' - 'T' - 'i' - 'I' - 'l' - 'L' - 'P' - 'p' keys */
 	switch (key)
 	{
-		case 113:
+		case 'q':
 	
 		/* The key is 'q' */
 		cout<<endl;
@@ -121,7 +128,7 @@ void manageKeys(unsigned char key, int x, int y)
 		exit(EXIT_SUCCESS);
 		break;
 		
-		case 81:
+		case 'Q':
 	
 		/* The key is 'Q' */
 		cout<<endl;
@@ -137,7 +144,7 @@ void manageKeys(unsigned char key, int x, int y)
 		exit(EXIT_SUCCESS);
 		break;
 		
-		case 70:
+		case 'F':
 
 		/* The key is 'F' */
 		face=GL_FRONT;
@@ -146,7 +153,7 @@ void manageKeys(unsigned char key, int x, int y)
 		glutPostRedisplay();
 		break;
 		
-		case 102:
+		case 'f':
 
 		/* The key is 'f' */
 		face=GL_FRONT;
@@ -155,7 +162,7 @@ void manageKeys(unsigned char key, int x, int y)
 		glutPostRedisplay();
 		break;
 		
-		case 66:
+		case 'B':
 
 		/* The key is 'B' */
 		face=GL_BACK;
@@ -164,7 +171,7 @@ void manageKeys(unsigned char key, int x, int y)
 		glutPostRedisplay();
 		break;
 		
-		case 98:
+		case 'b':
 
 		/* The key is 'b' */
 		face=GL_BACK;
@@ -173,7 +180,7 @@ void manageKeys(unsigned char key, int x, int y)
 		glutPostRedisplay();
 		break;
 		
-		case 84:
+		case 'T':
 
 		/* The key is 'T' */
 		face=GL_FRONT_AND_BACK;
@@ -182,7 +189,7 @@ void manageKeys(unsigned char key, int x, int y)
 		glutPostRedisplay();
 		break;
 		
-		case 116:
+		case 't':
 
 		/* The key is 't' */
 		face=GL_FRONT_AND_BACK;
@@ -191,7 +198,7 @@ void manageKeys(unsigned char key, int x, int y)
 		glutPostRedisplay();
 		break;
 		
-		case 73:
+		case 'I':
 
 		/* The key is 'I' */
 		mode=GL_FILL;
@@ -200,7 +207,7 @@ void manageKeys(unsigned char key, int x, int y)
 		glutPostRedisplay();
 		break;
 		
-		case 105:
+		case 'i':
 
 		/* The key is 'i' */
 		mode=GL_FILL;
@@ -209,7 +216,7 @@ void manageKeys(unsigned char key, int x, int y)
 		glutPostRedisplay();
 		break;
 		
-		case 76:
+		case 'L':
 
 		/* The key is 'L' */
 		mode=GL_LINE;
@@ -218,7 +225,7 @@ void manageKeys(unsigned char key, int x, int y)
 		glutPostRedisplay();
 		break;
 		
-		case 108:
+		case 'l':
 
 		/* The key is 'l' */
 		mode=GL_LINE;
@@ -227,7 +234,7 @@ void manageKeys(unsigned char key, int x, int y)
 		glutPostRedisplay();
 		break;
 		
-		case 80:
+		case 'P':
 		
 		/* The key is 'P' */
 		mode=GL_POINT;
@@ -236,7 +243,7 @@ void manageKeys(unsigned char key, int x, int y)
 		glutPostRedisplay();
 		break;
 		
-		case 112:
+		case 'p':
 		
 		/* The key is 'p' */
 		mode=GL_POINT;
