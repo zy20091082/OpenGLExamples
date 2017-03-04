@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: December 2016
+ * Last update: March 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -90,9 +90,10 @@ void initialize()
 {
 	/* We initialize the OpenGL window of interest! */
 	cout<<endl<<"\tThis is the 'Example-006' Example, based on the (Old Mode) OpenGL"<<endl;
-	cout<<"\tIt shows the polygon with the maximum number 7 of sides, obtained as the intersection of a triangle with the viewing box"<<endl<<endl;
-	cout<<"\t\t-) the viewing box (orthographic projection): [0,100] x [0,100] x [-1,1]"<<endl<<endl;
+	cout<<"\tIt draws the polygon in 'red' with the maximum number 7 of sides, obtained as the intersection of the following elements:"<<endl<<endl;
+	cout<<"\t\t-) the viewing box (orthographic projection): [0,100] x [0,100] x [-1,1]"<<endl;
 	cout<<"\t\t-) the triangle with vertices (-50,-30,0) - (150,-50,0) - (50,150,0)"<<endl<<endl;
+	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glClearColor(1.0, 1.0, 1.0, 0.0); 
 }

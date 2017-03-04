@@ -40,6 +40,7 @@ void initialize();
 void resize(int w,int h);
 void manageKeys(unsigned char key, int x, int y);
 int choice;
+bool eol=false;
 
 /// The main function for the <i>'Example-008 (Old Mode)'</i> example.
 int main(int argc,char **argv)
@@ -128,12 +129,14 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	cout<<endl<<"\tThis is the 'Example-008' Example, based on the (Old Mode) OpenGL"<<endl;
 	cout<<"\tTwo quadrilaterals with a not empty intersection are drawn, and their rendering order can be changed as follows:"<<endl<<endl;
-	cout<<"\t\t-) the quadrilateral in 'red' is defined before in the code (inferior rendering level)"<<endl;
-	cout<<"\t\t-) the quadrilateral in 'blue' is defined after in the code (superior rendering level)"<<endl<<endl;
-	cout<<"\tIt is possible to change the rendering order of these quadrilaterals by using the '0' and '1' keys"<<endl<<endl;
+	cout<<"\t\t-) the quadrilateral in 'red' is defined and rendered before in the code (inferior rendering level)"<<endl;
+	cout<<"\t\t-) the quadrilateral in 'blue' is defined and rendered after in the code (superior rendering level)"<<endl<<endl;
+	cout<<"\tThe rendering order of these quadrilaterals, corresponding to two configurations, can be changed by pressing the '0' and '1' keys."<<endl<<endl;
+	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	choice=0;
-	glClearColor(1.0, 1.0, 1.0, 0.0); 
+	glClearColor(1.0, 1.0, 1.0, 0.0);
+	eol=false;
 }
 
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
@@ -142,35 +145,44 @@ void manageKeys(unsigned char key, int x, int y)
 	/* We are interested only in the 'q' - 'Q' - 'Esc' - '0' - '1' keys */
 	switch (key)
 	{
-		case 113:
+		case 'q':
 	
 		/* The key is 'q' */
+		if(eol) cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
 		
-		case 81:
+		case 'Q':
 	
 		/* The key is 'Q' */
+		if(eol) cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
 		
 		case 27:
 	
 		/* The key is 'Esc' */
+		if(eol) cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
 		
-		case 48:
+		case '0':
 		
 		/* The key is '0' */
 		choice=0;
+		cout<<"\tDrawing the rendering configuration #0"<<endl;
+		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		
-		case 49:
+		case '1':
 		
 		/* The key is '1' */
 		choice=1;
+		cout<<"\tDrawing the rendering configuration #1"<<endl;
+		cout.flush();
+		eol=true;
 		glutPostRedisplay();
 		break;
 		

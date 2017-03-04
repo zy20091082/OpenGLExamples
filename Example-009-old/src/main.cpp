@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: December 2016
+ * Last update: March 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -71,10 +71,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws a polygon, such that a color is assigned with each of its vertices, in the OpenGL window of interest.
+/// This function draws a square, such that a color is assigned with each of its vertices, in the OpenGL window of interest.
 void draw()
 {
-	/* We draw a polygon, such that a color is assigned with each of its vertices, in the OpenGL window of interest. */
+	/* We draw a square, such that a color is assigned with each of its vertices, in the OpenGL window of interest. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glBegin(GL_POLYGON);
 	glColor3f(1.0,0.0,0.0);
@@ -94,6 +94,8 @@ void initialize()
 {
 	/* We initialize the OpenGL window of interest! */
 	cout<<endl<<"\tThis is the 'Example-009' Example, based on the (Old Mode) OpenGL"<<endl;
+	cout<<"\tIt draws a square, such that a different color is assigned with every vertex."<<endl<<endl;
+	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl;
 	cout.flush();
 	glClearColor(1.0, 1.0, 1.0, 0.0); 
 }
@@ -104,7 +106,7 @@ void manageKeys(unsigned char key, int x, int y)
 	/* We are interested only in the 'q' - 'Q' - 'Esc' keys */
 	switch (key)
 	{
-		case 113:
+		case 'q':
 	
 		/* The key is 'q' */
 		cout<<endl;
@@ -112,7 +114,7 @@ void manageKeys(unsigned char key, int x, int y)
 		exit(EXIT_SUCCESS);
 		break;
 		
-		case 81:
+		case 'Q':
 	
 		/* The key is 'Q' */
 		cout<<endl;
