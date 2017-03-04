@@ -74,7 +74,7 @@ void resize(int w, int h)
 /// This function draws two versions of the <i>'Double Square Annulus'</i> shape, approximated by 2 triangle strips, in the OpenGL window of interest.
 void draw()
 {
-	/* We draw two versions of the <i>'Double Square Annulus'</i> shape, approximated by 2 triangle strips, in the OpenGL window of interest. We start from the first triangle strip (in red and in the wireframe mode). */
+	/* We draw two versions of the 'Double Square Annulus' shape, approximated by 2 triangle strips, in the OpenGL window of interest. We start from the first triangle strip (in 'red' and in the 'wireframe' mode). */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0,0.0,0.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
