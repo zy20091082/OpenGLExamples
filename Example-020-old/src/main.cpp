@@ -134,7 +134,7 @@ void draw()
 void initialize() 
 {
 	/* We initialize the OpenGL window of interest! */
-	cout<<endl<<"\tThis is the 'Example-020' Example, based on the (Old Mode) OpenGL"<<endl;
+	cout<<endl<<"\tThis is the 'Example-020' Example, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws 2 versions (both in red) of the 'Double Square Annulus' shape, approximated by one triangle strip."<<endl;
 	cout<<"\tIn the 'filled' version, the triangles of the triangle strip are completely rendered. Instead, only the edges of the triangle strip are completely rendered in the 'wireframe' version."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
