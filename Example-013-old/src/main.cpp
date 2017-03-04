@@ -72,10 +72,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws a triangle strip in the OpenGL window of interest by using the face and the mode rendering, chosen by the user.
+/// This function draws the <i>'Square Annulus'</i> shape, approximated by a triangle strip, in the OpenGL window of interest by using the face and the mode rendering, chosen by the user.
 void draw()
 {
-	/* We draw a triangle strip in the OpenGL window of interest by using the face and the mode rendering, chosen by the user. */
+	/* We draw the 'Square Annulus' shape, approximated by a triangle strip, in the OpenGL window of interest by using the face and the mode rendering, chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(10.0);
 	glLineWidth(2.0);
@@ -102,7 +102,15 @@ void draw()
 void initialize() 
 {
 	/* We initialize the OpenGL window of interest! */
-	cout<<endl<<"\tThis is the 'Example-013' Example, based on the (Old Mode) OpenGL"<<endl<<endl;
+	cout<<endl<<"\tThis is the 'Example-013' Example, based on the (Old Mode) OpenGL"<<endl;
+	cout<<"\tIt draws the 'Square Annulus' shape, approximated by a triangle strip, in the scene, and it allows to modify its rendering as follows:"<<endl<<endl;
+	cout<<"\t-) only the 'front' side of the triangles in the triangle strip is rendered by pressing the 'f' and 'F' keys"<<endl;
+	cout<<"\t-) only the 'back' side of the triangles in the triangle strip is rendered by pressing the 'b' and 'B' keys"<<endl;
+	cout<<"\t-) both the sides of the triangles in the triangle strip are rendered by pressing the 't' and 'T' keys"<<endl;
+	cout<<"\t-) only the vertices of the triangles in the triangle strip are rendered by pressing the 'p' and 'P' keys"<<endl;
+	cout<<"\t-) only the edges of the triangles in the triangle strip (wireframe version) are rendered by pressing the 'l' and the 'L' keys"<<endl;
+	cout<<"\t-) the triangles in the triangle strip are entirely rendered (filled version) by pressing the 'i' and 'I' keys"<<endl<<endl;
+	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	face=GL_FRONT_AND_BACK;

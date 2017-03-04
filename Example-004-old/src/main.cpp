@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: December 2016
+ * Last update: March 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -17,6 +17,7 @@
 /* First, we must understand which platform we are using. */
 #include <cstdlib>
 #include <iostream>
+using namespace std;
 #ifdef __APPLE__
 
 	/* We are using a MacOSX platform (Macintosh) */
@@ -106,10 +107,13 @@ void initialize()
 	top_value=100.0;
 	near_value=-1.0;
 	far_value=1.0;
-	std::cout<<std::endl<<"\tDrawing two quadrilaterals in the scene"<<std::endl<<std::endl;
-	std::cout<<"\t\tQuadrilateral #0 (in red) with vertices (20,20,0) - (80,20,0) - (80,80,0) - (20,80,0) "<<std::endl;
-	std::cout<<"\t\tQuadrilateral #1 (in green) with vertices (120,120,0) - (180,120,0) - (180,180,0) - (120,180,0) "<<std::endl;
-	std::cout.flush();
+	cout<<endl<<"\tThis is the 'Example-004' Example, based on the (Old Mode) OpenGL"<<endl;
+	cout<<endl<<"\tIt draws the following quadrilaterals in the scene:"<<endl<<endl;
+	cout<<"\t\t- Quadrilateral #0 (in red) with vertices (20,20,0) - (80,20,0) - (80,80,0) - (20,80,0) "<<endl;
+	cout<<"\t\t- Quadrilateral #1 (in green) with vertices (120,120,0) - (180,120,0) - (180,180,0) - (120,180,0) "<<endl<<endl;
+	cout<<"\tby using two different viewports (chosen by pressing the '0' and '1' keys)"<<endl<<endl;
+	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout.flush();
 	glClearColor(1.0, 1.0, 1.0, 0.0); 
 }
 
@@ -122,29 +126,29 @@ void manageKeys(unsigned char key, int x, int y)
 		case 113:
 	
 		/* The key is 'q' */
-		std::cout<<std::endl;
+		cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
 		
 		case 81:
 	
 		/* The key is 'Q' */
-		std::cout<<std::endl;
+		cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
 		
 		case 27:
 	
 		/* The key is 'Esc' */
-		std::cout<<std::endl;
+		cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
 		
-		case 48:
+		case '0':
 		
 		/* The key is '0' - initial configuration #0: glOrtho(0,100,0,100,-1,1) */
-		std::cout<<std::endl<<"\tApplying the initial configuration #0 with the viewing box [0,100] x [0,100] x [-1,1]"<<std::endl;
-		std::cout.flush();
+		cout<<"\tApplying the initial configuration #0 with the viewing box [0,100] x [0,100] x [-1,1]"<<endl;
+		cout.flush();
 		left_value=0.0;
 		right_value=100.0;
 		bottom_value=0.0;
@@ -156,11 +160,11 @@ void manageKeys(unsigned char key, int x, int y)
 		glutPostRedisplay();
 		break;
 		
-		case 49:
+		case '1':
 		
 		/* The key is '1' - configuration #1: glOrtho(-100,100,-100,100,-1,1) */
-		std::cout<<std::endl<<"\tApplying the configuration #1 with the viewing box [0,200] x [0,200] x [-1,1]"<<std::endl;
-		std::cout.flush();
+		cout<<"\tApplying the configuration #1 with the viewing box [0,200] x [0,200] x [-1,1]"<<endl;
+		cout.flush();
 		left_value=0.0;
 		right_value=200.0;
 		bottom_value=0;

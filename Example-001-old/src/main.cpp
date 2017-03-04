@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: December 2016
+ * Last update: March 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -16,6 +16,8 @@
 
 /* First, we must understand which platform we are using. */
 #include <cstdlib>
+#include <iostream>
+using namespace std;
 #ifdef __APPLE__
 
 	/* We are using a MacOSX platform (Macintosh) */
@@ -31,6 +33,15 @@
 	#include "GL/gl.h"
 
 #endif
+
+/// This function initializes the OpenGL window of interest.
+void initialize() 
+{
+	/* We initialize the OpenGL window of interest! */
+	cout<<endl<<"\tThis is the 'Example-001' Example, based on the (Old Mode) OpenGL"<<endl;
+	cout<<"\tIt creates a basic OpenGL window by providing no interaction with the user"<<endl<<endl;
+	cout.flush();
+}
 
 /// This function draws the black background in the OpenGL window of interest.
 void draw(void)
@@ -51,6 +62,7 @@ int main(int argc,char **argv)
 	glutInitWindowSize(480,480);
 	glutCreateWindow("The 'Example-001' Example, based on the (Old Mode) OpenGL");
 	glutDisplayFunc(draw);
+	initialize();
 	glutMainLoop();
 	return EXIT_SUCCESS;
 }
