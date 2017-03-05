@@ -93,7 +93,7 @@ void draw()
 void initialize() 
 {
 	/* We initialize the OpenGL window of interest! */
-	cout<<endl<<"\tThis is the 'Example-009' Example, based on the (Old Mode) OpenGL"<<endl;
+	cout<<endl<<"\tThis is the 'Example-009' Example, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws a square, such that a different color is assigned with every vertex."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl;
 	cout.flush();
