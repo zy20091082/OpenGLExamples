@@ -73,10 +73,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws two quadrilaterals in the OpenGL window of interest.
+/// This function draws 2 quadrilaterals in the OpenGL window of interest.
 void draw()
 {
-	/* We draw two quadrilaterals in the OpenGL window of interest! */
+	/* We draw 2 quadrilaterals in the OpenGL window of interest! */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0,0.0,0.0);
 	if(choice==0)
@@ -127,10 +127,10 @@ void draw()
 void initialize() 
 {
 	/* We initialize the OpenGL window of interest! */
-	cout<<endl<<"\tThis is the 'Example-008' Example, based on the (Old Mode) OpenGL"<<endl;
+	cout<<endl<<"\tThis is the 'Example-008' Example, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tTwo quadrilaterals with a not empty intersection are drawn, and their rendering order can be changed as follows:"<<endl<<endl;
-	cout<<"\t\t-) the quadrilateral in 'red' is defined and rendered before in the code (inferior rendering level)"<<endl;
-	cout<<"\t\t-) the quadrilateral in 'blue' is defined and rendered after in the code (superior rendering level)"<<endl<<endl;
+	cout<<"\t\t-) The quadrilateral in 'red' is defined and rendered before in the code (inferior rendering level)."<<endl;
+	cout<<"\t\t-) The quadrilateral in 'blue' is defined and rendered after in the code (superior rendering level)."<<endl<<endl;
 	cout<<"\tThe rendering order of these quadrilaterals, corresponding to two configurations, can be changed by pressing the '0' and '1' keys."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
@@ -170,7 +170,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '0' */
 		choice=0;
-		cout<<"\tDrawing the rendering configuration #0"<<endl;
+		cout<<"\tDrawing the rendering configuration #0."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -180,7 +180,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '1' */
 		choice=1;
-		cout<<"\tDrawing the rendering configuration #1"<<endl;
+		cout<<"\tDrawing the rendering configuration #1."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
