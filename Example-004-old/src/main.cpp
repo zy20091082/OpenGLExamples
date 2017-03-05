@@ -110,8 +110,8 @@ void initialize()
 	far_value=1.0;
 	cout<<endl<<"\tThis is the 'Example-004' Example, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws the following quadrilaterals in the scene:"<<endl<<endl;
-	cout<<"\t\t-) Quadrilateral #0 (in 'red') with vertices (20,20,0) - (80,20,0) - (80,80,0) - (20,80,0)."<<endl;
-	cout<<"\t\t-) Quadrilateral #1 (in 'green') with vertices (120,120,0) - (180,120,0) - (180,180,0) - (120,180,0)."<<endl<<endl;
+	cout<<"\t\t-) quadrilateral #0 (in 'red') with vertices (20,20,0) - (80,20,0) - (80,80,0) - (20,80,0);"<<endl;
+	cout<<"\t\t-) quadrilateral #1 (in 'green') with vertices (120,120,0) - (180,120,0) - (180,180,0) - (120,180,0)."<<endl<<endl;
 	cout<<"\tby using two different viewports (chosen by pressing the '0' and '1' keys)."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
