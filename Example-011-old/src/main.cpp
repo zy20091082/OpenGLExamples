@@ -103,12 +103,12 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	cout<<endl<<"\tThis is the 'Example-011' Example, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws a custom polygon in the scene, and it allows to modify its rendering as follows:"<<endl<<endl;
-	cout<<"\t-) only the 'front' side of the polygon is rendered by pressing the 'f' and 'F' keys;"<<endl;
-	cout<<"\t-) only the 'back' side of the polygon is rendered by pressing the 'b' and 'B' keys;"<<endl;
-	cout<<"\t-) both the sides of the polygon are rendered by pressing the 't' and 'T' keys;"<<endl;
-	cout<<"\t-) only the vertices of the polygon are rendered by pressing the 'p' and 'P' keys;"<<endl;
-	cout<<"\t-) only the edges of the polygon (wireframe version) are rendered by pressing the 'l' and the 'L' keys;"<<endl;
-	cout<<"\t-) the polygon is entirely rendered (filled version) by pressing the 'i' and 'I' keys;"<<endl<<endl;
+	cout<<"\t-) only the 'front' side of the custom polygon is rendered by pressing the 'f' and 'F' keys;"<<endl;
+	cout<<"\t-) only the 'back' side of the custom polygon is rendered by pressing the 'b' and 'B' keys;"<<endl;
+	cout<<"\t-) both the sides of the custom polygon are rendered by pressing the 't' and 'T' keys;"<<endl;
+	cout<<"\t-) only the vertices of the custom polygon are rendered by pressing the 'p' and 'P' keys;"<<endl;
+	cout<<"\t-) only the edges of the custom polygon (wireframe version) are rendered by pressing the 'l' and the 'L' keys;"<<endl;
+	cout<<"\t-) the custom polygon is entirely rendered (filled version) by pressing the 'i' and 'I' keys."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glClearColor(1.0, 1.0, 1.0, 0.0);
@@ -151,7 +151,7 @@ void manageKeys(unsigned char key, int x, int y)
 
 		/* The key is 'F' */
 		face=GL_FRONT;
-		cout<<"\tRendering only the 'front' side of the polygon."<<endl;
+		cout<<"\tRendering only the 'front' side of the custom polygon."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -161,7 +161,7 @@ void manageKeys(unsigned char key, int x, int y)
 
 		/* The key is 'f' */
 		face=GL_FRONT;
-		cout<<"\tRendering only the 'front' side of the polygon."<<endl;
+		cout<<"\tRendering only the 'front' side of the custom polygon."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -171,7 +171,7 @@ void manageKeys(unsigned char key, int x, int y)
 
 		/* The key is 'B' */
 		face=GL_BACK;
-		cout<<"\tRendering only the 'back' side of the polygon."<<endl;
+		cout<<"\tRendering only the 'back' side of the custom polygon."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -181,7 +181,7 @@ void manageKeys(unsigned char key, int x, int y)
 
 		/* The key is 'b' */
 		face=GL_BACK;
-		cout<<"\tRendering only the 'back' side of the polygon."<<endl;
+		cout<<"\tRendering only the 'back' side of the custom polygon."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -191,7 +191,7 @@ void manageKeys(unsigned char key, int x, int y)
 
 		/* The key is 'T' */
 		face=GL_FRONT_AND_BACK;
-		cout<<"\tRendering both the 'front' and the 'back' sides of the polygon."<<endl;
+		cout<<"\tRendering both the 'front' and the 'back' sides of the custom polygon."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -201,7 +201,7 @@ void manageKeys(unsigned char key, int x, int y)
 
 		/* The key is 't' */
 		face=GL_FRONT_AND_BACK;
-		cout<<"\tRendering both the 'front' and the 'back' sides of the polygon."<<endl;
+		cout<<"\tRendering both the 'front' and the 'back' sides of the custom polygon."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -211,7 +211,7 @@ void manageKeys(unsigned char key, int x, int y)
 
 		/* The key is 'I' */
 		mode=GL_FILL;
-		cout<<"\tRendering completely the polygon (filled version)."<<endl;
+		cout<<"\tRendering completely the custom polygon (filled version)."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -221,7 +221,7 @@ void manageKeys(unsigned char key, int x, int y)
 
 		/* The key is 'i' */
 		mode=GL_FILL;
-		cout<<"\tRendering completely the polygon (filled version)."<<endl;
+		cout<<"\tRendering completely the custom polygon (filled version)."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -231,7 +231,7 @@ void manageKeys(unsigned char key, int x, int y)
 
 		/* The key is 'L' */
 		mode=GL_LINE;
-		cout<<"\tRendering only the edges of the polygon (wireframe version)."<<endl;
+		cout<<"\tRendering only the edges of the custom polygon (wireframe version)."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -241,7 +241,7 @@ void manageKeys(unsigned char key, int x, int y)
 
 		/* The key is 'l' */
 		mode=GL_LINE;
-		cout<<"\tRendering only the edges of the polygon (wireframe version)."<<endl;
+		cout<<"\tRendering only the edges of the custom polygon (wireframe version)."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -251,7 +251,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is 'P' */
 		mode=GL_POINT;
-		cout<<"\tRendering only the vertices of the polygon."<<endl;
+		cout<<"\tRendering only the vertices of the custom polygon."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -261,7 +261,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is 'p' */
 		mode=GL_POINT;
-		cout<<"\tRendering only the vertices of the polygon."<<endl;
+		cout<<"\tRendering only the vertices of the custom polygon."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();

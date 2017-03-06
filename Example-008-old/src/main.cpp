@@ -129,8 +129,8 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	cout<<endl<<"\tThis is the 'Example-008' Example, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tTwo quadrilaterals with a not empty intersection are drawn, and their rendering order can be changed as follows:"<<endl<<endl;
-	cout<<"\t\t-) The quadrilateral in 'red' is defined and rendered before in the code (inferior rendering level)."<<endl;
-	cout<<"\t\t-) The quadrilateral in 'blue' is defined and rendered after in the code (superior rendering level)."<<endl<<endl;
+	cout<<"\t\t-) the quadrilateral in 'red' is defined and rendered before in the code (inferior rendering level);"<<endl;
+	cout<<"\t\t-) the quadrilateral in 'blue' is defined and rendered after in the code (superior rendering level)."<<endl<<endl;
 	cout<<"\tThe rendering order of these quadrilaterals, corresponding to two configurations, can be changed by pressing the '0' and '1' keys."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
