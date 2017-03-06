@@ -61,9 +61,9 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-022' Example, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws different versions (formed by an arbitrary number of samples) of the 'Circle' shape with radius 'R' and center '(xc,yc)'."<<endl;
 	cout<<"\tThe radius 'R' and the coodinates of the center '(xc,yc)' are specified by the user, which can also:"<<endl<<endl;
-	cout<<"\t\t-) decide to approximate the 'Circle' shape through a polyline by pressing the 'l' key."<<endl;
-	cout<<"\t\t-) decide to approximate the 'Circle' shape through a triangle fan by pressing the 'f' key."<<endl;
-	cout<<"\t\t-) decide to approximate the 'Circle' shape through a unique polygon by pressing the 'p' key."<<endl;
+	cout<<"\t\t-) decide to approximate the 'Circle' shape through a polyline by pressing the 'l' key;"<<endl;
+	cout<<"\t\t-) decide to approximate the 'Circle' shape through a triangle fan by pressing the 'f' key;"<<endl;
+	cout<<"\t\t-) decide to approximate the 'Circle' shape through a unique polygon by pressing the 'p' key;"<<endl;
 	cout<<"\t\t-) increase the number of the samples for the approximation of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number of the samples for the approximation of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;

@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: January 2017
+ * Last update: March 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -37,10 +37,10 @@ using namespace std;
 
 #endif
 
-/// The number of the samples, used for drawing the scene of interest.
+/// The number of the samples, used for drawing the <i>'Circular Annulus'</i> shapes in the scene of interest.
 int num_samples=5;
 
-/// The rendering mode for the scene of interest (wireframe or filled).
+/// The rendering mode, used for drawing the <i>'Circular Annulus'</i> shapes in the scene of interest.
 GLenum mode=GL_FILL;
 
 /// The font for drawing the informative labels of interest.
@@ -58,7 +58,16 @@ void drawString(void *font,string s);
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a new window! */
-	cout<<endl<<"\tThis is the 'Example-030' Example, based on the (Old Mode) OpenGL"<<endl<<endl;
+	cout<<endl<<"\tThis is the 'Example-030' Example, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tIt draws three variants of the 'Circular Annulus' shape, defined as follows"<<endl<<endl;
+	cout<<"\t-) the first variant of the 'Circular Annulus' shape is not a real annulus, and is formed by drawing two overwritten disks;"<<endl;
+	cout<<"\t-) also the second 'Circular Annulus' shape is not a real annulus, and is formed by drawing two overwritten disks through the depth buffer technique (z-buffer);"<<endl;
+	cout<<"\t-) the third 'Circular Annulus' shape is approximated by one (real) triangle strip."<<endl<<endl;
+	cout<<"\tUpon request, the user can:"<<endl<<endl;
+	cout<<"\t-) increase the number of samples for the disks and the triangle strip of interest, by pressing the '+' key;"<<endl;
+	cout<<"\t-) decrease the number of samples for the disks and the triangle strip of interest, by pressing the '-' key;"<<endl;
+	cout<<"\t-) modify the rendering mode ('wireframe' or 'filled' mode) for the disks and the triangle strip of interest by pressing the ' ' key (space)."<<endl<<endl;
+	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE|GLUT_DEPTH);
@@ -78,16 +87,15 @@ int main(int argc,char **argv)
 /// This function initializes the OpenGL window of interest.
 void initialize() 
 {
-	/* We initialize the OpenGL window of interest! */	
-	cout<<"\tWe draw three examples of the circular annuluses, defined as follows"<<endl<<endl;
-	cout<<"\t-) the first 'annulus' is not a real annulus, and is formed by two overwritten discs."<<endl; 
-	cout<<"\t-) Also the second 'annulus' is not a real annulus. It is drawn by using the depth buffer, and is formed by two overwritten discs."<<endl;
-	cout<<"\t-) The third annulus is real, and is formed by only one triangle strip."<<endl<<endl;
-	cout<<"\tIt is possible to modify the number of the samples (by pressing the '+' and '-' keys), as well as the rendering mode (by pressing the ' ' key)"<<endl<<endl;
-	cout.flush();
+	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=5;
 	mode=GL_FILL;
+	cout<<"\tWe draw 3 variants of the 'Circular Annulus' shape through several ";
+	if(mode==GL_FILL) cout<<"filled ";
+	else cout<<"wireframe ";
+	cout<<"disks and triangles in one (real) triangle strip, initially formed by "<<num_samples<<" samples (the minimum number as possible)."<<endl<<endl;
+	cout.flush();
 }
 
 /// This function updates the viewport for the scene when it is resized. */
@@ -151,7 +159,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-', thus we decrease the number of the samples! */
 		if(num_samples>5) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 5 of samples is reached"<<endl;
+		else cout<<"\tThe minimum number 5 of samples is reached, and it is not possible to decrease again this number."<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;
@@ -183,12 +191,12 @@ void drawDisc(float R,float X,float Y,float Z)
 /// This function draws a bitmap character string in the scene.
 void drawString(void *font,string s) { for(string::iterator c=s.begin();c!=s.end();c++) glutBitmapCharacter(font, *c); }
 
-/// This function draws the 'false' and the 'true' circular annuluses in the OpenGL window of interest.
+/// This function draws 3 variants of the <i>'Circular Annuluses'</i> shapes in the OpenGL window of interest.
 void draw()
 {
 	float d=(2*PI)/(num_samples-1);
 
-	/* Now, we draw the first 'false' circular annulus by using two overlapping disks. The red disk is external, while the blue disk is internal. If we change the rendering order, then the result will be different. */
+	/* Now, we draw the first (false) variant of the 'Circular Annulus' shape by using two overlapping disks. The 'red' disk is external, while the 'blue' disk is internal. If we change the rendering order, then the result will be different. */
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 	glPolygonMode(GL_FRONT,mode);
 	glColor3f(1,0,0);
@@ -196,7 +204,7 @@ void draw()
 	glColor3f(0,0,1);
 	drawDisc(10,25,75,0);
 	
-	/* Now, we draw the second 'false' circular annulus by using two overlapping disks. The red disk is external, while the blue disk is internal. Here, we exploit the depth test buffer. */
+	/* Now, we draw the second (false) variant of the 'Circular Annulus' shape by using two overlapping disks. The 'red' disk is external, while the 'blue' disk is internal. Here, we exploit the depth test buffer (z-buffer). */
 	glEnable(GL_DEPTH_TEST);
 	glColor3f(1,0,0);
 	drawDisc(20,75,75,0);
@@ -204,7 +212,7 @@ void draw()
 	drawDisc(10,75,75,0.5);
 	glDisable(GL_DEPTH_TEST);
 	
-	/* Now, we draw the 'true' circular annulus by using only triangle strip. */
+	/* Now, we draw the third  (true) variant of the 'Circular Annulus' shape by using only triangle strip. */
 	glColor3f(1,0,0);
 	glBegin(GL_TRIANGLE_STRIP);
 	for(int i=0;i<num_samples;i++)
@@ -225,11 +233,14 @@ void draw()
    	drawString((void*)font,"Overlapping disks with the");
    	glRasterPos3f(65.0,48.0,0.0);
    	drawString((void*)font,"depth test buffer");
-   	glRasterPos3f(10,1,0);
-   	drawString((void*)font,"A real circular annulus with only one triangle strip");
+   	glRasterPos3f(7,1,0);
+   	drawString((void*)font,"A 'Circular Annulus' shape with only one triangle strip");
 	
 	/* If we arrive here, we have drawn the entire scene! */
 	glFlush();
-	cout<<"\tApproximated and drawn the scene of interest with "<<num_samples<<" samples"<<endl;
+	cout<<"\tWe draw several ";
+	if(mode==GL_FILL) cout<<"filled ";
+	else cout<<"wireframe ";
+	cout<<"disks and triangle in one (real) triangle strip, formed by "<<num_samples<<" samples, for approximating 3 variants of the 'Circular Annulus' shape."<<endl;
 	cout.flush();
 }
