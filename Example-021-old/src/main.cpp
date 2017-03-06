@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: January 2017
+ * Last update: March 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -36,14 +36,14 @@ using namespace std;
 
 #endif
 
-/// The radius for the circle of interest.
+/// The radius for drawing the <i>'Circle'</i> shape of interest.
 float radius;
 
-/// The coordinates of the center for the circle of interest.
+/// The coordinates of the center for the <i>'Circle'</i> shape of interest.
 float xc,yc;
 
-/// The number of the samples, used for drawing the circle of interest.
-unsigned int num_samples;
+/// The number of the samples, used for drawing the <i>'Circle'</i> shape of interest.
+unsigned int num_samples=3;
 
 /* Prototypes for all functions of interest! */
 void draw();
@@ -55,9 +55,14 @@ void manageKeys(unsigned char key, int x, int y);
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
-	cout<<endl<<"\tThis is the 'Example-021' Example, based on the (Old Mode) OpenGL"<<endl<<endl;
+	cout<<endl<<"\tThis is the 'Example-021' Example, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tIt draws a polyline (formed by an arbitrary number of samples), which approximates the 'Circle' shape with radius R and center (xc,yc)."<<endl;
+	cout<<"\tThe radius R and the coodinates of the center (xc,yc) are specified by the user, which can also:"<<endl<<endl;
+	cout<<"\t\t-) increase the number of the samples for the polyline of interest by pressing the '+' key;"<<endl;
+	cout<<"\t\t-) decrease the number of the samples for the polyline of interest by pressing the '-' key."<<endl<<endl;
+	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
-	cout<<"\tPlease, insert the radius R (positive and not null) for the circle of interest: ";
+	cout<<"\tPlease, insert the radius R (positive and not null) for the 'Circle' shape of interest: ";
 	cin>>radius;
 	if( (!cin) || (radius<=0) )
 	{
@@ -67,17 +72,17 @@ int main(int argc,char **argv)
 	}
 	
 	/* Now, we read the coordinates for the center! */
-	cout<<"\tPlease, insert the coordinates (xc,yc) of the center for the circle of interest: ";
+	cout<<"\tPlease, insert the coordinates (xc,yc) of the center for the 'Circle' shape of interest (separated by a space): ";
 	cout.flush();
 	cin>>xc>>yc;
 	if(!cin)
 	{
-		cout<<"\tPLEASE, INSERT THE COORDINATES (xc,yc) OF THE CENTER FOR THE CIRCLE OF INTEREST. THIS PROGRAM IS CLOSING..."<<endl<<endl;
+		cout<<"\tPLEASE, INSERT THE COORDINATES (xc,yc) OF THE CENTER FOR THE 'CIRCLE' SHAPE OF INTEREST. THIS PROGRAM IS CLOSING..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
 	
-	/* If we arrive here, we can draw our circle! */
+	/* If we arrive here, we can draw our 'Circle' shape! */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -96,11 +101,11 @@ int main(int argc,char **argv)
 /// This function initializes the OpenGL window of interest.
 void initialize() 
 {
-	/* We initialize the OpenGL window of interest! */	
-	cout<<endl<<"\tWe draw a circle having center ("<<xc<<","<<yc<<") and radius R="<<radius<<endl<<endl;
-	cout.flush();
+	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=3;
+	cout<<endl<<"\tWe draw a polyline, initially formed by "<<num_samples<<" samples (the minimum number as possible), for approximating the 'Circle' shape of center ("<<xc<<","<<yc<<") and radius "<<radius<<"."<<endl<<endl;
+	cout.flush();
 }
 
 /// This function updates the viewport for the scene when it is resized. */
@@ -121,7 +126,7 @@ void manageKeys(unsigned char key, int x, int y)
 	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' keys */
 	switch (key)
 	{
-		case 113:
+		case 'q':
 	
 		/* The key is 'q' */
 		cout<<endl;
@@ -129,7 +134,7 @@ void manageKeys(unsigned char key, int x, int y)
 		exit(EXIT_SUCCESS);
 		break;
 		
-		case 81:
+		case 'Q':
 	
 		/* The key is 'Q' */
 		cout<<endl;
@@ -156,7 +161,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-', thus we decrease the number of the samples! */
 		if(num_samples>3) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 3 of samples is reached"<<endl;
+		else cout<<"\tThe minimum number 3 of samples is reached, and it is not possible to decrease again this number."<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;
@@ -168,12 +173,12 @@ void manageKeys(unsigned char key, int x, int y)
 	}
 }
 
-/// This function draws the polyline, approximating the circle of interest, in the OpenGL window of interest.
+/// This function draws the polyline, approximating the <i>'Circle'</i> shape of interest, in the OpenGL window of interest.
 void draw()
 {
 	float t;
 
-	/* We draw the polyline, approximating the circle of interest, in the OpenGL window of interest. */
+	/* We draw the polyline, approximating the 'Circle' shape of interest, in the OpenGL window of interest. */
 	t=0;
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0,0.0,0.0);
@@ -187,6 +192,6 @@ void draw()
 	/* If we arrive here, all is ok */
 	glEnd();
 	glFlush();
-	cout<<"\tApproximated and drawn the circle of interest with "<<num_samples<<" samples"<<endl;
+	cout<<"\tApproximated and drawn the 'Circle' shape of interest by using a polyline with "<<num_samples<<" samples."<<endl;
 	cout.flush();
 }

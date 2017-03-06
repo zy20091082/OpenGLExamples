@@ -87,12 +87,12 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws several convex and not convex polygons in the OpenGL window of interest.
+/// This function draws several convex and concave polygons in the OpenGL window of interest.
 void draw()
 {
 	int pp,jj;
 
-	/* We draw several convex and not convex polygons in the OpenGL window of interest. */
+	/* We draw several convex and concave polygons in the OpenGL window of interest. */
 	pp = (iconvex%5);
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(10.0);
@@ -117,7 +117,7 @@ void draw()
    		glVertex3f(convex_points[jj][0]+100,convex_points[jj][1],convex_points[jj][2]);
    	}
    	
-   	/* Not-Convex polygon (filled) */
+   	/* concave polygon (filled) */
 	glEnd();
 	glColor3f(0.0,0.0,1.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
@@ -128,7 +128,7 @@ void draw()
    		glVertex3f(not_convex_points[jj][0],not_convex_points[jj][1],not_convex_points[jj][2]);
    	}
 	
-	/* Not-Convex polygon (wireframe) */
+	/* concave polygon (wireframe) */
 	glEnd();
 	glColor3f(0.0,0.0,1.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
@@ -149,9 +149,9 @@ void draw()
 void initialize() 
 {
 	/* We initialize the OpenGL window of interest! */
-	cout<<endl<<"\tThis is the 'Example-018' Example, based on the (Old Mode) OpenGL"<<endl;
-	cout<<"\tIt draws several convex and not-convex polygons by using different rendering settings, and allows to cycle the order of the vertices for the polygons of interest by pressing the '+' key."<<endl;
-	cout<<"\tIn particular, there may be 'strange' situations, expecially when rendering not-convex polygons in the 'filled' mode."<<endl<<endl;
+	cout<<endl<<"\tThis is the 'Example-018' Example, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tIt draws several convex (in 'red') and concave (in 'blue') polygons by using different rendering settings, and allows to cycle the order of the vertices for the polygons of interest by pressing the '+' key."<<endl;
+	cout<<"\tIn particular, there may be 'strange' situations, expecially when rendering concave polygons (in 'blue') in the 'filled' mode."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glClearColor(1.0, 1.0, 1.0, 0.0);
@@ -196,7 +196,7 @@ void manageKeys(unsigned char key, int x, int y)
 		iconvex=iconvex+1;
 		inconvex=inconvex+1;
 		eol=true;
-		cout<<"\tCycling the order of the vertices for the convex and not convex polygons of interest"<<endl;
+		cout<<"\tCycling the order of the vertices for the convex (in 'red') and concave (in 'blue') polygons of interest"<<endl;
 		glutPostRedisplay();		
 		break;
 
