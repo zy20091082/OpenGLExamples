@@ -46,6 +46,13 @@ bool eol=false;
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
+	cout<<endl<<"\tThis is the 'Example-008' Example, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tTwo quadrilaterals with a not empty intersection are drawn, and their rendering order can be changed as follows:"<<endl<<endl;
+	cout<<"\t\t-) the quadrilateral in 'red' is defined and rendered before in the code (inferior rendering level);"<<endl;
+	cout<<"\t\t-) the quadrilateral in 'blue' is defined and rendered after in the code (superior rendering level)."<<endl<<endl;
+	cout<<"\tThe rendering order of these quadrilaterals, corresponding to two configurations, can be changed by pressing the '0' and '1' keys."<<endl<<endl;
+	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -127,16 +134,11 @@ void draw()
 void initialize() 
 {
 	/* We initialize the OpenGL window of interest! */
-	cout<<endl<<"\tThis is the 'Example-008' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tTwo quadrilaterals with a not empty intersection are drawn, and their rendering order can be changed as follows:"<<endl<<endl;
-	cout<<"\t\t-) the quadrilateral in 'red' is defined and rendered before in the code (inferior rendering level);"<<endl;
-	cout<<"\t\t-) the quadrilateral in 'blue' is defined and rendered after in the code (superior rendering level)."<<endl<<endl;
-	cout<<"\tThe rendering order of these quadrilaterals, corresponding to two configurations, can be changed by pressing the '0' and '1' keys."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
-	cout.flush();
 	choice=0;
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	eol=false;
+	cout<<"\tThe configuration #"<<choice<<" is initially applied to the current scene."<<endl<<endl;
+	cout.flush();
 }
 
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
@@ -170,7 +172,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '0' */
 		choice=0;
-		cout<<"\tDrawing the rendering configuration #0."<<endl;
+		cout<<"\tApplying the configuration #"<<choice<<" to the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -180,7 +182,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '1' */
 		choice=1;
-		cout<<"\tDrawing the rendering configuration #1."<<endl;
+		cout<<"\tApplying the configuration #"<<choice<<" to the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();

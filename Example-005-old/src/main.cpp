@@ -46,6 +46,17 @@ void manageKeys(unsigned char key, int x, int y);
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
+	cout<<endl<<"\tThis is the 'Example-005' Example, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tIt draws a polygon in 'red', obtained as the intersection between the following elements:"<<endl<<endl;
+	cout<<"\t\t-) the viewing box (orthographic projection): [0,100] x [0,100] x [-1,1];"<<endl;
+	cout<<"\t\t-) the triangle with vertices (x,20,0) - (80,20,0) - (80,80,0)."<<endl<<endl;
+	cout.flush();
+	cout<<"\tHere, the viewing box is not modified. Instead, the triangle is modified by moving the 'x' coordinate along the x-axis as follows:"<<endl<<endl;
+	cout<<"\t\t-) the '+' key increases the 'x' coordinate by 1.0;"<<endl;
+	cout<<"\t\t-) the '-' key decreases the 'x' coordinate by 1.0;"<<endl;
+	cout<<"\t\t-) the '=' key sets 'x' as its initial value '20'."<<endl<<endl;
+	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -91,19 +102,11 @@ void draw()
 void initialize() 
 {
 	/* We initialize the OpenGL window of interest! */
-	cout<<endl<<"\tThis is the 'Example-005' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polygon in 'red', obtained as the intersection between the following elements:"<<endl<<endl;
-	cout<<"\t\t-) the viewing box (orthographic projection): [0,100] x [0,100] x [-1,1];"<<endl;
-	cout<<"\t\t-) the triangle with vertices (x,20,0) - (80,20,0) - (80,80,0)."<<endl<<endl;
-	cout.flush();
-	cout<<"\tHere, the viewing box is not modified. Instead, the triangle is modified by moving the 'x' coordinate along the x-axis as follows:"<<endl<<endl;
-	cout<<"\t\t-) the '+' key increases the 'x' coordinate by 1.0;"<<endl;
-	cout<<"\t\t-) the '-' key decreases the 'x' coordinate by 1.0;"<<endl;
-	cout<<"\t\t-) the '=' key sets 'x' as its initial value '20'."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	xcoord=20.0;
 	eol=false;
-	glClearColor(1.0, 1.0, 1.0, 0.0); 
+	glClearColor(1.0, 1.0, 1.0, 0.0);
+	cout<<"\tThe 'x' coordinate is initially set to "<<xcoord<<" in the current scene."<<endl<<endl;
+	cout.flush();
 }
 
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
@@ -137,7 +140,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '+' */
 		xcoord=xcoord+(GLfloat)1.0;
-		cout<<"\tIncreased the 'x' coordinate as "<<xcoord<<"."<<endl;
+		cout<<"\tIncreasing the 'x' coordinate as "<<xcoord<<" in the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -147,7 +150,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-' */
 		xcoord=xcoord-(GLfloat)1.0;
-		cout<<"\tDecreased the 'x' coordinate as "<<xcoord<<"."<<endl;
+		cout<<"\tDecreased the 'x' coordinate as "<<xcoord<<" in the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -158,7 +161,7 @@ void manageKeys(unsigned char key, int x, int y)
 		/* The key is '=' */
 		xcoord=20.0;
 		eol=true;
-		cout<<"\tReinitialized the 'x' coordinate to the default value "<<xcoord<<"."<<endl;
+		cout<<"\tReinitialized the 'x' coordinate to the default value "<<xcoord<<" in the current scene."<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;

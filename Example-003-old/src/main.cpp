@@ -48,6 +48,10 @@ void manageKeys(unsigned char key, int x, int y);
 int main(int argc, char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
+	cout<<endl<<"\tThis is the 'Example-003' Example, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tIt draws a quadrilateral in 'red' with vertices (30,20,0) - (80,20,0) - (80,80,0) - (20,80,0) by applying several viewport configurations (chosen by pressing the '0-1-2-3-4-5' keys)."<<endl<<endl;
+	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout.flush();
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_RGBA | GLUT_SINGLE);
 	glutInitWindowPosition(50, 25);
@@ -100,12 +104,10 @@ void initialize()
 	top_value = 100.0;
 	near_value = -1.0;
 	far_value = 1.0;
-	cout<<endl<<"\tThis is the 'Example-003' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a quadrilateral in 'red' with vertices (30,20,0) - (80,20,0) - (80,80,0) - (20,80,0) by applying several viewport configurations (chosen by pressing the '0-1-2-3-4-5' keys)."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
-	cout.flush();
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	eol=false;
+	cout<<"\tThe configuration #0 with the viewing box [0,100] x [0,100] x [-1,1] is initially applied to the current scene."<<endl<<endl;
+	cout.flush();
 }
 
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
@@ -138,7 +140,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case '0':
 
 		/* The key is '0' - initial configuration #0: glOrtho(0,100,0,100,-1,1) */
-		cout<<"\tApplying the initial configuration #0 with the viewing box [0,100] x [0,100] x [-1,1]."<<endl;
+		cout<<"\tApplying the initial configuration #0 with the viewing box [0,100] x [0,100] x [-1,1] to the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		left_value = 0.0;
@@ -155,7 +157,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case '1':
 
 		/* The key is '1' - configuration #1: glOrtho(-100,100,-100,100,-1,1) */
-		cout<<"\tApplying the configuration #1 with the viewing box [-100,100] x [-100,100] x [-1,1]."<<endl;
+		cout<<"\tApplying the configuration #1 with the viewing box [-100,100] x [-100,100] x [-1,1] to the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		left_value = -100.0;
@@ -172,7 +174,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case '2':
 
 		/* The key is '2' - configuration #2: glOrtho(20,80,20,80,-1,1) */
-		cout<<"\tApplying the configuration #2 with the viewing box [20,80] x [20,80] x [-1,1]."<<endl;
+		cout<<"\tApplying the configuration #2 with the viewing box [20,80] x [20,80] x [-1,1] to the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		left_value = 20;
@@ -189,7 +191,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case '3':
 
 		/* The key is '3' - configuration #3: glOrtho(0,100,0,100,-2,5) */
-		cout<<"\tApplying the configuration #3 with the viewing box [0,100] x [0,100] x [-2,5]."<<endl;
+		cout<<"\tApplying the configuration #3 with the viewing box [0,100] x [0,100] x [-2,5] to the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		left_value = 0;
@@ -206,7 +208,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case '4':
 
 		/* The key is '4' - configuration #4: glOrtho(0,200,0,200,-1,1) */
-		cout<<"\tApplying the configuration #4 with the viewing box [0,200] x [0,200] x [-1,1]."<<endl;
+		cout<<"\tApplying the configuration #4 with the viewing box [0,200] x [0,200] x [-1,1] to the current scene."<<endl;
 		std::cout.flush();
 		eol=true;
 		left_value = 0;
@@ -223,7 +225,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case '5':
 
 		/* The key is '5' - configuration #5: glOrtho(120,200,90,200,-1,3) */
-		cout<<"\tApplying the configuration #5 with the viewing box [120,200] x [90,200] x [-1,3]."<<endl;
+		cout<<"\tApplying the configuration #5 with the viewing box [120,200] x [90,200] x [-1,3] to the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		left_value = 120;

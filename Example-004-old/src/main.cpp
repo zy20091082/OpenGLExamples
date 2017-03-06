@@ -48,6 +48,13 @@ bool eol=false;
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
+	cout<<endl<<"\tThis is the 'Example-004' Example, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tIt draws the following quadrilaterals in the scene:"<<endl<<endl;
+	cout<<"\t\t-) quadrilateral #0 (in 'red') with vertices (20,20,0) - (80,20,0) - (80,80,0) - (20,80,0);"<<endl;
+	cout<<"\t\t-) quadrilateral #1 (in 'green') with vertices (120,120,0) - (180,120,0) - (180,180,0) - (120,180,0)."<<endl<<endl;
+	cout<<"\tby using two different viewports (chosen by pressing the '0' and '1' keys)."<<endl<<endl;
+	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -108,15 +115,10 @@ void initialize()
 	top_value=100.0;
 	near_value=-1.0;
 	far_value=1.0;
-	cout<<endl<<"\tThis is the 'Example-004' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the following quadrilaterals in the scene:"<<endl<<endl;
-	cout<<"\t\t-) quadrilateral #0 (in 'red') with vertices (20,20,0) - (80,20,0) - (80,80,0) - (20,80,0);"<<endl;
-	cout<<"\t\t-) quadrilateral #1 (in 'green') with vertices (120,120,0) - (180,120,0) - (180,180,0) - (120,180,0)."<<endl<<endl;
-	cout<<"\tby using two different viewports (chosen by pressing the '0' and '1' keys)."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
-	cout.flush();
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	eol=false;
+	cout<<"\tThe configuration #0 with the viewing box [0,100] x [0,100] x [-1,1] is initially applied to the current scene."<<endl<<endl;
+	cout.flush();
 }
 
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
@@ -149,7 +151,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case '0':
 		
 		/* The key is '0' - initial configuration #0: glOrtho(0,100,0,100,-1,1) */
-		cout<<"\tApplying the initial configuration #0 with the viewing box [0,100] x [0,100] x [-1,1]."<<endl;
+		cout<<"\tApplying the initial configuration #0 with the viewing box [0,100] x [0,100] x [-1,1] to the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		left_value=0.0;
@@ -166,7 +168,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case '1':
 		
 		/* The key is '1' - configuration #1: glOrtho(-100,100,-100,100,-1,1) */
-		cout<<"\tApplying the configuration #1 with the viewing box [0,200] x [0,200] x [-1,1]."<<endl;
+		cout<<"\tApplying the configuration #1 with the viewing box [0,200] x [0,200] x [-1,1] to the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		left_value=0.0;
