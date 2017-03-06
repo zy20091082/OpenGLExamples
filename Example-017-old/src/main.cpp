@@ -101,8 +101,8 @@ void draw()
 void initialize() 
 {
 	/* We initialize the OpenGL window of interest! */
-	cout<<endl<<"\tThis is the 'Example-017' Example, based on the (Old Mode) OpenGL"<<endl;
-	cout<<"\tIt draws 6 rectangles, defined through the 'glRectf' primitive function, by using several rendering settings"<<endl<<endl;
+	cout<<endl<<"\tThis is the 'Example-017' Example, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tIt draws 6 rectangles, defined through the 'glRectf' primitive function, by using several rendering settings."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glClearColor(1.0, 1.0, 1.0, 0.0);
