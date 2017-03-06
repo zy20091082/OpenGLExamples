@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: January 2017
+ * Last update: March 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -36,16 +36,16 @@ using namespace std;
 
 #endif
 
-/// The radius for the circle of interest.
+/// The radius <i>'R'</i> for the <i>'Circle'</i> shape of interest.
 float radius;
 
-/// The coordinates for the circle of interest.
+/// The coordinates <i>'(xc,yc)'</i> of the center for the <i>'Circle'</i> shape of interest.
 float xc,yc;
 
-/// The number of the samples, used for drawing the circle of interest.
+/// The number of the samples, used for approximating the <i>'Circle'</i> shape of interest.
 unsigned int num_samples;
 
-/// The rendering choice for the circle of interest.
+/// The rendering choice for drawing the <i>'Circle'</i> shape of interest.
 char choice;
 
 /* Prototypes for all functions of interest! */
@@ -58,29 +58,37 @@ void manageKeys(unsigned char key, int x, int y);
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
-	cout<<endl<<"\tThis is the 'Example-022' Example, based on the (Old Mode) OpenGL"<<endl<<endl;
+	cout<<endl<<"\tThis is the 'Example-022' Example, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tIt draws different versions (formed by an arbitrary number of samples) of the 'Circle' shape with radius 'R' and center '(xc,yc)'."<<endl;
+	cout<<"\tThe radius 'R' and the coodinates of the center '(xc,yc)' are specified by the user, which can also:"<<endl<<endl;
+	cout<<"\t\t-) decide to approximate the 'Circle' shape through a polyline by pressing the 'l' key."<<endl;
+	cout<<"\t\t-) decide to approximate the 'Circle' shape through a triangle fan by pressing the 'f' key."<<endl;
+	cout<<"\t\t-) decide to approximate the 'Circle' shape through a unique polygon by pressing the 'p' key."<<endl;
+	cout<<"\t\t-) increase the number of the samples for the approximation of interest by pressing the '+' key;"<<endl;
+	cout<<"\t\t-) decrease the number of the samples for the approximation of interest by pressing the '-' key."<<endl<<endl;
+	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
-	cout<<"\tPlease, insert the radius R (positive and not null) for the circle of interest: ";
+	cout<<"\tPlease, insert the radius 'R' (positive and not null) for the 'Circle' shape of interest: ";
 	cin>>radius;
 	if( (!cin) || (radius<=0) )
 	{
-		cout<<"\tPLEASE, INSERT A VALID VALUE FOR THE RADIUS OF INTEREST. THIS PROGRAM IS CLOSING..."<<endl<<endl;
+		cout<<"\tPLEASE, INSERT A VALID VALUE FOR THE RADIUS 'R' OF INTEREST. THIS PROGRAM IS CLOSING..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
 	
 	/* Now, we read the coordinates for the center! */
-	cout<<"\tPlease, insert the coordinates (xc,yc) of the center for the circle of interest: ";
+	cout<<"\tPlease, insert the coordinates '(xc,yc)' of the center for the 'Circle' shape of interest (separated by a space): ";
 	cout.flush();
 	cin>>xc>>yc;
 	if(!cin)
 	{
-		cout<<"\tPLEASE, INSERT THE COORDINATES (xc,yc) OF THE CENTER FOR THE CIRCLE OF INTEREST. THIS PROGRAM IS CLOSING..."<<endl<<endl;
+		cout<<"\tPLEASE, INSERT THE COORDINATES '(xc,yc)' OF THE CENTER FOR THE 'CIRCLE' SHAPE OF INTEREST (SEPARATED BY A SPACE). THIS PROGRAM IS CLOSING..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
 	
-	/* If we arrive here, we can draw our circle! */
+	/* If we arrive here, we can draw the approximation of interest for the 'Circle' shape! */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -99,12 +107,12 @@ int main(int argc,char **argv)
 /// This function initializes the OpenGL window of interest.
 void initialize() 
 {
-	/* We initialize the OpenGL window of interest! */	
-	cout<<endl<<"\tWe draw a circle having center ("<<xc<<","<<yc<<") and radius R="<<radius<<endl<<endl;
-	cout.flush();
+	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=3;
 	choice='l';
+	cout<<endl<<"\tWe draw a specific approximation for the 'Circle' shape of center ("<<xc<<","<<yc<<") and radius "<<radius<<", initially formed by "<<num_samples<<" samples (the minimum number as possible)."<<endl<<endl;
+	cout.flush();
 }
 
 /// This function updates the viewport for the scene when it is resized. */
@@ -125,7 +133,7 @@ void manageKeys(unsigned char key, int x, int y)
 	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' - 'l' - 'f' - 'p' keys */
 	switch (key)
 	{
-		case 113:
+		case 'q':
 	
 		/* The key is 'q' */
 		cout<<endl;
@@ -133,7 +141,7 @@ void manageKeys(unsigned char key, int x, int y)
 		exit(EXIT_SUCCESS);
 		break;
 		
-		case 81:
+		case 'Q':
 	
 		/* The key is 'Q' */
 		cout<<endl;
@@ -160,28 +168,28 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-', thus we decrease the number of the samples! */
 		if(num_samples>3) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 3 of samples is reached"<<endl;
+		else cout<<"\tThe minimum number 3 of samples is reached, and it is not possible to decrease again this number."<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;
 		
 		case 'l':
 		
-		/* The key is 'l', thus we choose to render only the polyline */
+		/* The key is 'l', thus we choose to approximate the 'Circle' shape of interest by using a polyline. */
 		choice='l';
 		glutPostRedisplay();
 		break;
 		
 		case 'f':
 		
-		/* The key is 'f', thus we choose to render only the triangle fan */
+		/* The key is 'f', thus we choose to approximate the 'Circle' shape of interest by using a triangle fan. */
 		choice='f';
 		glutPostRedisplay();
 		break;
 		
 		case 'p':
 		
-		/* The key is 'p', thus we choose to render only the polygon */
+		/* The key is 'p', thus we choose to approximate the 'Circle' shape of interest by using a polygon. */
 		choice='p';
 		glutPostRedisplay();
 		break;
@@ -193,12 +201,12 @@ void manageKeys(unsigned char key, int x, int y)
 	}
 }
 
-/// This function draws the circle in the OpenGL window of interest by using the current rendering settings.
+/// This function draws the <i>'Circle'</i> shape in the OpenGL window of interest by using the current rendering settings.
 void draw()
 {
 	float t;
 
-	/* We draw the circle in the OpenGL window of interest by using the current rendering settings. */
+	/* We draw the 'Circle' shape in the OpenGL window of interest by using the current rendering settings. */
 	t=0;
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(1);
@@ -218,7 +226,7 @@ void draw()
 		/* If we arrive here, all is ok */
 		glEnd();
 		glFlush();
-		cout<<"\tApproximated and drawn the circle of interest (polyline) with "<<num_samples<<" samples"<<endl;
+		cout<<"\tThe 'Circle' shape is approximated by using a polyline, formed by "<<num_samples<<" samples (thus by "<<num_samples<<" vertices and "<<num_samples<<" edges)."<<endl;
 		cout.flush();
 	}
 	else if(choice=='f')
@@ -237,7 +245,7 @@ void draw()
 		/* If we arrive here, all is ok */
 		glEnd();
 		glFlush();
-		cout<<"\tApproximated and drawn the circle of interest (triangle fan) with "<<num_samples<<" samples"<<endl;
+		cout<<"\tThe 'Circle' shape is approximated by using a triangle fan, formed by "<<num_samples<<" samples (thus by "<<num_samples<<" vertices and "<<num_samples<<" triangles)."<<endl;
 		cout.flush();
 	}
 	else if(choice=='p')
@@ -255,7 +263,7 @@ void draw()
 		/* If we arrive here, all is ok */
 		glEnd();
 		glFlush();
-		cout<<"\tApproximated and drawn the circle of interest (filled polygon) with "<<num_samples<<" samples"<<endl;
+		cout<<"\tThe 'Circle' shape is approximated by using a polygon, formed by "<<num_samples<<" samples (thus by "<<num_samples<<" vertices and "<<num_samples<<" edges)."<<endl;
 		cout.flush();
 	}
 }
