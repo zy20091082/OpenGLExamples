@@ -36,13 +36,13 @@ using namespace std;
 
 #endif
 
-/// The radius for drawing the <i>'Circle'</i> shape of interest.
+/// The radius <i>'R'</i> for drawing the <i>'Circle'</i> shape of interest.
 float radius;
 
-/// The coordinates of the center for the <i>'Circle'</i> shape of interest.
+/// The coordinates of the center <i>'(xc,yc)'</i> for the <i>'Circle'</i> shape of interest.
 float xc,yc;
 
-/// The number of the samples, used for drawing the <i>'Circle'</i> shape of interest.
+/// The number of the samples, used for approximating the <i>'Circle'</i> shape of interest.
 unsigned int num_samples=3;
 
 /* Prototypes for all functions of interest! */
@@ -56,33 +56,33 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-021' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polyline (formed by an arbitrary number of samples), which approximates the 'Circle' shape with radius R and center (xc,yc)."<<endl;
-	cout<<"\tThe radius R and the coodinates of the center (xc,yc) are specified by the user, which can also:"<<endl<<endl;
+	cout<<"\tIt draws a polyline (formed by an arbitrary number of samples), which approximates the 'Circle' shape with radius 'R' and center '(xc,yc)'."<<endl;
+	cout<<"\tThe radius 'R' and the center coodinates '(xc,yc)' are specified by the user, which can also:"<<endl<<endl;
 	cout<<"\t\t-) increase the number of the samples for the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number of the samples for the polyline of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
-	cout<<"\tPlease, insert the radius R (positive and not null) for the 'Circle' shape of interest: ";
+	cout<<"\tPlease, insert the radius 'R' (positive and not null) for the 'Circle' shape of interest: ";
 	cin>>radius;
 	if( (!cin) || (radius<=0) )
 	{
-		cout<<"\tPLEASE, INSERT A VALID VALUE FOR THE RADIUS OF INTEREST. THIS PROGRAM IS CLOSING..."<<endl<<endl;
+		cout<<"\tPLEASE, INSERT A VALID VALUE FOR THE RADIUS 'R' OF INTEREST. THIS PROGRAM IS CLOSING..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
 	
-	/* Now, we read the coordinates for the center! */
-	cout<<"\tPlease, insert the coordinates (xc,yc) of the center for the 'Circle' shape of interest (separated by a space): ";
+	/* Now, we read the coordinates '(xc,yc)' for the center! */
+	cout<<"\tPlease, insert the center coordinates '(xc,yc)' for the 'Circle' shape of interest (separated by a space): ";
 	cout.flush();
 	cin>>xc>>yc;
 	if(!cin)
 	{
-		cout<<"\tPLEASE, INSERT THE COORDINATES (xc,yc) OF THE CENTER FOR THE 'CIRCLE' SHAPE OF INTEREST. THIS PROGRAM IS CLOSING..."<<endl<<endl;
+		cout<<"\tPLEASE, INSERT THE CENTER COORDINATES '(xc,yc)' FOR THE 'CIRCLE' SHAPE OF INTEREST (SEPARATED BY A SPACE). THIS PROGRAM IS CLOSING..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
 	
-	/* If we arrive here, we can draw our 'Circle' shape! */
+	/* If we arrive here, we can draw the polyline, approximating the 'Circle' shape! */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
