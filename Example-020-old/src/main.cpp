@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-020 (Old Mode)' example
+ * main.cpp - the main function for the 'Example-020 (Old Mode)' example.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -20,7 +20,7 @@
 using namespace std;
 #ifdef __APPLE__
 
-	/* We are using a MacOSX platform (Macintosh) */
+	/* We are using a MacOSX platform (Macintosh). */
 	#include "GL/glew.h"
 	#include "GLUT/glut.h"
 	#include "OpenGL/gl.h"
@@ -44,6 +44,11 @@ void manageKeys(unsigned char key, int x, int y);
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
+	cout<<endl<<"\tThis is the 'Example-020' Example, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tIt draws 2 versions of the 'Double Square Annulus' shape (the 'filled' and the 'wireframe' versions), both approximated by only one triangle strip."<<endl;
+	cout<<"\tIn the 'filled' version, the triangles of the triangle strip are completely rendered. Instead, only the edges of the triangle strip are rendered in the 'wireframe' version."<<endl<<endl;
+	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -71,10 +76,44 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws 2 versions of the <i>'Double Square Annulus'</i> shape, approximated by one triangle strip, in the OpenGL window of interest.
+/// This function initializes the OpenGL window of interest.
+void initialize() { glClearColor(1.0, 1.0, 1.0, 0.0); }
+
+/// This function is the keyboard input processing routine for the OpenGL window of interest.
+void manageKeys(unsigned char key, int x, int y)
+{
+	/* We are interested only in the 'q' - 'Q' - 'Esc' keys */
+	switch (key)
+	{
+		case 'q':
+	
+		/* The key is 'q', thus we can exit from this program. */
+		exit(EXIT_SUCCESS);
+		break;
+		
+		case 'Q':
+	
+		/* The key is 'Q', thus we can exit from this program. */
+		exit(EXIT_SUCCESS);
+		break;
+		
+		case 27:
+	
+		/* The key is 'Esc', thus we can exit from this program. */
+		exit(EXIT_SUCCESS);
+		break;
+
+		default:
+
+    	/* Other keys are not important for us! */
+    	break;
+	}
+}
+
+/// This function draws 2 versions of the <i>'Double Square Annulus'</i> shape, both approximated by one triangle strip, in the OpenGL window of interest.
 void draw()
 {
-	/* We draw 2 versions of the 'Double Square Annulus' shape, approximated by one triangle strip, in the OpenGL window of interest. First, we draw the 'wireframe' version (in red). */
+	/* We draw 2 versions of the 'Double Square Annulus' shape, both approximated by one triangle strip, in the OpenGL window of interest. First, we draw the 'wireframe' version (in 'red'). */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0,0.0,0.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
@@ -102,7 +141,7 @@ void draw()
 	glVertex3f(80,110,0);
 	glEnd();
 	
-	/* Now, we draw the 'filled' version (always in red). */
+	/* Now, we draw the 'filled' version (always in 'red'). */
 	glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
 	glBegin(GL_TRIANGLE_STRIP);
 	glVertex3f(95,160,0);
@@ -128,47 +167,4 @@ void draw()
 	glVertex3f(80,260,0);
 	glEnd();
 	glFlush();
-}
-
-/// This function initializes the OpenGL window of interest.
-void initialize() 
-{
-	/* We initialize the OpenGL window of interest! */
-	cout<<endl<<"\tThis is the 'Example-020' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws 2 versions (both in 'red') of the 'Double Square Annulus' shape, approximated by one triangle strip."<<endl;
-	cout<<"\tIn the 'filled' version, the triangles of the triangle strip are completely rendered. Instead, only the edges of the triangle strip are completely rendered in the 'wireframe' version."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
-	cout.flush();
-	glClearColor(1.0, 1.0, 1.0, 0.0);
-}
-
-/// This function is the keyboard input processing routine for the OpenGL window of interest.
-void manageKeys(unsigned char key, int x, int y)
-{
-	/* We are interested only in the 'q' - 'Q' - 'Esc' keys */
-	switch (key)
-	{
-		case 'q':
-	
-		/* The key is 'q' */
-		exit(EXIT_SUCCESS);
-		break;
-		
-		case 'Q':
-	
-		/* The key is 'Q' */
-		exit(EXIT_SUCCESS);
-		break;
-		
-		case 27:
-	
-		/* The key is 'Esc' */
-		exit(EXIT_SUCCESS);
-		break;
-
-		default:
-
-    	/* Other keys are not important for us */
-    	break;
-	}
 }

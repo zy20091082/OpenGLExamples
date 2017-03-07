@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-019 (Old Mode)' example
+ * main.cpp - the main function for the 'Example-019 (Old Mode)' example.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -20,7 +20,7 @@
 using namespace std;
 #ifdef __APPLE__
 
-	/* We are using a MacOSX platform (Macintosh) */
+	/* We are using a MacOSX platform (Macintosh). */
 	#include "GL/glew.h"
 	#include "GLUT/glut.h"
 	#include "OpenGL/gl.h"
@@ -44,6 +44,11 @@ void manageKeys(unsigned char key, int x, int y);
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
+	cout<<endl<<"\tThis is the 'Example-019' Example, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tIt draws 2 versions of the 'Double Square Annulus' shape (the 'filled' and the 'wireframe' versions), both approximated by 2 triangle strips (shown, respectively, in 'red' and in 'blue')."<<endl;
+	cout<<"\tIn the 'filled' version, the triangles of 2 triangle strips are completely rendered. Instead, only the edges of 2 triangle strips are rendered in the 'wireframe' version."<<endl<<endl;
+	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -59,6 +64,40 @@ int main(int argc,char **argv)
 	return EXIT_SUCCESS;
 }
 
+/// This function initializes the OpenGL window of interest.
+void initialize() { glClearColor(1.0, 1.0, 1.0, 0.0); }
+
+/// This function is the keyboard input processing routine for the OpenGL window of interest.
+void manageKeys(unsigned char key, int x, int y)
+{
+	/* We are interested only in the 'q' - 'Q' - 'Esc' keys */
+	switch (key)
+	{
+		case 'q':
+	
+		/* The key is 'q', thus we can exit from this program. */
+		exit(EXIT_SUCCESS);
+		break;
+		
+		case 'Q':
+	
+		/* The key is 'Q', thus we can exit from this program. */
+		exit(EXIT_SUCCESS);
+		break;
+		
+		case 27:
+	
+		/* The key is 'Esc', thus we can exit from this program. */
+		exit(EXIT_SUCCESS);
+		break;
+
+		default:
+
+    	/* Other keys are not important for us! */
+    	break;
+	}
+}
+
 /// This function updates the viewport for the scene when it is resized. */
 void resize(int w, int h)
 {
@@ -71,10 +110,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws two versions of the <i>'Double Square Annulus'</i> shape, approximated by 2 triangle strips, in the OpenGL window of interest.
+/// This function draws two versions of the <i>'Double Square Annulus'</i> shape, both approximated by 2 triangle strips, in the OpenGL window of interest.
 void draw()
 {
-	/* We draw two versions of the 'Double Square Annulus' shape, approximated by 2 triangle strips, in the OpenGL window of interest. We start from the first triangle strip (in 'red' and in the 'wireframe' mode). */
+	/* We draw two versions of the 'Double Square Annulus' shape, both approximated by 2 triangle strips, in the OpenGL window of interest. We start from the triangle strip #0 (in 'red' and in the 'wireframe' mode), which is connected to the triangle strip #2. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0,0.0,0.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
@@ -91,7 +130,7 @@ void draw()
 	glVertex3f(40,100,0);
 	glEnd();
 	
-	/* Now, we draw the first triangle strip (in red and in the filled mode). */
+	/* Now, we draw the triangle strip #1 (in 'red' and in the 'filled' mode), which is connected to the triangle strip #3. */
 	glColor3f(1.0,0.0,0.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
 	glBegin(GL_TRIANGLE_STRIP);
@@ -107,7 +146,7 @@ void draw()
 	glVertex3f(40,220,0);
 	glEnd();
 	
-	/* Now, we draw the second triangle strip (in blue and in the wireframe mode). */
+	/* Now, we draw the triangle strip #2 (in 'blue' and in the 'wireframe' mode), which is connected to the triangle strip #0. */
 	glColor3f(0.0,0.0,1.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
 	glBegin(GL_TRIANGLE_STRIP);
@@ -123,7 +162,7 @@ void draw()
 	glVertex3f(100,100,0);
 	glEnd();
 	
-	/* Now, we draw the second triangle strip (in blue and in the filled mode). */
+	/* Now, we draw the triangle strip #3 (in blue and in the filled mode), which is connected to the triangle strip #1. */
 	glColor3f(0.0,0.0,1.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
 	glBegin(GL_TRIANGLE_STRIP);
@@ -139,47 +178,4 @@ void draw()
 	glVertex3f(100,220,0);
 	glEnd();
 	glFlush();
-}
-
-/// This function initializes the OpenGL window of interest.
-void initialize() 
-{
-	/* We initialize the OpenGL window of interest! */
-	cout<<endl<<"\tThis is the 'Example-019' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws 2 versions of the 'Double Square Annulus' shape, approximated by 2 triangle strips (shown, respectively, in 'red' and in 'blue')."<<endl;
-	cout<<"\tIn the 'filled' version, the triangles of the triangle strips are completely rendered. Instead, only the edges of the triangle strips are completely rendered in the 'wireframe' version."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
-	cout.flush();
-	glClearColor(1.0, 1.0, 1.0, 0.0);
-}
-
-/// This function is the keyboard input processing routine for the OpenGL window of interest.
-void manageKeys(unsigned char key, int x, int y)
-{
-	/* We are interested only in the 'q' - 'Q' - 'Esc' keys */
-	switch (key)
-	{
-		case 'q':
-	
-		/* The key is 'q' */
-		exit(EXIT_SUCCESS);
-		break;
-		
-		case 'Q':
-	
-		/* The key is 'Q' */
-		exit(EXIT_SUCCESS);
-		break;
-		
-		case 27:
-	
-		/* The key is 'Esc' */
-		exit(EXIT_SUCCESS);
-		break;
-
-		default:
-
-    	/* Other keys are not important for us */
-    	break;
-	}
 }
