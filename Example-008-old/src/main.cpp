@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-008 (Old Mode)' example
+ * main.cpp - the main function for the 'Example-008 (Old Mode)' example.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -20,7 +20,7 @@
 using namespace std;
 #ifdef __APPLE__
 
-	/* We are using a MacOSX platform (Macintosh) */
+	/* We are using a MacOSX platform (Macintosh). */
 	#include "GL/glew.h"
 	#include "GLUT/glut.h"
 	#include "OpenGL/gl.h"
@@ -144,33 +144,33 @@ void initialize()
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
-	/* We are interested only in the 'q' - 'Q' - 'Esc' - '0' - '1' keys */
+	/* We are interested only in the 'q' - 'Q' - 'Esc' - '0' - '1' keys. */
 	switch (key)
 	{
 		case 'q':
 	
-		/* The key is 'q' */
+		/* The key is 'q', thus we can exit from this program. */
 		if(eol) cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
 		
 		case 'Q':
 	
-		/* The key is 'Q' */
+		/* The key is 'Q', thus we can exit from this program. */
 		if(eol) cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
 		
 		case 27:
 	
-		/* The key is 'Esc' */
+		/* The key is 'Esc', thus we can exit from this program. */
 		if(eol) cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
 		
 		case '0':
 		
-		/* The key is '0' */
+		/* The key is '0', thus we apply the configuration #0 to the current scene. */
 		choice=0;
 		cout<<"\tApplying the configuration #"<<choice<<" to the current scene."<<endl;
 		cout.flush();
@@ -180,7 +180,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '1':
 		
-		/* The key is '1' */
+		/* The key is '1', thus we apply the configuration #1 to the current scene. */
 		choice=1;
 		cout<<"\tApplying the configuration #"<<choice<<" to the current scene."<<endl;
 		cout.flush();
@@ -190,7 +190,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		default:
 
-    	/* Other keys are not important for us */
+    	/* Other keys are not important for us! */
     	break;
 	}
 }

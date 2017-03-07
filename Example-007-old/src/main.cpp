@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-007 (Old Mode)' example
+ * main.cpp - the main function for the 'Example-007 (Old Mode)' example.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -20,7 +20,7 @@
 using namespace std;
 #ifdef __APPLE__
 
-	/* We are using a MacOSX platform (Macintosh) */
+	/* We are using a MacOSX platform (Macintosh). */
 	#include "GL/glew.h"
 	#include "GLUT/glut.h"
 	#include "OpenGL/gl.h"
@@ -77,7 +77,7 @@ void draw()
 	/* We draw 12 quadrilaterals (with different colors) in the OpenGL window of interest! */
 	glClear(GL_COLOR_BUFFER_BIT);
 	
-	/* Black quadrilateral #0 */
+	/* We draw the 'black' quadrilateral #0. */
 	glColor3f(0.0, 0.0, 0.0);
 	glBegin(GL_POLYGON);
 	glVertex3f(20,90,0);
@@ -86,7 +86,7 @@ void draw()
 	glVertex3f(20,110,0);
 	glEnd();
 	
-	/* Red quadrilateral #1 */
+	/* We draw the 'red' quadrilateral #1. */
 	glColor3f(1.0, 0.0, 0.0);
 	glBegin(GL_POLYGON);
 	glVertex3f(50,90,0);
@@ -95,7 +95,7 @@ void draw()
 	glVertex3f(50,110,0);
 	glEnd();
 	
-	/* Green quadrilateral #2 */
+	/* We draw the 'green' quadrilateral #2. */
 	glColor3f(0.0, 1.0, 0.0);
 	glBegin(GL_POLYGON);
 	glVertex3f(80,90,0);
@@ -104,7 +104,7 @@ void draw()
 	glVertex3f(80,110,0);
 	glEnd();
 	
-	/* Blue quadrilateral #3 */
+	/* We draw the 'blue' quadrilateral #3. */
 	glColor3f(0.0, 0.0, 1.0);
 	glBegin(GL_POLYGON);
 	glVertex3f(20,60,0);
@@ -113,7 +113,7 @@ void draw()
 	glVertex3f(20,80,0);
 	glEnd();
 	
-	/* Yellow quadrilateral #4 */
+	/* We draw the 'yellow' quadrilateral #4. */
 	glColor3f(1.0, 1.0, 0.0);
 	glBegin(GL_POLYGON);
 	glVertex3f(50,60,0);
@@ -122,7 +122,7 @@ void draw()
 	glVertex3f(50,80,0);
 	glEnd();
 	
-	/* Magenta quadrilateral #5 */
+	/* We draw the 'magenta' quadrilateral #5. */
 	glColor3f(1.0, 0.0, 1.0);
 	glBegin(GL_POLYGON);
 	glVertex3f(80,60,0);
@@ -131,7 +131,7 @@ void draw()
 	glVertex3f(80,80,0);
 	glEnd();
 	
-	/* Cyan quadrilateral #6*/
+	/* We draw the 'cyan' quadrilateral #6. */
 	glColor3f(0.0, 1.0, 1.0);
 	glBegin(GL_POLYGON);
 	glVertex3f(20,30,0);
@@ -140,7 +140,7 @@ void draw()
 	glVertex3f(20,50,0);
 	glEnd();
 	
-	/* Custom color quadrilateral #7*/
+	/* We draw the quadrilateral #7 by using a custom color. */
 	glColor3f(0.2,0.2,0.2);
 	glBegin(GL_POLYGON);
 	glVertex3f(50,30,0);
@@ -149,7 +149,7 @@ void draw()
 	glVertex3f(50,50,0);
 	glEnd();
 	
-	/* Custom color quadrilateral #8 */
+	/* We draw the quadrilateral #8 by using a custom color. */
 	glColor3f(0.5,0.5,0.5);
 	glBegin(GL_POLYGON);
 	glVertex3f(80,30,0);
@@ -158,7 +158,7 @@ void draw()
 	glVertex3f(80,50,0);
 	glEnd();
 	
-	/* Custom color quadrilateral #9 */
+	/* We draw the quadrilateral #9 by using a custom color. */
 	glColor3f(0.8,0.8,0.8);
 	glBegin(GL_POLYGON);
 	glVertex3f(50,0,0);
@@ -167,7 +167,7 @@ void draw()
 	glVertex3f(50,20,0);
 	glEnd();
 	
-	/* Custom color quadrilateral #10 */
+	/* We draw the quadrilateral #10 by using a custom color. */
 	glColor3f(0.8,0,0.8);
 	glBegin(GL_POLYGON);
 	glVertex3f(20,0,0);
@@ -176,7 +176,7 @@ void draw()
 	glVertex3f(20,20,0);
 	glEnd();
 	
-	/* Custom color quadrilateral #11 */
+	/* We draw the quadrilateral #11 by using a custom color. */
 	glColor3f(0,0.3,0);
 	glBegin(GL_POLYGON);
 	glVertex3f(80,0,0);
@@ -188,7 +188,7 @@ void draw()
 	glFlush();
 }
 
-/// This function initializes the window. It draws a white background. */
+/// This function initializes the OpenGL window of interest. */
 void initialize() 
 {
 	/* We initialize the OpenGL window of interest! */
@@ -202,30 +202,30 @@ void initialize()
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
-	/* We are interested only in the 'q' - 'Q' - 'Esc' keys */
+	/* We are interested only in the 'q' - 'Q' - 'Esc' keys. */
 	switch (key)
 	{
 		case 'q':
 	
-		/* The key is 'q' */
+		/* The key is 'q', thus we can exit from this program. */
 		exit(EXIT_SUCCESS);
 		break;
 		
 		case 'Q':
 	
-		/* The key is 'Q' */
+		/* The key is 'Q', thus we can exit from this program. */
 		exit(EXIT_SUCCESS);
 		break;
 		
 		case 27:
 	
-		/* The key is 'Esc' */
+		/* The key is 'Esc', thus we can exit from this program. */
 		exit(EXIT_SUCCESS);
 		break;
 		
 		default:
 
-    	/* Other keys are not important for us */
+    	/* Other keys are not important for us! */
     	break;
 	}
 }

@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-009 (Old Mode)' example
+ * main.cpp - the main function for the 'Example-009 (Old Mode)' example.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -20,7 +20,7 @@
 using namespace std;
 #ifdef __APPLE__
 
-	/* We are using a MacOSX platform (Macintosh) */
+	/* We are using a MacOSX platform (Macintosh). */
 	#include "GL/glew.h"
 	#include "GLUT/glut.h"
 	#include "OpenGL/gl.h"
@@ -103,12 +103,12 @@ void initialize()
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
-	/* We are interested only in the 'q' - 'Q' - 'Esc' keys */
+	/* We are interested only in the 'q' - 'Q' - 'Esc' keys. */
 	switch (key)
 	{
 		case 'q':
 	
-		/* The key is 'q' */
+		/* The key is 'q', thus we can exit from this program. */
 		cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
@@ -116,7 +116,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 'Q':
 	
-		/* The key is 'Q' */
+		/* The key is 'Q', thus we can exit from this program. */
 		cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
@@ -124,7 +124,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 27:
 	
-		/* The key is 'Esc' */
+		/* The key is 'Esc', thus we can exit from this program. */
 		cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
@@ -132,7 +132,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		default:
 
-    	/* Other keys are not important for us */
+    	/* Other keys are not important for us! */
     	break;
 	}
 }
