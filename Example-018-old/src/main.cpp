@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-018 (Old Mode)' example
+ * main.cpp - the main function for the 'Example-018 (Old Mode)' example.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -20,7 +20,7 @@
 using namespace std;
 #ifdef __APPLE__
 
-	/* We are using a MacOSX platform (Macintosh) */
+	/* We are using a MacOSX platform (Macintosh). */
 	#include "GL/glew.h"
 	#include "GLUT/glut.h"
 	#include "OpenGL/gl.h"
@@ -60,6 +60,11 @@ float not_convex_points[][3]={
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
+	cout<<endl<<"\tThis is the 'Example-018' Example, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tIt draws several convex (in 'red') and concave (in 'blue') polygons by using the 'wireframe' and the 'filled' rendering mode, and allows to cycle the vertices order in the polygons of interest by pressing the '+' key."<<endl;
+	cout<<"\tIn particular, there may be 'strange' situations, expecially when rendering concave polygons (in 'blue') in the 'filled' mode."<<endl<<endl;
+	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -106,7 +111,7 @@ void draw()
    		glVertex3f(convex_points[jj][0],convex_points[jj][1],convex_points[jj][2]);
    	}
    	
-   	/* Convex polygon (wireframe) */
+   	/* Convex polygon #0 in 'red' ('wireframe' rendering). */
    	glEnd();
    	glColor3f(1.0,0.0,0.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
@@ -117,7 +122,7 @@ void draw()
    		glVertex3f(convex_points[jj][0]+100,convex_points[jj][1],convex_points[jj][2]);
    	}
    	
-   	/* concave polygon (filled) */
+   	/* Concave polygon #1 in 'blue' ('filled' rendering). */
 	glEnd();
 	glColor3f(0.0,0.0,1.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
@@ -128,7 +133,7 @@ void draw()
    		glVertex3f(not_convex_points[jj][0],not_convex_points[jj][1],not_convex_points[jj][2]);
    	}
 	
-	/* concave polygon (wireframe) */
+	/* Concave polygon #1 in 'blue' ('wireframe' rendering). */
 	glEnd();
 	glColor3f(0.0,0.0,1.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
@@ -149,11 +154,6 @@ void draw()
 void initialize() 
 {
 	/* We initialize the OpenGL window of interest! */
-	cout<<endl<<"\tThis is the 'Example-018' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws several convex (in 'red') and concave (in 'blue') polygons by using different rendering settings, and allows to cycle the order of the vertices for the polygons of interest by pressing the '+' key."<<endl;
-	cout<<"\tIn particular, there may be 'strange' situations, expecially when rendering concave polygons (in 'blue') in the 'filled' mode."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
-	cout.flush();
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	iconvex=0;
 	inconvex=0;
@@ -168,7 +168,7 @@ void manageKeys(unsigned char key, int x, int y)
 	{
 		case 'q':
 	
-		/* The key is 'q' */
+		/* The key is 'q', thus we can exit from this program. */
 		if(eol) cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
@@ -176,7 +176,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 'Q':
 	
-		/* The key is 'Q' */
+		/* The key is 'Q', thus we can exit from this program. */
 		if(eol) cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
@@ -184,7 +184,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 27:
 	
-		/* The key is 'Esc' */
+		/* The key is 'Esc', thus we can exit from this program. */
 		if(eol) cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
@@ -192,17 +192,17 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '+':
 		
-		/* The key is '+' */
+		/* The key is '+', thus we must cycle the order of the vertices for all polygons of interest. */
 		iconvex=iconvex+1;
 		inconvex=inconvex+1;
 		eol=true;
-		cout<<"\tCycling the order of the vertices for the convex (in 'red') and concave (in 'blue') polygons of interest"<<endl;
+		cout<<"\tCycling the vertices order in the convex (in 'red') and concave (in 'blue') polygons of interest."<<endl;
 		glutPostRedisplay();		
 		break;
 
 		default:
 
-    	/* Other keys are not important for us */
+    	/* Other keys are not important for us! */
     	break;
 	}
 }
