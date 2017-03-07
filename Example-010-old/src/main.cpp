@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-010 (Old Mode)' example
+ * main.cpp - the main function for the 'Example-010 (Old Mode)' example.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -20,7 +20,7 @@
 using namespace std;
 #ifdef __APPLE__
 
-	/* We are using a MacOSX platform (Macintosh) */
+	/* We are using a MacOSX platform (Macintosh). */
 	#include "GL/glew.h"
 	#include "GLUT/glut.h"
 	#include "OpenGL/gl.h"
@@ -118,12 +118,12 @@ void initialize()
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
-	/* We are interested only in the 'q' - 'Q' - 'Esc' - '0' - '1' - '2' - '3' - '4' - '5' keys */
+	/* We are interested only in the 'q' - 'Q' - 'Esc' - '0' - '1' - '2' - '3' - '4' - '5' keys. */
 	switch (key)
 	{
 		case 'q':
 	
-		/* The key is 'q' */
+		/* The key is 'q', thus we can exit from this program. */
 		if(eol) cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
@@ -131,7 +131,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 'Q':
 	
-		/* The key is 'Q' */
+		/* The key is 'Q', thus we can exit from this program. */
 		if(eol) cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
@@ -139,7 +139,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 27:
 	
-		/* The key is 'Esc' */
+		/* The key is 'Esc', thus we can exit from this program. */
 		if(eol) cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
@@ -147,7 +147,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '0':
 		
-		/* The key is '0', thus the GL_POINTS primitive is required. */
+		/* The key is '0', thus the GL_POINTS primitive is exploited for drawing several points. */
 		rendering=GL_POINTS;
 		cout<<"\tUsing the GL_POINTS primitive for drawing several independents points in the current scene."<<endl;
 		cout.flush();
@@ -157,7 +157,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '1':
 		
-		/* The key is '1', thus the GL_LINES primitive is required. */
+		/* The key is '1', thus the GL_LINES primitive is exploited for drawing several lines. */
 		rendering=GL_LINES;
 		cout<<"\tUsing the GL_LINES primitive for drawing several independent lines in the current scene."<<endl;
 		cout.flush();
@@ -167,7 +167,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '2':
 		
-		/* The key is '2', thus the GL_LINE_STRIP primitive is required. */
+		/* The key is '2', thus the GL_LINE_STRIP primitive is exploited for drawing an open line strip. */
 		rendering=GL_LINE_STRIP;
 		cout<<"\tUsing the GL_LINE_STRIP primitive for drawing an open line strip in the current scene."<<endl;
 		cout.flush();
@@ -177,7 +177,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '3':
 		
-		/* The key is '3', thus the GL_LINE_LOOP primitive is required. */
+		/* The key is '3', thus the GL_LINE_LOOP primitive is exploited for drawing a close line loop. */
 		rendering=GL_LINE_LOOP;
 		cout<<"\tUsing the GL_LINE_LOOP primitive for drawing a closed line loop in the current scene."<<endl;
 		cout.flush();
@@ -187,7 +187,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '4':
 		
-		/* The key is '4', thus the GL_TRIANGLES primitive is required. */
+		/* The key is '4', thus the GL_TRIANGLES primitive is exploited for drawing several triangles. */
 		rendering=GL_TRIANGLES;
 		cout<<"\tUsing the GL_TRIANGLES primitive for drawing several independent triangles in the current scene."<<endl;
 		cout.flush();
@@ -197,7 +197,7 @@ void manageKeys(unsigned char key, int x, int y)
 
 		case '5':
 		
-		/* The key is '5', thus the GL_POLYGON primitive is required. */
+		/* The key is '5', thus the GL_POLYGON primitive is exploited for drawing a polygon. */
 		rendering=GL_POLYGON;
 		cout<<"\tUsing the GL_POLYGON primitive for drawing a polygon in the current scene."<<endl;
 		cout.flush();
@@ -207,7 +207,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		default:
 
-    	/* Other keys are not important for us */
+    	/* Other keys are not important for us! */
     	break;
 	}
 }
