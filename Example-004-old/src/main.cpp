@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-004 (Old Mode)' example
+ * main.cpp - the main function for the 'Example-004 (Old Mode)' example.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -20,7 +20,7 @@
 using namespace std;
 #ifdef __APPLE__
 
-	/* We are using a MacOSX platform (Macintosh) */
+	/* We are using a MacOSX platform (Macintosh). */
 	#include "GL/glew.h"
 	#include "GLUT/glut.h"
 	#include "OpenGL/gl.h"
@@ -82,10 +82,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws two quadrilaterals in the OpenGL window of interest.
+/// This function draws 2 quadrilaterals in the OpenGL window of interest.
 void draw()
 {
-	/* We draw two quadrilaterals in the OpenGL window of interest! */
+	/* We draw 2 quadrilaterals in the OpenGL window of interest! */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0, 0.0, 0.0);
   	glBegin(GL_POLYGON);
@@ -124,34 +124,34 @@ void initialize()
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
-	/* We are interested only in the 'q' - 'Q' - 'Esc' - '0' - '1' keys */
+	/* We are interested only in the 'q' - 'Q' - 'Esc' - '0' - '1' keys. */
 	switch (key)
 	{
 		case 'q':
 	
-		/* The key is 'q' */
+		/* The key is 'q', thus we can exit from the program. */
 		if(eol) cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
 		
 		case 'Q':
 	
-		/* The key is 'Q' */
+		/* The key is 'Q', thus we can exit from the program. */
 		if(eol) cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
 		
 		case 27:
 	
-		/* The key is 'Esc' */
+		/* The key is 'Esc', thus we can exit from the program. */
 		if(eol) cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
 		
 		case '0':
 		
-		/* The key is '0' - initial configuration #0: glOrtho(0,100,0,100,-1,1) */
-		cout<<"\tApplying the initial configuration #0 with the viewing box [0,100] x [0,100] x [-1,1] to the current scene."<<endl;
+		/* The key is '0', thus we apply the initial configuration #0: glOrtho(0,100,0,100,-1,1). */
+		cout<<"\tApplying the configuration #0 with the viewing box [0,100] x [0,100] x [-1,1] to the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		left_value=0.0;
@@ -167,7 +167,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '1':
 		
-		/* The key is '1' - configuration #1: glOrtho(-100,100,-100,100,-1,1) */
+		/* The key is '1', thus we apply the configuration #1: glOrtho(-100,100,-100,100,-1,1). */
 		cout<<"\tApplying the configuration #1 with the viewing box [0,200] x [0,200] x [-1,1] to the current scene."<<endl;
 		cout.flush();
 		eol=true;

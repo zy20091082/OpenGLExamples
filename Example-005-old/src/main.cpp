@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-005 (Old Mode)' example
+ * main.cpp - the main function for the 'Example-005 (Old Mode)' example.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -20,7 +20,7 @@
 using namespace std;
 #ifdef __APPLE__
 
-	/* We are using a MacOSX platform (Macintosh) */
+	/* We are using a MacOSX platform (Macintosh). */
 	#include "GL/glew.h"
 	#include "GLUT/glut.h"
 	#include "OpenGL/gl.h"
@@ -84,10 +84,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws a triangle in the OpenGL window of interest.
+/// This function draws a triangle in <i>'red'</i> in the OpenGL window of interest.
 void draw()
 {
-	/* We draw a 'red' triangle in the OpenGL window of interest! */
+	/* We draw a triangle in 'red' in the OpenGL window of interest! */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0, 0.0, 0.0);
   	glBegin(GL_POLYGON);
@@ -112,33 +112,33 @@ void initialize()
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
-	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' - "=" keys */
+	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' - "=" keys. */
 	switch (key)
 	{
 		case 'q':
 	
-		/* The key is 'q' */
+		/* The key is 'q', thus we can exit from this program. */
 		if(eol) cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
 		
 		case 'Q':
 	
-		/* The key is 'Q' */
+		/* The key is 'Q', thus we can exit from this program. */
 		if(eol) cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
 		
 		case 27:
 	
-		/* The key is 'Esc' */
+		/* The key is 'Esc', thus we can exit from this program. */
 		if(eol) cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
 		
 		case '+':
 		
-		/* The key is '+' */
+		/* The key is '+, thus we increase the 'x' coordinate. */
 		xcoord=xcoord+(GLfloat)1.0;
 		cout<<"\tIncreasing the 'x' coordinate as "<<xcoord<<" in the current scene."<<endl;
 		cout.flush();
@@ -148,9 +148,9 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '-':
 		
-		/* The key is '-' */
+		/* The key is '-', thus we decrease the 'x' coordinate. */
 		xcoord=xcoord-(GLfloat)1.0;
-		cout<<"\tDecreased the 'x' coordinate as "<<xcoord<<" in the current scene."<<endl;
+		cout<<"\tDecreasing the 'x' coordinate as "<<xcoord<<" in the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -158,10 +158,10 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '=':
 		
-		/* The key is '=' */
+		/* The key is '=', thus we reinitialize the 'x' coordinate. */
 		xcoord=20.0;
 		eol=true;
-		cout<<"\tReinitialized the 'x' coordinate to the default value "<<xcoord<<" in the current scene."<<endl;
+		cout<<"\tReinitializing the 'x' coordinate to the default value "<<xcoord<<" in the current scene."<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;
