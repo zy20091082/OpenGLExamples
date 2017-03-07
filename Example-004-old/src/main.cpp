@@ -129,21 +129,21 @@ void manageKeys(unsigned char key, int x, int y)
 	{
 		case 'q':
 	
-		/* The key is 'q', thus we can exit from the program. */
+		/* The key is 'q', thus we can exit from this program. */
 		if(eol) cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
 		
 		case 'Q':
 	
-		/* The key is 'Q', thus we can exit from the program. */
+		/* The key is 'Q', thus we can exit from this program. */
 		if(eol) cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
 		
 		case 27:
 	
-		/* The key is 'Esc', thus we can exit from the program. */
+		/* The key is 'Esc', thus we can exit from this program. */
 		if(eol) cout<<endl;
 		exit(EXIT_SUCCESS);
 		break;
@@ -184,7 +184,7 @@ void manageKeys(unsigned char key, int x, int y)
 	
 		default:
 
-    	/* Other keys are not important for us */
+    	/* Other keys are not important for us! */
     	break;
 	}	
 }

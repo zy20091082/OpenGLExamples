@@ -168,7 +168,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		default:
 
-    	/* Other keys are not important for us */
+    	/* Other keys are not important for us! */
     	break;
 	}
 }

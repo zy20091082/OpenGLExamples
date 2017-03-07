@@ -105,25 +105,25 @@ void manageKeys(unsigned char key, int x, int y)
 	{
 		case 'q':
 	
-		/* The key is 'q', thus we can exit from the program! */
+		/* The key is 'q', thus we can exit from this program! */
 		exit(EXIT_SUCCESS);
 		break;
 		
 		case 'Q':
 	
-		/* The key is 'Q', thus we can exit from the program! */
+		/* The key is 'Q', thus we can exit from this program! */
 		exit(EXIT_SUCCESS);
 		break;
 		
 		case 27:
 	
-		/* The key is 'Esc', thus we can exit from the program! */
+		/* The key is 'Esc', thus we can exit from this program! */
 		exit(EXIT_SUCCESS);
 		break;
 	
 		default:
     
-    	/* Other keys are not important for us */
+    	/* Other keys are not important for us! */
     	break;
 	}	
 }
