@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-023 (Old Mode)' example
+ * main.cpp - the main function for the 'Example-023 (Old Mode)' example.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -22,7 +22,7 @@
 using namespace std;
 #ifdef __APPLE__
 
-	/* We are using a MacOSX platform (Macintosh) */
+	/* We are using a MacOSX platform (Macintosh). */
 	#include "GL/glew.h"
 	#include "GLUT/glut.h"
 	#include "OpenGL/gl.h"
@@ -36,10 +36,10 @@ using namespace std;
 
 #endif
 
-/// The coordinates <i>'(xc,yc)'</i> of the center for the <i>'Ellipse'</i> shape of interest.
+/// The center coordinates <i>'(xc,yc)'</i> for the <i>'Ellipse'</i> shape of interest.
 float xc,yc;
 
-/// The lengths <i>'Rx'</i> and <i>'Ry'</i> of the semi-axis for the <i>'Ellipse'</i> of interest
+/// The lengths <i>'Rx'</i> and <i>'Ry'</i> of the semi-axis for the <i>'Ellipse'</i> shape of interest.
 float radius_x,radius_y;
 
 /// The number of the samples, used for approximating the <i>'Ellipse'</i> shape of interest.
@@ -57,7 +57,7 @@ int main(int argc,char **argv)
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-023' Example, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws a polyline (formed by an arbitrary number of samples), which approximates the 'Ellipse' shape with semiaxis 'Rx' and 'Ry' (respectively along the x- and the y-axis), and center '(xc,yc)'."<<endl;
-	cout<<"\tThe semiaxis 'Rx' and 'Ry', as well as the coodinates of the center '(xc,yc)' are specified by the user, which can also:"<<endl<<endl;
+	cout<<"\tThe semiaxis 'Rx' and 'Ry', as well as the center coodinates '(xc,yc)', are specified by the user, which can also:"<<endl<<endl;
 	cout<<"\t\t-) increase the number of the samples for the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number of the samples for the polyline of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
@@ -66,28 +66,28 @@ int main(int argc,char **argv)
 	cin>>radius_x;
 	if( (!cin) || (radius_x<=0) )
 	{
-		cout<<"\tPLEASE, INSERT A VALID VALUE FOR THE SEMI-AXIS 'Rx' IN THE 'ELLIPSE' SHAPE OF INTEREST. THIS PROGRAM IS CLOSING..."<<endl<<endl;
+		cout<<"\tPLEASE, INSERT A VALID VALUE FOR THE SEMI-AXIS 'Rx' IN THE 'ELLIPSE' SHAPE OF INTEREST. THIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
 	
-	/* Now, we read the length of the second semi-axis */
+	/* Now, we read the length of the second semi-axis for the 'Ellipse' shape of interest. */
 	cout<<"\tPlease, insert the semi-axis 'Ry' along the y-axis (positive and not null) for the 'Ellipse' shape of interest: ";
 	cin>>radius_y;
 	if( (!cin) || (radius_y<=0) )
 	{
-		cout<<"\tPLEASE, INSERT A VALID VALUE FOR THE SEMI-AXIS 'Ry' IN THE 'ELLIPSE' OF INTEREST. THIS PROGRAM IS CLOSING..."<<endl<<endl;
+		cout<<"\tPLEASE, INSERT A VALID VALUE FOR THE SEMI-AXIS 'Ry' IN THE 'ELLIPSE' OF INTEREST. THIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
 	
-	/* Now, we read the coordinates for the center! */
-	cout<<"\tPlease, insert the coordinates '(xc,yc)' of the center for the 'Ellipse' shape of interest (separated by a space): ";
+	/* Now, we read the center coordinates '(xc,yc)' for the 'Ellipse' shape of interest. */
+	cout<<"\tPlease, insert the center coordinates '(xc,yc)' for the 'Ellipse' shape of interest (separated by a space): ";
 	cout.flush();
 	cin>>xc>>yc;
 	if(!cin)
 	{
-		cout<<"\tPLEASE, INSERT THE COORDINATES '(xc,yc)' OF THE CENTER FOR THE 'ELLIPSE' SHAPE OF INTEREST. THIS PROGRAM IS CLOSING..."<<endl<<endl;
+		cout<<"\tPLEASE, INSERT THE CENTER COORDINATES '(xc,yc)' FOR THE 'ELLIPSE' SHAPE OF INTEREST. THIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
@@ -110,17 +110,6 @@ int main(int argc,char **argv)
 	return EXIT_SUCCESS;
 }
 
-/// This function initializes the OpenGL window of interest.
-void initialize() 
-{
-	/* We initialize the OpenGL window of interest! */
-	glClearColor(1.0, 1.0, 1.0, 0.0);
-	num_samples=3;
-	cout<<endl<<"\tWe draw a polyline, initially formed by "<<num_samples<<" samples (the minimum number as possible), for approximating the 'Ellipse' shape of center ("<<xc<<","<<yc<<"), semi-axis 'Rx'="<<radius_x<<" (along the x-axis), and semi-axis 'Ry'=";
-	cout<<radius_y<<" (along the y axis)"<<endl<<endl;
-	cout.flush();
-}
-
 /// This function updates the viewport for the scene when it is resized. */
 void resize(int w, int h)
 {
@@ -133,57 +122,15 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function is the keyboard input processing routine for the OpenGL window of interest.
-void manageKeys(unsigned char key, int x, int y)
+/// This function initializes the OpenGL window of interest.
+void initialize() 
 {
-	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' keys */
-	switch (key)
-	{
-		case 'q':
-	
-		/* The key is 'q' */
-		cout<<endl;
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
-		
-		case 'Q':
-	
-		/* The key is 'Q' */
-		cout<<endl;
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
-		
-		case 27:
-	
-		/* The key is 'Esc' */
-		cout<<endl;
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
-		
-		case '+':
-		
-		/* The key is '+', thus we increase the number of the samples! */
-		num_samples=num_samples+1;
-		glutPostRedisplay();
-		break;
-		
-		case '-':
-		
-		/* The key is '-', thus we decrease the number of the samples! */
-		if(num_samples>3) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 3 of samples is reached, and it is not possible to decrease again this number."<<endl;
-		cout.flush();
-		glutPostRedisplay();
-		break;
-
-		default:
-
-    	/* Other keys are not important for us */
-    	break;
-	}
+	/* We initialize the OpenGL window of interest! */
+	glClearColor(1.0, 1.0, 1.0, 0.0);
+	num_samples=3;
+	cout<<endl<<"\tWe draw a polyline, initially formed by "<<num_samples<<" samples (the minimum number as possible), for approximating the 'Ellipse' shape of center ("<<xc<<","<<yc<<"), semi-axis 'Rx'="<<radius_x<<" (along the x-axis), and semi-axis 'Ry'=";
+	cout<<radius_y<<" (along the y axis)"<<endl<<endl;
+	cout.flush();
 }
 
 /// This function draws the polyline, approximating the <i>'Ellipse'</i> shape of interest, in the OpenGL window of interest.
@@ -207,4 +154,57 @@ void draw()
 	glFlush();
 	cout<<"\tApproximated and drawn the 'Ellipse' shape of interest by using a polyline with "<<num_samples<<" samples."<<endl;
 	cout.flush();
+}
+
+/// This function is the keyboard input processing routine for the OpenGL window of interest.
+void manageKeys(unsigned char key, int x, int y)
+{
+	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' keys. */
+	switch (key)
+	{
+		case 'q':
+	
+		/* The key is 'q', thus we can exit from this program. */
+		cout<<endl;
+		cout.flush();
+		exit(EXIT_SUCCESS);
+		break;
+		
+		case 'Q':
+	
+		/* The key is 'Q', thus we can exit from this program. */
+		cout<<endl;
+		cout.flush();
+		exit(EXIT_SUCCESS);
+		break;
+		
+		case 27:
+	
+		/* The key is 'Esc', thus we can exit from this program. */
+		cout<<endl;
+		cout.flush();
+		exit(EXIT_SUCCESS);
+		break;
+		
+		case '+':
+		
+		/* The key is '+', thus we increase the number of the samples in the polyline of interest! */
+		num_samples=num_samples+1;
+		glutPostRedisplay();
+		break;
+		
+		case '-':
+		
+		/* The key is '-', thus we decrease the number of the samples (if possible) in the polyline of interest. */
+		if(num_samples>3) num_samples=num_samples-1;
+		else cout<<"\tThe minimum number 3 of samples is reached, and it is not possible to decrease again this number."<<endl;
+		cout.flush();
+		glutPostRedisplay();
+		break;
+
+		default:
+
+    	/* Other keys are not important for us! */
+    	break;
+	}
 }

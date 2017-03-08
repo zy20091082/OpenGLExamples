@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-021 (Old Mode)' example
+ * main.cpp - the main function for the 'Example-021 (Old Mode)' example.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -22,7 +22,7 @@
 using namespace std;
 #ifdef __APPLE__
 
-	/* We are using a MacOSX platform (Macintosh) */
+	/* We are using a MacOSX platform (Macintosh). */
 	#include "GL/glew.h"
 	#include "GLUT/glut.h"
 	#include "OpenGL/gl.h"
@@ -39,7 +39,7 @@ using namespace std;
 /// The radius <i>'R'</i> for drawing the <i>'Circle'</i> shape of interest.
 float radius;
 
-/// The coordinates of the center <i>'(xc,yc)'</i> for the <i>'Circle'</i> shape of interest.
+/// The center coordinates <i>'(xc,yc)'</i> for the <i>'Circle'</i> shape of interest.
 float xc,yc;
 
 /// The number of the samples, used for approximating the <i>'Circle'</i> shape of interest.
@@ -66,18 +66,18 @@ int main(int argc,char **argv)
 	cin>>radius;
 	if( (!cin) || (radius<=0) )
 	{
-		cout<<"\tPLEASE, INSERT A VALID VALUE FOR THE RADIUS 'R' OF INTEREST. THIS PROGRAM IS CLOSING..."<<endl<<endl;
+		cout<<"\tPLEASE, INSERT A VALID VALUE FOR THE RADIUS 'R' OF INTEREST. THIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
 	
-	/* Now, we read the coordinates '(xc,yc)' for the center! */
+	/* Now, we read the center coordinates '(xc,yc)' for the 'Circle' shape of interest. */
 	cout<<"\tPlease, insert the center coordinates '(xc,yc)' for the 'Circle' shape of interest (separated by a space): ";
 	cout.flush();
 	cin>>xc>>yc;
 	if(!cin)
 	{
-		cout<<"\tPLEASE, INSERT THE CENTER COORDINATES '(xc,yc)' FOR THE 'CIRCLE' SHAPE OF INTEREST (SEPARATED BY A SPACE). THIS PROGRAM IS CLOSING..."<<endl<<endl;
+		cout<<"\tPLEASE, INSERT THE CENTER COORDINATES '(xc,yc)' FOR THE 'CIRCLE' SHAPE OF INTEREST (SEPARATED BY A SPACE). THIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
@@ -98,16 +98,6 @@ int main(int argc,char **argv)
 	return EXIT_SUCCESS;
 }
 
-/// This function initializes the OpenGL window of interest.
-void initialize() 
-{
-	/* We initialize the OpenGL window of interest! */
-	glClearColor(1.0, 1.0, 1.0, 0.0);
-	num_samples=3;
-	cout<<endl<<"\tWe draw a polyline, initially formed by "<<num_samples<<" samples (the minimum number as possible), for approximating the 'Circle' shape of center ("<<xc<<","<<yc<<") and radius "<<radius<<"."<<endl<<endl;
-	cout.flush();
-}
-
 /// This function updates the viewport for the scene when it is resized. */
 void resize(int w, int h)
 {
@@ -120,15 +110,25 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
+/// This function initializes the OpenGL window of interest.
+void initialize() 
+{
+	/* We initialize the OpenGL window of interest! */
+	glClearColor(1.0, 1.0, 1.0, 0.0);
+	num_samples=3;
+	cout<<endl<<"\tWe draw a polyline, initially formed by "<<num_samples<<" samples (the minimum number as possible), for approximating the 'Circle' shape of center ("<<xc<<","<<yc<<") and radius "<<radius<<"."<<endl<<endl;
+	cout.flush();
+}
+
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
-	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' keys */
+	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' keys. */
 	switch (key)
 	{
 		case 'q':
 	
-		/* The key is 'q' */
+		/* The key is 'q', thus we can exit from this program. */
 		cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
@@ -136,7 +136,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 'Q':
 	
-		/* The key is 'Q' */
+		/* The key is 'Q', thus we can exit from this program. */
 		cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
@@ -144,7 +144,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 27:
 	
-		/* The key is 'Esc' */
+		/* The key is 'Esc', thus we can exit from this program. */
 		cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
@@ -152,14 +152,14 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '+':
 		
-		/* The key is '+', thus we increase the number of the samples! */
+		/* The key is '+', thus we increase the number of the samples in the polyline of interest! */
 		num_samples=num_samples+1;
 		glutPostRedisplay();
 		break;
 		
 		case '-':
 		
-		/* The key is '-', thus we decrease the number of the samples! */
+		/* The key is '-', thus we decrease the number of the samples (if possible) in the polyline of interest. */
 		if(num_samples>3) num_samples=num_samples-1;
 		else cout<<"\tThe minimum number 3 of samples is reached, and it is not possible to decrease again this number."<<endl;
 		cout.flush();
@@ -168,7 +168,7 @@ void manageKeys(unsigned char key, int x, int y)
 
 		default:
 
-    	/* Other keys are not important for us */
+    	/* Other keys are not important for us! */
     	break;
 	}
 }
