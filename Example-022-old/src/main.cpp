@@ -61,7 +61,7 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-022' Example, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws different versions (formed by an arbitrary number of samples) of the 'Circle' shape with radius 'R' and center '(xc,yc)'."<<endl;
 	cout<<"\tThe radius 'R' and the center coodinates '(xc,yc)' are specified by the user, which can also:"<<endl<<endl;
-	cout<<"\t\t-) decide to approximate the 'Circle' shape through a polyline by pressing the 'l' key;"<<endl;
+	cout<<"\t\t-) decide to approximate the 'Circle' shape through a polyline (i.e., its boundary curve) by pressing the 'l' key;"<<endl;
 	cout<<"\t\t-) decide to approximate the 'Circle' shape through a triangle fan by pressing the 'f' key;"<<endl;
 	cout<<"\t\t-) decide to approximate the 'Circle' shape through only one polygon by pressing the 'p' key;"<<endl;
 	cout<<"\t\t-) increase the number of the samples for the approximation of interest by pressing the '+' key;"<<endl;
@@ -123,7 +123,7 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=3;
 	choice='l';
-	cout<<endl<<"\tInitially, the 'Circle' shape of center ("<<xc<<","<<yc<<") and radius "<<radius<<", is approximated by a polyline, formed by "<<num_samples<<" samples (the minimum number as possible)."<<endl<<endl;
+	cout<<endl<<"\tInitially, the 'Circle' shape of center ("<<xc<<","<<yc<<") and radius "<<radius<<", is approximated by a polyline (i.e., its boundary curve), formed by "<<num_samples<<" samples (the minimum number as possible)."<<endl<<endl;
 	cout.flush();
 }
 
@@ -140,7 +140,7 @@ void draw()
 	glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
 	if(choice=='l')
 	{
-		/* We must draw a polyline! */
+		/* We must approximate the 'Circle' shape by using a polyline (i.e., its boundary curve)! */
 		glColor3f(1.0,0.0,0.0);
 		glBegin(GL_LINE_LOOP);
 		for(unsigned int i=0;i<=num_samples;i++)
@@ -152,12 +152,12 @@ void draw()
 		/* If we arrive here, all is ok */
 		glEnd();
 		glFlush();
-		cout<<"\tThe 'Circle' shape of interest is approximated by a polyline, formed by "<<num_samples<<" samples (thus by "<<num_samples<<" vertices and "<<num_samples<<" edges)."<<endl;
+		cout<<"\tThe 'Circle' shape of interest is approximated by a polyline (i.e., its boundary curve), formed by "<<num_samples<<" samples (thus by "<<num_samples<<" vertices and "<<num_samples<<" edges)."<<endl;
 		cout.flush();
 	}
 	else if(choice=='f')
 	{
-		/* We draw a triangle fan! */
+		/* We must approximate the 'Circle' shape by using a triangle fan! */
 		glColor3f(1.0,0.0,0.0);
 		glBegin(GL_TRIANGLE_FAN);
 		glVertex3f(xc,yc,0);
@@ -176,7 +176,7 @@ void draw()
 	}
 	else if(choice=='p')
 	{
-		/* We draw a polyline! */
+		/* We must approximate the 'Circle' shape by using only one polygon! */
 		glColor3f(1.0,0.0,0.0);
 		glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
 		glBegin(GL_POLYGON);
@@ -242,7 +242,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 'l':
 		
-		/* The key is 'l', thus we choose to approximate the 'Circle' shape of interest by using a polyline. */
+		/* The key is 'l', thus we choose to approximate the 'Circle' shape of interest by using a polyline (i.e., its boundary curve). */
 		choice='l';
 		glutPostRedisplay();
 		break;

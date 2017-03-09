@@ -45,7 +45,7 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-020' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws 2 versions of the 'Double Square Annulus' shape (the 'filled' and the 'wireframe' versions), both approximated by only one triangle strip."<<endl;
+	cout<<"\tIt draws 2 versions of the 'Double Square Annulus' shape (i.e., the 'filled' and the 'wireframe' versions), both approximated by only one triangle strip."<<endl;
 	cout<<"\tIn the 'filled' version, the triangles of the triangle strip are completely rendered. Instead, only the edges of the triangle strip are rendered in the 'wireframe' version."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
