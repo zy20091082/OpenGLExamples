@@ -36,13 +36,13 @@ using namespace std;
 
 #endif
 
-/// The center coordinates <i>'(xc,yc)'</i> for the <i>'Ellipse'</i> shape of interest.
+/// The center coordinates <i>'(xc,yc)'</i> for the <i>'Ellipse'</i> curve of interest.
 float xc,yc;
 
-/// The lengths <i>'Rx'</i> and <i>'Ry'</i> of the semi-axis for the <i>'Ellipse'</i> shape of interest.
+/// The lengths <i>'Rx'</i> and <i>'Ry'</i> of the semi-axis for the <i>'Ellipse'</i> curve of interest.
 float radius_x,radius_y;
 
-/// The number of the samples, used for approximating the <i>'Ellipse'</i> shape of interest.
+/// The number of the samples, used for approximating the <i>'Ellipse'</i> curve of interest.
 unsigned int num_samples=3;
 
 /* Prototypes for all functions of interest! */
@@ -56,23 +56,23 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-023' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polyline (formed by an arbitrary number of samples), which approximates the 'Ellipse' shape with semiaxis 'Rx' and 'Ry' (respectively along the x- and the y-axis), and center '(xc,yc)'."<<endl;
+	cout<<"\tIt draws a polyline (formed by an arbitrary number of samples), which approximates the 'Ellipse' curve with semiaxis 'Rx' and 'Ry' (respectively along the x- and the y-axis), and center '(xc,yc)'."<<endl;
 	cout<<"\tThe semiaxis 'Rx' and 'Ry', as well as the center coodinates '(xc,yc)', are specified by the user, which can also:"<<endl<<endl;
 	cout<<"\t\t-) increase the number of the samples for the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number of the samples for the polyline of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
-	cout<<"\tPlease, insert the semi-axis 'Rx' along the x-axis (positive and not null) for the 'Ellipse' shape of interest: ";
+	cout<<"\tPlease, insert the semi-axis 'Rx' along the x-axis (positive and not null) for the 'Ellipse' curve of interest: ";
 	cin>>radius_x;
 	if( (!cin) || (radius_x<=0) )
 	{
-		cout<<"\tPLEASE, INSERT A VALID VALUE FOR THE SEMI-AXIS 'Rx' IN THE 'ELLIPSE' SHAPE OF INTEREST. THIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<"\tPLEASE, INSERT A VALID VALUE FOR THE SEMI-AXIS 'Rx' IN THE 'ELLIPSE' CURVE OF INTEREST. THIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
 	
-	/* Now, we read the length of the second semi-axis for the 'Ellipse' shape of interest. */
-	cout<<"\tPlease, insert the semi-axis 'Ry' along the y-axis (positive and not null) for the 'Ellipse' shape of interest: ";
+	/* Now, we read the length of the second semi-axis for the 'Ellipse' curve of interest. */
+	cout<<"\tPlease, insert the semi-axis 'Ry' along the y-axis (positive and not null) for the 'Ellipse' curve of interest: ";
 	cin>>radius_y;
 	if( (!cin) || (radius_y<=0) )
 	{
@@ -81,18 +81,18 @@ int main(int argc,char **argv)
 		return EXIT_FAILURE;
 	}
 	
-	/* Now, we read the center coordinates '(xc,yc)' for the 'Ellipse' shape of interest. */
-	cout<<"\tPlease, insert the center coordinates '(xc,yc)' for the 'Ellipse' shape of interest (separated by a space): ";
+	/* Now, we read the center coordinates '(xc,yc)' for the 'Ellipse' curve of interest. */
+	cout<<"\tPlease, insert the center coordinates '(xc,yc)' for the 'Ellipse' curve of interest (separated by a space): ";
 	cout.flush();
 	cin>>xc>>yc;
 	if(!cin)
 	{
-		cout<<"\tPLEASE, INSERT THE CENTER COORDINATES '(xc,yc)' FOR THE 'ELLIPSE' SHAPE OF INTEREST. THIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<"\tPLEASE, INSERT THE CENTER COORDINATES '(xc,yc)' FOR THE 'ELLIPSE' CURVE OF INTEREST. THIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
 	
-	/* If we arrive here, we can draw our ellipse! */
+	/* If we arrive here, we can draw our 'Ellipse' curve! */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -128,17 +128,17 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=3;
-	cout<<endl<<"\tWe draw a polyline, initially formed by "<<num_samples<<" samples (the minimum number as possible), for approximating the 'Ellipse' shape of center ("<<xc<<","<<yc<<"), semi-axis 'Rx'="<<radius_x<<" (along the x-axis), and semi-axis 'Ry'=";
-	cout<<radius_y<<" (along the y axis)"<<endl<<endl;
+	cout<<endl<<"\tWe draw a polyline, initially formed by "<<num_samples<<" samples (the minimum number as possible), for approximating the 'Ellipse' curve of center ("<<xc<<","<<yc<<"), semi-axis 'Rx'="<<radius_x<<" (along the x-axis), and semi-axis 'Ry'=";
+	cout<<radius_y<<" (along the y axis)."<<endl<<endl;
 	cout.flush();
 }
 
-/// This function draws the polyline, approximating the <i>'Ellipse'</i> shape of interest, in the OpenGL window of interest.
+/// This function draws the polyline, approximating the <i>'Ellipse'</i> curve of interest, in the main OpenGL window.
 void draw()
 {
 	float t;
 
-	/* We draw the polyline, approximating the 'Ellipse' shape of interest, in the OpenGL window of interest. */
+	/* We draw the polyline, approximating the 'Ellipse' curve of interest, in the main OpenGL window. */
 	t=0;
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0,0.0,0.0);
@@ -152,7 +152,7 @@ void draw()
 	/* If we arrive here, all is ok */
 	glEnd();
 	glFlush();
-	cout<<"\tApproximated and drawn the 'Ellipse' shape of interest by using a polyline with "<<num_samples<<" samples."<<endl;
+	cout<<"\tApproximated and drawn the 'Ellipse' curve of interest by using a polyline with "<<num_samples<<" samples."<<endl;
 	cout.flush();
 }
 
