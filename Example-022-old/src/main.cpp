@@ -45,7 +45,7 @@ float xc,yc;
 /// The number of the samples, used for approximating the <i>'Circle'</i> shape of interest.
 unsigned int num_samples=3;
 
-/// The rendering choice for drawing the specific version <i>'Circle'</i> shape, chosen by the user, i.e., a polyline (the 'l' key and 'char'), a triangle fan (the 'f' key and 'char'), and a polygon (the 'p' key and 'char').
+/// The rendering choice for drawing the specific version of the <i>'Circle'</i> shape, chosen by the user, i.e., a polyline (the 'l' key and 'char'), a triangle fan (the 'f' key and 'char'), and a polygon (the 'p' key and 'char').
 char choice;
 
 /* Prototypes for all functions of interest! */
