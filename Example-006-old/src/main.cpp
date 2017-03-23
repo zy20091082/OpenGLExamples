@@ -71,10 +71,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws a triangle in <i>'red'</i> in the OpenGL window of interest.
+/// This function draws a triangle in <i>'red'</i> within the OpenGL window of interest.
 void draw()
 {
-	/* We draw a 'red' triangle in the OpenGL window of interest! */
+	/* We draw a 'red' triangle within the OpenGL window of interest! */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0, 0.0, 0.0);
   	glBegin(GL_POLYGON);
