@@ -46,13 +46,13 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-015' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a custom shape, approximated by a triangle fan, in the scene, and it allows to modify its rendering as follows:"<<endl<<endl;
-	cout<<"\t-) only the 'front' side of the triangles in the triangle fan of interest is rendered by pressing the 'f' and 'F' keys;"<<endl;
-	cout<<"\t-) only the 'back' side of the triangles in the triangle fan of interest is rendered by pressing the 'b' and 'B' keys;"<<endl;
-	cout<<"\t-) both the sides of the triangles in the triangle fan of interest are rendered by pressing the 't' and 'T' keys;"<<endl;
-	cout<<"\t-) only the vertices of the triangles in the triangle fan of interest are rendered by pressing the 'p' and 'P' keys;"<<endl;
+	cout<<"\tIt draws a custom shape, approximated by a triangle fan (in 'turquoise gray', and with the reference vertex in 'red'), and it allows to modify its rendering as follows:"<<endl<<endl;
+	cout<<"\t-) only the 'front' side of the triangles in the triangle fan of interest is rendered by pressing the 'f' and the 'F' keys;"<<endl;
+	cout<<"\t-) only the 'back' side of the triangles in the triangle fan of interest is rendered by pressing the 'b' and the 'B' keys;"<<endl;
+	cout<<"\t-) both the 'front' and the 'back' sides of the triangles in the triangle fan of interest are rendered by pressing the 't' and the 'T' keys;"<<endl;
+	cout<<"\t-) only the vertices of the triangles in the triangle fan of interest are rendered by pressing the 'p' and the 'P' keys;"<<endl;
 	cout<<"\t-) only the edges of the triangles in the triangle fan of interest are rendered (wireframe version) by pressing the 'l' and the 'L' keys;"<<endl;
-	cout<<"\t-) the triangles in the triangle fan of interest are entirely rendered (filled version) by pressing the 'i' and 'I' keys."<<endl<<endl;
+	cout<<"\t-) the triangles in the triangle fan of interest are entirely rendered (filled version) by pressing the 'i' and the 'I' keys."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -82,10 +82,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws a custom shape, approximated by a triangle fan, in the OpenGL window of interest by using the rendering preferences, chosen by the user.
+/// This function draws a custom shape, approximated by a triangle fan (in <i>'turquoise gray'</i>, and with the reference vertex in <i>'red'</i>), in the OpenGL window of interest by using the rendering preferences, chosen by the user.
 void draw()
 {
-	/* We draw a custom shape, approximated by a triangle fan, in the OpenGL window of interest by using the rendering preferences, chosen by the user. */
+	/* We draw a custom shape, approximated by a triangle fan (in 'turquoise gray', and with the reference vertex in 'red'), in the OpenGL window of interest by using the rendering preferences, chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(10.0);
 	glLineWidth(2.0);
@@ -121,7 +121,7 @@ void draw()
 	}
 	else
 	{
-		/* We analyze both the sides of the triangles in the triangle fan, approximating the custom shape of interest. */
+		/* We analyze both the 'front' and the 'back' sides of the triangles in the triangle fan, approximating the custom shape of interest. */
 		if(mode==GL_POINT) cout<<"\tOnly the points in both the 'front' and the 'back' sides of the triangles in the triangle fan, approximating the custom shape of interest, are rendered in the current scene."<<endl;
 		if(mode==GL_LINE) cout<<"\tOnly the edges in both the 'front' and the 'back' sides of the triangles in the triangle fan, approximating the custom shape of interest, are rendered (wireframe version) in the current scene."<<endl;
 		if(mode==GL_FILL) cout<<"\tBoth the 'front' and the 'back' sides of the triangles in the triangle fan, approximating the custom shape of interest, are completely rendered (filled version) in the current scene."<<endl;
