@@ -62,7 +62,7 @@ int main(int argc,char **argv)
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-018' Example, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws several convex (in 'red') and concave (in 'blue') polygons by using the 'wireframe' and the 'filled' rendering mode, and allows to cycle the vertices order in the polygons of interest by pressing the '+' key."<<endl;
-	cout<<"\tIn particular, there may be 'strange' situations, expecially when rendering concave polygons (in 'blue') in the 'filled' mode."<<endl<<endl;
+	cout<<"\tIn particular, there may be 'strange' situations, expecially when rendering concave polygons (in 'blue') in the 'filled' mode, and cycling their vertices."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -92,12 +92,12 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws several convex and concave polygons in the OpenGL window of interest.
+/// This function draws several convex (in <i>'red'</i>) and concave (in <i>'blue'</i>) polygons in the OpenGL window of interest.
 void draw()
 {
 	int pp,jj;
 
-	/* We draw several convex and concave polygons in the OpenGL window of interest. */
+	/* We draw several convex (in 'red') and concave (in 'blue') polygons in the OpenGL window of interest. First, we draw the convex polygon #0 in 'red' ('filled' rendering). */
 	pp = (iconvex%5);
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(10.0);
@@ -111,7 +111,7 @@ void draw()
    		glVertex3f(convex_points[jj][0],convex_points[jj][1],convex_points[jj][2]);
    	}
    	
-   	/* Convex polygon #0 in 'red' ('wireframe' rendering). */
+   	/* We draw the convex polygon #0 in 'red' ('wireframe' rendering). */
    	glEnd();
    	glColor3f(1.0,0.0,0.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
@@ -122,7 +122,7 @@ void draw()
    		glVertex3f(convex_points[jj][0]+100,convex_points[jj][1],convex_points[jj][2]);
    	}
    	
-   	/* Concave polygon #1 in 'blue' ('filled' rendering). */
+   	/* We draw the concave polygon #1 in 'blue' ('filled' rendering). */
 	glEnd();
 	glColor3f(0.0,0.0,1.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
@@ -133,7 +133,7 @@ void draw()
    		glVertex3f(not_convex_points[jj][0],not_convex_points[jj][1],not_convex_points[jj][2]);
    	}
 	
-	/* Concave polygon #1 in 'blue' ('wireframe' rendering). */
+	/* We draw the concave polygon #1 in 'blue' ('wireframe' rendering). */
 	glEnd();
 	glColor3f(0.0,0.0,1.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
