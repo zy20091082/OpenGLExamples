@@ -45,8 +45,8 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-020' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws 2 versions of the 'Double Square Annulus' shape (i.e., the 'filled' and the 'wireframe' versions), both approximated by only one triangle strip."<<endl;
-	cout<<"\tIn the 'filled' version, the triangles of the triangle strip are completely rendered. Instead, only the edges of the triangle strip are rendered in the 'wireframe' version."<<endl<<endl;
+	cout<<"\tIt draws the 'filled' and the 'wireframe versions' of the 'Double Square Annulus' shape, both approximated by only one triangle strip (in 'red')."<<endl;
+	cout<<"\tIn the 'filled version', the triangles of the triangle strip are completely rendered. Instead, only the edges of the triangle strip are rendered in the 'wireframe version'."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -82,7 +82,7 @@ void initialize() { glClearColor(1.0, 1.0, 1.0, 0.0); }
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
-	/* We are interested only in the 'q' - 'Q' - 'Esc' keys */
+	/* We are interested only in the 'q' - 'Q' - 'Esc' keys. */
 	switch (key)
 	{
 		case 'q':
@@ -110,10 +110,10 @@ void manageKeys(unsigned char key, int x, int y)
 	}
 }
 
-/// This function draws 2 versions of the <i>'Double Square Annulus'</i> shape, both approximated by one triangle strip, in the OpenGL window of interest.
+/// This function draws 2 versions of the <i>'Double Square Annulus'</i> shape, both approximated by one triangle strip (in <i>'red'</i>), in the OpenGL window of interest.
 void draw()
 {
-	/* We draw 2 versions of the 'Double Square Annulus' shape, both approximated by one triangle strip, in the OpenGL window of interest. First, we draw the 'wireframe' version (in 'red'). */
+	/* We draw 2 versions of the 'Double Square Annulus' shape, both approximated by one triangle strip (in 'red'), in the OpenGL window of interest. First, we draw the 'wireframe version' for the triangle strip of interest (in 'red'). */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0,0.0,0.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
@@ -141,7 +141,7 @@ void draw()
 	glVertex3f(80,110,0);
 	glEnd();
 	
-	/* Now, we draw the 'filled' version (always in 'red'). */
+	/* Now, we draw the 'filled version' for the triangle strip of interest (in 'red'). */
 	glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
 	glBegin(GL_TRIANGLE_STRIP);
 	glVertex3f(95,160,0);
