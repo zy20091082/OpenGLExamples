@@ -56,7 +56,7 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-021' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polyline (formed by an arbitrary number of samples), which approximates the 'Circle' curve with radius 'R' and center '(xc,yc)'."<<endl;
+	cout<<"\tIt draws a polyline in 'red' (formed by an arbitrary number of samples), which approximates the 'Circle' curve with radius 'R' and center '(xc,yc)'."<<endl;
 	cout<<"\tThe radius 'R' and the center coodinates '(xc,yc)' are specified by the user, which can also:"<<endl<<endl;
 	cout<<"\t\t-) increase the number of the samples for the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number of the samples for the polyline of interest by pressing the '-' key."<<endl<<endl;
@@ -66,7 +66,7 @@ int main(int argc,char **argv)
 	cin>>radius;
 	if( (!cin) || (radius<=0) )
 	{
-		cout<<"\tPLEASE, INSERT A VALID VALUE FOR THE RADIUS 'R' OF INTEREST. THIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (POSITIVE AND NOT NULL) FOR THE RADIUS 'R' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
@@ -77,7 +77,7 @@ int main(int argc,char **argv)
 	cin>>xc>>yc;
 	if(!cin)
 	{
-		cout<<"\tPLEASE, INSERT THE CENTER COORDINATES '(xc,yc)' FOR THE 'CIRCLE' CURVE OF INTEREST (SEPARATED BY A SPACE). THIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT THE CENTER COORDINATES '(xc,yc)' FOR THE 'CIRCLE' CURVE OF INTEREST (SEPARATED BY A SPACE)."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
@@ -116,7 +116,7 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=3;
-	cout<<endl<<"\tWe draw a polyline, initially formed by "<<num_samples<<" samples (the minimum number as possible), for approximating the 'Circle' curve of center ("<<xc<<","<<yc<<") and radius "<<radius<<"."<<endl<<endl;
+	cout<<endl<<"\tThe polyline, approximating the 'Circle' curve of center ("<<xc<<","<<yc<<") and radius "<<radius<<", is initially formed by "<<num_samples<<" samples (the minimum number as possible)."<<endl<<endl;
 	cout.flush();
 }
 
@@ -173,12 +173,12 @@ void manageKeys(unsigned char key, int x, int y)
 	}
 }
 
-/// This function draws the polyline, approximating the <i>'Circle'</i> curve of interest, in the main OpenGL window.
+/// This function draws the polyline (in <i>'red'</i>), approximating the <i>'Circle'</i> curve of interest, in the main OpenGL window.
 void draw()
 {
 	float t;
 
-	/* We draw the polyline, approximating the 'Circle' curve of interest, in the main OpenGL window. */
+	/* We draw the polyline (in 'red'), approximating the 'Circle' curve of interest, in the main OpenGL window. */
 	t=0;
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0,0.0,0.0);
@@ -192,6 +192,6 @@ void draw()
 	/* If we arrive here, all is ok */
 	glEnd();
 	glFlush();
-	cout<<"\tApproximated and drawn the 'Circle' curve of interest by using a polyline with "<<num_samples<<" samples."<<endl;
+	cout<<"\tThe 'Circle' curve of interest is currently approximated by a polyline with "<<num_samples<<" samples (thus with "<<num_samples<<" vertices and "<<num_samples<<" edges)."<<endl;
 	cout.flush();
 }
