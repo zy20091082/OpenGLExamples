@@ -39,13 +39,13 @@ using namespace std;
 /// The center coordinates <i>'(xc,yc)'</i> for the <i>'Ellipse-like'</i> curve of interest.
 float xc,yc;
 
-/// The lengths <i>'Rx'</i> and <i>'Ry'</i> of the semi-axis for the <i>'Ellipse-like'</i> curve of interest.
+/// The lengths <i>'Rx'</i> and <i>'Ry'</i> of the semi-axis for drawing the <i>'Ellipse-like'</i> curve of interest.
 float radius_x,radius_y;
 
 /// The number of the samples, used for approximating the <i>'Ellipse-like'</i> curve of interest.
-unsigned int num_samples;
+unsigned int num_samples=3;
 
-/// The custom exponent to be used in the functions, used for defining and drawing the <i>'Ellipse-like'</i> curve of interest.
+/// The custom exponent <i>'n'</i> to be used in the functions, used for defining and drawing the <i>'Ellipse-like'</i> curve of interest.
 int ee;
 
 /* Prototypes for all functions of interest! */
@@ -59,28 +59,27 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-026' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polyline (formed by an arbitrary number of samples), which approximates an 'Ellipse-like' curve with semiaxis 'Rx' and 'Ry' (respectively along the x- and the y-axis), and center '(xc,yc)'."<<endl;
+	cout<<"\tIt draws a polyline in 'red' (formed by an arbitrary number of samples), which approximates an 'Ellipse-like' curve with semiaxis 'Rx' and 'Ry' (respectively along the x- and the y-axis), and center '(xc,yc)'."<<endl;
 	cout<<"\tIn particular, an 'Ellipse-like' curve is defined in the same spirit of the 'Ellipse' curve, but it requires an exponent 'n' for computing the cosine and the sine functions to the 'n'-th."<<endl;
 	cout<<"\tThe semiaxis 'Rx' and 'Ry', as well as the center coodinates '(xc,yc)' and the exponent 'n', are specified by the user, which can also:"<<endl<<endl;
 	cout<<"\t\t-) increase the number of the samples for the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number of the samples for the polyline of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
-	cout.flush();
 	cout<<"\tPlease, insert the semi-axis 'Rx' along the x-axis (positive and not null) for the 'Ellipse-like' curve of interest: ";
 	cin>>radius_x;
 	if( (!cin) || (radius_x<=0) )
 	{
-		cout<<"\tPLEASE, INSERT A VALID VALUE FOR THE SEMI-AXIS 'Rx' IN THE 'ELLIPSE-LIKE' CURVE OF INTEREST. THIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (POSITIVE AND NOT NULL) FOR THE SEMI-AXIS 'Rx' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
 	
-	/* Now, we read the length of the second semi-axis for the 'Ellipse-like' curve of interest. */
+	/* Now, we read the length of the second semi-axis 'Ry' (along the y-axis) for the 'Ellipse-like' curve of interest. */
 	cout<<"\tPlease, insert the semi-axis 'Ry' along the y-axis (positive and not null) for the 'Ellipse-like' curve of interest: ";
 	cin>>radius_y;
 	if( (!cin) || (radius_y<=0) )
 	{
-		cout<<"\tPLEASE, INSERT A VALID VALUE FOR THE SEMI-AXIS 'Ry' IN THE 'ELLIPSE-LIKE' CURVE OF INTEREST. THIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (POSITIVE AND NOT NULL) FOR THE SEMI-AXIS 'Ry' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
@@ -91,22 +90,22 @@ int main(int argc,char **argv)
 	cin>>xc>>yc;
 	if(!cin)
 	{
-		cout<<"\tPLEASE, INSERT THE CENTER COORDINATES '(xc,yc)' FOR THE 'ELLIPSE-LIKE' CURVE OF INTEREST. THIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT THE CENTER COORDINATES '(xc,yc)' FOR THE 'ELLIPSE-LIKE' CURVE OF INTEREST (SEPARATED BY A SPACE)."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
 	
 	/* Now, we read the exponent 'n' for drawing and defining the 'Ellipse-like' curve of interest. */
-	cout<<"\tPlease, insert the exponent 'n' (positive and not null) for the the 'Ellipse-like' curve of interest: ";
+	cout<<"\tPlease, insert the exponent 'n' (positive and not null) for the functions, defining the 'Ellipse-like' curve of interest: ";
 	cin>>ee;
 	if( (!cin) || (ee<=0) )
 	{
-		cout<<"\tPLEASE, INSERT A VALID VALUE FOR THE EXPONENT 'N' IN THE THE 'ELLIPSE-LIKE' CURVE OF INTEREST. THIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (POSITIVE AND NOT NULL) FOR THE EXPONENT 'n' FOR THE FUNCTIONS, DEFINING THE 'ELLIPSE-LIKE' CURVE OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
-
-	/* If we arrive here, we can draw our 'Ellipse-like' curve! */
+	
+	/* If we arrive here, we can draw the polyline, approximating the 'Ellipse-like' curve! */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -121,7 +120,7 @@ int main(int argc,char **argv)
    	glewInit();
    	initialize(); 
 	glutMainLoop();
-	return EXIT_SUCCESS;	
+	return EXIT_SUCCESS;
 }
 
 /// This function updates the viewport for the scene when it is resized. */
@@ -134,40 +133,6 @@ void resize(int w, int h)
    	glOrtho(xc-1.1*radius_x,xc+1.1*radius_x,yc-1.1*radius_y,yc+1.1*radius_y,-1,1);
    	glMatrixMode(GL_MODELVIEW);
    	glLoadIdentity();
-}
-
-/// This function initializes the OpenGL window of interest.
-void initialize() 
-{
-	/* We initialize the OpenGL window of interest! */
-	glClearColor(1.0, 1.0, 1.0, 0.0);
-	num_samples=3;
-	cout<<endl<<"\tWe draw a polyline, initially formed by "<<num_samples<<" samples (the minimum number as possible), for approximating the 'Ellipse-like' curve of center ("<<xc<<","<<yc<<"), exponent 'n'="<<ee<<", semi-axis 'Rx'="<<radius_x<<" (along the ";
-	cout<<"x-axis), and semi-axis 'Ry'="<<radius_y<<" (along the y axis)."<<endl<<endl;
-	cout.flush();
-}
-
-/// This function draws the polyline, approximating the <i>'Ellipse-like'</i> curve of interest, in the main OpenGL window.
-void draw()
-{
-	float t;
-	
-	/* We draw the polyline, approximating the 'Ellipse-like' curve of interest, in the main OpenGL window. */
-	t=0;
-	glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(1.0,0.0,0.0);
-	glBegin(GL_LINE_LOOP);
-	for(unsigned int i=0;i<=num_samples;i++)
-	{
-		glVertex3f(xc+radius_x*pow(cos(t),ee),yc+radius_y*pow(sin(t),ee),0);
-		t=t+(2*PI/num_samples);
-	}
-	
-	/* If we arrive here, all is ok */
-	glEnd();
-	glFlush();
-	cout<<"\tApproximated and drawn the 'Ellipse-like' curve of interest by using a polyline with "<<num_samples<<" samples."<<endl;
-	cout.flush();
 }
 
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
@@ -221,4 +186,38 @@ void manageKeys(unsigned char key, int x, int y)
     	/* Other keys are not important for us! */
     	break;
 	}
+}
+
+/// This function initializes the OpenGL window of interest.
+void initialize() 
+{
+	/* We initialize the OpenGL window of interest! */
+	glClearColor(1.0, 1.0, 1.0, 0.0);
+	num_samples=3;
+	cout<<endl<<"\tInitially, the polyline, approximating the 'Ellipse-like' curve of center ("<<xc<<","<<yc<<"), exponent 'n'="<<ee<<", semi-axis 'Rx'="<<radius_x<<" (along the x-axis), and semi-axis 'Ry'="<<radius_y<<" (along the y-axis), is formed by ";
+	cout<<num_samples<<" samples (the minimum number as possible)."<<endl<<endl;
+	cout.flush();
+}
+
+/// This function draws the polyline, approximating the <i>'Ellipse-like'</i> curve of interest, in the main OpenGL window.
+void draw()
+{
+	float t;
+	
+	/* We draw the polyline, approximating the 'Ellipse-like' curve of interest, in the main OpenGL window. */
+	t=0;
+	glClear(GL_COLOR_BUFFER_BIT);
+	glColor3f(1.0,0.0,0.0);
+	glBegin(GL_LINE_LOOP);
+	for(unsigned int i=0;i<=num_samples;i++)
+	{
+		glVertex3f(xc+radius_x*pow(cos(t),ee),yc+radius_y*pow(sin(t),ee),0);
+		t=t+(2*PI/num_samples);
+	}
+	
+	/* If we arrive here, all is ok */
+	glEnd();
+	glFlush();
+	cout<<"\tThe 'Ellipse-like' curve of interest is currently approximated by a polyline with "<<num_samples<<" samples (thus with "<<num_samples<<" vertices and "<<num_samples<<" edges)."<<endl;
+	cout.flush();
 }
