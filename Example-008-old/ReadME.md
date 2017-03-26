@@ -3,7 +3,7 @@ height="97"></A>
 
 <H3>The <i>'Example-008 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-008 (Old Mode)'</i> Test draws the <i>'filled version'</i> of two quadrilaterals with a not empty intersection in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window by providing a basic interaction mechanism with the user. The color of the quadrilaterals depends on the rendering order, which is defined as follows:<p><ul>
+The <i>'Example-008 (Old Mode)'</i> Test draws the <i>'filled version'</i> of two quadrilaterals with a not empty intersection in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window by providing a basic interaction mechanism with the user. In particular, the quadrilaterals have different size, and the smaller quadrilateral may be completely covered by the larger quadrilateral, depending on their rendering order. This latter plays a key role in this context. The color of the quadrilaterals depends on the rendering order, which is defined as follows:<p><ul>
 <li>the quadrilateral in <i>'red'</i> is rendered before in the code;</li>
 <li>the quadrilateral in <i>'blue'</i> is rendered after in the code.</li></ul><p>The rendering order of these quadrilaterals corresponds, respectively, to two configurations <i>'#0'</i> and <i>'#1'</i>, that can be changed by pressing any among the <i>'0'</i> and the <i>'1'</i> keys. Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-008-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
 
