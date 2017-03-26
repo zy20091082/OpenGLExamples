@@ -222,7 +222,7 @@ void draw()
 	glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
 	if(choice=='l')
 	{
-		/* We must approximate the boundary curve of the 'Circle' shape by using a polyline! */
+		/* We must approximate the boundary curve of the 'Circle' shape by using a polyline (in 'red')! */
 		glColor3f(1.0,0.0,0.0);
 		glBegin(GL_LINE_LOOP);
 		for(unsigned int i=0;i<=num_samples;i++)
@@ -239,7 +239,7 @@ void draw()
 	}
 	else if(choice=='f')
 	{
-		/* We must approximate the 'Circle' shape by using a triangle fan. The reference vertex is the center '(xc,yc)'. Here, the triangles are shown in 'dark gray', and the reference vertex is shown in 'red'. */
+		/* We must approximate the 'Circle' shape by using a triangle fan, formed by several filled triangles. The reference vertex is the center '(xc,yc)'. Here, the triangles are shown in 'dark gray', and the reference vertex is shown in 'red'. */
 		glColor3f(1.0,0.0,0.0);
 		glBegin(GL_TRIANGLE_FAN);
 		glVertex3f(xc,yc,0);
@@ -258,7 +258,7 @@ void draw()
 	}
 	else if(choice=='p')
 	{
-		/* We must approximate the 'Circle' shape by using only one polygon! */
+		/* We must approximate the 'Circle' shape by using only one polygon. The polygon is completely filled in 'red'. */
 		glColor3f(1.0,0.0,0.0);
 		glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
 		glBegin(GL_POLYGON);

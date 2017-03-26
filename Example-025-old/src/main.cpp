@@ -43,20 +43,26 @@ using namespace std;
 
 #endif
 
-/// The x- and the y-ranges for the scene of interest.
-float xmin,xmax,ymin,ymax;
+/// The coefficients of the equation, describing the custom <i>'Parabola'</i> curve of interest.
+/**
+ * The custom 'Parabola' curve of interest is described by the equation 'a x^2 + b x +c =0 ', where 'a' is not null (clearly).
+ */
+float a,b,c;
 
 /// The number of the samples, used for approximating the custom <i>'Parabola'</i> curve of interest.
 unsigned int num_samples;
 
-/// The radius for the interval, where the custom <i>'Parabola'</i> curve of interest must be drawn.
-float radius;
+/// The x- and the y-ranges for the scene of interest.
+float xmin,xmax,ymin,ymax;
 
-/// The coefficients of the equation, describing the custom <i>'Parabola'</i> curve of interest.
-float a,b,c;
-
-/// The vertex coordinates for the custom <i>'Parabola'</i> curve of interest.
+/// The vertex coordinates <i>'(xv,yv)'</i> for the custom <i>'Parabola'</i> curve of interest.
 float xv,yv;
+
+/// The radius <i>'R'</i> for the interval <i>['xv-R,xv+R']</i> , where the custom <i>'Parabola'</i> curve of interest must be drawn.
+/**
+ * In this case, the 'Parabola' curve of interest is centered with respect to its vertex '(xv,yv)'.
+ */
+float radius;
 
 /* Prototypes for all functions of interest! */
 void draw();
@@ -83,7 +89,7 @@ int main(int argc,char **argv)
 	cin>>a>>b>>c;
 	if( (!cin) || (a==0) )
 	{
-		cout<<"\tPLEASE, INSERT VALID COEFFICIENTS '(a,b,c)' FOR THE EQUATION 'a x^2 + b x + c = 0' (SEPARATED BY SPACES), DESCRIBING THE 'PARABOLA' CURVE OF INTEREST."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT VALID COEFFICIENTS '(a,b,c)' FOR THE EQUATION 'a x^2 + b x + c = 0' (SEPARATED BY SPACES), DESCRIBING THE 'PARABOLA' CURVE OF INTEREST."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
@@ -104,7 +110,7 @@ int main(int argc,char **argv)
 	cin>>radius;
 	if( (!cin) || (radius<=0) )
 	{
-		cout<<"\tPLEASE, INSERT  A VALID VALUE FOR THE RADIUS 'R' (POSITIVE AND NOT NULL), USED FOR DETERMINING THE X-RANGE [";
+		cout<<endl<<"\tPLEASE, INSERT  A VALID VALUE FOR THE RADIUS 'R' (POSITIVE AND NOT NULL), USED FOR DETERMINING THE X-RANGE [";
 		if(xv==0) cout<<"-R,+R]";
 		else cout<<xv<<"-R,"<<xv<<"+R]";
 		cout<<", WHERE THE 'PARABOLA' CURVE IS DRAWN."<<endl<<endl;
@@ -123,7 +129,7 @@ int main(int argc,char **argv)
 	cout<<"\tThe y-range for the 'Parabola' curve of interest: ["<<ymin<<","<<ymax<<"]"<<endl<<endl;
 	h=fabs(ymin-ymax);
 	
-	/* If we arrive here, we can draw our parabola! */
+	/* If we arrive here, we can draw the polyline, approximating the 'Parabola' curve of interest. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -139,19 +145,6 @@ int main(int argc,char **argv)
    	initialize(); 
 	glutMainLoop();
 	return EXIT_SUCCESS;
-}
-
-/// This function initializes the OpenGL window of interest.
-void initialize() 
-{
-	/* We initialize the OpenGL window of interest! */
-	glClearColor(1.0, 1.0, 1.0, 0.0);
-	num_samples=3;
-	cout<<"\tWe draw a polyline, initially formed by "<<num_samples<<" samples (the minimum number as possible), for approximating the 'Parabola' curve of equation ";
-	exportEquation();
-	cout<<", in the x-range ["<<xv-radius<<","<<xv+radius<<"], ";
-	cout<<"and with vertex ("<<xv<<","<<yv<<")."<<endl<<endl;
-	cout.flush();
 }
 
 /// This function exports the human-readable version of the equation for the <i>'Parabola'</i> curve of interest on the standard output.
@@ -189,73 +182,8 @@ void exportEquation()
 	cout<<"= 0'";
 }
 
-/// This function draws the polyline, approximating the <i>'Parabola'</i> curve of interest, in the main OpenGL window.
-void draw()
-{
-	float d,x;
-
-	/* We draw the polyline, approximating the <i>'Parabola'</i> curve of interest, in the main OpenGL window. */
-	glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(1.0,0.0,0.0);
-	glBegin(GL_LINE_STRIP);
-	d=(2*radius)/(num_samples-1);
-	for(unsigned int k=0;k<num_samples;k++)
-	{
-		x=xmin+k*d;
-		glVertex3f(x,evaluateParabola(x),0);
-	}
-	
-	/* If we arrive here, all is ok */
-	glEnd();
-	glFlush();
-	cout<<"\tApproximated and drawn the 'Parabola' curve of interest by using a polyline with "<<num_samples<<" samples"<<endl;
-	cout.flush();
-}
-
 /// This function evaluates the y-value for equation, describing the custom <i>'Parabola'</i> curve of interest, at a given x-coordinate.
 float evaluateParabola(float x) { return (a*x*x+b*x+c); }
-
-/// This function updates the viewport for the scene when it is resized. */
-void resize(int w, int h)
-{
-	float x0,x1,y0,y1;
-
-	/* First, we set properly the x-range. */
-	x0=xmin-0.1*fabs(xmin);
-	x1=xmax+0.1*fabs(xmax);
-	y0=ymin-0.1*fabs(ymin);
-	y1=ymax+0.1*fabs(ymax);
-	if(xmin==0)
-	{
-		x1=xmax+0.1*fabs(xmax);
-		x0=-0.1*fabs(xmax);
-	}
-	else if(xmax==0)
-	{
-		x0=xmin-0.1*fabs(xmin);
-		x1=0.1*fabs(xmin);
-	}
-	
-	/* Now, we set properly the y-range. */
-	if(ymin==0)
-	{
-		y1=ymax+0.1*fabs(ymax);
-		y0=-0.1*fabs(ymax);
-	}
-	else if(ymax==0)
-	{
-		y0=ymin-0.1*fabs(ymin);
-		y1=0.1*fabs(ymin);
-	}
-	
-	/* We update the projections and the modeling matrices! */
-	glViewport(0, 0, w, h);
-   	glMatrixMode(GL_PROJECTION);
-   	glLoadIdentity();
-   	glOrtho(x0,x1,y0,y1,-1,1);
-   	glMatrixMode(GL_MODELVIEW);
-   	glLoadIdentity();
-}
 
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
@@ -308,4 +236,81 @@ void manageKeys(unsigned char key, int x, int y)
     	/* Other keys are not important for us! */
     	break;
 	}
+}
+
+/// This function updates the viewport for the scene when it is resized. */
+void resize(int w, int h)
+{
+	float x0,x1,y0,y1;
+
+	/* First, we set properly the x-range. */
+	x0=xmin-0.1*fabs(xmin);
+	x1=xmax+0.1*fabs(xmax);
+	y0=ymin-0.1*fabs(ymin);
+	y1=ymax+0.1*fabs(ymax);
+	if(xmin==0)
+	{
+		x1=xmax+0.1*fabs(xmax);
+		x0=-0.1*fabs(xmax);
+	}
+	else if(xmax==0)
+	{
+		x0=xmin-0.1*fabs(xmin);
+		x1=0.1*fabs(xmin);
+	}
+	
+	/* Now, we set properly the y-range. */
+	if(ymin==0)
+	{
+		y1=ymax+0.1*fabs(ymax);
+		y0=-0.1*fabs(ymax);
+	}
+	else if(ymax==0)
+	{
+		y0=ymin-0.1*fabs(ymin);
+		y1=0.1*fabs(ymin);
+	}
+	
+	/* We update the projections and the modeling matrices! */
+	glViewport(0, 0, w, h);
+   	glMatrixMode(GL_PROJECTION);
+   	glLoadIdentity();
+   	glOrtho(x0,x1,y0,y1,-1,1);
+   	glMatrixMode(GL_MODELVIEW);
+   	glLoadIdentity();
+}
+
+/// This function initializes the OpenGL window of interest.
+void initialize() 
+{
+	/* We initialize the OpenGL window of interest! */
+	glClearColor(1.0, 1.0, 1.0, 0.0);
+	num_samples=3;
+	cout<<"\tThe polyline, approximating the 'Parabola' curve of equation ";
+	exportEquation();
+	cout<<", in the x-range ["<<xv-radius<<","<<xv+radius<<"], and with vertex ('"<<xv<<","<<yv<<"'), is initially formed by "<<num_samples<<" samples (the minimum number as possible), thus by "<<num_samples<<" vertices and "<<num_samples<<" edges."<<endl<<endl;
+	cout.flush();
+}
+
+/// This function draws the polyline (in <i>'red'</i>), approximating the <i>'Parabola'</i> curve of interest, in the main OpenGL window.
+void draw()
+{
+	float d,x;
+
+	/* We draw the polyline (in 'red'), approximating the <i>'Parabola'</i> curve of interest, in the main OpenGL window. */
+	glClear(GL_COLOR_BUFFER_BIT);
+	glColor3f(1.0,0.0,0.0);
+	glBegin(GL_LINE_STRIP);
+	d=(2*radius)/(num_samples-1);
+	for(unsigned int k=0;k<num_samples;k++)
+	{
+		x=xmin+k*d;
+		glVertex3f(x,evaluateParabola(x),0);
+	}
+	
+	/* If we arrive here, all is ok */
+	glEnd();
+	glFlush();
+	cout<<"\tThe polyline, approximating the 'Parabola' curve of interest, is currently formed by "<<num_samples<<" samples, thus by "<<num_samples<<" vertices and "<<num_samples<<" edges."<<endl;
+	cout.flush();
 }

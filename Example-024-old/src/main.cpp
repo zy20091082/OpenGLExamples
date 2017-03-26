@@ -144,12 +144,12 @@ void initialize()
 	cout.flush();
 }
 
-/// This function draws the specific quadstrip, approximating the <i>'Cicular Annulus'</i> shape of interest, in the OpenGL window of interest by using the current rendering settings (chosen by the user).
+/// This function draws the specific quadstrip (in <i>'red'</i>), approximating the <i>'Cicular Annulus'</i> shape of interest, in the OpenGL window of interest by using the current rendering settings (chosen by the user).
 void draw()
 {
 	float t;
 	
-	/* We draw the quadstrip, describing the circular annulus, in the OpenGL window of interest. */
+	/* We draw the quadstrip (in 'red'), describing the circular annulus, in the OpenGL window of interest. */
 	t=0;
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(5);
@@ -172,19 +172,19 @@ void draw()
 	glFlush();
 	if(choice=='l') 
 	{ 
-		/* We draw the 'wireframe version' for all quadrilaterals in the quadstrip of interest! */
+		/* We draw the 'wireframe version' (in 'red') for all quadrilaterals in the quadstrip of interest! */
 		cout<<"\tThe 'wireframe version' of the "<<num_quads<<" quadrilaterals in the quadstrip, approximating the 'Circular Annulus' shape of interest, is rendered."<<endl; 
 		cout.flush();
 	}
     else if(choice=='f') 
     {
-    	/* We draw the 'filled version' for all quadrilaterals in the quadstrip of interest! */
+    	/* We draw the 'filled version' (in 'red') for all quadrilaterals in the quadstrip of interest! */
     	cout<<"\tThe 'filled version' of the "<<num_quads<<" quadrilaterals in the quadstrip, approximating the 'Circular Annulus' shape of interest, is rendered."<<endl; 
 		cout.flush();
     }
     else if(choice=='p') 
     { 
-    	/* We draw only the points for all quadrilaterals in the quadstrip of interest! */
+    	/* We draw only the points (in 'red') for all quadrilaterals in the quadstrip of interest! */
     	cout<<"\tOnly the points of the "<<num_quads<<" quadrilaterals in the quadstrip, approximating the 'Circular Annulus' shape of interest, are rendered."<<endl;
 		cout.flush();
     }
