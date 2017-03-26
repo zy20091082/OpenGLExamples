@@ -47,7 +47,7 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-008' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tTwo quadrilaterals with a not empty intersection are drawn, and their rendering order can be changed as follows:"<<endl<<endl;
+	cout<<"\tTwo quadrilaterals with a not empty intersection are drawn, and their rendering order is defined as follows:"<<endl<<endl;
 	cout<<"\t\t-) the quadrilateral in 'red' is defined and rendered before in the code (inferior rendering level);"<<endl;
 	cout<<"\t\t-) the quadrilateral in 'blue' is defined and rendered after in the code (superior rendering level)."<<endl<<endl;
 	cout<<"\tThe rendering order of these quadrilaterals, corresponding to two configurations, can be changed by pressing the '0' and '1' keys."<<endl<<endl;
