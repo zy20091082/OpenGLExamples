@@ -3,7 +3,7 @@ height="97"></A>
 
 <H3>The <i>'Example-003 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-003 (Old Mode)'</i> Test draws the <i>'filled version'</i> of a quadrilateral (in <i>'red'</i>) with the 3D vertices <i>'(30,20,0)'</i>, <i>'(80,20,0)'</i>, <i>'(80,80,0)'</i>, and <i>'(20,80,0)'</i> in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window by providing a basic interaction mechanism with the user. In fact, the user can apply several different viewport configurations to the scene by pressing any among the <i>'0'</i>, <i>'1'</i>, <i>'2'</i>, <i>'3'</i>, <i>'4'</i>, and <i>'5'</i> keys. The window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-003-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
+The <i>'Example-003 (Old Mode)'</i> Test draws the <i>'filled version'</i> of a quadrilateral (in <i>'red'</i>) in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window by providing a basic interaction mechanism with the user. In fact, the user can apply several different viewport configurations to the scene by pressing any among the <i>'0'</i>, <i>'1'</i>, <i>'2'</i>, <i>'3'</i>, <i>'4'</i>, and <i>'5'</i> keys. The window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-003-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
 
 <h4>Dependencies</h4>
 
