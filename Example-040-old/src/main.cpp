@@ -38,7 +38,7 @@ using namespace std;
 #endif
 
 /// The number of the samples, used for approximating the <i>'Archimedean spiral-like'</i> curve of interest.
-unsigned int num_samples;
+unsigned int num_samples=5;
 
 /* Prototypes for all functions of interest! */
 void initialize();
@@ -51,8 +51,8 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a new window! */
 	cout<<endl<<"\tThis is the 'Example-040' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polyline (formed by an arbitrary number of samples), which approximates the 'Archimedean spiral-like' curve."<<endl;
-	cout<<"\tIn particular, the user, can also:"<<endl<<endl;
+	cout<<"\tIt draws a polyline in 'red' (formed by an arbitrary number of samples), which approximates the 'Archimedean spiral-like' curve."<<endl;
+	cout<<"\tIn particular, the user can also:"<<endl<<endl;
 	cout<<"\t\t-) increase the number of the samples for the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number of the samples for the polyline of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
@@ -137,22 +137,12 @@ void manageKeys(unsigned char key, int x, int y)
 	}
 }
 
-/// This function initializes the main OpenGL window.
-void initialize() 
-{
-	/* We initialize the OpenGL window of interest! */
-	glClearColor(1.0, 1.0, 1.0, 0.0);
-	num_samples=5;
-	cout<<"\tWe draw a polyline, initially formed by "<<num_samples<<" samples (the minimum number as possible), for approximating the 'Archimedean spiral-like' curve."<<endl<<endl;
-	cout.flush();
-}
-
-/// This function draws the polyline, approximating the <i>'Archimedean spiral-like'</i> curve of interest, in the main OpenGL window.
+/// This function draws the polyline (in <i>'red'</i>), approximating the <i>'Archimedean spiral-like'</i> curve of interest, in the main OpenGL window.
 void draw()
 {
 	float d=(12.0*PI/(num_samples-1));
 
-	/* Now, we draw the polyline, approximating the <i>'Archimedean spiral-like'</i> curve of interest, in the main OpenGL window. */
+	/* We draw the polyline (in 'red'), approximating the 'Archimedean spiral-like' curve of interest, in the main OpenGL window. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1,0,0);
 	glLineWidth(1.5);
@@ -166,6 +156,16 @@ void draw()
 	/* If we arrive here, then all is ok! */
 	glEnd();
 	glFlush();
-	cout<<"\tApproximated and drawn the 'Archimedean spiral-like' curve of interest by using a polyline with "<<num_samples<<" samples."<<endl;
+	cout<<"\tThe 'Archimedean spiral-like' curve of interest is currently approximated by a polyline with "<<num_samples<<" samples (thus with "<<num_samples<<" vertices and "<<num_samples<<" edges)."<<endl;
+	cout.flush();
+}
+
+/// This function initializes the main OpenGL window.
+void initialize() 
+{
+	/* We initialize the OpenGL window of interest! */
+	glClearColor(1.0, 1.0, 1.0, 0.0);
+	num_samples=5;
+	cout<<"\tThe polyline, approximating the 'Archimedean spiral-like' curve, is initially formed by "<<num_samples<<" samples (the minimum number as possible)."<<endl<<endl;
 	cout.flush();
 }

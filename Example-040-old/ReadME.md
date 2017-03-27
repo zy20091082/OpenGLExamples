@@ -5,7 +5,9 @@ height="97"></A>
 
 The <i>'Example-040 (Old Mode)'</i> Test draws a polyline in <i>'red'</i> (formed by an arbitrary number of samples), in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The polyline of interest approximates several complete turns of the <i>'Archimedean spiral-like'</i> curve. This test also provides a very basic interaction mechanism with the user, which can:<p><ul>
 <li>increase the number of the samples for the polyline of interest by pressing the <i>'+'</i> key;</li>
-<li>decrease the number of the samples for the polyline of interest by pressing the <i>'-'</i> key.</li></ul>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-040-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
+<li>decrease the number of the samples for the polyline of interest by pressing the <i>'-'</i> key.</li></ul>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
+
+In particular, this test consists of the <i>'Example-040-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
 
 <h4>Dependencies</h4>
 
