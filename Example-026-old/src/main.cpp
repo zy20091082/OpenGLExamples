@@ -100,7 +100,7 @@ int main(int argc,char **argv)
 	cin>>ee;
 	if( (!cin) || (ee<=0) )
 	{
-		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (POSITIVE AND NOT NULL) FOR THE EXPONENT 'n' FOR THE FUNCTIONS, DEFINING THE 'ELLIPSE-LIKE' CURVE OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (POSITIVE AND NOT NULL) FOR THE EXPONENT 'n' IN THE FUNCTIONS, DEFINING THE 'ELLIPSE-LIKE' CURVE OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
