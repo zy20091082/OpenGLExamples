@@ -39,7 +39,7 @@ using namespace std;
 /// The number of the samples, used for approximating the <i>'Cosine-like'</i> curve of interest.
 unsigned int num_samples=3;
 
-/// The custom exponent <i>'n'</i> to be used in the functions, used for defining and drawing the <i>'Cosine-like'</i> curve of interest.
+/// The custom exponent <i>'n'</i> to be used in the function, used for defining and drawing the <i>'Cosine-like'</i> curve of interest.
 int ee;
 
 /* Prototypes for all functions of interest! */
@@ -62,7 +62,7 @@ int main(int argc,char **argv)
 	cout.flush();
 	
 	/* Now, we read the exponent 'n' for drawing and defining the 'Cosine-like' curve of interest. */
-	cout<<"\tPlease, insert the exponent 'n' (positive and not null) for the functions, defining the 'Cosine-like' curve of interest: ";
+	cout<<"\tPlease, insert the exponent 'n' (positive and not null) for the function, defining the 'Cosine-like' curve of interest: ";
 	cin>>ee;
 	if( (!cin) || (ee<=0) )
 	{

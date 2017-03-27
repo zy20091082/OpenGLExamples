@@ -37,13 +37,13 @@ using namespace std;
 #endif
 
 /// The number of the samples, used for approximating the <i>'Lissajous-like'</i> curve of interest.
-unsigned int num_samples;
+unsigned int num_samples=5;
 
-/// The coefficients 'kx' and 'ky' for the equations, describing the custom <i>'Lissajous-like'</i> curve of interest.
-int kx,ky;
+/// The coefficients <i>'Kx'</i> and <i>'Ky'</i> to be used in the functions, used for defining and drawing the <i>'Lissajous-like'</i> curve of interest.
+int Kx,Ky;
 
-/// The coefficients 'rx' and 'ry' for the equations, describing the custom <i>'Lissajous-like'</i> curve of interest.
-float rx,ry;
+/// The coefficients <i>'Rx'</i> and <i>'Ry'</i> to be used in the functions, used for defining and drawing the <i>'Lissajous-like'</i> curve of interest.
+int Rx,Ry;
 
 /* Prototypes for all functions of interest! */
 void draw();
@@ -54,9 +54,9 @@ void manageKeys(unsigned char key, int x, int y);
 /// The main function for the <i>'Example-029 (Old Mode)'</i> example.
 int main(int argc,char **argv)
 {
-	/* We initialize everything, and create a very basic window! */
+	/* We initialize eveRything, and create a veRy basic window! */
 	cout<<endl<<"\tThis is the 'Example-029' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polyline (formed by an arbitrary number of samples), which approximates a custom version of the 'Lissajous-like' curve, defined as follows:"<<endl<<endl;
+	cout<<"\tIt draws a polyline in 'blue' (formed by an arbitraRy number of samples), which approximates a custom version of the 'Lissajous-like' curve, defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = Rx * cos( Kx * t)"<<endl;
 	cout<<"\ty(t) = Ry * sin( Ky * t)"<<endl<<endl;
 	cout<<"\twith 't' belonging to [0,"<<(2*PI)<<"] and 'Kx'>0, 'Ky'>0, 'Rx'>0, 'Ry'>0."<<endl;
@@ -64,45 +64,45 @@ int main(int argc,char **argv)
 	cout<<"\t\t-) increase the number of the samples for the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number of the samples for the polyline of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
-	cout<<"\tPlease, insert the coefficient 'Rx' (positive and not null) for the custom 'Lissajous-like' curve of interest: ";
+	cout<<"\tPlease, insert the coefficient 'Rx' (positive and not null integer) for the custom 'Lissajous-like' curve of interest: ";
 	cout.flush();
-	cin>>rx;
-	if( (!cin) || (rx<=0) )
+	cin>>Rx;
+	if( (!cin) || (Rx<=0) )
 	{
-		cout<<"\tPLEASE, INSERT A VALID VALUE FOR THE COEFFICIENT 'RX' IN THE CUSTOM 'LISSAJOUS-LIKE' CURVE OF INTEREST. THIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (POSITIVE AND NOT INTEGER) FOR THE COEFFICIENT 'Rx' IN THE CUSTOM 'LISSAJOUS-LIKE' CURVE OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
 	
-	/* Now, we read the coefficient 'Ry' (positive and not null) for the custom 'Lissajous-like' curve of interest. */
-	cout<<"\tPlease, insert the coefficient 'Ry' (positive and not null) for the custom 'Lissajous-like' curve of interest: ";
+	/* Now, we read the coefficient 'Ry' (positive and not null integer) for the custom 'Lissajous-like' curve of interest. */
+	cout<<"\tPlease, insert the coefficient 'Ry' (positive and not null integer) for the custom 'Lissajous-like' curve of interest: ";
 	cout.flush();
-	cin>>ry;
-	if( (!cin) || (ry<=0) )
+	cin>>Ry;
+	if( (!cin) || (Ry<=0) )
 	{
-		cout<<"\tPLEASE, INSERT A VALID VALUE FOR THE COEFFICIENT 'RY' IN THE CUSTOM 'LISSAJOUS-LIKE' CURVE OF INTEREST. THIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (POSITIVE AND NOT NULL INTEGER) FOR THE COEFFICIENT 'Ry' IN THE CUSTOM 'LISSAJOUS-LIKE' CURVE OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
 	
-	/* Now, we read the coefficient 'Kx' (positive and not null) for the custom 'Lissajous-like' curve of interest. */
-	cout<<"\tPlease, insert the coefficient 'Kx' (positive and not null) for the custom 'Lissajous-like' curve of interest: ";
+	/* Now, we read the coefficient 'Kx' (positive and not null integer) for the custom 'Lissajous-like' curve of interest. */
+	cout<<"\tPlease, insert the coefficient 'Kx' (positive and not null integer) for the custom 'Lissajous-like' curve of interest: ";
 	cout.flush();
-	cin>>kx;
-	if( (!cin) || (kx<=0) )
+	cin>>Kx;
+	if( (!cin) || (Kx<=0) )
 	{
-		cout<<"\tPLEASE, INSERT A VALID VALUE FOR THE COEFFICIENT 'KX' IN THE CUSTOM 'LISSAJOUS-LIKE' CURVE OF INTEREST. THIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (POSITIVE AND NOT NULL INTEGER) FOR THE COEFFICIENT 'Kx' IN THE CUSTOM 'LISSAJOUS-LIKE' CURVE OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
 	
-	/* Now, we read the coefficient 'Ky' (positive and not null) for the custom 'Lissajous-like' curve of interest. */
-	cout<<"\tPlease, insert the coefficient 'Ky' (positive and not null) for the custom 'Lissajous-like' curve of interest: ";
+	/* Now, we read the coefficient 'Ky' (positive and not null integer) for the custom 'Lissajous-like' curve of interest. */
+	cout<<"\tPlease, insert the coefficient 'Ky' (positive and not null integer) for the custom 'Lissajous-like' curve of interest: ";
 	cout.flush();
-	cin>>ky;
-	if( (!cin) || (ky<=0) )
+	cin>>Ky;
+	if( (!cin) || (Ky<=0) )
 	{
-		cout<<"\tPLEASE, INSERT A VALID VALUE FOR THE COEFFICIENT 'KY' IN THE CUSTOM 'LISSAJOUS-LIKE' CURVE OF INTEREST. THIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (POSITIVE AND NOT NULL INTEGER) FOR THE COEFFICIENT 'Ky' IN THE CUSTOM 'LISSAJOUS-LIKE' CURVE OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
@@ -111,9 +111,9 @@ int main(int argc,char **argv)
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
-	if(rx==ry) glutInitWindowSize(500,500);
-	else if(rx>ry) { glutInitWindowSize(1000,1000*ry/rx); }
-	else { glutInitWindowSize(1000*rx/ry,1000); }
+	if(Rx==Ry) glutInitWindowSize(500,500);
+	else if(Rx>Ry) { glutInitWindowSize(1000,1000*Ry/Rx); }
+	else { glutInitWindowSize(1000*Rx/Ry,1000); }
 	glutCreateWindow("The 'Example-029' Example, based on the (Old Mode) OpenGL");
 	glutReshapeFunc(resize);
 	glutKeyboardFunc(manageKeys);
@@ -132,19 +132,9 @@ void resize(int w, int h)
 	glViewport(0, 0, w, h);
    	glMatrixMode(GL_PROJECTION);
    	glLoadIdentity();
-   	glOrtho(-1.1*rx,1.1*rx,-1.1*ry,1.1*ry,-1,1);
+   	glOrtho(-1.1*Rx,1.1*Rx,-1.1*Ry,1.1*Ry,-1,1);
    	glMatrixMode(GL_MODELVIEW);
    	glLoadIdentity();
-}
-
-/// This function initializes the OpenGL window of interest.
-void initialize() 
-{
-	/* We initialize the OpenGL window of interest! */
-	glClearColor(1.0, 1.0, 1.0, 0.0);
-	num_samples=5;
-	cout<<endl<<"\tWe draw a polyline, initially formed by "<<num_samples<<" samples (the minimum number as possible), for approximating the custom 'Lissajous-like' curve of interest."<<endl<<endl;
-	cout.flush();
 }
 
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
@@ -200,7 +190,17 @@ void manageKeys(unsigned char key, int x, int y)
 	}
 }
 
-/// This function draws the polyline, approximating the custom <i>'Lissajous-like'</i> curve of interest, in the main OpenGL window.
+/// This function initializes the OpenGL window of interest.
+void initialize() 
+{
+	/* We initialize the OpenGL window of interest! */
+	glClearColor(1.0, 1.0, 1.0, 0.0);
+	num_samples=5;
+	cout<<endl<<"\tInitially, the polyline, approximating the 'Lissajous-like' curve with coefficients 'Kx'="<<Kx<<", 'Ky'="<<Ky<<", 'Rx'="<<Rx<<", and 'Ry'="<<Ry<<" is formed by "<<num_samples<<" samples (the minimum number as possible)."<<endl<<endl;
+	cout.flush();
+}
+
+/// This function draws the polyline, approximating the <i>'Lissajous-like'</i> curve of interest, in the main OpenGL window.
 void draw()
 {
 	float d,t;
@@ -215,12 +215,12 @@ void draw()
 	for(int k=0;k<num_samples;k++)
 	{
 		t=k*d;
-		glVertex3f(rx*cos(kx*t),ry*sin(ky*t),0);
+		glVertex3f(Rx*cos(Kx*t),Ry*sin(Ky*t),0);
 	}
 	
-	/* If we arrive here, we have drawn everything! */
+	/* If we arrive here, we have drawn eveRything! */
 	glEnd();
 	glFlush();
-	cout<<"\tApproximated and drawn the custom 'Lissajous-like' curve of interest by using a polyline with "<<num_samples<<" samples."<<endl;
+	cout<<"\tThe 'Lissajous-like' curve of interest is currently approximated by a polyline with "<<num_samples<<" samples (thus with "<<num_samples<<" vertices and "<<num_samples<<" edges)."<<endl;
 	cout.flush();
 }
