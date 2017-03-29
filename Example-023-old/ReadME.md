@@ -3,7 +3,7 @@ height="97"></A>
 
 <H3>The <i>'Example-023 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-023 (Old Mode)'</i> Test draws a polyline (in <i>'red'</i>), formed by an arbitrary number of samples, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The polyline of interest approximates the <i>'Ellipse'</i> curve with semiaxis <i>'Rx'</i> and <i>'Ry'</i> (respectively along the x- and the y-axis), as well as center <i>'(xc,yc)'</i>. This test also provides a very basic interaction mechanism with the user, which must provide the semiaxis <i>'Rx'</i> and <i>'Ry'</i>, as well as the center <i>'(xc,yc)'</i>. The user can also:<p><ul>
+The <i>'Example-023 (Old Mode)'</i> Test draws a polyline (in <i>'red'</i>), formed by an arbitrary number of samples, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The polyline of interest approximates the <i>'Ellipse'</i> curve with semiaxis <i>'Rx'</i> and <i>'Ry'</i> (respectively along the x- and the y-axis), as well as center <i>'(xc,yc)'</i>. The <i>'Ellipse'</i> curve is defined as follows:<p><pre>x(t) = xc + Rx * cos(t), y(t) = yc + Ry * sin(t)</pre><p>with <i>'Rx'>0</i>, <i>'Ry'>0</i>, and <i>'t'</i> in <i>'[-pi,pi]'</i>.<p>This test also provides a very basic interaction mechanism with the user, which must provide the semiaxis <i>'Rx'</i> and <i>'Ry'</i>, as well as the center <i>'(xc,yc)'</i>. The user can also:<p><ul>
 <li>increase the number of the samples for the polyline of interest by pressing the <i>'+'</i> key;</li>
 <li>decrease the number of the samples for the polyline of interest by pressing the <i>'-'</i> key.</li></ul>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
 
