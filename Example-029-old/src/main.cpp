@@ -54,9 +54,9 @@ void manageKeys(unsigned char key, int x, int y);
 /// The main function for the <i>'Example-029 (Old Mode)'</i> example.
 int main(int argc,char **argv)
 {
-	/* We initialize eveRything, and create a veRy basic window! */
+	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-029' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polyline in 'blue' (formed by an arbitraRy number of samples), which approximates a custom version of the 'Lissajous-like' curve, defined as follows:"<<endl<<endl;
+	cout<<"\tIt draws a polyline in 'blue' (formed by an arbitrary number of samples), which approximates a custom version of the 'Lissajous-like' curve, defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = Rx * cos( Kx * t)"<<endl;
 	cout<<"\ty(t) = Ry * sin( Ky * t)"<<endl<<endl;
 	cout<<"\twith 't' belonging to [0,"<<(2*PI)<<"] and 'Kx'>0, 'Ky'>0, 'Rx'>0, 'Ry'>0."<<endl;
@@ -218,7 +218,7 @@ void draw()
 		glVertex3f(Rx*cos(Kx*t),Ry*sin(Ky*t),0);
 	}
 	
-	/* If we arrive here, we have drawn eveRything! */
+	/* If we arrive here, we have drawn everything! */
 	glEnd();
 	glFlush();
 	cout<<"\tThe 'Lissajous-like' curve of interest is currently approximated by a polyline with "<<num_samples<<" samples (thus with "<<num_samples<<" vertices and "<<num_samples<<" edges)."<<endl;
