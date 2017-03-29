@@ -44,6 +44,10 @@ void manageKeys(unsigned char key, int x, int y);
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
+	cout<<endl<<"\tThis is the 'Example-002' Example, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tIt creates a basic OpenGL window, and draws a polygon (quadrilateral) in 'red'."<<endl<<endl;
+	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(50,25);
@@ -87,15 +91,7 @@ void draw()
 }
 
 /// This function initializes the OpenGL window of interest. */
-void initialize() 
-{ 
-	/* We initialize the OpenGL window of interest! */
-	cout<<endl<<"\tThis is the 'Example-002' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt creates a basic OpenGL window, and draws a polygon (quadrilateral) in 'red'."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
-	cout.flush();
-	glClearColor(1.0, 1.0, 1.0, 0.0); 
-}
+void initialize() { glClearColor(1.0, 1.0, 1.0, 0.0); }
 
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)

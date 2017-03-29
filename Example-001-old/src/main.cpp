@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-001 (Old Mode)' example
+ * main.cpp - the main function for the 'Example-001 (Old Mode)' example.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -34,19 +34,10 @@ using namespace std;
 
 #endif
 
-/// This function initializes the OpenGL window of interest.
-void initialize() 
-{
-	/* We initialize the OpenGL window of interest! */
-	cout<<endl<<"\tThis is the 'Example-001' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt creates a basic OpenGL window by providing no interaction with the user."<<endl<<endl;
-	cout.flush();
-}
-
-/// This function draws the black background in the OpenGL window of interest.
+/// This function draws the <i>'black'</i> background in the OpenGL window of interest.
 void draw(void)
 {
-	/* We draw the black background in the OpenGL window of interest. */
+	/* We draw the 'black' background in the OpenGL window of interest. */
 	glClearColor(0.0f,0.0f,0.0f,1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 	glFlush();
@@ -56,13 +47,15 @@ void draw(void)
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
+	cout<<endl<<"\tThis is the 'Example-001' Example, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tIt creates a basic OpenGL window by providing no interaction with the user."<<endl<<endl;
+	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(50,25);
 	glutInitWindowSize(480,480);
 	glutCreateWindow("The 'Example-001' Example, based on the (Old Mode) OpenGL");
 	glutDisplayFunc(draw);
-	initialize();
 	glutMainLoop();
 	return EXIT_SUCCESS;
 }
