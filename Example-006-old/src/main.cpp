@@ -44,6 +44,12 @@ void manageKeys(unsigned char key, int x, int y);
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
+	cout<<endl<<"\tThis is the 'Example-006' Example, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tIt draws the polygon in 'red' with the maximum number 7 of sides, obtained as the intersection of the following elements:"<<endl<<endl;
+	cout<<"\t\t-) the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]';"<<endl;
+	cout<<"\t\t-) the triangle with vertices '(-50,-30,0)' - '(150,-50,0)' - '(50,150,0)'."<<endl<<endl;
+	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -74,7 +80,7 @@ void resize(int w, int h)
 /// This function draws a triangle in <i>'red'</i> within the OpenGL window of interest.
 void draw()
 {
-	/* We draw a 'red' triangle within the OpenGL window of interest! */
+	/* We draw a triangle in 'red' within the OpenGL window of interest! */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0, 0.0, 0.0);
   	glBegin(GL_POLYGON);
@@ -86,17 +92,7 @@ void draw()
 }
 
 /// This function initializes the OpenGL window of interest. */
-void initialize() 
-{
-	/* We initialize the OpenGL window of interest! */
-	cout<<endl<<"\tThis is the 'Example-006' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the polygon in 'red' with the maximum number 7 of sides, obtained as the intersection of the following elements:"<<endl<<endl;
-	cout<<"\t\t-) the viewing box (orthographic projection): [0,100] x [0,100] x [-1,1];"<<endl;
-	cout<<"\t\t-) the triangle with vertices (-50,-30,0) - (150,-50,0) - (50,150,0)."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
-	cout.flush();
-	glClearColor(1.0, 1.0, 1.0, 0.0); 
-}
+void initialize() { glClearColor(1.0, 1.0, 1.0, 0.0); }
 
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
@@ -104,13 +100,13 @@ void manageKeys(unsigned char key, int x, int y)
 	/* We are interested only in the 'q' - 'Q' - 'Esc' keys. */
 	switch (key)
 	{
-		case 113:
+		case 'q':
 	
 		/* The key is 'q', thus we can exit from this program. */
 		exit(EXIT_SUCCESS);
 		break;
 		
-		case 81:
+		case 'Q':
 	
 		/* The key is 'Q', thus we can exit from this program. */
 		exit(EXIT_SUCCESS);

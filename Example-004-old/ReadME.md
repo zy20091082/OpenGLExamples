@@ -3,7 +3,7 @@ height="97"></A>
 
 <H3>The <i>'Example-004 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-004 (Old Mode)'</i> Test draws the <i>'filled version'</i> of two quadrilaterals (respectively, in <i>'red'</i> and <i>'green'</i>) in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window by providing a basic interaction mechanism with the user. In fact, the user can choose the viewport configuration for the scene by pressing any among the <i>'0'</i> and the <i>'1'</i> keys. Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-004-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
+The <i>'Example-004 (Old Mode)'</i> Test draws the <i>'filled version'</i> of two quadrilaterals (respectively, in <i>'red'</i> and <i>'green'</i>) in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window by providing a basic interaction mechanism with the user. In fact, the user can choose the orthographic viewport configuration for the scene by pressing any among the <i>'0'</i> and the <i>'1'</i> keys. Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-004-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
 
 <h4>Dependencies</h4>
 

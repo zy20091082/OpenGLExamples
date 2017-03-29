@@ -48,10 +48,9 @@ int main(int argc,char **argv)
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-005' Example, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws a polygon in 'red', obtained as the intersection between the following elements:"<<endl<<endl;
-	cout<<"\t\t-) the viewing box (orthographic projection): [0,100] x [0,100] x [-1,1];"<<endl;
-	cout<<"\t\t-) the triangle with vertices (x,20,0) - (80,20,0) - (80,80,0)."<<endl<<endl;
-	cout.flush();
-	cout<<"\tHere, the viewing box is not modified. Instead, the 'x' coordinate of the triangle can be moved by the user along the x-axis. The user can:"<<endl<<endl;
+	cout<<"\t\t-) the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]';"<<endl;
+	cout<<"\t\t-) the triangle with vertices '(x,20,0)' - '(80,20,0)' - '(80,80,0)'."<<endl<<endl;
+	cout<<"\tHere, the orthographic viewing box is not modified. Instead, the 'x' coordinate of the triangle can be moved by the user along the x-axis. The user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the 'x' coordinate by 1.0 by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the 'x' coordinate by 1.0 by pressing the '-' key;"<<endl;
 	cout<<"\t\t-) reset the 'x' coordinate to its initial value '20' by pressing the '=' key."<<endl<<endl;
@@ -140,7 +139,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '+, thus we increase the 'x' coordinate. */
 		xcoord=xcoord+(GLfloat)1.0;
-		cout<<"\tIncreasing the 'x' coordinate as "<<xcoord<<" in the current scene."<<endl;
+		cout<<"\tThe 'x' coordinate is increased to "<<xcoord<<" in the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -150,7 +149,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-', thus we decrease the 'x' coordinate. */
 		xcoord=xcoord-(GLfloat)1.0;
-		cout<<"\tDecreasing the 'x' coordinate as "<<xcoord<<" in the current scene."<<endl;
+		cout<<"\tThe 'x' coordinate is decreased to "<<xcoord<<" in the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -161,7 +160,7 @@ void manageKeys(unsigned char key, int x, int y)
 		/* The key is '=', thus we reinitialize the 'x' coordinate. */
 		xcoord=20.0;
 		eol=true;
-		cout<<"\tReinitializing the 'x' coordinate to the default value "<<xcoord<<" in the current scene."<<endl;
+		cout<<"\tThe 'x' coordinate is set to its default value "<<xcoord<<" in the current scene."<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;

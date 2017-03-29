@@ -50,7 +50,7 @@ int main(int argc,char **argv)
 	cout<<"\tTwo quadrilaterals with a not empty intersection are drawn, and their rendering order is defined as follows:"<<endl<<endl;
 	cout<<"\t\t-) the quadrilateral in 'red' is defined and rendered before in the code (inferior rendering level);"<<endl;
 	cout<<"\t\t-) the quadrilateral in 'blue' is defined and rendered after in the code (superior rendering level)."<<endl<<endl;
-	cout<<"\tThe rendering order of these quadrilaterals, corresponding to two configurations, can be changed by pressing the '0' and '1' keys."<<endl<<endl;
+	cout<<"\tThe rendering order of these quadrilaterals, corresponding to two configurations, can be changed by pressing any among the '0' and '1' keys."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -80,10 +80,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws 2 quadrilaterals in the OpenGL window of interest.
+/// This function draws 2 quadrilaterals in the OpenGL window of interest by using the rendering order, chosen by the user.
 void draw()
 {
-	/* We draw 2 quadrilaterals in the OpenGL window of interest! */
+	/* We draw 2 quadrilaterals in the OpenGL window of interest by using the rendering order, chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0,0.0,0.0);
 	if(choice==0)
@@ -172,7 +172,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '0', thus we apply the configuration #0 to the current scene. */
 		choice=0;
-		cout<<"\tApplying the configuration #"<<choice<<" to the current scene."<<endl;
+		cout<<"\tThe configuration #"<<choice<<" is applied to the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -182,7 +182,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '1', thus we apply the configuration #1 to the current scene. */
 		choice=1;
-		cout<<"\tApplying the configuration #"<<choice<<" to the current scene."<<endl;
+		cout<<"\tThe configuration #"<<choice<<" is applied to the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
