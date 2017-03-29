@@ -4,7 +4,7 @@ height="97"></A>
 <H3>The <i>'Example-027 (Old Mode)'</i> Test</H3>
 
 The <i>'Example-027 (Old Mode)'</i> Test draws a polyline (in <i>'red'</i>), formed by an arbitrary number of samples, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The polyline of interest approximates the <i>'Sine-like'</i> curve, defined in the range <i>'[-pi,+pi]'</i>. In particular, the <i>'Sine-like'</i> curve is defined in the same spirit of the <i>'Sine'</i> curve, but it requires an exponent <i>'n'</i> for computing the sine function to the <i>'n'</i>-th, as follows:<center>
-<pre>x(t) = t, y(t) = sin^n (t)</pre></center><p>with <i>'t'</i> in <i>'[-pi,pi]'</i>.<p>This test also provides a very basic interaction mechanism with the user, which must provide the exponent <i>'n'</i>, the semiaxis <i>'Rx'</i> and <i>'Ry'</i>, as well as the center <i>'(xc,yc)'</i>. The user can also:<p><ul>
+<pre>x(t) = t, y(t) = sin^n (t)</pre></center><p>with <i>'n'>0</i> and <i>'t'</i> in <i>'[-pi,pi]'</i>.<p>This test also provides a very basic interaction mechanism with the user, which must provide the exponent <i>'n'</i>, the semiaxis <i>'Rx'</i> and <i>'Ry'</i>, as well as the center <i>'(xc,yc)'</i>. The user can also:<p><ul>
 <li>increase the number of the samples for the polyline of interest by pressing the <i>'+'</i> key;</li>
 <li>decrease the number of the samples for the polyline of interest by pressing the <i>'-'</i> key.</li></ul>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
 
