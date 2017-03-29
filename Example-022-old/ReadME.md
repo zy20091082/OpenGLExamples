@@ -4,11 +4,11 @@ height="97"></A>
 <H3>The <i>'Example-022 (Old Mode)'</i> Test</H3>
 
 The <i>'Example-022 (Old Mode)'</i> Test draws 3 different versions (formed by an arbitrary number of samples) of the <i>'Circle'</i> shape with radius <i>'R'</i> and center <i>'(xc,yc)'</i>. This test also provides a very basic interaction mechanism with the user, which must provide the radius <i>'R'</i> and the center <i>'(xc,yc)'</i>. The user can also:<p><ul>
-<li>decide to approximate the boundary (in <i>'red'</i>) of the <i>'Circle'</i> shape through a polyline (<i>'wireframe version'</i>) by pressing the <i>'l'</i> key;</li>
-<li>decide to approximate the <i>'Circle'</i> shape through a triangle fan (in <i>'dark gray'</i>) of several filled triangles (<i>'filled version'</i>), incident at the reference vertex <i>'(xc,yc)'</i> (in <i>'red'</i>), by pressing the <i>'f'</i> key;</li>
+<li>decide to approximate the boundary (in <i>'red'</i>) of the <i>'Circle'</i> shape through a polyline by pressing the <i>'l'</i> key;</li>
+<li>decide to approximate the <i>'Circle'</i> shape through the <i>'filled version'</i> for a triangle fan (in <i>'dark gray'</i>) of several triangles, incident at the reference vertex <i>'(xc,yc)'</i> (in <i>'red'</i>), by pressing the <i>'f'</i> key;</li>
 <li>decide to approximate the <i>'Circle'</i> shape through the <i>'filled version'</i> of only one polygon (in <i>'red'</i>) by pressing the <i>'p'</i> key;</li>
-<li>increase the number of the samples for the polyline of interest by pressing the <i>'+'</i> key;</li>
-<li>decrease the number of the samples for the polyline of interest by pressing the <i>'-'</i> key.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
+<li>increase the number of the samples for the approximation of interest by pressing the <i>'+'</i> key;</li>
+<li>decrease the number of the samples for the approximation of interest by pressing the <i>'-'</i> key.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
 
 In particular, this test consists of the <i>'Example-022-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
 
