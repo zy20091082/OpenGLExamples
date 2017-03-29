@@ -69,7 +69,7 @@ int main(int argc,char **argv)
 	cout<<"\tIt draws different versions (formed by an arbitrary number of samples) of the 'Circle' shape with radius 'R' and center '(xc,yc)'."<<endl;
 	cout<<"\tThe radius 'R' and the center coodinates '(xc,yc)' are specified by the user, which can also:"<<endl<<endl;
 	cout<<"\t\t-) decide to approximate the boundary (in 'red') of the 'Circle' shape through a polyline ('wireframe version') by pressing the 'l' key;"<<endl;
-	cout<<"\t\t-) decide to approximate the 'Circle' shape through a triangle fan ('in dark gray') of several filled triangles ('filled version'), incident at the reference vertex '(xc,yc)' (in 'red'), by pressing the 'f' key;"<<endl;
+	cout<<"\t\t-) decide to approximate the 'Circle' shape through a triangle fan (in 'dark gray') of several filled triangles ('filled version'), incident at the reference vertex '(xc,yc)' (in 'red'), by pressing the 'f' key;"<<endl;
 	cout<<"\t\t-) decide to approximate the 'Circle' shape through the 'filled version' of only one polygon (in 'red') by pressing the 'p' key;"<<endl;
 	cout<<"\t\t-) increase the number of the samples for the approximation of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number of the samples for the approximation of interest by pressing the '-' key."<<endl<<endl;
