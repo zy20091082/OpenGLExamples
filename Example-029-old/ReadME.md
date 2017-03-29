@@ -3,7 +3,7 @@ height="97"></A>
 
 <H3>The <i>'Example-029 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-029 (Old Mode)'</i> Test draws a polyline (in <i>'red'</i>), formed by an arbitrary number of samples, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The polyline of interest approximates the <i>'Lissajous-like'</i> curve, defined as follows:<center><pre>x(t) = Rx * cos( Kx * t), y(t) = Ry * sin( Ky * t)</pre></center><p>with with <i>'t'</i> belonging to <i>'[0,2*pi]'</i>, and <i>'Kx'>0</i>, <i>'Ky'>0</i>, <i>'Rx'>0</i>, <i>'Ry'>0</i>. This test also provides a very basic interaction mechanism with the user, which must provide the coefficients <i>'Kx'</i>, <i>'Ky'</i>, <i>'Rx'</i>, and <i>'Ry'</i>. The user can also:<p><ul>
+The <i>'Example-029 (Old Mode)'</i> Test draws a polyline (in <i>'red'</i>), formed by an arbitrary number of samples, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The polyline of interest approximates the <i>'Lissajous-like'</i> curve, defined as follows:<center><pre>x(t) = Rx * cos( Kx * t), y(t) = Ry * sin( Ky * t)</pre></center><p>with <i>'t'</i> in <i>'[0,2*pi]'</i>, and <i>'Kx'>0</i>, <i>'Ky'>0</i>, <i>'Rx'>0</i>, <i>'Ry'>0</i>.<p>This test also provides a very basic interaction mechanism with the user, which must provide the coefficients <i>'Kx'</i>, <i>'Ky'</i>, <i>'Rx'</i>, and <i>'Ry'</i>. The user can also:<p><ul>
 <li>increase the number of the samples for the polyline of interest by pressing the <i>'+'</i> key;</li>
 <li>decrease the number of the samples for the polyline of interest by pressing the <i>'-'</i> key.</li></ul>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
 
