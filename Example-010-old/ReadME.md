@@ -3,7 +3,7 @@ height="97"></A>
 
 <H3>The <i>'Example-010 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-010 (Old Mode)'</i> Test draws several graphic primitives in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window, starting from a cloud of several 2D points. This test also provides a very basic interaction mechanism with the user, which can choose what graphic primitive must be exploited, as follows:<p><ul>
+The <i>'Example-010 (Old Mode)'</i> Test draws several graphic primitives in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window, starting from a cloud of several 3D points. This test also provides a very basic interaction mechanism with the user, which can choose what graphic primitive must be exploited, as follows:<p><ul>
 <li>several independent points (thus, using the <i>'GL_POINTS'</i> primitive) are drawn by pressing the <i>'0'</i> key;</li>
 <li>several independent lines (thus, using the <i>'GL_LINES'</i> primitive) are drawn by pressing the <i>'1'</i> key;</li>
 <li>an open line strip (thus, using the <i>'GL_LINE_STRIP'</i> primitive) is drawn by pressing the <i>'2'</i> key;</li>

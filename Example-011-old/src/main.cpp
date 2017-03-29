@@ -49,8 +49,8 @@ GLenum face;
  * It may be one of the following:
  *
  * -) GL_POINT for rendering only the points of the polygon (press the 'p' or the 'P' key);
- * -) GL_LINE for rendering only the edges of the polygon, thus their 'wireframe version' (press the 'l' or the 'L' key);
- * -) GL_FILL for rendering completely the polygon, thus their 'filled version' (see the 'i' or the 'I' key).
+ * -) GL_LINE for rendering only the edges of the polygon, thus its 'wireframe version' (press the 'l' or the 'L' key);
+ * -) GL_FILL for rendering completely the polygon, thus its 'filled version' (see the 'i' or the 'I' key).
  */
 GLenum mode;
 
@@ -70,8 +70,8 @@ int main(int argc,char **argv)
 	cout<<"\t-) only the 'back' side of the custom polygon is rendered by pressing the 'b' or the 'B' key;"<<endl;
 	cout<<"\t-) both the 'front' and the 'back' sides of the custom polygon are rendered by pressing the 't' or the 'T' key;"<<endl;
 	cout<<"\t-) only the vertices of the custom polygon are rendered by pressing the 'p' or the 'P' key;"<<endl;
-	cout<<"\t-) only the edges of the custom polygon are rendered ('wireframe version') by pressing the 'l' or the 'L' key;"<<endl;
-	cout<<"\t-) the custom polygon is completely rendered ('filled version') by pressing the 'i' or the 'I' key."<<endl<<endl;
+	cout<<"\t-) only the edges of the custom polygon are rendered (thus, its 'wireframe version') by pressing the 'l' or the 'L' key;"<<endl;
+	cout<<"\t-) the custom polygon is completely rendered (thus, its 'filled version') by pressing the 'i' or the 'I' key."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -127,24 +127,24 @@ void draw()
 	{
 		/* We analyze only the 'front' side of the custom polygon. */
 		if(mode==GL_POINT) cout<<"\tOnly the points in the 'front' side of the custom polygon are rendered in the current scene."<<endl;
-		if(mode==GL_LINE) cout<<"\tOnly the edges in the 'front' side of the custom polygon are rendered ('wireframe version') in the current scene."<<endl;
-		if(mode==GL_FILL) cout<<"\tOnly the 'front' side of the custom polygon is completely rendered ('filled version') in the current scene."<<endl;
+		if(mode==GL_LINE) cout<<"\tOnly the edges in the 'front' side of the custom polygon are rendered (thus, its 'wireframe version') in the current scene."<<endl;
+		if(mode==GL_FILL) cout<<"\tOnly the 'front' side of the custom polygon is completely rendered (thus, its 'filled version') in the current scene."<<endl;
 		cout.flush();
 	}
 	else if(face==GL_BACK)
 	{
 		/* We analyze only the 'back' side of the custom polygon. */
 		if(mode==GL_POINT) cout<<"\tOnly the points in the 'back' side of the custom polygon are rendered in the current scene."<<endl;
-		if(mode==GL_LINE) cout<<"\tOnly the edges in the 'back' side of the custom polygon are rendered ('wireframe version') in the current scene."<<endl;
-		if(mode==GL_FILL) cout<<"\tOnly the 'back' side of the custom polygon is completely rendered ('filled version') in the current scene."<<endl;
+		if(mode==GL_LINE) cout<<"\tOnly the edges in the 'back' side of the custom polygon are rendered (thus, its 'wireframe version') in the current scene."<<endl;
+		if(mode==GL_FILL) cout<<"\tOnly the 'back' side of the custom polygon is completely rendered (thus, its 'filled version') in the current scene."<<endl;
 		cout.flush();
 	}
 	else
 	{
 		/* We analyze both the 'front' and the 'back' sides of the custom polygon. */
 		if(mode==GL_POINT) cout<<"\tOnly the points in both the 'front' and the 'back' sides of the custom polygon are rendered in the current scene."<<endl;
-		if(mode==GL_LINE) cout<<"\tOnly the edges in both the 'front' and the 'back' sides of the custom polygon are rendered ('wireframe version') in the current scene."<<endl;
-		if(mode==GL_FILL) cout<<"\tBoth the 'front' and the 'back' sides are completely rendered ('filled version') in the current scene."<<endl;
+		if(mode==GL_LINE) cout<<"\tOnly the edges in both the 'front' and the 'back' sides of the custom polygon are rendered (thus, their 'wireframe version') in the current scene."<<endl;
+		if(mode==GL_FILL) cout<<"\tBoth the 'front' and the 'back' sides are completely rendered (thus, their 'filled version') in the current scene."<<endl;
 		cout.flush();
 	}
 }
@@ -156,7 +156,7 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	face=GL_FRONT;
 	mode=GL_FILL;
-	cout<<"\tInitially, only the 'front' side of the custom polygon is completely filled ('filled version') in the current scene."<<endl<<endl;
+	cout<<"\tInitially, only the 'front' side of the custom polygon is completely filled (thus, its 'filled version') in the current scene."<<endl<<endl;
 	cout.flush();
 }
 
@@ -234,28 +234,28 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 'I':
 
-		/* The key is 'I', thus we completely render the custom polygon ('filled version'). */
+		/* The key is 'I', thus we completely render the custom polygon (thus, its 'filled version'). */
 		mode=GL_FILL;
 		glutPostRedisplay();
 		break;
 		
 		case 'i':
 
-		/* The key is 'i', thus we completely render the custom polygon ('filled version'). */
+		/* The key is 'i', thus we completely render the custom polygon (thus, its 'filled version'). */
 		mode=GL_FILL;
 		glutPostRedisplay();
 		break;
 		
 		case 'L':
 
-		/* The key is 'L', thus we render only the edges of the custom polygon ('wireframe version'). */
+		/* The key is 'L', thus we render only the edges of the custom polygon (thus, its 'wireframe version'). */
 		mode=GL_LINE;
 		glutPostRedisplay();
 		break;
 		
 		case 'l':
 
-		/* The key is 'l', thus we render only the edges of the custom polygon ('wireframe version'). */
+		/* The key is 'l', thus we render only the edges of the custom polygon (thus, its 'wireframe version'). */
 		mode=GL_LINE;
 		glutPostRedisplay();
 		break;
