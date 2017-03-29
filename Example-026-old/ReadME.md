@@ -5,7 +5,7 @@ height="97"></A>
 
 The <i>'Example-026 (Old Mode)'</i> Test draws a polyline (in <i>'red'</i>), formed by an arbitrary number of samples, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The polyline of interest approximates the <i>'Ellipse-like'</i> curve with semiaxis <i>'Rx'</i> and <i>'Ry'</i> (respectively along the x- and the y-axis), as well as center <i>'(xc,yc)'</i>. In particular, an <i>'Ellipse-like'</i> curve is defined in the same spirit of the <i>'Ellipse'</i> curve, but it requires an exponent <i>'n'</i> for computing the cosine and the sine functions to the <i>'n'</i>-th, as follows:<center>
 <pre>
-x(t) = Rx * cos^n (t) , y(t) = Ry * sin^n (t) </pre></center><p>This test also provides a very basic interaction mechanism with the user, which must provide the exponent <i>'n'</i>, the semiaxis <i>'Rx'</i> and <i>'Ry'</i>, as well as the center <i>'(xc,yc)'</i>. The user can also:<p><ul>
+x(t) = xc + Rx * cos^n (t) , y(t) = yc + Ry * sin^n (t) </pre></center>with <i>'Rx'>0</i>, <i>'Ry'>0</i>, and <i>'n'>0</i>.<p>This test also provides a very basic interaction mechanism with the user, which must provide the exponent <i>'n'</i>, the semiaxis <i>'Rx'</i> and <i>'Ry'</i>, as well as the center <i>'(xc,yc)'</i>. The user can also:<p><ul>
 <li>increase the number of the samples for the polyline of interest by pressing the <i>'+'</i> key;</li>
 <li>decrease the number of the samples for the polyline of interest by pressing the <i>'-'</i> key.</li></ul>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
 
