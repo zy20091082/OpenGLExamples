@@ -61,8 +61,8 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-018' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws several convex (in 'red') and concave (in 'blue') polygons by using the 'wireframe' and the 'filled' rendering mode, and allows to cycle the vertices order in the polygons of interest by pressing the '+' key."<<endl;
-	cout<<"\tIn particular, there may be 'strange' situations, expecially when rendering concave polygons (in 'blue') in the 'filled' mode, and cycling their vertices."<<endl<<endl;
+	cout<<"\tIt draws both the 'filled' and the 'wireframe version' of several convex (in 'red') and concave (in 'blue') polygons, and allows the user to cycle the vertices order in the polygons of interest by pressing the '+' key."<<endl;
+	cout<<"\tWhile performing these operations, there may be 'strange' situations, expecially when cycling the vertices in the 'filled version' of the concave polygons (in 'blue')."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -196,7 +196,7 @@ void manageKeys(unsigned char key, int x, int y)
 		iconvex=iconvex+1;
 		inconvex=inconvex+1;
 		eol=true;
-		cout<<"\tCycling the vertices order in the convex (in 'red') and concave (in 'blue') polygons of interest."<<endl;
+		cout<<"\tThe vertices for both the 'filled' and the 'wireframe version' of several convex and concave polygons are cycled in advance."<<endl;
 		glutPostRedisplay();		
 		break;
 

@@ -45,7 +45,7 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-017' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws 6 rectangles, defined through the 'glRectf' primitive function, by using several rendering settings."<<endl<<endl;
+	cout<<"\tIt draws 6 rectangles, defined through the 'glRectf()' function, by using several rendering settings."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -78,7 +78,7 @@ void resize(int w, int h)
 /// This function draws 6 rectangles by using several rendering settings in the OpenGL window of interest.
 void draw()
 {
-	/* We draw 6 rectangles, defined through the 'glRectf' primitive function, by using several rendering settings in the OpenGL window of interest. */
+	/* We draw 6 rectangles, defined through the 'glRectf()' function, by using several rendering settings in the OpenGL window of interest. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(10.0);
 	glLineWidth(2.0);

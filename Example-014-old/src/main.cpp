@@ -70,8 +70,8 @@ int main(int argc,char **argv)
 	cout<<"\t-) only the 'back' side of the triangles in the triangle strip of interest is rendered by pressing the 'b' or the 'B' key;"<<endl;
 	cout<<"\t-) both the 'front' and the 'back' sides of the triangles in the triangle strip of interest are rendered by pressing the 't' or the 'T' key;"<<endl;
 	cout<<"\t-) only the vertices of the triangles in the triangle strip of interest are rendered by pressing the 'p' or the 'P' key;"<<endl;
-	cout<<"\t-) only the edges of the triangles in the triangle strip of interest are rendered ('wireframe version') by pressing the 'l' or the 'L' key;"<<endl;
-	cout<<"\t-) the triangles in the triangle strip of interest are completely rendered ('filled version') by pressing the 'i' or the 'I' key."<<endl<<endl;
+	cout<<"\t-) only the edges of the triangles in the triangle strip of interest are rendered (thus, their 'wireframe version') by pressing the 'l' or the 'L' key;"<<endl;
+	cout<<"\t-) the triangles in the triangle strip of interest are completely rendered (thus, their 'filled version') by pressing the 'i' or the 'I' key."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -131,24 +131,24 @@ void draw()
 	{
 		/* We analyze only the 'front' side of the triangles in the triangle strip, approximating the custom shape of interest. */
 		if(mode==GL_POINT) cout<<"\tOnly the points in the 'front' side of the triangles in the triangle strip, approximating the custom shape of interest, are rendered in the current scene."<<endl;
-		if(mode==GL_LINE) cout<<"\tOnly the edges in the 'front' side of the triangles in the triangle strip, approximating the custom shape of interest, are rendered ('wireframe version') in the current scene."<<endl;
-		if(mode==GL_FILL) cout<<"\tOnly the 'front' side of the triangles in the triangle strip, approximating the custom shape of interest, is completely rendered ('filled version') in the current scene."<<endl;
+		if(mode==GL_LINE) cout<<"\tOnly the edges in the 'front' side of the triangles in the triangle strip, approximating the custom shape of interest, are rendered (thus, their 'wireframe version') in the current scene."<<endl;
+		if(mode==GL_FILL) cout<<"\tOnly the 'front' side of the triangles in the triangle strip, approximating the custom shape of interest, is completely rendered (thus, their 'filled version') in the current scene."<<endl;
 		cout.flush();
 	}
 	else if(face==GL_BACK)
 	{
 		/* We analyze only the 'back' side of the triangles in the triangle strip, approximating the custom shape of interest. */
 		if(mode==GL_POINT) cout<<"\tOnly the points in the 'back' side of the triangles in the triangle strip, approximating the custom shape of interest, are rendered in the current scene."<<endl;
-		if(mode==GL_LINE) cout<<"\tOnly the edges in the 'back' side of the triangles in the triangle strip, approximating the custom shape of interest, are rendered ('wireframe version') in the current scene."<<endl;
-		if(mode==GL_FILL) cout<<"\tOnly the 'back' side of the triangles in the triangle strip, approximating the custom shape of interest, is completely rendered ('filled version') in the current scene."<<endl;
+		if(mode==GL_LINE) cout<<"\tOnly the edges in the 'back' side of the triangles in the triangle strip, approximating the custom shape of interest, are rendered (thus, their 'wireframe version') in the current scene."<<endl;
+		if(mode==GL_FILL) cout<<"\tOnly the 'back' side of the triangles in the triangle strip, approximating the custom shape of interest, is completely rendered (thus, their 'filled version') in the current scene."<<endl;
 		cout.flush();
 	}
 	else
 	{
 		/* We analyze both the 'front' and the 'back' sides of the triangles in the triangle strip, approximating the custom shape of interest. */
 		if(mode==GL_POINT) cout<<"\tOnly the points in both the 'front' and the 'back' sides of the triangles in the triangle strip, approximating the custom shape of interest, are rendered in the current scene."<<endl;
-		if(mode==GL_LINE) cout<<"\tOnly the edges in both the 'front' and the 'back' sides of the triangles in the triangle strip, approximating the custom shape of interest, are rendered ('wireframe version') in the current scene."<<endl;
-		if(mode==GL_FILL) cout<<"\tBoth the 'front' and the 'back' sides of the triangles in the triangle strip, approximating the custom shape of interest, are completely rendered ('filled version') in the current scene."<<endl;
+		if(mode==GL_LINE) cout<<"\tOnly the edges in both the 'front' and the 'back' sides of the triangles in the triangle strip, approximating the custom shape of interest, are rendered (thus, their 'wireframe version') in the current scene."<<endl;
+		if(mode==GL_FILL) cout<<"\tBoth the 'front' and the 'back' sides of the triangles in the triangle strip, approximating the custom shape of interest, are completely rendered (thus, their 'filled version') in the current scene."<<endl;
 		cout.flush();
 	}
 }
@@ -160,7 +160,7 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	face=GL_FRONT_AND_BACK;
 	mode=GL_FILL;
-	cout<<"\tInitially, both the 'front' and the 'back' sides of the triangles in the triangle strip, approximating the custom shape of interest, are completely filled ('filled version') in the current scene."<<endl<<endl;
+	cout<<"\tInitially, both the 'front' and the 'back' sides of the triangles in the triangle strip, approximating the custom shape of interest, are completely filled (thus, their 'filled version') in the current scene."<<endl<<endl;
 	cout.flush();
 }
 
@@ -238,28 +238,28 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 'I':
 
-		/* The key is 'I', thus we completely render the triangles in the triangle strip ('filled version'), approximating the custom shape of interest. */
+		/* The key is 'I', thus we completely render the triangles in the triangle strip (thus, their 'filled version'), approximating the custom shape of interest. */
 		mode=GL_FILL;
 		glutPostRedisplay();
 		break;
 		
 		case 'i':
 
-		/* The key is 'i', thus we completely render the triangles in the triangle strip ('filled version'), approximating the custom shape of interest. */
+		/* The key is 'i', thus we completely render the triangles in the triangle strip (thus, their 'filled version'), approximating the custom shape of interest. */
 		mode=GL_FILL;
 		glutPostRedisplay();
 		break;
 		
 		case 'L':
 
-		/* The key is 'L', thus we render only the edges of the triangles in the triangle strip ('wireframe version'), approximating the custom shape of interest. */
+		/* The key is 'L', thus we render only the edges of the triangles in the triangle strip (thus, their 'wireframe version'), approximating the custom shape of interest. */
 		mode=GL_LINE;
 		glutPostRedisplay();
 		break;
 		
 		case 'l':
 
-		/* The key is 'l', thus we render only the edges of the triangles in the triangle strip ('wireframe version'), approximating the custom shape of interest. */
+		/* The key is 'l', thus we render only the edges of the triangles in the triangle strip (thus, their 'wireframe version'), approximating the custom shape of interest. */
 		mode=GL_LINE;
 		glutPostRedisplay();
 		break;

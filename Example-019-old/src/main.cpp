@@ -45,9 +45,8 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-019' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the 'filled' and the 'wireframe versions' of the 'Double Square Annulus' shape, both approximated by 2 triangle strips (respectively, in 'red' and in 'blue')."<<endl;
-	cout<<"\tIn the 'filled version', the triangles of 2 triangle strips are completely rendered. Instead, only the edges of 2 triangle strips are rendered in the 'wireframe version'."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout<<"\tIt draws both the 'filled' and the 'wireframe versions' of 2 triangle strips (respectively, in 'red' and in 'blue'), that approximate the 'Double Square Annulus' shape."<<endl<<endl;
+	cout<<"\tIn this context, it is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
@@ -110,10 +109,11 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws two versions of the <i>'Double Square Annulus'</i> shape, both approximated by 2 triangle strips, in the OpenGL window of interest.
+/// This function draws both the <i>'filled'</i> and the <i>'wireframe versions'</i> of 2 triangle strips (respectively, in <i>'red'</i> and in <i>'blue'</i>), that approximate the <i>'Double Square Annulus'</i> shape in the OpenGL window of interest.
 void draw()
 {
-	/* We draw two versions of the 'Double Square Annulus' shape, both approximated by 2 triangle strips, in the OpenGL window of interest. We start from the 'wireframe version' of the triangle strip #0 (in 'red'), which is connected to the triangle strip #2. */
+	/* We draw both the 'filled' and the 'wireframe versions' of 2 triangle strips (respectively, in 'red' and in 'blue'), that approximate the 'Double Square Annulus' shape in the OpenGL window of interest.
+	 * We start from the 'wireframe version' of the triangle strip #0 (in 'red'), which is connected to the triangle strip #1. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0,0.0,0.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
