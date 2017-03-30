@@ -45,9 +45,8 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-020' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the 'filled' and the 'wireframe versions' of the 'Double Square Annulus' shape, both approximated by only one triangle strip (in 'red')."<<endl;
-	cout<<"\tIn the 'filled version', the triangles of the triangle strip are completely rendered. Instead, only the edges of the triangle strip are rendered in the 'wireframe version'."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout<<"\tIt draws both the 'filled' and the 'wireframe versions' of the triangle strip (in 'red'), which approximates the 'Double Square Annulus' shape."<<endl<<endl;
+	cout<<"\tIn this context, it is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
@@ -110,10 +109,11 @@ void manageKeys(unsigned char key, int x, int y)
 	}
 }
 
-/// This function draws 2 versions of the <i>'Double Square Annulus'</i> shape, both approximated by one triangle strip (in <i>'red'</i>), in the OpenGL window of interest.
+/// This function draws both the <i>'filled'</i> and the <i>'wireframe versions'</i> of the triangle strip (in <i>'red'</i>), which approximates the <i>'Double Square Annulus'</i> shape in the OpenGL window of interest.
 void draw()
 {
-	/* We draw 2 versions of the 'Double Square Annulus' shape, both approximated by one triangle strip (in 'red'), in the OpenGL window of interest. First, we draw the 'wireframe version' for the triangle strip of interest (in 'red'). */
+	/* We draw both the 'filled' and the 'wireframe versions' of the triangle strip (in 'red'), which approximates the 'Double Square Annulus' shape in the OpenGL window of interest.	
+	 * First, we draw the 'wireframe version' for the triangle strip of interest (in 'red'). */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0,0.0,0.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
