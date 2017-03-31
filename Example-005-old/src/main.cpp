@@ -27,7 +27,7 @@ using namespace std;
 
 #else
 
-	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU Linux, or a Microsoft Windows platform. */
+	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU/Linux, or a Microsoft Windows platform. */
 	#include "GL/glew.h"
 	#include "GL/glut.h"
 	#include "GL/gl.h"
@@ -50,10 +50,10 @@ int main(int argc,char **argv)
 	cout<<"\tIt draws a polygon in 'red', obtained as the intersection between the following elements:"<<endl<<endl;
 	cout<<"\t\t-) the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]';"<<endl;
 	cout<<"\t\t-) the triangle with vertices '(x,20,0)' - '(80,20,0)' - '(80,80,0)'."<<endl<<endl;
-	cout<<"\tHere, the orthographic viewing box is not modified. Instead, the 'x' coordinate of the triangle can be moved by the user along the x-axis. The user can:"<<endl<<endl;
-	cout<<"\t\t-) increase the 'x' coordinate by 1.0 by pressing the '+' key;"<<endl;
-	cout<<"\t\t-) decrease the 'x' coordinate by 1.0 by pressing the '-' key;"<<endl;
-	cout<<"\t\t-) reset the 'x' coordinate to its initial value '20' by pressing the '=' key."<<endl<<endl;
+	cout<<"\tHere, the orthographic viewing box is not modified. Instead, the 'x' coordinate of the triangle, initially set to '20', can be moved by the user along the x-axis. The user can:"<<endl<<endl;
+	cout<<"\t\t-) increase the 'x' coordinate for the triangle of interest by 1.0 by pressing the '+' key;"<<endl;
+	cout<<"\t\t-) decrease the 'x' coordinate for the triangle of interest by 1.0 by pressing the '-' key;"<<endl;
+	cout<<"\t\t-) reset the 'x' coordinate for the triangle of interest to its initial value '20' by pressing the '=' key."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -74,7 +74,7 @@ int main(int argc,char **argv)
 /// This function updates the viewport for the scene when it is resized. */
 void resize(int w, int h)
 {
-	/* We update the projections and the modeling matrices! */
+	/* We update the projection and the modeling matrices! */
 	glViewport(0, 0, w, h);
    	glMatrixMode(GL_PROJECTION);
    	glLoadIdentity();
@@ -83,10 +83,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws a triangle in <i>'red'</i> within the OpenGL window of interest.
+/// This function draws a polygon in <i>'red'</i> within the OpenGL window of interest.
 void draw()
 {
-	/* We draw a triangle in 'red' within the OpenGL window of interest! */
+	/* We draw a polygon in 'red' within the OpenGL window of interest! */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0, 0.0, 0.0);
   	glBegin(GL_POLYGON);
@@ -104,7 +104,7 @@ void initialize()
 	xcoord=20.0;
 	eol=false;
 	glClearColor(1.0, 1.0, 1.0, 0.0);
-	cout<<"\tThe 'x' coordinate is initially set to "<<xcoord<<" in the current scene."<<endl<<endl;
+	cout<<"\tThe 'x' coordinate for the triangle of interest is initially set to "<<xcoord<<" in the current scene."<<endl<<endl;
 	cout.flush();
 }
 
@@ -137,9 +137,9 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '+':
 		
-		/* The key is '+, thus we increase the 'x' coordinate. */
+		/* The key is '+, thus we increase the 'x' coordinate for the triangle of interest. */
 		xcoord=xcoord+(GLfloat)1.0;
-		cout<<"\tThe 'x' coordinate is increased to "<<xcoord<<" in the current scene."<<endl;
+		cout<<"\tThe 'x' coordinate for the triangle of interest is increased to "<<xcoord<<" in the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -147,9 +147,9 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '-':
 		
-		/* The key is '-', thus we decrease the 'x' coordinate. */
+		/* The key is '-', thus we decrease the 'x' coordinate for the triangle of interest. */
 		xcoord=xcoord-(GLfloat)1.0;
-		cout<<"\tThe 'x' coordinate is decreased to "<<xcoord<<" in the current scene."<<endl;
+		cout<<"\tThe 'x' coordinate for the triangle of interest is decreased to "<<xcoord<<" in the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -157,10 +157,10 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '=':
 		
-		/* The key is '=', thus we reinitialize the 'x' coordinate. */
+		/* The key is '=', thus we reinitialize the 'x' coordinate for the triangle of interest. */
 		xcoord=20.0;
 		eol=true;
-		cout<<"\tThe 'x' coordinate is set to its default value "<<xcoord<<" in the current scene."<<endl;
+		cout<<"\tThe 'x' coordinate for the triangle of interest is set to its default value "<<xcoord<<" in the current scene."<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;
