@@ -50,12 +50,12 @@ int main(int argc, char **argv)
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-003' Example, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws the 'filled version' of a quadrilateral (in 'red') with vertices '(30,20,0)' - '(80,20,0)' - '(80,80,0)' - '(20,80,0)' by applying several orthographic projections (chosen upon request by the user):"<<endl<<endl;
-	cout<<"\t-) the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' is activated by pressing the '0' key;"<<endl;
-	cout<<"\t-) the orthographic viewing box '[-100,100]' x '[-100,100]' x '[-1,1]' is activated by pressing the '1' key;"<<endl;
-	cout<<"\t-) the orthographic viewing box '[20,80]' x '[20,80]' x '[-1,1]' is activated by pressing the '2' key;"<<endl;
-	cout<<"\t-) the orthographic viewing box '[0,100]' x '[0,100]' x '[-2,5]' is activated by pressing the '3' key;"<<endl;
-	cout<<"\t-) the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' is activated by pressing the '4' key;"<<endl;
-	cout<<"\t-) the orthographic viewing box '[120,200]' x '[90,200]' x '[-1,3]' is activated by pressing the '5' key."<<endl;
+	cout<<"\t-) the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' is activated by pressing the '0' key (the viewing configuration #0);"<<endl;
+	cout<<"\t-) the orthographic viewing box '[-100,100]' x '[-100,100]' x '[-1,1]' is activated by pressing the '1' key (the viewing configuration #1);"<<endl;
+	cout<<"\t-) the orthographic viewing box '[20,80]' x '[20,80]' x '[-1,1]' is activated by pressing the '2' key (the viewing configuration #2);"<<endl;
+	cout<<"\t-) the orthographic viewing box '[0,100]' x '[0,100]' x '[-2,5]' is activated by pressing the '3' key (the viewing configuration #3);"<<endl;
+	cout<<"\t-) the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' is activated by pressing the '4' key (the viewing configuration #4);"<<endl;
+	cout<<"\t-) the orthographic viewing box '[120,200]' x '[90,200]' x '[-1,3]' is activated by pressing the '5' key (the viewing configuration #5)."<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc, argv);
@@ -197,7 +197,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case '3':
 
 		/* The key is '3', thus we exploit the orthographic viewing box '[0,100]' x '[0,100]' x '[-2,5]' (the viewing configuration #3). */
-		cout<<"\tThe (viewing) configuration #3, corresponding to the viewing box '[0,100]' x '[0,100]' x '[-2,5]', is applied to the current scene."<<endl;
+		cout<<"\tThe (viewing) configuration #3, corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-2,5]', is applied to the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		left_value = 0;
@@ -214,7 +214,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case '4':
 
 		/* The key is '4', thus we exploit the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' (the viewing configuration #4). */
-		cout<<"\tThe (viewing) configuration #4, corresponding to the viewing box '[0,200]' x '[0,200]' x '[-1,1]', is applied to the current scene."<<endl;
+		cout<<"\tThe (viewing) configuration #4, corresponding to the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]', is applied to the current scene."<<endl;
 		std::cout.flush();
 		eol=true;
 		left_value = 0;
@@ -231,7 +231,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case '5':
 
 		/* The key is '5', thus we exploit the orthographic viewing box '[120,200]' x '[90,200]' x '[-1,3]' (the viewing configuration #5). */
-		cout<<"\tThe (viewing) configuration #5, corresponding to the viewing box '[120,200]' x '[90,200]' x '[-1,3]', is applied to the current scene."<<endl;
+		cout<<"\tThe (viewing) configuration #5, corresponding to the orthographic viewing box '[120,200]' x '[90,200]' x '[-1,3]', is applied to the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		left_value = 120;

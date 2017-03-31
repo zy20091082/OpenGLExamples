@@ -3,6 +3,18 @@ height="97"></A>
 
 <H3>The <i>'Example-004 (Old Mode)'</i> Test</H3>
 
+
+cout<<"\tIt draws the following quadrilaterals in the scene:"<<endl<<endl;
+	cout<<"\t\t-) quadrilateral #0 (in 'red') with vertices '(20,20,0)' - '(80,20,0)' - '(80,80,0)' - '(20,80,0)';"<<endl;
+	cout<<"\t\t-) quadrilateral #1 (in 'green') with vertices '(120,120,0)' - '(180,120,0)' - '(180,180,0)' - '(120,180,0)'."<<endl<<endl;
+	cout<<"\tby using the following orthographic viewports (activated by request):"<<endl<<endl;
+	cout<<"\t\t-) the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' is activated by pressing the '0' key. In this case, only the 'red' quadrilateral is visible."<<endl;
+	cout<<"\t\t-) The ortographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' is activated by pressing the '1' key. In this case, both quadrilaterals are visible."<<endl<<endl;
+	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout.flush();
+	
+	
+	
 The <i>'Example-004 (Old Mode)'</i> Test draws the <i>'filled version'</i> of two quadrilaterals (respectively, in <i>'red'</i> and <i>'green'</i>) in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window by providing a basic interaction mechanism with the user. In fact, the user can choose the orthographic viewport configuration for the scene by pressing any among the <i>'0'</i> and the <i>'1'</i> keys. Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-004-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
 
 <h4>Dependencies</h4>
