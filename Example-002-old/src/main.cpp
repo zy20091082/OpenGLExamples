@@ -75,10 +75,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws a quadrilateral in <i>'red'</i> within the OpenGL window of interest.
+/// This function draws the <i>'filled version'</i> of a quadrilateral (in <i>'red'</i>) in the OpenGL window of interest.
 void draw()
 {
-	/* We draw a quadrilateral in 'red' within the OpenGL window of interest! */
+	/* We draw the 'filled version' of a quadrilateral (in 'red') in the OpenGL window of interest! */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0, 0.0, 0.0);
   	glBegin(GL_POLYGON);
