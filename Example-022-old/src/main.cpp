@@ -67,7 +67,7 @@ int main(int argc,char **argv)
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-022' Example, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws different versions (formed by an arbitrary number of samples) of the 'Circle' shape with radius 'R' and center '(xc,yc)'. This latter is defined as follows:"<<endl<<endl;
-	cout<<"\tx(t) = xc + R * cos(t), y(t) = yc + R * sin(t)"<<endl<<endl<<"\twith 'R'>0 and 't' in '[-pi,pi]'."<<endl<<endl;
+	cout<<"\tx(t) <= xc + R * cos(t), y(t) <= yc + R * sin(t)"<<endl<<endl<<"\twith 'R'>0 and 't' in '[-pi,pi]'."<<endl<<endl;
 	cout<<"\tThe radius 'R' and the center coodinates '(xc,yc)' are specified by the user, which can also:"<<endl<<endl;
 	cout<<"\t\t-) decide to approximate the boundary (in 'red') of the 'Circle' shape through a polyline by pressing the 'l' key;"<<endl;
 	cout<<"\t\t-) decide to approximate the 'Circle' shape through the 'filled version' for a triangle fan (in 'dark gray') of several triangles, incident at the reference vertex '(xc,yc)' (in 'red'), by pressing the 'f' key;"<<endl;
