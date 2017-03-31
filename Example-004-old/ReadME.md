@@ -3,10 +3,10 @@ height="97"></A>
 
 <H3>The <i>'Example-004 (Old Mode)'</i> Test</H3>
 The <i>'Example-004 (Old Mode)'</i> Test draws the <i>'filled versions'</i> of the following quadrilaterals in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window:<p><ol>
-<li>the quadrilateral #0 (in <i>'red'</i>) with vertices <i>'(20,20,0)'</i> - <i>'(80,20,0)'</i> - <i>'(80,80,0)'</i> - <i>'(20,80,0)'</i>;</li>
-<li>the quadrilateral #1 (in <i>'green'</i>) with vertices <i>'(120,120,0)'</i> - <i>'(180,120,0)'</i> - <i>'(180,180,0)'</i> - <i>'(120,180,0)'</i>.</li></ol><p>by using the following orthographic projections (activated upon request):<p><ol>
-<li>the ortographic viewing box <i>'[0,100]' x '[0,100]' x '[-1,1]'</i> is activated by pressing the '0' key (the viewing configuration #0). In this case, only the quadrilateral #0 is shown.<p></li>
-<li>The ortographic viewing box <i>'[0,200]' x '[0,200]' x '[-1,1]'</i> is activated by pressing the '1' key (the viewing configuration #1). In this case, both the quadrilaterals #0 and #1 are shown.</li></ol><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-004-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
+<li value="0">the quadrilateral #0 (in <i>'red'</i>) with vertices <i>'(20,20,0)'</i> - <i>'(80,20,0)'</i> - <i>'(80,80,0)'</i> - <i>'(20,80,0)'</i>;</li>
+<li value="1">the quadrilateral #1 (in <i>'green'</i>) with vertices <i>'(120,120,0)'</i> - <i>'(180,120,0)'</i> - <i>'(180,180,0)'</i> - <i>'(120,180,0)'</i>.</li></ol><p>by using the following orthographic projections (activated upon request):<p><ol>
+<li value="0">the ortographic viewing box <i>'[0,100]' x '[0,100]' x '[-1,1]'</i> is activated by pressing the '0' key (the viewing configuration #0). In this case, only the quadrilateral #0 is shown.<p></li>
+<li value="1">The ortographic viewing box <i>'[0,200]' x '[0,200]' x '[-1,1]'</i> is activated by pressing the '1' key (the viewing configuration #1). In this case, both the quadrilaterals #0 and #1 are shown.</li></ol><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-004-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
 
 <h4>Dependencies</h4>
 
