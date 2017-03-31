@@ -84,10 +84,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws 2 quadrilaterals (respectively, in <i>'red'</i> and in <i>'green'</i>) in the OpenGL window of interest.
+/// This function draws the <i>'filled versions'</i> of 2 quadrilaterals (respectively, in <i>'red'</i> and in <i>'green'</i>) in the OpenGL window of interest by using the orthographic projection, chosen by the user.
 void draw()
 {
-	/* We draw 2 quadrilaterals (respectively, in 'red' and in 'green') in the OpenGL window of interest! */
+	/* We draw the 'filled versions' of 2 quadrilaterals (respectively, in 'red' and in 'green') in the OpenGL window of interest by using the orthographic projection, chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0, 0.0, 0.0);
   	glBegin(GL_POLYGON);

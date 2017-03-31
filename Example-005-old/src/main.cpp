@@ -47,9 +47,9 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-005' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polygon in 'red', obtained as the intersection between the following elements:"<<endl<<endl;
+	cout<<"\tIt draws the 'filled version' of a polygon (in 'red'), obtained as the intersection between the following elements:"<<endl<<endl;
 	cout<<"\t\t-) the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]';"<<endl;
-	cout<<"\t\t-) the triangle with vertices '(x,20,0)' - '(80,20,0)' - '(80,80,0)'."<<endl<<endl;
+	cout<<"\t\t-) the triangle with vertices '(x,20,0)' - '(80,20,0)' - '(80,80,0)', for any 'x' coordinate along the x-axis."<<endl<<endl;
 	cout<<"\tHere, the orthographic viewing box is not modified. Instead, the 'x' coordinate of the triangle, initially set to '20', can be moved by the user along the x-axis. The user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the 'x' coordinate for the triangle of interest by 1.0 by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the 'x' coordinate for the triangle of interest by 1.0 by pressing the '-' key;"<<endl;
@@ -83,10 +83,14 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws a polygon in <i>'red'</i> within the OpenGL window of interest.
+/// This function draws the <i>'filled version'</i> of the polygon (in <i>'red'</i>), which is the intersection between a triangle and the ortographic viewing box, in the OpenGL window of interest.
 void draw()
 {
-	/* We draw a polygon in 'red' within the OpenGL window of interest! */
+	/* We draw the 'filled version' of the polygon (in 'red'), which is the intersection between the following components, in the OpenGL window of interest:
+	 *
+	 * -) the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]';
+	 * -) the triangle with vertices '(x,20,0)' - '(80,20,0)' - '(80,80,0)'.
+	 */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0, 0.0, 0.0);
   	glBegin(GL_POLYGON);
