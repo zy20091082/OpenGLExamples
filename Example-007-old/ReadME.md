@@ -3,7 +3,7 @@ height="97"></A>
 
 <H3>The <i>'Example-007 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-007 (Old Mode)'</i> Test draws the <i>'filled version'</i> of 12 quadrilaterals with several colors in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window by providing a basic interaction mechanism with the user. Here, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-007-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
+The <i>'Example-007 (Old Mode)'</i> Test draws the <i>'filled versions'</i> for 12 quadrilaterals with different colors in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window, and provides a basic interaction mechanism with the user. Here, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-007-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
 
 <h4>Dependencies</h4>
 
