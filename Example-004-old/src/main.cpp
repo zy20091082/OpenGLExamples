@@ -49,7 +49,7 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-004' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the 'filled' versions of the following quadrilaterals in the scene:"<<endl<<endl;
+	cout<<"\tIt draws the 'filled versions' of the following quadrilaterals in the scene:"<<endl<<endl;
 	cout<<"\t\t-) quadrilateral #0 (in 'red') with vertices '(20,20,0)' - '(80,20,0)' - '(80,80,0)' - '(20,80,0)';"<<endl;
 	cout<<"\t\t-) quadrilateral #1 (in 'green') with vertices '(120,120,0)' - '(180,120,0)' - '(180,180,0)' - '(120,180,0)'."<<endl<<endl;
 	cout<<"\tby using the following orthographic projections (activated upon request):"<<endl<<endl;

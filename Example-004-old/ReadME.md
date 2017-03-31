@@ -2,20 +2,12 @@
 height="97"></A>
 
 <H3>The <i>'Example-004 (Old Mode)'</i> Test</H3>
-
-
-cout<<"\tIt draws the following quadrilaterals in the scene:"<<endl<<endl;
-	cout<<"\t\t-) quadrilateral #0 (in 'red') with vertices '(20,20,0)' - '(80,20,0)' - '(80,80,0)' - '(20,80,0)';"<<endl;
-	cout<<"\t\t-) quadrilateral #1 (in 'green') with vertices '(120,120,0)' - '(180,120,0)' - '(180,180,0)' - '(120,180,0)'."<<endl<<endl;
-	cout<<"\tby using the following orthographic viewports (activated by request):"<<endl<<endl;
-	cout<<"\t\t-) the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' is activated by pressing the '0' key. In this case, only the 'red' quadrilateral is visible."<<endl;
-	cout<<"\t\t-) The ortographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' is activated by pressing the '1' key. In this case, both quadrilaterals are visible."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
-	cout.flush();
-	
-	
-	
-The <i>'Example-004 (Old Mode)'</i> Test draws the <i>'filled version'</i> of two quadrilaterals (respectively, in <i>'red'</i> and <i>'green'</i>) in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window by providing a basic interaction mechanism with the user. In fact, the user can choose the orthographic viewport configuration for the scene by pressing any among the <i>'0'</i> and the <i>'1'</i> keys. Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-004-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
+The <i>'Example-004 (Old Mode)'</i> Test draws the <i>'filled versions'</i> of the following quadrilaterals in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window:<ul>
+<li>the quadrilateral #0 (in <i>'red'</i>) with vertices <i>'(20,20,0)'</i> - <i>'(80,20,0)'</i> - <i>'(80,80,0)'</i> - <i>'(20,80,0)'</i>;</li>
+<li>the quadrilateral #1 (in <i>'green'</i>) with vertices <i>'(120,120,0)'</i> - <i>'(180,120,0)'</i> - <i>'(180,180,0)'</i> - <i>'(120,180,0)'</i>.</li><ul>
+by using the following orthographic projections (activated upon request):<ol>
+<li>the ortographic viewing box <i>'[0,100]' x '[0,100]' x '[-1,1]'</i> is activated by pressing the '0' key (the viewing configuration #0);</li>
+<li>the ortographic viewing box <i>'[0,200]' x '[0,200]' x '[-1,1]'</i> is activated by pressing the '1' key (the viewing configuration #1).</li></ol><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-004-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
 
 <h4>Dependencies</h4>
 
