@@ -34,10 +34,10 @@ using namespace std;
 
 #endif
 
-/// This function draws the <i>'black'</i> background in the OpenGL window of interest.
+/// This function draws only the <i>'black'</i> background in the OpenGL window of interest.
 void draw(void)
 {
-	/* We draw the 'black' background in the OpenGL window of interest. */
+	/* We draw only the 'black' background in the OpenGL window of interest. */
 	glClearColor(0.0f,0.0f,0.0f,1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 	glFlush();
@@ -48,7 +48,7 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-001' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt creates a basic OpenGL window with the 'black' background by providing no interaction with the user."<<endl<<endl;
+	cout<<"\tIt creates a basic OpenGL window with the 'black' background, and provides no interaction mechanism with the user."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
