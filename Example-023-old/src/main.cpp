@@ -42,7 +42,7 @@ float xc,yc;
 /// The lengths <i>'Rx'</i> and <i>'Ry'</i> of the semi-axis for drawing the <i>'Ellipse'</i> curve of interest.
 float radius_x,radius_y;
 
-/// The number of the samples, used for approximating the <i>'Ellipse'</i> curve of interest.
+/// The number of the samples in the polyline, used for approximating the <i>'Ellipse'</i> curve of interest.
 unsigned int num_samples=3;
 
 /* Prototypes for all functions of interest! */
@@ -57,6 +57,8 @@ int main(int argc,char **argv)
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-023' Example, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws a polyline in 'red' (formed by an arbitrary number of samples), which approximates the 'Ellipse' curve with semiaxis 'Rx' and 'Ry' (respectively along the x- and the y-axis), and center '(xc,yc)'."<<endl;
+	cout<<"\tThis latter is defined as follows:"<<endl<<endl;
+	cout<<"\tx(t) = xc + Rx * cos(t), y(t) = yc + Ry * sin(t)"<<endl<<endl<<"\twith 'Rx'>0, 'Ry'>0, and 't' in '[-pi,pi]'."<<endl<<endl;
 	cout<<"\tThe semiaxis 'Rx' and 'Ry', as well as the center coodinates '(xc,yc)', are specified by the user, which can also:"<<endl<<endl;
 	cout<<"\t\t-) increase the number of the samples for the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number of the samples for the polyline of interest by pressing the '-' key."<<endl<<endl;
@@ -127,7 +129,7 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=3;
-	cout<<endl<<"\tInitially, the polyline, approximating the 'Ellipse' curve of center ("<<xc<<","<<yc<<"), semi-axis 'Rx'="<<radius_x<<" (along the x-axis), and semi-axis 'Ry'="<<radius_y<<" (along the y-axis), is formed by "<<num_samples<<" samples (the";
+	cout<<endl<<"\tThe polyline, approximating the 'Ellipse' curve of center ("<<xc<<","<<yc<<"), semi-axis 'Rx'="<<radius_x<<" (along the x-axis), and semi-axis 'Ry'="<<radius_y<<" (along the y-axis), is initially formed by "<<num_samples<<" samples (the";
 	cout<<" minimum number as possible)."<<endl<<endl;
 	cout.flush();
 }
@@ -173,7 +175,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-', thus we decrease the number of the samples (if possible) in the polyline of interest. */
 		if(num_samples>3) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 3 of samples is reached, and it is not possible to decrease again this number."<<endl;
+		else cout<<"\tThe minimum number 3 of samples in the polyline of interest is reached, and it is not possible to decrease again this number."<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;

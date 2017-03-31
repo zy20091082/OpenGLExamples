@@ -42,7 +42,7 @@ float radius;
 /// The center coordinates <i>'(xc,yc)'</i> for the <i>'Circle'</i> curve of interest.
 float xc,yc;
 
-/// The number of the samples, used for approximating the <i>'Circle'</i> curve of interest.
+/// The number of the samples in the polyline, used for approximating the <i>'Circle'</i> curve of interest.
 unsigned int num_samples=3;
 
 /* Prototypes for all functions of interest! */
@@ -56,7 +56,8 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-021' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polyline in 'red' (formed by an arbitrary number of samples), which approximates the 'Circle' curve with radius 'R' and center '(xc,yc)'."<<endl;
+	cout<<"\tIt draws a polyline in 'red' (formed by an arbitrary number of samples), which approximates the 'Circle' curve with radius 'R' and center '(xc,yc)'. This latter is defined as follows:"<<endl<<endl;
+	cout<<"\tx(t) = xc + R * cos(t), y(t) = yc + R * sin(t)"<<endl<<endl<<"\twith 'R'>0 and 't' in '[-pi,pi]'."<<endl<<endl;
 	cout<<"\tThe radius 'R' and the center coodinates '(xc,yc)' are specified by the user, which can also:"<<endl<<endl;
 	cout<<"\t\t-) increase the number of the samples for the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number of the samples for the polyline of interest by pressing the '-' key."<<endl<<endl;
@@ -161,7 +162,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-', thus we decrease the number of the samples (if possible) in the polyline of interest. */
 		if(num_samples>3) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 3 of samples is reached, and it is not possible to decrease again this number."<<endl;
+		else cout<<"\tThe minimum number 3 of samples in the polyline of interest is reached, and it is not possible to decrease again this number."<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;
