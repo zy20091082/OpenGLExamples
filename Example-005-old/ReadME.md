@@ -3,7 +3,7 @@ height="97"></A>
 
 <H3>The <i>'Example-005 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-005 (Old Mode)'</i> Test draws the <i>'filled version'</i> of a polygon (in <i>'red'</i>) in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window by providing a basic interaction mechanism with the user. The polygon of interest is the intersection of the following elements:<p><ul>
+The <i>'Example-005 (Old Mode)'</i> Test draws the <i>'filled version'</i> of a triangle (in <i>'red'</i>) in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window by providing a basic interaction mechanism with the user. The triangle of interest is the intersection of the following elements:<p><ul>
 <li>the orthographic projection viewing box, defined by <i>'[0,100]' x '[0,100]' x '[-1,1]'</i>;</li>
 <li>the triangle of vertices <i>'(x,20,0)'</i>, <i>'(80,20,0)'</i>, and <i>'(80,80,0)'</i></li></ul><p>Here, the orthographic viewing box is not modified. Instead, the <i>'x'</i> coordinate of the triangle, initially set as <i>'20'</i>, can be moved by the user along the x-axis. Specifically, the user can:<p><ul>
 <li>increase the <i>'x'</i> coordinate by 1.0 by pressing the <i>'+'</i> key;</li>
