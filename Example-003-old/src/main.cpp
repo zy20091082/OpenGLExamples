@@ -1,18 +1,18 @@
 /*******************************************************************************************************************************************************
-* David Canino (canino.david@gmail.com)
-*
-* Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
-*
-* Last update: March 2017
-*
-* This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
-* by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
-*
-* main.cpp - the main function for the 'Example-003 (Old Mode)' example.
-*******************************************************************************************************************************************************/
+ * David Canino (canino.david@gmail.com)
+ *
+ * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
+ *
+ * Last update: March 2017
+ *
+ * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
+ * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
+ *
+ * main.cpp - the main function for the 'Example-003 (Old Mode)' example.
+ *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
 #include <cstdlib>
@@ -27,7 +27,7 @@ using namespace std;
 
 #else
 
-	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU Linux, or a Microsoft Windows platform. */
+	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU/Linux, or a Microsoft Windows platform. */
 	#include "GL/glew.h"
 	#include "GL/glut.h"
 	#include "GL/gl.h"
@@ -49,7 +49,13 @@ int main(int argc, char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-003' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a quadrilateral in 'red' with vertices '(30,20,0)' - '(80,20,0)' - '(80,80,0)' - '(20,80,0)' by applying several orthographic viewport configurations (chosen by pressing any among the '0-1-2-3-4-5' keys)."<<endl<<endl;
+	cout<<"\tIt draws the 'filled version' of a quadrilateral (in 'red') with vertices '(30,20,0)' - '(80,20,0)' - '(80,80,0)' - '(20,80,0)' by applying several orthographic projections (chosen upon request by the user):"<<endl<<endl;
+	cout<<"\t-) the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' is activated by pressing the '0' key;"<<endl;
+	cout<<"\t-) the orthographic viewing box '[-100,100]' x '[-100,100]' x '[-1,1]' is activated by pressing the '1' key;"<<endl;
+	cout<<"\t-) the orthographic viewing box '[20,80]' x '[20,80]' x '[-1,1]' is activated by pressing the '2' key;"<<endl;
+	cout<<"\t-) the orthographic viewing box '[0,100]' x '[0,100]' x '[-2,5]' is activated by pressing the '3' key;"<<endl;
+	cout<<"\t-) the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' is activated by pressing the '4' key;"<<endl;
+	cout<<"\t-) the orthographic viewing box '[120,200]' x '[90,200]' x '[-1,3]' is activated by pressing the '5' key."<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc, argv);
@@ -70,7 +76,7 @@ int main(int argc, char **argv)
 /// This function updates the viewport for the scene when it is resized. */
 void resize(int w, int h)
 {
-	/* We update the projections and the modeling matrices! */
+	/* We update the projection and the modeling matrices! */
 	glViewport(0, 0, w, h);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
@@ -106,7 +112,7 @@ void initialize()
 	far_value = 1.0;
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	eol=false;
-	cout<<"\tThe configuration #0, corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', is initially applied to the current scene."<<endl<<endl;
+	cout<<"\tThe (viewing) configuration #0, corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', is initially applied to the current scene."<<endl<<endl;
 	cout.flush();
 }
 
@@ -139,8 +145,8 @@ void manageKeys(unsigned char key, int x, int y)
 
 		case '0':
 
-		/* The key is '0', thus we apply the configuration #0, corresponding to 'glOrtho(0,100,0,100,-1,1)'. */
-		cout<<"\tThe configuration #0, corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', is applied to the current scene."<<endl;
+		/* The key is '0', thus we exploit the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' (the viewing configuration #0). */
+		cout<<"\tThe (viewing) configuration #0, corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', is applied to the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		left_value = 0.0;
@@ -156,8 +162,8 @@ void manageKeys(unsigned char key, int x, int y)
 
 		case '1':
 
-		/* The key is '1', thus we apply the configuration #1, corresponding to 'glOrtho(-100,100,-100,100,-1,1)'. */
-		cout<<"\tThe configuration #1, corresponding to the orthographic viewing box '[-100,100]' x '[-100,100]' x '[-1,1]', is applied to the current scene."<<endl;
+		/* The key is '1', thus we exploit the orthographic viewing box '[-100,100]' x '[-100,100]' x '[-1,1]' (the viewing configuration #1). */
+		cout<<"\tThe (viewing) configuration #1, corresponding to the orthographic viewing box '[-100,100]' x '[-100,100]' x '[-1,1]', is applied to the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		left_value = -100.0;
@@ -173,8 +179,8 @@ void manageKeys(unsigned char key, int x, int y)
 
 		case '2':
 
-		/* The key is '2', thus we apply the configuration #2, corresponding to 'glOrtho(20,80,20,80,-1,1)'. */
-		cout<<"\tThe configuration #2, corresponding to the orthographic viewing box '[20,80]' x '[20,80]' x '[-1,1]', is applied to the current scene."<<endl;
+		/* The key is '2', thus we exploit the orthographic viewing box '[20,80]' x '[20,80]' x '[-1,1]' (the viewing configuration #2). */
+		cout<<"\tThe (viewing) configuration #2, corresponding to the orthographic viewing box '[20,80]' x '[20,80]' x '[-1,1]', is applied to the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		left_value = 20;
@@ -190,8 +196,8 @@ void manageKeys(unsigned char key, int x, int y)
 
 		case '3':
 
-		/* The key is '3', thus we apply the configuration #3, corresponding to 'glOrtho(0,100,0,100,-2,5)'. */
-		cout<<"\tThe configuration #3, corresponding to the viewing box '[0,100]' x '[0,100]' x '[-2,5]', is applied to the current scene."<<endl;
+		/* The key is '3', thus we exploit the orthographic viewing box '[0,100]' x '[0,100]' x '[-2,5]' (the viewing configuration #3). */
+		cout<<"\tThe (viewing) configuration #3, corresponding to the viewing box '[0,100]' x '[0,100]' x '[-2,5]', is applied to the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		left_value = 0;
@@ -207,8 +213,8 @@ void manageKeys(unsigned char key, int x, int y)
 
 		case '4':
 
-		/* The key is '4', thus we apply the configuration #4, corresponding to 'glOrtho(0,200,0,200,-1,1)'. */
-		cout<<"\tThe configuration #4, corresponding to the viewing box '[0,200]' x '[0,200]' x '[-1,1]', is applied to the current scene."<<endl;
+		/* The key is '4', thus we exploit the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' (the viewing configuration #4). */
+		cout<<"\tThe (viewing) configuration #4, corresponding to the viewing box '[0,200]' x '[0,200]' x '[-1,1]', is applied to the current scene."<<endl;
 		std::cout.flush();
 		eol=true;
 		left_value = 0;
@@ -224,8 +230,8 @@ void manageKeys(unsigned char key, int x, int y)
 
 		case '5':
 
-		/* The key is '5', thus we apply the configuration #5, corresponding to 'glOrtho(120,200,90,200,-1,3)'. */
-		cout<<"\tThe configuration #5, corresponding to the viewing box '[120,200]' x '[90,200]' x '[-1,3]', is applied to the current scene."<<endl;
+		/* The key is '5', thus we exploit the orthographic viewing box '[120,200]' x '[90,200]' x '[-1,3]' (the viewing configuration #5). */
+		cout<<"\tThe (viewing) configuration #5, corresponding to the viewing box '[120,200]' x '[90,200]' x '[-1,3]', is applied to the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		left_value = 120;
