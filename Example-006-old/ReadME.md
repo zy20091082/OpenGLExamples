@@ -3,9 +3,9 @@ height="97"></A>
 
 <H3>The <i>'Example-006 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-006 (Old Mode)'</i> Test draws the <i>'filled version'</i> of a polygon (in <i>'red'</i>) in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window by providing a basic interaction mechanism with the user. The polygon of interest has the maximum number 7 of sides, obtained as the intersection of the following elements:<p><ul>
-<li>the orthographic projection viewing box, defined by <i>'[0,100]' x '[0,100]' x '[-1,1]'</i>;</li>
-<li>the triangle of vertices <i>'(-50,-30,0)'</i>, <i>'(150,-50,0)'</i>, and <i>'(50,150,0)'</i>.</li></ul><p>Here, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-006-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
+The <i>'Example-006 (Old Mode)'</i> Test draws the <i>'filled version'</i> of a polygon (in <i>'red'</i>) in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window by providing a basic interaction mechanism with the user. The polygon of interest is the intersection with the maximum number of sides 7 between the following elements:<p><ul>
+<li value="0">the orthographic projection viewing box <i>'[0,100]' x '[0,100]' x '[-1,1]'</i>;</li>
+<li>the triangle of vertices <i>'(-50,-30,0)'</i> - <i>'(150,-50,0)'</i> - <i>'(50,150,0)'</i>.</li></ul><p>Here, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-006-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
 
 <h4>Dependencies</h4>
 

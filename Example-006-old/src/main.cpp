@@ -27,7 +27,7 @@ using namespace std;
 
 #else
 
-	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU Linux, or a Microsoft Windows platform. */
+	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU/Linux, or a Microsoft Windows platform. */
 	#include "GL/glew.h"
 	#include "GL/glut.h"
 	#include "GL/gl.h"
@@ -45,7 +45,7 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-006' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the polygon in 'red' with the maximum number 7 of sides, obtained as the intersection of the following elements:"<<endl<<endl;
+	cout<<"\tIt draws the polygon (in 'red'), which is the intersection with the maximum number 7 of sides between the following elements:"<<endl<<endl;
 	cout<<"\t\t-) the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]';"<<endl;
 	cout<<"\t\t-) the triangle with vertices '(-50,-30,0)' - '(150,-50,0)' - '(50,150,0)'."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
@@ -77,10 +77,14 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws a triangle in <i>'red'</i> within the OpenGL window of interest.
+/// This function draws the <i>'filled version'</i> of the polygon (in <i>'red'</i>), which is the intersection with the maximum number of sides between a triangle and the ortographic viewing box, in the OpenGL window of interest.
 void draw()
 {
-	/* We draw a triangle in 'red' within the OpenGL window of interest! */
+	/* We draw the 'filled' version' of a polygon (in 'red') in the OpenGL window of interest. It is the intersection with the maximum number of sides 7 between:
+	 *
+	 * -) the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1];
+	 * -) the triangle with vertices '(-50,-30,0)' - '(150,-50,0)' - '(50,150,0).
+	 */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0, 0.0, 0.0);
   	glBegin(GL_POLYGON);
