@@ -3,7 +3,7 @@ height="97"></A>
 
 <H3>The <i>'Example-003 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-003 (Old Mode)'</i> Test draws the <i>'filled version'</i> of a quadrilateral (in <i>'red'</i>) with vertices <i>'(30,20,0)'</i>, <i>'(80,20,0)'</i>, <i>'(80,80,0)'</i>, and <i>'(20,80,0)'</i> in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window by providing a basic interaction mechanism with the user. In fact, the user can apply (upon request) the following orthographic projections to the scene:<ol>
+The <i>'Example-003 (Old Mode)'</i> Test draws the <i>'filled version'</i> of a quadrilateral (in <i>'red'</i>) with vertices <i>'(30,20,0)'</i>, <i>'(80,20,0)'</i>, <i>'(80,80,0)'</i>, and <i>'(20,80,0)'</i> in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window by providing a basic interaction mechanism with the user. In fact, the user can apply (upon request) the following orthographic projections to the scene:<p><ol>
 <li>the orthographic viewing box <i>'[0,100]' x '[0,100]' x '[-1,1]'</i> is activated by pressing the <i>'0'</i> key (the viewing configuration #0). This is the standard orthographic viewing box of the scene, and the quadrilateral is completely rendered in the middle of the scene.</li>
 <li>The orthographic viewing box <i>'[-100,100]' x '[-100,100]' x '[-1,1]'</i> is activated by pressing the <i>'1'</i> key (the viewing configuration #1). The reduced and scaled quadrilateral is completely rendered in the top right corner of the scene.</li>
 <li>The orthographic viewing box <i>'[20,80]' x '[20,80]' x '[-1,1]'</i> is activated by pressing the <i>'2'</i> key (the viewing configuration #2). This orthographic viewing box does not cover entirely the quadrilateral, which is partially rendered in the middle of the scene.</li>
