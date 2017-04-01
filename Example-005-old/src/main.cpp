@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: March 2017
+ * Last update: April 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -34,9 +34,16 @@ using namespace std;
 
 #endif
 
-/* Prototypes for all functions of interest! */
-GLfloat xcoord;
+/// The <i>'x'</i> coordinate value for the triangle of interest.
+/**
+ * It is initially set to '20', and can be modified by pressing the '+', the '-', and the '=' keys.
+ */
+GLfloat xcoord=20;
+
+/// This boolean flag is useful for completing the textual interface.
 bool eol=false;
+
+/* Prototypes for all functions of interest! */
 void draw();
 void initialize();
 void resize(int w,int h);
@@ -51,8 +58,8 @@ int main(int argc,char **argv)
 	cout<<"\t\t-) the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]';"<<endl;
 	cout<<"\t\t-) the triangle with vertices '(x,20,0)' - '(80,20,0)' - '(80,80,0)', for any 'x' coordinate along the x-axis."<<endl<<endl;
 	cout<<"\tHere, the orthographic viewing box is not modified. Instead, the 'x' coordinate of the triangle, initially set to '20', can be moved by the user along the x-axis. The user can:"<<endl<<endl;
-	cout<<"\t\t-) increase the 'x' coordinate for the triangle of interest by 1.0 by pressing the '+' key;"<<endl;
-	cout<<"\t\t-) decrease the 'x' coordinate for the triangle of interest by 1.0 by pressing the '-' key;"<<endl;
+	cout<<"\t\t-) increase the 'x' coordinate by 1.0 for the triangle of interest by pressing the '+' key;"<<endl;
+	cout<<"\t\t-) decrease the 'x' coordinate by 1.0 for the triangle of interest by pressing the '-' key;"<<endl;
 	cout<<"\t\t-) reset the 'x' coordinate for the triangle of interest to its initial value '20' by pressing the '=' key."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();

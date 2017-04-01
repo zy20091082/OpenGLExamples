@@ -34,15 +34,25 @@ using namespace std;
 
 #endif
 
+/// These global variables define the orthographic view of interest to be applied in the scene.
+/*
+ * 'left_value' indicates the minimum value of the range along the 'x'-axis;
+ * 'right_value' indicates the maximum value of the range along the 'x'-axis;
+ * 'bottom_value' indicates the minimum value of the range along the 'y'-axis;
+ * 'top_value' indicates the maximum value of the range along the 'y'-axis;
+ * '-far_value' indicates the minimum value of the range along the 'z'-axis;
+ * '-near_value' indicates the maximum value of the range along the 'z'-axis.
+ */
+GLfloat left_value, right_value, bottom_value, top_value, near_value, far_value;
+
+/// This boolean flag is useful for completing the textual interface.
+bool eol=false;
+
 /* Prototypes for all functions of interest! */
 void draw();
 void initialize();
 void resize(int w,int h);
 void manageKeys(unsigned char key, int x, int y);
-
-/* Global variables */
-GLfloat left_value,right_value,bottom_value,top_value,near_value,far_value;
-bool eol=false;
 
 /// The main function for the <i>'Example-004 (Old Mode)'</i> example.
 int main(int argc,char **argv)

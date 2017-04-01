@@ -81,7 +81,7 @@ void draw()
 	/* We draw the 'filled versions' for 12 quadrilaterals of different colors in the OpenGL window of interest. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	
-	/* We draw the 'black' quadrilateral #0. */
+	/* We draw the quadrilateral #0 by using the 'black' color. */
 	glColor3f(0.0, 0.0, 0.0);
 	glBegin(GL_POLYGON);
 	glVertex3f(20,90,0);
@@ -90,7 +90,7 @@ void draw()
 	glVertex3f(20,110,0);
 	glEnd();
 	
-	/* We draw the 'red' quadrilateral #1. */
+	/* We draw the quadrilateral #1 by using the 'red' color. */
 	glColor3f(1.0, 0.0, 0.0);
 	glBegin(GL_POLYGON);
 	glVertex3f(50,90,0);
@@ -99,7 +99,7 @@ void draw()
 	glVertex3f(50,110,0);
 	glEnd();
 	
-	/* We draw the 'green' quadrilateral #2. */
+	/* We draw the quadrilateral #2 by using the 'green' color. */
 	glColor3f(0.0, 1.0, 0.0);
 	glBegin(GL_POLYGON);
 	glVertex3f(80,90,0);
@@ -108,7 +108,7 @@ void draw()
 	glVertex3f(80,110,0);
 	glEnd();
 	
-	/* We draw the 'blue' quadrilateral #3. */
+	/* We draw the quadrilateral #3 by using the 'blue' color. */
 	glColor3f(0.0, 0.0, 1.0);
 	glBegin(GL_POLYGON);
 	glVertex3f(20,60,0);
@@ -117,7 +117,7 @@ void draw()
 	glVertex3f(20,80,0);
 	glEnd();
 	
-	/* We draw the 'yellow' quadrilateral #4. */
+	/* We draw the quadrilateral #4 by using the 'yellow' color. */
 	glColor3f(1.0, 1.0, 0.0);
 	glBegin(GL_POLYGON);
 	glVertex3f(50,60,0);
@@ -126,7 +126,7 @@ void draw()
 	glVertex3f(50,80,0);
 	glEnd();
 	
-	/* We draw the 'magenta' quadrilateral #5. */
+	/* We draw the quadrilateral #5 by using the 'magenta' color. */
 	glColor3f(1.0, 0.0, 1.0);
 	glBegin(GL_POLYGON);
 	glVertex3f(80,60,0);
@@ -135,7 +135,7 @@ void draw()
 	glVertex3f(80,80,0);
 	glEnd();
 	
-	/* We draw the 'cyan' quadrilateral #6. */
+	/* We draw the quadrilateral #6 by using the 'cyan' color. */
 	glColor3f(0.0, 1.0, 1.0);
 	glBegin(GL_POLYGON);
 	glVertex3f(20,30,0);

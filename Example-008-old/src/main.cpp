@@ -34,12 +34,12 @@ using namespace std;
 
 #endif
 
-/// This flag identifies what 'viewing configuration' must be applied.
+/// This flag identifies what 'viewing configuration' must be applied to the current scene.
 /**
  * It may assume these values:
  *
- * -) '0' for activating the 'viewing configuration #0'. Here, the 'large' quadrilateral is rendered before.
- * -) '1' for activating the 'viewing configuration #1'. Here, the 'small' quadrilateral is rendered before.
+ * -) '0' for activating the 'viewing configuration #0'. Here, the 'large' quadrilateral is rendered before, but it is partially hidden by the 'small' quadrilateral.
+ * -) '1' for activating the 'viewing configuration #1'. Here, the 'small' quadrilateral is rendered before, but it is completely hidden by the 'large' quadrilateral.
  */
 int choice;
 
@@ -86,7 +86,7 @@ int main(int argc,char **argv)
 /// This function updates the viewport for the scene when it is resized. */
 void resize(int w, int h)
 {
-	/* We update the projections and the modeling matrices! */
+	/* We update the projection and the modeling matrices! */
 	glViewport(0, 0, w, h);
    	glMatrixMode(GL_PROJECTION);
    	glLoadIdentity();
