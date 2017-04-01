@@ -34,7 +34,7 @@ using namespace std;
 
 #endif
 
-/// The custom setting for choosing which side of the custom polygon must be rendered.
+/// The flag, modeling the custom setting for choosing which side of the custom polygon must be rendered.
 /**
  * The value of this flag may be one of the following values:
  * 
@@ -46,7 +46,7 @@ using namespace std;
  */
 GLenum face;
 
-/// The custom setting for rendering the polygon of interest.
+/// The flag, modeling the custom setting for rendering the polygon of interest.
 /**
  * The value of this flag may be one of the following values:
  *
