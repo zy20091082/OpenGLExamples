@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: March 2017
+ * Last update: April 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -27,7 +27,7 @@ using namespace std;
 
 #else
 
-	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU Linux, or a Microsoft Windows platform. */
+	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU/Linux, or a Microsoft Windows platform. */
 	#include "GL/glew.h"
 	#include "GL/glut.h"
 	#include "GL/gl.h"

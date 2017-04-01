@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: March 2017
+ * Last update: April 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -27,33 +27,47 @@ using namespace std;
 
 #else
 
-	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU Linux, or a Microsoft Windows platform. */
+	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU/Linux, or a Microsoft Windows platform. */
 	#include "GL/glew.h"
 	#include "GL/glut.h"
 	#include "GL/gl.h"
 
 #endif
 
+/// This flag identifies what graphic primitive must be exploited for rendering the cloud of several 3D points in the scene.
+/**
+ * It may be one of the following values:
+ *
+ * -) the 'GL_POINTS' value for rendering several independent points;
+ * -) the 'GL_LINES' for rendering several independent lines;
+ * -) the 'GL_LINE_STRIP' for rendering an open line strip;
+ * -) the 'GL_LINE_LOOP' for rendering a closed line strip;
+ * -) the 'GL_TRIANGLES' for rendering several triangles;
+ * -) the 'GL_POLYGON' for rendering a unique polygon.
+ */
+int rendering;
+
+/// This boolean flag is used for completing the textual interface.
+bool eol=false;
+
 /* Prototypes for all functions of interest! */
 void draw();
 void initialize();
 void resize(int w,int h);
 void manageKeys(unsigned char key, int x, int y);
-int rendering;
-bool eol=false;
 
 /// The main function for the <i>'Example-010 (Old Mode)'</i> example.
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-010' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt allows to exploit the following primitives for drawing the scene, based on a cloud of several 3D points:"<<endl<<endl;
-	cout << "\t-) several independent points (the 'GL_POINTS' primitive) by pressing the '0' key;" << endl;
-	cout << "\t-) several independent lines (the 'GL_LINES' primitive) by pressing the '1' key;" << endl;
-	cout << "\t-) an open line strip (the 'GL_LINE_STRIP' primitive) by pressing the '2' key;" << endl;
-	cout << "\t-) a closed line loop (the 'GL_LINE_LOOP' primitive) by pressing the '3' key;" << endl;
-	cout << "\t-) several independent triangles (the 'GL_TRIANGLES' primitive) by pressing the '4' key;" << endl;
-	cout<<"\t-) a unique polygon (the 'GL_POLYGON' primitive) by pressing the '5' key."<<endl<<endl;
+	cout<<"\tIt allows to exploit the following graphic primitives, based on a cloud of several 3D points, to be drawn in the scene:"<<endl<<endl;
+	cout << "\t-) the 'GL_POINTS' primitive is chosen by pressing the '0' key for drawing several independent points;" << endl;
+	cout << "\t-) the 'GL_LINES' primitive is chosen by pressing the '1' key for drawing several independent lines;" << endl;
+	cout << "\t-) the 'GL_LINE_STRIP' primitive is chosen by pressing the '2' key for drawing an open line strip;" << endl;
+	cout << "\t-) the 'GL_LINE_LOOP' primitive is chosen by pressing the '3' key for drawing a closed line loop;" << endl;
+	cout << "\t-) the 'GL_TRIANGLES' primitive is chosen by pressing the '4' key for drawing several independent triangles;" << endl;
+	cout << "\t-) the 'GL_POLYGON' primitive is chosen by pressing the '5' key for drawing only one polygon."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -74,7 +88,7 @@ int main(int argc,char **argv)
 /// This function updates the viewport for the scene when it is resized. */
 void resize(int w, int h)
 {
-	/* We update the projections and the modeling matrices! */
+	/* We update the projection and the modeling matrices! */
 	glViewport(0, 0, w, h);
    	glMatrixMode(GL_PROJECTION);
    	glLoadIdentity();
@@ -83,10 +97,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws the scene in the OpenGL window of interest by using the primitive, chosen by the user.
+/// This function draws the scene in the OpenGL window of interest by using the graphic primitive, chosen by the user.
 void draw()
 {
-	/* We draw the scene by using the primitive, chosen by the user. */
+	/* We draw the scene in the OpenGL window of interest by using the graphic primitive, chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(10.0);
 	glLineWidth(2.0);
@@ -177,7 +191,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '3':
 		
-		/* The key is '3', thus the 'GL_LINE_LOOP' primitive is used for drawing a close line loop in the current scene. */
+		/* The key is '3', thus the 'GL_LINE_LOOP' primitive is used for drawing a closed line loop in the current scene. */
 		rendering=GL_LINE_LOOP;
 		cout<<"\tThe 'GL_LINE_LOOP' primitive is used for drawing a closed line loop in the current scene."<<endl;
 		cout.flush();
@@ -197,9 +211,9 @@ void manageKeys(unsigned char key, int x, int y)
 
 		case '5':
 		
-		/* The key is '5', thus the 'GL_POLYGON' primitive is used for drawing a polygon in the current scene. */
+		/* The key is '5', thus the 'GL_POLYGON' primitive is used for drawing only one polygon in the current scene. */
 		rendering=GL_POLYGON;
-		cout<<"\tThe 'GL_POLYGON' primitive is used for drawing a polygon in the current scene."<<endl;
+		cout<<"\tThe 'GL_POLYGON' primitive is used for drawing only one polygon in the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();

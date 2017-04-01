@@ -3,13 +3,13 @@ height="97"></A>
 
 <H3>The <i>'Example-010 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-010 (Old Mode)'</i> Test draws several graphic primitives in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window, starting from a cloud of several 3D points. This test also provides a very basic interaction mechanism with the user, which can choose what graphic primitive must be exploited, as follows:<p><ul>
-<li>several independent points (thus, using the <i>'GL_POINTS'</i> primitive) are drawn by pressing the <i>'0'</i> key;</li>
-<li>several independent lines (thus, using the <i>'GL_LINES'</i> primitive) are drawn by pressing the <i>'1'</i> key;</li>
-<li>an open line strip (thus, using the <i>'GL_LINE_STRIP'</i> primitive) is drawn by pressing the <i>'2'</i> key;</li>
-<li>a closed line loop (thus, using the <i>'GL_LINE_LOOP'</i> primitive) is drawn by pressing the <i>'3'</i> key;</li>
-<li>several independent triangles (thus, using the <i>'GL_TRIANGLES'</i> primitive) are drawn by pressing the <i>'4'</i> key;</li>
-<li>a unique polygon (thus, the <i>'GL_POLYGON'</i> primitive) is drawn by pressing the <i>'5'</i> key.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-010-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
+The <i>'Example-010 (Old Mode)'</i> Test draws several graphic primitives in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window, starting from a cloud of several 3D points. This test also provides a very basic interaction mechanism with the user, which can choose what graphic primitive must be exploited, as follows:<p><ol>
+<li value="0">the <i>'GL_POINTS'</i> primitive is chosen by pressing the <i>'0'</i> key for drawing several independent points;</li>
+<li value="1">the <i>'GL_LINES'</i> primitive is chosen by pressing the <i>'1'</i> key for drawing several independent lines;</li>
+<li value="2">the <i>'GL_LINE_STRIP'</i> primitive is chosen by pressing the <i>'2'</i> key for drawing an open line strip;</li>
+<li value="3">the <i>'GL_LINE_LOOP'</i> primitive is chosen by pressing the <i>'3'</i> key for drawing a closed line loop;</li>
+<li value="4">the <i>'GL_TRIANGLES'</i> primitive is chosen by pressing the <i>'4'</i> key for drawing several independent triangles;</li>
+<li value="5">the <i>'GL_POLYGON'</i> primitive is chosen by pressing the <i>'5'</i> key for drawing only one polygon.</li></ol><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-010-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
 
 <h4>Dependencies</h4>
 

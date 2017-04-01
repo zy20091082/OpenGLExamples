@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: March 2017
+ * Last update: April 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -27,30 +27,34 @@ using namespace std;
 
 #else
 
-	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU Linux, or a Microsoft Windows platform. */
+	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU/Linux, or a Microsoft Windows platform. */
 	#include "GL/glew.h"
 	#include "GL/glut.h"
 	#include "GL/gl.h"
 
 #endif
 
-/// The custom setting for choosing which side of the polygon must be rendered.
+/// The custom setting for choosing which side of the custom polygon must be rendered.
 /**
- * It may be one of the following:
+ * The value of this flag may be one of the following values:
  * 
- * -) GL_FRONT for rendering only the 'front' side of the polygon (press the 'f' or the 'F' key);
- * -) GL_BACK for rendering only the 'back' side of the polygon (press the 'b' or the 'B' key);
- * -) GL_FRONT_AND_BACK for rendering both the 'front' and the 'back' sides of the polygon (press the 't' or the 'T' key).
+ * -) 'GL_FRONT', for rendering only the 'front' side of the custom polygon (press the 'f' or the 'F' key);
+ * -) 'GL_BACK', for rendering only the 'back' side of the custom polygon (press the 'b' or the 'B' key);
+ * -) 'GL_FRONT_AND_BACK', for rendering both the 'front' and the 'back' sides of the custom polygon (press the 't' or the 'T' key).
+ *
+ * The rendering type to be exploited is chosen separately by the user.
  */
 GLenum face;
 
 /// The custom setting for rendering the polygon of interest.
 /**
- * It may be one of the following:
+ * The value of this flag may be one of the following values:
  *
- * -) GL_POINT for rendering only the points of the polygon (press the 'p' or the 'P' key);
- * -) GL_LINE for rendering only the edges of the polygon, thus its 'wireframe version' (press the 'l' or the 'L' key);
- * -) GL_FILL for rendering completely the polygon, thus its 'filled version' (see the 'i' or the 'I' key).
+ * -) 'GL_POINT', for rendering only the vertices for the sides of the custom polygon to be drawn (press the 'p' or the 'P' key);
+ * -) 'GL_LINE', for rendering the 'wireframe versions' for the sides of the custom polygon to be drawn (press the 'l' or the 'L' key);
+ * -) 'GL_FILL', for rendering the 'filled versions' for the sides of the custom polygon to be drawn (press the 'i' or the 'I' key).
+ *
+ * The choice for what sides of the custom polygon must be drawn is performed separately by the user.
  */
 GLenum mode;
 
@@ -65,13 +69,13 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-011' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a custom polygon in 'red', and it allows to modify its rendering as follows:"<<endl<<endl;
-	cout<<"\t-) only the 'front' side of the custom polygon is rendered by pressing the 'f' or the 'F' key;"<<endl;
-	cout<<"\t-) only the 'back' side of the custom polygon is rendered by pressing the 'b' or the 'B' key;"<<endl;
-	cout<<"\t-) both the 'front' and the 'back' sides of the custom polygon are rendered by pressing the 't' or the 'T' key;"<<endl;
-	cout<<"\t-) only the vertices of the custom polygon are rendered by pressing the 'p' or the 'P' key;"<<endl;
-	cout<<"\t-) only the edges of the custom polygon are rendered (thus, its 'wireframe version') by pressing the 'l' or the 'L' key;"<<endl;
-	cout<<"\t-) the custom polygon is completely rendered (thus, its 'filled version') by pressing the 'i' or the 'I' key."<<endl<<endl;
+	cout<<"\tIt draws a custom polygon (in 'red') by using the following rendering settings, that can be chosen and activated by the user, as follows:"<<endl<<endl;
+	cout<<"\t-) only the 'front' side of the custom polygon is rendered by pressing the 'f' or the 'F' key. The corresponding rendering type is chosen by the user separately."<<endl;
+	cout<<"\t-) Only the 'back' side of the custom polygon is rendered by pressing the 'b' or the 'B' key. The corresponding rendering type is chosen by the user separately."<<endl;
+	cout<<"\t-) Both the 'front' and the 'back' sides of the custom polygon are rendered by pressing the 't' or the 'T' key. The corresponding rendering type is chosen by the user separately."<<endl;
+	cout<<"\t-) Only the vertices for the sides of the custom polygon to be drawn (chosen by the user separately) are rendered by pressing the 'p' or the 'P' key;"<<endl;
+	cout<<"\t-) the 'wireframe versions' for the sides of the custom polygon to be drawn (chosen by the user separately) are rendered by pressing the 'l' or the 'L' key;"<<endl;
+	cout<<"\t-) the 'filled versions' for the sides of the custom polygon to be drawn (chosen by the user separately) are rendered by pressing the 'i' or the 'I' key."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -92,72 +96,13 @@ int main(int argc,char **argv)
 /// This function updates the viewport for the scene when it is resized. */
 void resize(int w, int h)
 {
-	/* We update the projections and the modeling matrices! */
+	/* We update the projection and the modeling matrices! */
 	glViewport(0, 0, w, h);
    	glMatrixMode(GL_PROJECTION);
    	glLoadIdentity();
    	glOrtho(0,130,0,120,-1,1);
    	glMatrixMode(GL_MODELVIEW);
    	glLoadIdentity();
-}
-
-/// This function draws a custom polygon in <i>'red'</i> within the OpenGL window of interest by using the rendering preferences, chosen by the user.
-void draw()
-{
-	/* We draw a custom polygon in 'red' within the OpenGL window of interest by using the rendering preferences, chosen by the user. */
-	glClear(GL_COLOR_BUFFER_BIT);
-	glPointSize(10.0);
-	glLineWidth(2.0);
-	glColor3f(1,0,0);
-	glPolygonMode(face,mode);
-	glPolygonMode(face,mode);
-	glBegin(GL_POLYGON);
-	glVertex3f(20,80,0);
-	glVertex3f(20,50,0);
-	glVertex3f(50,20,0);
-	glVertex3f(80,20,0);
-	glVertex3f(110,50,0);
-	glVertex3f(110,80,0);
-	glVertex3f(80,100,0);
-	glVertex3f(50,100,0);
-	glEnd();
-	glFlush();
-	glFlush();
-	if(face==GL_FRONT)
-	{
-		/* We analyze only the 'front' side of the custom polygon. */
-		if(mode==GL_POINT) cout<<"\tOnly the points in the 'front' side of the custom polygon are rendered in the current scene."<<endl;
-		if(mode==GL_LINE) cout<<"\tOnly the edges in the 'front' side of the custom polygon are rendered (thus, its 'wireframe version') in the current scene."<<endl;
-		if(mode==GL_FILL) cout<<"\tOnly the 'front' side of the custom polygon is completely rendered (thus, its 'filled version') in the current scene."<<endl;
-		cout.flush();
-	}
-	else if(face==GL_BACK)
-	{
-		/* We analyze only the 'back' side of the custom polygon. */
-		if(mode==GL_POINT) cout<<"\tOnly the points in the 'back' side of the custom polygon are rendered in the current scene."<<endl;
-		if(mode==GL_LINE) cout<<"\tOnly the edges in the 'back' side of the custom polygon are rendered (thus, its 'wireframe version') in the current scene."<<endl;
-		if(mode==GL_FILL) cout<<"\tOnly the 'back' side of the custom polygon is completely rendered (thus, its 'filled version') in the current scene."<<endl;
-		cout.flush();
-	}
-	else
-	{
-		/* We analyze both the 'front' and the 'back' sides of the custom polygon. */
-		if(mode==GL_POINT) cout<<"\tOnly the points in both the 'front' and the 'back' sides of the custom polygon are rendered in the current scene."<<endl;
-		if(mode==GL_LINE) cout<<"\tOnly the edges in both the 'front' and the 'back' sides of the custom polygon are rendered (thus, their 'wireframe version') in the current scene."<<endl;
-		if(mode==GL_FILL) cout<<"\tBoth the 'front' and the 'back' sides are completely rendered (thus, their 'filled version') in the current scene."<<endl;
-		cout.flush();
-	}
-}
-
-/// This function initializes the OpenGL window of interest.
-void initialize() 
-{
-	/* We initialize the OpenGL window of interest! */
-	glClearColor(1.0, 1.0, 1.0, 0.0);
-	face=GL_FRONT;
-	mode=GL_FILL;
-	cout<<"\tInitially, only the 'front' side of the custom polygon is completely filled (thus, its 'filled version') in the current scene."<<endl<<endl;
-	cout.flush();
 }
 
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
@@ -192,84 +137,84 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 'F':
 
-		/* The key is 'F', thus we draw only the 'front' side of the custom polygon. */
+		/* The key is 'F', thus we draw only the 'front' side of the custom polygon by using the rendering type, chosen by the user. */
 		face=GL_FRONT;
 		glutPostRedisplay();
 		break;
 		
 		case 'f':
 
-		/* The key is 'f', thus we draw only the 'front' side of the custom polygon. */
+		/* The key is 'f', thus we draw only the 'front' side of the custom polygon by using the rendering type, chosen by the user. */
 		face=GL_FRONT;
 		glutPostRedisplay();
 		break;
 		
 		case 'B':
 
-		/* The key is 'B', thus we draw only the 'back' side of the custom polygon. */
+		/* The key is 'B', thus we draw only the 'back' side of the custom polygon by using the rendering type, chosen by the user. */
 		face=GL_BACK;
 		glutPostRedisplay();
 		break;
 		
 		case 'b':
 
-		/* The key is 'b', thus we draw only the 'back' side of the custom polygon. */
+		/* The key is 'b', thus we draw only the 'back' side of the custom polygon by using the rendering type, chosen by the user. */
 		face=GL_BACK;
 		glutPostRedisplay();
 		break;
 		
 		case 'T':
 
-		/* The key is 'T', thus we draw both the 'front' and the 'back' sides of the custom polygon. */
+		/* The key is 'T', thus we draw both the 'front' and the 'back' sides of the custom polygon by using the rendering type, chosen by the user. */
 		face=GL_FRONT_AND_BACK;
 		glutPostRedisplay();
 		break;
 		
 		case 't':
 
-		/* The key is 't', thus we draw both the 'front' and the 'back' sides of the custom polygon. */
+		/* The key is 't', thus we draw both the 'front' and the 'back' sides of the custom polygon by using the rendering type, chosen by the user. */
 		face=GL_FRONT_AND_BACK;
 		glutPostRedisplay();
 		break;
 		
 		case 'I':
 
-		/* The key is 'I', thus we completely render the custom polygon (thus, its 'filled version'). */
+		/* The key is 'I', thus we render the 'filled versions' for the sides of the custom polygon to be drawn (chosen by the user separately). */
 		mode=GL_FILL;
 		glutPostRedisplay();
 		break;
 		
 		case 'i':
 
-		/* The key is 'i', thus we completely render the custom polygon (thus, its 'filled version'). */
+		/* The key is 'i', thus we render the 'filled versions' for the sides of the custom polygon to be drawn (chosen by the user separately). */
 		mode=GL_FILL;
 		glutPostRedisplay();
 		break;
 		
 		case 'L':
 
-		/* The key is 'L', thus we render only the edges of the custom polygon (thus, its 'wireframe version'). */
+		/* The key is 'L', thus we render the 'wireframe versions' for the sides of the custom polygon to be drawn (chosen by the user separately). */
 		mode=GL_LINE;
 		glutPostRedisplay();
 		break;
 		
 		case 'l':
 
-		/* The key is 'l', thus we render only the edges of the custom polygon (thus, its 'wireframe version'). */
+		/* The key is 'l', thus we render the 'wireframe versions' for the sides of the custom polygon to be drawn (chosen by the user separately). */
 		mode=GL_LINE;
 		glutPostRedisplay();
 		break;
 		
 		case 'P':
 		
-		/* The key is 'P', thus we render only the vertices of the custom polygon. */
+		/* The key is 'P', thus we render only the vertices in the sides of the custom polygon to be drawn (chosen by the user separately). */
 		mode=GL_POINT;
 		glutPostRedisplay();
 		break;
 		
 		case 'p':
 		
-		/* The key is 'p', thus we render only the vertices of the custom polygon. */
+		/* The key is 'p', thus we render only the vertices in the sides of the custom polygon to be drawn (chosen by the user separately). */
 		mode=GL_POINT;
 		glutPostRedisplay();
 		break;
@@ -278,5 +223,61 @@ void manageKeys(unsigned char key, int x, int y)
 
     	/* Other keys are not important for us! */
     	break;
+	}
+}
+
+/// This function initializes the OpenGL window of interest.
+void initialize() 
+{
+	/* We initialize the OpenGL window of interest! */
+	glClearColor(1.0, 1.0, 1.0, 0.0);
+	face=GL_FRONT;
+	mode=GL_FILL;
+	cout<<"\tAt the beginning, the 'filled version' for the 'front' side of the custom polygon is rendered in the current scene."<<endl<<endl;
+	cout.flush();
+}
+
+/// This function draws a custom polygon (in <i>'red'</i>) in the OpenGL window of interest by using the rendering preferences, chosen by the user.
+void draw()
+{
+	/* We draw a custom polygon (in 'red') in the OpenGL window of interest by using the rendering preferences, chosen by the user. */
+	glClear(GL_COLOR_BUFFER_BIT);
+	glPointSize(10.0);
+	glLineWidth(2.0);
+	glColor3f(1,0,0);
+	glPolygonMode(face,mode);
+	glPolygonMode(face,mode);
+	glBegin(GL_POLYGON);
+	glVertex3f(20,80,0);
+	glVertex3f(20,50,0);
+	glVertex3f(50,20,0);
+	glVertex3f(80,20,0);
+	glVertex3f(110,50,0);
+	glVertex3f(110,80,0);
+	glVertex3f(80,100,0);
+	glVertex3f(50,100,0);
+	glEnd();
+	glFlush();
+	glFlush();
+	if(face==GL_FRONT)
+	{
+		/* We must draw only the 'front' side of the custom polygon by using the rendering type, chosen by the user. */
+		if(mode==GL_POINT) cout<<"\tOnly the vertices in the 'front' side of the custom polygon are rendered in the current scene."<<endl;
+		if(mode==GL_LINE) cout<<"\tThe 'wireframe version' for the 'front' side of the custom polygon is rendered in the current scene."<<endl;
+		if(mode==GL_FILL) cout<<"\tThe 'filled version' for the 'front' side of the custom polygon is rendered in the current scene."<<endl;
+	}
+	else if(face==GL_BACK)
+	{
+		/* We must draw only the 'back' side of the custom polygon by using the rendering type, chosen by the user. */
+		if(mode==GL_POINT) cout<<"\tOnly the vertices in the 'back' side of the custom polygon are rendered in the current scene."<<endl;
+		if(mode==GL_LINE) cout<<"\tThe 'wireframe version' for the 'back' side of the custom polygon is rendered in the current scene."<<endl;
+		if(mode==GL_FILL) cout<<"\tThe 'filled version' for the 'back' side of the custom polygon is rendered in the current scene."<<endl;
+	}
+	else
+	{
+		/* We must draw both the 'front' and the 'back' sides of the custom polygon by using the rendering type, chosen by the user. */
+		if(mode==GL_POINT) cout<<"\tOnly the vertices in both the 'front' and the 'back' sides of the custom polygon are rendered in the current scene."<<endl;
+		if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' for both the 'front' and the 'back' sides of the custom polygon are rendered in the current scene."<<endl;
+		if(mode==GL_FILL) cout<<"\tThe 'filled versions' for both the 'front' and the 'back' sides of the custom polygon are rendered in the current scene."<<endl;
 	}
 }
