@@ -3,7 +3,7 @@ height="97"></A>
 
 <H3>The <i>'Example-008 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-008 (Old Mode)'</i> Test draws the <i>'filled versions'</i> for 2 quadrilaterals of different size and with a not empty intersection (partial overlap) in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. In particular, the <i>'small'</i> quadrilateral may be completely covered by the <i>'large'</i> quadrilateral, depending on their rendering order. This latter corresponds to their color, as follows:<p><ul>
+The <i>'Example-008 (Old Mode)'</i> Test draws the <i>'filled versions'</i> for 2 quadrilaterals of different size and with a not empty intersection (partial overlap) in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. In particular, the <i>'small'</i> quadrilateral may be completely covered by the <i>'large'</i> quadrilateral, depending on their rendering order. This latter corresponds to their color, which is defined as follows:<p><ul>
 <li>the quadrilateral in <i>'red'</i> is rendered before in the scene;</li>
 <li>the quadrilateral in <i>'blue'</i> is rendered after in the scene.</li></ul><p>The rendering order of these quadrilaterals corresponds to the following <i>'viewing configurations'</i>, that can be activated upon request by the user:<p><ol>
 <li value="0">the <i>'large'</i> quadrilateral (in <i>'red'</i>) is rendered before, and the <i>'small'</i> quadrilateral (in <i>'blue'</i>) is rendered after in the <i>'viewing configuration #0'</i>. In this case, both the quadrilaterals are visible. The <i>'viewing configuration #0'</i> is activated upon request by pressing the <i>'0'</i> key.<p></li>
