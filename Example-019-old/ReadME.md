@@ -3,7 +3,7 @@ height="97"></A>
 
 <H3>The <i>'Example-019 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-019 (Old Mode)'</i> Test draws the <i>'filled version'</i> and the <i>'wireframe version'</i> of 2 triangle strips (respectively, in <i>'red'</i> and in <i>'blue'</i>), that approximate the <i>'Double Square Annulus'</i> shape, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. This test also provides a very basic interaction mechanism with the user. Here, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-019-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
+The <i>'Example-019 (Old Mode)'</i> Test draws the <i>'filled'</i> and the <i>'wireframe versions'</i> of 2 triangle strips (respectively, in <i>'red'</i> and in <i>'blue'</i>), that approximate the <i>'Double Square Annulus'</i> shape, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. This test also provides a very basic interaction mechanism with the user. Here, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-019-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
 
 <h4>Dependencies</h4>
 
