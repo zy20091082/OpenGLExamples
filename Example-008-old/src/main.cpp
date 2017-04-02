@@ -58,10 +58,10 @@ int main(int argc,char **argv)
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-008' Example, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws the 'filled versions' for 2 quadrilaterals of different size and with a not empty intersection (partial overlap)."<<endl;
-	cout<<"\tIn particular, the 'small' quadrilateral may be completely covered by the 'large' quadrilateral, depending on their rendering order. This latter corresponds to their color, as follows:"<<endl<<endl;
+	cout<<"\tIn particular, the 'small' quadrilateral may be completely covered by the 'large' quadrilateral, depending on their rendering order. This latter corresponds to their color, which is defined as follows:"<<endl<<endl;
 	cout<<"\t\t-) the quadrilateral in 'red' is rendered before in the scene;"<<endl;
 	cout<<"\t\t-) the quadrilateral in 'blue' is rendered after in the scene."<<endl<<endl;
-	cout<<"\tThe rendering order of these quadrilaterals corresponds to the following 'viewing configurations':"<<endl<<endl;
+	cout<<"\tThe rendering order of these quadrilaterals corresponds to the following 'viewing configurations', that can be activated upon request by the user:"<<endl<<endl;
 	cout<<"\t\t-) the 'large' quadrilateral (in 'red') is rendered before, and the 'small' quadrilateral (in 'blue') is rendered after in the 'viewing configuration #0'. In this case, both the quadrilaterals are visible."<<endl;
 	cout<<"\t\t   The 'viewing configuration #0' is activated by pressing the '0' key."<<endl<<endl;
 	cout<<"\t\t-) The 'small' quadrilateral (in 'red') is rendered before, and the 'large' quadrilateral (in 'blue') is rendered after in the 'viewing configuration #1'. In this case, only the 'large' quadrilateral is visible."<<endl;
@@ -103,7 +103,7 @@ void draw()
 	glColor3f(1.0,0.0,0.0);
 	if(choice==0)
 	{
-		/* We must draw the 'large' quadrilateral, first. */
+		/* We must draw the 'filled version' of the 'large' quadrilateral, first. */
 		glBegin(GL_POLYGON);
 		glVertex3f(20,20,0);
 		glVertex3f(80,20,0);
@@ -113,7 +113,7 @@ void draw()
 	}
 	else
 	{
-		/* We must draw the 'small' quadrilateral, first. */
+		/* We must draw the 'filled version' of the 'small' quadrilateral, first. */
 		glBegin(GL_POLYGON);
 		glVertex3f(40,40,0);
 		glVertex3f(60,40,0);
@@ -122,11 +122,11 @@ void draw()
 		glEnd();
 	}
 	
-	/* Now, we draw the second quadrilateral! */
+	/* Now, we draw the 'filled version' of the second quadrilateral! */
 	glColor3f(0.0,0.0,1.0);
 	if(choice==0)
 	{
-		/* We must draw the 'small' quadrilateral. */
+		/* We must draw the 'filled version' of the 'small' quadrilateral. */
 		glBegin(GL_POLYGON);
 		glVertex3f(40,40,0);
 		glVertex3f(60,40,0);
@@ -136,7 +136,7 @@ void draw()
 	}
 	else
 	{
-		/* We must draw the 'large' quadrilateral. */
+		/* We must draw the 'filled version' of the 'large' quadrilateral. */
 		glBegin(GL_POLYGON);
 		glVertex3f(20,20,0);
 		glVertex3f(80,20,0);

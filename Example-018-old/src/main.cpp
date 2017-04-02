@@ -34,14 +34,16 @@ using namespace std;
 
 #endif
 
-/* Prototypes for all functions of interest! */
-void draw();
-void initialize();
-void resize(int w,int h);
-void manageKeys(unsigned char key, int x, int y);
+/// The counter index for cycling the vertices order for all versions of the convex polygons (in <i>'red'</i>).
 int iconvex;
+
+/// The counter index for cycling the vertices order for all versions of the concave polygons (in <i>'blue'</i>).
 int inconvex;
+
+/// This boolean flag is useful for completing the textual interface.
 bool eol=false;
+
+/// The 3D coordinates of the points in the convex polygons (in <i>'red'</i>).
 float convex_points[][3]={
 			{ 20.0,20.0,0.0},
 			{ 50,20,0 },
@@ -49,6 +51,8 @@ float convex_points[][3]={
 			{ 80,80,0 },
 			{ 20,80,0 }
 	};
+
+/// The 3D coordinates of the points in the concave polygons (in <i>'blue'</i>).
 float not_convex_points[][3]={
 			{20,120,0},
 			{80,120,0},
@@ -56,13 +60,19 @@ float not_convex_points[][3]={
 			{20,180,0}
 };
 
+/* Prototypes for all functions of interest! */
+void draw();
+void initialize();
+void resize(int w,int h);
+void manageKeys(unsigned char key, int x, int y);
+
 /// The main function for the <i>'Example-018 (Old Mode)'</i> example.
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-018' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws both the 'filled' and the 'wireframe version' of several convex (in 'red') and concave (in 'blue') polygons, and allows the user to cycle the vertices order in the polygons of interest by pressing the '+' key."<<endl;
-	cout<<"\tWhile performing these operations, there may be 'strange' situations, expecially when cycling the vertices in the 'filled version' of the concave polygons (in 'blue')."<<endl<<endl;
+	cout<<"\tIt draws the 'filled' and the 'wireframe versions' of several convex (in 'red') and concave (in 'blue') polygons, and allows the user to cycle the vertices order in the polygons of interest by pressing the '+' key."<<endl;
+	cout<<"\tWhile performing these operations, there may be 'strange' situations, expecially when cycling the vertices in the 'filled versions' of the concave polygons (in 'blue')."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -83,7 +93,7 @@ int main(int argc,char **argv)
 /// This function updates the viewport for the scene when it is resized. */
 void resize(int w, int h)
 {
-	/* We update the projections and the modeling matrices! */
+	/* We update the projection and the modeling matrices! */
 	glViewport(0, 0, w, h);
    	glMatrixMode(GL_PROJECTION);
    	glLoadIdentity();
@@ -92,12 +102,12 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws several convex (in <i>'red'</i>) and concave (in <i>'blue'</i>) polygons in the OpenGL window of interest.
+/// This function draws the <i>'filled'</i> and the <i>'wireframe versions'</i> of several convex (in <i>'red'</i>) and concave (in <i>'blue'</i>) polygons in the OpenGL window of interest.
 void draw()
 {
 	int pp,jj;
 
-	/* We draw several convex (in 'red') and concave (in 'blue') polygons in the OpenGL window of interest. First, we draw the convex polygon #0 in 'red' ('filled' rendering). */
+	/* We draw the 'filled' and the 'wireframe versions' of several convex (in 'red') and concave (in 'blue') polygons in the OpenGL window of interest. First, we draw the 'filled version' of the convex polygon #0 (in 'red'). */
 	pp = (iconvex%5);
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(10.0);
@@ -111,7 +121,7 @@ void draw()
    		glVertex3f(convex_points[jj][0],convex_points[jj][1],convex_points[jj][2]);
    	}
    	
-   	/* We draw the convex polygon #0 in 'red' ('wireframe' rendering). */
+   	/* We draw the 'wireframe version' of the convex polygon #0 (in 'red'). */
    	glEnd();
    	glColor3f(1.0,0.0,0.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
@@ -122,7 +132,7 @@ void draw()
    		glVertex3f(convex_points[jj][0]+100,convex_points[jj][1],convex_points[jj][2]);
    	}
    	
-   	/* We draw the concave polygon #1 in 'blue' ('filled' rendering). */
+   	/* We draw the 'filled version' of the concave polygon #1 (in 'blue'). */
 	glEnd();
 	glColor3f(0.0,0.0,1.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
@@ -133,7 +143,7 @@ void draw()
    		glVertex3f(not_convex_points[jj][0],not_convex_points[jj][1],not_convex_points[jj][2]);
    	}
 	
-	/* We draw the concave polygon #1 in 'blue' ('wireframe' rendering). */
+	/* We draw the 'wireframe version' of the concave polygon #1 (in 'blue'). */
 	glEnd();
 	glColor3f(0.0,0.0,1.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
@@ -196,7 +206,7 @@ void manageKeys(unsigned char key, int x, int y)
 		iconvex=iconvex+1;
 		inconvex=inconvex+1;
 		eol=true;
-		cout<<"\tThe vertices for both the 'filled' and the 'wireframe version' of several convex and concave polygons are cycled in advance."<<endl;
+		cout<<"\tThe vertices for both the 'filled' and the 'wireframe versions' of several convex and concave polygons are cycled in advance."<<endl;
 		glutPostRedisplay();		
 		break;
 

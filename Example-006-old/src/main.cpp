@@ -77,7 +77,7 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws the <i>'filled version'</i> of the polygon (in <i>'red'</i>), which is the intersection with the maximum number of edges and vertices between a triangle and the ortographic viewing box, in the OpenGL window of interest.
+/// This function draws the <i>'filled version'</i> of the polygon (in <i>'red'</i>), which is the intersection with the maximum number 7 of edges and vertices between a triangle and the ortographic viewing box, in the OpenGL window of interest.
 void draw()
 {
 	/* We draw the 'filled' version' of a polygon (in 'red') in the OpenGL window of interest. It is the intersection with the maximum number 7 of edges and vertices between:

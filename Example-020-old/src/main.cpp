@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: March 2017
+ * Last update: April 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -27,7 +27,7 @@ using namespace std;
 
 #else
 
-	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU Linux, or a Microsoft Windows platform. */
+	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU/Linux, or a Microsoft Windows platform. */
 	#include "GL/glew.h"
 	#include "GL/glut.h"
 	#include "GL/gl.h"
@@ -37,15 +37,15 @@ using namespace std;
 /* Prototypes for all functions of interest! */
 void draw();
 void initialize();
+
 void resize(int w,int h);
 void manageKeys(unsigned char key, int x, int y);
-
 /// The main function for the <i>'Example-020 (Old Mode)'</i> example.
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-020' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws both the 'filled' and the 'wireframe versions' of the triangle strip (in 'red'), which approximates the 'Double Square Annulus' shape."<<endl<<endl;
+	cout<<"\tIt draws the 'filled' and the 'wireframe versions' of the triangle strip (in 'red'), which approximates the 'Double Square Annulus' shape."<<endl<<endl;
 	cout<<"\tIn this context, it is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -109,10 +109,10 @@ void manageKeys(unsigned char key, int x, int y)
 	}
 }
 
-/// This function draws both the <i>'filled'</i> and the <i>'wireframe versions'</i> of the triangle strip (in <i>'red'</i>), which approximates the <i>'Double Square Annulus'</i> shape in the OpenGL window of interest.
+/// This function draws the <i>'filled'</i> and the <i>'wireframe versions'</i> of the triangle strip (in <i>'red'</i>), which approximates the <i>'Double Square Annulus'</i> shape, in the OpenGL window of interest.
 void draw()
 {
-	/* We draw both the 'filled' and the 'wireframe versions' of the triangle strip (in 'red'), which approximates the 'Double Square Annulus' shape in the OpenGL window of interest.	
+	/* We draw the 'filled' and the 'wireframe versions' of the triangle strip (in 'red'), which approximates the 'Double Square Annulus' shape, in the OpenGL window of interest.	
 	 * First, we draw the 'wireframe version' for the triangle strip of interest (in 'red'). */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0,0.0,0.0);

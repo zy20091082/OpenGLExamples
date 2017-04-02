@@ -45,7 +45,7 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-007' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the 'filled versions' for 12 quadrilaterals of different colors."<<endl<<endl;
+	cout<<"\tIt draws the 'filled versions' for 12 quadrilaterals with different colors."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -75,10 +75,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws the <i>'filled versions'</i> for 12 quadrilaterals of different colors in the OpenGL window of interest.
+/// This function draws the <i>'filled versions'</i> for 12 quadrilaterals with different colors in the OpenGL window of interest.
 void draw()
 {
-	/* We draw the 'filled versions' for 12 quadrilaterals of different colors in the OpenGL window of interest. */
+	/* We draw the 'filled versions' for 12 quadrilaterals with different colors in the OpenGL window of interest. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	
 	/* We draw the quadrilateral #0 by using the 'black' color. */

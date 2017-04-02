@@ -96,7 +96,7 @@ void draw()
 	/* We draw the 'filled version' of the polygon (in 'red'), which is the intersection between the following components, in the OpenGL window of interest:
 	 *
 	 * -) the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]';
-	 * -) the triangle with vertices '(x,20,0)' - '(80,20,0)' - '(80,80,0)'.
+	 * -) the triangle with vertices '(x,20,0)' - '(80,20,0)' - '(80,80,0)', for any 'x' coordinate along the x-axis.
 	 */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0, 0.0, 0.0);

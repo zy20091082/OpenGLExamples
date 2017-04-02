@@ -45,7 +45,7 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-009' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a quadrilateral, such that a different color is associated with each of its vertices."<<endl<<endl;
+	cout<<"\tIt draws the 'filled version' of a square, such that a different color is associated with each of its vertices."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -75,10 +75,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws a square, such that a different color is associated with each of its vertices, in the OpenGL window of interest.
+/// This function draws the <i>'filled version'</i> of a square, such that a different color is associated with each of its vertices, in the OpenGL window of interest.
 void draw()
 {
-	/* We draw a square, such that a different color is associated with each of its vertices, in the OpenGL window of interest. */
+	/* We draw the 'filled version' of a square, such that a different color is associated with each of its vertices, in the OpenGL window of interest. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glBegin(GL_POLYGON);
 	glColor3f(1.0,0.0,0.0);
