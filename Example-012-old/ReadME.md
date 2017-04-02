@@ -4,12 +4,12 @@ height="97"></A>
 <H3>The <i>'Example-012 (Old Mode)'</i> Test</H3>
 
 The <i>'Example-012 (Old Mode)'</i> Test draws a custom shape, approximated by a triangle strip (in <i>'turquoise gray'</i>) in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window by using the following rendering settings, that can be chosen and activated by the user as follows:<p><ul>
-<li>only the <i>'front'</i> sides of the triangles in the triangle strip are rendered by pressing the <i>'f'</i> or the <i>'F'</i> key. The corresponding rendering type is chosen by the user separately.</li>
-<li>Only the <i>'back'</i> sides oof the triangles in the triangle strip are rendered by pressing the <i>'b'</i> or the <i>'B'</i> key. The corresponding rendering type is chosen by the user separately.</li>
-<li>Both the <i>'front'</i> and the <i>'back'</i> sides of the triangles in the triangle strip are rendered by pressing the <i>'t'</i> or the <i>'T'</i> key. The corresponding rendering type is chosen by the user separately.</li>
-<li>Only the vertices for the sides of the triangles in the triangle strip to be drawn (chosen by the user separately) are rendered by pressing the <i>'p'</i> or the <i>'P'</i> key;</li>
-<li>the <i>'wireframe versions'</i> for the sides of the triangles in the triangle strip to be drawn (chosen by the user separately) are rendered by pressing the <i>'l'</i> or the <i>'L'</i> key;</li>
-<li>the <i>'filled versions'</i> for the sides of the triangles in the triangle strip to be drawn (chosen by the user separately) are rendered by pressing the <i>'i'</i> or the <i>'I'</i> key.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-012-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
+<li>only the <i>'front'</i> sides of the triangles in the triangle strip are rendered by pressing the <i>'f'</i> or the <i>'F'</i> key. The corresponding rendering type is chosen by the user separately.<p></li>
+<li>Only the <i>'back'</i> sides of the triangles in the triangle strip are rendered by pressing the <i>'b'</i> or the <i>'B'</i> key. The corresponding rendering type is chosen by the user separately.<p></li>
+<li>Both the <i>'front'</i> and the <i>'back'</i> sides of the triangles in the triangle strip are rendered by pressing the <i>'t'</i> or the <i>'T'</i> key. The corresponding rendering type is chosen by the user separately.<p></li>
+<li>Only the vertices for the sides of the triangles in the triangle strip to be drawn are rendered by pressing the <i>'p'</i> or the <i>'P'</i> key. The user can choose separately what sides of the triangles must be drawn.<p></li>
+<li>The <i>'wireframe versions'</i> for the sides of the triangles in the triangle strip to be drawn are rendered by pressing the <i>'l'</i> or the <i>'L'</i> key. The user can choose separately what sides of the triangles must be drawn.<p></li>
+<li>The <i>'filled versions'</i> for the sides of the triangles in the triangle strip to be drawn are rendered by pressing the <i>'i'</i> or the <i>'I'</i> key. The user can choose separately what sides of the triangles must be drawn.<p></li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-012-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
 
 <h4>Dependencies</h4>
 
