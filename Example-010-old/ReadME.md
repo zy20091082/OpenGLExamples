@@ -4,7 +4,7 @@ height="97"></A>
 <H3>The <i>'Example-010 (Old Mode)'</i> Test</H3>
 
 The <i>'Example-010 (Old Mode)'</i> Test draws several graphic primitives in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window, starting from a cloud of several 3D points. This test also provides a very basic interaction mechanism with the user, which can choose what graphic primitive must be exploited, as follows:<p><ol>
-<li value="0">the <i>'GL_POINTS'</i> primitive is chosen by pressing the <i>'0'</i> key for drawing several independent points;</li>
+<li value="0">the <i>'GL_POINTS'</i> primitive is chosen by pressing the <i>'0'</i> key for drawing several independent 3D points;</li>
 <li value="1">the <i>'GL_LINES'</i> primitive is chosen by pressing the <i>'1'</i> key for drawing several independent lines;</li>
 <li value="2">the <i>'GL_LINE_STRIP'</i> primitive is chosen by pressing the <i>'2'</i> key for drawing an open line strip;</li>
 <li value="3">the <i>'GL_LINE_LOOP'</i> primitive is chosen by pressing the <i>'3'</i> key for drawing a closed line loop;</li>

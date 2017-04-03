@@ -38,12 +38,12 @@ using namespace std;
 /**
  * It may be one of the following values:
  *
- * -) the 'GL_POINTS' value for rendering several independent points;
- * -) the 'GL_LINES' for rendering several independent lines;
- * -) the 'GL_LINE_STRIP' for rendering an open line strip;
- * -) the 'GL_LINE_LOOP' for rendering a closed line strip;
- * -) the 'GL_TRIANGLES' for rendering several triangles;
- * -) the 'GL_POLYGON' for rendering a unique polygon.
+ * -) the 'GL_POINTS' value, used for rendering several independent 3D points;
+ * -) the 'GL_LINES' value, used for rendering several independent lines;
+ * -) the 'GL_LINE_STRIP' value, used for rendering an open line strip;
+ * -) the 'GL_LINE_LOOP' value, used for rendering a closed line strip;
+ * -) the 'GL_TRIANGLES' value, used for rendering several triangles;
+ * -) the 'GL_POLYGON' value, used for rendering a unique polygon.
  */
 int rendering;
 
@@ -61,8 +61,9 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-010' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt allows to exploit the following graphic primitives, based on a cloud of several 3D points, to be drawn in the scene:"<<endl<<endl;
-	cout << "\t-) the 'GL_POINTS' primitive is chosen by pressing the '0' key for drawing several independent points;" << endl;
+	cout<<"\tIt draws several graphic primitives, starting from a cloud of several 3D points."<<endl;
+	cout<<"\tThe user can choose what graphic primitive must be exploited, as follows:"<<endl<<endl;
+	cout << "\t-) the 'GL_POINTS' primitive is chosen by pressing the '0' key for drawing several independent 3D points;" << endl;
 	cout << "\t-) the 'GL_LINES' primitive is chosen by pressing the '1' key for drawing several independent lines;" << endl;
 	cout << "\t-) the 'GL_LINE_STRIP' primitive is chosen by pressing the '2' key for drawing an open line strip;" << endl;
 	cout << "\t-) the 'GL_LINE_LOOP' primitive is chosen by pressing the '3' key for drawing a closed line loop;" << endl;
@@ -97,10 +98,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws the scene in the OpenGL window of interest by using the graphic primitive, chosen by the user.
+/// This function draws the cloud of several 3D points in the OpenGL window of interest by using the graphic primitive, chosen by the user.
 void draw()
 {
-	/* We draw the scene in the OpenGL window of interest by using the graphic primitive, chosen by the user. */
+	/* We draw the cloud of several 3D points in the OpenGL window of interest by using the graphic primitive, chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(10.0);
 	glLineWidth(2.0);
@@ -125,7 +126,7 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0); 
 	rendering=GL_POINTS;
 	eol=false;
-	cout<<"\tThe 'GL_POINTS' primitive is initially used for drawing several independents points in the current scene."<<endl<<endl;
+	cout<<"\tThe 'GL_POINTS' primitive is initially used for drawing several independents 3D points in the current scene."<<endl<<endl;
 	cout.flush();
 }
 
@@ -161,9 +162,9 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '0':
 		
-		/* The key is '0', thus the 'GL_POINTS' primitive is used for drawing several independent points in the current scene. */
+		/* The key is '0', thus the 'GL_POINTS' primitive is used for drawing several independent 3D points in the current scene. */
 		rendering=GL_POINTS;
-		cout<<"\tThe 'GL_POINTS' primitive is used for drawing several independents points in the current scene."<<endl;
+		cout<<"\tThe 'GL_POINTS' primitive is used for drawing several independents 3D points in the current scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();

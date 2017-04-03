@@ -34,10 +34,10 @@ using namespace std;
 
 #endif
 
-/// The counter index for cycling the vertices order for all versions of the convex polygons (in <i>'red'</i>).
+/// The counter index for cycling the vertices order for all possible versions of the convex polygons (in <i>'red'</i>).
 int iconvex;
 
-/// The counter index for cycling the vertices order for all versions of the concave polygons (in <i>'blue'</i>).
+/// The counter index for cycling the vertices order for all possible versions of the concave polygons (in <i>'blue'</i>).
 int inconvex;
 
 /// This boolean flag is useful for completing the textual interface.
