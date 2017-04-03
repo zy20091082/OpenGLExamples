@@ -3,13 +3,13 @@ height="97"></A>
 
 <H3>The <i>'Example-015 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-015 (Old Mode)'</i> Test draws a custom shape, approximated by a triangle fan, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The reference vertex of the triangle fan is depicted in <i>'red'</i>, while the triangles are depicted in <i>'turquoise gray'</i>. The settings for rendering the triangles in the triangle fan of interest can be modified interactively by the user as follows:<p><ul>
-<li>only the <i>'front'</i> side of the triangles in the triangle fan of interest is rendered by pressing the <i>'f'</i> or the <i>'F'</i> key;</li>
-<li>only the <i>'back'</i> side of the triangles in the triangle fan of interest is rendered by pressing the <i>'b'</i> or the <i>'B'</i> key;</li>
-<li>both the <i>'front'</i> and the <i>'back'</i> sides of the triangles in the triangle fan of interest are rendered by pressing the <i>'t'</i> or the <i>'T'</i> key;</li>
-<li>only the vertices of the triangles in the triangle fan of interest are rendered by pressing the <i>'p'</i> or the <i>'P'</i> key;</li>
-<li>only the edges of the triangles in the triangle fan of interest are rendered (thus, their <i>'wireframe version'</i>) by pressing the <i>'l'</i> or the <i>'L'</i> key;</li>
-<li>the triangles in the triangle fan of interest are completely rendered (thus, their <i>'filled version'</i>) by pressing the <i>'i'</i> or the <i>'I'</i> key.</ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-015-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
+The <i>'Example-015 (Old Mode)'</i> Test draws a triangle fan, approximating a custom shape, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The reference vertex of the triangle fan is depicted in <i>'red'</i>, while the triangles are depicted in <i>'turquoise gray'</i>. The settings for rendering the triangles in the triangle fan of interest can be modified interactively by the user as follows:<p><ul>
+<li>only the <i>'front'</i> sides of the triangles in the custom triangle fan are rendered by pressing the <i>'f'</i> or the <i>'F'</i> key. The corresponding rendering type is chosen by the user separately.<p></li>
+<li>Only the <i>'back'</i> sides of the triangles in the custom triangle fan are rendered by pressing the <i>'b'</i> or the <i>'B'</i> key. The corresponding rendering type is chosen by the user separately.<p></li>
+<li>Both the <i>'front'</i> and the <i>'back'</i> sides of the triangles in the custom triangle fan are rendered by pressing the <i>'t'</i> or the <i>'T'</i> key. The corresponding rendering type is chosen by the user separately.<p></li>
+<li>Only the vertices for the sides of the triangles in the custom triangle fan to be drawn are rendered by pressing the <i>'p'</i> or the <i>'P'</i> key. The user can choose separately what sides of the triangles must be drawn.<p></li>
+<li>The <i>'wireframe versions'</i> for the sides of the triangles in the custom triangle fan to be drawn are rendered by pressing the <i>'l'</i> or the <i>'L'</i> key. The user can choose separately what sides of the triangles must be drawn.<p></li>
+<li>The <i>'filled versions'</i> for the sides of the triangles in the custom triangle fan to be drawn are rendered by pressing the <i>'i'</i> or the <i>'I'</i> key. The user can choose separately what sides of the triangles must be drawn.<p></li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-015-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
 
 <h4>Dependencies</h4>
 
