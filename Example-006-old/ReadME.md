@@ -7,7 +7,7 @@ The <i>'Example-006 (Old Mode)'</i> Test draws the <i>'filled version'</i> of a 
 <li value="0">the orthographic projection viewing box <i>'[0,100]' x '[0,100]' x '[-1,1]'</i>;</li>
 <li>the triangle of vertices <i>'(-50,-30,0)'</i> - <i>'(150,-50,0)'</i> - <i>'(50,150,0)'</i>.</li></ul><p>Here, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
 
-<IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example006_old.png' width='492' height='514' border='0'>
+<IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example006_old.png' border='0'>
 <hr><p>
 
 <h4>Dependencies</h4>
