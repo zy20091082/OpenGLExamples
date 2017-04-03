@@ -5,6 +5,8 @@ height="97"></A>
 
 The <i>'Example-001 (Old Mode)'</i> Test is similar to the classic <i>'Hello World'</i> program for testing the correctness of the building infrastructure. Broadly speaking, it creates an empty <A href="http://www.opengl.org"><i>OpenGL</i></A> window with the <i>'black'</i> background, and provides no interaction mechanism with the user. In fact, this window must be stopped through an enforced closure.<p>
 
+<IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example_old.png' width='384' height='395' border='0'>
+
 <p>In particular, this test consists of the <i>'Example-001-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
 
 <h4>Dependencies</h4>
