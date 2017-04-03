@@ -7,9 +7,8 @@ The <i>'Example-006 (Old Mode)'</i> Test draws the <i>'filled version'</i> of a 
 <li value="0">the orthographic projection viewing box <i>'[0,100]' x '[0,100]' x '[-1,1]'</i>;</li>
 <li>the triangle of vertices <i>'(-50,-30,0)'</i> - <i>'(150,-50,0)'</i> - <i>'(50,150,0)'</i>.</li></ul><p>Here, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
 
-<IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example006_old.png' width='380' height='403' border='0'>
-
-<p>In particular, this test consists of the <i>'Example-006-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
+<IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example006_old.png' width='492' height='514' border='0'>
+<hr><p>
 
 <h4>Dependencies</h4>
 
@@ -17,7 +16,8 @@ The <i>'Example-006 (Old Mode)'</i> Test is based on the so-called <i>OpenGL old
 
 <li>the <A href="http://www.opengl.org"><i>OpenGL</i></A> package, distributed with the platform of interest (see the <i><A href="https://www.khronos.org/opengl/wiki/Getting_Started">Official Documentation</A></i>);</li>
 <li>the <i><A href="https://www.opengl.org/resources/libraries/glut/">OpenGL Utility Toolkit (GLUT)</A></i> package (or the <A href="http://freeglut.sourceforge.net/"><i>FreeGLUT</i></A> package);</li>
-<li>the <A href="http://glew.sourceforge.net/"><i>OpenGL Extension Wrangler Library (GLEW)</i></A> package.</li></ul><p>Several methods for building this test are provided.<p><table border=1><tr><td><p><b>ATTENTION:</b><p>The majority of the dependencies for this test are stable, but are currently deprecated, and several warning messages may appear during the building process.<p></td></tr></table><p><hr><p>
+<li>the <A href="http://glew.sourceforge.net/"><i>OpenGL Extension Wrangler Library (GLEW)</i></A> package.</li></ul>
+<p>In particular, this test consists of the <i>'Example-006-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p>Several methods for building this test are provided.<p><table border=1><tr><td><p><b>ATTENTION:</b><p>The majority of the dependencies for this test are stable, but are currently deprecated, and several warning messages may appear during the building process.<p></td></tr></table><p><hr><p>
 
 <h4>Instructions for building this test with the <i><A href="http://cmake.org">CMake Building Tool</A></i></h4>
 
