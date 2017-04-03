@@ -3,11 +3,10 @@ height="97"></A>
 
 <H3>The <i>'Example-001 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-001 (Old Mode)'</i> Test is similar to the classic <i>'Hello World'</i> program for testing the correctness of the building infrastructure. Broadly speaking, it creates an empty <A href="http://www.opengl.org"><i>OpenGL</i></A> window with the <i>'black'</i> background, and provides no interaction mechanism with the user. In fact, this window must be stopped through an enforced closure.<p>
+The <i>'Example-001 (Old Mode)'</i> Test is similar to the classic <i>'Hello World'</i> program for testing the correctness of the building infrastructure. Broadly speaking, it creates an empty <A href="http://www.opengl.org"><i>OpenGL</i></A> window with the <i>'black'</i> background, and provides no interaction mechanism with the user. In fact, this window must be stopped through an enforced closure.
 
 <IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example001_old.png' width='492' height='514' border='0'>
-
-<p>In particular, this test consists of the <i>'Example-001-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
+In particular, this test consists of the <i>'Example-001-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
 
 <h4>Dependencies</h4>
 
