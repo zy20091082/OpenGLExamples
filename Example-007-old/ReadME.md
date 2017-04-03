@@ -5,7 +5,7 @@ height="97"></A>
 
 The <i>'Example-007 (Old Mode)'</i> Test draws the <i>'filled versions'</i> for 12 quadrilaterals with different colors in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window, and provides a basic interaction mechanism with the user. Here, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
 
-<IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example007_old.png' width='492' height='514' border='0'>
+<IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example007_old.png' border='1'>
 <hr><p>
 
 <h4>Dependencies</h4>
