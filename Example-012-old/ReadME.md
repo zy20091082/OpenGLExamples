@@ -3,7 +3,7 @@ height="97"></A>
 
 <H3>The <i>'Example-012 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-012 (Old Mode)'</i> Test draws a triangle strip (in <i>'turquoise gray'</i>), approximating a custom shape, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window by using the following rendering settings, that can be chosen and activated by the user as follows:<p><ul>
+The <i>'Example-012 (Old Mode)'</i> Test draws a triangle strip (in <i>'turquoise gray'</i>), approximating a custom shape, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The settings for rendering the triangles in the triangle strip of interest can be modified interactively by the user as follows:<p><ul>
 <li>only the <i>'front'</i> sides of the triangles in the custom triangle strip are rendered by pressing the <i>'f'</i> or the <i>'F'</i> key. The corresponding rendering type is chosen by the user separately.<p></li>
 <li>Only the <i>'back'</i> sides of the triangles in the custom triangle strip are rendered by pressing the <i>'b'</i> or the <i>'B'</i> key. The corresponding rendering type is chosen by the user separately.<p></li>
 <li>Both the <i>'front'</i> and the <i>'back'</i> sides of the triangles in the custom triangle strip are rendered by pressing the <i>'t'</i> or the <i>'T'</i> key. The corresponding rendering type is chosen by the user separately.<p></li>

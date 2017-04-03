@@ -69,7 +69,7 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-012' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a a triangle strip (in 'turquoise gray'), approximating a custom shape, by using the following rendering settings, that can be chosen and activated by the user, as follows:"<<endl<<endl;
+	cout<<"\tIt draws a triangle strip (in 'turquoise gray'), approximating a custom shape, by using the following rendering settings, that can be chosen and activated by the user, as follows:"<<endl<<endl;
 	cout<<"\t-) only the 'front' sides of the triangles in the custom triangle strip are rendered by pressing the 'f' or the 'F' key. The corresponding rendering type is chosen by the user separately."<<endl;
 	cout<<"\t-) Only the 'back' sides of the triangles in the custom triangle strip are rendered by pressing the 'b' or the 'B' key. The corresponding rendering type is chosen by the user separately."<<endl;
 	cout<<"\t-) Both the 'front' and the 'back' sides of the triangles in the custom triangle strip are rendered by pressing the 't' or the 'T' key. The corresponding rendering type is chosen by the user separately."<<endl;

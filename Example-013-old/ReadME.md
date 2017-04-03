@@ -3,7 +3,7 @@ height="97"></A>
 
 <H3>The <i>'Example-013 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-013 (Old Mode)'</i> Test draws the <i>'Square Annulus'</i> shape, approximated by a triangle strip (in <i>'turquoise gray'</i>), in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The settings for rendering the triangles in the triangle strip of interest can be modified interactively by the user as follows:<p><ul>
+The <i>'Example-013 (Old Mode)'</i> Test draws a triangle strip (in <i>'turquoise gray'</i>), approximating the <i>'Square Annulus'</i> shape, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The settings for rendering the triangles in the triangle strip of interest can be modified interactively by the user as follows:<p><ul>
 <li>only the <i>'front'</i> side of the triangles in the triangle strip of interest is rendered by pressing the <i>'f'</i> or the <i>'F'</i> key;</li>
 <li>only the <i>'back'</i> side of the triangles in the triangle strip of interest is rendered by pressing the <i>'b'</i> or the <i>'B'</i> key;</li>
 <li>both the <i>'front'</i> and the <i>'back'</i> sides of the triangles in the triangle strip of interest are rendered by pressing the <i>'t'</i> or the <i>'T'</i> key;</li>
