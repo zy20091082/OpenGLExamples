@@ -5,7 +5,11 @@ height="97"></A>
 
 The <i>'Example-006 (Old Mode)'</i> Test draws the <i>'filled version'</i> of a polygon (in <i>'red'</i>) in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window, and provides a basic interaction mechanism with the user. The polygon of interest is the intersection with the maximum number 7 of edges and vertices between the following elements:<p><ul>
 <li value="0">the orthographic projection viewing box <i>'[0,100]' x '[0,100]' x '[-1,1]'</i>;</li>
-<li>the triangle of vertices <i>'(-50,-30,0)'</i> - <i>'(150,-50,0)'</i> - <i>'(50,150,0)'</i>.</li></ul><p>Here, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-006-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
+<li>the triangle of vertices <i>'(-50,-30,0)'</i> - <i>'(150,-50,0)'</i> - <i>'(50,150,0)'</i>.</li></ul><p>Here, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
+
+<IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example006_old.png' width='380' height='403' border='0'>
+
+<p>In particular, this test consists of the <i>'Example-006-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
 
 <h4>Dependencies</h4>
 
