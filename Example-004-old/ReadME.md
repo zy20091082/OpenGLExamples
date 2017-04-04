@@ -6,7 +6,12 @@ The <i>'Example-004 (Old Mode)'</i> Test draws the <i>'filled versions'</i> of t
 <li value="0">the quadrilateral #0 (in <i>'red'</i>) with vertices <i>'(20,20,0)'</i> - <i>'(80,20,0)'</i> - <i>'(80,80,0)'</i> - <i>'(20,80,0)'</i>;</li>
 <li value="1">the quadrilateral #1 (in <i>'green'</i>) with vertices <i>'(120,120,0)'</i> - <i>'(180,120,0)'</i> - <i>'(180,180,0)'</i> - <i>'(120,180,0)'</i>;</li></ol><p>by using the following orthographic projections (activated upon request by the user):<p><ol>
 <li value="0">the ortographic viewing box <i>'[0,100]' x '[0,100]' x '[-1,1]'</i> is activated by pressing the <i>'0'</i> key (the <i>'viewing configuration #0'</i>). In this case, only the quadrilateral #0 is shown.<p></li>
-<li value="1">The ortographic viewing box <i>'[0,200]' x '[0,200]' x '[-1,1]'</i> is activated by pressing the <i>'1'</i> key (the <i>'viewing configuration #1'</i>). In this case, both the quadrilaterals #0 and #1 are shown.</li></ol><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-004-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
+<li value="1">The ortographic viewing box <i>'[0,200]' x '[0,200]' x '[-1,1]'</i> is activated by pressing the <i>'1'</i> key (the <i>'viewing configuration #1'</i>). In this case, both the quadrilaterals #0 and #1 are shown.</li></ol><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
+<td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example004_old_conf0.png' border='1' width='456' height='470'></td>
+<td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example004_old_conf1.png' border='1' width='456' height='470'></td></tr>
+<tr>
+<td>The <i>'viewing configuration #0'</i> (press the <i>'0'</i> key).</td><td>The <i>'viewing configuration #1'</i> (press the <i>'1'</i> key).</td>
+</tr></table><hr><p>
 
 <h4>Dependencies</h4>
 
@@ -14,7 +19,7 @@ The <i>'Example-004 (Old Mode)'</i> Test is based on the so-called <i>OpenGL old
 
 <li>the <A href="http://www.opengl.org"><i>OpenGL</i></A> package, distributed with the platform of interest (see the <i><A href="https://www.khronos.org/opengl/wiki/Getting_Started">Official Documentation</A></i>);</li>
 <li>the <i><A href="https://www.opengl.org/resources/libraries/glut/">OpenGL Utility Toolkit (GLUT)</A></i> package (or the <A href="http://freeglut.sourceforge.net/"><i>FreeGLUT</i></A> package);</li>
-<li>the <A href="http://glew.sourceforge.net/"><i>OpenGL Extension Wrangler Library (GLEW)</i></A> package.</li></ul><p>Several methods for building this test are provided.<p><table border=1><tr><td><p><b>ATTENTION:</b><p>The majority of the dependencies for this test are stable, but are currently deprecated, and several warning messages may appear during the building process.<p></td></tr></table><p><hr><p>
+<li>the <A href="http://glew.sourceforge.net/"><i>OpenGL Extension Wrangler Library (GLEW)</i></A> package.</li></ul><p>In particular, this test consists of the <i>'Example-004-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p>Several methods for building this test are provided.<p><table border=1><tr><td><p><b>ATTENTION:</b><p>The majority of the dependencies for this test are stable, but are currently deprecated, and several warning messages may appear during the building process.<p></td></tr></table><p><hr><p>
 
 <h4>Instructions for building this test with the <i><A href="http://cmake.org">CMake Building Tool</A></i></h4>
 
