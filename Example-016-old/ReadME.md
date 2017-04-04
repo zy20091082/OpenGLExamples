@@ -37,7 +37,7 @@ Instead, the <i>'Triangle Fan #1'</i> is formed only by back-faced triangles, th
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example016_old_filled.png' border='1' width='456' height='470'></td>
 <td>As consequence, it is clear that the triangle fans can be rendered separately, except when both the <i>'front'</i> and the <i>'back'</i> sides of all triangles are rendered at the same time.<p>
 
-In this case, both the <i>'Triangle Fan #0'</i> and the <i>'Triangle Fan #1'</i> satisfy completely the rendering settings, chosen by the user.</td></tr>
+In this case, both the <i>'Triangle Fan #0'</i> and the <i>'Triangle Fan #1'</i> (more specifically, their <i>'front'</i> and <i>'back'</i> sides) satisfy completely the rendering settings, chosen by the user.</td></tr>
 <tr><td width=50%>The <i>'filled version'</i> (press the <i>'i'</i> or the <i>'I'</i> key).</td><td><b>IMPORTANT</b></td></tr></table><hr><p>
 
 <h4>Dependencies</h4>
