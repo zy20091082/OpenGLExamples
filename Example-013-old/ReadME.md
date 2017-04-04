@@ -10,11 +10,11 @@ The <i>'Example-013 (Old Mode)'</i> Test draws a triangle strip (in <i>'turquois
 <li>Only the vertices for the sides of the triangles in the triangle strip to be drawn are rendered by pressing the <i>'p'</i> or the <i>'P'</i> key. The user can choose separately what sides of the triangles must be drawn.<p></li>
 <li>The <i>'wireframe versions'</i> for the sides of the triangles in the triangle strip to be drawn are rendered by pressing the <i>'l'</i> or the <i>'L'</i> key. The user can choose separately what sides of the triangles must be drawn.<p></li>
 <li>The <i>'filled versions'</i> for the sides of the triangles in the triangle strip to be drawn are rendered by pressing the <i>'i'</i> or the <i>'I'</i> key. The user can choose separately what sides of the triangles must be drawn.<p></li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example013_old_backside_points.png' border='1' width='456' height='470'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example013_old_backside_wireframe.png' border='1' width='456' height='470'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example013_old_backsides_points.png' border='1' width='456' height='470'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example013_old_backsides_wireframe.png' border='1' width='456' height='470'></td></tr>
 <tr><td><i>'Points rendering'</i> (press the <i>'p'</i> or the <i>'P'</i> key).</td><td>The <i>'wireframe version'</i> (press the <i>'l'</i> or the <i>'L'</i> key).</td></tr>
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example013_old_backside_filled.png' border='1' width='456' height='470'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example013_old_backsides_filled.png' border='1' width='456' height='470'></td>
 <td>In this case, the <i>'front'</i> sides of the triangles are not rendered, due to their vertices order. In the code, these latters are enumerated in the clockwise order, thus every triangle is a back-faced triangle.<p>
 
 Hence, the scene remains unchanged, when the user decides to render the <i>'front'</i> sides of the triangles.<p>This is true, even if changing the rendering type for the triangles (points, wireframe, filled).</td>
