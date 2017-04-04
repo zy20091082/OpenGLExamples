@@ -5,9 +5,9 @@ height="97"></A>
 
 The <i>'Example-018 (Old Mode)'</i> Test draws the <i>'filled'</i> and the <i>'wireframe versions'</i> of several convex (in <i>'red'</i>) and concave (in <i>'blue'</i>) polygons in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. This test also provides a very basic interaction mechanism with the user, which can cycle the vertices order in the polygons of interest by pressing the <i>'+'</i> key. While performing these operations, there may be <i>'strange'</i> situations, expecially when cycling the vertices in the <i>'filled versions'</i> of the concave polygons (in <i>'blue'</i>). Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
 
-<IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example018_old_conf0.png' border='1'>
+<IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example018_old_conf0.png' border='1' width='356' height='367'>
 
-<IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example018_old_conf1.png' border='1'><hr><p>
+<IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example018_old_conf1.png' border='1' width='356' height='367'><hr><p>
 
 <h4>Dependencies</h4>
 
