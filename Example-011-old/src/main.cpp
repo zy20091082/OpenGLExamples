@@ -34,25 +34,25 @@ using namespace std;
 
 #endif
 
-/// The flag, modeling the custom settings for choosing which side of the custom polygon must be rendered.
+/// The custom settings for choosing which side of the custom polygon must be rendered.
 /**
  * The value of this flag may be one of the following values:
  * 
- * -) 'GL_FRONT', for rendering only the 'front' side of the custom polygon (press the 'f' or the 'F' key);
- * -) 'GL_BACK', for rendering only the 'back' side of the custom polygon (press the 'b' or the 'B' key);
- * -) 'GL_FRONT_AND_BACK', for rendering both the 'front' and the 'back' sides of the custom polygon (press the 't' or the 'T' key).
+ * -) the 'GL_FRONT' value, used for rendering only the 'front' side of the custom polygon (press the 'f' or the 'F' key);
+ * -) the 'GL_BACK' value, used for rendering only the 'back' side of the custom polygon (press the 'b' or the 'B' key);
+ * -) the 'GL_FRONT_AND_BACK' value, used for rendering both the 'front' and the 'back' sides of the custom polygon (press the 't' or the 'T' key).
  *
  * The rendering type to be exploited is chosen separately by the user.
  */
 GLenum face;
 
-/// The flag, modeling the custom settings for rendering the sides of interest in the custom polygon.
+/// The custom settings for rendering the sides of interest in the custom polygon.
 /**
  * The value of this flag may be one of the following values:
  *
- * -) 'GL_POINT', for rendering only the vertices for the sides of the custom polygon to be drawn (press the 'p' or the 'P' key);
- * -) 'GL_LINE', for rendering the 'wireframe versions' for the sides of the custom polygon to be drawn (press the 'l' or the 'L' key);
- * -) 'GL_FILL', for rendering the 'filled versions' for the sides of the custom polygon to be drawn (press the 'i' or the 'I' key).
+ * -) the 'GL_POINT' value, used for rendering only the vertices for the sides of the custom polygon to be drawn (press the 'p' or the 'P' key);
+ * -) the 'GL_LINE' value, used for rendering the 'wireframe versions' for the sides of the custom polygon to be drawn (press the 'l' or the 'L' key);
+ * -) the 'GL_FILL' value, used for rendering the 'filled versions' for the sides of the custom polygon to be drawn (press the 'i' or the 'I' key).
  *
  * The choice for what sides of the custom polygon must be drawn is performed separately by the user.
  */
