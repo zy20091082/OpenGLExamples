@@ -11,7 +11,7 @@ The <i>'Example-008 (Old Mode)'</i> Test draws the <i>'filled versions'</i> for 
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example008_old_conf0.png' border='1' width='456' height='470'></td>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example008_old_conf1.png' border='1' width='456' height='470'></td></tr>
 <tr>
-<td>The <i>'viewing configuration #0'</i>.</td><td>The <i>'viewing configuration #1'</i>.</td>
+<td>The <i>'viewing configuration #0'</i> (press the <i>'0'</i> key).</td><td>The <i>'viewing configuration #1'</i> (press the <i>'1'</i> key).</td>
 </tr></table><hr><p>
 
 <h4>Dependencies</h4>
