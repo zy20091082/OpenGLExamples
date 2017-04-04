@@ -17,7 +17,7 @@ The <i>'Example-014 (Old Mode)'</i> Test draws a triangle strip (in <i>'turquois
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example014_old_backsides_filled.png' border='1' width='456' height='470'></td>
 <td>In this case, the <i>'front'</i> sides of the triangles are not rendered, due to their vertices order. In the code, these latters are enumerated in the clockwise order, thus every triangle is a back-faced triangle.<p>
 
-Hence, the scene remains unchanged, when the user decides to render the <i>'front'</i> sides of the triangles.<p>This is true, even if changing the rendering type for the triangles (points, wireframe, filled).</td>
+Hence, the scene remains unchanged, when the user decides to render only the <i>'front'</i> sides of all triangles in the triangle strip.<p>This is true, even if changing the rendering type for the triangles (points, wireframe, filled).</td>
 </tr>
 <tr><td width=50%>The <i>'filled version'</i> (press the <i>'i'</i> or the <i>'I'</i> key).</td><td><b>IMPORTANT</b></td></tr>
 </table><hr><p>
