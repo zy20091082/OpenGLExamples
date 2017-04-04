@@ -13,7 +13,9 @@ The <i>'Example-005 (Old Mode)'</i> Test draws the <i>'filled version'</i> of a 
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example005_old_conf1.png' border='1' width='456' height='470'></td></tr>
 <tr><td>The <i>'Initial scene'</i> (press the <i>'='</i> key).</td><td>The <i>'scene'</i> if <i>x='156'</i> (press the <i>'+'</i> and <i>'-'</i> keys).</td></tr>
 <tr>
-
+<td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example005_old_conf2.png' border='1' width='456' height='470'></td>
+<td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example005_old_conf3.png' border='1' width='456' height='470'></td>
+</tr>
 <tr><td>The <i>'scene'</i> if <i>x='-93'</i> (press the <i>'+'</i> and <i>'-'</i> keys).</td><td>The <i>'scene'</i> if <i>x='60'</i> (press the <i>'+'</i> and <i>'-'</i> keys).</td></tr>
 </table><hr><p>
 
