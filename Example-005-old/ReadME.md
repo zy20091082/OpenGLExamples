@@ -11,11 +11,11 @@ The <i>'Example-005 (Old Mode)'</i> Test draws the <i>'filled version'</i> of a 
 <li>reset the <i>'x'</i> coordinate for the triangle of interest to its initial value <i>'20'</i> by pressing the <i>'='</i> key.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example005_old_conf0.png' border='1' width='456' height='470'></td>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example005_old_conf1.png' border='1' width='456' height='470'></td></tr>
-<tr><td>The <i>'Initial scene'</i> (press the <i>'='</i> key).</td><td>The <i>'scene'</i> when <i>x='156'</i> (press the <i>'+'</i> and <i>'-'</i> keys).</td></tr>
+<tr><td>The <i>'Initial scene'</i> (press the <i>'='</i> key).</td><td>The <i>'scene'</i> if <i>x='156'</i> (press the <i>'+'</i> and <i>'-'</i> keys).</td></tr>
 <tr>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example005_old_conf2.png' border='1' width='456' height='470'></td>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example005_old_conf3.png' border='1' width='456' height='470'></td></tr>
-<tr><td>The <i>'scene'</i> when <i>x='-93'</i> (press the <i>'+'</i> and <i>'-'</i> keys).</td><td>The <i>'scene'</i> when <i>x='60'</i> (press the <i>'+'</i> and <i>'-'</i> keys).</td></tr>
+<tr><td>The <i>'scene'</i> if <i>x='-93'</i> (press the <i>'+'</i> and <i>'-'</i> keys).</td><td>The <i>'scene'</i> if <i>x='60'</i> (press the <i>'+'</i> and <i>'-'</i> keys).</td></tr>
 </table><hr><p>
 
 <h4>Dependencies</h4>
