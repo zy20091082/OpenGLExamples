@@ -7,7 +7,7 @@ The <i>'Example-018 (Old Mode)'</i> Test draws the <i>'filled'</i> and the <i>'w
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example018_old_conf0.png' border='1' width='456' height='470'></td>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example018_old_conf1.png' border='1' width='456' height='470'></td></tr>
 <tr>
-<td>Initial configuration.</td><td>Configuration after one cycle.</td>
+<td>Initial configuration.</td><td>Configuration after one cycle (press the <i>'+'</i> key).</td>
 </tr></table><hr><p>
 
 <h4>Dependencies</h4>
