@@ -17,9 +17,10 @@ The <i>'Example-010 (Old Mode)'</i> Test draws several graphic primitives in an 
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example010_old_conf2.png' border='1' width='456' height='470'></td>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example010_old_conf3.png' border='1' width='456' height='470'></td></tr>
 <tr><td>The <i>GL_LINE_STRIP'</i> primitive (press the <i>'2'</i> key).</td><td>The <i>'GL_LINE_LOOP'</i> primitive (press the <i>'3'</i> key).</td></tr>
-
-
-</table><hr><p>
+<tr>
+<td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example010_old_conf4.png' border='1' width='456' height='470'></td>
+<td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example010_old_conf5.png' border='1' width='456' height='470'></td></tr>
+<tr><td>The <i>GL_TRIANGLES'</i> primitive (press the <i>'4'</i> key).</td><td>The <i>'GL_POLYGON'</i> primitive (press the <i>'5'</i> key).</td></tr></table><hr><p>
 
 <h4>Dependencies</h4>
 
