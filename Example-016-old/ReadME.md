@@ -35,7 +35,9 @@ Instead, the <i>'Fan #1'</i> is formed only by back-faced triangles, thus the <i
 <tr><td><i>'Points rendering'</i> (press the <i>'p'</i> or the <i>'P'</i> key).</td><td>The <i>'wireframe version'</i> (press the <i>'l'</i> or the <i>'L'</i> key).</td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example016_old_filled.png' border='1' width='456' height='470'></td>
-<td>As consequence, it is clear that the triangle fans can be rendered separately, except when both the <i>'front'</i> and the <i>'back'</i> sides of the triangles are rendered at the same time.<p>In this case, both the triangle fans satisfy completely the rendering settings, chosen by the user.</td></tr>
+<td>As consequence, it is clear that the triangle fans can be rendered separately, except when both the <i>'front'</i> and the <i>'back'</i> sides of the triangles are rendered at the same time.<p>
+
+In this case, both the triangle fans satisfy completely the rendering settings, chosen by the user.</td></tr>
 <tr><td width=50%>The <i>'filled version'</i> (press the <i>'i'</i> or the <i>'I'</i> key).</td><td><b>IMPORTANT</b></td></tr></table><hr><p>
 
 <h4>Dependencies</h4>
