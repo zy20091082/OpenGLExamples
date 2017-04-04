@@ -10,17 +10,15 @@ The <i>'Example-011 (Old Mode)'</i> Test draws a custom polygon (in <i>'red'</i>
 <li>Only the vertices for the sides of the custom polygon to be drawn are rendered by pressing the <i>'p'</i> or the <i>'P'</i> key. The user can choose separately what sides of the custom polygon must be drawn.<p></li>
 <li>The <i>'wireframe versions'</i> for the sides of the custom polygon to be drawn are rendered by pressing the <i>'l'</i> or the <i>'L'</i> key. The user can choose separately what sides of the custom polygon must be drawn.<p></li>
 <li>The <i>'filled versions'</i> for the sides of the custom polygon to be drawn are rendered by pressing the <i>'i'</i> or the <i>'I'</i> key. The user can choose separately what sides of the custom polygon must be drawn.<p></li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
+<tr><td><i>'Points rendering'</i> (press the <i>'p'</i> or the <i>'P'</i> key).</td><td>The <i>'wireframe version'</i> (press the <i>'l'</i> or the <i>'L'</i> key).</td></tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example011_old_frontside_points.png' border='1' width='456' height='470'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example011_old_frontside_wireframe.png' border='1' width='456' height='470'></td></tr>
-<tr><td><i>'Points rendering'</i> (press the <i>'p'</i> or the <i>'P'</i> key).</td><td>The <i>'wireframe version'</i> (press the <i>'l'</i> or the <i>'L'</i> key).</td></tr>
-<tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example011_old_frontside_filled.png' border='1' width='456' height='470'></td>
+<tr><td width=50%>The <i>'filled version'</i> (press the <i>'i'</i> or the <i>'I'</i> key).</td><td><b>IMPORTANT</b></td></tr>
+<tr><td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example011_old_frontside_filled.png' border='1' width='456' height='470'></td>
 <td>In this case, the <i>'back'</i> side of the polygon is not rendered, due to its vertices order. In the code, these latters are enumerated in the counter-clockwise order, thus the polygon is a front-faced polygon.<p>
 
-Hence, the scene remains unchanged, when the user decides to render the <i>'back'</i> side of the polygon.<p>This is true, even if changing the rendering type for the polygon (points, wireframe, filled).</td>
-</tr>
-<tr><td width=50%>The <i>'filled version'</i> (press the <i>'i'</i> or the <i>'I'</i> key).</td><td><b>IMPORTANT</b></td></tr>
-</table>
+Hence, the scene remains unchanged, when the user decides to render only the <i>'back'</i> side of the polygon.<p>This is true, even if changing the rendering type for the polygon (points, wireframe, filled).</td>
+</tr></table>
 
 
 <hr><p>
