@@ -3,7 +3,7 @@ height="97"></A>
 
 <H3>The <i>'Example-016 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-016 (Old Mode)'</i> Test draws 2 triangle fans, approximating the <i>'Square Annulus'</i> shape, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The reference vertices of the triangle fans are depicted, respectively, in <i>'red'</i> (indicated as the <i>'Fan #0'</i>) and in <i>'blue'</i> (indicated as the <i>'Fan #1'</i>), while their triangles are depicted in <i>'turquoise gray'</i>. The settings for rendering the triangles in the triangle fans of interest can be modified interactively by the user as follows:<p><ul>
+The <i>'Example-016 (Old Mode)'</i> Test draws 2 triangle fans, approximating the <i>'Square Annulus'</i> shape, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The reference vertices of the triangle fans are depicted, respectively, in <i>'red'</i> (indicated as the <i>'Triangle Fan #0'</i>) and in <i>'blue'</i> (indicated as the <i>'Triangle Fan #1'</i>), while their triangles are depicted in <i>'turquoise gray'</i>. The settings for rendering the triangles in the triangle fans of interest can be modified interactively by the user as follows:<p><ul>
 <li>only the <i>'front'</i> sides of the triangles in the triangle fans of interest are rendered by pressing the <i>'f'</i> or the <i>'F'</i> key. The corresponding rendering type is chosen by the user separately.<p></li>
 <li>Only the <i>'back'</i> sides of the triangles in the triangle fans of interest are rendered by pressing the <i>'b'</i> or the <i>'B'</i> key. The corresponding rendering type is chosen by the user separately.<p></li>
 <li>Both the <i>'front'</i> and the <i>'back'</i> sides of the triangles in the triangle fans of interest are rendered by pressing the <i>'t'</i> or the <i>'T'</i> key. The corresponding rendering type is chosen by the user separately.<p></li>
@@ -15,9 +15,9 @@ The <i>'Example-016 (Old Mode)'</i> Test draws 2 triangle fans, approximating th
 <tr><td><i>'Points rendering'</i> (press the <i>'p'</i> or the <i>'P'</i> key).</td><td>The <i>'wireframe version'</i> (press the <i>'l'</i> or the <i>'L'</i> key).</td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example016_old_fan0_filled.png' border='1' width='456' height='470'></td>
-<td>In this case, the <i>'front'</i> sides of the triangles in the <i>'Fan #1'</i> are not rendered, due to their vertices order. In the code, these latters are enumerated in the clockwise order, thus every triangle is a back-faced triangle. Hence, the <i>'Fan #1'</i> remains unchanged, when the user decides to render only the <i>'front'</i> sides of the triangles.<p>
+<td>In this case, the <i>'front'</i> sides of the triangles in the <i>'Triangle Fan #1'</i> are not rendered, due to their vertices order. In the code, these latters are enumerated in the clockwise order, thus every triangle is a back-faced triangle. Hence, the <i>'Triangle Fan #1'</i> remains unchanged, when the user decides to render only the <i>'front'</i> sides of all triangles.<p>
 
-Instead, the <i>'Fan #0'</i> is formed only by front-faced triangles, thus the <i>'front sides'</i> of its triangles can be rendered.<p>This implies that the triangle fans can be rendered separately, except when both the <i>'front'</i> and the <i>'back'</i> sides of the triangles are rendered at the same time.<p>This is true, even if changing the rendering type for the triangles (points, wireframe, filled).</td></tr>
+Instead, the <i>'Triangle Fan #0'</i> is formed only by front-faced triangles, thus the <i>'front sides'</i> of its triangles can be rendered.<p>This is true, even if changing the rendering type for the triangles (points, wireframe, filled).</td></tr>
 <tr><td width=50%>The <i>'filled version'</i> (press the <i>'i'</i> or the <i>'I'</i> key).</td><td><b>IMPORTANT</b></td></tr></table><p><h5>Rendering only the <i>'back'</i> sides of the triangles</h5><p>
 <table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example016_old_fan1_points.png' border='1' width='456' height='470'></td>
@@ -25,9 +25,9 @@ Instead, the <i>'Fan #0'</i> is formed only by front-faced triangles, thus the <
 <tr><td><i>'Points rendering'</i> (press the <i>'p'</i> or the <i>'P'</i> key).</td><td>The <i>'wireframe version'</i> (press the <i>'l'</i> or the <i>'L'</i> key).</td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example016_old_fan1_filled.png' border='1' width='456' height='470'></td>
-<td>In this case, the <i>'back'</i> sides of the triangles in the <i>'Fan #0'</i> are not rendered, due to their vertices order. In the code, these latters are enumerated in the counter-clockwise order, thus every triangle is a front-faced triangle. Hence, the <i>'Fan #0'</i> remains unchanged, when the user decides to render only the <i>'back'</i> sides of the triangles.<p>
+<td>In this case, the <i>'back'</i> sides of the triangles in the <i>'Triangle Fan #0'</i> are not rendered, due to their vertices order. In the code, these latters are enumerated in the counter-clockwise order, thus every triangle is a front-faced triangle. Hence, the <i>'Triangle Fan #0'</i> remains unchanged, when the user decides to render only the <i>'back'</i> sides of all triangles.<p>
 
-Instead, the <i>'Fan #1'</i> is formed only by back-faced triangles, thus the <i>'back sides'</i> of its triangles can be rendered.<p>This implies that the triangle fans can be rendered separately, except when both the <i>'front'</i> and the <i>'back'</i> sides of the triangles are rendered at the same time (as mentioned above).<p>This is true, even if changing the rendering type for the triangles (points, wireframe, filled).</td></tr>
+Instead, the <i>'Triangle Fan #1'</i> is formed only by back-faced triangles, thus the <i>'back sides'</i> of its triangles can be rendered.<p>This is true, even if changing the rendering type for the triangles (points, wireframe, filled).</td></tr>
 <tr><td width=50%>The <i>'filled version'</i> (press the <i>'i'</i> or the <i>'I'</i> key).</td><td><b>IMPORTANT</b></td></tr></table><p><h5>Rendering both the <i>'front'</i> and the <i>'back'</i> sides of the triangles</h5><p>
 <table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example016_old_points.png' border='1' width='456' height='470'></td>
@@ -35,9 +35,9 @@ Instead, the <i>'Fan #1'</i> is formed only by back-faced triangles, thus the <i
 <tr><td><i>'Points rendering'</i> (press the <i>'p'</i> or the <i>'P'</i> key).</td><td>The <i>'wireframe version'</i> (press the <i>'l'</i> or the <i>'L'</i> key).</td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example016_old_filled.png' border='1' width='456' height='470'></td>
-<td>As consequence, it is clear that the triangle fans can be rendered separately, except when both the <i>'front'</i> and the <i>'back'</i> sides of the triangles are rendered at the same time.<p>
+<td>As consequence, it is clear that the triangle fans can be rendered separately, except when both the <i>'front'</i> and the <i>'back'</i> sides of all triangles are rendered at the same time.<p>
 
-In this case, both the triangle fans satisfy completely the rendering settings, chosen by the user.</td></tr>
+In this case, both the <i>'Triangle Fan #0'</i> and the <i>'Triangle Fan #1'</i> satisfy completely the rendering settings, chosen by the user.</td></tr>
 <tr><td width=50%>The <i>'filled version'</i> (press the <i>'i'</i> or the <i>'I'</i> key).</td><td><b>IMPORTANT</b></td></tr></table><hr><p>
 
 <h4>Dependencies</h4>
