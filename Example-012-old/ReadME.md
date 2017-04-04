@@ -9,7 +9,21 @@ The <i>'Example-012 (Old Mode)'</i> Test draws a triangle strip (in <i>'turquois
 <li>Both the <i>'front'</i> and the <i>'back'</i> sides of the triangles in the custom triangle strip are rendered by pressing the <i>'t'</i> or the <i>'T'</i> key. The corresponding rendering type is chosen by the user separately.<p></li>
 <li>Only the vertices for the sides of the triangles in the custom triangle strip to be drawn are rendered by pressing the <i>'p'</i> or the <i>'P'</i> key. The user can choose separately what sides of the triangles must be drawn.<p></li>
 <li>The <i>'wireframe versions'</i> for the sides of the triangles in the custom triangle strip to be drawn are rendered by pressing the <i>'l'</i> or the <i>'L'</i> key. The user can choose separately what sides of the triangles must be drawn.<p></li>
-<li>The <i>'filled versions'</i> for the sides of the triangles in the custom triangle strip to be drawn are rendered by pressing the <i>'i'</i> or the <i>'I'</i> key. The user can choose separately what sides of the triangles must be drawn.<p></li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>In particular, this test consists of the <i>'Example-012-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
+<li>The <i>'filled versions'</i> for the sides of the triangles in the custom triangle strip to be drawn are rendered by pressing the <i>'i'</i> or the <i>'I'</i> key. The user can choose separately what sides of the triangles must be drawn.<p></li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example012_old_frontside_points.png' border='1' width='456' height='470'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example012_old_frontside_wireframe.png' border='1' width='456' height='470'></td></tr>
+<tr><td><i>'Points rendering'</i> (press the <i>'p'</i> or the <i>'P'</i> key).</td><td>The <i>'wireframe version'</i> (press the <i>'l'</i> or the <i>'L'</i> key).</td></tr>
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example012_old_frontside_filled.png' border='1' width='456' height='470'></td>
+<td>In this case, the <i>'back'</i> side of the polygon is not rendered, due to its vertices order. In the code, these latters are enumerated in the counter-clockwise order, thus the polygon is a front-faced polygon.<p>
+
+Hence, the scene remains unchanged, when the user decides to render the <i>'back'</i> side of the polygon.<p>This is true, even if changing the rendering type for the polygon (points, wireframe, filled).</td>
+</tr>
+<tr><td width=50%>The <i>'filled version'</i> (press the <i>'i'</i> or the <i>'I'</i> key).</td><td><b>IMPORTANT</b></td></tr>
+</table>
+
+
+<hr><p>
 
 <h4>Dependencies</h4>
 
@@ -17,7 +31,7 @@ The <i>'Example-012 (Old Mode)'</i> Test is based on the so-called <i>OpenGL old
 
 <li>the <A href="http://www.opengl.org"><i>OpenGL</i></A> package, distributed with the platform of interest (see the <i><A href="https://www.khronos.org/opengl/wiki/Getting_Started">Official Documentation</A></i>);</li>
 <li>the <i><A href="https://www.opengl.org/resources/libraries/glut/">OpenGL Utility Toolkit (GLUT)</A></i> package (or the <A href="http://freeglut.sourceforge.net/"><i>FreeGLUT</i></A> package);</li>
-<li>the <A href="http://glew.sourceforge.net/"><i>OpenGL Extension Wrangler Library (GLEW)</i></A> package.</li></ul><p>Several methods for building this test are provided.<p><table border=1><tr><td><p><b>ATTENTION:</b><p>The majority of the dependencies for this test are stable, but are currently deprecated, and several warning messages may appear during the building process.<p></td></tr></table><p><hr><p>
+<li>the <A href="http://glew.sourceforge.net/"><i>OpenGL Extension Wrangler Library (GLEW)</i></A> package.</li></ul><p>In particular, this test consists of the <i>'Example-012-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p>Several methods for building this test are provided.<p><table border=1><tr><td><p><b>ATTENTION:</b><p>The majority of the dependencies for this test are stable, but are currently deprecated, and several warning messages may appear during the building process.<p></td></tr></table><p><hr><p>
 
 <h4>Instructions for building this test with the <i><A href="http://cmake.org">CMake Building Tool</A></i></h4>
 
