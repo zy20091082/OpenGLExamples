@@ -34,7 +34,7 @@ using namespace std;
 
 #endif
 
-/// The custom settings for choosing which side of the triangles in the custom triangle strip must be rendered.
+/// The custom settings for choosing which side of all triangles in the custom triangle strip must be rendered.
 /**
  * The value of this flag may be one of the following values:
  * 
@@ -46,7 +46,7 @@ using namespace std;
  */
 GLenum face;
 
-/// The custom settings for rendering the sides of interest for the triangles in the custom triangle strip.
+/// The custom settings for rendering the sides of interest for all triangles in the custom triangle strip.
 /**
  * The value of this flag may be one of the following values:
  *
@@ -190,42 +190,42 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 'I':
 
-		/* The key is 'I', thus we render the 'filled versions' for the sides to be drawn of the triangles in the triangle strip, approximating the custom shape of interest. The user can choose separately what sides of all triangles must be drawn. */
+		/* The key is 'I', thus we render the 'filled versions' for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape of interest. The user can choose separately what sides of all triangles must be drawn. */
 		mode=GL_FILL;
 		glutPostRedisplay();
 		break;
 		
 		case 'i':
 
-		/* The key is 'i', thus we render the 'filled versions' for the sides to be drawn of the triangles in the triangle strip, approximating the custom shape of interest. The user can choose separately what sides of all triangles must be drawn. */
+		/* The key is 'i', thus we render the 'filled versions' for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape of interest. The user can choose separately what sides of all triangles must be drawn. */
 		mode=GL_FILL;
 		glutPostRedisplay();
 		break;
 		
 		case 'L':
 
-		/* The key is 'L', thus we render the 'wireframe versions' for the sides to be drawn of the triangles in the triangle strip, approximating the custom shape of interest. The user can choose separately what sides of all triangles must be drawn. */
+		/* The key is 'L', thus we render the 'wireframe versions' for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape of interest. The user can choose separately what sides of all triangles must be drawn. */
 		mode=GL_LINE;
 		glutPostRedisplay();
 		break;
 		
 		case 'l':
 
-		/* The key is 'l', thus we render the 'wireframe versions' for the sides to be drawn of the triangles in the triangle strip, approximating the custom shape of interest. The user can choose separately what sides of all triangles must be drawn. */
+		/* The key is 'l', thus we render the 'wireframe versions' for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape of interest. The user can choose separately what sides of all triangles must be drawn. */
 		mode=GL_LINE;
 		glutPostRedisplay();
 		break;
 		
 		case 'P':
 		
-		/* The key is 'P', thus we render only the vertices for the sides to be drawn of the triangles in the triangle strip, approximating the custom shape of interest. The user can choose separately what sides of all triangles must be drawn. */
+		/* The key is 'P', thus we render only the vertices for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape of interest. The user can choose separately what sides of all triangles must be drawn. */
 		mode=GL_POINT;
 		glutPostRedisplay();
 		break;
 		
 		case 'p':
 		
-		/* The key is 'p', thus we render only the vertices for the sides to be drawn of the triangles in the triangle strip, approximating the custom shape of interest. The user can choose separately what sides of all triangles must be drawn. */
+		/* The key is 'p', thus we render only the vertices for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape of interest. The user can choose separately what sides of all triangles must be drawn. */
 		mode=GL_POINT;
 		glutPostRedisplay();
 		break;
@@ -275,7 +275,7 @@ void draw()
 	{
 		/* We must draw both the 'front' and the 'back' sides of all triangles in the custom triangle strip by using the rendering type, chosen by the user. */
 		if(mode==GL_POINT) cout<<"\tOnly the vertices in both the 'front' and the 'back' sides of all triangles in the custom triangle strip are rendered in the current scene."<<endl;
-		if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' of both the 'front' and the 'back' sides for the triangles in the custom triangle strip are rendered in the current scene."<<endl;
-		if(mode==GL_FILL) cout<<"\tThe 'filled versions' of both the 'front' and the 'back' sides for the triangles in the custom triangle strip are rendered in the current scene."<<endl;
+		if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' of both the 'front' and the 'back' sides for all triangles in the custom triangle strip are rendered in the current scene."<<endl;
+		if(mode==GL_FILL) cout<<"\tThe 'filled versions' of both the 'front' and the 'back' sides for all triangles in the custom triangle strip are rendered in the current scene."<<endl;
 	}
 }
