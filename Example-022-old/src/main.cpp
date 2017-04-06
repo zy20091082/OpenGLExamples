@@ -84,10 +84,9 @@ int main(int argc,char **argv)
 	cout<<"\tIt draws 3 approximations, activated upon request and formed by an arbitrary number 'n' of samples, of the 'Circle' shape with radius 'R' and center '(xc,yc)'. This shape is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) <= xc + R * cos(t), y(t) <= yc + R * sin(t)"<<endl<<endl<<"\twith 'R'>0 and 't' in '[-pi,pi]'."<<endl<<endl;
 	cout<<"\tThe radius 'R' and the center coodinates '(xc,yc)' are specified by the user interactively, which can also:"<<endl<<endl;
-	cout<<"\t\t-) decide to approximate the boundary (in 'red') of the 'Circle' shape through a polyline with 'n' vertices and edges (indicated as the 'Approximation #0') by pressing the 'l' key;"<<endl;
-	cout<<"\t\t-) decide to approximate the 'Circle' shape through the 'filled version' for a triangle fan (in 'dark gray') of 'n' triangles (indicated as the 'Approximation #1'), incident at the reference vertex '(xc,yc)' (in 'red'), by pressing ";
-	cout<<"the 'f' key;"<<endl;
-	cout<<"\t\t-) decide to approximate the 'Circle' shape through the 'filled version' of only one polygon (in 'red') with 'n' vertices and edges (indicated as the 'Approximation #2') by pressing the 'p' key;"<<endl;
+	cout<<"\t\t-) approximate the boundary (in 'red') of the 'Circle' shape through a polyline with 'n' vertices and edges (indicated as the 'Approximation #0') by pressing the 'l' key;"<<endl;
+	cout<<"\t\t-) approximate the 'Circle' shape through the 'filled version' for a triangle fan (in 'dark gray') of 'n' triangles (indicated as the 'Approximation #1'), incident at the reference vertex '(xc,yc)' (in 'red'), by pressing the 'f' key;"<<endl;
+	cout<<"\t\t-) approximate the 'Circle' shape through the 'filled version' of only one polygon (in 'red') with 'n' vertices and edges (indicated as the 'Approximation #2') by pressing the 'p' key;"<<endl;
 	cout<<"\t\t-) increase the number 'n' of the samples for the approximation of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of the samples for the approximation of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
