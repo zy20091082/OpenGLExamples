@@ -3,14 +3,23 @@ height="97"></A>
 
 <H3>The <i>'Example-022 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-022 (Old Mode)'</i> Test draws 3 different versions (formed by an arbitrary number of samples) of the <i>'Circle'</i> shape with radius <i>'R'</i> and center <i>'(xc,yc)'</i>, defined as follows:<p><pre>x(t) <= xc + R * sin(t), y(t) <= yc + R * cos(t)</pre><p>with <i>'R'>0</i> and <i>'t'</i> in <i>'[-pi,pi]'</i>.<p>This test also provides a very basic interaction mechanism with the user, which must provide the radius <i>'R'</i> and the center <i>'(xc,yc)'</i>. The user can also:<p><ul>
-<li>decide to approximate the boundary (in <i>'red'</i>) of the <i>'Circle'</i> shape through a polyline by pressing the <i>'l'</i> key;</li>
-<li>decide to approximate the <i>'Circle'</i> shape through the <i>'filled version'</i> for a triangle fan (in <i>'dark gray'</i>) of several triangles, incident at the reference vertex <i>'(xc,yc)'</i> (in <i>'red'</i>), by pressing the <i>'f'</i> key;</li>
-<li>decide to approximate the <i>'Circle'</i> shape through the <i>'filled version'</i> of only one polygon (in <i>'red'</i>) by pressing the <i>'p'</i> key;</li>
-<li>increase the number of the samples for the approximation of interest by pressing the <i>'+'</i> key;</li>
-<li>decrease the number of the samples for the approximation of interest by pressing the <i>'-'</i> key.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
-
-In particular, this test consists of the <i>'Example-022-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
+The <i>'Example-022 (Old Mode)'</i> Test draws 3 approximations, activated upon request and formed by an arbitrary number <i>'n'</i> of samples, of the <i>'Circle'</i> shape with radius <i>'R'</i> and center <i>'(xc,yc)'</i>. This shape is defined as follows:<p><pre>x(t) <= xc + R * cos(t), y(t) <= yc + R * sin(t)</pre><p>with <i>'R'>0</i> and <i>'t'</i> in <i>'[-pi,pi]'</i>.<p>This test also provides a very basic interaction mechanism with the user, which must provide the radius <i>'R'</i> and the center <i>'(xc,yc)'</i>. The user can:<p><ul>
+<li>decide to approximate the boundary (in <i>'red'</i>) of the <i>'Circle'</i> shape through a polyline with an arbitrary number <i>'n'</i> of vertices and edges (indicated as the <i>'Approximation #0'</i>) by pressing the <i>'l'</i> key;<p></li>
+<li>decide to approximate the <i>'Circle'</i> shape through the <i>'filled version'</i> for a triangle fan (in <i>'dark gray'</i>) of <i>'n'</i> triangles (indicated as the <i>'Approximation #1'</i>), incident at the reference vertex <i>'(xc,yc)'</i> (in <i>'red'</i>), by pressing the <i>'f'</i> key;<p></li>
+<li>decide to approximate the <i>'Circle'</i> shape through the <i>'filled version'</i> of only one polygon (in <i>'red'</i>) with <i>'n</i> vertices and edges (indicated as the <i>'Approximation #2'</i>) by pressing the <i>'p'</i> key;<p></li>
+<li>increase the number <i>'n'</i> of the samples in the approximation of interest by pressing the <i>'+'</i> key;<p></li>
+<li>decrease the number <i>'n'</i> of the samples in the approximation of interest by pressing the <i>'-'</i> key.<p></li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf0.png' border='1' width='456' height='450'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf1.png' border='1' width='456' height='450'></td></tr>
+<tr><td><i>'Approximation #0'</i>, <i>'R'=1</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=3</i>.</td><td><i>'Approximation #0'</i>, <i>'R'=1</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=50</i>.</td></tr>
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf2.png' border='1' width='456' height='450'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf3.png' border='1' width='456' height='450'></td></tr>
+<tr><td><i>'Approximation #1'</i>, <i>'R'=1</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=3</i>.</td><td><i>'Approximation #1'</i>, <i>'R'=1</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=50</i>.</td></tr>
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf2.png' border='1' width='456' height='450'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf3.png' border='1' width='456' height='450'></td></tr>
+<tr><td><i>'Approximation #2'</i>, <i>'R'=1</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=3</i>.</td><td><i>'Approximation #2'</i>, <i>'R'=1</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=50</i>.</td></tr></table><p><hr><p>
 
 <h4>Dependencies</h4>
 
@@ -18,7 +27,7 @@ The <i>'Example-022 (Old Mode)'</i> Test is based on the so-called <i>OpenGL old
 
 <li>the <A href="http://www.opengl.org"><i>OpenGL</i></A> package, distributed with the platform of interest (see the <i><A href="https://www.khronos.org/opengl/wiki/Getting_Started">Official Documentation</A></i>);</li>
 <li>the <i><A href="https://www.opengl.org/resources/libraries/glut/">OpenGL Utility Toolkit (GLUT)</A></i> package (or the <A href="http://freeglut.sourceforge.net/"><i>FreeGLUT</i></A> package);</li>
-<li>the <A href="http://glew.sourceforge.net/"><i>OpenGL Extension Wrangler Library (GLEW)</i></A> package.</li></ul><p>Several methods for building this test are provided.<p><table border=1><tr><td><p><b>ATTENTION:</b><p>The majority of the dependencies for this test are stable, but are currently deprecated, and several warning messages may appear during the building process.<p></td></tr></table><p><hr><p>
+<li>the <A href="http://glew.sourceforge.net/"><i>OpenGL Extension Wrangler Library (GLEW)</i></A> package.</li></ul><p>In particular, this test consists of the <i>'Example-022-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p>Several methods for building this test are provided.<p><table border=1><tr><td><p><b>ATTENTION:</b><p>The majority of the dependencies for this test are stable, but are currently deprecated, and several warning messages may appear during the building process.<p></td></tr></table><p><hr><p>
 
 <h4>Instructions for building this test with the <i><A href="http://cmake.org">CMake Building Tool</A></i></h4>
 
