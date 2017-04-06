@@ -6,12 +6,12 @@ height="97"></A>
 The <i>'Example-021 (Old Mode)'</i> Test draws a polyline (in <i>'red'</i>), formed by an arbitrary number <i>'n'</i> of samples, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The polyline of interest approximates the <i>'Circle'</i> curve with radius <i>'R'</i> and center <i>'(xc,yc)'</i>, which is defined as follows:<p><pre>x(t) = xc + R * sin(t), y(t) = yc + R * cos(t)</pre><p>with <i>'R'>0</i> and <i>'t'</i> in <i>'[-pi,pi]'</i>.<p>This test also provides a very basic interaction mechanism with the user, which must provide the radius <i>'R'</i> and the center <i>'(xc,yc)'</i>. The user can also:<p><ul>
 <li>increase the number <i>'n'</i> of the samples for the polyline of interest by pressing the <i>'+'</i> key;</li>
 <li>decrease the number <i>'n'</i> of the samples for the polyline of interest by pressing the <i>'-'</i> key.</li></ul>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf0.png' border='1' width='456' height='472'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf1.png' border='1' width='456' height='472'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf0.png' border='1' width='456' height='460'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf1.png' border='1' width='456' height='460'></td></tr>
 <tr><td>Here, <i>'R'=1</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=3</i>.</td><td>Here, <i>'R'=1</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=8</i>.</td></tr>
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf2.png' border='1' width='456' height='472'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf3.png' border='1' width='456' height='472'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf2.png' border='1' width='456' height='460'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf3.png' border='1' width='456' height='460'></td></tr>
 <tr><td>Here, <i>'R'=1</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=15</i>.</td><td>Here, <i>'R'=1</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=85</i>.</td></tr></table><p><hr><p>
 
 <h4>Dependencies</h4>
