@@ -9,8 +9,8 @@ The <i>'Example-022 (Old Mode)'</i> Test draws 3 approximations, activated upon 
 <li>decide to approximate the <i>'Circle'</i> shape through the <i>'filled version'</i> of only one polygon (in <i>'red'</i>) with <i>'n</i> vertices and edges (indicated as the <i>'Approximation #2'</i>) by pressing the <i>'p'</i> key;<p></li>
 <li>increase the number <i>'n'</i> of the samples in the approximation of interest by pressing the <i>'+'</i> key;<p></li>
 <li>decrease the number <i>'n'</i> of the samples in the approximation of interest by pressing the <i>'-'</i> key.<p></li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf0.png' border='1' width='456' height='450'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf1.png' border='1' width='456' height='450'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shot_example022_conf0_case0.png' border='1' width='456' height='450'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shot_example022_conf0_case1.png' border='1' width='456' height='450'></td></tr>
 <tr><td><i>'Approximation #0'</i>, <i>'R'=1</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=3</i>.</td><td><i>'Approximation #0'</i>, <i>'R'=1</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=50</i>.</td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf2.png' border='1' width='456' height='450'></td>
