@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: March 2017
+ * Last update: April 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -29,7 +29,7 @@ using namespace std;
 
 #else
 
-	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU Linux, or a Microsoft Windows platform. */
+	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU/Linux, or a Microsoft Windows platform. */
 	#include "GL/glew.h"
 	#include "GL/glut.h"
 	#include "GL/gl.h"
@@ -37,12 +37,21 @@ using namespace std;
 #endif
 
 /// The radius <i>'R'</i> for drawing the <i>'Circle'</i> curve of interest.
+/**
+ * Clearly, it must be a positive and not null floating-point value, provided interactively by the user.
+ */
 float radius;
 
 /// The center coordinates <i>'(xc,yc)'</i> for the <i>'Circle'</i> curve of interest.
+/**
+ * Clearly, it is formed by 2 floating-point values, provided interactively by the user.
+ */
 float xc,yc;
 
 /// The number of the samples in the polyline, used for approximating the <i>'Circle'</i> curve of interest.
+/**
+ * It is initially set to '3', which is the minimum number of samples. It is interactively modified by pressing the '+' and the '-' keys.
+ */
 unsigned int num_samples=3;
 
 /* Prototypes for all functions of interest! */
@@ -56,29 +65,28 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-021' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polyline in 'red' (formed by an arbitrary number of samples), which approximates the 'Circle' curve with radius 'R' and center '(xc,yc)'. This latter is defined as follows:"<<endl<<endl;
+	cout<<"\tIt draws a polyline in 'red' (formed by an arbitrary number 'n' of samples), which approximates the 'Circle' curve with radius 'R' and center '(xc,yc)'. This latter is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = xc + R * cos(t), y(t) = yc + R * sin(t)"<<endl<<endl<<"\twith 'R'>0 and 't' in '[-pi,pi]'."<<endl<<endl;
 	cout<<"\tThe radius 'R' and the center coodinates '(xc,yc)' are specified by the user, which can also:"<<endl<<endl;
-	cout<<"\t\t-) increase the number of the samples for the polyline of interest by pressing the '+' key;"<<endl;
-	cout<<"\t\t-) decrease the number of the samples for the polyline of interest by pressing the '-' key."<<endl<<endl;
+	cout<<"\t\t-) increase the number 'n' of the samples for the polyline of interest by pressing the '+' key;"<<endl;
+	cout<<"\t\t-) decrease the number 'n' of the samples for the polyline of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
-	cout.flush();
-	cout<<"\tPlease, insert the radius 'R' (positive and not null) for the 'Circle' curve of interest: ";
+	cout<<"\tPlease, insert the radius 'R' (thus, a positive and not null floating-point value) for the 'Circle' curve of interest: ";
 	cin>>radius;
 	if( (!cin) || (radius<=0) )
 	{
-		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (POSITIVE AND NOT NULL) FOR THE RADIUS 'R' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE) FOR THE RADIUS 'R' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
 	
 	/* Now, we read the center coordinates '(xc,yc)' for the 'Circle' curve of interest. */
-	cout<<"\tPlease, insert the center coordinates '(xc,yc)' for the 'Circle' curve of interest (separated by a space): ";
+	cout<<"\tPlease, insert the center coordinates '(xc,yc)' for the 'Circle' curve of interest (thus, 2 floating-point values, separated by a space): ";
 	cout.flush();
 	cin>>xc>>yc;
 	if(!cin)
 	{
-		cout<<endl<<"\tPLEASE, INSERT THE CENTER COORDINATES '(xc,yc)' FOR THE 'CIRCLE' CURVE OF INTEREST (SEPARATED BY A SPACE)."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT THE CENTER COORDINATES '(xc,yc)' FOR THE 'CIRCLE' CURVE OF INTEREST (THUS, 2 FLOATING-POINT VALUES, SEPARATED BY A SPACE)."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
@@ -102,7 +110,7 @@ int main(int argc,char **argv)
 /// This function updates the viewport for the scene when it is resized. */
 void resize(int w, int h)
 {
-	/* We update the projections and the modeling matrices! */
+	/* We update the projection and the modeling matrices! */
 	glViewport(0, 0, w, h);
    	glMatrixMode(GL_PROJECTION);
    	glLoadIdentity();
@@ -117,7 +125,7 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=3;
-	cout<<endl<<"\tThe polyline, approximating the 'Circle' curve of center ("<<xc<<","<<yc<<") and radius "<<radius<<", is initially formed by "<<num_samples<<" samples (the minimum number as possible)."<<endl<<endl;
+	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Circle' curve of center ("<<xc<<","<<yc<<") and radius "<<radius<<", is formed by 'n'="<<num_samples<<" samples (thus by the the minimum number of samples as possible)."<<endl<<endl;
 	cout.flush();
 }
 
@@ -193,6 +201,6 @@ void draw()
 	/* If we arrive here, all is ok */
 	glEnd();
 	glFlush();
-	cout<<"\tThe 'Circle' curve of interest is currently approximated by a polyline with "<<num_samples<<" samples (thus with "<<num_samples<<" vertices and "<<num_samples<<" edges)."<<endl;
+	cout<<"\tThe 'Circle' curve of interest is currently approximated by a polyline with 'n'="<<num_samples<<" samples (thus with "<<num_samples<<" vertices and "<<num_samples<<" edges)."<<endl;
 	cout.flush();
 }
