@@ -8,7 +8,11 @@ The <i>'Example-021 (Old Mode)'</i> Test draws a polyline (in <i>'red'</i>), for
 <li>decrease the number <i>'n'</i> of the samples for the polyline of interest by pressing the <i>'-'</i> key.</li></ul>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf0.png' border='1' width='456' height='470'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf1.png' border='1' width='456' height='470'></td></tr>
-<tr><td>Here, <i>'R'=1</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=3</i>.</td><td>The Here, <i>'R'=1</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=8</i>.</td></tr>
+<tr><td>Here, <i>'R'=1</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=3</i>.</td><td>Here, <i>'R'=1</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=8</i>.</td></tr>
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf2.png' border='1' width='456' height='470'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf3.png' border='1' width='456' height='470'></td></tr>
+<tr><td>Here, <i>'R'=1</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=15</i>.</td><td>Here, <i>'R'=1</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=85</i>.</td></tr>
 
 <hr><p>
 
