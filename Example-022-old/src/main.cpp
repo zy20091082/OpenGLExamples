@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: March 2017
+ * Last update: April 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -29,29 +29,44 @@ using namespace std;
 
 #else
 
-	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU Linux, or a Microsoft Windows platform. */
+	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU/Linux, or a Microsoft Windows platform. */
 	#include "GL/glew.h"
 	#include "GL/glut.h"
 	#include "GL/gl.h"
 
 #endif
 
-/// The radius <i>'R'</i> for drawing the <i>'Circle'</i> shape of interest.
+/// The radius <i>'R'</i> for drawing the approximation of interest for the <i>'Circle'</i> shape.
+/**
+ * Clearly, it must be a positive and not null floating-point value, provided interactively by the user.
+ */
 float radius;
 
-/// The center coordinates <i>'(xc,yc)'</i> for the <i>'Circle'</i> shape of interest.
+/// The center coordinates <i>'(xc,yc)'</i> for drawing the approximation of interest for the <i>'Circle'</i> shape.
+/**
+ * Clearly, it is formed by 2 floating-point values, provided interactively by the user.
+ */
 float xc,yc;
 
-/// The number of the samples, used for defining the approximation of interest for the <i>'Circle'</i> shape.
+/// The number of the samples for drawing the approximation of interest for the <i>'Circle'</i> shape.
+/**
+ * It is initially set to '3', which is the minimum number of samples. More specifically:
+ *
+ * -) if the polyline, approximating the boundary of the 'Circle' shape, is drawn, then this number is the number of its vertices;
+ * -) if the 'Circle' shape is approximated by a triangle fan, centered at '(xc,yc)', then this number is the number of its triangles;
+ *- ) if the 'Circle' shape is approximated by only one polygon, then this number is the number of its vertices and edges of the polygon.
+ *
+ * The number of the samples is interactively modified by pressing the '+' and the '-' keys.
+ */
 unsigned int num_samples=3;
 
-/// The setting for choosing which approximation of the <i>'Circle'</i> shape must be drawn.
+/// The settings for choosing which approximation of the <i>'Circle'</i> shape must be drawn.
 /**
- * It may be one of the following values:
+ * The value of this flag may be one of the following values:
  *
- * -) the 'l' char value, used for choosing to approximate only the boundary of the <i>'Circle'</i> shape through a polyline, formed by an arbitrary number of vertices and edges. Only the edges of the polyline are rendered ('wireframe version');
- * -) the 'f' char value, used for choosing to approximate the <i>'Circle'</i> shape through a triangle fan, formed by an arbitrary number of triangles. All triangles are incident at the center the <i>'Circle'</i> shape, and completed filled ('filled version').
- * -) the 'p' char value, used for choosing to approximate the <i>'Circle'</i> shape through an unique polygon, formed by an arbitrary number of vertices and edges. The polygon of interest is completely filled ('filled version').
+ * -) the 'l' char value, used for choosing to approximate only the boundary of the 'Circle' shape through a polyline, formed by an arbitrary number 'n' of vertices and edges.
+ * -) The 'f' char value, used for choosing to approximate the 'Circle' shape through the 'filled version' of a triangle fan, formed by an arbitrary number 'n' of triangles. All triangles are incident at the center '(xc,yc)' of the 'Circle' shape.
+ * -) the 'p' char value, used for choosing to approximate the 'Circle' shape through the 'filled version' of only one polygon, formed by an arbitrary number 'n' of vertices and edges.
  */
 char choice;
 
@@ -66,32 +81,33 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-022' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws different versions (formed by an arbitrary number of samples) of the 'Circle' shape with radius 'R' and center '(xc,yc)'. This latter is defined as follows:"<<endl<<endl;
+	cout<<"\tIt draws 3 approximations, activated upon request and formed by an arbitrary number 'n' of samples, of the 'Circle' shape with radius 'R' and center '(xc,yc)'. This shape is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) <= xc + R * cos(t), y(t) <= yc + R * sin(t)"<<endl<<endl<<"\twith 'R'>0 and 't' in '[-pi,pi]'."<<endl<<endl;
-	cout<<"\tThe radius 'R' and the center coodinates '(xc,yc)' are specified by the user, which can also:"<<endl<<endl;
-	cout<<"\t\t-) decide to approximate the boundary (in 'red') of the 'Circle' shape through a polyline by pressing the 'l' key;"<<endl;
-	cout<<"\t\t-) decide to approximate the 'Circle' shape through the 'filled version' for a triangle fan (in 'dark gray') of several triangles, incident at the reference vertex '(xc,yc)' (in 'red'), by pressing the 'f' key;"<<endl;
-	cout<<"\t\t-) decide to approximate the 'Circle' shape through the 'filled version' of only one polygon (in 'red') by pressing the 'p' key;"<<endl;
-	cout<<"\t\t-) increase the number of the samples for the approximation of interest by pressing the '+' key;"<<endl;
-	cout<<"\t\t-) decrease the number of the samples for the approximation of interest by pressing the '-' key."<<endl<<endl;
+	cout<<"\tThe radius 'R' and the center coodinates '(xc,yc)' are specified by the user interactively, which can also:"<<endl<<endl;
+	cout<<"\t\t-) decide to approximate the boundary (in 'red') of the 'Circle' shape through a polyline with 'n' vertices and edges (indicated as the 'Approximation #0') by pressing the 'l' key;"<<endl;
+	cout<<"\t\t-) decide to approximate the 'Circle' shape through the 'filled version' for a triangle fan (in 'dark gray') of 'n' triangles (indicated as the 'Approximation #1'), incident at the reference vertex '(xc,yc)' (in 'red'), by pressing ";
+	cout<<"the 'f' key;"<<endl;
+	cout<<"\t\t-) decide to approximate the 'Circle' shape through the 'filled version' of only one polygon (in 'red') with 'n' vertices and edges (indicated as the 'Approximation #2') by pressing the 'p' key;"<<endl;
+	cout<<"\t\t-) increase the number 'n' of the samples for the approximation of interest by pressing the '+' key;"<<endl;
+	cout<<"\t\t-) decrease the number 'n' of the samples for the approximation of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
-	cout<<"\tPlease, insert the radius 'R' (positive and not null) for the 'Circle' shape of interest: ";
+	cout<<"\tPlease, insert the radius 'R' (thus, a positive and not null floating-point value) for the 'Circle' shape of interest: ";
 	cin>>radius;
 	if( (!cin) || (radius<=0) )
 	{
-		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (POSITIVE AND NOT NULL) FOR THE RADIUS 'R' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE) FOR THE RADIUS 'R' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
 	
 	/* Now, we read the center coordinates '(xc,yc)' for the 'Circle' shape of interest. */
-	cout<<"\tPlease, insert the center coordinates '(xc,yc)' for the 'Circle' shape of interest (separated by a space): ";
+	cout<<"\tPlease, insert the center coordinates '(xc,yc)' for the 'Circle' shape of interest (thus, 2 floating-point values, separated by a space): ";
 	cout.flush();
 	cin>>xc>>yc;
 	if(!cin)
 	{
-		cout<<endl<<"\tPLEASE, INSERT THE CENTER COORDINATES '(xc,yc)' FOR THE 'CIRCLE' SHAPE OF INTEREST (SEPARATED BY A SPACE)."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT THE CENTER COORDINATES '(xc,yc)' FOR THE 'CIRCLE' SHAPE OF INTEREST (THUS, 2 FLOATING-POINT VALUES, SEPARATED BY A SPACE)."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
@@ -109,19 +125,31 @@ int main(int argc,char **argv)
    	glewInit();
    	initialize(); 
 	glutMainLoop();
-	return EXIT_SUCCESS;	
+	return EXIT_SUCCESS;
 }
 
 /// This function updates the viewport for the scene when it is resized. */
 void resize(int w, int h)
 {
-	/* We update the projections and the modeling matrices! */
+	/* We update the projection and the modeling matrices! */
 	glViewport(0, 0, w, h);
    	glMatrixMode(GL_PROJECTION);
    	glLoadIdentity();
    	glOrtho(xc-1.1*radius,xc+1.1*radius,yc-1.1*radius,yc+1.1*radius,-1,1);
    	glMatrixMode(GL_MODELVIEW);
    	glLoadIdentity();
+}
+
+/// This function initializes the OpenGL window of interest.
+void initialize() 
+{
+	/* We initialize the OpenGL window of interest! */
+	glClearColor(1.0, 1.0, 1.0, 0.0);
+	num_samples=3;
+	choice='l';
+	cout<<endl<<"\tAt the beginning, the boundary of the 'Circle' shape with center '("<<xc<<","<<yc<<")' and radius '"<<radius<<"', is approximated by a polyline, formed by 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" edges (thus by the the ";
+	cout<<"minimum number of vertices and edges as possible) [ Approximation #0 ]."<<endl<<endl;
+	cout.flush();
 }
 
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
@@ -156,37 +184,46 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '+':
 		
-		/* The key is '+', thus we increase the number of the samples for drawing the approximation of interest for the 'Circle' shape. */
+		/* The key is '+', thus we increase the number of the samples in the approximation of interest for the 'Curve' shape. */
 		num_samples=num_samples+1;
 		glutPostRedisplay();
 		break;
 		
 		case '-':
 		
-		/* The key is '-', thus we decrease the number of the samples (if possible) for drawing the approximation of interest for the 'Circle' shape. */
+		/* The key is '-', thus we decrease the number of the samples (if possible) in the approximation of interest for the 'Curve' shape. */
 		if(num_samples>3) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 3 of samples is reached in the approximation of interest for the 'Circle' shape, and it is not possible to decrease again this number."<<endl;
-		cout.flush();
+		else
+		{
+			cout<<"\tThe minimum number 3 of ";
+			if(choice=='l') { cout<<" vertices and edges in the polyline, approximating the boundary of the 'Curve' shape [ Approximation #0 ], "; }
+			if(choice=='f') { cout<<" triangles in the 'filled version' of the triangle fan, approximating the 'Curve' shape [ Approximation #1 ], "; }
+			if(choice=='p') { cout<<" vertices and edges in the 'filled version' of the only one polygon, approximating the 'Curve' shape [ Approximation #2 ], "; }
+			cout<<"is reached, and it is not possible to decrease again this number."<<endl;
+			cout.flush();
+		}
+		
+		/* We finalize this case. */
 		glutPostRedisplay();
 		break;
 		
 		case 'l':
 		
-		/* The key is 'l', thus we choose to approximate only the boundary for the 'Circle' shape of interest by using a polyline with an arbitrary number of vertices and edges. */
+		/* The key is 'l', thus we choose to approximate only the boundary for the 'Circle' shape of interest by using a polyline with an arbitrary number 'n' of vertices and edges. */
 		choice='l';
 		glutPostRedisplay();
 		break;
 		
 		case 'f':
 		
-		/* The key is 'f', thus we choose to approximate the 'Circle' shape of interest by using the 'filled version' of a triangle fan with an arbitrary number of triangles, and with the center '(xc,yc)' of the 'Circle' shape as the reference vertex. */
+		/* The key is 'f', thus we choose to approximate the 'Circle' shape of interest by using the 'filled version' of a triangle fan with an arbitrary number 'n' of triangles, and with the center '(xc,yc)' of the 'Circle' shape as the reference vertex. */
 		choice='f';
 		glutPostRedisplay();
 		break;
 		
 		case 'p':
 		
-		/* The key is 'p', thus we choose to approximate the 'Circle' shape of interest by using the 'filled version' of only one polygon with an arbitrary number of vertices and edges. */
+		/* The key is 'p', thus we choose to approximate the 'Circle' shape of interest by using the 'filled version' of the only one polygon with an arbitrary number 'n' of vertices and edges. */
 		choice='p';
 		glutPostRedisplay();
 		break;
@@ -196,17 +233,6 @@ void manageKeys(unsigned char key, int x, int y)
     	/* Other keys are not important for us! */
     	break;
 	}
-}
-
-/// This function initializes the OpenGL window of interest.
-void initialize() 
-{
-	/* We initialize the OpenGL window of interest! */
-	glClearColor(1.0, 1.0, 1.0, 0.0);
-	num_samples=3;
-	choice='l';
-	cout<<endl<<"\tInitially, the boundary of the 'Circle' shape with center ("<<xc<<","<<yc<<") and radius "<<radius<<", is approximated by a polyline, formed by "<<num_samples<<" samples (the minimum number as possible)."<<endl<<endl;
-	cout.flush();
 }
 
 /// This function draws the specific approximation of the <i>'Circle'</i> shape in the OpenGL window of interest by using the current rendering settings (chosen by the user).
@@ -222,7 +248,7 @@ void draw()
 	glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
 	if(choice=='l')
 	{
-		/* We must approximate the boundary curve of the 'Circle' shape by using a polyline (in 'red')! */
+		/* We must approximate the boundary curve of the 'Circle' shape by using a polyline (in 'red') with 'n' vertices and edges! */
 		glColor3f(1.0,0.0,0.0);
 		glBegin(GL_LINE_LOOP);
 		for(unsigned int i=0;i<=num_samples;i++)
@@ -234,12 +260,12 @@ void draw()
 		/* If we arrive here, all is ok */
 		glEnd();
 		glFlush();
-		cout<<"\tOnly the "<<num_samples<<" vertices and "<<num_samples<<" edges in the polyline, approximating the boundary for the 'Circle' shape of interest, are rendered."<<endl;
+		cout<<"\tCurrently, the boundary for the 'Circle' shape of interest is approximated by a polyline with 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" edges [ Approximation #0 ]."<<endl;
 		cout.flush();
 	}
 	else if(choice=='f')
 	{
-		/* We must approximate the 'Circle' shape by using a triangle fan, formed by several filled triangles. The reference vertex is the center '(xc,yc)'. Here, the triangles are shown in 'dark gray', and the reference vertex is shown in 'red'. */
+		/* We must approximate the 'Circle' shape by using the 'filled version' of a triangle fan. The reference vertex is the center '(xc,yc)'. Here, the triangles are shown in 'dark gray', and the reference vertex is shown in 'red'. */
 		glColor3f(1.0,0.0,0.0);
 		glBegin(GL_TRIANGLE_FAN);
 		glVertex3f(xc,yc,0);
@@ -253,12 +279,12 @@ void draw()
 		/* If we arrive here, all is ok */
 		glEnd();
 		glFlush();
-		cout<<"\tThe 'filled versions' of "<<num_samples<<" triangles in the triangle fan, approximating the 'Circle' shape of interest, are rendered."<<endl;
+		cout<<"\tCurrently, the 'Circle' shape of interest is approximated by the 'filled version' of a triangle fan with 'n'="<<num_samples<<" triangles [ Approximation #1 ]."<<endl;
 		cout.flush();
 	}
 	else if(choice=='p')
 	{
-		/* We must approximate the 'Circle' shape by using only one polygon. The polygon is completely filled in 'red'. */
+		/* We must approximate the 'Circle' shape by using the 'filled version' of only one polygon (in 'red') with 'n' vertices and edges! */
 		glColor3f(1.0,0.0,0.0);
 		glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
 		glBegin(GL_POLYGON);
@@ -271,7 +297,7 @@ void draw()
 		/* If we arrive here, all is ok */
 		glEnd();
 		glFlush();
-		cout<<"\tThe 'filled version' of the polygon with "<<num_samples<<" vertices and "<<num_samples<<" edges, approximating the 'Circle' shape of interest, is rendered."<<endl;
+		cout<<"\tCurrently, the 'Circle' shape of interest is approximated by the 'filled version' of only one polygon with 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" edges [ Approximation #2 ]."<<endl;
 		cout.flush();
 	}
 }
