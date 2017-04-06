@@ -3,21 +3,21 @@ height="97"></A>
 
 <H3>The <i>'Example-014 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-014 (Old Mode)'</i> Test draws a triangle strip (in <i>'turquoise gray'</i>), approximating a custom shape, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The settings for rendering the triangles in the triangle strip of interest can be modified interactively by the user as follows:<p><ul>
-<li>only the <i>'front'</i> sides of the triangles in the custom triangle strip are rendered by pressing the <i>'f'</i> or the <i>'F'</i> key. The corresponding rendering type is chosen by the user separately.<p></li>
-<li>Only the <i>'back'</i> sides of the triangles in the custom triangle strip are rendered by pressing the <i>'b'</i> or the <i>'B'</i> key. The corresponding rendering type is chosen by the user separately.<p></li>
-<li>Both the <i>'front'</i> and the <i>'back'</i> sides of the triangles in the custom triangle strip are rendered by pressing the <i>'t'</i> or the <i>'T'</i> key. The corresponding rendering type is chosen by the user separately.<p></li>
-<li>Only the vertices for the sides of the triangles in the custom triangle strip to be drawn are rendered by pressing the <i>'p'</i> or the <i>'P'</i> key. The user can choose separately what sides of the triangles must be drawn.<p></li>
-<li>The <i>'wireframe versions'</i> for the sides of the triangles in the custom triangle strip to be drawn are rendered by pressing the <i>'l'</i> or the <i>'L'</i> key. The user can choose separately what sides of the triangles must be drawn.<p></li>
-<li>The <i>'filled versions'</i> for the sides of the triangles in the custom triangle strip to be drawn are rendered by pressing the <i>'i'</i> or the <i>'I'</i> key. The user can choose separately what sides of the triangles must be drawn.<p></li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
+The <i>'Example-014 (Old Mode)'</i> Test draws a triangle strip (in <i>'turquoise gray'</i>), approximating a custom shape, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The settings for rendering all triangles in the triangle strip of interest can be modified interactively by the user as follows:<p><ul>
+<li>only the <i>'front'</i> sides of all triangles in the custom triangle strip are rendered by pressing the <i>'f'</i> or the <i>'F'</i> key. The corresponding rendering type is chosen by the user separately.<p></li>
+<li>Only the <i>'back'</i> sides of all triangles in the custom triangle strip are rendered by pressing the <i>'b'</i> or the <i>'B'</i> key. The corresponding rendering type is chosen by the user separately.<p></li>
+<li>Both the <i>'front'</i> and the <i>'back'</i> sides of all triangles in the custom triangle strip are rendered by pressing the <i>'t'</i> or the <i>'T'</i> key. The corresponding rendering type is chosen by the user separately.<p></li>
+<li>Only the vertices for the sides of all triangles in the custom triangle strip to be drawn are rendered by pressing the <i>'p'</i> or the <i>'P'</i> key. The user can choose separately what sides of all triangles must be drawn.<p></li>
+<li>The <i>'wireframe versions'</i> for the sides of all triangles in the custom triangle strip to be drawn are rendered by pressing the <i>'l'</i> or the <i>'L'</i> key. The user can choose separately what sides of all triangles must be drawn.<p></li>
+<li>The <i>'filled versions'</i> for the sides of all triangles in the custom triangle strip to be drawn are rendered by pressing the <i>'i'</i> or the <i>'I'</i> key. The user can choose separately what sides of all triangles must be drawn.<p></li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example014_old_backsides_points.png' border='1' width='456' height='470'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example014_old_backsides_wireframe.png' border='1' width='456' height='470'></td></tr>
 <tr><td><i>'Points rendering'</i> (press the <i>'p'</i> or the <i>'P'</i> key).</td><td>The <i>'wireframe version'</i> (press the <i>'l'</i> or the <i>'L'</i> key).</td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example014_old_backsides_filled.png' border='1' width='456' height='470'></td>
-<td>In this case, the <i>'front'</i> sides of the triangles are not rendered, due to their vertices order. In the code, these latters are enumerated in the clockwise order, thus every triangle is a back-faced triangle.<p>
+<td>In this case, the <i>'front'</i> sides of all triangles are not rendered, due to their vertices order. In the code, these latters are enumerated in the clockwise order, thus every triangle is a back-faced triangle.<p>
 
-Hence, the scene remains unchanged, when the user decides to render only the <i>'front'</i> sides of all triangles in the triangle strip.<p>This is true, even if changing the rendering type for the triangles (points, wireframe, filled).</td>
+Hence, the scene remains unchanged, when the user decides to render only the <i>'front'</i> sides of all triangles in the triangle strip.<p>This is true, even if changing the rendering type for all triangles (points, wireframe, filled).</td>
 </tr>
 <tr><td width=50%>The <i>'filled version'</i> (press the <i>'i'</i> or the <i>'I'</i> key).</td><td><b>IMPORTANT</b></td></tr>
 </table><hr><p>
