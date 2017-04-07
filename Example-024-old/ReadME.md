@@ -4,22 +4,22 @@ height="97"></A>
 <H3>The <i>'Example-024 (Old Mode)'</i> Test</H3>
 
 The <i>'Example-024 (Old Mode)'</i> Test draws several versions (in <i>'red'</i>) of a quadstrip, formed by an arbitrary number <i>'n'</i> of quadrilaterals, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The quadstrip of interest approximates the <i>'Circular Annulus'</i> shape with internal radius <i>'rI'</i>, external radius <i>'rE'</i>, and center <i>'(xc,yc)'</i>. Note that the <i>'Circular Annulus'</i> shape is defined as follows:<p><pre>| rI * cos(t) | <= | x(t) - xc | <= | rE * cos(t) |, | rI * sin(t) | <= | y(t) - yc | <= | rE * sin(t) |</pre><p>for every <i>'t'</i> in <i>'[-pi,pi]'</i>, and <i>'rI'>0</i> and <i>'rE>0'</i>, such that <i>'rI<rE'</i>.<p>In other words, it is formed by all points, belonging to the intersection of two concentric <i>'Circle'</i> shapes of center <i>'(xc,yc)'</i> and of radius <i>'rI'</i> and <i>'rE'</i>, respectively.<p>This test also provides a very basic interaction mechanism with the user, which must provide the external radius <i>'rE'</i> and the internal radius <i>'rI'</i>, as well as the center coodinates <i>'(xc,yc)'</i>. The user can also:<p><ul> 
-<li>render only the points for all quadrilaterals in the quadstrip of interest by pressing the <i>'p'</i> key;</li>
-<li>render only the <i>'wireframe versions'</i> of all quadrilaterals in the quadstrip of interest by pressing the <i>'l'</i> key;</li>
-<li><li>render only the <i>'filled versions'</i> of all quadrilaterals in the quadstrip of interest by pressing the <i>'f'</i> key;</li>
+<li>render only the points for all quadrilaterals in the quadstrip of interest (indicated as the <i>'Configuration #0'</i>) by pressing the <i>'p'</i> key;</li>
+<li>render only the <i>'wireframe versions'</i> of all quadrilaterals in the quadstrip of interest (indicated as the <i>'Configuration #1'</i>) by pressing the <i>'l'</i> key;</li>
+<li>render only the <i>'filled versions'</i> of all quadrilaterals in the quadstrip of interest (indicated as the <i>'Configuration #2'</i>) by pressing the <i>'f'</i> key;</li>
 <li>increase the number <i>'n'</i> of all quadrilaterals in the quadstrip of interest by pressing the <i>'+'</i> key;</li>
 <li>decrease the number <i>'n'</i> of all quadrilaterals in the quastrip of interest by pressing the <i>'-'</i> key.</li></ul>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example024_old_conf0.png' border='1' width='450' height='466'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example024_old_conf1.png' border='1' width='450' height='466'></td></tr>
-<tr><td><i>'rI'=1</i>, <i>'rE'=2</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=3</i>.</td><td><i>'rI'=1</i>, <i>'rE'=2</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=50</i>.</td></tr>
+<tr><td>Here, <i>'rI'=1</i>, <i>'rE'=2</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=3</i>.</td><td><i>'rI'=1</i>, <i>'rE'=2</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=50</i>.</td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example024_old_conf2.png' border='1' width='450' height='466'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example024_old_conf3.png' border='1' width='450' height='466'></td></tr>
-<tr><td><i>'rI'=1</i>, <i>'rE'=2</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=3</i>.</td><td><i>'rI'=1</i>, <i>'rE'=2</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=50</i>.</td></tr>
+<tr><td>Here, <i>'rI'=1</i>, <i>'rE'=2</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=3</i>.</td><td><i>'rI'=1</i>, <i>'rE'=2</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=50</i>.</td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example024_old_conf4.png' border='1' width='450' height='466'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example024_old_conf5.png' border='1' width='450' height='466'></td></tr>
-<tr><td><i>'rI'=1</i>, <i>'rE'=2</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=3</i>.</td><td><i>'rI'=1</i>, <i>'rE'=2</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=50</i>.</td></tr></table><p><hr><p>
+<tr><td>Here, <i>'rI'=1</i>, <i>'rE'=2</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=3</i>.</td><td><i>'rI'=1</i>, <i>'rE'=2</i>, <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=50</i>.</td></tr></table><p><hr><p>
 
 <h4>Dependencies</h4>
 
