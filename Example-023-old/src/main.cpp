@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: March 2017
+ * Last update: April 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -29,7 +29,7 @@ using namespace std;
 
 #else
 
-	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU Linux, or a Microsoft Windows platform. */
+	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU/Linux, or a Microsoft Windows platform. */
 	#include "GL/glew.h"
 	#include "GL/glut.h"
 	#include "GL/gl.h"
@@ -37,13 +37,28 @@ using namespace std;
 #endif
 
 /// The center coordinates <i>'(xc,yc)'</i> for the <i>'Ellipse'</i> curve of interest.
+/**
+ * Clearly, it is formed by 2 floating-point values, provided interactively by the user.
+ */
 float xc,yc;
 
-/// The lengths <i>'Rx'</i> and <i>'Ry'</i> of the semi-axis for drawing the <i>'Ellipse'</i> curve of interest.
-float radius_x,radius_y;
-
-/// The number of the samples in the polyline, used for approximating the <i>'Ellipse'</i> curve of interest.
+/// The number of the vertices and edges in the polyline, used for approximating the <i>'Ellipse'</i> curve of interest.
+/**
+ * It is initially set to '3', which is the minimum number of vertices and edges. It is interactively modified by pressing the '+' and the '-' keys.
+ */
 unsigned int num_samples=3;
+
+/// The semi-axis <i>'Rx'</i> along the x-axis for drawing the <i>'Ellipse'</i> curve of interest.
+/**
+ * Clearly, it must be a positive and not null floating-point value, provided interactively by the user.
+ */
+float Rx;
+
+/// The semi-axis <i>'Ry'</i> along the y-axis for drawing the <i>'Ellipse'</i> curve of interest.
+/**
+ * Clearly, it must be a positive and not null floating-point value, provided interactively by the user.
+ */
+float Ry;
 
 /* Prototypes for all functions of interest! */
 void draw();
@@ -56,39 +71,39 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-023' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polyline in 'red' (formed by an arbitrary number of samples), which approximates the 'Ellipse' curve with semiaxis 'Rx' and 'Ry' (respectively along the x- and the y-axis), and center '(xc,yc)'."<<endl;
-	cout<<"\tThis latter is defined as follows:"<<endl<<endl;
+	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of vertices and edges, which approximates the 'Ellipse' curve with semi-axis 'Rx' and 'Ry' (respectively along the x- and the y-axis), as well as center '(xc,yc)'."<<endl;
+	cout<<"\tThis curve is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = xc + Rx * cos(t), y(t) = yc + Ry * sin(t)"<<endl<<endl<<"\twith 'Rx'>0, 'Ry'>0, and 't' in '[-pi,pi]'."<<endl<<endl;
-	cout<<"\tThe semiaxis 'Rx' and 'Ry', as well as the center coodinates '(xc,yc)', are specified by the user, which can also:"<<endl<<endl;
-	cout<<"\t\t-) increase the number of the samples for the polyline of interest by pressing the '+' key;"<<endl;
-	cout<<"\t\t-) decrease the number of the samples for the polyline of interest by pressing the '-' key."<<endl<<endl;
+	cout<<"\tThe semi-axis 'Rx' and 'Ry' as well as the center coodinates '(xc,yc)' are specified by the user interactively, which can also:"<<endl<<endl;
+	cout<<"\t\t-) increase the number 'n' of the vertices and edges for the polyline of interest by pressing the '+' key;"<<endl;
+	cout<<"\t\t-) decrease the number 'n' of the vertices and edges for the polyline of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
-	cout<<"\tPlease, insert the semi-axis 'Rx' along the x-axis (positive and not null) for the 'Ellipse' curve of interest: ";
-	cin>>radius_x;
-	if( (!cin) || (radius_x<=0) )
+	cout<<"\tPlease, insert the semi-axis 'Rx' (thus, a positive and not null floating-point value) for the 'Ellipse' curve of interest: ";
+	cin>>Rx;
+	if( (!cin) || (Rx<=0) )
 	{
-		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (POSITIVE AND NOT NULL) FOR THE SEMI-AXIS 'Rx' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE) FOR THE SEMI-AXIS 'Rx' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
 	
 	/* Now, we read the length of the second semi-axis 'Ry' (along the y-axis) for the 'Ellipse' curve of interest. */
-	cout<<"\tPlease, insert the semi-axis 'Ry' along the y-axis (positive and not null) for the 'Ellipse' curve of interest: ";
-	cin>>radius_y;
-	if( (!cin) || (radius_y<=0) )
+	cout<<"\tPlease, insert the semi-axis 'Ry' (thus, a positive and not null floating-point value) for the 'Ellipse' curve of interest: ";
+	cin>>Ry;
+	if( (!cin) || (Ry<=0) )
 	{
-		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (POSITIVE AND NOT NULL) FOR THE SEMI-AXIS 'Ry' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE) FOR THE SEMI-AXIS 'Ry' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
 	
 	/* Now, we read the center coordinates '(xc,yc)' for the 'Ellipse' curve of interest. */
-	cout<<"\tPlease, insert the center coordinates '(xc,yc)' for the 'Ellipse' curve of interest (separated by a space): ";
+	cout<<"\tPlease, insert the center coordinates '(xc,yc)' for the 'Ellipse' curve of interest (thus, 2 floating-point values, separated by a space): ";
 	cout.flush();
 	cin>>xc>>yc;
 	if(!cin)
 	{
-		cout<<endl<<"\tPLEASE, INSERT THE CENTER COORDINATES '(xc,yc)' FOR THE 'ELLIPSE' CURVE OF INTEREST (SEPARATED BY A SPACE)."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT THE CENTER COORDINATES '(xc,yc)' FOR THE 'ELLIPSE' CURVE OF INTEREST (THUS, 2 FLOATING-POINT VALUES, SEPARATED BY A SPACE)."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}
@@ -97,9 +112,9 @@ int main(int argc,char **argv)
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
-	if(radius_x==radius_y) glutInitWindowSize(500,500);
-	else if(radius_x>radius_y) { glutInitWindowSize(1000,1000*radius_y/radius_x); }
-	else { glutInitWindowSize(1000*radius_x/radius_y,1000); }
+	if(Rx==Ry) glutInitWindowSize(500,500);
+	else if(Rx>Ry) { glutInitWindowSize(1000,1000*Ry/Rx); }
+	else { glutInitWindowSize(1000*Rx/Ry,1000); }
 	glutCreateWindow("The 'Example-023' Example, based on the (Old Mode) OpenGL");
 	glutDisplayFunc(draw);
 	glutReshapeFunc(resize);
@@ -114,11 +129,11 @@ int main(int argc,char **argv)
 /// This function updates the viewport for the scene when it is resized. */
 void resize(int w, int h)
 {
-	/* We update the projections and the modeling matrices! */
+	/* We update the projection and the modeling matrices! */
 	glViewport(0, 0, w, h);
    	glMatrixMode(GL_PROJECTION);
    	glLoadIdentity();
-   	glOrtho(xc-1.1*radius_x,xc+1.1*radius_x,yc-1.1*radius_y,yc+1.1*radius_y,-1,1);
+   	glOrtho(xc-1.1*Rx,xc+1.1*Rx,yc-1.1*Ry,yc+1.1*Ry,-1,1);
    	glMatrixMode(GL_MODELVIEW);
    	glLoadIdentity();
 }
@@ -129,8 +144,8 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=3;
-	cout<<endl<<"\tThe polyline, approximating the 'Ellipse' curve of center ("<<xc<<","<<yc<<"), semi-axis 'Rx'="<<radius_x<<" (along the x-axis), and semi-axis 'Ry'="<<radius_y<<" (along the y-axis), is initially formed by "<<num_samples<<" samples (the";
-	cout<<" minimum number as possible)."<<endl<<endl;
+	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Ellipse' curve of center '("<<xc<<","<<yc<<")', semi-axis 'Rx'="<<Rx<<", and semi-axis 'Ry'="<<Ry<<" is formed by 'n'="<<num_samples<<" vertices and edges (thus by the the minimum ";
+	cout<<"number of vertices and edges as possible)."<<endl<<endl;
 	cout.flush();
 }
 
@@ -166,16 +181,16 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '+':
 		
-		/* The key is '+', thus we increase the number of the samples in the polyline of interest! */
+		/* The key is '+', thus we increase the number of the vertices and edges in the polyline of interest! */
 		num_samples=num_samples+1;
 		glutPostRedisplay();
 		break;
 		
 		case '-':
 		
-		/* The key is '-', thus we decrease the number of the samples (if possible) in the polyline of interest. */
+		/* The key is '-', thus we decrease the number of the vertices and edges (if possible) in the polyline of interest. */
 		if(num_samples>3) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 3 of samples in the polyline of interest is reached, and it is not possible to decrease again this number."<<endl;
+		else cout<<"\tThe minimum number 'n'=3 of vertices and edges in the polyline of interest is reached, and it is not possible to decrease again this number."<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;
@@ -199,13 +214,13 @@ void draw()
 	glBegin(GL_LINE_LOOP);
 	for(unsigned int i=0;i<=num_samples;i++)
 	{
-		glVertex3f(xc+radius_x*cos(t),yc+radius_y*sin(t),0);
+		glVertex3f(xc+Rx*cos(t),yc+Ry*sin(t),0);
 		t=t+(2*PI/num_samples);
 	}
 	
 	/* If we arrive here, all is ok */
 	glEnd();
 	glFlush();
-	cout<<"\tThe 'Ellipse' curve of interest is currently approximated by a polyline with "<<num_samples<<" samples (thus with "<<num_samples<<" vertices and "<<num_samples<<" edges)."<<endl;
+	cout<<"\tThe 'Ellipse' curve of interest is currently approximated by a polyline with 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" edges."<<endl;
 	cout.flush();
 }
