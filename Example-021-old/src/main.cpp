@@ -48,9 +48,9 @@ float radius;
  */
 float xc,yc;
 
-/// The number of the samples in the polyline, used for approximating the <i>'Circle'</i> curve of interest.
+/// The number of the vertices and edges in the polyline, used for approximating the <i>'Circle'</i> curve of interest.
 /**
- * It is initially set to '3', which is the minimum number of samples. It is interactively modified by pressing the '+' and the '-' keys.
+ * It is initially set to '3', which is the minimum number of vertices and edges. It is interactively modified by pressing the '+' and the '-' keys.
  */
 unsigned int num_samples=3;
 
@@ -65,11 +65,11 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-021' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polyline in 'red' (formed by an arbitrary number 'n' of samples), which approximates the 'Circle' curve with radius 'R' and center '(xc,yc)'. This latter is defined as follows:"<<endl<<endl;
+	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of vertices and edges, which approximates the 'Circle' curve with radius 'R' and center '(xc,yc)'. This curve is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = xc + R * cos(t), y(t) = yc + R * sin(t)"<<endl<<endl<<"\twith 'R'>0 and 't' in '[-pi,pi]'."<<endl<<endl;
 	cout<<"\tThe radius 'R' and the center coodinates '(xc,yc)' are specified by the user interactively, which can also:"<<endl<<endl;
-	cout<<"\t\t-) increase the number 'n' of the samples for the polyline of interest by pressing the '+' key;"<<endl;
-	cout<<"\t\t-) decrease the number 'n' of the samples for the polyline of interest by pressing the '-' key."<<endl<<endl;
+	cout<<"\t\t-) increase the number 'n' of the vertices and edges for the polyline of interest by pressing the '+' key;"<<endl;
+	cout<<"\t\t-) decrease the number 'n' of the vertices and edges for the polyline of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout<<"\tPlease, insert the radius 'R' (thus, a positive and not null floating-point value) for the 'Circle' curve of interest: ";
 	cin>>radius;
@@ -125,7 +125,8 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=3;
-	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Circle' curve of center '("<<xc<<","<<yc<<")' and radius '"<<radius<<"', is formed by 'n'="<<num_samples<<" samples (thus by the the minimum number of samples as possible)."<<endl<<endl;
+	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Circle' curve of center '("<<xc<<","<<yc<<")' and radius '"<<radius<<"', is formed by 'n'="<<num_samples<<" vertices and edges (thus by the the minimum number of";
+	cout<<" vertices and edges as possible)."<<endl<<endl;
 	cout.flush();
 }
 
@@ -161,16 +162,16 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '+':
 		
-		/* The key is '+', thus we increase the number of the samples in the polyline of interest! */
+		/* The key is '+', thus we increase the number of the vertices and edges in the polyline of interest! */
 		num_samples=num_samples+1;
 		glutPostRedisplay();
 		break;
 		
 		case '-':
 		
-		/* The key is '-', thus we decrease the number of the samples (if possible) in the polyline of interest. */
+		/* The key is '-', thus we decrease the number of the vertices and edges (if possible) in the polyline of interest. */
 		if(num_samples>3) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 3 of samples in the polyline of interest is reached, and it is not possible to decrease again this number."<<endl;
+		else cout<<"\tThe minimum number 'n'=3 of vertices and edges in the polyline of interest is reached, and it is not possible to decrease again this number."<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;
@@ -201,6 +202,6 @@ void draw()
 	/* If we arrive here, all is ok */
 	glEnd();
 	glFlush();
-	cout<<"\tThe 'Circle' curve of interest is currently approximated by a polyline with 'n'="<<num_samples<<" samples (thus with "<<num_samples<<" vertices and "<<num_samples<<" edges)."<<endl;
+	cout<<"\tThe 'Circle' curve of interest is currently approximated by a polyline with 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" edges."<<endl;
 	cout.flush();
 }
