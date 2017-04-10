@@ -84,7 +84,7 @@ int main(int argc,char **argv)
 	cout<<"\tIt draws several versions (in 'red') of a quadstrip (formed by an arbitrary number 'n' of quadrilaterals), approximating the 'Circular Annulus' shape with internal radius 'rI', external radius 'rE', and center '(xc,yc)'."<<endl;
 	cout<<"\tNote that the 'Circular Annulus' shape is defined as follows:"<<endl<<endl;
 	cout<<"\t| rI * cos(t) | <= | x(t) - xc | <= | rE * cos(t) |, | rI * sin(t) | <= | y(t) - yc | <= | rE * sin(t) |"<<endl<<endl;
-	cout<<"\tfor every 't' in '[-pi,pi]', and 'rI'>0 and 'rE>0', such that 'rI<rE'."<<endl<<endl;
+	cout<<"\tfor every 't' in '[-pi,pi]', and for any 'rI'>0 and 'rE>0', such that 'rI<rE'."<<endl<<endl;
 	cout<<"\tIn other words, it is formed by all points, belonging to the intersection of two concentric 'Circle' shapes of center '(xc,yc)' and of radius 'rI' and 'rE', respectively."<<endl<<endl;
 	cout<<"\tThe external radius 'rE' and the internal radius 'rI', as well as the center coodinates '(xc,yc)' of the 'Circular Annulus' shape, are specified interactively by the user, which can also:"<<endl<<endl;
 	cout<<"\t\t-) decide to render only the vertices for all quadrilaterals in the quadstrip of interest by pressing the 'p' key;"<<endl;
