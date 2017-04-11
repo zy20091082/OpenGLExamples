@@ -3,12 +3,16 @@ height="97"></A>
 
 <H3>The <i>'Example-027 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-027 (Old Mode)'</i> Test draws a polyline (in <i>'red'</i>), formed by an arbitrary number of samples, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The polyline of interest approximates the <i>'Sine-like'</i> curve, defined in the range <i>'[-pi,+pi]'</i>. In particular, the <i>'Sine-like'</i> curve is defined in the same spirit of the <i>'Sine'</i> curve, but it requires an exponent <i>'n'</i> for computing the sine function to the <i>'n'</i>-th, as follows:<center>
-<pre>x(t) = t, y(t) = sin^n (t)</pre></center><p>with <i>'n'>0</i> and <i>'t'</i> in <i>'[-pi,pi]'</i>.<p>This test also provides a very basic interaction mechanism with the user, which must provide the exponent <i>'n'</i>, the semiaxis <i>'Rx'</i> and <i>'Ry'</i>, as well as the center <i>'(xc,yc)'</i>. The user can also:<p><ul>
-<li>increase the number of the samples for the polyline of interest by pressing the <i>'+'</i> key;</li>
-<li>decrease the number of the samples for the polyline of interest by pressing the <i>'-'</i> key.</li></ul>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
-
-In particular, this test consists of the <i>'Example-027-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p><hr><p>
+The <i>'Example-027 (Old Mode)'</i> Test draws a polyline (in <i>'red'</i>), formed by an arbitrary number <i>'n'</i> of vertices and edges, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The polyline of interest approximates the <i>'Sine-like'</i> curve, defined in the range <i>'[-pi,+pi]'</i>. In particular, any <i>'Sine-like'</i> curve is defined in the same spirit of the <i>'Sine'</i> curve, but it requires an exponent <i>'k'</i> for computing the sine function to the <i>'k'</i>-th. This curve is defined as follows:<center><pre>x(t) = t, y(t) = sin ^ k (t)</pre></center><p>with <i>'k'>0</i> and <i>'t'</i> in <i>'[-pi,pi]'</i>.<p>This test also provides a very basic interaction mechanism with the user, which must provide the exponent <i>'k'</i>, and can also:<p><ul>
+<li>increase the number <i>'n'</i> of the vertices and edges in the polyline of interest by pressing the <i>'+'</i> key;</li>
+<li>decrease the number <i>'n'</i> of the vertices and edges in the polyline of interest by pressing the <i>'-'</i> key.</li></ul>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example027_old_conf0.png' border='1' width='450' height='647'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example027_old_conf1.png' border='1' width='450' height='647'></td></tr>
+<tr><td>Here, <i>'k'=2</i>, and <i>'n'=5</i>.</td><td>Here, <i>'k'=2</i>, and <i>'n'=60</i>.</td></tr>
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example027_old_conf2.png' border='1' width='450' height='647'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example027_old_conf3.png' border='1' width='450' height='647'></td></tr>
+<tr><td>Here, <i>'k'=3</i>, and <i>'n'=5</i>.</td><td>Here, <i>'k'=3</i>, and <i>'n'=60</i>.</td></tr></table><p><hr><p>
 
 <h4>Dependencies</h4>
 
@@ -16,7 +20,7 @@ The <i>'Example-027 (Old Mode)'</i> Test is based on the so-called <i>OpenGL old
 
 <li>the <A href="http://www.opengl.org"><i>OpenGL</i></A> package, distributed with the platform of interest (see the <i><A href="https://www.khronos.org/opengl/wiki/Getting_Started">Official Documentation</A></i>);</li>
 <li>the <i><A href="https://www.opengl.org/resources/libraries/glut/">OpenGL Utility Toolkit (GLUT)</A></i> package (or the <A href="http://freeglut.sourceforge.net/"><i>FreeGLUT</i></A> package);</li>
-<li>the <A href="http://glew.sourceforge.net/"><i>OpenGL Extension Wrangler Library (GLEW)</i></A> package.</li></ul><p>Several methods for building this test are provided.<p><table border=1><tr><td><p><b>ATTENTION:</b><p>The majority of the dependencies for this test are stable, but are currently deprecated, and several warning messages may appear during the building process.<p></td></tr></table><p><hr><p>
+<li>the <A href="http://glew.sourceforge.net/"><i>OpenGL Extension Wrangler Library (GLEW)</i></A> package.</li></ul><p>In particular, this test consists of the <i>'Example-027-old'</i> executable file (in the <i>'bin'</i> folder), starting uniquely from the <i>'main.cpp'</i> C++ source file (in the <i>'src'</i> folder).<p>Several methods for building this test are provided.<p><table border=1><tr><td><p><b>ATTENTION:</b><p>The majority of the dependencies for this test are stable, but are currently deprecated, and several warning messages may appear during the building process.<p></td></tr></table><p><hr><p>
 
 <h4>Instructions for building this test with the <i><A href="http://cmake.org">CMake Building Tool</A></i></h4>
 
