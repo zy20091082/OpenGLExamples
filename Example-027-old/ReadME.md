@@ -10,8 +10,8 @@ The <i>'Example-027 (Old Mode)'</i> Test draws a polyline (in <i>'red'</i>), for
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example027_old_conf1.png' border='1' width="750" height="220"></td></tr>
 <tr><td>Here, the <i>'Sine-like'</i> curve with <i>'k'=2</i>, and <i>'n'=5</i>.</td><td>Here, the <i>'Sine-like'</i> curve with <i>'k'=2</i>, and <i>'n'=60</i>.</td></tr>
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example027_old_conf2.png' border='1' width="750" height="250"></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example027_old_conf3.png' border='1' width="750" height="250"></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example027_old_conf2.png' border='1' width="790" height="290"></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example027_old_conf3.png' border='1' width="790" height="290"></td></tr>
 <tr><td>Here, the <i>'Sine-like'</i> curve with <i>'k'=3</i>, and <i>'n'=5</i>.</td><td>Here, the <i>'Sine-like'</i> curve with <i>'k'=3</i>, and <i>'n'=60</i>.</td></tr>
 </table><p><hr><p>
 
