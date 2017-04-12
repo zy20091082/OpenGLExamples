@@ -36,13 +36,13 @@ using namespace std;
 
 #endif
 
-/// The radius <i>'R'</i> for drawing the <i>'Circle'</i> curve of interest.
+/// The radius <i>'R'</i> to be used for defining and drawing the polyline, approximating the <i>'Circle'</i> curve of interest.
 /**
  * Clearly, it must be a positive and not null floating-point value, provided interactively by the user.
  */
 float radius;
 
-/// The center coordinates <i>'(xc,yc)'</i> for the <i>'Circle'</i> curve of interest.
+/// The center coordinates <i>'(xc,yc)'</i> to be used for defining and drawing the polyline, approximating the <i>'Circle'</i> curve of interest.
 /**
  * Clearly, the center for the 'Cicle' curve of interest is formed by 2 floating-point values, provided interactively by the user.
  */

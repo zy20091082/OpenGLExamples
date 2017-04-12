@@ -49,13 +49,13 @@ using namespace std;
  */
 float a,b,c;
 
-/// The number of the vertices and edges in the polyline, used for approximating the <i>'Parabola'</i> curve of interest.
+/// The number of the vertices and edges in the polyline, approximating the <i>'Parabola'</i> curve of interest.
 /**
  * It is initially set to '3', which is the minimum number of vertices and edges. It is interactively modified by pressing the '+' and the '-' keys.
  */
 unsigned int num_samples=3;
 
-/// The coordinates <i>'(xv,yv)'</i> for the vertex of the <i>'Parabola'</i> curve of interest.
+/// The coordinates <i>'(xv,yv)'</i> for the vertex to be used for defining and drawing the polyline, approximating the <i>'Parabola'</i> curve of interest.
 /**
  * Here, the coordinates '(xv,yv)' of the vertex are determined by the coefficients 'a', 'b', and 'c', as follows:
  * 
@@ -63,15 +63,15 @@ unsigned int num_samples=3;
  */
 float xv,yv;
 
-/// The x- and the y-ranges for the scene of interest.
+/// The x- and the y-ranges for the scene, where the polyline, approximating the <i>'Parabola'</i> curve of interest, must be drawn.
 /**
  * The values are useful for fixing the orthographic projection, used for drawing the scene. Here, the x-range of the 'Parabola' curve is '[ xv - R, xv + R ]' (by construction). Instead, the y-range depends on the specific 'Parabola' curve of interest.
  */
 float xmin,xmax,ymin,ymax;
 
-/// The radius <i>'R'</i> for the interval <i>['xv-R,xv+R']</i>, where the <i>'Parabola'</i> curve of interest must be drawn.
+/// The radius <i>'R'</i> for the interval <i>['xv-R,xv+R']</i>, where the polyline, approximating the <i>'Parabola'</i> curve of interest, must be drawn.
 /**
- * it must be a positive and not null floating-point value, provided interactively by the user. In this case, the 'Parabola' curve of interest is centered with respect to its vertex '(xv,yv)', and its x-range is '[ xv - R, xv + R ]' (by construction).
+ * It must be a positive and not null floating-point value, provided interactively by the user. In this case, the 'Parabola' curve of interest is centered with respect to its vertex '(xv,yv)', and its x-range is '[ xv - R, xv + R ]' (by construction).
  */
 float R;
 

@@ -36,13 +36,13 @@ using namespace std;
 
 #endif
 
-/// The radius <i>'R'</i> for drawing the approximation of interest for the <i>'Circle'</i> shape.
+/// The radius <i>'R'</i> to be used for defining and drawing the approximation of interest for the <i>'Circle'</i> shape.
 /**
  * Clearly, it must be a positive and not null floating-point value, provided interactively by the user.
  */
 float radius;
 
-/// The center coordinates <i>'(xc,yc)'</i> for drawing the approximation of interest for the <i>'Circle'</i> shape.
+/// The center coordinates <i>'(xc,yc)'</i> to be used for defining and drawing the approximation of interest for the <i>'Circle'</i> shape.
 /**
  * Clearly, the center for the 'Circle' shape of interest is formed by 2 floating-point values, provided interactively by the user.
  */

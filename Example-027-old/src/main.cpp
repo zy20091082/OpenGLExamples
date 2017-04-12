@@ -42,9 +42,9 @@ using namespace std;
  */
 unsigned int num_samples=5;
 
-/// The custom exponent <i>'k'</i> to be used for defining and drawing the <i>'Sine-like'</i> curve of interest.
+/// The custom exponent <i>'k'</i> to be used for defining and drawing the polyline, approximating the <i>'Sine-like'</i> curve of interest.
 /**
- * In particular, any 'Sine-like' curve is defined in the same spirit of the 'Sine' curve, but it requires an exponent 'k' for computing sine function to the 'k'-th. Clearly, it must be a positive and not null integer value, provided interactively by the user.
+ * In particular, any 'Sine-like' curve is defined in the same spirit of the 'Sine' curve, but it requires an exponent 'k' for computing sine function to the 'k'-th. Clearly, it must be a positive and not null 'integer' value, provided interactively by the user.
  */
 int k;
 

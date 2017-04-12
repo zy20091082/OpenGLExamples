@@ -36,7 +36,7 @@ using namespace std;
 
 #endif
 
-/// The center coordinates <i>'(xc,yc)'</i> for the <i>'Ellipse'</i> curve of interest.
+/// The center coordinates <i>'(xc,yc)'</i> to be used for defining and drawing the polyline, approximating the <i>'Ellipse'</i> curve of interest.
 /**
  * Clearly, the center for the 'Ellipse' curve of interest is formed by 2 floating-point values, provided interactively by the user.
  */
@@ -48,13 +48,13 @@ float xc,yc;
  */
 unsigned int num_samples=3;
 
-/// The semi-axis <i>'Rx'</i> along the x-axis for drawing the <i>'Ellipse'</i> curve of interest.
+/// The semi-axis <i>'Rx'</i> along the x-axis to be used for defining and drawing the polyline, approximating the <i>'Ellipse'</i> curve of interest.
 /**
  * Clearly, it must be a positive and not null floating-point value, provided interactively by the user.
  */
 float Rx;
 
-/// The semi-axis <i>'Ry'</i> along the y-axis for drawing the <i>'Ellipse'</i> curve of interest.
+/// The semi-axis <i>'Ry'</i> along the y-axis to be used for defining and drawing the polyline, approximating the <i>'Ellipse'</i> curve of interest.
 /**
  * Clearly, it must be a positive and not null floating-point value, provided interactively by the user.
  */

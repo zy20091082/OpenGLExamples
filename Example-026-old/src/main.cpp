@@ -36,7 +36,7 @@ using namespace std;
 
 #endif
 
-/// The center coordinates <i>'(xc,yc)'</i> for the <i>'Ellipse-like'</i> curve of interest.
+/// The center coordinates <i>'(xc,yc)'</i> to be used for defining and drawing the polyline, approximating the <i>'Ellipse-like'</i> curve of interest.
 /**
  * Clearly, the center for the 'Ellipse-like' curve of interest is formed by 2 floating-point values, provided interactively by the user.
  */
@@ -48,21 +48,21 @@ float xc,yc;
  */
 unsigned int num_samples=3;
 
-/// The semi-axis <i>'Rx'</i> along the x-axis for drawing the <i>'Ellipse-like'</i> curve of interest.
+/// The semi-axis <i>'Rx'</i> along the x-axis to be used for defining and drawing the polyline, approximating the <i>'Ellipse-like'</i> curve of interest.
 /**
  * Clearly, it must be a positive and not null floating-point value, provided interactively by the user.
  */
 float Rx;
 
-/// The semi-axis <i>'Ry'</i> along the y-axis for drawing the <i>'Ellipse-like'</i> curve of interest.
+/// The semi-axis <i>'Ry'</i> along the y-axis to be used for defining and drawing the polyline, approximating the <i>'Ellipse-like'</i> curve of interest.
 /**
  * Clearly, it must be a positive and not null floating-point value, provided interactively by the user.
  */
 float Ry;
 
-/// The custom exponent <i>'k'</i> for the functions, used for defining and drawing the <i>'Ellipse-like'</i> curve of interest.
+/// The custom exponent <i>'k'</i> to be used for defining and drawing the polyline, approximating the <i>'Ellipse-like'</i> curve of interest.
 /**
- * In particular, any 'Ellipse-like' curve is defined in the same spirit of the 'Ellipse' curve, but it requires an exponent 'k' for computing the cosine and the sine functions to the 'k'-th. Clearly, it must be a positive and not null integer value, provided 
+ * In particular, any 'Ellipse-like' curve is defined in the same spirit of the 'Ellipse' curve, but it requires an exponent 'k' for computing the cosine and the sine functions to the 'k'-th. Clearly, it must be a positive and not null 'integer value', provided 
  * interactively by the user.
  */
 int k;
@@ -241,4 +241,3 @@ void draw()
 	cout<<"\tThe 'Ellipse-like' curve of interest is currently approximated by a polyline with 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" edges."<<endl;
 	cout.flush();
 }
-

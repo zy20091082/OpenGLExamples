@@ -36,25 +36,25 @@ using namespace std;
 
 #endif
 
-/// The center coordinates <i>'(xc,yc)'</i> for the <i>'Circular Annulus'</i> shape of interest.
+/// The center coordinates <i>'(xc,yc)'</i> to be used for defining and drawing the quadstrip, approximating the <i>'Circular Annulus'</i> shape of interest.
 /**
  * Clearly, the center for the 'Circular Annulus' shape of interest is formed by 2 floating-point values, provided interactively by the user.
  */
 float xc,yc;
 
-/// The radius <i>'rE'</i> of the external circle in the <i>'Circular Annulus'</i> shape of interest.
+/// The radius <i>'rE'</i> of the external circle to be used for defining and drawing the quadstrip, approximating the <i>'Circular Annulus'</i> shape of interest.
 /**
  * The radius 'rE' is also called the 'external radius' for the 'Circular Annulus' shape of interest. Clearly, it must be a positive and not null floating-point value, provided interactively by the user.
  */
 float rE;
 
-/// The radius <i>'rI'</i> of the internal circle in the <i>'Circular Annulus'</i> shape of interest.
+/// The radius <i>'rI'</i> of the internal circle to be used for defining and drawing the quadstrip, approximating the <i>'Circular Annulus'</i> shape of interest.
 /**
  * The radius 'rI' is also called the 'internal radius' for the 'Circular Annulus' shape of interest. Clearly, it must be a positive and not null floating-point value, provided interactively by the user.
  */
 float rI;
 
-/// The number of the quadrilaterals in the approximation of the <i>'Circular Annulus'</i> shape of interest.
+/// The number of the quadrilaterals in the quadstrip, approximating the <i>'Circular Annulus'</i> shape of interest.
 /**
  * It is initially set to '3', which is the minimum number of the quadrilaterals. It is interactively modified by pressing the '+' and the '-' keys.
  */
