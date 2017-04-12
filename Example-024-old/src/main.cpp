@@ -38,7 +38,7 @@ using namespace std;
 
 /// The center coordinates <i>'(xc,yc)'</i> for the <i>'Circular Annulus'</i> shape of interest.
 /**
- * Clearly, it is formed by 2 floating-point values, provided interactively by the user.
+ * Clearly, the center for the 'Circular Annulus' shape of interest is formed by 2 floating-point values, provided interactively by the user.
  */
 float xc,yc;
 

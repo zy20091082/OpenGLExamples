@@ -44,7 +44,7 @@ float radius;
 
 /// The center coordinates <i>'(xc,yc)'</i> for the <i>'Circle'</i> curve of interest.
 /**
- * Clearly, it is formed by 2 floating-point values, provided interactively by the user.
+ * Clearly, the center for the 'Cicle' curve of interest is formed by 2 floating-point values, provided interactively by the user.
  */
 float xc,yc;
 
@@ -125,7 +125,7 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=3;
-	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Circle' curve of center '("<<xc<<","<<yc<<")' and radius '"<<radius<<"', is formed by 'n'="<<num_samples<<" vertices and edges (thus by the the minimum number of";
+	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Circle' curve of center '("<<xc<<","<<yc<<")' and radius '"<<radius<<"', is formed by 'n'="<<num_samples<<" vertices and edges (thus by the minimum number of";
 	cout<<" vertices and edges as possible)."<<endl<<endl;
 	cout.flush();
 }

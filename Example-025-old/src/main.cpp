@@ -303,7 +303,7 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=3;
-	cout<<"\tAt the beginning, the polyline, approximating the portion of interest for the 'Parabola' curve, is formed by 'n'="<<num_samples<<" vertices and edges (thus by the the minimum number of vertices and edges as possible)."<<endl<<endl;
+	cout<<"\tAt the beginning, the polyline, approximating the portion of interest for the 'Parabola' curve, is formed by 'n'="<<num_samples<<" vertices and edges (thus by the minimum number of vertices and edges as possible)."<<endl<<endl;
 	cout.flush();
 }
 

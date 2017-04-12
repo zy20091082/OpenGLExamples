@@ -38,7 +38,7 @@ using namespace std;
 
 /// The center coordinates <i>'(xc,yc)'</i> for the <i>'Ellipse-like'</i> curve of interest.
 /**
- * Clearly, it is formed by 2 floating-point values, provided interactively by the user.
+ * Clearly, the center for the 'Ellipse-like' curve of interest is formed by 2 floating-point values, provided interactively by the user.
  */
 float xc,yc;
 
@@ -60,7 +60,7 @@ float Rx;
  */
 float Ry;
 
-/// The custom exponent <i>'k'</i> to be used in the functions, used for defining and drawing the <i>'Ellipse-like'</i> curve of interest.
+/// The custom exponent <i>'k'</i> for the functions, used for defining and drawing the <i>'Ellipse-like'</i> curve of interest.
 /**
  * In particular, any 'Ellipse-like' curve is defined in the same spirit of the 'Ellipse' curve, but it requires an exponent 'k' for computing the cosine and the sine functions to the 'k'-th. Clearly, it must be a positive and not null integer value, provided 
  * interactively by the user.
@@ -118,7 +118,7 @@ int main(int argc,char **argv)
 	/* Now, we read the exponent 'k' for the 'Ellipse-like' curve of interest. */
 	cout<<"\tPlease, insert the exponent 'k' (thus, a positive and not null 'integer' value) for the 'Ellipse-like' curve of interest: ";
 	cin>>k;
-	if( (!cin) || (Ry<=0) )
+	if( (!cin) || (k<=0) )
 	{
 		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL 'INTEGER' VALUE) FOR THE EXPONENT 'k' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
@@ -162,7 +162,7 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=3;
 	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Ellipse-like' curve of center '("<<xc<<","<<yc<<")', exponent 'k'="<<k<<", semi-axis 'Rx'="<<Rx<<", and semi-axis 'Ry'="<<Ry<<", is formed by 'n'="<<num_samples<<" vertices and edges (thus by";
-	cout<<" the the minimum number of vertices and edges as possible)."<<endl<<endl;
+	cout<<" the minimum number of vertices and edges as possible)."<<endl<<endl;
 	cout.flush();
 }
 
@@ -241,3 +241,4 @@ void draw()
 	cout<<"\tThe 'Ellipse-like' curve of interest is currently approximated by a polyline with 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" edges."<<endl;
 	cout.flush();
 }
+

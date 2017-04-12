@@ -38,7 +38,7 @@ using namespace std;
 
 /// The center coordinates <i>'(xc,yc)'</i> for the <i>'Ellipse'</i> curve of interest.
 /**
- * Clearly, it is formed by 2 floating-point values, provided interactively by the user.
+ * Clearly, the center for the 'Ellipse' curve of interest is formed by 2 floating-point values, provided interactively by the user.
  */
 float xc,yc;
 
@@ -144,7 +144,7 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=3;
-	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Ellipse' curve of center '("<<xc<<","<<yc<<")', semi-axis 'Rx'="<<Rx<<", and semi-axis 'Ry'="<<Ry<<", is formed by 'n'="<<num_samples<<" vertices and edges (thus by the the minimum ";
+	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Ellipse' curve of center '("<<xc<<","<<yc<<")', semi-axis 'Rx'="<<Rx<<", and semi-axis 'Ry'="<<Ry<<", is formed by 'n'="<<num_samples<<" vertices and edges (thus by the minimum ";
 	cout<<"number of vertices and edges as possible)."<<endl<<endl;
 	cout.flush();
 }

@@ -44,7 +44,7 @@ float radius;
 
 /// The center coordinates <i>'(xc,yc)'</i> for drawing the approximation of interest for the <i>'Circle'</i> shape.
 /**
- * Clearly, it is formed by 2 floating-point values, provided interactively by the user.
+ * Clearly, the center for the 'Circle' shape of interest is formed by 2 floating-point values, provided interactively by the user.
  */
 float xc,yc;
 
@@ -146,7 +146,7 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=3;
 	choice='l';
-	cout<<endl<<"\tAt the beginning, the boundary of the 'Circle' shape with center '("<<xc<<","<<yc<<")' and radius '"<<radius<<"', is approximated by a polyline, formed by 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" edges (thus by the the ";
+	cout<<endl<<"\tAt the beginning, the boundary of the 'Circle' shape with center '("<<xc<<","<<yc<<")' and radius '"<<radius<<"', is approximated by a polyline, formed by 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" edges (thus by the ";
 	cout<<"minimum number of vertices and edges as possible) [ Approximation #0 ]."<<endl<<endl;
 	cout.flush();
 }
