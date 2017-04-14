@@ -51,7 +51,7 @@ float a,b,c;
 
 /// The number of the vertices and edges in the polyline, approximating the <i>'Parabola'</i> curve of interest.
 /**
- * It is initially set to '3', which is the minimum number of vertices and edges. It is interactively modified by pressing the '+' and the '-' keys.
+ * It is initially set to '3', which is the minimum number 'n' of vertices and edges. It is interactively modified by pressing the '+' and the '-' keys.
  */
 unsigned int num_samples=3;
 
@@ -91,7 +91,7 @@ int main(int argc,char **argv)
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-025' Example, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of vertices and edges, which approximates a specific portion of the 'Parabola' curve with vertex '(xv,yv)'."<<endl;
-	cout<<"\\tThe portion of interest for this curve is defined as follows:"<<endl<<endl;
+	cout<<"\tThe portion of interest for this curve is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = t, y(t) = a * t ^ 2 + b * t + c"<<endl<<endl<<"\tfor any not null 'a', and for every 't' in '[xv-R,xv+R]', with any 'R'>0."<<endl<<endl;
 	cout<<"\tThe coefficients '(a,b,c)', as well as the radius 'R' are specified by the user interactively, which can also:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of the vertices and edges for the polyline of interest by pressing the '+' key;"<<endl;

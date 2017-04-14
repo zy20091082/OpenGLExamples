@@ -56,7 +56,7 @@ float rI;
 
 /// The number of all quadrilaterals in the quadstrip, approximating the <i>'Circular Annulus'</i> shape of interest.
 /**
- * It is initially set to '3', which is the minimum number of all quadrilaterals. It is interactively modified by pressing the '+' and the '-' keys.
+ * It is initially set to '3', which is the minimum number 'n' of all quadrilaterals. It is interactively modified by pressing the '+' and the '-' keys.
  */
 unsigned int num_quads=3;
 
@@ -234,8 +234,8 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_quads=3;
 	choice='l';
-	cout<<"\tAt the beginning, the 'wireframe versions' of 'n'="<<num_quads<<" quadrilaterals (thus, the minimum number 'n' as possible) in the quadstrip, approximating the 'Circular Annulus' shape of center '("<<xc<<","<<yc<<")', internal radius 'rI'="<<rI<<", ";
-	cout<<"and external radius 'rE'="<<rE<<", are rendered."<<endl<<endl;
+	cout<<"\tAt the beginning, the 'wireframe versions' of 'n'="<<num_quads<<" quadrilaterals (thus, the minimum number 'n' of quadrilaterals as possible) in the quadstrip, approximating the 'Circular Annulus' shape of center '("<<xc<<","<<yc<<")',";
+	cout<<" internal radius 'rI'="<<rI<<", and external radius 'rE'="<<rE<<", are rendered."<<endl<<endl;
 	cout.flush();
 }
 

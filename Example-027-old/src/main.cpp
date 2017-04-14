@@ -38,7 +38,7 @@ using namespace std;
 
 /// The number of the vertices and edges in the polyline, used for approximating the <i>'Sine-like'</i> curve of interest.
 /**
- * It is initially set to '5', which is the minimum number of vertices and edges. It is interactively modified by pressing the '+' and the '-' keys.
+ * It is initially set to '5', which is the minimum number 'n' of vertices and edges. It is interactively modified by pressing the '+' and the '-' keys.
  */
 unsigned int num_samples=5;
 

@@ -50,13 +50,13 @@ float xc,yc;
 
 /// The number of the samples for drawing the approximation of interest for the <i>'Circle'</i> shape.
 /**
- * It is initially set to '3', which is the minimum number of samples. More specifically:
+ * It is initially set to '3', which is the minimum number 'n' of samples in the approximation of interest. More specifically:
  *
- * -) if the polyline, approximating the boundary of the 'Circle' shape, is drawn, then this number is the number of its vertices;
- * -) if the 'Circle' shape is approximated by a triangle fan, centered at '(xc,yc)', then this number is the number of its triangles;
- *- ) if the 'Circle' shape is approximated by only one polygon, then this number is the number of its vertices and edges of the polygon.
+ * -) if the polyline, approximating the boundary of the 'Circle' shape, is drawn, then this number is the number 'n' of its vertices;
+ * -) if the 'Circle' shape is approximated by a triangle fan, centered at '(xc,yc)', then this number is the number 'n' of its triangles;
+ *- ) if the 'Circle' shape is approximated by only one polygon, then this number is the number 'n' of its vertices and edges.
  *
- * The number of the samples is interactively modified by pressing the '+' and the '-' keys.
+ * The number 'n' of the samples is interactively modified by pressing the '+' and the '-' keys.
  */
 unsigned int num_samples=3;
 
@@ -195,7 +195,7 @@ void manageKeys(unsigned char key, int x, int y)
 		if(num_samples>3) num_samples=num_samples-1;
 		else
 		{
-			cout<<"\tThe minimum number 3 of ";
+			cout<<"\tThe minimum number 'n'=3 of ";
 			if(choice=='l') { cout<<" vertices and edges in the polyline, approximating the boundary of the 'Curve' shape [ Approximation #0 ], "; }
 			if(choice=='f') { cout<<" triangles in the 'filled version' of the triangle fan, approximating the 'Curve' shape [ Approximation #1 ], "; }
 			if(choice=='p') { cout<<" vertices and edges in the 'filled version' of the only one polygon, approximating the 'Curve' shape [ Approximation #2 ], "; }

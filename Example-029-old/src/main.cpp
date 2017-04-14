@@ -38,7 +38,7 @@ using namespace std;
 
 /// The number of the vertices and edges in the polyline, used for approximating the <i>'Lissajous-like'</i> curve of interest.
 /**
- * It is initially set to '7', which is the minimum number of vertices and edges. It is interactively modified by pressing the '+' and the '-' keys.
+ * It is initially set to '7', which is the minimum number 'n' of vertices and edges. It is interactively modified by pressing the '+' and the '-' keys.
  */
 unsigned int num_samples=7;
 
@@ -67,8 +67,8 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-029' Example, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws a polyline (in 'blue'), formed by an arbitrary number 'n' of vertices and edges, which approximates the 'Lissajous-like' curve with parameters 'Rx', 'Ry', 'Kx', and 'Ky'. This latter is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = Rx * cos( Kx * t ), y(t) = Ry * sin( Ky * t )"<<endl<<endl;
-	cout<<"\twith 't' in '[0,2*pi]', and 'Kx'>0, 'Ky'>0, 'Rx'>0, 'Ry'>0. For the sake of the simplicity, the parameters 'Rx', 'Ry', 'Kx', and 'Ky' are 'integer' values, and are provided interactively by the user, which can also:"<<endl<<endl;
-	cout<<"\t\t-) increase the number 'n' of the vertices and edges for the polyline of interest by pressing the '+' key;"<<endl;
+	cout<<"\tfor every 't' in '[0,2*pi]', and for any 'Kx'>0, 'Ky'>0, 'Rx'>0, 'Ry'>0. For the sake of the simplicity, the parameters 'Rx', 'Ry', 'Kx', and 'Ky' are positive and not null 'integer' values, and are provided ";
+	cout<<"interactively by the user, which can also:"<<endl<<endl<<"\t\t-) increase the number 'n' of the vertices and edges for the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of the vertices and edges for the polyline of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout<<"\tPlease, insert the coefficient 'Kx' (thus, a positive and not null 'integer' value) for the 'Lissajous-like' curve of interest: ";
@@ -146,8 +146,8 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=7;
-	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Lissajous-like' curve with the coefficients 'Rx'="<<Rx<<", 'Ry'="<<Ry<<", 'Kx'="<<Kx<<", and 'Ky'="<<Ky<<", is formed by 'n'="<<num_samples<<" vertices and edges (thus by the minimum number ";
-	cout<<"of vertices and edges as possible)."<<endl<<endl;
+	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Lissajous-like' curve with the coefficients 'Rx'="<<Rx<<", 'Ry'="<<Ry<<", 'Kx'="<<Kx<<", and 'Ky'="<<Ky<<", is formed by 'n'="<<num_samples<<" vertices and edges (thus by the minimum number 'n'";
+	cout<<" of vertices and edges as possible)."<<endl<<endl;
 	cout.flush();
 }
 
