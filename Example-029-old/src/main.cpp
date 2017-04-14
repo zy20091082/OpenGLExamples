@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-028 (Old Mode)' example.
+ * main.cpp - the main function for the 'Example-029 (Old Mode)' example.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -65,7 +65,7 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-029' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polyline (in 'blue'), formed by an arbitrary number 'n' of vertices and edges, which approximates the 'Lissajous-like' curve with parameters 'Rx', 'Ry', 'Kx', and 'Ky'. This latter is defined as follows:"<<endl<<endl;
+	cout<<"\tIt draws a polyline (in 'blue'), formed by an arbitrary number 'n' of vertices and edges, which approximates the 'Lissajous-like' curve with parameters 'Rx', 'Ry', 'Kx', and 'Ky'. This curve is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = Rx * cos( Kx * t ), y(t) = Ry * sin( Ky * t )"<<endl<<endl;
 	cout<<"\tfor every 't' in '[0,2*pi]', and for any 'Kx'>0, 'Ky'>0, 'Rx'>0, 'Ry'>0. For the sake of the simplicity, the parameters 'Rx', 'Ry', 'Kx', and 'Ky' are positive and not null 'integer' values, and are provided ";
 	cout<<"interactively by the user, which can also:"<<endl<<endl<<"\t\t-) increase the number 'n' of the vertices and edges for the polyline of interest by pressing the '+' key;"<<endl;
