@@ -61,7 +61,7 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-027' Example, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of vertices and edges, which approximates the 'Sine-like' curve in the range '[-pi,+pi]'."<<endl;
 	cout<<"\tIn particular, any 'Sine-like' curve is defined in the same spirit of the 'Sine' curve, but it requires an exponent 'k' for computing the sine function to the 'k'-th. This curve is defined as follows:"<<endl<<endl;
-	cout<<"\tx(t) = t, y(t) = sin ^ k (t)"<<endl<<endl<<"\tfor any 'k'>0 and for every 't' in '[-pi,pi]'."<<endl<<endl;
+	cout<<"\tx(t) = t, y(t) = sin ^ k (t)"<<endl<<endl<<"\tfor any 'k'>0, and for every 't' in '[-pi,pi]'."<<endl<<endl;
 	cout<<"\tThe exponent 'k' is specified by the user interactively, which can also:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of the vertices and edges for the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of the vertices and edges for the polyline of interest by pressing the '-' key."<<endl<<endl;
