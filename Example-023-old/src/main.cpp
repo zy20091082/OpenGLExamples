@@ -73,7 +73,7 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-023' Example, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of vertices and edges, which approximates the 'Ellipse' curve with semi-axis 'Rx' and 'Ry' (respectively along the x- and the y-axis), as well as center '(xc,yc)'."<<endl;
 	cout<<"\tThis curve is defined as follows:"<<endl<<endl;
-	cout<<"\tx(t) = xc + Rx * cos(t), y(t) = yc + Ry * sin(t)"<<endl<<endl<<"\twith 'Rx'>0, 'Ry'>0, and 't' in '[-pi,pi]'."<<endl<<endl;
+	cout<<"\tx(t) = xc + Rx * cos(t), y(t) = yc + Ry * sin(t)"<<endl<<endl<<"\tfor any 'Rx'>0, 'Ry'>0, and for every't' in '[-pi,pi]'."<<endl<<endl;
 	cout<<"\tThe semi-axis 'Rx' and 'Ry' as well as the center coodinates '(xc,yc)' are specified by the user interactively, which can also:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of the vertices and edges for the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of the vertices and edges for the polyline of interest by pressing the '-' key."<<endl<<endl;
@@ -145,7 +145,7 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=3;
 	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Ellipse' curve of center '("<<xc<<","<<yc<<")', semi-axis 'Rx'="<<Rx<<", and semi-axis 'Ry'="<<Ry<<", is formed by 'n'="<<num_samples<<" vertices and edges (thus by the minimum ";
-	cout<<"number of vertices and edges as possible)."<<endl<<endl;
+	cout<<"number 'n' of vertices and edges as possible)."<<endl<<endl;
 	cout.flush();
 }
 

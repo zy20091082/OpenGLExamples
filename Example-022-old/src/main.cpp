@@ -81,8 +81,9 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-022' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws 3 approximations, activated upon request and formed by an arbitrary number 'n' of samples, of the 'Circle' shape with radius 'R' and center '(xc,yc)'. This shape is defined as follows:"<<endl<<endl;
-	cout<<"\tx(t) <= xc + R * cos(t), y(t) <= yc + R * sin(t)"<<endl<<endl<<"\twith 'R'>0 and 't' in '[-pi,pi]'."<<endl<<endl;
+	cout<<"\tIt draws 3 approximations of the 'Circle' shape with radius 'R' and center '(xc,yc)'. The approximations of interest are activated upon request, and are formed by an arbitrary number 'n' of samples."<<endl;
+	cout<<"\tThe 'Circle' shape is defined as follows:"<<endl<<endl;
+	cout<<"\t| x(t) - xc | <= R * cos(t), | y(t) - yc | <= R * sin(t)"<<endl<<endl<<"\tfor any 'R'>0, and for every 't' in '[-pi,pi]'."<<endl<<endl;
 	cout<<"\tThe radius 'R' and the center coodinates '(xc,yc)' are specified by the user interactively, which can also:"<<endl<<endl;
 	cout<<"\t\t-) approximate the boundary (in 'red') of the 'Circle' shape through a polyline with 'n' vertices and edges (indicated as the 'Approximation #0') by pressing the 'l' key;"<<endl;
 	cout<<"\t\t-) approximate the 'Circle' shape through the 'filled version' for a triangle fan (in 'dark gray') of 'n' triangles (indicated as the 'Approximation #1'), incident at the reference vertex '(xc,yc)' (in 'red'), by pressing the 'f' key;"<<endl;
@@ -147,7 +148,7 @@ void initialize()
 	num_samples=3;
 	choice='l';
 	cout<<endl<<"\tAt the beginning, the boundary of the 'Circle' shape with center '("<<xc<<","<<yc<<")' and radius '"<<radius<<"', is approximated by a polyline, formed by 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" edges (thus by the ";
-	cout<<"minimum number of vertices and edges as possible) [ Approximation #0 ]."<<endl<<endl;
+	cout<<"minimum number 'n' of vertices and edges as possible) [ Approximation #0 ]."<<endl<<endl;
 	cout.flush();
 }
 
