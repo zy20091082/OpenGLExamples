@@ -45,7 +45,7 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-019' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the 'filled' and the 'wireframe versions' of 2 triangle strips (respectively, in 'red' and in 'blue'), that approximate the 'Double Square Annulus' shape."<<endl<<endl;
+	cout<<"\tIt draws the 'filled' and the 'wireframe versions' of all triangles in 2 triangle strips (respectively, in 'red' and in 'blue'), that approximate the 'Double Square Annulus' shape."<<endl<<endl;
 	cout<<"\tIn this context, it is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -109,11 +109,11 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws the <i>'filled'</i> and the <i>'wireframe versions'</i> of 2 triangle strips (respectively, in <i>'red'</i> and in <i>'blue'</i>), that approximate the <i>'Double Square Annulus'</i> shape, in the OpenGL window of interest.
+/// This function draws the <i>'filled'</i> and the <i>'wireframe versions'</i> of all triangles in 2 triangle strips (respectively, in <i>'red'</i> and in <i>'blue'</i>), that approximate the <i>'Double Square Annulus'</i> shape, in the OpenGL window of interest.
 void draw()
 {
-	/* We draw the 'filled' and the 'wireframe versions' of 2 triangle strips (respectively, in 'red' and in 'blue'), that approximate the 'Double Square Annulus' shape, in the OpenGL window of interest.
-	 * We start from the 'wireframe version' of the triangle strip #0 (in 'red'), which is connected to the triangle strip #1. */
+	/* We draw the 'filled' and the 'wireframe versions' of all triangles in 2 triangle strips (respectively, in 'red' and in 'blue'), that approximate the 'Double Square Annulus' shape, in the OpenGL window of interest.
+	 * We start from the 'wireframe versions' of all triangles in the triangle strip #0 (in 'red'). */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0,0.0,0.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
@@ -130,7 +130,7 @@ void draw()
 	glVertex3f(40,100,0);
 	glEnd();
 	
-	/* Now, we draw the 'filled version' of the triangle strip #0 (in 'red'). */
+	/* Now, we draw the 'filled versions' of all triangles in the triangle strip #0 (in 'red'). */
 	glColor3f(1.0,0.0,0.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
 	glBegin(GL_TRIANGLE_STRIP);
@@ -146,7 +146,7 @@ void draw()
 	glVertex3f(40,220,0);
 	glEnd();
 	
-	/* Now, we draw the 'wireframe version' of the triangle strip #1 (in 'blue'). */
+	/* Now, we draw the 'wireframe versions' of all triangles in the triangle strip #1 (in 'blue'). */
 	glColor3f(0.0,0.0,1.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
 	glBegin(GL_TRIANGLE_STRIP);
@@ -162,7 +162,7 @@ void draw()
 	glVertex3f(100,100,0);
 	glEnd();
 	
-	/* Now, we draw the 'filled version' of the triangle strip #1 (in 'blue'). */
+	/* Now, we draw the 'filled versions' of all triangles in the triangle strip #1 (in 'blue'). */
 	glColor3f(0.0,0.0,1.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
 	glBegin(GL_TRIANGLE_STRIP);

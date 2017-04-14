@@ -69,7 +69,7 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-015' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a triangle fan, approximating a custom shape. The reference vertex of the triangle fan is depicted in 'red', while all triangles are depicted in 'turquoise gray'."<<endl;
+	cout<<"\tIt draws all triangles in a triangle fan, approximating a custom shape. The reference vertex of the triangle fan is depicted in 'red', while all triangles are depicted in 'turquoise gray'."<<endl;
 	cout<<"\tThe settings for rendering all triangles in the triangle fan of interest can be modified interactively by the user as follows:"<<endl<<endl;
 	cout<<"\t-) only the 'front' sides of all triangles in the custom triangle fan are rendered by pressing the 'f' or the 'F' key. The corresponding rendering type is chosen by the user separately."<<endl;
 	cout<<"\t-) Only the 'back' sides of all triangles in the custom triangle fan are rendered by pressing the 'b' or the 'B' key. The corresponding rendering type is chosen by the user separately."<<endl;
@@ -238,10 +238,10 @@ void manageKeys(unsigned char key, int x, int y)
 	}
 }
 
-/// This function draws a triangle fan, approximating a custom shape, in the OpenGL window of interest by using the rendering preferences, chosen by the user.
+/// This function draws all triangles in a triangle fan, approximating a custom shape, in the OpenGL window of interest by using the rendering preferences, chosen by the user.
 void draw()
 {
-	/* We draw a triangle fan, approximating a custom shape, in the OpenGL window of interest by using the rendering preferences, chosen by the user. Here, all triangles are depicted in 'turquoise gray', and the reference vertex in 'red'. */
+	/* We draw all triangles in a triangle fan, approximating a custom shape, in the OpenGL window of interest by using the rendering preferences, chosen by the user. Here, all triangles are depicted in 'turquoise gray', and the reference vertex in 'red'. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(10.0);
 	glLineWidth(2.0);

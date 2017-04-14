@@ -3,7 +3,7 @@ height="97"></A>
 
 <H3>The <i>'Example-015 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-015 (Old Mode)'</i> Test draws a triangle fan, approximating a custom shape, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The reference vertex of the triangle fan is depicted in <i>'red'</i>, while all triangles are depicted in <i>'turquoise gray'</i>. The settings for rendering all triangles in the triangle fan of interest can be modified interactively by the user as follows:<p><ul>
+The <i>'Example-015 (Old Mode)'</i> Test draws all triangles in a triangle fan, approximating a custom shape, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The reference vertex of the triangle fan is depicted in <i>'red'</i>, while all triangles are depicted in <i>'turquoise gray'</i>. The settings for rendering all triangles in the triangle fan of interest can be modified interactively by the user as follows:<p><ul>
 <li>only the <i>'front'</i> sides of all triangles in the custom triangle fan are rendered by pressing the <i>'f'</i> or the <i>'F'</i> key. The corresponding rendering type is chosen by the user separately.<p></li>
 <li>Only the <i>'back'</i> sides of all triangles in the custom triangle fan are rendered by pressing the <i>'b'</i> or the <i>'B'</i> key. The corresponding rendering type is chosen by the user separately.<p></li>
 <li>Both the <i>'front'</i> and the <i>'back'</i> sides of all triangles in the custom triangle fan are rendered by pressing the <i>'t'</i> or the <i>'T'</i> key. The corresponding rendering type is chosen by the user separately.<p></li>

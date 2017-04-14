@@ -69,7 +69,7 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-013' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a triangle strip (in 'turquoise gray'), approximating the 'Square Annulus' shape, by using the following rendering settings, that can be chosen and activated by the user, as follows:"<<endl<<endl;
+	cout<<"\tIt draws all triangles in a triangle strip (in 'turquoise gray'), approximating the 'Square Annulus' shape, by using the following rendering settings, that can be chosen and activated by the user, as follows:"<<endl<<endl;
 	cout<<"\t-) only the 'front' sides of all triangles in the triangle strip of interest are rendered by pressing the 'f' or the 'F' key. The corresponding rendering type is chosen by the user separately."<<endl;
 	cout<<"\t-) Only the 'back' sides of all triangles in the triangle strip of interest are rendered by pressing the 'b' or the 'B' key. The corresponding rendering type is chosen by the user separately."<<endl;
 	cout<<"\t-) Both the 'front' and the 'back' sides of all triangles in the triangle strip of interest are rendered by pressing the 't' or the 'T' key. The corresponding rendering type is chosen by the user separately."<<endl;
@@ -237,10 +237,10 @@ void manageKeys(unsigned char key, int x, int y)
 	}
 }
 
-/// This function draws a triangle strip (in <i>'turquoise gray'</i>), approximating the <i>'Square Annulus'</i> shape, in the OpenGL window of interest by using the rendering preferences, chosen by the user.
+/// This function draws all triangles in a triangle strip (in <i>'turquoise gray'</i>), approximating the <i>'Square Annulus'</i> shape, in the OpenGL window of interest by using the rendering preferences, chosen by the user.
 void draw()
 {
-	/* We draw a triangle strip (in 'turquoise gray'), approximating the 'Square Annulus' shape, in the OpenGL window of interest by using the rendering preferences, chosen by the user. */
+	/* We draw all triangles in a triangle strip (in 'turquoise gray'), approximating the 'Square Annulus' shape, in the OpenGL window of interest by using the rendering preferences, chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(10.0);
 	glLineWidth(2.0);

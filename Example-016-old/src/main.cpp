@@ -69,7 +69,7 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-016' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws 2 triangle fans, approximating the 'Square Annulus' shape'. The reference vertices of the triangle fans are depicted, respectively, in 'red' and in 'blue', while their triangles are depicted in 'turquoise gray'."<<endl;
+	cout<<"\tIt draws all triangles in 2 triangle fans, approximating the 'Square Annulus' shape'. The reference vertices of the triangle fans are depicted, respectively, in 'red' and in 'blue', while their triangles are depicted in 'turquoise gray'."<<endl;
 	cout<<"\tThe settings for rendering all triangles in the triangle fans of interest can be modified interactively by the user as follows:"<<endl<<endl;
 	cout<<"\t-) only the 'front' sides of all triangles in the triangle fans of interest are rendered by pressing the 'f' or the 'F' key. The corresponding rendering type is chosen by the user separately."<<endl;
 	cout<<"\t-) Only the 'back' sides of all triangles in the triangle fans of interest are rendered by pressing the 'b' or the 'B' key. The corresponding rendering type is chosen by the user separately."<<endl;
