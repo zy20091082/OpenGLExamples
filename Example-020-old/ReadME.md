@@ -3,7 +3,7 @@ height="97"></A>
 
 <H3>The <i>'Example-020 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-020 (Old Mode)'</i> Test draws the <i>'filled'</i> and the <i>'wireframe versions'</i> of the triangle strip (in <i>'red'</i>), which approximates the <i>'Double Square Annulus'</i> shape, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. This test also provides a very basic interaction mechanism with the user. Here, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.
+The <i>'Example-020 (Old Mode)'</i> Test draws the <i>'filled'</i> and the <i>'wireframe versions'</i> of all triangles in a triangle strip (in <i>'red'</i>), which approximates the <i>'Double Square Annulus'</i> shape, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. This test also provides a very basic interaction mechanism with the user. Here, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.
 
 <IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example020_old.png' border='1'><hr><p>
 

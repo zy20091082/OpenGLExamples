@@ -37,15 +37,15 @@ using namespace std;
 /* Prototypes for all functions of interest! */
 void draw();
 void initialize();
-
 void resize(int w,int h);
 void manageKeys(unsigned char key, int x, int y);
+
 /// The main function for the <i>'Example-020 (Old Mode)'</i> example.
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-020' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the 'filled' and the 'wireframe versions' of the triangle strip (in 'red'), which approximates the 'Double Square Annulus' shape."<<endl<<endl;
+	cout<<"\tIt draws the 'filled' and the 'wireframe versions' of all triangles in a triangle strip (in 'red'), which approximates the 'Double Square Annulus' shape."<<endl<<endl;
 	cout<<"\tIn this context, it is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
