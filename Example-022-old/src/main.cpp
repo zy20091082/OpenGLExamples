@@ -81,8 +81,8 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-022' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws 3 approximations of the 'Circle' shape with radius 'R' and center '(xc,yc)'. The approximations of interest are activated upon request, and are formed by an arbitrary number 'n' of samples.";
-	cout<<"The 'Circle' shape is defined as follows:"<<endl<<endl;
+	cout<<"\tIt draws 3 approximations of the 'Circle' shape with radius 'R' and center '(xc,yc)'. The approximations of interest are activated upon request, and are formed by an arbitrary number 'n' of samples."<<endl;
+	cout<<"\tThe 'Circle' shape is defined as follows:"<<endl<<endl;
 	cout<<"\t| x(t) - xc | <= R * cos(t), | y(t) - yc | <= R * sin(t)"<<endl<<endl<<"\tfor any 'R'>0, and for every 't' in '[-pi,pi]'."<<endl<<endl;
 	cout<<"\tThe radius 'R' and the center coodinates '(xc,yc)' are specified by the user interactively, which can also:"<<endl<<endl;
 	cout<<"\t\t-) approximate the boundary (in 'red') of the 'Circle' shape through a polyline with 'n' vertices and edges [ 'Approximation #0' ] by pressing the 'l' key."<<endl;
