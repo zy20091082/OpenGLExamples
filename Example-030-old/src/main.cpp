@@ -89,11 +89,11 @@ int main(int argc,char **argv)
 	cout<<"\t\t-) The second variant is basically the same as the first variant, but the approximations of 2 'Circle' shapes (always at different z-depths) are drawn by using the z-buffer (depth test) technique. Thus, the "<<endl;
 	cout<<"\t\t   result will be always the same, despite the rendering order of the 'Circle' shapes. Also in this case, both the 'Circle' shapes are approximated by a triangle fan of 'n' vertices (including the center)."<<endl<<endl;
 	cout<<"\t\t-) The third variant is a real approximation of the 'Circular Annulus' shape through a triangle strip (in 'red'), defined over 'n' pairs of the corresponding vertices (including the center) between the"<<endl;
-	cout<<"\t\t   approximations of the external and of the internal 'Circle' curves. These curves approximate the boundary of the 'Circular Annulus' shape."<<endl<<endl;
+	cout<<"\t\t   approximations of the external and of the internal 'Circle' curves, respectively. These curves approximate the boundary of the 'Circular Annulus' shape."<<endl<<endl;
 	cout<<"\tEach variant is accompanied by an explicative label. Thus, this test also shows how writing and rendering some text."<<endl<<endl;
 	cout<<"\tHere, the user cannot modify the radius and the center for 3 variants of the 'Circular Annulus' shape, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
-	cout<<"\t\t-) increase the number 'n' of all vertices in the triangle fans and in the triangle strip of interest by pressing the '+' key;"<<endl;
-	cout<<"\t\t-) decrease the number 'n' of all vertices in the triangle fans and in the triangle strip of interest by pressing the '-' key;"<<endl;
+	cout<<"\t\t-) increase the number 'n' of all vertices in the triangle fans and of the vertices pairs in the triangle strip of interest by pressing the '+' key;"<<endl;
+	cout<<"\t\t-) decrease the number 'n' of all vertices in the triangle fans and of the vertices pairs in the triangle strip of interest by pressing the '-' key;"<<endl;
 	cout<<"\t\t-) choose to render the 'wireframe' or the 'filled versions' for all triangles in the triangle fans and in the triangle strip of interest by pressing cyclically the ' ' (space) key."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
@@ -155,7 +155,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-', thus we decrease the number of the vertices (if possible) in 2 triangle fans and in the triangle strip of interest! */
 		if(num_samples>5) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 'n'=5 of vertices in 2 triangle fans and in the triangle strip of interest is reached, and it is not possible to decrease again this number."<<endl;
+		else cout<<"\tThe minimum number 'n'=5 of vertices in 2 triangle fans and of vertices pairs in the triangle strip of interest is reached, and it is not possible to decrease again this number."<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;
@@ -259,7 +259,7 @@ void draw()
 	cout<<"\tAll variants of the 'Circular Annulus' shape are approximated by the ";
 	if(mode==GL_FILL) cout<<"'filled versions' ";
 	else cout<<"'wireframe versions' ";
-	cout<<"of several triangles in 2 triangle fans and a triangle strip with 'n'="<<num_samples<<" vertices."<<endl;
+	cout<<"of several triangles in 2 triangle fans and in a triangle strip with 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" vertices pairs, respectively."<<endl;
 	cout.flush();
 }
 
@@ -273,7 +273,6 @@ void initialize()
 	cout<<"\tAt the beginning, the variants of the 'Circular Annulus' shape are currently approximated by the ";
 	if(mode==GL_FILL) cout<<"'filled versions' ";
 	else cout<<"'wireframe versions' ";
-	cout<<"of all triangles in 2 triangle fans and a triangle strip with 'n'="<<num_samples<<" vertices (thus with the minimum"<<endl;
-	cout<<"\tnumber 'n' of vertices as possible)."<<endl<<endl;
+	cout<<"of all triangles in 2 triangle fans with 'n'="<<num_samples<<" vertices and in a triangle strip with 'n'="<<num_samples<<" pairs of"<<endl;
+	cout<<"\tvertices (thus with the minimum number 'n' of vertices and vertices pairs as possible)."<<endl<<endl;
 }
-
