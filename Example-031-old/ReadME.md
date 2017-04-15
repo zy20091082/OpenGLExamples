@@ -10,7 +10,7 @@ The <i>'Example-031 (Old Mode)'</i> Test draws 3 variants of the <i>'Circular An
 <li>increase the number <i>'n'</i> of all vertices in the triangle fans and of the vertices pairs in the triangle strip of interest by pressing the <i>'+'</i> key;</li>
 <li>decrease the number <i>'n'</i> of all vertices in the triangle fans and of the vertices pairs in the triangle strip of interest by pressing the <i>'-'</i> key;</li>
 <li>choose to render the <i>'wireframe'</i> or the <i>'filled'</i> versions for all triangles in the triangle fans and in the triangle strip of interest by pressing cyclically the <i>' '</i> (space) key;</li>
-<li>change the rendering order for 2 <i>'Circle'</i> shapes in the first variant of the interest. This means that the renderings of the first and the second variant of the <i>'Circular Annulus'</i> shape may be different (upon request).</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.
+<li>change the rendering order for 2 <i>'Circle'</i> shapes in the first variant of the interest by pressing cyclically the <i>'o'</i> key. This means that the renderings of the first and the second variant of the <i>'Circular Annulus'</i> shape may be different (upon request).</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.
 
 
 <p><hr><p>
