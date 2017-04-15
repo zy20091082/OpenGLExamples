@@ -91,7 +91,7 @@ int main(int argc,char **argv)
 	cout<<"\t\t-) The third variant is a real approximation of the 'Circular Annulus' shape through a triangle strip (in 'red'), defined over 'n' pairs of the corresponding vertices (including the center) between the"<<endl;
 	cout<<"\t\t   approximations of the external and of the internal 'Circle' curves. These curves approximate the boundary of the 'Circular Annulus' shape."<<endl<<endl;
 	cout<<"\tEach variant is accompanied by an explicative label. Thus, this test also shows how writing and rendering some text."<<endl<<endl;
-	cout<<"\tThe user cannot modify the radius and the center for 3 variants of the 'Circular Annulus' shape, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
+	cout<<"\tHere, the user cannot modify the radius and the center for 3 variants of the 'Circular Annulus' shape, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of all vertices in the triangle fans and in the triangle strip of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of all vertices in the triangle fans and in the triangle strip of interest by pressing the '-' key;"<<endl;
 	cout<<"\t\t-) choose to render the 'wireframe' or the 'filled versions' for all triangles in the triangle fans and in the triangle strip of interest by pressing cyclically the ' ' (space) key."<<endl<<endl;
