@@ -60,7 +60,7 @@ unsigned int num_samples=5;
  * -) the 'GL_LINE' value, used for rendering the 'wireframe versions' for all triangles in the triangle fans and in the triangle strip of interest;
  * -) the 'GL_FILL' value, used for rendering the 'filled versions' for all triangles in the triangle fans and in the triangle strip of interest.
  *
- * It is possible to cycle between these two renderings by pressing the ' ' key.
+ * It is possible to cycle between these 2 renderings by pressing the ' ' key.
  */
 GLenum mode=GL_FILL;
 
@@ -81,9 +81,9 @@ int main(int argc,char **argv)
 	cout<<"\t| rI * cos(t) | <= | x(t) - xc | <= | rE * cos(t) |, | rI * sin(t) | <= | y(t) - yc | <= | rE * sin(t) |"<<endl<<endl;
 	cout<<"\tfor every 't' in '[-pi,pi]', and for any 'rI'>0 and 'rE>0', such that 'rI<rE'.";
 	cout<<"\tfor every 't' in '[-pi,pi]', and for any 'rI'>0 and 'rE>0', such that 'rI<rE'."<<endl<<endl;
-	cout<<"\tIn other words, it is formed by all points, belonging to the intersection of two concentric 'Circle' shapes of center '(xc,yc)' and of radius 'rI' and 'rE', respectively."<<endl<<endl;
+	cout<<"\tIn other words, it is formed by all points, belonging to the intersection of 2 concentric 'Circle' shapes (disks) of center '(xc,yc)' and of radius 'rI' and 'rE', respectively."<<endl<<endl;
 	cout<<"\tSpecifically, this test draws the following variants of the 'Circular Annulus' shape:"<<endl<<endl;
-	cout<<"\t\t-) the first variant is not 'real', since it is the result of drawing the approximations of 2 collinear 'Circle' shapes of radius 'rI' (in 'blue') and 'rE' (in 'red'), respectively, at different z-depths."<<endl;
+	cout<<"\t\t-) the first variant is not 'real', since it is the result of drawing the approximations of 2 concentric 'Circle' shapes of radius 'rI' (in 'blue') and 'rE' (in 'red'), respectively, at different z-depths."<<endl;
 	cout<<"\t\t   The 'Circle' shape in 'red' is rendered before than the 'Circle' shape in 'blue'. The scene is drawn by using the orthographic projection, thus they seem to approximate the 'Circular Annulus' shape."<<endl;
 	cout<<"\t\t   Both the 'Circle' shapes are approximated by a triangle fan of 'n' vertices (including the center)."<<endl<<endl;
 	cout<<"\t\t-) The second variant is basically the same as the first variant, but the approximations of 2 'Circle' shapes (always at different z-depths) are drawn by using the z-buffer (depth test) technique. Thus, the "<<endl;
@@ -212,8 +212,8 @@ void draw()
 {
 	float d=(2*PI)/(num_samples-1);
 
-	/* Now, we draw the first (false) variant of the 'Circular Annulus' shape by using two overlapping disks (described by the 'Circle' shape). The external disk in 'red' is rendered before than the internal disk in 'blue'. These disks are collinear, but at 
-	 * different depths. In any case, the result is the 'Circular Annulus' shape, since the orthographic projection is exploited. If we change the rendering order of the disks, then the result will be different. */
+	/* Now, we draw the first (false) variant of the 'Circular Annulus' shape by using 2 overlapping triangle fans (approximating by the 'Circle' shape). Broadly speaking, they describe 2 concentric disks, but at different depths. In any case, the result is the 
+	 * 'Circular Annulus' shape, since the orthographic projection is exploited. The external disk in 'red' is rendered before than the internal disk in 'blue', thus the result is 'the same as' the variant #1 of the 'Circular Annulus' shape. */
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 	glPolygonMode(GL_FRONT,mode);
 	glColor3f(1,0,0);
@@ -221,7 +221,8 @@ void draw()
 	glColor3f(0,0,1);
 	drawDisc(10,25,75,0);
 	
-	/* Now, we draw the second (false) variant of the 'Circular Annulus' shape. This variant is basically the same as the first variant, but the z-buffer technique is exploited, thus the result does not depend on their rendering order. */
+	/* Now, we draw the second (false) variant of the 'Circular Annulus' shape. This variant is basically the same as the first variant, but the z-buffer technique is exploited, thus the result does not depend on their rendering order, and it is 'the same as'
+	 * the variant #0 of the 'Circular Annulus' shape. */
 	glEnable(GL_DEPTH_TEST);
 	glColor3f(1,0,0);
 	drawDisc(20,75,75,0);
@@ -273,6 +274,6 @@ void initialize()
 	cout<<"\tAt the beginning, the variants of the 'Circular Annulus' shape are currently approximated by the ";
 	if(mode==GL_FILL) cout<<"'filled versions' ";
 	else cout<<"'wireframe versions' ";
-	cout<<"of all triangles in 2 triangle fans with 'n'="<<num_samples<<" vertices and in a triangle strip with 'n'="<<num_samples<<" pairs of"<<endl;
-	cout<<"\tvertices (thus with the minimum number 'n' of vertices and vertices pairs as possible)."<<endl<<endl;
+	cout<<"of all triangles in 2 triangle fans with 'n'="<<num_samples<<" vertices and in a triangle strip with 'n'="<<num_samples<<" pairs of vertices"<<endl;
+	cout<<"\t(thus with the minimum number 'n' of vertices and vertices pairs as possible)."<<endl<<endl;
 }
