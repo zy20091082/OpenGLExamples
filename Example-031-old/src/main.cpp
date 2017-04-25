@@ -95,7 +95,7 @@ int main(int argc,char **argv)
 	cout<<"\tIn other words, it is formed by all points, belonging to the intersection of 2 concentric 'Circle' shapes (disks) of center '(xc,yc)' and of radius 'rI' and 'rE', respectively."<<endl<<endl;
 	cout<<"\tSpecifically, this test draws the following variants of the 'Circular Annulus' shape:"<<endl<<endl;
 	cout<<"\t\t-) the variant #0 is not 'real', since it is the result of drawing the approximations of 2 'Circle' shapes of radius 'rI' (in 'blue') and 'rE' (in 'red'), respectively, placed at different z-depths. The scene is drawn"<<endl;
-	cout<<"\t\t   by using the orthographic projection, such that their centers are projected on the same point. Here, the rendering order of the 'Circle' shapes is modified upon request by the user. Hence, 2 different configurations"<<endl;
+	cout<<"\t\t   by using the orthographic projection, such that their centers are projected on the same point. The rendering order of the 'Circle' shapes is modified upon request by the user. Hence, 2 different configurations"<<endl;
 	cout<<"\t\t   [ 'Configuration #0 ] and [ 'Configuration #1' ] are possible, depending on which 'Circle' shape is rendered before. This means that the result is 'the same as' the 'Circular Annulus' shape only if the 'Circle' shape"<<endl;
 	cout<<"\t\t   in 'red' is drawn before than the 'Circle' shape in 'blue' (i.e., the [ 'Configuration #0' ]). Both the 'Circle' shapes are approximated by a triangle fan of 'n' vertices (including the center)."<<endl<<endl;
 	cout<<"\t\t-) The variant #1 is basically the same as the variant #0, but the approximations of 2 'Circle' shapes (always at different z-depths) are drawn by using the z-buffer (depth test) technique. Thus, the result will be always"<<endl;
