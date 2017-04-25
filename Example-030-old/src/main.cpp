@@ -39,7 +39,7 @@ using namespace std;
 
 /// The font for drawing the informative labels of interest.
 /**
- * Each variant of the 'Circular Annulus' shape is accompanied by an informative label about what they represent. This label is rendered by using this font.
+ * Each variant of the 'Circular Annulus' shape is accompanied by an informative label about what they represent. Each label is rendered by using this font.
  */
 static long font = (long)GLUT_BITMAP_8_BY_13;
 
@@ -79,13 +79,12 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-030' Example, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws 3 variants of the 'Circular Annulus' shape with internal radius 'rI', external radius 'rE', and center '(xc,yc)'. The 'Circular Annulus' shape is defined as follows:"<<endl<<endl;
 	cout<<"\t| rI * cos(t) | <= | x(t) - xc | <= | rE * cos(t) |, | rI * sin(t) | <= | y(t) - yc | <= | rE * sin(t) |"<<endl<<endl;
-	cout<<"\tfor every 't' in '[-pi,pi]', and for any 'rI'>0 and 'rE>0', such that 'rI<rE'.";
 	cout<<"\tfor every 't' in '[-pi,pi]', and for any 'rI'>0 and 'rE>0', such that 'rI<rE'."<<endl<<endl;
 	cout<<"\tIn other words, it is formed by all points, belonging to the intersection of 2 concentric 'Circle' shapes (disks) of center '(xc,yc)' and of radius 'rI' and 'rE', respectively."<<endl<<endl;
 	cout<<"\tSpecifically, this test draws the following variants of the 'Circular Annulus' shape:"<<endl<<endl;
-	cout<<"\t\t-) the first variant is not 'real', since it is the result of drawing the approximations of 2 concentric 'Circle' shapes of radius 'rI' (in 'blue') and 'rE' (in 'red'), respectively, at different z-depths."<<endl;
-	cout<<"\t\t   The 'Circle' shape in 'red' is rendered before than the 'Circle' shape in 'blue'. The scene is drawn by using the orthographic projection, thus they seem to approximate the 'Circular Annulus' shape."<<endl;
-	cout<<"\t\t   Both the 'Circle' shapes are approximated by a triangle fan of 'n' vertices (including the center)."<<endl<<endl;
+	cout<<"\t\t-) the first variant is not 'real', since it is the result of drawing the approximations of 2 'Circle' shapes of radius 'rI' (in 'blue') and 'rE' (in 'red'), respectively, placed at different z-depths."<<endl;
+	cout<<"\t\t   The 'Circle' shape in 'red' is drawn before than the 'Circle' shape in 'blue'. The scene is drawn by using the orthographic projection, such that their centers are projected on the same point."<<endl;
+	cout<<"\t\t   Thus, they seem to approximate the 'Circular Annulus' shape. Both the 'Circle' shapes are approximated by a triangle fan of 'n' vertices (including the center)."<<endl<<endl;
 	cout<<"\t\t-) The second variant is basically the same as the first variant, but the approximations of 2 'Circle' shapes (always at different z-depths) are drawn by using the z-buffer (depth test) technique. Thus, the "<<endl;
 	cout<<"\t\t   result will be always the same, despite the rendering order of the 'Circle' shapes. Also in this case, both the 'Circle' shapes are approximated by a triangle fan of 'n' vertices (including the center)."<<endl<<endl;
 	cout<<"\t\t-) The third variant is a real approximation of the 'Circular Annulus' shape through a triangle strip (in 'red'), defined over 'n' pairs of the corresponding vertices (including the center) between the"<<endl;
@@ -212,8 +211,9 @@ void draw()
 {
 	float d=(2*PI)/(num_samples-1);
 
-	/* Now, we draw the first (false) variant of the 'Circular Annulus' shape by using 2 overlapping triangle fans (approximating by the 'Circle' shape). Broadly speaking, they describe 2 concentric disks, but at different depths. In any case, the result is the 
-	 * 'Circular Annulus' shape, since the orthographic projection is exploited. The external disk in 'red' is rendered before than the internal disk in 'blue', thus the result is 'the same as' the variant #1 of the 'Circular Annulus' shape. */
+	/* Now, we draw the first (false) variant #0 of the 'Circular Annulus' shape by using 2 triangle fans (approximating by the 'Circle' shape). Broadly speaking, they describe 2 disk at different depths, that are drawn by using the orthographic projection,
+	 * such that their centers are projected on the same point. Thus, the result coincides with the 'Circular Annulus' shape. The external disk in 'red' is rendered before than the internal disk in 'blue', thus the result is 'the same as' the variant #1 of
+	 * the 'Circular Annulus' shape. */
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 	glPolygonMode(GL_FRONT,mode);
 	glColor3f(1,0,0);
@@ -221,8 +221,8 @@ void draw()
 	glColor3f(0,0,1);
 	drawDisc(10,25,75,0);
 	
-	/* Now, we draw the second (false) variant of the 'Circular Annulus' shape. This variant is basically the same as the first variant, but the z-buffer technique is exploited, thus the result does not depend on their rendering order, and it is 'the same as'
-	 * the variant #0 of the 'Circular Annulus' shape. */
+	/* Now, we draw the second (false) variant #1 of the 'Circular Annulus' shape. This variant is basically 'the same as' the variant #0, but the z-buffer technique is exploited. Thus, the result does not depend on their rendering order, and is 'the same as'
+	 * the 'Circular Annulus' shape. */
 	glEnable(GL_DEPTH_TEST);
 	glColor3f(1,0,0);
 	drawDisc(20,75,75,0);
@@ -230,8 +230,8 @@ void draw()
 	drawDisc(10,75,75,0.5);
 	glDisable(GL_DEPTH_TEST);
 	
-	/* Now, we draw the third (true) variant of the 'Circular Annulus' shape by using only triangle strip. Here, we consider 'n' pairs of the corresponding vertices in the approximations of the internal and the external 'Circle' curves. These curves approximate 
-	 * the boundary of the 'Circular Annulus' shape. */
+	/* Finally, we draw the third (true) variant of the 'Circular Annulus' shape by using only triangle strip. Here, we consider 'n' pairs of the corresponding vertices in the approximations of the internal and the external 'Circle' curves. These curves 
+	 * approximate the boundary of the 'Circular Annulus' shape. */
 	glColor3f(1,0,0);
 	glBegin(GL_TRIANGLE_STRIP);
 	for(int i=0;i<num_samples;i++)
