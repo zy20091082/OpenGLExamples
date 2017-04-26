@@ -48,7 +48,7 @@ static long font = (long)GLUT_BITMAP_8_BY_13;
  * It is initially set to '5', which is the minimum number of the samples in all approximations of interest. It is interactively modified by pressing the '+' and the '-' keys.
  * Its meaning is different for every variant:
  *
- * -) in the variants #0 and #1, it is the number of vertices (including the center) for constructing the triangle fan of interest.
+ * -) in the variants #0 and #1, it is the number of vertices (including the center) for constructing the triangle fans of interest.
  * -) In the variant #2, it is the number of pairs, formed by the corresponding vertices in the external and the internal 'Circle' curves. These latter provides the boundary of the 'Circular Annulus' shape.
  */
 unsigned int num_samples=5;
