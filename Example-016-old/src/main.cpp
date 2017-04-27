@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-016 (Old Mode)' example.
+ * main.cpp - the main function for the 'Example-016 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -64,11 +64,11 @@ void initialize();
 void resize(int w,int h);
 void manageKeys(unsigned char key, int x, int y);
 
-/// The main function for the <i>'Example-016 (Old Mode)'</i> example.
+/// The main function for the <i>'Example-016 (Old Mode)'</i> Test.
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
-	cout<<endl<<"\tThis is the 'Example-016' Example, based on the (Old Mode) OpenGL."<<endl;
+	cout<<endl<<"\tThis is the 'Example-016' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws all triangles in 2 triangle fans, approximating the 'Square Annulus' shape'. The reference vertices of the triangle fans are depicted, respectively, in 'red' and in 'blue', while their triangles are depicted in 'turquoise gray'."<<endl;
 	cout<<"\tThe settings for rendering all triangles in the triangle fans of interest can be modified interactively by the user as follows:"<<endl<<endl;
 	cout<<"\t-) only the 'front' sides of all triangles in the triangle fans of interest are rendered by pressing the 'f' or the 'F' key. The corresponding rendering type is chosen by the user separately."<<endl;
@@ -83,7 +83,7 @@ int main(int argc,char **argv)
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
 	glutInitWindowSize(480,480);
-	glutCreateWindow("The 'Example-016' Example, based on the (Old Mode) OpenGL");
+	glutCreateWindow("The 'Example-016' Test, based on the (Old Mode) OpenGL");
 	glutDisplayFunc(draw);
 	glutReshapeFunc(resize);
 	glutKeyboardFunc(manageKeys);

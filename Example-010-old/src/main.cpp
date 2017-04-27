@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-010 (Old Mode)' example.
+ * main.cpp - the main function for the 'Example-010 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -56,11 +56,11 @@ void initialize();
 void resize(int w,int h);
 void manageKeys(unsigned char key, int x, int y);
 
-/// The main function for the <i>'Example-010 (Old Mode)'</i> example.
+/// The main function for the <i>'Example-010 (Old Mode)'</i> Test.
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
-	cout<<endl<<"\tThis is the 'Example-010' Example, based on the (Old Mode) OpenGL."<<endl;
+	cout<<endl<<"\tThis is the 'Example-010' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws several graphic primitives, starting from a cloud of several 3D points."<<endl;
 	cout<<"\tThe user can choose what graphic primitive must be exploited, as follows:"<<endl<<endl;
 	cout << "\t-) the 'GL_POINTS' primitive is chosen by pressing the '0' key for drawing several independent 3D points;" << endl;
@@ -75,7 +75,7 @@ int main(int argc,char **argv)
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
 	glutInitWindowSize(480,480);
-	glutCreateWindow("The 'Example-010' Example, based on the (Old Mode) OpenGL");
+	glutCreateWindow("The 'Example-010' Test, based on the (Old Mode) OpenGL");
 	glutDisplayFunc(draw);
 	glutReshapeFunc(resize);
 	glutKeyboardFunc(manageKeys);

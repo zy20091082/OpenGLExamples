@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-018 (Old Mode)' example.
+ * main.cpp - the main function for the 'Example-018 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -66,11 +66,11 @@ void initialize();
 void resize(int w,int h);
 void manageKeys(unsigned char key, int x, int y);
 
-/// The main function for the <i>'Example-018 (Old Mode)'</i> example.
+/// The main function for the <i>'Example-018 (Old Mode)'</i> Test.
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
-	cout<<endl<<"\tThis is the 'Example-018' Example, based on the (Old Mode) OpenGL."<<endl;
+	cout<<endl<<"\tThis is the 'Example-018' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws the 'filled' and the 'wireframe versions' of several convex (in 'red') and concave (in 'blue') polygons, and allows the user to cycle the vertices order in the polygons of interest by pressing the '+' key."<<endl;
 	cout<<"\tWhile performing these operations, there may be 'strange' situations, expecially when cycling the vertices in the 'filled versions' of the concave polygons (in 'blue')."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
@@ -79,7 +79,7 @@ int main(int argc,char **argv)
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
 	glutInitWindowSize(600,600);
-	glutCreateWindow("The 'Example-018' Example, based on the (Old Mode) OpenGL");
+	glutCreateWindow("The 'Example-018' Test, based on the (Old Mode) OpenGL");
 	glutDisplayFunc(draw);
 	glutReshapeFunc(resize);
 	glutKeyboardFunc(manageKeys);
