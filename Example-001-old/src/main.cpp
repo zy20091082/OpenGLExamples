@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-001 (Old Mode)' example.
+ * main.cpp - the main function for the 'Example-001 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -43,18 +43,18 @@ void draw(void)
 	glFlush();
 }
 
-/// The main function for the <i>'Example-001 (Old Mode)'</i> example.
+/// The main function for the <i>'Example-001 (Old Mode)'</i> Test.
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
-	cout<<endl<<"\tThis is the 'Example-001' Example, based on the (Old Mode) OpenGL."<<endl;
+	cout<<endl<<"\tThis is the 'Example-001' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt creates a basic OpenGL window with the 'black' background, and provides no interaction mechanism with the user."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(50,25);
 	glutInitWindowSize(480,480);
-	glutCreateWindow("The 'Example-001' Example, based on the (Old Mode) OpenGL");
+	glutCreateWindow("The 'Example-001' Test, based on the (Old Mode) OpenGL");
 	glutDisplayFunc(draw);
 	glutMainLoop();
 	return EXIT_SUCCESS;
