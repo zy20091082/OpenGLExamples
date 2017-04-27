@@ -48,9 +48,9 @@ float radius;
  */
 float xc,yc;
 
-/// The number of the samples for drawing the approximation of interest for the <i>'Circle'</i> shape.
+/// The number <i>'n'</i> of the samples for drawing the approximation of interest for the <i>'Circle'</i> shape.
 /**
- * It is initially set to '3', which is the minimum number 'n' of samples in the approximation of interest. More specifically:
+ * It is initially set to 'n=3', which is the minimum number 'n' of samples in the approximation of interest. More specifically:
  *
  * -) if the polyline, approximating the boundary of the 'Circle' shape, is drawn, then this number is the number 'n' of its vertices;
  * -) if the 'Circle' shape is approximated by a triangle fan, centered at '(xc,yc)', then this number is the number 'n' of its triangles;
@@ -184,14 +184,14 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '+':
 		
-		/* The key is '+', thus we increase the number of the samples in the approximation of interest for the 'Curve' shape. */
+		/* The key is '+', thus we increase the number 'n' of the samples in the approximation of interest for the 'Curve' shape. */
 		num_samples=num_samples+1;
 		glutPostRedisplay();
 		break;
 		
 		case '-':
 		
-		/* The key is '-', thus we decrease the number of the samples (if possible) in the approximation of interest for the 'Curve' shape. */
+		/* The key is '-', thus we decrease the number 'n' of the samples (if possible) in the approximation of interest for the 'Curve' shape. */
 		if(num_samples>3) num_samples=num_samples-1;
 		else
 		{

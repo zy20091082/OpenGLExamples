@@ -42,9 +42,9 @@ using namespace std;
  */
 float xc,yc;
 
-/// The number of the vertices and edges in the polyline, used for approximating the <i>'Ellipse'</i> curve of interest.
+/// The number <i>'n'</i> of the vertices and edges in the polyline, used for approximating the <i>'Ellipse'</i> curve of interest.
 /**
- * It is initially set to '3', which is the minimum number 'n' of vertices and edges. It is interactively modified by pressing the '+' and the '-' keys.
+ * It is initially set to 'n=3', which is the minimum number 'n' of vertices and edges. It is interactively modified by pressing the '+' and the '-' keys.
  */
 unsigned int num_samples=3;
 
@@ -181,14 +181,14 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '+':
 		
-		/* The key is '+', thus we increase the number of the vertices and edges in the polyline of interest! */
+		/* The key is '+', thus we increase the number 'n' of the vertices and edges in the polyline of interest! */
 		num_samples=num_samples+1;
 		glutPostRedisplay();
 		break;
 		
 		case '-':
 		
-		/* The key is '-', thus we decrease the number of the vertices and edges (if possible) in the polyline of interest. */
+		/* The key is '-', thus we decrease the number 'n' of the vertices and edges (if possible) in the polyline of interest. */
 		if(num_samples>3) num_samples=num_samples-1;
 		else cout<<"\tThe minimum number 'n'=3 of vertices and edges in the polyline of interest is reached, and it is not possible to decrease again this number."<<endl;
 		cout.flush();
