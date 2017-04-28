@@ -36,7 +36,7 @@ using namespace std;
 
 /// The <i>'x'</i> coordinate value for the triangle of interest.
 /**
- * It is initially set to 'x=20', and can be modified by pressing the '+' (increasing 'x' by 1), the '-' (decreasing 'x' by 1), and the '=' (resetting 'x'=20) keys.
+ * It is initially set to 'x'=20, and can be modified by pressing the '+' (increasing 'x' by 1), the '-' (decreasing 'x' by 1), and the '=' (resetting 'x'=20) keys.
  */
 GLfloat xcoord=20;
 
@@ -57,10 +57,10 @@ int main(int argc,char **argv)
 	cout<<"\tIt draws the 'filled version' of a polygon (in 'red'), obtained as the intersection between the following elements:"<<endl<<endl;
 	cout<<"\t\t-) the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]';"<<endl;
 	cout<<"\t\t-) the triangle with vertices '(x,20,0)' - '(80,20,0)' - '(80,80,0)', for any 'x' coordinate along the x-axis."<<endl<<endl;
-	cout<<"\tHere, the orthographic viewing box is not modified. Instead, the 'x' coordinate of the triangle, initially set to 'x=20', can be moved by the user along the x-axis. The user can:"<<endl<<endl;
+	cout<<"\tHere, the orthographic viewing box is not modified. Instead, the 'x' coordinate of the triangle, initially set to 'x'=20, can be moved by the user along the x-axis. The user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the 'x' coordinate by 1.0 for the triangle of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the 'x' coordinate by 1.0 for the triangle of interest by pressing the '-' key;"<<endl;
-	cout<<"\t\t-) reset the 'x' coordinate for the triangle of interest to its initial value '20' by pressing the '=' key."<<endl<<endl;
+	cout<<"\t\t-) reset the 'x' coordinate for the triangle of interest to its initial value 'x'=20 by pressing the '=' key."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -115,7 +115,7 @@ void initialize()
 	xcoord=20.0;
 	eol=false;
 	glClearColor(1.0, 1.0, 1.0, 0.0);
-	cout<<"\tThe 'x' coordinate for the triangle of interest is initially set to "<<xcoord<<" in the current scene."<<endl<<endl;
+	cout<<"\tThe 'x' coordinate for the triangle of interest is initially set to 'x'="<<xcoord<<" in the current scene."<<endl<<endl;
 	cout.flush();
 }
 
