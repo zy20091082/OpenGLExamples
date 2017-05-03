@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: April 2017
+ * Last update: May 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-020 (Old Mode)' example.
+ * main.cpp - the main function for the 'Example-020 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -40,11 +40,11 @@ void initialize();
 void resize(int w,int h);
 void manageKeys(unsigned char key, int x, int y);
 
-/// The main function for the <i>'Example-020 (Old Mode)'</i> example.
+/// The main function for the <i>'Example-020 (Old Mode)'</i> Test.
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
-	cout<<endl<<"\tThis is the 'Example-020' Example, based on the (Old Mode) OpenGL."<<endl;
+	cout<<endl<<"\tThis is the 'Example-020' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws the 'filled' and the 'wireframe versions' of all triangles in a triangle strip (in 'red'), which approximates the 'Double Square Annulus' shape."<<endl<<endl;
 	cout<<"\tIn this context, it is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
@@ -52,7 +52,7 @@ int main(int argc,char **argv)
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
 	glutInitWindowSize(450,480);
-	glutCreateWindow("The 'Example-020' Example, based on the (Old Mode) OpenGL");
+	glutCreateWindow("The 'Example-020' Test, based on the (Old Mode) OpenGL");
 	glutDisplayFunc(draw);
 	glutReshapeFunc(resize);
 	glutKeyboardFunc(manageKeys);
