@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: April 2017
+ * Last update: May 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-022 (Old Mode)' example.
+ * main.cpp - the main function for the 'Example-022 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -50,9 +50,9 @@ float xc,yc;
 
 /// The number <i>'n'</i> of the samples for drawing the approximation of interest for the <i>'Circle'</i> shape.
 /**
- * It is initially set to 'n=3', which is the minimum number 'n' of samples in the approximation of interest. More specifically:
+ * It is initially set to 'n=3', which is the minimum number 'n' of the samples in the approximation of interest. More specifically:
  *
- * -) if the polyline, approximating the boundary of the 'Circle' shape, is drawn, then this number is the number 'n' of its vertices;
+ * -) if the polyline, approximating the boundary of the 'Circle' shape, is drawn, then this number is the number 'n' of its vertices and edges;
  * -) if the 'Circle' shape is approximated by a triangle fan, centered at '(xc,yc)', then this number is the number 'n' of its triangles;
  *- ) if the 'Circle' shape is approximated by only one polygon, then this number is the number 'n' of its vertices and edges.
  *
@@ -64,9 +64,9 @@ unsigned int num_samples=3;
 /**
  * The value of this flag may be one of the following values:
  *
- * -) the 'l' char value, used for choosing to approximate only the boundary of the 'Circle' shape through a polyline, formed by an arbitrary number 'n' of vertices and edges.
- * -) The 'f' char value, used for choosing to approximate the 'Circle' shape through the 'filled version' of a triangle fan, formed by an arbitrary number 'n' of triangles. All triangles are incident at the center '(xc,yc)' of the 'Circle' shape.
- * -) the 'p' char value, used for choosing to approximate the 'Circle' shape through the 'filled version' of only one polygon, formed by an arbitrary number 'n' of vertices and edges.
+ * -) the 'l' char value, used for choosing to approximate only the boundary of the 'Circle' shape through a polyline, formed by an arbitrary number 'n' of the vertices and the edges.
+ * -) The 'f' char value, used for choosing to approximate the 'Circle' shape through the 'filled version' of a triangle fan, formed by an arbitrary number 'n' of the triangles. All triangles are incident at the center '(xc,yc)' of the 'Circle' shape.
+ * -) the 'p' char value, used for choosing to approximate the 'Circle' shape through the 'filled version' of only one polygon, formed by an arbitrary number 'n' of the vertices and the edges.
  */
 char choice;
 
@@ -76,12 +76,12 @@ void initialize();
 void resize(int w,int h);
 void manageKeys(unsigned char key, int x, int y);
 
-/// The main function for the <i>'Example-022 (Old Mode)'</i> example.
+/// The main function for the <i>'Example-022 (Old Mode)'</i> Test.
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
-	cout<<endl<<"\tThis is the 'Example-022' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws 3 approximations of the 'Circle' shape with radius 'R' and center '(xc,yc)'. The approximations of interest are activated upon request, and are formed by an arbitrary number 'n' of samples."<<endl;
+	cout<<endl<<"\tThis is the 'Example-022' Test, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tIt draws 3 approximations of the 'Circle' shape with radius 'R' and center '(xc,yc)'. The approximations of interest are activated upon request, and are formed by an arbitrary number 'n' of the samples."<<endl;
 	cout<<"\tThe 'Circle' shape is defined as follows:"<<endl<<endl;
 	cout<<"\t| x(t) - xc | <= R * cos(t), | y(t) - yc | <= R * sin(t)"<<endl<<endl<<"\tfor any 'R'>0, and for every 't' in '[-pi,pi]'."<<endl<<endl;
 	cout<<"\tThe radius 'R' and the center coodinates '(xc,yc)' are specified by the user interactively, which can also:"<<endl<<endl;
@@ -117,7 +117,7 @@ int main(int argc,char **argv)
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
 	glutInitWindowSize(500,500);
-	glutCreateWindow("The 'Example-022' Example, based on the (Old Mode) OpenGL");
+	glutCreateWindow("The 'Example-022' Test, based on the (Old Mode) OpenGL");
 	glutDisplayFunc(draw);
 	glutReshapeFunc(resize);
 	glutKeyboardFunc(manageKeys);
@@ -148,7 +148,7 @@ void initialize()
 	num_samples=3;
 	choice='l';
 	cout<<endl<<"\tAt the beginning, the boundary of the 'Circle' shape with center '("<<xc<<","<<yc<<")' and radius '"<<radius<<"', is approximated by a polyline, formed by 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" edges (thus by the ";
-	cout<<"minimum number 'n' of vertices and edges as possible) [ 'Approximation #0' ]."<<endl<<endl;
+	cout<<"minimum number 'n' as possible of the vertices and the edges) [ 'Approximation #0' ]."<<endl<<endl;
 	cout.flush();
 }
 
@@ -196,9 +196,9 @@ void manageKeys(unsigned char key, int x, int y)
 		else
 		{
 			cout<<"\tThe minimum number 'n'=3 of";
-			if(choice=='l') { cout<<" vertices and edges in the polyline, approximating the boundary of the 'Curve' shape [ 'Approximation #0' ], "; }
+			if(choice=='l') { cout<<" the vertices and the edges in the polyline, approximating the boundary of the 'Curve' shape [ 'Approximation #0' ], "; }
 			if(choice=='f') { cout<<" the 'filled versions' for all triangles in the triangle fan, approximating the 'Curve' shape [ 'Approximation #1' ], "; }
-			if(choice=='p') { cout<<" vertices and edges in the 'filled version' of the only one polygon, approximating the 'Curve' shape [ 'Approximation #2' ], "; }
+			if(choice=='p') { cout<<" the vertices and the edges in the 'filled version' of the only one polygon, approximating the 'Curve' shape [ 'Approximation #2' ], "; }
 			cout<<"is reached, and it is not possible to decrease again this number."<<endl;
 			cout.flush();
 		}
@@ -209,21 +209,21 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 'l':
 		
-		/* The key is 'l', thus we choose to approximate only the boundary for the 'Circle' shape of interest by using a polyline with an arbitrary number 'n' of vertices and edges. */
+		/* The key is 'l', thus we choose to approximate only the boundary for the 'Circle' shape of interest by using a polyline with an arbitrary number 'n' of the vertices and the edges. */
 		choice='l';
 		glutPostRedisplay();
 		break;
 		
 		case 'f':
 		
-		/* The key is 'f', thus we choose to approximate the 'Circle' shape of interest by using the 'filled versions' of an arbitrary number 'n' of triangles in a triangle fan with the center '(xc,yc)' of the 'Circle' shape as the reference vertex. */
+		/* The key is 'f', thus we choose to approximate the 'Circle' shape of interest by using the 'filled versions' of an arbitrary number 'n' of the triangles in a triangle fan with the center '(xc,yc)' of the 'Circle' shape as the reference vertex. */
 		choice='f';
 		glutPostRedisplay();
 		break;
 		
 		case 'p':
 		
-		/* The key is 'p', thus we choose to approximate the 'Circle' shape of interest by using the 'filled version' of the only one polygon with an arbitrary number 'n' of vertices and edges. */
+		/* The key is 'p', thus we choose to approximate the 'Circle' shape of interest by using the 'filled version' of the only one polygon with an arbitrary number 'n' of the vertices and the edges. */
 		choice='p';
 		glutPostRedisplay();
 		break;
