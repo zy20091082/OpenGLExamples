@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: April 2017
+ * Last update: May 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-025 (Old Mode)' example.
+ * main.cpp - the main function for the 'Example-025 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -49,9 +49,9 @@ using namespace std;
  */
 float a,b,c;
 
-/// The number of the vertices and edges in the polyline, approximating the <i>'Parabola'</i> curve of interest.
+/// The number <i>'n'</i> of the vertices and the edges in the polyline, approximating the <i>'Parabola'</i> curve of interest.
 /**
- * It is initially set to '3', which is the minimum number 'n' of vertices and edges. It is interactively modified by pressing the '+' and the '-' keys.
+ * It is initially set to 'n=3', which is the minimum number 'n' of the vertices and the edges. It is interactively modified by pressing the '+' and the '-' keys.
  */
 unsigned int num_samples=3;
 
@@ -83,21 +83,21 @@ void manageKeys(unsigned char key, int x, int y);
 float evaluateParabola(float x);
 void exportEquation();
 
-/// The main function for the <i>'Example-025 (Old Mode)'</i> example.
+/// The main function for the <i>'Example-025 (Old Mode)'</i> Test.
 int main(int argc,char **argv)
 {
 	float vmin,vmax,h;
 
 	/* We initialize everything, and create a very basic window! */
-	cout<<endl<<"\tThis is the 'Example-025' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of vertices and edges, which approximates a specific portion of the 'Parabola' curve with vertex '(xv,yv)'."<<endl;
+	cout<<endl<<"\tThis is the 'Example-025' Test, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of the vertices and the edges, which approximates a specific portion of the 'Parabola' curve with vertex '(xv,yv)'."<<endl;
 	cout<<"\tThe portion of interest for this curve is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = t, y(t) = a * t ^ 2 + b * t + c"<<endl<<endl<<"\tfor any not null 'a', and for every 't' in '[xv-R,xv+R]', with any 'R'>0."<<endl<<endl;
 	cout<<"\tThe parameters 'a', 'b', and 'c' determine the properties of the 'Parabola' curve. In particular, its vertex '(xv,yv)' is defined as follows:"<<endl<<endl;
 	cout<<"\txv = -b / (2 * a), yv = a * xv ^ 2 + b * xv + c"<<endl<<endl;
 	cout<<"\tThe coefficients '(a,b,c)', as well as the radius 'R' are specified by the user interactively, which can also:"<<endl<<endl;
-	cout<<"\t\t-) increase the number 'n' of the vertices and edges for the polyline of interest by pressing the '+' key;"<<endl;
-	cout<<"\t\t-) decrease the number 'n' of the vertices and edges for the polyline of interest by pressing the '-' key."<<endl<<endl;
+	cout<<"\t\t-) increase the number 'n' of the vertices and the edges for the polyline of interest by pressing the '+' key;"<<endl;
+	cout<<"\t\t-) decrease the number 'n' of the vertices and the edges for the polyline of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout<<"\tPlease, insert all coefficients '(a,b,c)' for the equation 'a * x ^ 2 + b * x + c = 0' (thus, 3 floating-point values, separated by spaces, such that 'a' is not null), describing the 'Parabola' curve of interest: ";
 	cin>>a>>b>>c;
@@ -149,7 +149,7 @@ int main(int argc,char **argv)
 	if(h==2*R) glutInitWindowSize(500,500);
 	else if(2*R>h) { glutInitWindowSize(1000,1000*h/(2*R)); }
 	else { glutInitWindowSize(1000*2*R/h,1000); }
-	glutCreateWindow("The 'Example-025' Example, based on the (Old Mode) OpenGL");
+	glutCreateWindow("The 'Example-025' Test, based on the (Old Mode) OpenGL");
 	glutDisplayFunc(draw);
 	glutReshapeFunc(resize);
 	glutKeyboardFunc(manageKeys);
@@ -236,16 +236,16 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '+':
 		
-		/* The key is '+', thus we increase the number of the vertices and edges in the polyline of interest! */
+		/* The key is '+', thus we increase the number 'n' of the vertices and the edges in the polyline of interest! */
 		num_samples=num_samples+1;
 		glutPostRedisplay();
 		break;
 		
 		case '-':
 		
-		/* The key is '-', thus we decrease the number of the vertices and edges (if possible) in the polyline of interest. */
+		/* The key is '-', thus we decrease the number 'n' of the vertices and the edges (if possible) in the polyline of interest. */
 		if(num_samples>3) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 'n'=3 of vertices and edges in the polyline of interest is reached, and it is not possible to decrease again this number."<<endl;
+		else cout<<"\tThe minimum number 'n'=3 of the vertices and the edges in the polyline of interest is reached, and it is not possible to decrease again this number."<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;
@@ -305,7 +305,7 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=3;
-	cout<<"\tAt the beginning, the polyline, approximating the portion of interest for the 'Parabola' curve, is formed by 'n'="<<num_samples<<" vertices and edges (thus by the minimum number 'n' of vertices and edges as possible)."<<endl<<endl;
+	cout<<"\tAt the beginning, the polyline, approximating the portion of interest for the 'Parabola' curve, is formed by 'n'="<<num_samples<<" vertices and edges (thus by the minimum number 'n' as possible of the vertices and the edges)."<<endl<<endl;
 	cout.flush();
 }
 
