@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: April 2017
+ * Last update: May 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-029 (Old Mode)' example.
+ * main.cpp - the main function for the 'Example-029 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -36,9 +36,9 @@ using namespace std;
 
 #endif
 
-/// The number of the vertices and edges in the polyline, used for approximating the <i>'Lissajous-like'</i> curve of interest.
+/// The number <i>'n'</i> of the vertices and the edges in the polyline, used for approximating the <i>'Lissajous-like'</i> curve of interest.
 /**
- * It is initially set to '7', which is the minimum number 'n' of vertices and edges. It is interactively modified by pressing the '+' and the '-' keys.
+ * It is initially set to 'n=7', which is the minimum number 'n' of the vertices and the edges. It is interactively modified by pressing the '+' and the '-' keys.
  */
 unsigned int num_samples=7;
 
@@ -60,16 +60,16 @@ void initialize();
 void resize(int w,int h);
 void manageKeys(unsigned char key, int x, int y);
 
-/// The main function for the <i>'Example-029 (Old Mode)'</i> example.
+/// The main function for the <i>'Example-029 (Old Mode)'</i> Test.
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
-	cout<<endl<<"\tThis is the 'Example-029' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polyline (in 'blue'), formed by an arbitrary number 'n' of vertices and edges, which approximates the 'Lissajous-like' curve with parameters 'Rx', 'Ry', 'Kx', and 'Ky'. The 'Lissajous-like' curve is defined as follows:"<<endl<<endl;
+	cout<<endl<<"\tThis is the 'Example-029' Test, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tIt draws a polyline (in 'blue'), formed by an arbitrary number 'n' of the vertices and the edges, which approximates the 'Lissajous-like' curve with parameters 'Rx', 'Ry', 'Kx', and 'Ky'. The 'Lissajous-like' curve is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = Rx * cos( Kx * t ), y(t) = Ry * sin( Ky * t )"<<endl<<endl;
 	cout<<"\tfor every 't' in '[0,2*pi]', and for any 'Kx'>0, 'Ky'>0, 'Rx'>0, 'Ry'>0. For the sake of the simplicity, the parameters 'Rx', 'Ry', 'Kx', and 'Ky' are positive and not null 'integer' values, and are provided ";
-	cout<<"interactively by the user, which can also:"<<endl<<endl<<"\t\t-) increase the number 'n' of the vertices and edges for the polyline of interest by pressing the '+' key;"<<endl;
-	cout<<"\t\t-) decrease the number 'n' of the vertices and edges for the polyline of interest by pressing the '-' key."<<endl<<endl;
+	cout<<"interactively by the user, which can also:"<<endl<<endl<<"\t\t-) increase the number 'n' of the vertices and the edges for the polyline of interest by pressing the '+' key;"<<endl;
+	cout<<"\t\t-) decrease the number 'n' of the vertices and the edges for the polyline of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout<<"\tPlease, insert the coefficient 'Kx' (thus, a positive and not null 'integer' value) for the 'Lissajous-like' curve of interest: ";
 	cin>>Kx;
@@ -117,7 +117,7 @@ int main(int argc,char **argv)
 	if(Rx==Ry) glutInitWindowSize(500,500);
 	else if(Rx>Ry) { glutInitWindowSize(1000,1000*Ry/Rx); }
 	else { glutInitWindowSize(1000*Rx/Ry,1000); }
-	glutCreateWindow("The 'Example-029' Example, based on the (Old Mode) OpenGL");
+	glutCreateWindow("The 'Example-029' Test, based on the (Old Mode) OpenGL");
 	glutReshapeFunc(resize);
 	glutKeyboardFunc(manageKeys);
 	glutDisplayFunc(draw);
@@ -147,7 +147,7 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=7;
 	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Lissajous-like' curve with the coefficients 'Rx'="<<Rx<<", 'Ry'="<<Ry<<", 'Kx'="<<Kx<<", and 'Ky'="<<Ky<<", is formed by 'n'="<<num_samples<<" vertices and edges (thus by the minimum number 'n'";
-	cout<<" of vertices and edges as possible)."<<endl<<endl;
+	cout<<" as possible of the vertices and the edges)."<<endl<<endl;
 	cout.flush();
 }
 
@@ -183,16 +183,16 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '+':
 		
-		/* The key is '+', thus we increase the number of the vertices and edges in the polyline of interest! */
+		/* The key is '+', thus we increase the number 'n' of the vertices and the edges in the polyline of interest! */
 		num_samples=num_samples+1;
 		glutPostRedisplay();
 		break;
 		
 		case '-':
 		
-		/* The key is '-', thus we decrease the number of the vertices and edges (if possible) in the polyline of interest. */
+		/* The key is '-', thus we decrease the number 'n' of the vertices and the edges (if possible) in the polyline of interest. */
 		if(num_samples>7) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 'n'=7 of vertices and edges in the polyline of interest is reached, and it is not possible to decrease again this number."<<endl;
+		else cout<<"\tThe minimum number 'n'=7 of the vertices and the edges in the polyline of interest is reached, and it is not possible to decrease again this number."<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;
