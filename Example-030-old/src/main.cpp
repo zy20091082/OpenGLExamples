@@ -82,13 +82,13 @@ int main(int argc,char **argv)
 	cout<<"\tfor every 't' in '[-pi,pi]', and for any 'rI'>0 and 'rE>0', such that 'rI<rE'."<<endl<<endl;
 	cout<<"\tIn other words, it is formed by all points, belonging to the intersection of 2 concentric 'Circle' shapes (disks) of center '(xc,yc)' and of radius 'rI' and 'rE', respectively."<<endl<<endl;
 	cout<<"\tSpecifically, this test draws the following variants of the 'Circular Annulus' shape:"<<endl<<endl;
-	cout<<"\t\t-) the variant #0 is not 'real', since it is the result of drawing the approximations of 2 'Circle' shapes of radius 'rI' (in 'blue') and 'rE' (in 'red'), that are, respectively, placed at different z-depths."<<endl;
-	cout<<"\t\t   The 'Circle' shape in 'red' is drawn before than the 'Circle' shape in 'blue'. The scene is drawn by using the orthographic projection, such that the centers of the 'Circle' shapes are projected on the same point."<<endl;
+	cout<<"\t\t0) the variant #0 is not 'real', since it is the result of drawing the approximations of 2 'Circle' shapes of radius 'rI' (in 'blue') and 'rE' (in 'red'), that are, respectively, placed at different z-depths. The"<<endl;
+	cout<<"\t\t   'Circle' shape in 'red' is drawn before than the 'Circle' shape in 'blue'. The scene is drawn by using the orthographic projection, such that the centers of the 'Circle' shapes are projected on the same point."<<endl;
 	cout<<"\t\t   Thus, they seem to approximate the 'Circular Annulus' shape. Both the 'Circle' shapes are approximated by a triangle fan of 'n' vertices (including the center)."<<endl<<endl;
-	cout<<"\t\t-) The variant #1 is basically the same as the variant #0, but the approximations of 2 'Circle' shapes (always at different z-depths) are drawn by using the z-buffer (depth test) technique. Thus, the "<<endl;
-	cout<<"\t\t   result will be always the same, despite the rendering order of the 'Circle' shapes. Also in this case, both the 'Circle' shapes are approximated by a triangle fan of 'n' vertices (including the center)."<<endl<<endl;
-	cout<<"\t\t-) The variant #2 is a real approximation of the 'Circular Annulus' shape through a triangle strip (in 'red'), defined over 'n' pairs of the corresponding vertices (including the center) between the"<<endl;
-	cout<<"\t\t   approximations of the external and of the internal 'Circle' curves, respectively. These curves approximate the boundary of the 'Circular Annulus' shape."<<endl<<endl;
+	cout<<"\t\t1) The variant #1 is basically the same as the variant #0, but the approximations of 2 'Circle' shapes (always at different z-depths) are drawn by using the z-buffer (depth test) technique. Thus, the result will"<<endl;
+	cout<<"\t\t   be always the same, despite the rendering order of the 'Circle' shapes. Also in this case, both the 'Circle' shapes are approximated by a triangle fan of 'n' vertices (including the center)."<<endl<<endl;
+	cout<<"\t\t2) The variant #2 is a real approximation of the 'Circular Annulus' shape through a triangle strip (in 'red'), defined over 'n' pairs of the corresponding vertices (including the center) between the approximations"<<endl;
+	cout<<"\t\t   of the external and of the internal 'Circle' curves, respectively. These curves approximate the boundary of the 'Circular Annulus' shape."<<endl<<endl;
 	cout<<"\tEach variant is accompanied by an explicative label. Thus, this test also shows how writing and rendering some text."<<endl<<endl;
 	cout<<"\tHere, the user cannot modify the radius and the center for 3 variants of the 'Circular Annulus' shape, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of all vertices in the triangle fans and of the vertices pairs in the triangle strip of interest by pressing the '+' key;"<<endl;
@@ -212,8 +212,8 @@ void draw()
 	float d=(2*PI)/(num_samples-1);
 
 	/* Now, we draw the variant #0 of the 'Circular Annulus' shape by using 2 triangle fans (approximating by the 'Circle' shape). Broadly speaking, they describe 2 disks at different depths, that are drawn by using the orthographic projection,
-	 * such that the centers of the 'Circle' shapes are projected on the same point. Thus, the result seems to coincide with the 'Circular Annulus' shape (but not actually). The external disk in 'red' is rendered before than the internal disk 
-	 * in 'blue', thus the result is 'the same as' the variant #1 of the 'Circular Annulus' shape. */
+	 * such that the centers of the 'Circle' shapes are projected on the same point. Thus, the result seems to coincide with the 'Circular Annulus' shape. The external disk in 'red' is rendered before than the internal disk in 'blue', thus the 
+	 * result is 'the same as' the variant #1 of the 'Circular Annulus' shape. */
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 	glPolygonMode(GL_FRONT,mode);
 	glColor3f(1,0,0);
