@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-024 (Old Mode)' example.
+ * main.cpp - the main function for the 'Example-024 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -54,9 +54,9 @@ float rE;
  */
 float rI;
 
-/// The number of all quadrilaterals in the quadstrip, approximating the <i>'Circular Annulus'</i> shape of interest.
+/// The number <i>'n'</i> of all quadrilaterals in the quadstrip, approximating the <i>'Circular Annulus'</i> shape of interest.
 /**
- * It is initially set to '3', which is the minimum number 'n' of all quadrilaterals. It is interactively modified by pressing the '+' and the '-' keys.
+ * It is initially set to 'n=3', which is the minimum number 'n' of all quadrilaterals. It is interactively modified by pressing the '+' and the '-' keys.
  */
 unsigned int num_quads=3;
 
@@ -76,12 +76,12 @@ void initialize();
 void resize(int w,int h);
 void manageKeys(unsigned char key, int x, int y);
 
-/// The main function for the <i>'Example-024 (Old Mode)'</i> example.
+/// The main function for the <i>'Example-024 (Old Mode)'</i> Test.
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
-	cout<<endl<<"\tThis is the 'Example-024' Example, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws all quadrilaterals (in 'red') in a quadstrip (formed by an arbitrary number 'n' of quadrilaterals), approximating the 'Circular Annulus' shape with internal radius 'rI', external radius 'rE', and center '(xc,yc)'."<<endl;
+	cout<<endl<<"\tThis is the 'Example-024' Test, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tIt draws all quadrilaterals (in 'red') in a quadstrip (formed by an arbitrary number 'n' of the quadrilaterals), approximating the 'Circular Annulus' shape with internal radius 'rI', external radius 'rE', and center '(xc,yc)'."<<endl;
 	cout<<"\tNote that the 'Circular Annulus' shape is defined as follows:"<<endl<<endl;
 	cout<<"\t| rI * cos(t) | <= | x(t) - xc | <= | rE * cos(t) |, | rI * sin(t) | <= | y(t) - yc | <= | rE * sin(t) |"<<endl<<endl;
 	cout<<"\tfor every 't' in '[-pi,pi]', and for any 'rI'>0 and 'rE>0', such that 'rI<rE'."<<endl<<endl;
@@ -130,7 +130,7 @@ int main(int argc,char **argv)
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
 	glutInitWindowSize(500,500);
-	glutCreateWindow("The 'Example-024' Example, based on the (Old Mode) OpenGL");
+	glutCreateWindow("The 'Example-024' Test, based on the (Old Mode) OpenGL");
 	glutDisplayFunc(draw);
 	glutReshapeFunc(resize);
 	glutKeyboardFunc(manageKeys);
@@ -185,14 +185,14 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '+':
 		
-		/* The key is '+', thus we increase the number of all quadrilaterals in the quadstrip of interest. */
+		/* The key is '+', thus we increase the number 'n' of all quadrilaterals in the quadstrip of interest. */
 		num_quads=num_quads+1;
 		glutPostRedisplay();
 		break;
 		
 		case '-':
 		
-		/* The key is '-', thus we decrease the number of all quadrilaterals (if possible) in the quadstrip of interest. */
+		/* The key is '-', thus we decrease the number 'n' of all quadrilaterals (if possible) in the quadstrip of interest. */
 		if(num_quads>3) num_quads=num_quads-1;
 		else cout<<"\tThe minimum number 'n'=3 of all quadrilaterals in the quadstrip of interest is reached, and it is not possible to decrease again this number."<<endl;
 		cout.flush();
@@ -234,7 +234,7 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_quads=3;
 	choice='l';
-	cout<<"\tAt the beginning, the 'wireframe versions' of 'n'="<<num_quads<<" quadrilaterals (thus, the minimum number 'n' of quadrilaterals as possible) in the quadstrip, approximating the 'Circular Annulus' shape of center '("<<xc<<","<<yc<<")',"<<endl;
+	cout<<"\tAt the beginning, the 'wireframe versions' of 'n'="<<num_quads<<" quadrilaterals (thus, the minimum number 'n' as possible of the quadrilaterals) in the quadstrip, approximating the 'Circular Annulus' shape of center '("<<xc<<","<<yc<<")',"<<endl;
 	cout<<"\tinternal radius 'rI'="<<rI<<", and external radius 'rE'="<<rE<<", are rendered [ 'Configuration #1' ]."<<endl<<endl;
 	cout.flush();
 }
