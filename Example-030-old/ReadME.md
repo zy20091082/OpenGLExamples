@@ -10,11 +10,11 @@ The <i>'Example-030 (Old Mode)'</i> Test draws 3 variants of the <i>'Circular An
 <li>choose to render the <i>'wireframe'</i> or the <i>'filled versions'</i> for all triangles in the triangle fans and in the triangle strip of interest by pressing cyclically the <i>' '</i> (space) key.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example030_old_conf0.png' border='1' width="800" height="500"></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example030_old_conf1.png' border='1' width="800" height="500"></td></tr>
-<tr><td>Here, the <i>'wireframe versions'</i> of all triangles, approximated by <i>'n'= 5</i> samples, are drawn.</td><td>Here, the <i>'wireframe versions'</i> of all triangles, approximated by <i>'n'= 30</i> samples, are drawn.</td></tr>
+<tr><td>Here, the <i>'wireframe versions'</i> of all triangles in 2 triangles fans and in the triangle strip of interest, approximated by <i>'n'= 5</i> samples, are drawn.</td><td>Here, the <i>'wireframe versions'</i> of all triangles in 2 triangles fans and in the triangle strip of interest, approximated by <i>'n'= 30</i> samples, are drawn.</td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example030_old_conf2.png' border='1' width="800" height="500"></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example030_old_conf3.png' border='1' width="800" height="500"></td></tr>
-<tr><td>Here, the <i>'filled versions'</i> of all triangles, approximated by <i>'n'= 5</i> samples, are drawn.</td><td>Here, the <i>'filled versions'</i> of all triangles, approximated by <i>'n'= 30</i> samples, are drawn.</td></tr></table><p><hr><p>
+<tr><td>Here, the <i>'filled versions'</i> of all triangles in 2 triangles fans and in the triangle strip of interest, approximated by <i>'n'= 5</i> samples, are drawn.</td><td>Here, the <i>'filled versions'</i> of all triangles in 2 triangles fans and in the triangle strip of interest, approximated by <i>'n'= 30</i> samples, are drawn.</td></tr></table><p><hr><p>
 
 <h4>Dependencies</h4>
 
