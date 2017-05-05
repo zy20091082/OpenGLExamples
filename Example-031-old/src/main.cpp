@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: April 2017
+ * Last update: May 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-031 (Old Mode)' example.
+ * main.cpp - the main function for the 'Example-030 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -43,13 +43,13 @@ using namespace std;
  */
 static long font = (long)GLUT_BITMAP_8_BY_13;
 
-/// The number of the samples in all approximations of interest of the <i>'Circular Annulus'</i> shape.
+/// The number <i>'n'</i> of the samples in all approximations of interest for the <i>'Circular Annulus'</i> shape.
 /**
- * It is initially set to '5', which is the minimum number of the samples in all approximations of interest. It is interactively modified by pressing the '+' and the '-' keys.
+ * It is initially set to 'n=5', which is the minimum number of the samples in all approximations of interest. It is interactively modified by pressing the '+' and the '-' keys.
  * Its meaning is different for every variant:
  *
- * -) in the variants #0 and #1, it is the number of vertices (including the center) for constructing the triangle fans of interest.
- * -) In the variant #2, it is the number of pairs, formed by the corresponding vertices in the external and the internal 'Circle' curves. These latter provides the boundary of the 'Circular Annulus' shape.
+ * -) in the variants #0 and #1, it is the number 'n' of the vertices (including the center) for constructing the triangle fans of interest.
+ * -) In the variant #2, it is the number 'n' of the pairs, formed by the corresponding vertices in the external and the internal 'Circle' curves. These latter provides the boundary of the 'Circular Annulus' shape.
  */
 unsigned int num_samples=5;
 
@@ -66,13 +66,13 @@ GLenum mode=GL_FILL;
 
 /// The setting for choosing the rendering order of the triangle fans in the variant #0 of the <i>'Circular Annulus'</i> shape.
 /**
- * In the variant #0 of the 'Circular Annulus' shape, 2 triangle fans, respectively in 'red' (the 'external disk') and 'blue' (the 'internal disk') at different z-depths are rendered without using the z-depth test. 
- * Thus, their rendering order is fundamental for drawing the scene. There are 2 possible cases:
+ * In the variant #0 of the 'Circular Annulus' shape, 2 triangle fans, respectively in 'red' (the 'external disk') and 'blue' (the 'internal disk') at different z-depths are rendered without using the z-buffer (depth test). 
+ * Thus, their rendering order is fundamental for drawing the resulting scene. There are 2 possible cases:
  *
- * -) 'Configuration #0' (this flag is 0), where the 'external disk' is rendered before the 'internal disk'. In this case, all disks are visible.
- * -) 'Configuration #1' (this flag is 1), where the 'internal disk' is rendered before the 'external disk'. In this case, only the 'external disk' is visible.
+ * -) the 'Configuration #0' (this flag is 0), where the 'external disk' is rendered before the 'internal disk'. In this case, all disks are visible.
+ * -) The 'Configuration #1' (this flag is 1), where the 'internal disk' is rendered before the 'external disk'. In this case, only the 'external disk' is visible.
  *
- * It is possible to cycle between these 2 rendering by pressing the 'o' key.
+ * It is possible to cycle between these 2 rendering orders by pressing the 'o' key.
  */
 int odmode=0;
 
@@ -84,23 +84,24 @@ void resize(int w,int h);
 void drawDisc(float R,float X,float Y,float Z);
 void drawString(void *font,string s);
 
-/// The main function for the <i>'Example-31 (Old Mode)'</i> example.
+/// The main function for the <i>'Example-31 (Old Mode)'</i> Test.
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a new window! */
-	cout<<endl<<"\tThis is the 'Example-031' Example, based on the (Old Mode) OpenGL."<<endl;
+	cout<<endl<<"\tThis is the 'Example-031' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws 3 variants of the 'Circular Annulus' shape with internal radius 'rI', external radius 'rE', and center '(xc,yc)'. The 'Circular Annulus' shape is defined as follows:"<<endl<<endl;
 	cout<<"\t| rI * cos(t) | <= | x(t) - xc | <= | rE * cos(t) |, | rI * sin(t) | <= | y(t) - yc | <= | rE * sin(t) |"<<endl<<endl;
 	cout<<"\tfor every 't' in '[-pi,pi]', and for any 'rI'>0 and 'rE>0', such that 'rI<rE'."<<endl<<endl;
 	cout<<"\tIn other words, it is formed by all points, belonging to the intersection of 2 concentric 'Circle' shapes (disks) of center '(xc,yc)' and of radius 'rI' and 'rE', respectively."<<endl<<endl;
 	cout<<"\tSpecifically, this test draws the following variants of the 'Circular Annulus' shape:"<<endl<<endl;
-	cout<<"\t\t-) the variant #0 is not 'real', since it is the result of drawing the approximations of 2 'Circle' shapes of radius 'rI' (in 'blue') and 'rE' (in 'red'), respectively, placed at different z-depths. The scene is drawn"<<endl;
-	cout<<"\t\t   by using the orthographic projection, such that their centers are projected on the same point. The rendering order of the 'Circle' shapes is modified upon request by the user. Hence, 2 different configurations"<<endl;
-	cout<<"\t\t   [ 'Configuration #0 ] and [ 'Configuration #1' ] are possible, depending on which 'Circle' shape is rendered before. This means that the result is 'the same as' the 'Circular Annulus' shape only if the 'Circle' shape"<<endl;
-	cout<<"\t\t   in 'red' is drawn before than the 'Circle' shape in 'blue' (namely the [ 'Configuration #0' ]). Both the 'Circle' shapes are approximated by a triangle fan of 'n' vertices (including the center)."<<endl<<endl;
-	cout<<"\t\t-) The variant #1 is basically the same as the variant #0, but the approximations of 2 'Circle' shapes (always at different z-depths) are drawn by using the z-buffer (depth test) technique. Thus, the result will be always"<<endl;
-	cout<<"\t\t   the same, despite the rendering order of the 'Circle' shapes. Also in this case, both the 'Circle' shapes are approximated by a triangle fan of 'n' vertices (including the center)."<<endl<<endl;
-	cout<<"\t\t-) The variant #2 is a real approximation of the 'Circular Annulus' shape through a triangle strip (in 'red'), defined over 'n' pairs of the corresponding vertices (including the center) between the approximations"<<endl;
+	cout<<"\t\t0) the variant #0 is not 'real', since it is the result of drawing the approximations of 2 'Circle' shapes of radius 'rI' (in 'blue') and 'rE' (in 'red'), respectively, placed at different z-depths. The scene"<<endl;
+	cout<<"\t\t   is drawn by using the orthographic projection, such that the centers of the 'Circle' shapes are projected on the same point. However, the rendering order of the 'Circle' shapes is modified upon request by"<<endl;
+	cout<<"\t\t   the user. Hence, 2 configurations [ 'Configuration #0' ] and [ 'Configuration #1' ] are possible, depending on which 'Circle' shape is rendered before in the scene. This means that the result is 'the same as'"<<endl;
+	cout<<"\t\t   the 'Circular Annulus' shape only if the 'Circle' shape in 'red' is drawn before than the 'Circle' shape in 'blue' (namely the [ 'Configuration #0' ]). Otherwise, only the external 'Circle' shape in 'red' is"<<endl;
+	cout<<"\t\t   visible in the scene (namely the [ 'Configuration #1' ]). Both the 'Circle' shapes are approximated by a triangle fan of 'n' vertices (including the center)."<<endl<<endl;
+	cout<<"\t\t1) The variant #1 is basically the same as the variant #0, but the approximations of 2 'Circle' shapes (always at different z-depths) are drawn by using the z-buffer (depth test) technique. Thus, the result will"<<endl;
+	cout<<"\t\t   be always the same, despite the rendering order of the 'Circle' shapes. Also in this case, both the 'Circle' shapes are approximated by a triangle fan of 'n' vertices (including the center)."<<endl<<endl;
+	cout<<"\t\t2) The variant #2 is a real approximation of the 'Circular Annulus' shape through a triangle strip (in 'red'), defined over 'n' pairs of the corresponding vertices (including the center) between the approximations"<<endl;
 	cout<<"\t\t   of the external and of the internal 'Circle' curves, respectively. These curves approximate the boundary of the 'Circular Annulus' shape."<<endl<<endl;
 	cout<<"\tEach variant is accompanied by an explicative label. Thus, this test also shows how writing and rendering some text."<<endl<<endl;
 	cout<<"\tHere, the user cannot modify the radius and the center for 3 variants of the 'Circular Annulus' shape, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
@@ -110,13 +111,13 @@ int main(int argc,char **argv)
 	cout<<"\t\t-) choose to render the 'wireframe' or the 'filled versions' for all triangles in the triangle fans and in the triangle strip of interest by pressing cyclically the ' ' (space) key."<<endl<<endl;
 	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
 	cout.flush();
-	
+
 	/* If we arrive here, we can draw all variants of the 'Circular Annulus' shape in the scene. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE|GLUT_DEPTH);
 	glutInitWindowPosition(0,0);
 	glutInitWindowSize(500,500);
-	glutCreateWindow("The 'Example-031' Example, based on the (Old Mode) OpenGL");
+	glutCreateWindow("The 'Example-031' Test, based on the (Old Mode) OpenGL");
 	glutReshapeFunc(resize);
 	glutKeyboardFunc(manageKeys);
 	glutDisplayFunc(draw);
@@ -126,7 +127,89 @@ int main(int argc,char **argv)
 	glutMainLoop();
 	return EXIT_SUCCESS;
 }
+		
+/// This function initializes the OpenGL window of interest.
+void initialize() 
+{
+	/* We initialize the OpenGL window of interest! */
+	glClearColor(1.0, 1.0, 1.0, 0.0);
+	num_samples=5;
+	mode=GL_FILL;
+	odmode=0;
+	cout<<"\tAt the beginning, the variants of the 'Circular Annulus' shape are currently approximated by the ";
+	if(mode==GL_FILL) cout<<"'filled versions' ";
+	else cout<<"'wireframe versions' ";
+	cout<<"of all triangles in 2 triangle fans with 'n'="<<num_samples<<" vertices and in a triangle strip with 'n'="<<num_samples<<" pairs of the vertices"<<endl;
+	cout<<"\t(thus with the minimum number 'n' as possible of the vertices and the vertices pairs). The 'Configuration #"<<odmode<<"' for the variant #0 of the 'Circular Annulus' shape is initially considered."<<endl<<endl;
+}
+
+/// This function is the keyboard input processing routine for the OpenGL window of interest.
+void manageKeys(unsigned char key, int x, int y)
+{
+	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' - ' ' - 'o' keys. */
+	switch (key)
+	{
+		case 'q':
 	
+		/* The key is 'q', thus we can exit from this program. */
+		cout<<endl;
+		cout.flush();
+		exit(EXIT_SUCCESS);
+		break;
+		
+		case 'Q':
+	
+		/* The key is 'Q', thus we can exit from this program. */
+		cout<<endl;
+		cout.flush();
+		exit(EXIT_SUCCESS);
+		break;
+		
+		case 27:
+	
+		/* The key is 'Esc', thus we can exit from this program. */
+		cout<<endl;
+		cout.flush();
+		exit(EXIT_SUCCESS);
+		break;
+
+		case '+':
+		
+		/* The key is '+', thus we increase the number 'n' of the vertices in 2 triangle fans and of the vertices pairs in the triangle strip of interest! */
+		num_samples=num_samples+1;
+		glutPostRedisplay();
+		break;
+		
+		case '-':
+		
+		/* The key is '-', thus we decrease the number 'n' of the vertices (if possible) in 2 triangle fans and of the vertices pairs in the triangle strip of interest! */
+		if(num_samples>5) num_samples=num_samples-1;
+		else cout<<"\tThe minimum number 'n'=5 of the vertices in 2 triangle fans and of the vertices pairs in the triangle strip of interest is reached, and it is not possible to decrease again this number."<<endl;
+		cout.flush();
+		glutPostRedisplay();
+		break;
+		
+		case ' ':
+		
+		/* The key is ' ', thus we change the rendering mode! */
+		if(mode==GL_FILL) mode=GL_LINE;
+		else mode=GL_FILL;
+		glutPostRedisplay();
+		break;
+		
+		case 'o':
+		
+		/* The key is 'o', thus we change the rendering order for the triangle fans of interest in the variant #0 of the 'Circular Annulus' shape. */
+		odmode=( (odmode+1)%2);
+		glutPostRedisplay();
+
+		default:
+
+    	/* Other keys are not important for us! */
+    	break;
+	}
+}
+
 /// This function draws a bitmap character string in the scene.
 void drawString(void *font,string s) { for(string::iterator c=s.begin();c!=s.end();c++) glutBitmapCharacter(font, *c); }
 
@@ -159,101 +242,20 @@ void drawDisc(float R,float X,float Y,float Z)
 	glEnd();
 }
 
-/// This function initializes the OpenGL window of interest.
-void initialize() 
-{
-	/* We initialize the OpenGL window of interest! */
-	glClearColor(1.0, 1.0, 1.0, 0.0);
-	num_samples=5;
-	mode=GL_FILL;
-	odmode=0;
-	cout<<"\tAt the beginning, the variants of the 'Circular Annulus' shape are currently approximated by the ";
-	if(mode==GL_FILL) cout<<"'filled versions' ";
-	else cout<<"'wireframe versions' ";
-	cout<<"of all triangles in 2 triangle fans with 'n'="<<num_samples<<" vertices and in a triangle strip with 'n'="<<num_samples<<" pairs of vertices"<<endl;
-	cout<<"\t(thus with the minimum number 'n' of vertices and vertices pairs as possible). The 'Configuration #"<<odmode<<"' for the variant #0 of the 'Circular Annulus' shape is initially considered."<<endl<<endl;
-}
-
-/// This function is the keyboard input processing routine for the OpenGL window of interest.
-void manageKeys(unsigned char key, int x, int y)
-{
-	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' - ' ' - 'o' keys. */
-	switch (key)
-	{
-		case 'q':
-	
-		/* The key is 'q', thus we can exit from this program. */
-		cout<<endl;
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
-		
-		case 'Q':
-	
-		/* The key is 'Q', thus we can exit from this program. */
-		cout<<endl;
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
-		
-		case 27:
-	
-		/* The key is 'Esc', thus we can exit from this program. */
-		cout<<endl;
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
-		
-		case '+':
-		
-		/* The key is '+', thus we increase the number of the vertices in 2 triangle fans and in the triangle strip of interest! */
-		num_samples=num_samples+1;
-		glutPostRedisplay();
-		break;
-		
-		case '-':
-		
-		/* The key is '-', thus we decrease the number of the vertices (if possible) in 2 triangle fans and in the triangle strip of interest! */
-		if(num_samples>5) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 'n'=5 of vertices in 2 triangle fans and of vertices pairs in the triangle strip of interest is reached, and it is not possible to decrease again this number."<<endl;
-		cout.flush();
-		glutPostRedisplay();
-		break;
-		
-		case ' ':
-		
-		/* The key is ' ', thus we change the rendering mode! */
-		if(mode==GL_FILL) mode=GL_LINE;
-		else mode=GL_FILL;
-		glutPostRedisplay();
-		break;
-		
-		case 'o':
-		
-		/* The key is 'o', thus we change the rendering order for the triangle fans of interest in the variant #0 of the 'Circular Annulus' shape. */
-		odmode=( (odmode+1)%2);
-		glutPostRedisplay();
-
-		default:
-
-    	/* Other keys are not important for us! */
-    	break;
-	}
-}
-
 /// This function draws 3 different approximations of the <i>'Circular Annulus'</i> shape in the OpenGL window of interest by using the rendering settings, chosen by the user.
 void draw()
 {
 	float d=(2*PI)/(num_samples-1);
 	
-	/* Now, we draw the variant #0 of the 'Circular Annulus' shape by using 2 triangle fans (approximating by the 'Circle' shape). Broadly speaking, they describe 2 disk at different depths, that are drawn by using the orthographic projection,
-	 * such that their centers are projected on the same point. Here, the result depends on the rendering order of the 'Circle' shapes, which can be modified upon request by the user. Hence, the result is not necessarily 'the same as' the 'Circular Annulus' 
-	 * shape. */
+	/* Now, we draw the variant #0 of the 'Circular Annulus' shape by using 2 triangle fans (approximating by the 'Circle' shape). Broadly speaking, they describe 2 disks at different depths, that are drawn by using the orthographic projection,
+	 * such that the centers of the 'Circle' shapes are projected on the same point. Here, the result depends on the rendering order of the 'Circle' shapes, which can be modified upon request by the user. Hence, the result is not necessarily 
+	 * 'the same as' the 'Circular Annulus' shape (thus also the variant #1 of the 'Circular Annulus' shape), except when the 'Configuration #0' for the variant #0 of the 'Circular Annulus' shape is exploited.
+	 */
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 	glPolygonMode(GL_FRONT,mode);
 	if(odmode==0)
 	{
-		/* The 'Configuration #0' is chosen. */
+		/* The 'Configuration #0' is exploited. */
 		glColor3f(1,0,0);
 		drawDisc(20,25,75,0);
 		glColor3f(0,0,1);
@@ -261,15 +263,15 @@ void draw()
 	}
 	else
 	{
-		/* The 'Configuration #1' is chosen. */
+		/* The 'Configuration #1' is exploited. */
 		glColor3f(0,0,1);
 		drawDisc(10,25,75,0);
 		glColor3f(1,0,0);
 		drawDisc(20,25,75,0);
 	}
-
-	/* Now, we draw the variant #1 of the 'Circular Annulus' shape. This variant is basically 'the same as' the variant #0, but the z-buffer technique is exploited. Thus, the result does not depend on their rendering order, and is 'the same as'
-	 * the 'Circular Annulus' shape. */
+	
+	/* Now, we draw the variant #1 of the 'Circular Annulus' shape. This variant is basically 'the same as' the variant #0, but the z-buffer (depth test) technique is exploited. Thus, the result does not depend on their rendering order, and it is only
+	 * 'the same as' the 'Configuration #0' for the variant #0 of the 'Circular Annulus' shape. */
 	glEnable(GL_DEPTH_TEST);
 	glColor3f(1,0,0);
 	drawDisc(20,75,75,0);
@@ -277,8 +279,8 @@ void draw()
 	drawDisc(10,75,75,0.5);
 	glDisable(GL_DEPTH_TEST);
 	
-	/* Finally, we draw the variant #2 of the 'Circular Annulus' shape by using only triangle strip. Here, we consider 'n' pairs of the corresponding vertices in the approximations of the internal and the external 'Circle' curves. These curves 
-	 * approximate the boundary of the 'Circular Annulus' shape. */
+	/* Now, we draw the variant #2 of the 'Circular Annulus' shape by using only triangle strip. Here, we consider 'n' pairs of the corresponding vertices in the approximations of the internal and the external 'Circle' curves, respectively. 
+	 * These curves approximate the boundary of the 'Circular Annulus' shape. */
 	glColor3f(1,0,0);
 	glBegin(GL_TRIANGLE_STRIP);
 	for(int i=0;i<num_samples;i++)
@@ -307,6 +309,6 @@ void draw()
 	cout<<"\tAll variants of the 'Circular Annulus' shape are approximated by the ";
 	if(mode==GL_FILL) cout<<"'filled versions' ";
 	else cout<<"'wireframe versions' ";
-	cout<<"of several triangles in 2 triangle fans [ 'Configuration #"<<odmode<<"' ] and in a triangle strip with 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" vertices pairs, respectively."<<endl;
+	cout<<"of several triangles in 2 triangle fans [ including the 'Configuration #"<<odmode<<"' ] and in a triangle strip with 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" vertices pairs, respectively."<<endl;
 	cout.flush();
 }
