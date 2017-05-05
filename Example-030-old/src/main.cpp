@@ -230,7 +230,7 @@ void draw()
 	drawDisc(10,75,75,0.5);
 	glDisable(GL_DEPTH_TEST);
 	
-	/* Finally, we draw the variant #2 of the 'Circular Annulus' shape by using only triangle strip. Here, we consider 'n' pairs of the corresponding vertices in the approximations of the internal and the external 'Circle' curves, respectively. 
+	/* Now, we draw the variant #2 of the 'Circular Annulus' shape by using only triangle strip. Here, we consider 'n' pairs of the corresponding vertices in the approximations of the internal and the external 'Circle' curves, respectively. 
 	 * These curves approximate the boundary of the 'Circular Annulus' shape. */
 	glColor3f(1,0,0);
 	glBegin(GL_TRIANGLE_STRIP);
