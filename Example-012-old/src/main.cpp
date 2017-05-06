@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: April 2017
+ * Last update: May 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -112,7 +112,7 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	face=GL_FRONT;
 	mode=GL_FILL;
-	cout<<"\tAt the beginning, the 'filled versions' for the 'front' sides of all triangles in the triangle strip of interest are rendered in the current scene."<<endl<<endl;
+	cout<<"\tAt the beginning, the 'filled versions' for the 'front' sides of all triangles in the triangle strip of interest are rendered in the scene."<<endl<<endl;
 	cout.flush();
 }
 
@@ -260,22 +260,22 @@ void draw()
 	if(face==GL_FRONT)
 	{
 		/* We must draw only the 'front' sides of all triangles in the custom triangle strip by using the rendering type, chosen by the user. */
-		if(mode==GL_POINT) cout<<"\tOnly the vertices in the 'front' sides of all triangles in the custom triangle strip are rendered in the current scene."<<endl;
-		if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' for the 'front' sides of all triangles in the custom triangle strip are rendered in the current scene."<<endl;
-		if(mode==GL_FILL) cout<<"\tThe 'filled versions' for the 'front' sides of all triangles in the custom triangle strip are rendered in the current scene."<<endl;
+		if(mode==GL_POINT) cout<<"\tOnly the vertices in the 'front' sides of all triangles in the custom triangle strip are currently rendered in the scene."<<endl;
+		if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' for the 'front' sides of all triangles in the custom triangle strip are currently rendered in the scene."<<endl;
+		if(mode==GL_FILL) cout<<"\tThe 'filled versions' for the 'front' sides of all triangles in the custom triangle strip are currently rendered in the scene."<<endl;
 	}
 	else if(face==GL_BACK)
 	{
 		/* We must draw only the 'back' sides of all triangles in the custom triangle strip by using the rendering type, chosen by the user. */
-		if(mode==GL_POINT) cout<<"\tOnly the vertices in the 'back' sides of all triangles in the custom triangle strip are rendered in the current scene."<<endl;
-		if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' for the 'back' sides of all triangles in the custom triangle strip are rendered in the current scene."<<endl;
-		if(mode==GL_FILL) cout<<"\tThe 'filled versions' for the 'back' sides of all triangles in the custom triangle strip are rendered in the current scene."<<endl;
+		if(mode==GL_POINT) cout<<"\tOnly the vertices in the 'back' sides of all triangles in the custom triangle strip are currently rendered in the scene."<<endl;
+		if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' for the 'back' sides of all triangles in the custom triangle strip are currently rendered in the scene."<<endl;
+		if(mode==GL_FILL) cout<<"\tThe 'filled versions' for the 'back' sides of all triangles in the custom triangle strip are currently rendered in the scene."<<endl;
 	}
 	else
 	{
 		/* We must draw both the 'front' and the 'back' sides of all triangles in the custom triangle strip by using the rendering type, chosen by the user. */
-		if(mode==GL_POINT) cout<<"\tOnly the vertices in both the 'front' and the 'back' sides of all triangles in the custom triangle strip are rendered in the current scene."<<endl;
-		if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' of both the 'front' and the 'back' sides for all triangles in the custom triangle strip are rendered in the current scene."<<endl;
-		if(mode==GL_FILL) cout<<"\tThe 'filled versions' of both the 'front' and the 'back' sides for all triangles in the custom triangle strip are rendered in the current scene."<<endl;
+		if(mode==GL_POINT) cout<<"\tOnly the vertices in both the 'front' and the 'back' sides of all triangles in the custom triangle strip are currently rendered in the scene."<<endl;
+		if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' of both the 'front' and the 'back' sides for all triangles in the custom triangle strip are currently rendered in the scene."<<endl;
+		if(mode==GL_FILL) cout<<"\tThe 'filled versions' of both the 'front' and the 'back' sides for all triangles in the custom triangle strip are currently rendered in the scene."<<endl;
 	}
 }

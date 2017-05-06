@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: April 2017
+ * Last update: May 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -126,7 +126,7 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0); 
 	rendering=GL_POINTS;
 	eol=false;
-	cout<<"\tThe 'GL_POINTS' primitive is initially used for drawing several independents 3D points in the current scene."<<endl<<endl;
+	cout<<"\tThe 'GL_POINTS' primitive is initially used for drawing several independents 3D points in the scene."<<endl<<endl;
 	cout.flush();
 }
 
@@ -162,9 +162,9 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '0':
 		
-		/* The key is '0', thus the 'GL_POINTS' primitive is used for drawing several independent 3D points in the current scene. */
+		/* The key is '0', thus the 'GL_POINTS' primitive is currently used for drawing several independent 3D points in the scene. */
 		rendering=GL_POINTS;
-		cout<<"\tThe 'GL_POINTS' primitive is used for drawing several independents 3D points in the current scene."<<endl;
+		cout<<"\tThe 'GL_POINTS' primitive is currently used for drawing several independents 3D points in the scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -172,9 +172,9 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '1':
 		
-		/* The key is '1', thus the 'GL_LINES' primitive is used for drawing several independent lines in the current scene. */
+		/* The key is '1', thus the 'GL_LINES' primitive is currently used for drawing several independent lines in the scene. */
 		rendering=GL_LINES;
-		cout<<"\tThe 'GL_LINES' primitive is used for drawing several independent lines in the current scene."<<endl;
+		cout<<"\tThe 'GL_LINES' primitive is currently used for drawing several independent lines in the scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -182,9 +182,9 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '2':
 		
-		/* The key is '2', thus the 'GL_LINE_STRIP' primitive is used for drawing an open line strip in the current scene. */
+		/* The key is '2', thus the 'GL_LINE_STRIP' primitive is currently used for drawing an open line strip in the scene. */
 		rendering=GL_LINE_STRIP;
-		cout<<"\tThe 'GL_LINE_STRIP' primitive is used for drawing an open line strip in the current scene."<<endl;
+		cout<<"\tThe 'GL_LINE_STRIP' primitive is currently used for drawing an open line strip in the scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -192,9 +192,9 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '3':
 		
-		/* The key is '3', thus the 'GL_LINE_LOOP' primitive is used for drawing a closed line loop in the current scene. */
+		/* The key is '3', thus the 'GL_LINE_LOOP' primitive is currently used for drawing a closed line loop in the scene. */
 		rendering=GL_LINE_LOOP;
-		cout<<"\tThe 'GL_LINE_LOOP' primitive is used for drawing a closed line loop in the current scene."<<endl;
+		cout<<"\tThe 'GL_LINE_LOOP' primitive is currently used for drawing a closed line loop in the scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -202,9 +202,9 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '4':
 		
-		/* The key is '4', thus the 'GL_TRIANGLES' primitive is used for drawing several triangles in the current scene. */
+		/* The key is '4', thus the 'GL_TRIANGLES' primitive is currently used for drawing several triangles in the scene. */
 		rendering=GL_TRIANGLES;
-		cout<<"\tThe 'GL_TRIANGLES' primitive is used for drawing several independent triangles in the current scene."<<endl;
+		cout<<"\tThe 'GL_TRIANGLES' primitive is currently used for drawing several independent triangles in the scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -212,9 +212,9 @@ void manageKeys(unsigned char key, int x, int y)
 
 		case '5':
 		
-		/* The key is '5', thus the 'GL_POLYGON' primitive is used for drawing only one polygon in the current scene. */
+		/* The key is '5', thus the 'GL_POLYGON' primitive is currently used for drawing only one polygon in the scene. */
 		rendering=GL_POLYGON;
-		cout<<"\tThe 'GL_POLYGON' primitive is used for drawing only one polygon in the current scene."<<endl;
+		cout<<"\tThe 'GL_POLYGON' primitive is currently used for drawing only one polygon in the scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();

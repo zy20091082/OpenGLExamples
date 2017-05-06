@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: April 2017
+ * Last update: May 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -233,7 +233,7 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	face=GL_FRONT;
 	mode=GL_FILL;
-	cout<<"\tAt the beginning, the 'filled version' for the 'front' side of the custom polygon is rendered in the current scene."<<endl<<endl;
+	cout<<"\tAt the beginning, the 'filled version' for the 'front' side of the custom polygon is rendered in the scene."<<endl<<endl;
 	cout.flush();
 }
 
@@ -262,22 +262,22 @@ void draw()
 	if(face==GL_FRONT)
 	{
 		/* We must draw only the 'front' side of the custom polygon by using the rendering type, chosen by the user. */
-		if(mode==GL_POINT) cout<<"\tOnly the vertices in the 'front' side of the custom polygon are rendered in the current scene."<<endl;
-		if(mode==GL_LINE) cout<<"\tThe 'wireframe version' for the 'front' side of the custom polygon is rendered in the current scene."<<endl;
-		if(mode==GL_FILL) cout<<"\tThe 'filled version' for the 'front' side of the custom polygon is rendered in the current scene."<<endl;
+		if(mode==GL_POINT) cout<<"\tOnly the vertices in the 'front' side of the custom polygon are currently rendered in the scene."<<endl;
+		if(mode==GL_LINE) cout<<"\tThe 'wireframe version' for the 'front' side of the custom polygon is currently rendered in the scene."<<endl;
+		if(mode==GL_FILL) cout<<"\tThe 'filled version' for the 'front' side of the custom polygon is currently rendered in the scene."<<endl;
 	}
 	else if(face==GL_BACK)
 	{
 		/* We must draw only the 'back' side of the custom polygon by using the rendering type, chosen by the user. */
-		if(mode==GL_POINT) cout<<"\tOnly the vertices in the 'back' side of the custom polygon are rendered in the current scene."<<endl;
-		if(mode==GL_LINE) cout<<"\tThe 'wireframe version' for the 'back' side of the custom polygon is rendered in the current scene."<<endl;
-		if(mode==GL_FILL) cout<<"\tThe 'filled version' for the 'back' side of the custom polygon is rendered in the current scene."<<endl;
+		if(mode==GL_POINT) cout<<"\tOnly the vertices in the 'back' side of the custom polygon are currently rendered in the scene."<<endl;
+		if(mode==GL_LINE) cout<<"\tThe 'wireframe version' for the 'back' side of the custom polygon is currently rendered in the scene."<<endl;
+		if(mode==GL_FILL) cout<<"\tThe 'filled version' for the 'back' side of the custom polygon is currently rendered in the scene."<<endl;
 	}
 	else
 	{
 		/* We must draw both the 'front' and the 'back' sides of the custom polygon by using the rendering type, chosen by the user. */
-		if(mode==GL_POINT) cout<<"\tOnly the vertices in both the 'front' and the 'back' sides of the custom polygon are rendered in the current scene."<<endl;
-		if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' for both the 'front' and the 'back' sides of the custom polygon are rendered in the current scene."<<endl;
-		if(mode==GL_FILL) cout<<"\tThe 'filled versions' for both the 'front' and the 'back' sides of the custom polygon are rendered in the current scene."<<endl;
+		if(mode==GL_POINT) cout<<"\tOnly the vertices in both the 'front' and the 'back' sides of the custom polygon are currently rendered in the scene."<<endl;
+		if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' for both the 'front' and the 'back' sides of the custom polygon are currently rendered in the scene."<<endl;
+		if(mode==GL_FILL) cout<<"\tThe 'filled versions' for both the 'front' and the 'back' sides of the custom polygon are currently rendered in the scene."<<endl;
 	}
 }
