@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: April 2017
+ * Last update: May 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -115,7 +115,7 @@ void initialize()
 	xcoord=20.0;
 	eol=false;
 	glClearColor(1.0, 1.0, 1.0, 0.0);
-	cout<<"\tThe 'x' coordinate for the triangle of interest is initially set to 'x'="<<xcoord<<" in the current scene."<<endl<<endl;
+	cout<<"\tThe 'x' coordinate for the triangle of interest is initially set to 'x'="<<xcoord<<" in the scene."<<endl<<endl;
 	cout.flush();
 }
 
@@ -150,7 +150,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '+, thus we increase the 'x' coordinate by 1 for the triangle of interest. */
 		xcoord=xcoord+(GLfloat)1.0;
-		cout<<"\tThe 'x' coordinate for the triangle of interest is increased to 'x'="<<xcoord<<" in the current scene."<<endl;
+		cout<<"\tThe 'x' coordinate for the triangle of interest is currently increased to 'x'="<<xcoord<<" in the scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -160,7 +160,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-', thus we decrease the 'x' coordinate by 1 for the triangle of interest. */
 		xcoord=xcoord-(GLfloat)1.0;
-		cout<<"\tThe 'x' coordinate for the triangle of interest is decreased to 'x'="<<xcoord<<" in the current scene."<<endl;
+		cout<<"\tThe 'x' coordinate for the triangle of interest is currently decreased to 'x'="<<xcoord<<" in the scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -171,7 +171,7 @@ void manageKeys(unsigned char key, int x, int y)
 		/* The key is '=', thus we reinitialize the 'x' coordinate to 'x'=20 for the triangle of interest. */
 		xcoord=20.0;
 		eol=true;
-		cout<<"\tThe 'x' coordinate for the triangle of interest is set to its default value 'x'="<<xcoord<<" in the current scene."<<endl;
+		cout<<"\tThe 'x' coordinate for the triangle of interest is currently set to its default value 'x'="<<xcoord<<" in the scene."<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;

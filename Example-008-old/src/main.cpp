@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: April 2017
+ * Last update: May 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -34,7 +34,7 @@ using namespace std;
 
 #endif
 
-/// This flag identifies what 'viewing configuration' must be applied to the current scene.
+/// This flag identifies what 'viewing configuration' must be applied to the scene.
 /**
  * It may assume these values:
  *
@@ -156,7 +156,7 @@ void initialize()
 	choice=0;
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	eol=false;
-	cout<<"\tThe 'viewing configuration #"<<choice<<"' is initially applied to the current scene."<<endl<<endl;
+	cout<<"\tThe 'viewing configuration #"<<choice<<"' is initially applied to the scene."<<endl<<endl;
 	cout.flush();
 }
 
@@ -189,9 +189,9 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '0':
 		
-		/* The key is '0', thus we apply the 'viewing configuration #0' to the current scene. */
+		/* The key is '0', thus we apply the 'viewing configuration #0' to the scene. */
 		choice=0;
-		cout<<"\tThe 'viewing configuration #"<<choice<<"' is applied to the current scene."<<endl;
+		cout<<"\tThe 'viewing configuration #"<<choice<<"' is currently applied to the scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -199,9 +199,9 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '1':
 		
-		/* The key is '1', thus we apply the 'viewing configuration #1' to the current scene. */
+		/* The key is '1', thus we apply the 'viewing configuration #1' to the scene. */
 		choice=1;
-		cout<<"\tThe 'viewing configuration #"<<choice<<"' is applied to the current scene."<<endl;
+		cout<<"\tThe 'viewing configuration #"<<choice<<"' is currently applied to the scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();

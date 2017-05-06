@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  *
- * Last update: April 2017
+ * Last update: May 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
@@ -127,7 +127,7 @@ void initialize()
 	far_value = 1.0;
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	eol=false;
-	cout<<"\tThe 'viewing configuration #0', corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', is initially applied to the current scene."<<endl<<endl;
+	cout<<"\tThe 'viewing configuration #0', corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', is initially applied to the scene."<<endl<<endl;
 	cout.flush();
 }
 
@@ -161,7 +161,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case '0':
 
 		/* The key is '0', thus we exploit the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' (thus, the 'viewing configuration #0'). */
-		cout<<"\tThe 'viewing configuration #0', corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', is applied to the current scene."<<endl;
+		cout<<"\tThe 'viewing configuration #0', corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', is currently applied to the scene."<<endl;
 		cout.flush();
 		eol=true;
 		left_value = 0.0;
@@ -178,7 +178,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case '1':
 
 		/* The key is '1', thus we exploit the orthographic viewing box '[-100,100]' x '[-100,100]' x '[-1,1]' (thus, the 'viewing configuration #1'). */
-		cout<<"\tThe 'viewing configuration #1', corresponding to the orthographic viewing box '[-100,100]' x '[-100,100]' x '[-1,1]', is applied to the current scene."<<endl;
+		cout<<"\tThe 'viewing configuration #1', corresponding to the orthographic viewing box '[-100,100]' x '[-100,100]' x '[-1,1]', is currently applied to the scene."<<endl;
 		cout.flush();
 		eol=true;
 		left_value = -100.0;
@@ -195,7 +195,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case '2':
 
 		/* The key is '2', thus we exploit the orthographic viewing box '[20,80]' x '[20,80]' x '[-1,1]' (thus, the 'viewing configuration #2'). */
-		cout<<"\tThe 'viewing configuration #2', corresponding to the orthographic viewing box '[20,80]' x '[20,80]' x '[-1,1]', is applied to the current scene."<<endl;
+		cout<<"\tThe 'viewing configuration #2', corresponding to the orthographic viewing box '[20,80]' x '[20,80]' x '[-1,1]', is currently applied to the scene."<<endl;
 		cout.flush();
 		eol=true;
 		left_value = 20;
@@ -212,7 +212,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case '3':
 
 		/* The key is '3', thus we exploit the orthographic viewing box '[0,100]' x '[0,100]' x '[-2,5]' (thus, the 'viewing configuration #3'). */
-		cout<<"\tThe 'viewing configuration #3', corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-2,5]', is applied to the current scene."<<endl;
+		cout<<"\tThe 'viewing configuration #3', corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-2,5]', is currently applied to the scene."<<endl;
 		cout.flush();
 		eol=true;
 		left_value = 0;
@@ -229,7 +229,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case '4':
 
 		/* The key is '4', thus we exploit the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' (thus, the 'viewing configuration #4'). */
-		cout<<"\tThe 'viewing configuration #4', corresponding to the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]', is applied to the current scene."<<endl;
+		cout<<"\tThe 'viewing configuration #4', corresponding to the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]', is currently applied to the scene."<<endl;
 		std::cout.flush();
 		eol=true;
 		left_value = 0;
@@ -246,7 +246,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case '5':
 
 		/* The key is '5', thus we exploit the orthographic viewing box '[120,200]' x '[90,200]' x '[-1,3]' (thus, the 'viewing configuration #5'). */
-		cout<<"\tThe 'viewing configuration #5', corresponding to the orthographic viewing box '[120,200]' x '[90,200]' x '[-1,3]', is applied to the current scene."<<endl;
+		cout<<"\tThe 'viewing configuration #5', corresponding to the orthographic viewing box '[120,200]' x '[90,200]' x '[-1,3]', is currently applied to the scene."<<endl;
 		cout.flush();
 		eol=true;
 		left_value = 120;
