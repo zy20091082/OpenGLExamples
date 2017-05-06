@@ -268,19 +268,19 @@ void draw()
 	if(choice=='l') 
 	{ 
 		/* We draw the 'wireframe versions' (in 'red') for all quadrilaterals in the quadstrip of interest! */
-		cout<<"\tThe 'wireframe versions' of 'n'="<<num_quads<<" quadrilaterals in the quadstrip of interest are rendered [ 'Configuration #1' ]."<<endl; 
+		cout<<"\tThe 'wireframe versions' of 'n'="<<num_quads<<" quadrilaterals in the quadstrip of interest are currently rendered [ 'Configuration #1' ]."<<endl; 
 		cout.flush();
 	}
     else if(choice=='f') 
     {
     	/* We draw the 'filled versions' (in 'red') for all quadrilaterals in the quadstrip of interest! */
-    	cout<<"\tThe 'filled versions' of 'n'="<<num_quads<<" quadrilaterals in the quadstrip of interest are rendered [ 'Configuration #2' ]."<<endl; 
+    	cout<<"\tThe 'filled versions' of 'n'="<<num_quads<<" quadrilaterals in the quadstrip of interest are currently rendered [ 'Configuration #2' ]."<<endl; 
 		cout.flush();
     }
     else if(choice=='p') 
     { 
     	/* We draw only the vertices (in 'red') for all quadrilaterals in the quadstrip of interest! */
-    	cout<<"\tOnly the vertices of 'n'="<<num_quads<<" quadrilaterals in the quadstrip of interest are rendered [ 'Configuration #0' ]."<<endl;
+    	cout<<"\tOnly the vertices of 'n'="<<num_quads<<" quadrilaterals in the quadstrip of interest are currently rendered [ 'Configuration #0' ]."<<endl;
 		cout.flush();
     }
 }

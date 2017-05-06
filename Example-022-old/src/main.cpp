@@ -260,7 +260,7 @@ void draw()
 		/* If we arrive here, all is ok */
 		glEnd();
 		glFlush();
-		cout<<"\tCurrently, the boundary for the 'Circle' shape of interest is approximated by a polyline with 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" edges [ 'Approximation #0' ]."<<endl;
+		cout<<"\tThe boundary for the 'Circle' shape of interest is currently approximated by a polyline with 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" edges [ 'Approximation #0' ]."<<endl;
 		cout.flush();
 	}
 	else if(choice=='f')
@@ -280,7 +280,7 @@ void draw()
 		/* If we arrive here, all is ok */
 		glEnd();
 		glFlush();
-		cout<<"\tCurrently, the 'Circle' shape of interest is approximated by the 'filled versions' of 'n'="<<num_samples<<" triangles in a triangle fan [ 'Approximation #1' ]."<<endl;
+		cout<<"\tThe 'Circle' shape of interest is currently approximated by the 'filled versions' of 'n'="<<num_samples<<" triangles in a triangle fan [ 'Approximation #1' ]."<<endl;
 		cout.flush();
 	}
 	else if(choice=='p')
@@ -298,7 +298,7 @@ void draw()
 		/* If we arrive here, all is ok */
 		glEnd();
 		glFlush();
-		cout<<"\tCurrently, the 'Circle' shape of interest is approximated by the 'filled version' of only one polygon with 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" edges [ 'Approximation #2' ]."<<endl;
+		cout<<"\tThe 'Circle' shape of interest is currently approximated by the 'filled version' of only one polygon with 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" edges [ 'Approximation #2' ]."<<endl;
 		cout.flush();
 	}
 }
