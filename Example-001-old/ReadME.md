@@ -3,7 +3,7 @@ height="97"></A>
 
 <H3>The <i>'Example-001 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-001 (Old Mode)'</i> Test is similar to the classic <i>'Hello World'</i> program for testing the correctness of the building infrastructure. Broadly speaking, it creates an empty <A href="http://www.opengl.org"><i>OpenGL</i></A> window with the <i>'black'</i> background, and provides no interaction mechanism with the user. In fact, this window must be stopped through an enforced closure.<table border=0 width=100%><tr><td width='100%'><IMG style=float:center src='http://davidcanino.github.io/img/shots_opengl/shot_example001_old.png' border='1'></td></tr></table><hr><p><h4>Dependencies</h4>
+The <i>'Example-001 (Old Mode)'</i> Test is similar to the classic <i>'Hello World'</i> program for testing the correctness of the building infrastructure. Broadly speaking, it creates an empty <A href="http://www.opengl.org"><i>OpenGL</i></A> window with the <i>'black'</i> background, and provides no interaction mechanism with the user. In fact, this window must be stopped through an enforced closure.<IMG style=float:center src='http://davidcanino.github.io/img/shots_opengl/shot_example001_old.png' border=0><hr><p><h4>Dependencies</h4>
 
 The <i>'Example-001 (Old Mode)'</i> Test is based on the so-called <i>OpenGL old (direct drawing) mode</i>, and requires the following dependencies:<ul>
 
