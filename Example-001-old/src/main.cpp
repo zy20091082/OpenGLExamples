@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: April 2017
+ * Last update: May 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -48,7 +48,8 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-001' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt creates a basic OpenGL window with the 'black' background, and provides no interaction mechanism with the user."<<endl<<endl;
+	cout<<"\tIt is similar to the classic 'Hello World' program for testing the correctness of the building infrastructure."<<endl;
+	cout<<"\tBroadly speaking, it creates an empty OpenGL window with the 'black' background, and provides no interaction mechanism with the user."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
