@@ -47,7 +47,7 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-002' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt is similar to the classic 'Hello World' program for testing the correctness of the building infrastructure."<<endl;
 	cout<<"\tBroadly speaking, it draws the 'filled version' of a quadrilateral (in 'red') in an OpenGL window, and provides a very basic interaction mechanism with the user."<<endl<<endl;
-	cout<<"\tIn fact, this window can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+	cout<<"\tHere, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
