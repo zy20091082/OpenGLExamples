@@ -257,7 +257,7 @@ void draw()
    	
    	/* If we arrive here, all is ok! */
 	glFlush();
-	cout<<"\tAll variants of the 'Circular Annulus' shape are approximated by the ";
+	cout<<"\tAll variants of the 'Circular Annulus' shape are currently approximated by the ";
 	if(mode==GL_FILL) cout<<"'filled versions' ";
 	else cout<<"'wireframe versions' ";
 	cout<<"of several triangles in 2 triangle fans and in a triangle strip with 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" vertices pairs, respectively."<<endl;
@@ -271,7 +271,7 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=5;
 	mode=GL_FILL;
-	cout<<"\tAt the beginning, the variants of the 'Circular Annulus' shape are currently approximated by the ";
+	cout<<"\tAt the beginning, the variants of the 'Circular Annulus' shape are approximated by the ";
 	if(mode==GL_FILL) cout<<"'filled versions' ";
 	else cout<<"'wireframe versions' ";
 	cout<<"of all triangles in 2 triangle fans with 'n'="<<num_samples<<" vertices and in a triangle strip with 'n'="<<num_samples<<" pairs of the vertices"<<endl;

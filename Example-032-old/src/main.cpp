@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: January 2017
+ * Last update: May 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -11,7 +11,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-032 (Old Mode)' example
+ * main.cpp - the main function for the 'Example-032 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
@@ -30,17 +30,28 @@ using namespace std;
 
 #else
 
-	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU Linux, or a Microsoft Windows platform. */
+	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU/Linux, or a Microsoft Windows platform. */
 	#include "GL/glew.h"
 	#include "GL/glut.h"
 	#include "GL/gl.h"
 
 #endif
 
-/// The number of the samples, used for drawing the scene of interest.
-int num_samples=5;
+/// The number <i>'n'</i> of the samples in the triangle fans, approximating the <i>'Bullseye'</i> shape.
+/**
+ * It is initially set to 'n=5', which is the minimum number of the vertices (including the center) for constructing the triangle fans of interest, approximating the 'Bullseye' shape.
+ */
+unsigned int num_samples=5;
 
-/// The rendering mode for the scene of interest (wireframe or filled).
+/// The setting for rendering all triangles in the triangle fans, used for approximating the <i>'Bullseye'</i> shape.
+/**
+ * The value of this flag may be one of the following values:
+ *
+ * -) the 'GL_LINE' value, used for rendering the 'wireframe versions' for all triangles in the triangle fans of interest;
+ * -) the 'GL_FILL' value, used for rendering the 'filled versions' for all triangles in the triangle fans of interest.
+ *
+ * It is possible to cycle between these 2 renderings by pressing the ' ' key.
+ */
 GLenum mode=GL_FILL;
 
 /* Prototypes for all functions of interest! */
@@ -50,17 +61,22 @@ void draw();
 void resize(int w,int h);
 void drawDisc(float R,float X,float Y,float Z);
 
-/// The main function for the <i>'Example-032 (Old Mode)'</i> example.
+/// The main function for the <i>'Example-032 (Old Mode)'</i> Test.
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a new window! */
-	cout<<endl<<"\tThis is the 'Example-032' Example, based on the (Old Mode) OpenGL"<<endl<<endl;
+	cout<<endl<<"\tThis is the 'Example-032' Test, based on the (Old Mode) OpenGL."<<endl<<endl;
 	cout.flush();
+	
+	
+	
+	
+	/* If we arrive here, we can draw the approximation of the 'Bullseye' shape in the scene. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE|GLUT_DEPTH);
 	glutInitWindowPosition(0,0);
 	glutInitWindowSize(500,500);
-	glutCreateWindow("The 'Example-032' Example, based on the (Old Mode) OpenGL");
+	glutCreateWindow("The 'Example-032' Test, based on the (Old Mode) OpenGL");
 	glutReshapeFunc(resize);
 	glutKeyboardFunc(manageKeys);
 	glutDisplayFunc(draw);
@@ -74,19 +90,21 @@ int main(int argc,char **argv)
 /// This function initializes the OpenGL window of interest.
 void initialize() 
 {
-	/* We initialize the OpenGL window of interest! */	
-	cout<<"\tWe draw several concentric circles of different dimensions and colors by using the depth test buffer (z-buffer)."<<endl<<endl;
-	cout<<"\tIt is possible to modify the number of the samples (by pressing the '+' and '-' keys), as well as the rendering mode (by pressing the ' ' key)."<<endl<<endl;
-	cout.flush();
+	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=5;
 	mode=GL_FILL;
+	cout<<"\tAt the beginning, the 'Bullseye' shape is approximated by the ";
+	if(mode==GL_FILL) cout<<"'filled versions' ";
+	else cout<<"'wireframe versions' ";
+	cout<<"of several triangles in 5 triangle fans with 'n'="<<num_samples<<" vertices (thus with the minimum number 'n' as possible of the vertices)."<<endl<<endl;
+	cout.flush();
 }
 
 /// This function updates the viewport for the scene when it is resized. */
 void resize(int w, int h)
 {
-	/* We update the projections and the modeling matrices! */
+	/* We update the projection and the modeling matrices! */
 	glViewport(0, 0, w, h);
    	glMatrixMode(GL_PROJECTION);
    	glLoadIdentity();
@@ -95,71 +113,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-// This function is the keyboard input processing routine for the OpenGL window of interest.
-void manageKeys(unsigned char key, int x, int y)
-{
-	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' - '<space bar>' keys */
-	switch (key)
-	{
-		case 'q':
-	
-		/* The key is 'q' */
-		cout<<endl;
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
-		
-		case 'Q':
-	
-		/* The key is 'Q' */
-		cout<<endl;
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
-		
-		case 27:
-	
-		/* The key is 'Esc' */
-		cout<<endl;
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
-		
-		case '+':
-		
-		/* The key is '+', thus we increase the number of the samples! */
-		num_samples=num_samples+1;
-		glutPostRedisplay();
-		break;
-		
-		case ' ':
-		
-		/* The key is ' ', thus we change the rendering mode! */
-		if(mode==GL_FILL) mode=GL_LINE;
-		else mode=GL_FILL;
-		glutPostRedisplay();
-		break;
-		
-		case '-':
-		
-		/* The key is '-', thus we decrease the number of the samples! */
-		if(num_samples>5) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 5 of samples is reached"<<endl;
-		cout.flush();
-		glutPostRedisplay();
-		break;
-
-		default:
-
-    	/* Other keys are not important for us */
-    	break;
-	}
-}
-
-/// This function draws a disc of radius R and centered at the 3D point (X,Y,Z).
+/// This function draws a triangle fan, approximating a given <i>'Circle'</i> shape.
 void drawDisc(float R,float X,float Y,float Z)
 {
-	/* Now, we draw a triangle fan! */
+	/* Now, we draw a triangle fan with radius 'R' and center '(X,Y,Z)'. */
 	float d=(2*PI)/(num_samples-1);
 	glBegin(GL_TRIANGLE_FAN);
 	glVertex3f(X,Y,Z);
@@ -173,10 +130,12 @@ void drawDisc(float R,float X,float Y,float Z)
 	glEnd();
 }
 
-/// This function draws several concentric circles of different dimensions and colors by using the depth test buffer (z-buffer) in the OpenGL window of interest.
+/// This function draws the approximation of the <i>'Bullseye'</i> shape in the OpenGL window of interest by using the rendering settings, chosen by the user.
 void draw()
 {
-	/* Now, we draw several concentric circles of different dimensions and colors by using the depth test buffer (z-buffer) in the OpenGL window of interest. */
+	/* Here, the approximation of interest for the 'Bullseye' shape is not 'real', since it is the result of drawing the approximations of 5 'Circle' shapes, placed at different z-depths. In this context, the scene is drawn by using the orthographic
+	 * projection, such that the centers of the 'Circle' shapes are projected on the same point. Every 'Circle' shape of interest is approximated by a triangle fan of 'n' vertices (including the center), and is drawn by using the z-buffer (depth test) 
+	 * technique. Thus, the result will be a 'false' version of the 'Bullseye' shape, and will be always the same, despite the rendering order of 5 'Circle' shapes. */
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 	glPolygonMode(GL_FRONT,mode);
 	glEnable(GL_DEPTH_TEST);
@@ -192,6 +151,73 @@ void draw()
 	drawDisc(40,0,0,60);
 	glDisable(GL_DEPTH_TEST);
 	glFlush();
-	cout<<"\tApproximated and drawn the scene of interest with "<<num_samples<<" samples"<<endl;
+	
+	/* If we arrive here, all is ok! */
+	glFlush();
+	cout<<"\tThe 'Bullseye' shape is approximated by the ";
+	if(mode==GL_FILL) cout<<"'filled versions' ";
+	else cout<<"'wireframe versions' ";
+	cout<<"of several triangles in 5 triangle fans with 'n'="<<num_samples<<" vertices (including the center)."<<endl;
 	cout.flush();
+}
+
+/// This function is the keyboard input processing routine for the OpenGL window of interest.
+void manageKeys(unsigned char key, int x, int y)
+{
+	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' - ' ' keys. */
+	switch (key)
+	{
+		case 'q':
+	
+		/* The key is 'q', thus we can exit from this program. */
+		cout<<endl;
+		cout.flush();
+		exit(EXIT_SUCCESS);
+		break;
+		
+		case 'Q':
+	
+		/* The key is 'Q', thus we can exit from this program. */
+		cout<<endl;
+		cout.flush();
+		exit(EXIT_SUCCESS);
+		break;
+		
+		case 27:
+	
+		/* The key is 'Esc', thus we can exit from this program. */
+		cout<<endl;
+		cout.flush();
+		exit(EXIT_SUCCESS);
+		break;
+		
+		case '+':
+		
+		/* The key is '+', thus we increase the number 'n' of the vertices (including the center) in the triangle fans approximating 5 'Circle' shapes in the 'Bullseye' shape of interest! */
+		num_samples=num_samples+1;
+		glutPostRedisplay();
+		break;
+		
+		case '-':
+		
+		/* The key is '-', thus we decrease (if possible) the number 'n' of the vertices (including the center) in the triangle fans, approximating 5 'Circle' shapes in the 'Bullseye' shape of interest! */
+		if(num_samples>5) num_samples=num_samples-1;
+		else cout<<"\tThe minimum number 'n'=5 of the vertices in the triangle fans of interest is reached, and it is not possible to decrease again this number."<<endl;
+		cout.flush();
+		glutPostRedisplay();
+		break;
+		
+		case ' ':
+		
+		/* The key is ' ', thus we change the rendering mode! */
+		if(mode==GL_FILL) mode=GL_LINE;
+		else mode=GL_FILL;
+		glutPostRedisplay();
+		break;
+
+		default:
+
+    	/* Other keys are not important for us! */
+    	break;
+	}			
 }

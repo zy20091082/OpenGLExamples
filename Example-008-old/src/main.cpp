@@ -57,16 +57,16 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-008' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the 'filled versions' for 2 quadrilaterals of different size and with a not empty intersection (partial overlap)."<<endl;
+	cout<<"\tIt draws the 'filled versions' for 2 quadrilaterals of different size and with a not empty intersection (partial overlap) in an OpenGL window."<<endl;
 	cout<<"\tIn particular, the 'small' quadrilateral may be completely covered by the 'large' quadrilateral, depending on their rendering order. This latter corresponds to their color, which is defined as follows:"<<endl<<endl;
 	cout<<"\t\t-) the quadrilateral in 'red' is rendered before in the scene;"<<endl;
 	cout<<"\t\t-) the quadrilateral in 'blue' is rendered after in the scene."<<endl<<endl;
 	cout<<"\tThe rendering order of these quadrilaterals corresponds to the following 'viewing configurations', that can be activated upon request by the user:"<<endl<<endl;
 	cout<<"\t\t-) the 'large' quadrilateral (in 'red') is rendered before, and the 'small' quadrilateral (in 'blue') is rendered after in the 'viewing configuration #0'. In this case, both the quadrilaterals are visible."<<endl;
-	cout<<"\t\t   The 'viewing configuration #0' is activated by pressing the '0' key."<<endl<<endl;
+	cout<<"\t\t   The 'viewing configuration #0' is activated upon request by pressing the '0' key."<<endl<<endl;
 	cout<<"\t\t-) The 'small' quadrilateral (in 'red') is rendered before, and the 'large' quadrilateral (in 'blue') is rendered after in the 'viewing configuration #1'. In this case, only the 'large' quadrilateral is visible."<<endl;
-	cout<<"\t\t   The 'viewing configuration #1' is activated by pressing the '1' key."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout<<"\t\t   The 'viewing configuration #1' is activated upon request by pressing the '1' key."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
@@ -156,7 +156,7 @@ void initialize()
 	choice=0;
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	eol=false;
-	cout<<"\tThe 'viewing configuration #"<<choice<<"' is initially applied to the scene."<<endl<<endl;
+	cout<<"\tAt the beginning, the 'viewing configuration #"<<choice<<"' is applied to the scene."<<endl<<endl;
 	cout.flush();
 }
 
