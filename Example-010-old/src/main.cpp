@@ -61,15 +61,15 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-010' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws several graphic primitives, starting from a cloud of several 3D points."<<endl;
-	cout<<"\tThe user can choose what graphic primitive must be exploited, as follows:"<<endl<<endl;
-	cout << "\t-) the 'GL_POINTS' primitive is chosen by pressing the '0' key for drawing several independent 3D points;" << endl;
-	cout << "\t-) the 'GL_LINES' primitive is chosen by pressing the '1' key for drawing several independent lines;" << endl;
-	cout << "\t-) the 'GL_LINE_STRIP' primitive is chosen by pressing the '2' key for drawing an open line strip;" << endl;
-	cout << "\t-) the 'GL_LINE_LOOP' primitive is chosen by pressing the '3' key for drawing a closed line loop;" << endl;
-	cout << "\t-) the 'GL_TRIANGLES' primitive is chosen by pressing the '4' key for drawing several independent triangles;" << endl;
-	cout << "\t-) the 'GL_POLYGON' primitive is chosen by pressing the '5' key for drawing only one polygon."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout<<"\tIt draws several graphic primitives in an OpenGL window, starting from a cloud of several 3D points."<<endl;
+	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which can choose what graphic primitive must be exploited, as follows::"<<endl<<endl;
+	cout << "\t\t0. the 'GL_POINTS' primitive is chosen by pressing the '0' key for drawing several independent 3D points;" << endl;
+	cout << "\t\t1. the 'GL_LINES' primitive is chosen by pressing the '1' key for drawing several independent lines;" << endl;
+	cout << "\t\t2. the 'GL_LINE_STRIP' primitive is chosen by pressing the '2' key for drawing an open line strip;" << endl;
+	cout << "\t\t3. the 'GL_LINE_LOOP' primitive is chosen by pressing the '3' key for drawing a closed line loop;" << endl;
+	cout << "\t\t4. the 'GL_TRIANGLES' primitive is chosen by pressing the '4' key for drawing several independent triangles;" << endl;
+	cout << "\t\t5. the 'GL_POLYGON' primitive is chosen by pressing the '5' key for drawing only one polygon."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
@@ -126,7 +126,7 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0); 
 	rendering=GL_POINTS;
 	eol=false;
-	cout<<"\tThe 'GL_POINTS' primitive is initially used for drawing several independents 3D points in the scene."<<endl<<endl;
+	cout<<"\tAt the beginning, the 'GL_POINTS' primitive is used for drawing several independents 3D points in the scene."<<endl<<endl;
 	cout.flush();
 }
 

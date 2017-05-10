@@ -69,14 +69,15 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-014' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws all triangles of a triangle strip (in 'turquoise gray'), approximating a custom shape, by using the following rendering settings, that can be chosen and activated by the user, as follows:"<<endl<<endl;
-	cout<<"\t-) only the 'front' sides of all triangles in the custom triangle strip are rendered by pressing the 'f' or the 'F' key. The corresponding rendering type is chosen by the user separately."<<endl;
-	cout<<"\t-) Only the 'back' sides of all triangles in the custom triangle strip are rendered by pressing the 'b' or the 'B' key. The corresponding rendering type is chosen by the user separately."<<endl;
-	cout<<"\t-) Both the 'front' and the 'back' sides of all triangles in the custom triangle strip are rendered by pressing the 't' or the 'T' key. The corresponding rendering type is chosen by the user separately."<<endl;
-	cout<<"\t-) Only the vertices for the sides of all triangles in the custom triangle strip to be drawn are rendered by pressing the 'p' or the 'P' key. The user can choose separately what sides of all triangles must be drawn."<<endl;
-	cout<<"\t-) The 'wireframe versions' for the sides of all triangles in the custom triangle strip to be drawn are rendered by pressing the 'l' or the 'L' key. The user can choose separately what sides of all triangles must be drawn."<<endl;
-	cout<<"\t-) The 'filled versions' for the sides of all triangles in the custom triangle strip to be drawn are rendered by pressing the 'i' or the 'I' key. The user can choose separately what sides of all triangles must be drawn."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout<<"\tIt draws all triangles in a triangle strip (in 'turquoise gray'), approximating a custom shape, in an OpenGL window. It is not possible to modify the size and the position for the vertices of the custom shape. Instead, the"<<endl;
+	cout<<"\tsettings for rendering all triangles in the triangle strip of interest can be modified interactively by the user as follows:"<<endl<<endl;
+	cout<<"\t\t-) only the 'front' sides of all triangles in the custom triangle strip are rendered by pressing the 'f' or the 'F' key. The corresponding rendering type is chosen by the user separately."<<endl;
+	cout<<"\t\t-) Only the 'back' sides of all triangles in the custom triangle strip are rendered by pressing the 'b' or the 'B' key. The corresponding rendering type is chosen by the user separately."<<endl;
+	cout<<"\t\t-) Both the 'front' and the 'back' sides of all triangles in the custom triangle strip are rendered by pressing the 't' or the 'T' key. The corresponding rendering type is chosen by the user separately."<<endl;
+	cout<<"\t\t-) Only the vertices for the sides of all triangles in the custom triangle strip to be drawn are rendered by pressing the 'p' or the 'P' key. The user can choose separately what sides of all triangles must be drawn."<<endl;
+	cout<<"\t\t-) The 'wireframe versions' for the sides of all triangles in the custom triangle strip to be drawn are rendered by pressing the 'l' or the 'L' key. The user can choose separately what sides of all triangles must be drawn."<<endl;
+	cout<<"\t\t-) The 'filled versions' for the sides of all triangles in the custom triangle strip to be drawn are rendered by pressing the 'i' or the 'I' key. The user can choose separately what sides of all triangles must be drawn."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
@@ -246,7 +247,6 @@ void draw()
 	glLineWidth(2.0);
 	glColor3f(0.6,0.7,0.7);
 	glPolygonMode(face,mode);
-	glPolygonMode(face,mode);
 	glBegin(GL_TRIANGLE_STRIP);
 	glVertex3f(20.0, 80.0, 0.0);
    	glVertex3f(20.0, 100.0, 0.0);
@@ -261,7 +261,6 @@ void draw()
    	glVertex3f(120.0, 80.0, 0.0);
     glVertex3f(120.0, 100.0, 0.0);
 	glEnd();
-	glFlush();
 	glFlush();
 	if(face==GL_FRONT)
 	{

@@ -69,15 +69,15 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-015' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws all triangles in a triangle fan, approximating a custom shape. The reference vertex of the triangle fan is depicted in 'red', while all triangles are depicted in 'turquoise gray'."<<endl;
-	cout<<"\tThe settings for rendering all triangles in the triangle fan of interest can be modified interactively by the user as follows:"<<endl<<endl;
-	cout<<"\t-) only the 'front' sides of all triangles in the custom triangle fan are rendered by pressing the 'f' or the 'F' key. The corresponding rendering type is chosen by the user separately."<<endl;
-	cout<<"\t-) Only the 'back' sides of all triangles in the custom triangle fan are rendered by pressing the 'b' or the 'B' key. The corresponding rendering type is chosen by the user separately."<<endl;
-	cout<<"\t-) Both the 'front' and the 'back' sides of all triangles in the custom triangle fan are rendered by pressing the 't' or the 'T' key. The corresponding rendering type is chosen by the user separately."<<endl;
-	cout<<"\t-) Only the vertices for the sides of all triangles in the custom triangle fan to be drawn are rendered by pressing the 'p' or the 'P' key. The user can choose separately what sides of all triangles must be drawn."<<endl;
-	cout<<"\t-) The 'wireframe versions' for the sides of all triangles in the custom triangle fan to be drawn are rendered by pressing the 'l' or the 'L' key. The user can choose separately what sides of all triangles must be drawn."<<endl;
-	cout<<"\t-) The 'filled versions' for the sides of all triangles in the custom triangle fan to be drawn are rendered by pressing the 'i' or the 'I' key. The user can choose separately what sides of all triangles must be drawn."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout<<"\tIt draws all triangles in a triangle fan, approximating a custom shape, in an OpenGL window. The reference vertex of the triangle fan is depicted in 'red', while all triangles are depicted in 'turquoise gray'. It is not"<<endl;
+	cout<<"\tpossible to modify the size and the position for the vertices of the custom shape. Instead, the settings for rendering all triangles in the triangle fan of interest can be modified interactively by the user as follows:"<<endl<<endl;
+	cout<<"\t\t-) only the 'front' sides of all triangles in the custom triangle fan are rendered by pressing the 'f' or the 'F' key. The corresponding rendering type is chosen by the user separately."<<endl;
+	cout<<"\t\t-) Only the 'back' sides of all triangles in the custom triangle fan are rendered by pressing the 'b' or the 'B' key. The corresponding rendering type is chosen by the user separately."<<endl;
+	cout<<"\t\t-) Both the 'front' and the 'back' sides of all triangles in the custom triangle fan are rendered by pressing the 't' or the 'T' key. The corresponding rendering type is chosen by the user separately."<<endl;
+	cout<<"\t\t-) Only the vertices for the sides of all triangles in the custom triangle fan to be drawn are rendered by pressing the 'p' or the 'P' key. The user can choose separately what sides of all triangles must be drawn."<<endl;
+	cout<<"\t\t-) The 'wireframe versions' for the sides of all triangles in the custom triangle fan to be drawn are rendered by pressing the 'l' or the 'L' key. The user can choose separately what sides of all triangles must be drawn."<<endl;
+	cout<<"\t\t-) The 'filled versions' for the sides of all triangles in the custom triangle fan to be drawn are rendered by pressing the 'i' or the 'I' key. The user can choose separately what sides of all triangles must be drawn."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
@@ -247,7 +247,6 @@ void draw()
 	glLineWidth(2.0);
 	glColor3f(0.6,0.7,0.7);
 	glPolygonMode(face,mode);
-	glPolygonMode(face,mode);
 	glBegin(GL_TRIANGLE_FAN);
 	glColor3f(1.0,0.0,0.0);
 	glVertex3f(10.0, 10.0, 0.0);
@@ -257,7 +256,6 @@ void draw()
 	glVertex3f(100.0, 50.0, 0.0);
 	glVertex3f(110.0, 30.0, 0.0);
 	glEnd();
-	glFlush();
 	glFlush();
 	if(face==GL_FRONT)
 	{

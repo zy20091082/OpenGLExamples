@@ -69,14 +69,15 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-011' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a custom polygon (in 'red') by using the following rendering settings, that can be chosen and activated by the user, as follows:"<<endl<<endl;
-	cout<<"\t-) only the 'front' side of the custom polygon is rendered by pressing the 'f' or the 'F' key. The corresponding rendering type is chosen by the user separately."<<endl;
-	cout<<"\t-) Only the 'back' side of the custom polygon is rendered by pressing the 'b' or the 'B' key. The corresponding rendering type is chosen by the user separately."<<endl;
-	cout<<"\t-) Both the 'front' and the 'back' sides of the custom polygon are rendered by pressing the 't' or the 'T' key. The corresponding rendering type is chosen by the user separately."<<endl;
-	cout<<"\t-) Only the vertices for the sides of the custom polygon to be drawn are rendered by pressing the 'p' or the 'P' key. The user can choose separately what sides of the custom polygon must be drawn."<<endl;
-	cout<<"\t-) The 'wireframe versions' for the sides of the custom polygon to be drawn are rendered by pressing the 'l' or the 'L' key. The user can choose separately what sides of the custom polygon must be drawn."<<endl;
-	cout<<"\t-) The 'filled versions' for the sides of the custom polygon to be drawn are rendered by pressing the 'i' or the 'I' key. The user can choose separately what sides of the custom polygon must be drawn."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout<<"\tIt draws a custom polygon (in 'red') in an OpenGL window. It is not possible to modify the size and the position for its vertices. Instead, the settings for rendering the custom polygon of interest"<<endl;
+	cout<<"\tcan be modified interactively by the user as follows:"<<endl<<endl;
+	cout<<"\t\t-) only the 'front' side of the custom polygon is rendered by pressing the 'f' or the 'F' key. The corresponding rendering type is chosen by the user separately."<<endl;
+	cout<<"\t\t-) Only the 'back' side of the custom polygon is rendered by pressing the 'b' or the 'B' key. The corresponding rendering type is chosen by the user separately."<<endl;
+	cout<<"\t\t-) Both the 'front' and the 'back' sides of the custom polygon are rendered by pressing the 't' or the 'T' key. The corresponding rendering type is chosen by the user separately."<<endl;
+	cout<<"\t\t-) Only the vertices for the sides of the custom polygon to be drawn are rendered by pressing the 'p' or the 'P' key. The user can choose separately what sides of the custom polygon must be drawn."<<endl;
+	cout<<"\t\t-) The 'wireframe versions' for the sides of the custom polygon to be drawn are rendered by pressing the 'l' or the 'L' key. The user can choose separately what sides of the custom polygon must be drawn."<<endl;
+	cout<<"\t\t-) The 'filled versions' for the sides of the custom polygon to be drawn are rendered by pressing the 'i' or the 'I' key. The user can choose separately what sides of the custom polygon must be drawn."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
@@ -246,7 +247,6 @@ void draw()
 	glLineWidth(2.0);
 	glColor3f(1,0,0);
 	glPolygonMode(face,mode);
-	glPolygonMode(face,mode);
 	glBegin(GL_POLYGON);
 	glVertex3f(20,80,0);
 	glVertex3f(20,50,0);
@@ -257,7 +257,6 @@ void draw()
 	glVertex3f(80,100,0);
 	glVertex3f(50,100,0);
 	glEnd();
-	glFlush();
 	glFlush();
 	if(face==GL_FRONT)
 	{

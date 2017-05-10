@@ -69,15 +69,17 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-013' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws all triangles in a triangle strip (in 'turquoise gray'), approximating the 'Square Annulus' shape. Recall that any 'Square Annulus' shape is contained between 2 concentric axis-parallel rectangles of different size."<<endl;
-	cout<<"\tThe settings for rendering all triangles in the triangle strip of interest can be modified interactively by the user as follows:"<<endl<<endl;
-	cout<<"\t-) only the 'front' sides of all triangles in the triangle strip of interest are rendered by pressing the 'f' or the 'F' key. The corresponding rendering type is chosen by the user separately."<<endl;
-	cout<<"\t-) Only the 'back' sides of all triangles in the triangle strip of interest are rendered by pressing the 'b' or the 'B' key. The corresponding rendering type is chosen by the user separately."<<endl;
-	cout<<"\t-) Both the 'front' and the 'back' sides of all triangles in the triangle strip of interest are rendered by pressing the 't' or the 'T' key. The corresponding rendering type is chosen by the user separately."<<endl;
-	cout<<"\t-) Only the vertices for the sides of all triangles in the triangle strip to be drawn are rendered by pressing the 'p' or the 'P' key. The user can choose separately what sides of all triangles must be drawn."<<endl;
-	cout<<"\t-) The 'wireframe versions' for the sides of all triangles in the triangle strip to be drawn are rendered by pressing the 'l' or the 'L' key. The user can choose separately what sides of all triangles must be drawn."<<endl;
-	cout<<"\t-) The 'filled versions' for the sides of all triangles in the triangle strip to be drawn are rendered by pressing the 'i' or the 'I' key. The user can choose separately what sides of all triangles must be drawn."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout<<"\tIt draws several versions of the 'Square Annulus' shape, in an OpenGL window. This shape is bounded by 2 (concentric) axis-parallel rectangles of different size in the same spirit of a circular crown. It is often known as"<<endl;
+	cout<<"\tthe 'rectangular' crown. Its large rectangle is called the 'external' rectangle, and other rectangle is called the 'internal' rectangle."<<endl<<endl;
+	cout<<"\tHere, the 'Square Annulus' shape of interest is approximated by an unique triangle strip (in 'turquoise gray') without adding any 'Steiner' point. It is not possible to modify the size and the position for the 'external'"<<endl;
+	cout<<"\tand the 'internal' rectangles of the 'Square Annulus' shape. Instead, the settings for rendering all triangles in the triangle strip of interest can be modified interactively by the user as follows:"<<endl<<endl;
+	cout<<"\t\t-) only the 'front' sides of all triangles in the triangle strip of interest are rendered by pressing the 'f' or the 'F' key. The corresponding rendering type is chosen by the user separately."<<endl;
+	cout<<"\t\t-) Only the 'back' sides of all triangles in the triangle strip of interest are rendered by pressing the 'b' or the 'B' key. The corresponding rendering type is chosen by the user separately."<<endl;
+	cout<<"\t\t-) Both the 'front' and the 'back' sides of all triangles in the triangle strip of interest are rendered by pressing the 't' or the 'T' key. The corresponding rendering type is chosen by the user separately."<<endl;
+	cout<<"\t\t-) Only the vertices for the sides of all triangles in the triangle strip to be drawn are rendered by pressing the 'p' or the 'P' key. The user can choose separately what sides of all triangles must be drawn."<<endl;
+	cout<<"\t\t-) The 'wireframe versions' for the sides of all triangles in the triangle strip to be drawn are rendered by pressing the 'l' or the 'L' key. The user can choose separately what sides of all triangles must be drawn."<<endl;
+	cout<<"\t\t-) The 'filled versions' for the sides of all triangles in the triangle strip to be drawn are rendered by pressing the 'i' or the 'I' key. The user can choose separately what sides of all triangles must be drawn."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
@@ -247,7 +249,6 @@ void draw()
 	glLineWidth(2.0);
 	glColor3f(0.6,0.7,0.7);
 	glPolygonMode(face,mode);
-	glPolygonMode(face,mode);
 	glBegin(GL_TRIANGLE_STRIP);
 	glVertex3f(20.0, 100.0, 0.0);
    	glVertex3f(40.0, 80.0, 0.0);
@@ -260,7 +261,6 @@ void draw()
    	glVertex3f(20.0, 100.0, 0.0);
    	glVertex3f(40.0, 80.0, 0.0);
 	glEnd();
-	glFlush();
 	glFlush();
 	if(face==GL_FRONT)
 	{

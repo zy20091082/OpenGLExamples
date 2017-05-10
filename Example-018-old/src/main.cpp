@@ -71,9 +71,9 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-018' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the 'filled' and the 'wireframe versions' of several convex (in 'red') and concave (in 'blue') polygons, and allows the user to cycle the vertices order in the polygons of interest by pressing the '+' key."<<endl;
-	cout<<"\tWhile performing these operations, there may be 'strange' situations, expecially when cycling the vertices in the 'filled versions' of the concave polygons (in 'blue')."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout<<"\tIt draws the 'filled' and the 'wireframe versions' of several convex (in 'red') and concave (in 'blue') polygons in an OpenGL window. This test also provides a very basic interaction mechanism with the user, which can cycle the"<<endl;
+	cout<<"\tvertices order in the polygons of interest by pressing the '+' key. While performing these operations, there may be 'strange' situations, expecially when cycling the vertices in the 'filled versions' of the concave polygons."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);

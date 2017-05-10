@@ -69,15 +69,18 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-016' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws all triangles in 2 triangle fans, approximating the 'Square Annulus' shape'. The reference vertices of the triangle fans are depicted, respectively, in 'red' and in 'blue', while their triangles are depicted in 'turquoise gray'."<<endl;
-	cout<<"\tThe settings for rendering all triangles in the triangle fans of interest can be modified interactively by the user as follows:"<<endl<<endl;
-	cout<<"\t-) only the 'front' sides of all triangles in the triangle fans of interest are rendered by pressing the 'f' or the 'F' key. The corresponding rendering type is chosen by the user separately."<<endl;
-	cout<<"\t-) Only the 'back' sides of all triangles in the triangle fans of interest are rendered by pressing the 'b' or the 'B' key. The corresponding rendering type is chosen by the user separately."<<endl;
-	cout<<"\t-) Both the 'front' and the 'back' sides of all triangles in the triangle fans of interest are rendered by pressing the 't' or the 'T' key. The corresponding rendering type is chosen by the user separately."<<endl;
-	cout<<"\t-) Only the vertices for the sides of all triangles in the triangle fans to be drawn are rendered by pressing the 'p' or the 'P' key. The user can choose separately what sides of all triangles must be drawn."<<endl;
-	cout<<"\t-) The 'wireframe versions' for the sides of all triangles in the triangle fans to be drawn are rendered by pressing the 'l' or the 'L' key. The user can choose separately what sides of all triangles must be drawn."<<endl;
-	cout<<"\t-) The 'filled versions' for the sides of all triangles in the triangle fans to be drawn are rendered by pressing the 'i' or the 'I' key. The user can choose separately what sides of all triangles must be drawn."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout<<"\tIt draws several versions of the 'Square Annulus' shape, in an OpenGL window. This shape is bounded by 2 (concentric) axis-parallel rectangles of different size in the same spirit of a circular crown. It is often known as the"<<endl;
+	cout<<"\t'rectangular' crown. Its large rectangle is called the 'external' rectangle, and other rectangle is called the 'internal' rectangle."<<endl<<endl;
+	cout<<"\tHere, the 'Square Annulus' shape of interest is approximated by 2 triangles fans (in 'turquoise gray') without adding any 'Steiner' point. The reference vertices of the triangle fans are depicted, respectively, in 'red' (indicated"<<endl;
+	cout<<"\tas the 'Triangle Fan #0') and in 'blue' (indicated as the 'Triangle Fan #1'), while their triangles are depicted in 'turquoise gray'. It is not possible to modify the size and the position for the 'external' and the 'internal'"<<endl;
+	cout<<"\trectangles of the 'Square Annulus' shape. Instead, the settings for rendering all triangles in the triangle fans of interest can be modified interactively by the user as follows:"<<endl<<endl;
+	cout<<"\t\t-) only the 'front' sides of all triangles in the triangle fans of interest are rendered by pressing the 'f' or the 'F' key. The corresponding rendering type is chosen by the user separately."<<endl;
+	cout<<"\t\t-) Only the 'back' sides of all triangles in the triangle fans of interest are rendered by pressing the 'b' or the 'B' key. The corresponding rendering type is chosen by the user separately."<<endl;
+	cout<<"\t\t-) Both the 'front' and the 'back' sides of all triangles in the triangle fans of interest are rendered by pressing the 't' or the 'T' key. The corresponding rendering type is chosen by the user separately."<<endl;
+	cout<<"\t\t-) Only the vertices for the sides of all triangles in the triangle fans to be drawn are rendered by pressing the 'p' or the 'P' key. The user can choose separately what sides of all triangles must be drawn."<<endl;
+	cout<<"\t\t-) The 'wireframe versions' for the sides of all triangles in the triangle fans to be drawn are rendered by pressing the 'l' or the 'L' key. The user can choose separately what sides of all triangles must be drawn."<<endl;
+	cout<<"\t\t-) The 'filled versions' for the sides of all triangles in the triangle fans to be drawn are rendered by pressing the 'i' or the 'I' key. The user can choose separately what sides of all triangles must be drawn."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
@@ -246,7 +249,6 @@ void draw()
 	glPointSize(10.0);
 	glLineWidth(2.0);
 	glPolygonMode(face,mode);
-	glPolygonMode(face,mode);
 	glBegin(GL_TRIANGLE_FAN);
 	glColor3f(1.0,0.0,0.0);
 	glVertex3f(40.0, 40.0, 0.0);
@@ -267,7 +269,6 @@ void draw()
 	glVertex3f(120.0, 20.0, 0.0);
 	glVertex3f(100.0, 40.0, 0.0);
 	glEnd();
-	glFlush();
 	glFlush();
 	if(face==GL_FRONT)
 	{

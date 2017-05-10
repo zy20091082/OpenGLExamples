@@ -45,8 +45,8 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-017' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws 6 rectangles, defined through the 'glRectf()' function, by using several rendering settings."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout<<"\tIt draws 6 rectangles, defined through the 'glRectf()' function, by using several rendering settings in an OpenGL window, and provides a basic interaction mechanism with the user."<<endl<<endl;
+	cout<<"\tHere, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
