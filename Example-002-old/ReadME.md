@@ -3,7 +3,7 @@ height="97"></A>
 
 <H3>The <i>'Example-002 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-002 (Old Mode)'</i> Test is similar to the classic <i>'Hello World'</i> program for testing the correctness of the building infrastructure. Broadly speaking, it draws the <i>'filled version'</i> of a quadrilateral (in <i>'red'</i>) in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window, and provides a very basic interaction mechanism with the user. In fact, this window can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
+The <i>'Example-002 (Old Mode)'</i> Test is similar to the classic <i>'Hello World'</i> program for testing the correctness of the building infrastructure. Broadly speaking, it draws the <i>'filled version'</i> of a quadrilateral (in <i>'red'</i>) in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window, and provides a very basic interaction mechanism with the user.<p>In fact, this window can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
 
 <IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example002_old.png' border='1'><hr><p>
 
