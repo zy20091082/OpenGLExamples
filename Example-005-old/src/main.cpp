@@ -54,7 +54,7 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-005' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the 'filled version' of a polygon (in 'red'), and provides a basic interaction mechanism with the user."<<endl;
+	cout<<"\tIt draws the 'filled version' of a polygon (in 'red') in an OpenGL window, and provides a basic interaction mechanism with the user."<<endl;
 	cout<<"\tThe polygon of interest is the intersection of the following elements:"<<endl<<endl;
 	cout<<"\t\t-) the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]';"<<endl;
 	cout<<"\t\t-) the triangle with vertices '(x,20,0)' - '(80,20,0)' - '(80,80,0)', for any 'x' coordinate along the x-axis."<<endl<<endl;
