@@ -81,16 +81,17 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-022' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws 3 approximations of the 'Circle' shape with radius 'R' and center '(xc,yc)'. The approximations of interest are activated upon request, and are formed by an arbitrary number 'n' of the samples."<<endl;
+	cout<<"\tIt draws 3 approximations of the 'Circle' shape with radius 'R' and center '(xc,yc)' in an OpenGL window. The approximations of interest are activated upon request, and are formed by an arbitrary number 'n' of the samples."<<endl;
 	cout<<"\tThe 'Circle' shape is defined as follows:"<<endl<<endl;
 	cout<<"\t| x(t) - xc | <= R * cos(t), | y(t) - yc | <= R * sin(t)"<<endl<<endl<<"\tfor any 'R'>0, and for every 't' in '[-pi,pi]'."<<endl<<endl;
-	cout<<"\tThe radius 'R' and the center coodinates '(xc,yc)' are specified by the user interactively, which can also:"<<endl<<endl;
-	cout<<"\t\t-) approximate the boundary (in 'red') of the 'Circle' shape through a polyline with 'n' vertices and edges [ 'Approximation #0' ] by pressing the 'l' key."<<endl;
-	cout<<"\t\t-) Approximate the 'Circle' shape through the 'filled versions' of 'n' triangles in a triangle fan [ 'Approximation #1' ] by pressing the 'f' key. All triangles (in 'dark gray') are incident at the center '(xc,yc)' (in 'red')."<<endl;
-	cout<<"\t\t-) Approximate the 'Circle' shape through the 'filled version' of only one polygon (in 'red') with 'n' vertices and edges [ 'Approximation #2' ] by pressing the 'p' key."<<endl;
-	cout<<"\t\t-) Increase the number 'n' of the samples for the approximation of interest by pressing the '+' key."<<endl;
-	cout<<"\t\t-) Decrease the number 'n' of the samples for the approximation of interest by pressing the '-' key."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide the radius 'R' and the center '(xc,yc)'. The user can:"<<endl<<endl;
+	cout<<"\t\t-) approximate the boundary (in 'red') of the 'Circle' shape through a polyline with an arbitrary number 'n' of the vertices and the edges [ 'Approximation #0' ] by pressing the 'l' key."<<endl<<endl;
+	cout<<"\t\t-) Approximate the 'Circle' shape through the 'filled versions' of 'n' triangles in a triangle fan [ 'Approximation #1' ] by pressing the 'f' key. All triangles (in 'dark gray') are incident at the center '(xc,yc)'"<<endl;
+	cout<<"\t\t   (in 'red')."<<endl<<endl;
+	cout<<"\t\t-) Approximate the 'Circle' shape through the 'filled version' of only one polygon (in 'red') with 'n' vertices and edges [ 'Approximation #2' ] by pressing the 'p' key."<<endl<<endl;
+	cout<<"\t\t-) Increase the number 'n' of the samples in the approximation of interest by pressing the '+' key."<<endl<<endl;
+	cout<<"\t\t-) Decrease the number 'n' of the samples in the approximation of interest by pressing the '-' key."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	cout<<"\tPlease, insert the radius 'R' (thus, a positive and not null floating-point value) for the 'Circle' shape of interest: ";
 	cin>>radius;
@@ -147,7 +148,7 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=3;
 	choice='l';
-	cout<<endl<<"\tAt the beginning, the boundary of the 'Circle' shape with center '("<<xc<<","<<yc<<")' and radius '"<<radius<<"', is approximated by a polyline, formed by 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" edges (thus by the ";
+	cout<<endl<<"\tAt the beginning, the boundary of the 'Circle' shape with center '("<<xc<<","<<yc<<")' and radius '"<<radius<<"' is approximated by a polyline, formed by 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" edges (thus by the ";
 	cout<<"minimum number 'n' as possible of the vertices and the edges) [ 'Approximation #0' ]."<<endl<<endl;
 	cout.flush();
 }
