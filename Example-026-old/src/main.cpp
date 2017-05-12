@@ -78,13 +78,14 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-026' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of the vertices and the edges, which approximates the 'Ellipse-like' curve with semi-axis 'Rx' and 'Ry' (respectively along the x- and the y-axis), as well as center '(xc,yc)'."<<endl;
-	cout<<"\tIn particular, any 'Ellipse-like' curve is defined in the same spirit of the 'Ellipse' curve, but it requires an exponent 'k' for computing the cosine and the sine functions to the 'k'-th. This curve is defined as follows:"<<endl<<endl;
+	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of the vertices and the edges, in an OpenGL window. The polyline of interest approximates the 'Ellipse-like' curve with semi-axis 'Rx' and 'Ry'"<<endl;
+	cout<<"\t(respectively along the x- and the y-axis), as well as center '(xc,yc)'. In particular, any 'Ellipse-like' curve is defined in the same spirit of the 'Ellipse' curve, but it requires an exponent 'k' for computing"<<endl;
+	cout<<"\tthe cosine and the sine functions to the 'k'-th. The 'Ellipse-like' curve is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = xc + Rx * cos ^ k (t), y(t) = yc + Ry * sin ^ k (t)"<<endl<<endl<<"\tfor any 'Rx'>0, 'Ry'>0, 'k'>0, and for every 't' in '[-pi,pi]'."<<endl<<endl;
-	cout<<"\tThe semi-axis 'Rx' and 'Ry' as well as the center coodinates '(xc,yc)' and the exponent 'k' are specified by the user interactively, which can also:"<<endl<<endl;
-	cout<<"\t\t-) increase the number 'n' of the vertices and the edges for the polyline of interest by pressing the '+' key;"<<endl;
-	cout<<"\t\t-) decrease the number 'n' of the vertices and the edges for the polyline of interest by pressing the '-' key."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide the semi-axis 'Rx' and 'Ry', as well as the center coordinates '(xc,yc)' and the exponent 'k'. The user can also:"<<endl<<endl;
+	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the polyline of interest by pressing the '+' key;"<<endl;
+	cout<<"\t\t-) decrease the number 'n' of the vertices and the edges in the polyline of interest by pressing the '-' key."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout<<"\tPlease, insert the semi-axis 'Rx' (thus, a positive and not null floating-point value) for the 'Ellipse-like' curve of interest: ";
 	cin>>Rx;
 	if( (!cin) || (Rx<=0) )
@@ -162,7 +163,7 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=3;
 	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Ellipse-like' curve of center '("<<xc<<","<<yc<<")', exponent 'k'="<<k<<", semi-axis 'Rx'="<<Rx<<", and semi-axis 'Ry'="<<Ry<<", is formed by 'n'="<<num_samples<<" vertices and edges (thus by";
-	cout<<" the minimum number 'n' as possible of the vertices and the edges)."<<endl<<endl;
+	cout<<" the minimum number 'n'"<<endl<<"\tas possible of the vertices and the edges)."<<endl<<endl;
 	cout.flush();
 }
 

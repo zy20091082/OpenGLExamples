@@ -65,12 +65,13 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-029' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polyline (in 'blue'), formed by an arbitrary number 'n' of the vertices and the edges, which approximates the 'Lissajous-like' curve with parameters 'Rx', 'Ry', 'Kx', and 'Ky'. The 'Lissajous-like' curve is defined as follows:"<<endl<<endl;
+	cout<<"\tIt draws a polyline (in 'blue'), formed by an arbitrary number 'n' of the vertices and the edges, in an OpenGL window. The polyline of interest approximates the 'Lissajous-like' curve, which is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = Rx * cos( Kx * t ), y(t) = Ry * sin( Ky * t )"<<endl<<endl;
-	cout<<"\tfor every 't' in '[0,2*pi]', and for any 'Kx'>0, 'Ky'>0, 'Rx'>0, 'Ry'>0. For the sake of the simplicity, the parameters 'Rx', 'Ry', 'Kx', and 'Ky' are positive and not null 'integer' values, and are provided ";
-	cout<<"interactively by the user, which can also:"<<endl<<endl<<"\t\t-) increase the number 'n' of the vertices and the edges for the polyline of interest by pressing the '+' key;"<<endl;
-	cout<<"\t\t-) decrease the number 'n' of the vertices and the edges for the polyline of interest by pressing the '-' key."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout<<"\tfor every 't' in '[0,2*pi]', and for any 'Kx'>0, 'Ky'>0, 'Rx'>0, and 'Ry'>0. For the sake of the simplicity, the parameters 'Rx', 'Ry', 'Kx', and 'Ky' are positive and not null 'integer' values."<<endl<<endl;
+	cout<<"\tThis test also provides a very basic interaction mechanism with the user. In fact, this latter must provide the parameters 'Rx', 'Ry', 'Kx', and 'Ky', and can also:"<<endl<<endl;
+	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the polyline of interest by pressing the '+' key;"<<endl;
+	cout<<"\t\t-) decrease the number 'n' of the vertices and the edges in the polyline of interest by pressing the '-' key."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout<<"\tPlease, insert the coefficient 'Kx' (thus, a positive and not null 'integer' value) for the 'Lissajous-like' curve of interest: ";
 	cin>>Kx;
 	if( (!cin) || (Kx<=0) )
@@ -147,7 +148,7 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=7;
 	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Lissajous-like' curve with the coefficients 'Rx'="<<Rx<<", 'Ry'="<<Ry<<", 'Kx'="<<Kx<<", and 'Ky'="<<Ky<<", is formed by 'n'="<<num_samples<<" vertices and edges (thus by the minimum number 'n'";
-	cout<<" as possible of the vertices and the edges)."<<endl<<endl;
+	cout<<" as possible of the"<<endl<<"\tvertices and the edges)."<<endl<<endl;
 	cout.flush();
 }
 

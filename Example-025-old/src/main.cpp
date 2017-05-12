@@ -90,15 +90,15 @@ int main(int argc,char **argv)
 
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-025' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of the vertices and the edges, which approximates a specific portion of the 'Parabola' curve with vertex '(xv,yv)'."<<endl;
-	cout<<"\tThe portion of interest for this curve is defined as follows:"<<endl<<endl;
+	cout<<"\tdraws a polyline (in 'red'), formed by an arbitrary number 'n' of the vertices and the edges, in an OpenGL window. The polyline of interest approximates a portion of the 'Parabola' curve with vertex '(xv,yv)'. The portion of"<<endl;
+	cout<<"\tinterest for the 'Parabola' curve is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = t, y(t) = a * t ^ 2 + b * t + c"<<endl<<endl<<"\tfor any not null 'a', and for every 't' in '[xv-R,xv+R]', with any 'R'>0."<<endl<<endl;
 	cout<<"\tThe parameters 'a', 'b', and 'c' determine the properties of the 'Parabola' curve. In particular, its vertex '(xv,yv)' is defined as follows:"<<endl<<endl;
 	cout<<"\txv = -b / (2 * a), yv = a * xv ^ 2 + b * xv + c"<<endl<<endl;
-	cout<<"\tThe coefficients '(a,b,c)', as well as the radius 'R' are specified by the user interactively, which can also:"<<endl<<endl;
-	cout<<"\t\t-) increase the number 'n' of the vertices and the edges for the polyline of interest by pressing the '+' key;"<<endl;
-	cout<<"\t\t-) decrease the number 'n' of the vertices and the edges for the polyline of interest by pressing the '-' key."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide the parameters 'a', 'b', and 'c', as well as the semi-length 'R' of the range '[xv-R,xv+R]'. The user can also:"<<endl<<endl;
+	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the polyline of interest by pressing the '+' key;"<<endl;
+	cout<<"\t\t-) decrease the number 'n' of the vertices and the edges in the polyline of interest by pressing the '-' key."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout<<"\tPlease, insert all coefficients '(a,b,c)' for the equation 'a * x ^ 2 + b * x + c = 0' (thus, 3 floating-point values, separated by spaces, such that 'a' is not null), describing the 'Parabola' curve of interest: ";
 	cin>>a>>b>>c;
 	if( (!cin) || (a==0) )

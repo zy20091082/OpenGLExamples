@@ -149,7 +149,8 @@ void initialize()
 	num_samples=3;
 	choice='l';
 	cout<<endl<<"\tAt the beginning, the boundary of the 'Circle' shape with center '("<<xc<<","<<yc<<")' and radius '"<<radius<<"' is approximated by a polyline, formed by 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" edges (thus by the ";
-	cout<<"minimum number 'n' as possible of the vertices and the edges) [ 'Approximation #0' ]."<<endl<<endl;
+	cout<<"minimum number 'n' as possible of the vertices"<<endl;
+	cout<<"\tand the edges) [ 'Approximation #0' ]."<<endl<<endl;
 	cout.flush();
 }
 

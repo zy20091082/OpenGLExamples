@@ -81,18 +81,19 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-024' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws all quadrilaterals (in 'red') in a quadstrip (formed by an arbitrary number 'n' of the quadrilaterals), approximating the 'Circular Annulus' shape with internal radius 'rI', external radius 'rE', and center '(xc,yc)'."<<endl;
-	cout<<"\tNote that the 'Circular Annulus' shape is defined as follows:"<<endl<<endl;
+	cout<<"\tIt draws all quadrilaterals (in 'red') in a quadstrip, formed by an arbitrary number 'n' of the quadrilaterals, in an OpenGL window. The quadstrip of interest approximates the 'Circular Annulus' shape with 'internal' radius 'rI',"<<endl;
+	cout<<"\t'external' radius 'rE', and center '(xc,yc)'. The 'Circular Annulus' shape is defined as follows:"<<endl<<endl;
 	cout<<"\t| rI * cos(t) | <= | x(t) - xc | <= | rE * cos(t) |, | rI * sin(t) | <= | y(t) - yc | <= | rE * sin(t) |"<<endl<<endl;
 	cout<<"\tfor every 't' in '[-pi,pi]', and for any 'rI'>0 and 'rE>0', such that 'rI<rE'."<<endl<<endl;
-	cout<<"\tIn other words, it is formed by all points, belonging to the intersection of two concentric 'Circle' shapes of center '(xc,yc)' and of radius 'rI' and 'rE', respectively."<<endl<<endl;
-	cout<<"\tThe external radius 'rE' and the internal radius 'rI', as well as the center coodinates '(xc,yc)' of the 'Circular Annulus' shape, are specified interactively by the user, which can also:"<<endl<<endl;
+	cout<<"\tIn other words, it is formed by all points in the circular crown, bounded by 2 (concentric) 'Circle' shapes (disks) of the same center '(xc,yc)' and of radius 'rI' and 'rE', respectively. The disk of radius 'rE' is the 'external'"<<endl;
+	cout<<"\tdisk, and the disk of radius 'rI' is the 'internal' disk."<<endl<<endl;
+	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide the 'external' radius 'rE' and the 'internal' radius 'rI', as well as the center coodinates '(xc,yc)'. The user can also:"<<endl<<endl;
 	cout<<"\t\t-) render only the vertices for all quadrilaterals in the quadstrip of interest [ 'Configuration #0' ] by pressing the 'p' key;"<<endl;
-	cout<<"\t\t-) render the 'wireframe versions' for all quadrilaterals in the quadstrip of interest [ 'Configuration #1' ] by pressing the 'l' key;"<<endl;
-	cout<<"\t\t-) render the 'filled versions' for all quadrilaterals in the quadstrip of interest [ 'Configuration #2' ] by pressing the 'f' key;"<<endl;
+	cout<<"\t\t-) render only the 'wireframe versions' of all quadrilaterals in the quadstrip of interest [ 'Configuration #1' ] by pressing the 'l' key;"<<endl;
+	cout<<"\t\t-) render only the 'filled versions' of all quadrilaterals in the quadstrip of interest [ 'Configuration #2' ] by pressing the 'f' key;"<<endl;
 	cout<<"\t\t-) increase the number 'n' of all quadrilaterals in the quadstrip of interest by pressing the '+' key;"<<endl;
-	cout<<"\t\t-) decrease the number 'n' of all quadrilaterals in the quadstrip of interest by pressing the '-' key."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout<<"\t\t-) decrease the number 'n' of all quadrilaterals in the quastrip of interest by pressing the '-' key."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout<<"\tPlease, insert the internal radius 'rI' (thus, a positive and not null floating-point value) for the 'Circular Annulus' shape of interest: ";
 	cin>>rI;
 	if( (!cin) || (rI<=0) )
