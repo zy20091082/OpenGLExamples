@@ -66,11 +66,22 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a new window! */
 	cout<<endl<<"\tThis is the 'Example-032' Test, based on the (Old Mode) OpenGL."<<endl<<endl;
+	cout<<"\tIt draws an approximation of the 'Bullseye' shape in an OpenGL window. A generic 'Bullseye' shape is defined by several concentric 'Circle' shapes (disks) of different colors, same center '(xc,yc)', and radii of different"<<endl;
+	cout<<"\tlengths. Recall that the 'Circle' shape with radius 'R' and center '(xc,yc)' is defined as follows:"<<endl<<endl;
+	cout<<"\t| x(t) - xc | <= R * cos(t), | y(t) - yc | <= R * sin(t)"<<endl<<endl<<"\tfor any 'R'>0, and for every 't' in '[-pi,pi]'."<<endl<<endl;
+	cout<<"\tIn other words, any 'Bullseye' shape is the union of all circular crowns, bounded by the 'Circle' curves, that are the boundary for the pairs of the consecutive disks in the 'Bullseye' shape, if sorted with respect to the"<<endl;
+	cout<<"\tlengths of their radii. The 'Bullseye' shape often represents the targets in the shooting and the archery competitions."<<endl<<endl;
+	cout<<"\tHere, we restrict our attention to the approximation of the 'Bullseye' shape, formed by 5 concentric disks. However, the approximation of interest is not 'real', since it is the result of drawing the approximations of 5"<<endl;
+	cout<<"\t'Circle' shapes, placed at different z-depths. In this context, the scene is drawn by using the orthographic projection, such that the centers of the 'Circle' shapes are projected on the same point. Every 'Circle' shape"<<endl;
+	cout<<"\tof interest is approximated by a triangle fan of 'n' vertices (including the center), and is drawn by using the z-buffer (depth test) technique. Thus, the result will be a 'false' version of the 'Bullseye' shape, and will"<<endl;
+	cout<<"\tbe always the same, despite the rendering order of 5 'Circle' shapes."<<endl<<endl;
+	cout<<"\tHere, the user cannot modify the radius, the number, and the colors for the 'Circle' shapes of interest, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
+	cout<<"\t\t-) increase the number 'n' of all vertices in the triangle fans of interest by pressing the '+' key;"<<endl;
+	cout<<"\t\t-) decrease the number 'n' of all vertices in the triangle fans of interest by pressing the '-' key;"<<endl;
+	cout<<"\t\t-) choose to render the 'wireframe' or the 'filled versions' for all triangles in the triangle fans of interest by pressing cyclically the ' ' (space) key."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
-	
-	
-	
-	
+
 	/* If we arrive here, we can draw the approximation of the 'Bullseye' shape in the scene. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE|GLUT_DEPTH);

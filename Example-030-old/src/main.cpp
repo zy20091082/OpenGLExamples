@@ -77,24 +77,25 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a new window! */
 	cout<<endl<<"\tThis is the 'Example-030' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws 3 variants of the 'Circular Annulus' shape with internal radius 'rI', external radius 'rE', and center '(xc,yc)'. The 'Circular Annulus' shape is defined as follows:"<<endl<<endl;
+	cout<<"\tIt draws 3 variants of the 'Circular Annulus' shape with 'internal' radius 'rI', 'external' radius 'rE', and center '(xc,yc)' in an OpenGL window. The 'Circular Annulus' shape is defined as follows:"<<endl<<endl;
 	cout<<"\t| rI * cos(t) | <= | x(t) - xc | <= | rE * cos(t) |, | rI * sin(t) | <= | y(t) - yc | <= | rE * sin(t) |"<<endl<<endl;
 	cout<<"\tfor every 't' in '[-pi,pi]', and for any 'rI'>0 and 'rE>0', such that 'rI<rE'."<<endl<<endl;
-	cout<<"\tIn other words, it is formed by all points, belonging to the intersection of 2 concentric 'Circle' shapes (disks) of center '(xc,yc)' and of radius 'rI' and 'rE', respectively."<<endl<<endl;
+	cout<<"\tIn other words, it is formed by all points in the circular crown, bounded by 2 (concentric) 'Circle' shapes (disks) of the same center '(xc,yc)' and of radius 'rI' and 'rE', respectively. The disk of radius 'rE' is the"<<endl;
+	cout<<"\t'external' disk, and the disk of radius 'rI' is the 'internal' disk."<<endl<<endl;
 	cout<<"\tSpecifically, this test draws the following variants of the 'Circular Annulus' shape:"<<endl<<endl;
-	cout<<"\t\t0) the variant #0 is not 'real', since it is the result of drawing the approximations of 2 'Circle' shapes of radius 'rI' (in 'blue') and 'rE' (in 'red'), respectively, placed at different z-depths. The"<<endl;
-	cout<<"\t\t   'Circle' shape in 'red' is drawn before than the 'Circle' shape in 'blue'. The scene is drawn by using the orthographic projection, such that the centers of the 'Circle' shapes are projected on the same point."<<endl;
-	cout<<"\t\t   Thus, they seem to approximate the 'Circular Annulus' shape. Both the 'Circle' shapes are approximated by a triangle fan of 'n' vertices (including the center)."<<endl<<endl;
-	cout<<"\t\t1) The variant #1 is basically the same as the variant #0, but the approximations of 2 'Circle' shapes (always at different z-depths) are drawn by using the z-buffer (depth test) technique. Thus, the result will"<<endl;
-	cout<<"\t\t   be always the same, despite the rendering order of the 'Circle' shapes. Also in this case, both the 'Circle' shapes are approximated by a triangle fan of 'n' vertices (including the center)."<<endl<<endl;
-	cout<<"\t\t2) The variant #2 is a real approximation of the 'Circular Annulus' shape through a triangle strip (in 'red'), defined over 'n' pairs of the corresponding vertices (including the center) between the approximations"<<endl;
-	cout<<"\t\t   of the external and of the internal 'Circle' curves, respectively. These curves approximate the boundary of the 'Circular Annulus' shape."<<endl<<endl;
-	cout<<"\tEach variant is accompanied by an explicative label. Thus, this test also shows how writing and rendering some text."<<endl<<endl;
-	cout<<"\tHere, the user cannot modify the radius and the center for 3 variants of the 'Circular Annulus' shape, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
+	cout<<"\t\t0. the variant #0 is not 'real', since it is the result of drawing the approximations of the 'external' (in 'red') and of the 'internal' (in 'blue') disks, placed at different z-depths. The 'external' disk is"<<endl;
+	cout<<"\t\t   drawn before than the 'internal' disk. The scene is drawn by using the orthographic projection, such that the centers for the 'Circle' shapes of interest are projected on the same point. Thus, they only seem"<<endl;
+	cout<<"\t\t   to approximate the 'Circular Annulus' shape. Both the 'Circle' shapes of interest are approximated by a triangle fan of 'n' vertices (including the center)."<<endl<<endl;
+	cout<<"\t\t1. The variant #1 is basically the same as the variant #0, but the approximations of 2 'Circle' shapes (always at different z-depths) are drawn by using the z-buffer (depth test) technique. Thus, the result will"<<endl;
+	cout<<"\t\t   be always the same, despite the rendering order of the 'Circle' shapes. Also in this case, both the 'Circle' shapes of interest are approximated by a triangle fan of 'n' vertices (including the center)."<<endl<<endl;
+	cout<<"\t\t2. The variant #2 is a real approximation of the 'Circular Annulus' shape through a triangle strip (in 'red'), defined over 'n' pairs of the corresponding vertices (including the center) between the approximations"<<endl;
+	cout<<"\t\t   of the 'Circle' curves, bounding the 'internal' and the 'external' disks."<<endl<<endl;
+	cout<<"\tEach variant of the 'Circular Annulus' shape is accompanied by an explicative label. Thus, this test also shows how writing and rendering some text in an OpenGL window."<<endl<<endl;
+	cout<<"\tHere, the user cannot modify the radii and the centers for 3 variants of the 'Circular Annulus' shape, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of all vertices in the triangle fans and of the vertices pairs in the triangle strip of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of all vertices in the triangle fans and of the vertices pairs in the triangle strip of interest by pressing the '-' key;"<<endl;
 	cout<<"\t\t-) choose to render the 'wireframe' or the 'filled versions' for all triangles in the triangle fans and in the triangle strip of interest by pressing cyclically the ' ' (space) key."<<endl<<endl;
-	cout<<"\tIt is possible to end this program by pressing one among the 'Q' - 'q' - 'Esc' keys."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	
 	/* If we arrive here, we can draw all variants of the 'Circular Annulus' shape in the scene. */
