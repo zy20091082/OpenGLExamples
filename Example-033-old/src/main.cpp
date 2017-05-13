@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: January 2017
+ * Last update: May 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -11,55 +11,72 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-033 (Old Mode)' example
+ * main.cpp - the main function for the 'Example-033 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
 
 /* First, we must understand which platform we are using. */
 #include <cstdlib>
 #include <iostream>
 #include <cmath>
-#include <string>
 #define PI 3.14159265358979324
 using namespace std;
 #ifdef __APPLE__
 
-	/* We are using a MacOSX platform (Macintosh) */
+	/* We are using a MacOSX platform (Macintosh). */
 	#include "GL/glew.h"
 	#include "GLUT/glut.h"
 	#include "OpenGL/gl.h"
 
 #else
 
-	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU Linux, or a Microsoft Windows platform. */
+	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU/Linux, or a Microsoft Windows platform. */
 	#include "GL/glew.h"
 	#include "GL/glut.h"
 	#include "GL/gl.h"
 
 #endif
 
-/// The number of the samples, used for drawing the scene of interest.
-int num_samples=5;
+/// The number <i>'n'</i> of the vertices and the edges in the polyline, used for approximating the <i>'Spiral-like'</i> curve of interest.
+/**
+ * It is initially set to 'n=10', which is the minimum number 'n' of the vertices and the edges. It is interactively modified by pressing the '+' and the '-' keys.
+ */
+unsigned int num_samples=10;
 
-/// This flag indicates what spiral we must draw.
 int orient=0;
 
 /* Prototypes for all functions of interest! */
+void draw();
 void initialize();
 void resize(int w,int h);
 void manageKeys(unsigned char key, int x, int y);
-void draw();
 
-/// The main function for the <i>'Example-033 (Old Mode)'</i> example.
+/// The main function for the <i>'Example-033 (Old Mode)'</i> Test.
 int main(int argc,char **argv)
 {
-	/* We initialize everything, and create a new window! */
-	cout<<endl<<"\tThis is the 'Example-033' Example, based on the (Old Mode) OpenGL"<<endl<<endl;
+	/* We initialize everything, and create a very basic window! */
+	cout<<endl<<"\tThis is the 'Example-033' Test, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tIt draws 3 variants of the 'Spiral-like' curve with center at the origin of the 3D space in an OpenGL window. Broadly speaking, any 'Spiral-like' curve turns around an axis at a constant or continuously varying distance, while moving"<<endl;
+	cout<<"\tparallel to the axis. In this test, we consider all variants of the 'Spiral-like' curve, evolving along 3 Cartesian axes. Every variant of interest is approximated by a polyline (in 'red'), formed by an arbitrary number 'n' of the"<<endl;
+	cout<<"\tvertices and the edges, and is drawn by using the same orthographic projection viewing box '[-50,50]' x '[-50,50]' x '[-50,50]'."<<endl<<endl<<"\tHere, the variant #0 of the 'Spiral-like' curve, evolving along the z-axis, is ";
+	cout<<"defined as follows:"<<endl<<endl;
+	cout<<"\tx(t) = 40 * cos(t), y(t) = 40 * sin(t), z(t) = t"<<endl<<endl<<"\tfor every 't' in '[ -10 * pi, 10 * pi ]'."<<endl<<endl;
+	cout<<"\tInstead, the variant #1 of the 'Spiral-like' curve, evolving along the x-axis, is defined as follows:"<<endl<<endl;
+	cout<<"\tx(t) = t, y(t) = 40 * cos(t), z(t) = 40 * sin(t)"<<endl<<endl<<"\tfor every 't' in '[ -10 * pi, 10 * pi ]'."<<endl<<endl;
+	cout<<"\tFinally, the variant #2 of the 'Spiral-like' curve, evolving along the y-axis, is defined as follows:"<<endl<<endl;
+	cout<<"\tx(t) = 40 * cos(t), y(t) = t, z(t) = 40 * sin(t)"<<endl<<endl<<"\tfor every 't' in '[ -10 * pi, 10 * pi ]'."<<endl<<endl;
+	cout<<"\tHere, the user cannot modify the projection and the size for 3 variants of the 'Spiral-like' curve, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
+	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the polyline of interest by pressing the '+' key;"<<endl;
+	cout<<"\t\t-) decrease the number 'n' of the vertices and the edges in the polyline of interest by pressing the '-' key;"<<endl;
+	cout<<"\t\t-) choose what variant of the 'Spiral-like' curve must be drawn by pressing cyclically the ' ' (space) key. At each choice, the number 'n' of the samples is resetted to the default value '10'."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
+	
+	/* If we arrive here, we can draw the polyline, approximating the 'Spiral-like' curve! */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
 	glutInitWindowSize(500,500);
-	glutCreateWindow("The 'Example-033' Example, based on the (Old Mode) OpenGL");
+	glutCreateWindow("The 'Example-033' Test, based on the (Old Mode) OpenGL");
 	glutReshapeFunc(resize);
 	glutKeyboardFunc(manageKeys);
 	glutDisplayFunc(draw);
@@ -70,21 +87,10 @@ int main(int argc,char **argv)
 	return EXIT_SUCCESS;
 }
 
-/// This function initializes the OpenGL window of interest.
-void initialize() 
-{
-	/* We initialize the OpenGL window of interest! */
-	cout<<"\tWe draw different orientations of the same spiral."<<endl<<endl;
-	cout<<"\tIt is possible to modify the number of the samples (by pressing the '+' and '-' keys), as well as the orientation of interest (by pressing the ' ' key)."<<endl<<endl;
-	glClearColor(1.0, 1.0, 1.0, 0.0);
-	num_samples=5;
-	orient=0;
-}
-
 /// This function updates the viewport for the scene when it is resized. */
 void resize(int w, int h)
 {
-	/* We update the projections and the modeling matrices! */
+	/* We update the projection and the modeling matrices! */
 	glViewport(0, 0, w, h);
    	glMatrixMode(GL_PROJECTION);
    	glLoadIdentity();
@@ -93,15 +99,26 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-// This function is the keyboard input processing routine for the OpenGL window of interest.
+/// This function initializes the OpenGL window of interest.
+void initialize() 
+{
+	/* We initialize the OpenGL window of interest! */
+	glClearColor(1.0, 1.0, 1.0, 0.0);
+	num_samples=10;
+	orient=0;
+	cout<<"\tAt the beginning, the polyline, approximating the variant #"<<orient<<" of the 'Spiral-like' curve, is formed by 'n'="<<num_samples<<" vertices and edges (thus by the minimum number 'n' as possible of the vertices and the edges)."<<endl<<endl;
+	cout.flush();
+}
+
+/// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
-	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' - '<space bar>' keys */
+	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' - ' ' keys. */
 	switch (key)
 	{
 		case 'q':
 	
-		/* The key is 'q' */
+		/* The key is 'q', thus we can exit from this program. */
 		cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
@@ -109,7 +126,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 'Q':
 	
-		/* The key is 'Q' */
+		/* The key is 'Q', thus we can exit from this program. */
 		cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
@@ -117,7 +134,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 27:
 	
-		/* The key is 'Esc' */
+		/* The key is 'Esc', thus we can exit from this program. */
 		cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
@@ -125,55 +142,55 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '+':
 		
-		/* The key is '+', thus we increase the number of the samples! */
+		/* The key is '+', thus we increase the number 'n' of the vertices and the edges in the polyline of interest! */
 		num_samples=num_samples+1;
-		glutPostRedisplay();
-		break;
-		
-		case ' ':
-		
-		/* The key is ' ', thus we change the orientation of interest! */
-		orient=(orient+1)%3;
-		num_samples=5;
 		glutPostRedisplay();
 		break;
 		
 		case '-':
 		
-		/* The key is '-', thus we decrease the number of the samples! */
-		if(num_samples>5) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 5 of samples is reached"<<endl;
+		/* The key is '-', thus we decrease the number 'n' of the vertices and the edges (if possible) in the polyline of interest. */
+		if(num_samples>10) num_samples=num_samples-1;
+		else cout<<"\tThe minimum number 'n'=10 of the vertices and the edges in the polyline of interest is reached, and it is not possible to decrease again this number."<<endl;
 		cout.flush();
+		glutPostRedisplay();
+		break;
+		
+		case ' ':
+		
+		/* The key is ' ', thus we change the variant of the 'Spiral-like' curve to be drawn. */
+		orient=(orient+1)%3;
+		num_samples=10;
 		glutPostRedisplay();
 		break;
 
 		default:
 
-    	/* Other keys are not important for us */
+    	/* Other keys are not important for us! */
     	break;
 	}
 }
 
-/// This function draws the orientation for the spiral (required by the user) in the OpenGL scene of interest.
+/// This function draws the polyline (in <i>'red'</i>), approximating the <i>'Spiral-like'</i> curve of interest, in the main OpenGL window.
 void draw()
 {
-	/* Now, we draw the required orientation for the spiral in the OpenGL scene of interest. */
+	/* We draw the polyline (in 'red'), approximating the 'Spiral-like' curve of interest, in the main OpenGL window. */
 	float d=(20*PI)/(num_samples-1);
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1,0,0);
 	glBegin(GL_LINE_STRIP);
 	if(orient==0)
 	{
-		/* Now, we must draw the configuration #0, such that the spiral evolves along the z-axis. */
+		/* Now, we must draw the variant #0 of the 'Spiral-like' curve, evolving along the z-axis. */
 		for(unsigned int k=0;k<num_samples;k++)
 		{
 			float t=-10*PI+k*d;
 			glVertex3f(40*cos(t),40*sin(t),t);
-		}
+		}	
 	}
 	else if(orient==1)
 	{
-		/* Now, we must draw the configuration #1, such that the spiral evolves along the x-axis. */
+		/* Now, we must draw the variant #1 of the 'Spiral-like' curve, evolving along the x-axis. */
 		for(unsigned int k=0;k<num_samples;k++)
 		{
 			float t=-10*PI+k*d;
@@ -182,7 +199,7 @@ void draw()
 	}
 	else
 	{
-		/* Now, we must draw the configuration #2, such that the spiral evolves along the y-axis. */
+		/* Now, we must draw the variant #2 of the 'Spiral-like' curve, evolving along the y-axis. */
 		for(unsigned int k=0;k<num_samples;k++)
 		{
 			float t=-10*PI+k*d;
@@ -193,6 +210,6 @@ void draw()
 	/* If we arrive here, we have finished! */
 	glEnd();
 	glFlush();
-	cout<<"\tApproximated and drawn the configuration #"<<orient<<" for the spiral of interest with "<<num_samples<<" samples by using the ortographic projection."<<endl;
+	cout<<"\tThe variant #"<<orient<<" of the 'Spiral-like' curve of interest is currently approximated by a polyline with 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" edges."<<endl;
 	cout.flush();
 }
