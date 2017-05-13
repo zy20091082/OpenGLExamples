@@ -36,12 +36,22 @@ using namespace std;
 
 #endif
 
-/// The number <i>'n'</i> of the vertices and the edges in the polyline, used for approximating the <i>'Spiral-like'</i> curve of interest.
+/// The number <i>'n'</i> of the vertices and the edges in the polyline, used for approximating the <i>'Helix-like'</i> curve of interest.
 /**
  * It is initially set to 'n=10', which is the minimum number 'n' of the vertices and the edges. It is interactively modified by pressing the '+' and the '-' keys.
  */
 unsigned int num_samples=10;
 
+/// This flag indicates which variant of the <i>'Helix-like'</i> curve must be drawn.
+/**
+ * It may assume the following values:
+ *
+ * -) 0, if the variant #0 of the 'Helix-like' curve (evolving along the z-axis) must be drawn. It is defined by: x(t) = 40 * cos(t), y(t) = 40 * sin(t), z(t) = t, for every 't' in '[ -10 * pi, 10 * pi ]'.
+ * -) 1: if the variant #1 of the 'Helix-like' curve (evolving along the x-axis) must be drawn. It is defined by: x(t) = t, y(t) = 40 * cos(t), z(t) = 40 * sin(t), for every 't' in '[ -10 * pi, 10 * pi ]'.
+ * -) 2: if the variant #2 of the 'Helix-like' curve (evolving along the y-axis) must be drawn. It is defined by: x(t) = 40 * cos(t), y(t) = t, z(t) = 40 * sin(t), for every 't' in '[ -10 * pi, 10 * pi ]'.
+ *
+ * The user can choose the variant of interest by pressing ciclically the ' ' (space) key.
+ */
 int orient=0;
 
 /* Prototypes for all functions of interest! */
@@ -55,24 +65,24 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-033' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws 3 variants of the 'Spiral-like' curve with center at the origin of the 3D space in an OpenGL window. Broadly speaking, any 'Spiral-like' curve turns around an axis at a constant or continuously varying distance, while moving"<<endl;
-	cout<<"\tparallel to the axis."<<endl<<endl<<"\tIn this test, we consider all variants of the 'Spiral-like' curve, evolving along 3 Cartesian axes. Every variant of interest is approximated by a polyline (in 'red'), formed by an arbitrary number";
+	cout<<"\tIt draws 3 variants of the 'Helix-like' curve with center at the origin of the 3D space in an OpenGL window. Broadly speaking, any 'Helix-like' curve turns around an axis at a constant or continuously varying distance, while moving"<<endl;
+	cout<<"\tparallel to the axis."<<endl<<endl<<"\tIn this test, we consider all variants of the 'Helix-like' curve, evolving along 3 Cartesian axes. Every variant of interest is approximated by a polyline (in 'red'), formed by an arbitrary number";
 	cout<<" 'n' of the"<<endl;
-	cout<<"\tvertices and the edges, and is drawn by using the same orthographic projection viewing box '[-50,50]' x '[-50,50]' x '[-50,50]'."<<endl<<endl<<"\tHere, the variant #0 of the 'Spiral-like' curve, evolving along the z-axis, is ";
+	cout<<"\tvertices and the edges, and is drawn by using the same orthographic projection viewing box '[-50,50]' x '[-50,50]' x '[-50,50]'."<<endl<<endl<<"\tHere, the variant #0 of the 'Helix-like' curve, evolving along the z-axis, is ";
 	cout<<"defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = 40 * cos(t), y(t) = 40 * sin(t), z(t) = t"<<endl<<endl<<"\tfor every 't' in '[ -10 * pi, 10 * pi ]'."<<endl<<endl;
-	cout<<"\tInstead, the variant #1 of the 'Spiral-like' curve, evolving along the x-axis, is defined as follows:"<<endl<<endl;
+	cout<<"\tInstead, the variant #1 of the 'Helix-like' curve, evolving along the x-axis, is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = t, y(t) = 40 * cos(t), z(t) = 40 * sin(t)"<<endl<<endl<<"\tfor every 't' in '[ -10 * pi, 10 * pi ]'."<<endl<<endl;
-	cout<<"\tFinally, the variant #2 of the 'Spiral-like' curve, evolving along the y-axis, is defined as follows:"<<endl<<endl;
+	cout<<"\tFinally, the variant #2 of the 'Helix-like' curve, evolving along the y-axis, is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = 40 * cos(t), y(t) = t, z(t) = 40 * sin(t)"<<endl<<endl<<"\tfor every 't' in '[ -10 * pi, 10 * pi ]'."<<endl<<endl;
-	cout<<"\tHere, the user cannot modify the projection and the size for 3 variants of the 'Spiral-like' curve, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
+	cout<<"\tHere, the user cannot modify the projection and the size for 3 variants of the 'Helix-like' curve, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of the vertices and the edges in the polyline of interest by pressing the '-' key;"<<endl;
-	cout<<"\t\t-) choose what variant of the 'Spiral-like' curve must be drawn by pressing cyclically the ' ' (space) key. At each choice, the number 'n' of the samples is resetted to the default value '10'."<<endl<<endl;
+	cout<<"\t\t-) choose what variant of the 'Helix-like' curve must be drawn by pressing cyclically the ' ' (space) key. At each choice, the number 'n' of the samples is resetted to the default value '10'."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	
-	/* If we arrive here, we can draw the polyline, approximating the 'Spiral-like' curve! */
+	/* If we arrive here, we can draw the polyline, approximating the 'Helix-like' curve! */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -107,7 +117,7 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=10;
 	orient=0;
-	cout<<"\tAt the beginning, the polyline, approximating the variant #"<<orient<<" of the 'Spiral-like' curve, is formed by 'n'="<<num_samples<<" vertices and edges (thus by the minimum number 'n' as possible of the vertices and the edges)."<<endl<<endl;
+	cout<<"\tAt the beginning, the polyline, approximating the variant #"<<orient<<" of the 'Helix-like' curve, is formed by 'n'="<<num_samples<<" vertices and edges (thus by the minimum number 'n' as possible of the vertices and the edges)."<<endl<<endl;
 	cout.flush();
 }
 
@@ -159,7 +169,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case ' ':
 		
-		/* The key is ' ', thus we change the variant of the 'Spiral-like' curve to be drawn. */
+		/* The key is ' ', thus we change the variant of the 'Helix-like' curve to be drawn. */
 		orient=(orient+1)%3;
 		num_samples=10;
 		glutPostRedisplay();
@@ -172,17 +182,17 @@ void manageKeys(unsigned char key, int x, int y)
 	}
 }
 
-/// This function draws the polyline (in <i>'red'</i>), approximating the <i>'Spiral-like'</i> curve of interest, in the main OpenGL window.
+/// This function draws the polyline (in <i>'red'</i>), approximating the <i>'Helix-like'</i> curve of interest, in the main OpenGL window.
 void draw()
 {
-	/* We draw the polyline (in 'red'), approximating the 'Spiral-like' curve of interest, in the main OpenGL window. */
+	/* We draw the polyline (in 'red'), approximating the 'Helix-like' curve of interest, in the main OpenGL window. */
 	float d=(20*PI)/(num_samples-1);
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1,0,0);
 	glBegin(GL_LINE_STRIP);
 	if(orient==0)
 	{
-		/* Now, we must draw the variant #0 of the 'Spiral-like' curve, evolving along the z-axis. */
+		/* Now, we must draw the variant #0 of the 'Helix-like' curve, evolving along the z-axis. */
 		for(unsigned int k=0;k<num_samples;k++)
 		{
 			float t=-10*PI+k*d;
@@ -191,7 +201,7 @@ void draw()
 	}
 	else if(orient==1)
 	{
-		/* Now, we must draw the variant #1 of the 'Spiral-like' curve, evolving along the x-axis. */
+		/* Now, we must draw the variant #1 of the 'Helix-like' curve, evolving along the x-axis. */
 		for(unsigned int k=0;k<num_samples;k++)
 		{
 			float t=-10*PI+k*d;
@@ -200,7 +210,7 @@ void draw()
 	}
 	else
 	{
-		/* Now, we must draw the variant #2 of the 'Spiral-like' curve, evolving along the y-axis. */
+		/* Now, we must draw the variant #2 of the 'Helix-like' curve, evolving along the y-axis. */
 		for(unsigned int k=0;k<num_samples;k++)
 		{
 			float t=-10*PI+k*d;
@@ -211,6 +221,6 @@ void draw()
 	/* If we arrive here, we have finished! */
 	glEnd();
 	glFlush();
-	cout<<"\tThe variant #"<<orient<<" of the 'Spiral-like' curve of interest is currently approximated by a polyline with 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" edges."<<endl;
+	cout<<"\tThe variant #"<<orient<<" of the 'Helix-like' curve of interest is currently approximated by a polyline with 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" edges."<<endl;
 	cout.flush();
 }
