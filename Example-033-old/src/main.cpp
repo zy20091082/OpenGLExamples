@@ -56,7 +56,8 @@ int main(int argc,char **argv)
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-033' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws 3 variants of the 'Spiral-like' curve with center at the origin of the 3D space in an OpenGL window. Broadly speaking, any 'Spiral-like' curve turns around an axis at a constant or continuously varying distance, while moving"<<endl;
-	cout<<"\tparallel to the axis. In this test, we consider all variants of the 'Spiral-like' curve, evolving along 3 Cartesian axes. Every variant of interest is approximated by a polyline (in 'red'), formed by an arbitrary number 'n' of the"<<endl;
+	cout<<"\tparallel to the axis."<<endl<<endl<<"\tIn this test, we consider all variants of the 'Spiral-like' curve, evolving along 3 Cartesian axes. Every variant of interest is approximated by a polyline (in 'red'), formed by an arbitrary number";
+	cout<<" 'n' of the"<<endl;
 	cout<<"\tvertices and the edges, and is drawn by using the same orthographic projection viewing box '[-50,50]' x '[-50,50]' x '[-50,50]'."<<endl<<endl<<"\tHere, the variant #0 of the 'Spiral-like' curve, evolving along the z-axis, is ";
 	cout<<"defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = 40 * cos(t), y(t) = 40 * sin(t), z(t) = t"<<endl<<endl<<"\tfor every 't' in '[ -10 * pi, 10 * pi ]'."<<endl<<endl;
