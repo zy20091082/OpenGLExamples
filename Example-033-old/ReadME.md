@@ -5,18 +5,18 @@ The <i>'Example-033 (Old Mode)'</i> Test draws 3 variants of the <i>'Spiral-like
 <li>increase the number <i>'n'</i> of the vertices and the edges in the polyline of interest by pressing the <i>'+'</i> key;</li>
 <li>decrease the number <i>'n'</i> of the vertices and the edges in the polyline of interest by pressing the <i>'-'</i> key;</li>
 <li>choose what variant of the <i>'Spiral-like'</i> curve must be drawn by pressing cyclically the <i>' '</i> (space) key. At each choice, the number <i>'n'</i> of the samples is resetted to the default value <i>'10'</i>.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example033_old_variant0_v0.png' border='1' width='800' height='450'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example033_old_variant0_v1.png' border='1' width='800' height='450'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example033_old_variant0_conf0.png' border='1' width='800' height='450'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example033_old_variant0_conf1.png' border='1' width='800' height='450'></td></tr>
 <tr><td>Here, the variant #0 of interest is approximated by a polyline with <i>'n=10'</i> vertices.</td><td>Here, the variant #0 of interest is approximated by a polyline with <i>'n=300'</i> vertices.</td></tr>
 
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example033_old_variant1_v0.png' border='1' width='800' height='450'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example033_old_variant1_v1.png' border='1' width='800' height='450'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example033_old_variant1_conf0.png' border='1' width='800' height='450'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example033_old_variant1_conf1.png' border='1' width='800' height='450'></td></tr>
 <tr><td>Here, the variant #1 of interest is approximated by a polyline with <i>'n=10'</i> vertices.</td><td>Here, the variant #1 of interest is approximated by a polyline with <i>'n=300'</i> vertices.</td></tr>
 
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example033_old_variant2_v0.png' border='1' width='800' height='450'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example033_old_variant2_v1.png' border='1' width='800' height='450'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example033_old_variant2_conf0.png' border='1' width='800' height='450'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example033_old_variant2_conf1.png' border='1' width='800' height='450'></td></tr>
 <tr><td>Here, the variant #2 of interest is approximated by a polyline with <i>'n=10'</i> vertices.</td><td>Here, the variant #2 of interest is approximated by a polyline with <i>'n=300'</i> vertices.</td></tr>
 </table><p><hr><p><h4>Dependencies</h4>
 
