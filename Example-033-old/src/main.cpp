@@ -50,7 +50,7 @@ unsigned int num_samples=10;
  * -) 1: if the variant #1 of the 'Helix-like' curve (evolving along the x-axis) must be drawn. It is defined by: x(t) = t, y(t) = 40 * cos(t), z(t) = 40 * sin(t), for every 't' in '[ -10 * pi, 10 * pi ]'.
  * -) 2: if the variant #2 of the 'Helix-like' curve (evolving along the y-axis) must be drawn. It is defined by: x(t) = 40 * cos(t), y(t) = t, z(t) = 40 * sin(t), for every 't' in '[ -10 * pi, 10 * pi ]'.
  *
- * The user can choose the variant of interest by pressing ciclically the ' ' (space) key.
+ * The user can choose the variant of interest by pressing cyclically the ' ' (space) key.
  */
 int orient=0;
 
