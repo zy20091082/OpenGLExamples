@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: January 2017
+ * Last update: May 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -11,9 +11,9 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-035 (Old Mode)' example
+ * main.cpp - the main function for the 'Example-035 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
- 
+
 /* First, we must understand which platform we are using. */
 #include <cstdlib>
 #include <iostream>
@@ -21,40 +21,58 @@
 using namespace std;
 #ifdef __APPLE__
 
-	/* We are using a MacOSX platform (Macintosh) */
+	/* We are using a MacOSX platform (Macintosh). */
 	#include "GL/glew.h"
 	#include "GLUT/glut.h"
 	#include "OpenGL/gl.h"
 
 #else
 
-	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU Linux, or a Microsoft Windows platform. */
+	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU/Linux, or a Microsoft Windows platform. */
 	#include "GL/glew.h"
 	#include "GL/glut.h"
 	#include "GL/gl.h"
 
 #endif
 
-/// This flag indicates what projection we must exploit.
+/// This flag indicates what projection we must exploit while drawing the scene.
+/**
+ * This flag assumes the following values:
+ *
+ * 0: it indicates to use the viewing orthographic box '[-40,40]' x '[-40,40]' x '[-80,80]'
+ * 1: it indicates to use the viewing perspective box (frustum) '[-2.7,2.7]' x '[-2.7,2.7]' x '[2.0,7.0]'
+ *
+ * The user can choose what project must be used by pressing cyclically the ' ' space.
+ */
 int projection=0;
 
 /* Prototypes for all functions of interest! */
+void draw();
 void initialize();
 void resize(int w,int h);
 void manageKeys(unsigned char key, int x, int y);
-void draw();
 
-/// The main function for the <i>'Example-035 (Old Mode)'</i> example.
+/// The main function for the <i>'Example-035 (Old Mode)'</i> Test.
 int main(int argc,char **argv)
 {
-	/* We initialize everything, and create a new window! */
-	cout<<endl<<"\tThis is the 'Example-035' Example, based on the (Old Mode) OpenGL"<<endl<<endl;
+	/* We initialize everything, and create a very basic window! */
+	cout<<endl<<"\tThis is the 'Example-035' Test, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tIt draws a specific 'Cube' shape in an OpenGL window. Broadly speaking, any 'Cube' shape is formed by 8 vertices, 12 edges, and 6 square faces, with three meeting at each vertex. In other words, it is the boundary of the 'Cube' (or"<<endl;
+	cout<<"\tthe 'Regular Hexahedron') solid."<<endl<<endl;
+	cout<<"\tIn this test, we consider a specific 'Cube' shape, such that a different color is assigned with each face, and such that its domain is '[-30,30]' x '[-30,30]' x '[-60,-30]'."<<endl<<endl;
+	cout<<"\tHere, the user cannot modify the orientations and the colors for 6 square faces in the 'Cube' shape of interest. Instead, the user can press cyclically the ' ' (space) key for choosing what 'viewing configuration' has to be applied"<<endl;
+	cout<<"\tbetween the following 'viewing configurations':"<<endl<<endl;
+	cout<<"\t\t-) the 'viewing configuration #0' is based on the viewing orthographic box '[-40,40]' x '[-40,40]' x '[-80,80]';"<<endl;
+	cout<<"\t\t-) the 'viewing configuration #1' is based on the viewing perspective box (frustum) '[-2.7,2.7]' x '[-2.7,2.7]' x '[2.0,70]'."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
+	
+	/* If we arrive here, we can draw the 'Cube' shape of interest. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
 	glutInitWindowSize(500,500);
-	glutCreateWindow("The 'Example-035' Example, based on the (Old Mode) OpenGL");
+	glutCreateWindow("The 'Example-035' Test, based on the (Old Mode) OpenGL");
 	glutReshapeFunc(resize);
 	glutKeyboardFunc(manageKeys);
 	glutDisplayFunc(draw);
@@ -65,38 +83,15 @@ int main(int argc,char **argv)
 	return EXIT_SUCCESS;
 }
 
-/// This function initializes the OpenGL window of interest.
-void initialize() 
-{
-	/* We initialize the OpenGL window of interest! */
-	cout<<"\tWe draw a cube by choosing the projection to be used (orthographic or prospective) by pressing the ' ' key."<<endl<<endl;
-	cout.flush();
-	glClearColor(1.0, 1.0, 1.0, 0.0);
-	projection=0;
-}
-
-/// This function updates the viewport for the scene when it is resized. */
-void resize(int w, int h)
-{
-   /* We update the projections and the modeling matrices! */
-	glViewport(0, 0, w, h);
-   	glMatrixMode(GL_PROJECTION);
-   	glLoadIdentity();
-   	if(projection==0) glOrtho(-40.0, 40.0, -40.0, 40.0, -80, 80);
-   	else glFrustum(-2.7, 2.7, -2.7, 2.7, 2.0, 70.0);
-   	glMatrixMode(GL_MODELVIEW);
-   	glLoadIdentity();
-}
-
-// This function is the keyboard input processing routine for the OpenGL window of interest.
+/// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
-	/* We are interested only in the 'q' - 'Q' - 'Esc' - ' ' keys */
+	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' - ' ' keys. */
 	switch (key)
 	{
 		case 'q':
 	
-		/* The key is 'q' */
+		/* The key is 'q', thus we can exit from this program. */
 		cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
@@ -104,7 +99,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 'Q':
 	
-		/* The key is 'Q' */
+		/* The key is 'Q', thus we can exit from this program. */
 		cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
@@ -112,7 +107,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 27:
 	
-		/* The key is 'Esc' */
+		/* The key is 'Esc', thus we can exit from this program. */
 		cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
@@ -129,12 +124,38 @@ void manageKeys(unsigned char key, int x, int y)
 
 		default:
 
-    	/* Other keys are not important for us */
+    	/* Other keys are not important for us! */
     	break;
 	}
 }
 
-/// This function draws the 3D cube by using the projection (requested by the user) in the OpenGL scene of interest.
+/// This function updates the viewport for the scene when it is resized. */
+void resize(int w, int h)
+{
+	/* We update the projection and the modeling matrices! */
+	glViewport(0, 0, w, h);
+   	glMatrixMode(GL_PROJECTION);
+   	glLoadIdentity();
+   	if(projection==0) glOrtho(-40.0, 40.0, -40.0, 40.0, -80, 80);
+   	else glFrustum(-2.7, 2.7, -2.7, 2.7, 2.0, 70.0);
+   	glMatrixMode(GL_MODELVIEW);
+   	glLoadIdentity();
+}
+
+/// This function initializes the OpenGL window of interest.
+void initialize() 
+{
+	/* We initialize the OpenGL window of interest! */
+	glClearColor(1.0, 1.0, 1.0, 0.0);
+	projection=0;
+	cout<<"\tAt the beginning, the 'Cube' shape of interest is drawn by using the ";
+	if(projection==0) cout<<"viewing orthographic box '[-40,40]' x '[-40,40]' x '[-80,80]' (thus, the 'viewing configuration #0').";
+	else cout<<"viewing perspective box (frustum) [-2.7,2.7]' x '[-2.7,2.7]' x '[2.0,7.0]' (thus, the 'viewing configuration #1').";
+	cout<<endl<<endl;
+	cout.flush();
+}
+
+/// This function draws the 'Cube' shape of interest in the main OpenGL window.
 void draw()
 {
 	/* First, we clear everything. Then, we draw the 3D cube of interest. */
@@ -198,8 +219,6 @@ void draw()
 		glVertex3f(-30,-30,-30);
 		glEnd();
 		glFlush();
-		cout<<"\tDrawn the 3D cube of interest by using the perspective projection (see the 'glFrustum()' function)"<<endl;
-		cout.flush();
 	}
 	else
 	{
@@ -256,9 +275,13 @@ void draw()
 		glVertex3f(-30,30,-30);
 		glVertex3f(-30,-30,-30);
 		glEnd();
-		
 		glFlush();
-		cout<<"\tDrawn the 3D cube of interest by using the orthogonal projection (see the 'glOrtho()' function)"<<endl;
-		cout.flush();
 	}
+	
+	/* Now, we finalize this function! */
+	cout<<"\tThe 'Cube' shape of interest is currently drawn by using the ";
+	if(projection==0) cout<<"viewing orthographic box '[-40,40]' x '[-40,40]' x '[-80,80]' (thus, the 'viewing configuration #0').";
+	else cout<<"viewing perspective box (frustum) [-2.7,2.7]' x '[-2.7,2.7]' x '[2.0,7.0]' (thus, the 'viewing configuration #1').";
+	cout<<endl;
+	cout.flush();
 }
