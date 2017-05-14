@@ -3,10 +3,10 @@ height="97"></A>
 
 The <i>'Example-035 (Old Mode)'</i> Test draws a specific <i>'Cube'</i> shape in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. Broadly speaking, any <i>'Cube'</i> shape is formed by 6 square faces, with three meeting at each vertex, 12 edges, and 8 vertices. In other words, it is the boundary of the <i>'Cube'</i> (or the <i>'Regular Hexahedron'</i> solid).<p>In this test, we consider a specific <i>'Cube'</i> shape, such that a different color is assigned with each face, and such that its domain is <i>'[-30,30]' x '[-30,30]' x '[-60,-30]'</i>.<p>Here, the user cannot modify the orientations and the colors for 6 square faces in the <i>'Cube'</i> shape of interest. Instead, the user can press cyclically the <i>' '</i> (space) key for choosing what <i>'viewing configuration'</i> has to be applied between the following <i>'viewing configurations'</i>:<p><ul>
 <li>the <i>'viewing configuration #0'</i> is based on the viewing orthographic box <i>'[-40,40]' x '[-40,40]' x '[-80,80]'</i>;</li>
-<li>the <i>'viewing configuration #1'</i> is based on the viewing perspective box (frustum) <i>'[-2.7,2.7]' x '[-2.7,2.7]' x '[2.0,70]'</i>.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
-
-
-<p><hr><p><h4>Dependencies</h4>
+<li>the <i>'viewing configuration #1'</i> is based on the viewing perspective box (frustum) <i>'[-2.7,2.7]' x '[-2.7,2.7]' x '[2.0,70]'</i>.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example035_old_viewing0.png' border='1' width='800' height='450'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example035_old_viewing1.png' border='1' width='800' height='450'></td></tr>
+<tr><td>Here, the <i>'viewing configuration #0'</i> is exploited (orthographic projection)</td><td>Here, the <i>'viewing configuration #1'</i> is exploited (perspective projection).</td></tr></table><p><hr><p><h4>Dependencies</h4>
 
 The <i>'Example-035 (Old Mode)'</i> Test is based on the so-called <i>OpenGL old (direct drawing) mode</i>, and requires the following dependencies:<ul>
 
