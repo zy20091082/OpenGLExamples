@@ -46,9 +46,9 @@ unsigned int num_samples=10;
 /**
  * It may assume the following values:
  *
- * -) 0, if the variant #0 of the 'Helix-like' curve (evolving along the z-axis) must be drawn. It is defined by: x(t) = 40 * cos(t), y(t) = 40 * sin(t), z(t) = t, for every 't' in '[ -10 * pi, 10 * pi ]'.
- * -) 1: if the variant #1 of the 'Helix-like' curve (evolving along the x-axis) must be drawn. It is defined by: x(t) = t, y(t) = 40 * cos(t), z(t) = 40 * sin(t), for every 't' in '[ -10 * pi, 10 * pi ]'.
- * -) 2: if the variant #2 of the 'Helix-like' curve (evolving along the y-axis) must be drawn. It is defined by: x(t) = 40 * cos(t), y(t) = t, z(t) = 40 * sin(t), for every 't' in '[ -10 * pi, 10 * pi ]'.
+ * -) 0, if the variant #0 of the 'Helix-like' curve (evolving along the z-axis) must be drawn. It is defined by: x(t) = 40 * cos(t), y(t) = 40 * sin(t), z(t) = t, for every 't' in '[-10*pi,10*pi]'.
+ * -) 1: if the variant #1 of the 'Helix-like' curve (evolving along the x-axis) must be drawn. It is defined by: x(t) = t, y(t) = 40 * cos(t), z(t) = 40 * sin(t), for every 't' in '[-10*pi,10*pi]'.
+ * -) 2: if the variant #2 of the 'Helix-like' curve (evolving along the y-axis) must be drawn. It is defined by: x(t) = 40 * cos(t), y(t) = t, z(t) = 40 * sin(t), for every 't' in '[-10*pi,10*pi]'.
  *
  * The user can choose the variant of interest by pressing cyclically the ' ' (space) key.
  */
@@ -70,11 +70,11 @@ int main(int argc,char **argv)
 	cout<<" 'n' of the"<<endl;
 	cout<<"\tvertices and the edges, and is drawn by using the same orthographic projection viewing box '[-50,50]' x '[-50,50]' x '[-50,50]'."<<endl<<endl<<"\tHere, the variant #0 of the 'Helix-like' curve, evolving along the z-axis, is ";
 	cout<<"defined as follows:"<<endl<<endl;
-	cout<<"\tx(t) = 40 * cos(t), y(t) = 40 * sin(t), z(t) = t"<<endl<<endl<<"\tfor every 't' in '[ -10 * pi, 10 * pi ]'."<<endl<<endl;
+	cout<<"\tx(t) = 40 * cos(t), y(t) = 40 * sin(t), z(t) = t"<<endl<<endl<<"\tfor every 't' in '[-10*pi,10*pi]'."<<endl<<endl;
 	cout<<"\tInstead, the variant #1 of the 'Helix-like' curve, evolving along the x-axis, is defined as follows:"<<endl<<endl;
-	cout<<"\tx(t) = t, y(t) = 40 * cos(t), z(t) = 40 * sin(t)"<<endl<<endl<<"\tfor every 't' in '[ -10 * pi, 10 * pi ]'."<<endl<<endl;
+	cout<<"\tx(t) = t, y(t) = 40 * cos(t), z(t) = 40 * sin(t)"<<endl<<endl<<"\tfor every 't' in '[-10*pi,10*pi]'."<<endl<<endl;
 	cout<<"\tFinally, the variant #2 of the 'Helix-like' curve, evolving along the y-axis, is defined as follows:"<<endl<<endl;
-	cout<<"\tx(t) = 40 * cos(t), y(t) = t, z(t) = 40 * sin(t)"<<endl<<endl<<"\tfor every 't' in '[ -10 * pi, 10 * pi ]'."<<endl<<endl;
+	cout<<"\tx(t) = 40 * cos(t), y(t) = t, z(t) = 40 * sin(t)"<<endl<<endl<<"\tfor every 't' in '[-10*pi,10*pi]'."<<endl<<endl;
 	cout<<"\tHere, the user cannot modify the projection and the size for 3 variants of the 'Helix-like' curve, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of the vertices and the edges in the polyline of interest by pressing the '-' key;"<<endl;

@@ -60,7 +60,7 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-034' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws a specific 'Helix' curve with center at the origin of the 3D space in an OpenGL window. Broadly speaking, any 'Helix' curve turns around an axis at a constant or continuously varying distance, while moving parallel to the axis."<<endl<<endl;
 	cout<<"\tIn this test, we consider a specific 'Helix' curve, evolving along the z-axis, and approximated by a polyline (in 'red'). The 'Helix' curve of interest is defined as follows:"<<endl<<endl;
-	cout<<"\tx(t) = 20 * cos(t), y(t) = 20 * sin(t), z(t) = t - 60"<<endl<<endl<<"\tfor every 't' in '[ -10 * pi, 10 * pi ]'."<<endl<<endl;
+	cout<<"\tx(t) = 20 * cos(t), y(t) = 20 * sin(t), z(t) = t - 60"<<endl<<endl<<"\tfor every 't' in '[-10*pi,10*pi]'."<<endl<<endl;
 	cout<<"\tHere, the user cannot modify the number of the samples in the polyline of interest, since they are fixed in advance. Instead, the user can press cyclically the ' ' (space) key for choosing what 'viewing configuration' has to be applied"<<endl;
 	cout<<"\tbetween the following 'viewing configurations':"<<endl<<endl;
 	cout<<"\t\t-) the 'viewing configuration #0' is based on the viewing orthographic box '[-50,50]' x '[-50,50]' x '[0,100]';"<<endl;
