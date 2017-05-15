@@ -105,7 +105,7 @@ void initialize()
 	else if(projection==3) cout<<"viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[2.5,100]' (thus, the 'viewing configuration #3').";
 	else if(projection==4) cout<<"viewing perspective box (frustum) '[-10,10]' x '[-10,10]' x '[5,100]' (thus, the 'viewing configuration #4').";
 	else if(projection==5) cout<<"viewing perspective box (frustum) '[-1,1]' x '[-3,3]' x '[5,100]' (thus, the 'viewing configuration #5').";
-	cout<<endl;
+	cout<<endl<<endl;
 	cout.flush();
 }
 

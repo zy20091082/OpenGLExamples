@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: January 2017
+ * Last update: May 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -11,54 +11,67 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-037 (Old Mode)' example
+ * main.cpp - the main function for the 'Example-037 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
- 
+
 /* First, we must understand which platform we are using. */
 #include <cstdlib>
 #include <iostream>
 #include <cmath>
-
 using namespace std;
 #ifdef __APPLE__
 
-	/* We are using a MacOSX platform (Macintosh) */
+	/* We are using a MacOSX platform (Macintosh). */
 	#include "GL/glew.h"
 	#include "GLUT/glut.h"
 	#include "OpenGL/gl.h"
 
 #else
 
-	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU Linux, or a Microsoft Windows platform. */
+	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU/Linux, or a Microsoft Windows platform. */
 	#include "GL/glew.h"
 	#include "GL/glut.h"
 	#include "GL/gl.h"
 
 #endif
 
-/// This flag indicates what rendering mode we must exploit.
 int mode=0;
 
-/// This flag indicates what tessellation we must exploit.
 int tessellation=0;
 
 /* Prototypes for all functions of interest! */
+void draw();
 void initialize();
 void resize(int w,int h);
 void manageKeys(unsigned char key, int x, int y);
-void draw();
 
-/// The main function for the <i>'Example-037 (Old Mode)'</i> example.
+/// The main function for the <i>'Example-037 (Old Mode)'</i> Test.
 int main(int argc,char **argv)
 {
-	/* We initialize everything, and create a new window! */
-	cout<<endl<<"\tThis is the 'Example-037' Example, based on the (Old Mode) OpenGL"<<endl<<endl;
+	/* We initialize everything, and create a very basic window! */
+	cout<<endl<<"\tThis is the 'Example-037' Test, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tIt draws several versions of the 'A' shape in an OpenGL window by using the rendering settings, chosen interactively by the user. Broadly speaking, the 'A' shape represents the 'A' letter, which is in the first letter and the"<<endl;
+	cout<<"\tfirst vowel in the ISO basic Latin alphabet. Here, we consider the upper-case version of the 'A' letter, consisting of two slanting sides of a triangle, crossed in the middle by a horizontal bar (as usual)."<<endl<<endl;
+	cout<<"\tIn this test, we consider the following tessellations of the 'A' shape, defined without adding any 'Steiner' point:"<<endl<<endl;
+	cout<<"\t\t0. the 'Tessellation #0' of the 'A' shape consists of a pure triangulation, formed by 11 triangles. A different color is assigned to each triangle."<<endl;
+	cout<<"\t\t1. The 'Tessellation #1' of the 'A' shape consists of a quad-dominant mesh, formed by 5 quadrilaterals, and by only one triangle. Also in this case, a different color is assigned to the triangle and to each quadrilateral."<<endl;
+	cout<<"\t\t2. The 'Tessellation #2' of the 'A' shape consists of the same triangulation in the 'Tessellation #0'. In this case, it is expressed by 1 triangle strip (in 'yellow'), and by 3 triangle fans. The reference vertices for"<<endl; 
+	cout<<"\t\t   the triangle fans are depicted, respectively, in 'red', in 'blue', and in 'green'. Instead, their triangles are depicted in 'grey'."<<endl<<endl;
+	cout<<"\tHere, the user cannot modify the vertices positions in the 'A' shape, since they are fixed in advance. Instead, the user can choose interactively to exploit any among the tessellations of the 'A' shape (mentioned above) by"<<endl;
+	cout<<"\tpressing cyclically the 't' key. Moreover, the user can decide interactively to render:"<<endl<<endl;
+	cout<<"\t\t-) only the points in the tessellation of interest for the 'A' shape;"<<endl;
+	cout<<"\t\t-) the 'wireframe versions' of all triangles and quadrilaterals in the tessellation of interest for the 'A' shape;"<<endl;
+	cout<<"\t\t-) the 'filled versions' of all triangles and quadrilaterals in the tessellation of interest for the 'A' shape;"<<endl<<endl;
+	cout<<"\tby pressing cyclically the ' ' key. As mentioned above, the tessellation of interest for the 'A' shape to be drawn can be chosen independently."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
+	
+	/* If we arrive here, we can draw the 'A' shape of interest. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
 	glutInitWindowSize(500,500);
-	glutCreateWindow("The 'Example-037' Example, based on the (Old Mode) OpenGL");
+	glutCreateWindow("The 'Example-037' Test, based on the (Old Mode) OpenGL");
 	glutReshapeFunc(resize);
 	glutKeyboardFunc(manageKeys);
 	glutDisplayFunc(draw);
@@ -66,29 +79,33 @@ int main(int argc,char **argv)
    	glewInit();
    	initialize(); 
 	glutMainLoop();
-	return EXIT_SUCCESS;
+	return EXIT_SUCCESS;	
 }
 
 /// This function initializes the OpenGL window of interest.
 void initialize() 
 {
 	/* We initialize the OpenGL window of interest! */
-	cout<<"\tWe draw a letter 'A', choose the rendering mode by pressing the ' ' key, and the tessellation by pressing the 't' key."<<endl<<endl;
-	cout.flush();
-	glClearColor(0.0, 0.0, 0.0, 0.0);
-	mode=0;
+	glClearColor(1.0, 1.0, 1.0, 0.0);
 	tessellation=0;
+	mode=2;
+	cout<<"\tAt the beginning, ";
+	if(mode==0) cout<<"only the points of all polygons ";
+	else if(mode==1) cout<<"the 'wireframe versions' of all polygons ";
+	else if(mode==2) cout<<"the 'filled versions' of all polygons ";
+	cout<<"in the 'Tesselation #'"<<tessellation<<" of the 'A' shape are drawn."<<endl<<endl;
+	cout.flush();
 }
 
-// This function is the keyboard input processing routine for the OpenGL window of interest.
+/// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
-	/* We are interested only in the 'q' - 'Q' - 'Esc' - '<space bar>' keys */
+	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' - ' ' keys. */
 	switch (key)
 	{
 		case 'q':
 	
-		/* The key is 'q' */
+		/* The key is 'q', thus we can exit from this program. */
 		cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
@@ -96,7 +113,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 'Q':
 	
-		/* The key is 'Q' */
+		/* The key is 'Q', thus we can exit from this program. */
 		cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
@@ -104,7 +121,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 27:
 	
-		/* The key is 'Esc' */
+		/* The key is 'Esc', thus we can exit from this program. */
 		cout<<endl;
 		cout.flush();
 		exit(EXIT_SUCCESS);
@@ -119,14 +136,14 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 't':
 		
-		/* The key is 't', thus we change the tessellation to be rendered! */
+		/* The key is 't', thus we change the tessellation of interest! */
 		tessellation=(tessellation+1)%3;
 		glutPostRedisplay();
 		break;
 
 		default:
 
-    	/* Other keys are not important for us */
+    	/* Other keys are not important for us! */
     	break;
 	}
 }
@@ -134,26 +151,26 @@ void manageKeys(unsigned char key, int x, int y)
 /// This function updates the viewport for the scene when it is resized. */
 void resize(int w, int h)
 {
-   /* We update the projections and the modeling matrices! */
+	/* We update the projection and the modeling matrices! */
 	glViewport(0, 0, w, h);
    	glMatrixMode(GL_PROJECTION);
    	glLoadIdentity();
    	gluOrtho2D(-35,35,-5,65);
 }
 
-/// This function draws the letter 'A' in the OpenGL scene of interest by using the rendering mode, requested by the user.
+/// This function draws the tessellation of interest for the 'A' shape in the main OpenGL window by using the rendering settings, choosen by the user.
 void draw()
 {
-	/* First, we clear everything. Then, we draw the letter 'A' of interest. */
+	/* We draw the tessellation of interest for the 'A' shape in the main OpenGL window by using the rendering settings, choosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
-	if(mode==0) { glPolygonMode(GL_FRONT_AND_BACK,GL_FILL); }
-   	if(mode==1) { glPolygonMode(GL_FRONT_AND_BACK,GL_LINE); }
-   	if(mode==2) { glPolygonMode(GL_FRONT_AND_BACK,GL_POINT); }
+	if(mode==0) { glPolygonMode(GL_FRONT_AND_BACK,GL_POINT); }
+	else if(mode==1) { glPolygonMode(GL_FRONT_AND_BACK,GL_LINE); }
+	else if(mode==2) { glPolygonMode(GL_FRONT_AND_BACK,GL_FILL); }
    	glLineWidth(3);
    	glPointSize(8);
-   	if(tessellation==0)
+	if(tessellation==0)
    	{
-   		/* We draw a basic tessellation, formed only by 11 independent triangles. */
+   		/* We draw a basic tessellation, formed only by 11 triangles. */
    		glBegin(GL_TRIANGLES);
    	
 	   	/* Drawing the triangle #0 (A-B-E) [blue] */
@@ -327,14 +344,9 @@ void draw()
    	
    	/* If we arrive here, we have finished! */
    	glFlush();
-   	cout<<"\tDrawn the letter 'A' of interest by rendering ";
-   	if(mode==2) cout<<"only the points ";
-   	if(mode==1) cout<<"only the edges (wireframe) ";
-   	if(mode==0) cout<<"completely the polygons ";
-   	cout<<"in the tesselation #"<<tessellation;
-   	if(tessellation==0) cout<<" (pure triangulation, formed by 11 independent triangles)"<<endl;
-   	if(tessellation==1) cout<<" (quad-dominant mesh, formed by 5 independent quads and 1 triangle)"<<endl;
-   	if(tessellation==2) cout<<" (the same pure triangulation as the case #0, but represented by 3 triangle fans and 1 triangle strip)"<<endl;
-   	
-   	cout.flush();
+   	if(mode==0) cout<<"\tOnly the points of all polygons ";
+	else if(mode==1) cout<<"\tThe 'wireframe versions' of all polygons ";
+	else if(mode==2) cout<<"\tThe 'filled versions' of all polygons ";
+	cout<<"in the 'Tesselation #'"<<tessellation<<" of the 'A' shape are currently drawn."<<endl;
+	cout.flush();
 }

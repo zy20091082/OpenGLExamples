@@ -9,11 +9,17 @@ The <i>'Example-037 (Old Mode)'</i> Test draws several versions of the <i>'A'</i
 Here, the user cannot modify the vertices positions in the <i>'A'</i> shape, since they are fixed in advance. Instead, the user can choose interactively to exploit any among the tessellations of the <i>'A'</i> shape (mentioned above) by pressing cyclically the <i>'t'</i> key. Moreover, the user can decide interactively to render:<ul>
 <li>only the points in the tessellation of interest for the <i>'A'</i> shape;</li>
 <li>the <i>'wireframe versions'</i> of all triangles and quadrilaterals in the tessellation of interest for the <i>'A'</i> shape;</li>
-<li>the <i>'filled versions'</i> of all triangles and quadrilaterals in the tessellation of interest for the <i>'A'</i> shape;</li></ul><p>
+<li>the <i>'filled versions'</i> of all triangles and quadrilaterals in the tessellation of interest for the <i>'A'</i> shape;</li></ul><p>by pressing cyclically the <i>' '</i> key. As mentioned above, the tessellation of interest for the <i>'A'</i> shape to be drawn can be chosen independently.<p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
 
-by pressing cyclically the <i>' '</i> key. As mentioned above, the tessellation of interest for the <i>'A'</i> shape to be drawn can be chosen independently.<p>
+<h4>Using the 'Tessellation #0'</h4><p>
 
-Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
+<h4>Using the 'Tessellation #1'</h4><p>
+
+<h4>Using the 'Tessellation #2'</h4><p>
+
+
+
+
 
 <p><hr><p><h4>Dependencies</h4>
 
