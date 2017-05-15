@@ -3,8 +3,8 @@ height="97"></A>
 
 The <i>'Example-037 (Old Mode)'</i> Test draws several versions of the <i>'A'</i> shape in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window by using the rendering settings, chosen interactively by the user. Broadly speaking, the <i>'A'</i> shape represents the <i>'A'</i> letter, which is in the first letter and the first vowel in the ISO basic Latin alphabet. Here, we consider the upper-case version of the <i>'A'</i> letter, consisting of two slanting sides of a triangle, crossed in the middle by a horizontal bar (as usual).<p>In this test, we consider the following approximations of the <i>'A'</i> shape, defined without adding any <i>'Steiner'</i> point:<ol start='0'>
 <li>the <i>'Variant #0'</i> consists of approximating the <i>'A'</i> shape through a pure triangulation, formed by 11 (independent) triangles. A different color is assigned to each triangle.<p></li>
-<li>The <i>'Variant #1'</i> consists of approximating the <i>'A'</i> shape through a quad-dominant mesh, formed by 5 (independent) quadrilaterals, and only one triangle. Also in this case, a different color is assigned to the triangle and to each quadrilateral.<p></li>
-<li>The <i>'Variant #2'</i> consists of approximating the <i>'A'</i> shape through the same pure triangulation in the variant #0. In this case, this triangulation is expressed by 1 triangle strip, and by 2 triangle fans. <p></li></ol><p>
+<li>The <i>'Variant #1'</i> consists of approximating the <i>'A'</i> shape through a quad-dominant mesh, formed by 5 (independent) quadrilaterals, and by only one triangle. Also in this case, a different color is assigned to the triangle and to each quadrilateral.<p></li>
+<li>The <i>'Variant #2'</i> consists of approximating the <i>'A'</i> shape through the same pure triangulation in the variant #0. In this case, this triangulation is expressed by 1 triangle strip (in <i>'yellow'</i>), and by 3 triangle fans. The reference vertices for the triangle fans are depicted, respectively, in <i>'red'</i>, in <i>'blue'</i>, and in <i>'green'</i>. Instead, their triangles are depicted in <i>'grey'</i>.<p></li></ol><p>
 
 Here, the user cannot modify the vertices positions in the <i>'A'</i> shape, since they are fixed in advance. Instead, the user can choose interactively to exploit any among the variants of the <i>'A'</i> shape (mentioned above) by pressing cyclically the <i>'t'</i> key. Moreover, the user can decide interactively to render:<ul>
 <li>only the points in the variant of interest for the <i>'A'</i> shape;</li>
@@ -15,7 +15,6 @@ by pressing cyclically the <i>' '</i> key. As mentioned above, the variant of in
 
 Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
 
->>>>>>> a73371be4159946a12b1c738c921808c837cdc15
 <p><hr><p><h4>Dependencies</h4>
 
 The <i>'Example-037 (Old Mode)'</i> Test is based on the so-called <i>OpenGL old (direct drawing) mode</i>, and requires the following dependencies:<ul>
