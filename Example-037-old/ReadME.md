@@ -24,14 +24,16 @@ Here, the user cannot modify the vertices positions in the <i>'A'</i> shape, sin
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing1.png' border='1' width='800' height='450'></td></tr>
 <tr><td>Only the points of all polygons are rendered.</td><td>The <i>'wireframe versions'</i> of all polygons are rendered.</td></tr>
 <tr><td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing0.png' border='1' width='800' height='450'></td>
-<td width=50%>The <i>'Triangulation #1'</i> is a quad-dominant mesh, formed by only one triangles and by 5 quadrilaterals. They are rendered independently, and a different color is assigned to each of them.</td></tr>
+<td width=50%>The <i>'Triangulation #1'</i> is a quad-dominant mesh, formed by only one triangle and by 5 quadrilaterals. They are rendered independently, and a different color is assigned to each of them.</td></tr>
 <tr><td width=50%>The <i>'filled versions'</i> of all polygons are rendered.</td><td width=50%><b>REMARK</b></td></tr></table><p>
 
-
-
-
-
-<hr><p><h4>Dependencies</h4>
+<h5>Using the 'Tessellation #2'</h5><p><table border=0 width=100%><tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing0.png' border='1' width='800' height='450'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing1.png' border='1' width='800' height='450'></td></tr>
+<tr><td>Only the points of all triangles are rendered.</td><td>The <i>'wireframe versions'</i> of all triangles are rendered.</td></tr>
+<tr><td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing0.png' border='1' width='800' height='450'></td>
+<td width=50%>The <i>'Triangulation #2'</i> is exactly the same as the <i>'Triangulation #0'</i>, formed by 11 triangles. In this case, it is expressed by 1 triangle strip (in <i>'yellow'</i>), and by 3 triangle fans. The reference vertices for the triangle fans are depicted, respectively, in <i>'red'</i>, in <i>'blue'</i>, and in <i>'green'</i>. Instead, their triangles are depicted in <i>'grey'</i>.</td></tr>
+<tr><td width=50%>The <i>'filled versions'</i> of all triangles are rendered.</td><td width=50%><b>REMARK</b></td></tr></table><p><hr><p><h4>Dependencies</h4>
 
 The <i>'Example-037 (Old Mode)'</i> Test is based on the so-called <i>OpenGL old (direct drawing) mode</i>, and requires the following dependencies:<ul>
 
