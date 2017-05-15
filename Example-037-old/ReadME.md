@@ -12,10 +12,10 @@ Here, the user cannot modify the vertices positions in the <i>'A'</i> shape, sin
 <li>the <i>'filled versions'</i> of all triangles and quadrilaterals in the tessellation of interest for the <i>'A'</i> shape;</li></ul><p>by pressing cyclically the <i>' '</i> key. As mentioned above, the tessellation of interest for the <i>'A'</i> shape to be drawn can be chosen independently.<p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
 
 <h5>Using the 'Tessellation #0'</h5><p><table border=0 width=100%><tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing0.png' border='1' width='800' height='450'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing1.png' border='1' width='800' height='450'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example037_old_tessellation0_vertices.png' border='1' width='800' height='450'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example037_old_tessellation0_edges.png' border='1' width='800' height='450'></td></tr>
 <tr><td>Only the points of all triangles are rendered.</td><td>The <i>'wireframe versions'</i> of all triangles are rendered.</td></tr>
-<tr><td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing0.png' border='1' width='800' height='450'></td>
+<tr><td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example037_old_tessellation0_filled.png' border='1' width='800' height='450'></td>
 <td width=50%>The <i>'Triangulation #0'</i> is a pure triangulation, formed by 11 triangles.<p>
 
 These triangles are rendered independently, and a different color is assigned to each of them.</td></tr>
