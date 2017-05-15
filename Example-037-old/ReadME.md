@@ -19,6 +19,15 @@ Here, the user cannot modify the vertices positions in the <i>'A'</i> shape, sin
 <td width=50%>The <i>'Triangulation #0'</i> is a pure triangulation, formed by 11 triangles. They are rendered independently, and a different color is assigned to each of them.</td></tr>
 <tr><td width=50%>The <i>'filled versions'</i> of all triangles are rendered.</td><td width=50%><b>REMARK</b></td></tr></table><p>
 
+<h5>Using the 'Tessellation #1'</h5><p><table border=0 width=100%><tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing0.png' border='1' width='800' height='450'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing1.png' border='1' width='800' height='450'></td></tr>
+<tr><td>Only the points of all polygons are rendered.</td><td>The <i>'wireframe versions'</i> of all polygons are rendered.</td></tr>
+<tr><td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing0.png' border='1' width='800' height='450'></td>
+<td width=50%>The <i>'Triangulation #1'</i> is a quad-dominant mesh, formed by only one triangles and by 5 quadrilaterals. They are rendered independently, and a different color is assigned to each of them.</td></tr>
+<tr><td width=50%>The <i>'filled versions'</i> of all polygons are rendered.</td><td width=50%><b>REMARK</b></td></tr></table><p>
+
+
 
 
 
