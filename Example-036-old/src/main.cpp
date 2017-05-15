@@ -62,8 +62,21 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-036' Test, based on the (Old Mode) OpenGL."<<endl;
+	cout<<"\tIt draws a specific 'Helix' curve with center at the origin of the 3D space in an OpenGL window. Broadly speaking, any 'Helix' curve turns around an axis at a constant or continuously varying distance, while moving parallel to the axis."<<endl<<endl;
+	cout<<"\tIn this test, we consider a specific 'Helix' curve, evolving along the z-axis, and approximated by a polyline (in 'red'). The 'Helix' curve of interest is defined as follows:"<<endl<<endl;
+	cout<<"\tx(t) = 20 * cos(t), y(t) = 20 * sin(t), z(t) = t - 60"<<endl<<endl<<"\tfor every 't' in '[-10*pi,10*pi]'. The domain, containing the 'Helix' curve of interest, is given by '[-20,20]' x '[-20,20]' x '[-91.4,-28.7]'."<<endl<<endl;
+	cout<<"\tHere, the user cannot modify the number of the samples in the polyline of interest, since they are fixed in advance. Instead, the user can press cyclically the ' ' (space) key for choosing what (perspective) 'viewing configuration' has "<<endl;
+	cout<<"\tto be applied between the following (perspective) 'viewing configurations':"<<endl<<endl;
+	cout<<"\t\tthe 'viewing configuration #0' is based on the viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[0,100]';"<<endl;
+	cout<<"\t\tthe 'viewing configuration #1' is based on the viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[5,120]';"<<endl;
+	cout<<"\t\tthe 'viewing configuration #2' is based on the viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[10,100]';"<<endl;
+	cout<<"\t\tthe 'viewing configuration #3' is based on the viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[2.5,100]';"<<endl;
+	cout<<"\t\tthe 'viewing configuration #4' is based on the viewing perspective box (frustum) '[-10,10]' x '[-10,10]' x '[5,100]';"<<endl;
+	cout<<"\t\tthe 'viewing configuration #5' is based on the viewing perspective box (frustum) '[-1,1]' x '[-3,3]' x '[5,100]'."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+	cout.flush();
 	
-	
+	/* If we arrive here, we can draw the 'Helix' curve of interest. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
