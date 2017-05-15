@@ -17,8 +17,7 @@ Here, the user cannot modify the vertices positions in the <i>'A'</i> shape, sin
 <tr><td>Only the points of all triangles are rendered.</td><td>The <i>'wireframe versions'</i> of all triangles are rendered.</td></tr>
 <tr><td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing0.png' border='1' width='800' height='450'></td>
 <td width=50%></td></tr>
-<tr><td width=50%> </td>
-<td width=50%> </td></tr></table><p>
+<tr><td width=50%>The <i>'filled versions'</i> of all triangles are rendered.</td><td width=50%> </td></tr></table><p>
 
 <h5>Using the 'Tessellation #1'</h5><p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing0.png' border='1' width='800' height='450'></td>
