@@ -6,7 +6,9 @@ The <i>'Example-036 (Old Mode)'</i> Test draws a specific <i>'Helix'</i> curve w
 <li>the <i>'viewing configuration #1'</i> is based on the viewing perspective box (frustum) <i>'[-5,5]' x '[-5,5]' x '[5,120]'.</i></li>
 <li>the <i>'viewing configuration #2'</i> is based on the viewing perspective box (frustum) <i>'[-5,5]' x '[-5,5]' x '[10,100]'.</i></li>
 <li>the <i>'viewing configuration #3'</i> is based on the viewing perspective box (frustum) <i>'[-5,5]' x '[-5,5]' x '[2.5,100]'.</i></li>
-<li>the <i>'viewing configuration #4'</i> is based on the viewing perspective box (frustum) <i>'[-10,10]' x '[-10,10]' x '[5,100]'.</i></li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
+<li>the <i>'viewing configuration #4'</i> is based on the viewing perspective box (frustum) <i>'[-10,10]' x '[-10,10]' x '[5,100]'.</i></li>
+<li>the <i>'viewing configuration #5'</i> is based on the viewing perspective box (frustum) <i>'[-1,1]' x '[-3,3]' x '[5,100]'.</i></li>
+</ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example034_old_viewing0.png' border='1' width='800' height='450'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example034_old_viewing0.png' border='1' width='800' height='450'></td></tr>
 <tr><td>Here, the (perspective) <i>'viewing configuration #0'</i> is exploited.</td><td>Here, the (perspective) <i>'viewing configuration #1'</i> is exploited.</td></tr>
@@ -15,7 +17,11 @@ The <i>'Example-036 (Old Mode)'</i> Test draws a specific <i>'Helix'</i> curve w
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example034_old_viewing0.png' border='1' width='800' height='450'></td>
 <tr><td>Here, the (perspective) <i>'viewing configuration #2'</i> is exploited.</td><td>Here, the (perspective) <i>'viewing configuration #3'</i> is exploited.</td></tr>
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example034_old_viewing0.png' border='1' width='800' height='450'></td><tr><td>Here, the (perspective) <i>'viewing configuration #4'</i> is exploited.</td></tr></table><p><hr><p><h4>Dependencies</h4>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example034_old_viewing0.png' border='1' width='800' height='450'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example034_old_viewing0.png' border='1' width='800' height='450'></td></tr>
+<tr>
+<td>Here, the (perspective) <i>'viewing configuration #4'</i> is exploited.</td>
+<td>Here, the (perspective) <i>'viewing configuration #5'</i> is exploited.</td></tr></table><p><hr><p><h4>Dependencies</h4>
 
 The <i>'Example-036 (Old Mode)'</i> Test is based on the so-called <i>OpenGL old (direct drawing) mode</i>, and requires the following dependencies:<ul>
 

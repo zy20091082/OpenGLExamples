@@ -42,7 +42,7 @@ using namespace std;
  * 0: it indicates to use the viewing orthographic box '[-40,40]' x '[-40,40]' x '[-80,80]'
  * 1: it indicates to use the viewing perspective box (frustum) '[-2.7,2.7]' x '[-2.7,2.7]' x '[2.0,7.0]'
  *
- * The user can choose what project must be used by pressing cyclically the ' ' space.
+ * The user can choose what project must be used by pressing cyclically the the ' ' (space) key.
  */
 int projection=0;
 
@@ -222,6 +222,8 @@ void draw()
 	}
 	else
 	{
+		/* We must exploit the 'glOrtho()' ortographic projection! */
+		
 		/* Face #0 for the cube (black). */
 		glColor3f(0.0f, 0.0f, 0.0f);
 		glBegin(GL_POLYGON);
