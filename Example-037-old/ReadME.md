@@ -7,7 +7,9 @@ The <i>'Example-037 (Old Mode)'</i> Test draws 3 versions of the <i>'A'</i> shap
 <li>The <i>'Variant #2'</i> consists of approximating the <i>'A'</i> shape through the same pure triangulation in the variant #0. In this case, this triangulation is expressed by 1 triangle strip, and by 2 triangle fans. <p></li></ul><p>Here, the user cannot modify the vertices positions in the <i>'A'</i> shape, since they are fixed in advance. Instead, the user can choose to exploit any among the variants of the <i>'A'</i> shape (mentioned above) by pressing cyclically the <i>'t'</i> key. Moreover, the user can decide to render:<ul>
 <li>only the points in the variant of interest for the <i>'A'</i> shape;</li>
 <li>the <i>'wireframe versions'</i> of all triangles and quadrilaterals in the variant of interest for the <i>'A'</i> shape;</li>
-<li>The <i>'filled versions'</i> of all triangles and quadrilaterals in the variant of interest for the <i>'A'</i> shape;</li></ul><p>by pressing cyclically the <i>' '</i> key. As mentioned above, the variant of interest to be drawn can be chosen independently.<p>
+<li>the <i>'filled versions'</i> of all triangles and quadrilaterals in the variant of interest for the <i>'A'</i> shape;</li></ul>
+
+<p>by pressing cyclically the <i>' '</i> key. As mentioned above, the variant of interest to be drawn can be chosen independently.<p>
 
 Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
 
