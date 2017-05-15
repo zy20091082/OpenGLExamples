@@ -10,15 +10,15 @@ The <i>'Example-036 (Old Mode)'</i> Test draws a specific <i>'Helix'</i> curve w
 <li>the <i>'viewing configuration #5'</i> is based on the viewing perspective box (frustum) <i>'[-1,1]' x '[-3,3]' x '[5,100]'.</i></li>
 </ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing0.png' border='1' width='800' height='450'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing0.png' border='1' width='800' height='450'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing1.png' border='1' width='800' height='450'></td></tr>
 <tr><td>Here, the (perspective) <i>'viewing configuration #0'</i> is exploited.</td><td>Here, the (perspective) <i>'viewing configuration #1'</i> is exploited.</td></tr>
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing0.png' border='1' width='800' height='450'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing0.png' border='1' width='800' height='450'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing2.png' border='1' width='800' height='450'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing3.png' border='1' width='800' height='450'></td>
 <tr><td>Here, the (perspective) <i>'viewing configuration #2'</i> is exploited.</td><td>Here, the (perspective) <i>'viewing configuration #3'</i> is exploited.</td></tr>
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing0.png' border='1' width='800' height='450'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing0.png' border='1' width='800' height='450'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing4.png' border='1' width='800' height='450'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing5.png' border='1' width='800' height='450'></td></tr>
 <tr>
 <td>Here, the (perspective) <i>'viewing configuration #4'</i> is exploited.</td>
 <td>Here, the (perspective) <i>'viewing configuration #5'</i> is exploited.</td></tr></table><p><hr><p><h4>Dependencies</h4>
