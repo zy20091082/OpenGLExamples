@@ -22,10 +22,10 @@ These triangles are rendered independently, and a different color is assigned to
 <tr><td width=50%>The <i>'filled versions'</i> of all triangles are rendered.</td><td width=50%><b>REMARK</b></td></tr></table><p>
 
 <h5>Using the 'Tessellation #1'</h5><p><table border=0 width=100%><tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing0.png' border='1' width='800' height='450'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing1.png' border='1' width='800' height='450'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example037_old_tessellation1_vertices.png' border='1' width='800' height='450'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example037_old_tessellation1_edges.png' border='1' width='800' height='450'></td></tr>
 <tr><td>Only the points of all polygons are rendered.</td><td>The <i>'wireframe versions'</i> of all polygons are rendered.</td></tr>
-<tr><td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example036_old_viewing0.png' border='1' width='800' height='450'></td>
+<tr><td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example037_old_tessellation1_filled.png' border='1' width='800' height='450'></td>
 <td width=50%>The <i>'Triangulation #1'</i> is a quad-dominant mesh, formed by only one triangle and by 5 quadrilaterals.<p>
 
 These polygons are rendered independently, and a different color is assigned to each of them.</td></tr>
