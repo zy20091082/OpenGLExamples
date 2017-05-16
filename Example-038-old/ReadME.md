@@ -7,27 +7,43 @@ The <i>'Example-038 (Old Mode)'</i> Test draws 2 variants of the <i>'Eight'</i> 
 <li>increase the number <i>'n'</i> of all vertices in the triangle fans and of the vertices pairs in the triangle strips of interest by pressing the <i>'+'</i> key;</li>
 <li>decrease the number <i>'n'</i> of all vertices in the triangle fans and of the vertices pairs in the triangle strips of interest by pressing the <i>'-'</i> key;</li>
 <li>choosing to render a specific variant of the <i>'Eight'</i> shape by pressing cyclically the <i>' '</i> key. The custom settings for rendering the triangles are set independently.</li>
-<li>Choosing to render the <i>'wireframe'</i> or the <i>'filled versions'</i> of all triangles in the triangle fans and the triangle strips of interest by pressing cyclically the <i>'w'</i> key. The variant of the <i>'Eight'</i> shape to be drawn is chosen independently.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example031_old_conf0.png' border='1' width="800" height="500"></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example031_old_conf1.png' border='1' width="800" height="500"></td></tr>
-<tr>
-<td width=50%>The <i>'wireframe versions'</i> of all triangles in the triangle fans, forming the disks with <i>'n'=5</i> vertices (including the centers).</td>
-<td width=50%>The <i>'wireframe versions'</i> of all triangles in the triangle fans, forming the disks with <i>'n'=50</i> vertices (including the centers).</td>
-</tr>
-<tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example031_old_conf0.png' border='1' width="800" height="500"></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example031_old_conf1.png' border='1' width="800" height="500"></td></tr>
-<tr>
-<td width=50%>The <i>'filled versions'</i> of all triangles in the triangle fans, forming the disks with <i>'n'=5</i> vertices (including the centers).</td>
-<td width=50%>The <i>'filled versions'</i> of all triangles in the triangle fans, forming the disks with <i>'n'=50</i> vertices (including the centers).</td>
-</tr>
-</table><p><h5>Using the variant #0</h5>
+<li>Choosing to render the <i>'wireframe'</i> or the <i>'filled versions'</i> of all triangles in the triangle fans and the triangle strips of interest by pressing cyclically the <i>'w'</i> key. The variant of the <i>'Eight'</i> shape to be drawn is chosen independently.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.
 
+<p><h5>Using the variant #0</h5>
+
+<p><table border=0 width=100%><tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example031_old_conf0.png' border='1' width="800" height="500"></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example031_old_conf1.png' border='1' width="800" height="500"></td></tr>
+<tr>
+<td width=50%>The number <i>'n'</i> of the samples is <i>'n'= 5</i> for the <i>'wireframe versions'</i> of all triangles in the triangle fans of interest.</td>
+<td width=50%>The number <i>'n'</i> of the samples is <i>'n'= 50</i> for the <i>'wireframe versions'</i> of all triangles in the triangle fans of interest.</td>
+</tr>
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example031_old_conf0.png' border='1' width="800" height="500"></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example031_old_conf1.png' border='1' width="800" height="500"></td></tr>
+<tr>
+<td width=50%>The number <i>'n'</i> of the samples is <i>'n'= 5</i> for the <i>'filled versions'</i> of all triangles in the triangle fans of interest.</td>
+<td width=50%>The number <i>'n'</i> of the samples is <i>'n'= 50</i> for the <i>'filled versions'</i> of all triangles in the triangle fans of interest.</td>
+</tr>
+</table><p>
 
 <h5>Using the variant #1</h5>
 
-
-<p><hr><p>
+<p><table border=0 width=100%><tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example031_old_conf0.png' border='1' width="800" height="500"></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example031_old_conf1.png' border='1' width="800" height="500"></td></tr>
+<tr>
+<td width=50%>The number <i>'n'</i> of the samples is <i>'n'= 5</i> for the <i>'wireframe versions'</i> of all quadrilaterals in the quad strips of interest.</td>
+<td width=50%>The number <i>'n'</i> of the samples is <i>'n'= 50</i> for the <i>'wireframe versions'</i> of all quadrilaterals in the quad strips of interest.</td>
+</tr>
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example031_old_conf0.png' border='1' width="800" height="500"></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example031_old_conf1.png' border='1' width="800" height="500"></td></tr>
+<tr>
+<td width=50%>The number <i>'n'</i> of the samples is <i>'n'= 5</i> for the <i>'filled versions'</i> of all quadrilaterals in the quad strips of interest.</td>
+<td width=50%>The number <i>'n'</i> of the samples is <i>'n'= 50</i> for the <i>'filled versions'</i> of all quadrilaterals in the quad strips of interest.</td>
+</tr>
+</table><p><hr><p>
 
 <h4>Dependencies</h4>
 
