@@ -7,7 +7,7 @@ The <i>'Example-038 (Old Mode)'</i> Test draws 2 variants of the <i>'Eight'</i> 
 <li>increase the number <i>'n'</i> of all vertices in the triangle fans and of the vertices pairs in the triangle strips of interest by pressing the <i>'+'</i> key;</li>
 <li>decrease the number <i>'n'</i> of all vertices in the triangle fans and of the vertices pairs in the triangle strips of interest by pressing the <i>'-'</i> key;</li>
 <li>choosing to render a specific variant of the <i>'Eight'</i> shape by pressing cyclically the <i>' '</i> key. The custom settings for rendering the triangles are set independently.</li>
-<li>Choosing to render the <i>'wireframe'</i> or the <i>'filled versions'</i> of all triangles in the triangle fans and of the vertices pairs in the triangle strips of interest by pressing cyclically the <i>'w'</i> key. The variant of the <i>'Eight'</i> shape to be drawn is chosen independently.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
+<li>Choosing to render the <i>'wireframe'</i> or the <i>'filled versions'</i> of all triangles in the triangle fans and in the triangle strips of interest by pressing cyclically the <i>'w'</i> key. The variant of the <i>'Eight'</i> shape to be drawn is chosen independently.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
 
 
 <p><hr><p>
