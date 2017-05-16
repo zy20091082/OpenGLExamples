@@ -13,14 +13,14 @@ The <i>'Example-038 (Old Mode)'</i> Test draws 2 variants of the <i>'Eight'</i> 
 
 <p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example038_old_tessellation0_edges.png' border='1'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example031_old_conf1.png' border='1' width="800" height="500"></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example038_old_tessellation0_50_edges.png' border='1'></td></tr>
 <tr>
 <td width=50%>The number <i>'n'</i> of the samples is <i>'n'= 5</i> for the <i>'wireframe versions'</i> of all triangles in the triangle fans of interest.</td>
 <td width=50%>The number <i>'n'</i> of the samples is <i>'n'= 50</i> for the <i>'wireframe versions'</i> of all triangles in the triangle fans of interest.</td>
 </tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example038_old_tessellation0_filled.png' border='1'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example031_old_conf1.png' border='1' width="800" height="500"></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example038_old_tessellation0_50_filled.png' border='1'></td></tr>
 <tr>
 <td width=50%>The number <i>'n'</i> of the samples is <i>'n'= 5</i> for the <i>'filled versions'</i> of all triangles in the triangle fans of interest.</td>
 <td width=50%>The number <i>'n'</i> of the samples is <i>'n'= 50</i> for the <i>'filled versions'</i> of all triangles in the triangle fans of interest.</td>
