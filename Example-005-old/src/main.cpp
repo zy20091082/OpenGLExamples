@@ -36,7 +36,7 @@ using namespace std;
 
 /// The <i>'x'</i> coordinate value for the triangle of interest.
 /**
- * It is initially set to 'x'=20, and can be modified by pressing the '+' (increasing 'x' by 1), the '-' (decreasing 'x' by 1), and the '=' (resetting 'x'=20) keys.
+ * It is initially set to 'x=20', and can be modified by pressing the '+' (increasing 'x' by 1), the '-' (decreasing 'x' by 1), and the '=' (resetting 'x=20') keys.
  */
 GLfloat xcoord=20;
 
@@ -58,10 +58,10 @@ int main(int argc,char **argv)
 	cout<<"\tThe polygon of interest is the intersection of the following elements:"<<endl<<endl;
 	cout<<"\t\t-) the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]';"<<endl;
 	cout<<"\t\t-) the triangle with vertices '(x,20,0)' - '(80,20,0)' - '(80,80,0)', for any 'x' coordinate along the x-axis."<<endl<<endl;
-	cout<<"\tHere, the orthographic viewing box is not modified. Instead, the 'x' coordinate of the triangle, initially set to 'x'=20, can be moved by the user along the x-axis. Specifically, the user can:"<<endl<<endl;
+	cout<<"\tHere, the orthographic viewing box is not modified. Instead, the 'x' coordinate of the triangle, initially set to 'x=20', can be moved by the user along the x-axis. Specifically, the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the 'x' coordinate by 1.0 for the triangle of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the 'x' coordinate by 1.0 for the triangle of interest by pressing the '-' key;"<<endl;
-	cout<<"\t\t-) reset the 'x' coordinate for the triangle of interest to its initial value 'x'=20 by pressing the '=' key."<<endl<<endl;
+	cout<<"\t\t-) reset the 'x' coordinate for the triangle of interest to its initial value 'x=20' by pressing the '=' key."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -116,7 +116,7 @@ void initialize()
 	xcoord=20.0;
 	eol=false;
 	glClearColor(1.0, 1.0, 1.0, 0.0);
-	cout<<"\tAt the beginning, the 'x' coordinate for the triangle of interest is set to 'x'="<<xcoord<<" in the scene."<<endl<<endl;
+	cout<<"\tAt the beginning, the 'x' coordinate for the triangle of interest is set to 'x="<<xcoord<<"' in the scene."<<endl<<endl;
 	cout.flush();
 }
 
@@ -151,7 +151,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '+, thus we increase the 'x' coordinate by 1 for the triangle of interest. */
 		xcoord=xcoord+(GLfloat)1.0;
-		cout<<"\tThe 'x' coordinate for the triangle of interest is currently increased to 'x'="<<xcoord<<" in the scene."<<endl;
+		cout<<"\tThe 'x' coordinate for the triangle of interest is currently increased to 'x="<<xcoord<<"' in the scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -161,7 +161,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-', thus we decrease the 'x' coordinate by 1 for the triangle of interest. */
 		xcoord=xcoord-(GLfloat)1.0;
-		cout<<"\tThe 'x' coordinate for the triangle of interest is currently decreased to 'x'="<<xcoord<<" in the scene."<<endl;
+		cout<<"\tThe 'x' coordinate for the triangle of interest is currently decreased to 'x="<<xcoord<<"' in the scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -169,10 +169,10 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '=':
 		
-		/* The key is '=', thus we reinitialize the 'x' coordinate to 'x'=20 for the triangle of interest. */
+		/* The key is '=', thus we reinitialize the 'x' coordinate to 'x=20' for the triangle of interest. */
 		xcoord=20.0;
 		eol=true;
-		cout<<"\tThe 'x' coordinate for the triangle of interest is currently set to its default value 'x'="<<xcoord<<" in the scene."<<endl;
+		cout<<"\tThe 'x' coordinate for the triangle of interest is currently set to its default value 'x="<<xcoord<<"' in the scene."<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;
