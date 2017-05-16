@@ -112,7 +112,7 @@ void initialize()
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
-	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' - ' ' keys. */
+	/* We are interested only in the 'q' - 'Q' - 'Esc' - ' ' keys. */
 	switch (key)
 	{
 		case 'q':

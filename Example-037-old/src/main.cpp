@@ -35,8 +35,29 @@ using namespace std;
 
 #endif
 
-int mode=0;
+/// This flag indicates the rendering settings for drawing the polygons in the tesselation of interest for the <i>'A'</i> shape.
+/**
+ * It assumes the following values:
+ *
+ * -) 0:	used for rendering only the points of all triangles and quadrilaterals in the tessellation of interest.
+ * -) 1:	used for rendering the 'wireframe versions' of all triangles and quadrilaterals in the tessellation of interest.
+ * -) 2:	used for rendering the 'filled versions' of all triangles and quadrilaterals in the tessellation of interest.
+ *
+ * The tessellation of interest is chosen independently.
+ */
+int mode=2;
 
+/// This flag indicates what tessellation of the <i>'A'</i> shape must be exploited.
+/**
+ * It assumes the following values:
+ *
+ * -) 0: 	used for indicating the use of the 'Tessellation #0', consisting of a pure triangulation with 11 triangles. A different color is assigned to each triangle.
+ * -) 1: 	used for indicating the use of the 'Tessellation #1', consisting of a quad-dominant mesh with 5 quadrilaterals and one triangle. A different color is assigned to the triangle and to each quadrilateral.
+ * -) 2: 	used for indicating the use of the 'Tessellation #2', consisting of the same triangulation in the 'Tessellation #0'. In this case, it is expressed by 1 triangle strip (in 'yellow'), and by 3 triangle fans. The reference vertices for
+ *    		the triangle fans are depicted, respectively, in 'red', in 'blue', and in 'green'. Instead, their triangles are depicted in 'grey'.
+ *
+ * The rendering settings for drawing the polygons of interest are set independently.
+ */
 int tessellation=0;
 
 /* Prototypes for all functions of interest! */
@@ -100,7 +121,7 @@ void initialize()
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
-	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' - ' ' keys. */
+	/* We are interested only in the 'q' - 'Q' - 'Esc' - ' ' - 't' keys. */
 	switch (key)
 	{
 		case 'q':
@@ -158,7 +179,7 @@ void resize(int w, int h)
    	gluOrtho2D(-35,35,-5,65);
 }
 
-/// This function draws the tessellation of interest for the 'A' shape in the main OpenGL window by using the rendering settings, choosen by the user.
+/// This function draws the tessellation of interest for the <i>'A'</i> shape in the main OpenGL window by using the rendering settings, choosen by the user.
 void draw()
 {
 	/* We draw the tessellation of interest for the 'A' shape in the main OpenGL window by using the rendering settings, choosen by the user. */
