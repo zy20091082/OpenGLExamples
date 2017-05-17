@@ -8,11 +8,11 @@ The <i>'Example-025 (Old Mode)'</i> Test draws a polyline (in <i>'red'</i>), for
 <li>decrease the number <i>'n'</i> of the vertices and the edges in the polyline of interest by pressing the <i>'-'</i> key.</li></ul>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example025_old_conf0.png' border='1' width='456' height='560'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example025_old_conf1.png' border='1' width='456' height='560'></td></tr>
-<tr><td>Here, <i>y = 5 * x^2</i>, <i>'R'=0.5</i>, and <i>'n'=3</i>.</td><td> Here, <i>y = 5 * x^2</i>, <i>'R'=0.5</i>, and <i>'n'=5</i>.</td></tr>
+<tr><td>Here, <i>y = 5 * x^2</i>, <i>'R=0.5'</i>, and <i>'n=3'</i>.</td><td> Here, <i>y = 5 * x^2</i>, <i>'R=0.5'</i>, and <i>'n=5'</i>.</td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example025_old_conf2.png' border='1' width='456' height='560'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example025_old_conf3.png' border='1' width='456' height='560'></td></tr>
-<tr><td>Here, <i>y = 5 * x^2</i>, <i>'R'=0.5</i>, and <i>'n'=20</i>.</td><td>Here, <i>y = 5 * x^2</i>, <i>'R'=0.5</i>, and <i>'n'=50</i>.</td></tr></table><p><hr><p>
+<tr><td>Here, <i>y = 5 * x^2</i>, <i>'R=0.5'</i>, and <i>'n=20'</i>.</td><td>Here, <i>y = 5 * x^2</i>, <i>'R=0.5'</i>, and <i>'n=50'</i>.</td></tr></table><p><hr><p>
 
 <h4>Dependencies</h4>
 

@@ -11,15 +11,15 @@ The <i>'Example-024 (Old Mode)'</i> Test draws all quadrilaterals (in <i>'red'</
 <li>decrease the number <i>'n'</i> of all quadrilaterals in the quastrip of interest by pressing the <i>'-'</i> key.</li></ul>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example024_old_conf0.png' border='1' width='450' height='450'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example024_old_conf1.png' border='1' width='450' height='450'></td></tr>
-<tr><td><i>'Configuration #0'</i>: radius <i>'rI'=1</i>, radius <i>'rE'=2</i>, center <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=3</i> quadrilaterals.</td><td><i>'Configuration #0'</i>: radius <i>'rI'=1</i>, radius <i>'rE'=2</i>, center <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=50</i> quadrilaterals.</td></tr>
+<tr><td><i>'Configuration #0'</i>: radius <i>'rI=1'</i>, radius <i>'rE=2'</i>, center <i>'(xc,yc)=(0,0)'</i>, and <i>'n=3'</i> quadrilaterals.</td><td><i>'Configuration #0'</i>: radius <i>'rI=1'</i>, radius <i>'rE=2'</i>, center <i>'(xc,yc)=(0,0)'</i>, and <i>'n=50'</i> quadrilaterals.</td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example024_old_conf2.png' border='1' width='450' height='450'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example024_old_conf3.png' border='1' width='450' height='450'></td></tr>
-<tr><td><i>'Configuration #1'</i>: radius <i>'rI'=1</i>, radius <i>'rE'=2</i>, center <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=3</i> quadrilaterals.</td><td><i>'Configuration #1'</i>: radius <i>'rI'=1</i>, radius <i>'rE'=2</i>, center <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=50</i> quadrilaterals.</td></tr>
+<tr><td><i>'Configuration #1'</i>: radius <i>'rI=1'</i>, radius <i>'rE=2'</i>, center <i>'(xc,yc)=(0,0)'</i>, and <i>'n=3'</i> quadrilaterals.</td><td><i>'Configuration #1'</i>: radius <i>'rI=1'</i>, radius <i>'rE=2'</i>, center <i>'(xc,yc)=(0,0)'</i>, and <i>'n=50'</i> quadrilaterals.</td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example024_old_conf4.png' border='1' width='450' height='450'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example024_old_conf5.png' border='1' width='450' height='450'></td></tr>
-<tr><td><i>'Configuration #2'</i>: radius <i>'rI'=1</i>, radius <i>'rE'=2</i>, center <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=3</i> quadrilaterals.</td><td><i>'Configuration #2'</i>: radius <i>'rI'=1</i>, radius <i>'rE'=2</i>, center <i>'(xc,yc)'=(0,0)</i>, and <i>'n'=50</i> quadrilaterals.</td></tr></table><p><hr><p>
+<tr><td><i>'Configuration #2'</i>: radius <i>'rI=1'</i>, radius <i>'rE=2'</i>, center <i>'(xc,yc)=(0,0)'</i>, and <i>'n=3'</i> quadrilaterals.</td><td><i>'Configuration #2'</i>: radius <i>'rI=1'</i>, radius <i>'rE=2'</i>, center <i>'(xc,yc)=(0,0)'</i>, and <i>'n=50'</i> quadrilaterals.</td></tr></table><p><hr><p>
 
 <h4>Dependencies</h4>
 
