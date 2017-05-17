@@ -83,7 +83,7 @@ int main(int argc,char **argv)
 	cout<<"\t\t-) only the points in the tessellation of interest for the 'A' shape;"<<endl;
 	cout<<"\t\t-) the 'wireframe versions' of all triangles and quadrilaterals in the tessellation of interest for the 'A' shape;"<<endl;
 	cout<<"\t\t-) the 'filled versions' of all triangles and quadrilaterals in the tessellation of interest for the 'A' shape;"<<endl<<endl;
-	cout<<"\tby pressing cyclically the ' ' key. As mentioned above, the tessellation of interest for the 'A' shape to be drawn can be chosen independently."<<endl<<endl;
+	cout<<"\tby pressing cyclically the ' ' (space) key. As mentioned above, the tessellation of interest for the 'A' shape to be drawn can be chosen independently."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	
@@ -121,7 +121,7 @@ void initialize()
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
-	/* We are interested only in the 'q' - 'Q' - 'Esc' - ' ' - 't' keys. */
+	/* We are interested only in the 'q' - 'Q' - 'Esc' - ' ' (space) - 't' keys. */
 	switch (key)
 	{
 		case 'q':
@@ -150,7 +150,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case ' ':
 		
-		/* The key is ' ', thus we change the rendering mode of interest! */
+		/* The key is ' ' (space), thus we change the rendering mode of interest! */
 		mode=(mode+1)%3;
 		glutPostRedisplay();
 		break;

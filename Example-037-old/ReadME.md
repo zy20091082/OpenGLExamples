@@ -9,7 +9,7 @@ The <i>'Example-037 (Old Mode)'</i> Test draws several versions of the <i>'A'</i
 Here, the user cannot modify the vertices positions in the <i>'A'</i> shape, since they are fixed in advance. Instead, the user can choose interactively to exploit any among the tessellations of the <i>'A'</i> shape (mentioned above) by pressing cyclically the <i>'t'</i> key. Moreover, the user can decide interactively to render:<ul>
 <li>only the points in the tessellation of interest for the <i>'A'</i> shape;</li>
 <li>the <i>'wireframe versions'</i> of all triangles and quadrilaterals in the tessellation of interest for the <i>'A'</i> shape;</li>
-<li>the <i>'filled versions'</i> of all triangles and quadrilaterals in the tessellation of interest for the <i>'A'</i> shape;</li></ul><p>by pressing cyclically the <i>' '</i> key. As mentioned above, the tessellation of interest for the <i>'A'</i> shape to be drawn can be chosen independently.<p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
+<li>the <i>'filled versions'</i> of all triangles and quadrilaterals in the tessellation of interest for the <i>'A'</i> shape;</li></ul><p>by pressing cyclically the <i>' '</i> (space) key. As mentioned above, the tessellation of interest for the <i>'A'</i> shape to be drawn can be chosen independently.<p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p>
 
 <h5>Using the 'Tessellation #0'</h5><p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example037_old_tessellation0_vertices.png' border='1' width='800' height='450'></td>

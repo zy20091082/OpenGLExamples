@@ -50,7 +50,7 @@ unsigned int num_samples=5;
  * -) the 'GL_LINE' value, used for rendering the 'wireframe versions' for all triangles in the triangle fans of interest;
  * -) the 'GL_FILL' value, used for rendering the 'filled versions' for all triangles in the triangle fans of interest.
  *
- * It is possible to cycle between these 2 renderings by pressing the ' ' key.
+ * It is possible to cycle between these 2 renderings by pressing the ' ' (space) key.
  */
 GLenum mode=GL_FILL;
 
@@ -68,7 +68,7 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-032' Test, based on the (Old Mode) OpenGL."<<endl<<endl;
 	cout<<"\tIt draws an approximation of the 'Bullseye' shape in an OpenGL window. A generic 'Bullseye' shape is defined by several concentric 'Circle' shapes (disks) of different colors, same center '(xc,yc)', and radii of different"<<endl;
 	cout<<"\tlengths. Recall that the 'Circle' shape with radius 'R' and center '(xc,yc)' is defined as follows:"<<endl<<endl;
-	cout<<"\t| x(t) - xc | <= R * cos(t), | y(t) - yc | <= R * sin(t)"<<endl<<endl<<"\tfor any 'R'>0, and for every 't' in '[-pi,pi]'."<<endl<<endl;
+	cout<<"\t| x(t) - xc | <= R * cos(t), | y(t) - yc | <= R * sin(t)"<<endl<<endl<<"\tfor any 'R>0', and for every 't' in '[-pi,pi]'."<<endl<<endl;
 	cout<<"\tIn other words, any 'Bullseye' shape is the union of all circular crowns, bounded by the 'Circle' curves, that are the boundary for the pairs of the consecutive disks in the 'Bullseye' shape, if sorted with respect to the"<<endl;
 	cout<<"\tlengths of their radii. The 'Bullseye' shape often represents the targets in the shooting and the archery competitions."<<endl<<endl;
 	cout<<"\tHere, we restrict our attention to the approximation of the 'Bullseye' shape, formed by 5 concentric disks. However, the approximation of interest is not 'real', since it is the result of drawing the approximations of 5"<<endl;
@@ -108,7 +108,7 @@ void initialize()
 	cout<<"\tAt the beginning, the 'Bullseye' shape is approximated by the ";
 	if(mode==GL_FILL) cout<<"'filled versions' ";
 	else cout<<"'wireframe versions' ";
-	cout<<"of several triangles in 5 triangle fans with 'n'="<<num_samples<<" vertices (thus with the minimum number 'n' as possible of the vertices)."<<endl<<endl;
+	cout<<"of several triangles in 5 triangle fans with 'n="<<num_samples<<"' vertices (thus with the minimum number 'n' as possible of the vertices)."<<endl<<endl;
 	cout.flush();
 }
 
@@ -168,14 +168,14 @@ void draw()
 	cout<<"\tThe 'Bullseye' shape is approximated by the ";
 	if(mode==GL_FILL) cout<<"'filled versions' ";
 	else cout<<"'wireframe versions' ";
-	cout<<"of several triangles in 5 triangle fans with 'n'="<<num_samples<<" vertices (including the center)."<<endl;
+	cout<<"of several triangles in 5 triangle fans with 'n="<<num_samples<<"' vertices (including the center)."<<endl;
 	cout.flush();
 }
 
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
-	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' - ' ' keys. */
+	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' - ' ' (space) keys. */
 	switch (key)
 	{
 		case 'q':
@@ -213,14 +213,14 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-', thus we decrease (if possible) the number 'n' of the vertices (including the center) in the triangle fans, approximating 5 'Circle' shapes in the 'Bullseye' shape of interest! */
 		if(num_samples>5) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 'n'=5 of the vertices in the triangle fans of interest is reached, and it is not possible to decrease again this number."<<endl;
+		else cout<<"\tThe minimum number 'n=5' of the vertices in the triangle fans of interest is reached, and it is not possible to decrease again this number."<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;
 		
 		case ' ':
 		
-		/* The key is ' ', thus we change the rendering mode! */
+		/* The key is ' ' (space), thus we change the rendering mode! */
 		if(mode==GL_FILL) mode=GL_LINE;
 		else mode=GL_FILL;
 		glutPostRedisplay();

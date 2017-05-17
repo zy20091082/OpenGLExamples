@@ -60,7 +60,7 @@ unsigned int num_samples=5;
  * -) the 'GL_LINE' value, used for rendering the 'wireframe versions' for all triangles in the triangle fans and in the triangle strip of interest;
  * -) the 'GL_FILL' value, used for rendering the 'filled versions' for all triangles in the triangle fans and in the triangle strip of interest.
  *
- * It is possible to cycle between these 2 renderings by pressing the ' ' key.
+ * It is possible to cycle between these 2 renderings by pressing the ' ' (space) key.
  */
 GLenum mode=GL_FILL;
 
@@ -79,7 +79,7 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-030' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws 3 variants of the 'Circular Annulus' shape with 'internal' radius 'rI', 'external' radius 'rE', and center '(xc,yc)' in an OpenGL window. The 'Circular Annulus' shape is defined as follows:"<<endl<<endl;
 	cout<<"\t| rI * cos(t) | <= | x(t) - xc | <= | rE * cos(t) |, | rI * sin(t) | <= | y(t) - yc | <= | rE * sin(t) |"<<endl<<endl;
-	cout<<"\tfor every 't' in '[-pi,pi]', and for any 'rI'>0 and 'rE>0', such that 'rI<rE'."<<endl<<endl;
+	cout<<"\tfor every 't' in '[-pi,pi]', and for any 'rI>0' and 'rE>0', such that 'rI<rE'."<<endl<<endl;
 	cout<<"\tIn other words, it is formed by all points in the circular crown, bounded by 2 (concentric) 'Circle' shapes (disks) of the same center '(xc,yc)' and of radius 'rI' and 'rE', respectively. The disk of radius 'rE' is the"<<endl;
 	cout<<"\t'external' disk, and the disk of radius 'rI' is the 'internal' disk."<<endl<<endl;
 	cout<<"\tSpecifically, this test draws the following variants of the 'Circular Annulus' shape:"<<endl<<endl;
@@ -117,7 +117,7 @@ int main(int argc,char **argv)
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
-	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' - ' ' keys. */
+	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' - ' ' (space) keys. */
 	switch (key)
 	{
 		case 'q':
@@ -155,14 +155,14 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-', thus we decrease the number 'n' of the vertices (if possible) in 2 triangle fans and of the vertices pairs in the triangle strip of interest! */
 		if(num_samples>5) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 'n'=5 of the vertices in 2 triangle fans and of the vertices pairs in the triangle strip of interest is reached, and it is not possible to decrease again this number."<<endl;
+		else cout<<"\tThe minimum number 'n=5' of the vertices in 2 triangle fans and of the vertices pairs in the triangle strip of interest is reached, and it is not possible to decrease again this number."<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;
 		
 		case ' ':
 		
-		/* The key is ' ', thus we change the rendering mode! */
+		/* The key is ' ' (space), thus we change the rendering mode! */
 		if(mode==GL_FILL) mode=GL_LINE;
 		else mode=GL_FILL;
 		glutPostRedisplay();
@@ -261,7 +261,7 @@ void draw()
 	cout<<"\tAll variants of the 'Circular Annulus' shape are currently approximated by the ";
 	if(mode==GL_FILL) cout<<"'filled versions' ";
 	else cout<<"'wireframe versions' ";
-	cout<<"of several triangles in 2 triangle fans and in a triangle strip with 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" vertices pairs, respectively."<<endl;
+	cout<<"of several triangles in 2 triangle fans and in a triangle strip with 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"' vertices pairs, respectively."<<endl;
 	cout.flush();
 }
 
@@ -275,6 +275,6 @@ void initialize()
 	cout<<"\tAt the beginning, the variants of the 'Circular Annulus' shape are approximated by the ";
 	if(mode==GL_FILL) cout<<"'filled versions' ";
 	else cout<<"'wireframe versions' ";
-	cout<<"of all triangles in 2 triangle fans with 'n'="<<num_samples<<" vertices and in a triangle strip with 'n'="<<num_samples<<" pairs of the vertices"<<endl;
+	cout<<"of all triangles in 2 triangle fans with 'n="<<num_samples<<"' vertices and in a triangle strip with 'n="<<num_samples<<"' pairs of the vertices"<<endl;
 	cout<<"\t(thus with the minimum number 'n' as possible of the vertices and of the vertices pairs)."<<endl<<endl;
 }

@@ -113,7 +113,7 @@ void initialize()
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
-	/* We are interested only in the 'q' - 'Q' - 'Esc' - ' ' keys. */
+	/* We are interested only in the 'q' - 'Q' - 'Esc' - ' ' (space) keys. */
 	switch (key)
 	{
 		case 'q':
@@ -142,7 +142,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case ' ':
 		
-		/* The key is ' ', thus we change the projection of interest! */
+		/* The key is ' ' (space), thus we change the projection of interest! */
 		projection=(projection+1)%2;
 		resize(500,500);
 		glutInitWindowSize(500,500);
