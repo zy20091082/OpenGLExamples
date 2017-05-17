@@ -84,7 +84,7 @@ int main(int argc,char **argv)
 	cout<<"\tIt draws all quadrilaterals (in 'red') in a quadstrip, formed by an arbitrary number 'n' of the quadrilaterals, in an OpenGL window. The quadstrip of interest approximates the 'Circular Annulus' shape with 'internal' radius 'rI',"<<endl;
 	cout<<"\t'external' radius 'rE', and center '(xc,yc)'. The 'Circular Annulus' shape is defined as follows:"<<endl<<endl;
 	cout<<"\t| rI * cos(t) | <= | x(t) - xc | <= | rE * cos(t) |, | rI * sin(t) | <= | y(t) - yc | <= | rE * sin(t) |"<<endl<<endl;
-	cout<<"\tfor every 't' in '[-pi,pi]', and for any 'rI'>0 and 'rE>0', such that 'rI<rE'."<<endl<<endl;
+	cout<<"\tfor every 't' in '[-pi,pi]', and for any 'rI>0' and 'rE>0', such that 'rI<rE'."<<endl<<endl;
 	cout<<"\tIn other words, it is formed by all points in the circular crown, bounded by 2 (concentric) 'Circle' shapes (disks) of the same center '(xc,yc)' and of radius 'rI' and 'rE', respectively. The disk of radius 'rE' is the 'external'"<<endl;
 	cout<<"\tdisk, and the disk of radius 'rI' is the 'internal' disk."<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide the 'external' radius 'rE' and the 'internal' radius 'rI', as well as the center coodinates '(xc,yc)'. The user can also:"<<endl<<endl;
@@ -104,11 +104,11 @@ int main(int argc,char **argv)
 	}
 	
 	/* Now, we read the external radius 'rE' for the 'Circular Annulus' shape of interest. */
-	cout<<"\tPlease, insert the external radius 'rE' (thus, a positive and not null floating-point value, such that 'rE'>"<<rI<<") for the 'Circular Annulus' shape of interest: ";
+	cout<<"\tPlease, insert the external radius 'rE' (thus, a positive and not null floating-point value, such that 'rE>"<<rI<<"') for the 'Circular Annulus' shape of interest: ";
 	cin>>rE;
 	if( (!cin) || (rE<=0) || (rE<=rI) )
 	{
-		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE, SUCH THAT 'rE'>"<<rI<<") FOR THE EXTERNAL RADIUS 'rE' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE, SUCH THAT 'rE>"<<rI<<"') FOR THE EXTERNAL RADIUS 'rE' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		cout.flush();
 		return EXIT_FAILURE;
 	}

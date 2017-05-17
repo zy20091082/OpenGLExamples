@@ -92,7 +92,7 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-025' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tdraws a polyline (in 'red'), formed by an arbitrary number 'n' of the vertices and the edges, in an OpenGL window. The polyline of interest approximates a portion of the 'Parabola' curve with vertex '(xv,yv)'. The portion of"<<endl;
 	cout<<"\tinterest for the 'Parabola' curve is defined as follows:"<<endl<<endl;
-	cout<<"\tx(t) = t, y(t) = a * t ^ 2 + b * t + c"<<endl<<endl<<"\tfor any not null 'a', and for every 't' in '[xv-R,xv+R]', with any 'R'>0."<<endl<<endl;
+	cout<<"\tx(t) = t, y(t) = a * t ^ 2 + b * t + c"<<endl<<endl<<"\tfor any not null 'a', and for every 't' in '[xv-R,xv+R]', with any 'R>0'."<<endl<<endl;
 	cout<<"\tThe parameters 'a', 'b', and 'c' determine the properties of the 'Parabola' curve. In particular, its vertex '(xv,yv)' is defined as follows:"<<endl<<endl;
 	cout<<"\txv = -b / (2 * a), yv = a * xv ^ 2 + b * xv + c"<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide the parameters 'a', 'b', and 'c', as well as the semi-length 'R' of the range '[xv-R,xv+R]'. The user can also:"<<endl<<endl;

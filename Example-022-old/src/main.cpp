@@ -83,7 +83,7 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-022' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws 3 approximations of the 'Circle' shape with radius 'R' and center '(xc,yc)' in an OpenGL window. The approximations of interest are activated upon request, and are formed by an arbitrary number 'n' of the samples."<<endl;
 	cout<<"\tThe 'Circle' shape is defined as follows:"<<endl<<endl;
-	cout<<"\t| x(t) - xc | <= R * cos(t), | y(t) - yc | <= R * sin(t)"<<endl<<endl<<"\tfor any 'R'>0, and for every 't' in '[-pi,pi]'."<<endl<<endl;
+	cout<<"\t| x(t) - xc | <= R * cos(t), | y(t) - yc | <= R * sin(t)"<<endl<<endl<<"\tfor any 'R>0', and for every 't' in '[-pi,pi]'."<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide the radius 'R' and the center '(xc,yc)'. The user can:"<<endl<<endl;
 	cout<<"\t\t-) approximate the boundary (in 'red') of the 'Circle' shape through a polyline with an arbitrary number 'n' of the vertices and the edges [ 'Approximation #0' ] by pressing the 'l' key."<<endl<<endl;
 	cout<<"\t\t-) Approximate the 'Circle' shape through the 'filled versions' of 'n' triangles in a triangle fan [ 'Approximation #1' ] by pressing the 'f' key. All triangles (in 'dark gray') are incident at the center '(xc,yc)'"<<endl;

@@ -73,7 +73,7 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-023' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of the vertices and the edges, in an OpenGL window. The polyline of interest approximates the 'Ellipse' curve with semi-axis 'Rx' and 'Ry' (respectively along"<<endl;
 	cout<<"\tthe x- and the y-axis), as well as center '(xc,yc)'. The 'Ellipse' curve is defined as follows:"<<endl<<endl;
-	cout<<"\tx(t) = xc + Rx * cos(t), y(t) = yc + Ry * sin(t)"<<endl<<endl<<"\tfor any 'Rx'>0, 'Ry'>0, and for every't' in '[-pi,pi]'."<<endl<<endl;
+	cout<<"\tx(t) = xc + Rx * cos(t), y(t) = yc + Ry * sin(t)"<<endl<<endl<<"\tfor any 'Rx>0', 'Ry>0', and for every't' in '[-pi,pi]'."<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide the semi-axis 'Rx' and 'Ry', as well as the center '(xc,yc)'. The user can also:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of the vertices and the edges in the polyline of interest by pressing the '-' key."<<endl<<endl;

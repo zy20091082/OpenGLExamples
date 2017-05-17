@@ -67,7 +67,7 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-029' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws a polyline (in 'blue'), formed by an arbitrary number 'n' of the vertices and the edges, in an OpenGL window. The polyline of interest approximates the 'Lissajous-like' curve, which is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = Rx * cos( Kx * t ), y(t) = Ry * sin( Ky * t )"<<endl<<endl;
-	cout<<"\tfor every 't' in '[0,2*pi]', and for any 'Kx'>0, 'Ky'>0, 'Rx'>0, and 'Ry'>0. For the sake of the simplicity, the parameters 'Rx', 'Ry', 'Kx', and 'Ky' are positive and not null 'integer' values."<<endl<<endl;
+	cout<<"\tfor every 't' in '[0,2*pi]', and for any 'Kx>0', 'Ky>0', 'Rx>0', and 'Ry>0'. For the sake of the simplicity, the parameters 'Rx', 'Ry', 'Kx', and 'Ky' are positive and not null 'integer' values."<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user. In fact, this latter must provide the parameters 'Rx', 'Ry', 'Kx', and 'Ky', and can also:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of the vertices and the edges in the polyline of interest by pressing the '-' key."<<endl<<endl;

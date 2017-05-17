@@ -81,7 +81,7 @@ int main(int argc,char **argv)
 	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of the vertices and the edges, in an OpenGL window. The polyline of interest approximates the 'Ellipse-like' curve with semi-axis 'Rx' and 'Ry'"<<endl;
 	cout<<"\t(respectively along the x- and the y-axis), as well as center '(xc,yc)'. In particular, any 'Ellipse-like' curve is defined in the same spirit of the 'Ellipse' curve, but it requires an exponent 'k' for computing"<<endl;
 	cout<<"\tthe cosine and the sine functions to the 'k'-th. The 'Ellipse-like' curve is defined as follows:"<<endl<<endl;
-	cout<<"\tx(t) = xc + Rx * cos ^ k (t), y(t) = yc + Ry * sin ^ k (t)"<<endl<<endl<<"\tfor any 'Rx'>0, 'Ry'>0, 'k'>0, and for every 't' in '[-pi,pi]'."<<endl<<endl;
+	cout<<"\tx(t) = xc + Rx * cos ^ k (t), y(t) = yc + Ry * sin ^ k (t)"<<endl<<endl<<"\tfor any 'Rx>0', 'Ry>0', 'k>0', and for every 't' in '[-pi,pi]'."<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide the semi-axis 'Rx' and 'Ry', as well as the center coordinates '(xc,yc)' and the exponent 'k'. The user can also:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of the vertices and the edges in the polyline of interest by pressing the '-' key."<<endl<<endl;
