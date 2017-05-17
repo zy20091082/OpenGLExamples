@@ -16,7 +16,7 @@ The <i>'Example-005 (Old Mode)'</i> Test draws the <i>'filled version'</i> of a 
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example005_old_config2.png' border='1' width='456' height='470'></td>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example005_old_config3.png' border='1' width='456' height='470'></td>
 </tr>
-<tr><td>The resulting <i>'scene'</i>, if <i>'x='-93</i>.</td><td>The resulting <i>'scene'</i>, if <i>'x=60'</i>.</td></tr>
+<tr><td>The resulting <i>'scene'</i>, if <i>'x=-93'</i>.</td><td>The resulting <i>'scene'</i>, if <i>'x=60'</i>.</td></tr>
 </table><hr><p>
 
 <h4>Dependencies</h4>
