@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: April 2017
+ * Last update: May 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -195,7 +195,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-', thus we decrease the number 'n' of all quadrilaterals (if possible) in the quadstrip of interest. */
 		if(num_quads>3) num_quads=num_quads-1;
-		else cout<<"\tThe minimum number 'n'=3 of all quadrilaterals in the quadstrip of interest is reached, and it is not possible to decrease again this number."<<endl;
+		else cout<<"\tThe minimum number 'n=3' of all quadrilaterals in the quadstrip of interest is reached, and it is not possible to decrease again this number."<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;
@@ -235,8 +235,8 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_quads=3;
 	choice='l';
-	cout<<"\tAt the beginning, the 'wireframe versions' of 'n'="<<num_quads<<" quadrilaterals (thus, the minimum number 'n' as possible of the quadrilaterals) in the quadstrip, approximating the 'Circular Annulus' shape of center '("<<xc<<","<<yc<<")',"<<endl;
-	cout<<"\tinternal radius 'rI'="<<rI<<", and external radius 'rE'="<<rE<<", are rendered [ 'Configuration #1' ]."<<endl<<endl;
+	cout<<"\tAt the beginning, the 'wireframe versions' of 'n="<<num_quads<<"' quadrilaterals (thus, the minimum number 'n' as possible of the quadrilaterals) in the quadstrip, approximating the 'Circular Annulus' shape of center '("<<xc<<","<<yc<<")',"<<endl;
+	cout<<"\tinternal radius 'rI="<<rI<<"', and external radius 'rE="<<rE<<"', are rendered [ 'Configuration #1' ]."<<endl<<endl;
 	cout.flush();
 }
 
@@ -269,19 +269,19 @@ void draw()
 	if(choice=='l') 
 	{ 
 		/* We draw the 'wireframe versions' (in 'red') for all quadrilaterals in the quadstrip of interest! */
-		cout<<"\tThe 'wireframe versions' of 'n'="<<num_quads<<" quadrilaterals in the quadstrip of interest are currently rendered [ 'Configuration #1' ]."<<endl; 
+		cout<<"\tThe 'wireframe versions' of 'n="<<num_quads<<"' quadrilaterals in the quadstrip of interest are currently rendered [ 'Configuration #1' ]."<<endl; 
 		cout.flush();
 	}
     else if(choice=='f') 
     {
     	/* We draw the 'filled versions' (in 'red') for all quadrilaterals in the quadstrip of interest! */
-    	cout<<"\tThe 'filled versions' of 'n'="<<num_quads<<" quadrilaterals in the quadstrip of interest are currently rendered [ 'Configuration #2' ]."<<endl; 
+    	cout<<"\tThe 'filled versions' of 'n="<<num_quads<<"' quadrilaterals in the quadstrip of interest are currently rendered [ 'Configuration #2' ]."<<endl; 
 		cout.flush();
     }
     else if(choice=='p') 
     { 
     	/* We draw only the vertices (in 'red') for all quadrilaterals in the quadstrip of interest! */
-    	cout<<"\tOnly the vertices of 'n'="<<num_quads<<" quadrilaterals in the quadstrip of interest are currently rendered [ 'Configuration #0' ]."<<endl;
+    	cout<<"\tOnly the vertices of 'n="<<num_quads<<"' quadrilaterals in the quadstrip of interest are currently rendered [ 'Configuration #0' ]."<<endl;
 		cout.flush();
     }
 }

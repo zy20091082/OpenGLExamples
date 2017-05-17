@@ -126,7 +126,7 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=3;
-	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Circle' curve of center '("<<xc<<","<<yc<<")' and radius '"<<radius<<"', is formed by 'n'="<<num_samples<<" vertices and edges (thus by the minimum number 'n' as possible of";
+	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Circle' curve of center '("<<xc<<","<<yc<<")' and radius '"<<radius<<"', is formed by 'n="<<num_samples<<"' vertices and edges (thus by the minimum number 'n' as possible of";
 	cout<<" the vertices and the edges)."<<endl<<endl;
 	cout.flush();
 }
@@ -172,7 +172,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-', thus we decrease the number 'n' of the vertices and the edges (if possible) in the polyline of interest. */
 		if(num_samples>3) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 'n'=3 of the vertices and the edges in the polyline of interest is reached, and it is not possible to decrease again this number."<<endl;
+		else cout<<"\tThe minimum number 'n=3' of the vertices and the edges in the polyline of interest is reached, and it is not possible to decrease again this number."<<endl;
 		cout.flush();
 		glutPostRedisplay();
 		break;
@@ -203,6 +203,6 @@ void draw()
 	/* If we arrive here, all is ok */
 	glEnd();
 	glFlush();
-	cout<<"\tThe 'Circle' curve of interest is currently approximated by a polyline with 'n'="<<num_samples<<" vertices and 'n'="<<num_samples<<" edges."<<endl;
+	cout<<"\tThe 'Circle' curve of interest is currently approximated by a polyline with 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"' edges."<<endl;
 	cout.flush();
 }
