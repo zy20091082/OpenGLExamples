@@ -110,8 +110,8 @@ int main(int argc,char **argv)
 	cout<<"\tHere, the user cannot modify the radii and the centers for all disks in 2 variants of the 'Eight' shape, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of all vertices pairs in the triangle fans, or the number 'k' of all vertices pairs in the quad strips of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of all vertices pairs in the triangle fans, or the number 'k' of all vertices pairs in the quad strips of interest by pressing the '-' key;"<<endl;
-	cout<<"\t\t-) choosing to render a specific variant of the 'Eight' shape by pressing cyclically the ' ' (space) key. The custom settings for rendering the polygons in the corresponding tessellation are set independently."<<endl;
-	cout<<"\t\t-) Choosing to render the 'wireframe' or the 'filled versions' of all triangles in the triangle fans or in the quad strips of interest by pressing cyclically the 'w' key. The variant of the 'Eight' shape to be drawn is chosen independently.";
+	cout<<"\t\t-) choose to render a specific variant of the 'Eight' shape by pressing cyclically the ' ' (space) key. The custom settings for rendering the polygons in the corresponding tessellation are set independently."<<endl;
+	cout<<"\t\t-) Choose to render the 'wireframe' or the 'filled versions' of all triangles in the triangle fans or in the quad strips of interest by pressing cyclically the 'w' key. The variant of the 'Eight' shape to be drawn is chosen independently.";
 	cout<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
