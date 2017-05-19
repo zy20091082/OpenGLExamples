@@ -9,12 +9,35 @@ The <i>'Example-039 (Old Mode)'</i> Test draws several views of the <i>'Ring'</i
 <li>decrease the number <i>'n'</i> of all vertices pairs in the quad strips of interest by pressing the <i>'+'</i> key.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.
 
 <p><h5>Rendering the <i>'View #0'</i></h5>
-
+<p><table border=0 width=100%><tr>
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example038_old_tessellation0_edges.png' border='1'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example038_old_tessellation0_50_edges.png' border='1'></td></tr>
+<tr>
+<td width=50%>				</td>
+<td width=50%>				</td>
+</tr>
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example038_old_tessellation0_edges.png' border='1'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example038_old_tessellation0_50_edges.png' border='1'></td></tr>
+<tr>
+<td width=50%>				</td>
+<td width=50%>				</td>
+</tr>
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example038_old_tessellation0_edges.png' border='1'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example038_old_tessellation0_50_edges.png' border='1'></td></tr>
+<tr>
+<td width=50%>				</td>
+<td width=50%>				</td>
+</tr>
+</table><p>
 <p><h5>Rendering the <i>'View #1'</i></h5>
 
 <p><h5>Rendering the <i>'View #2'</i></h5>
 
-<h4>Dependencies</h4>
+
+<p><hr><p><h4>Dependencies</h4>
 
 The <i>'Example-039 (Old Mode)'</i> Test is based on the so-called <i>OpenGL old (direct drawing) mode</i>, and requires the following dependencies:<ul>
 
