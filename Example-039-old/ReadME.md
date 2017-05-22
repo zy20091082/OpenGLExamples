@@ -25,15 +25,15 @@ The <i>'Example-039 (Old Mode)'</i> Test draws several views of the <i>'Ring'</i
 <td width=50%>The <i>'n=5'</i> vertices pairs in the <i>'filled versions'</i> of the quadrilaterals by using the orthographic projection.</td>
 </tr>
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example038_old_tessellation0_edges.png' border='0'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example038_old_tessellation0_50_edges.png' border='0'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example039_old_view0_wireframe_perspective_0.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example039_old_view0_wireframe_perspective_0.png' border='0'></td></tr>
 <tr>
 <td width=50%>				</td>
 <td width=50%>				</td>
 </tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example039_old_view0_filled_perspective_0.png' border='0'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example038_old_tessellation0_50_edges.png' border='0'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example039_old_view0_filled_perspective_0.png' border='0'></td></tr>
 <tr>
 <td width=50%>				</td>
 <td width=50%>				</td>
