@@ -329,7 +329,7 @@ void draw()
 	glFlush();
 	if(mode==GL_FILL) cout<<"\tThe 'filled versions' of all ";
 	if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' of all ";
-	if(tessellation==0) cout<<"triangles, belonging to the triangle fans (all formed by 'n="<<aaa<<"' vertices) in the variant #0 of the 'Eight' shape, are drawn."<<endl;
-	if(tessellation==1) cout<<"quadrilaterals, belonging to the quad strips (all formed by 'k="<<aaa<<"' vertices pairs) in the variant #1 of the 'Eight' shape, are drawn."<<endl;
+	if(tessellation==0) cout<<"triangles, belonging to the triangle fans (all formed by 'n="<<aaa<<"' vertices) in the variant #0 of the 'Eight' shape, are currently drawn."<<endl;
+	if(tessellation==1) cout<<"quadrilaterals, belonging to the quad strips (all formed by 'k="<<aaa<<"' vertices pairs) in the variant #1 of the 'Eight' shape, are currently drawn."<<endl;
 	cout.flush();
 }

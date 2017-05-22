@@ -42,7 +42,7 @@ using namespace std;
  * 0: it indicates to use the viewing orthographic box '[-40,40]' x '[-40,40]' x '[-80,80]'
  * 1: it indicates to use the viewing perspective box (frustum) '[-2.7,2.7]' x '[-2.7,2.7]' x '[2.0,7.0]'
  *
- * The user can choose what project must be used by pressing cyclically the the ' ' (space) key.
+ * The user can choose what projection must be used by pressing cyclically the the ' ' (space) key.
  */
 int projection=0;
 

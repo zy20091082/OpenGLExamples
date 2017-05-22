@@ -47,7 +47,7 @@ using namespace std;
  * 4: it indicates to use the viewing perspective box (frustum) '[-10,10]' x '[-10,10]' x '[5,100]'
  * 5: it indicates to use the viewing perspective box (frustum) '[-1,1]' x '[-3,3]' x '[5,100]'
  *
- * The user can choose what project must be used by pressing cyclically the ' ' (space) key.
+ * The user can choose what projection must be used by pressing cyclically the ' ' (space) key.
  */
 int projection=0;
 

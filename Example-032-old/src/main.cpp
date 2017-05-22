@@ -165,7 +165,7 @@ void draw()
 	
 	/* If we arrive here, all is ok! */
 	glFlush();
-	cout<<"\tThe 'Bullseye' shape is approximated by the ";
+	cout<<"\tThe 'Bullseye' shape is currently approximated by the ";
 	if(mode==GL_FILL) cout<<"'filled versions' ";
 	else cout<<"'wireframe versions' ";
 	cout<<"of several triangles in 5 triangle fans with 'n="<<num_samples<<"' vertices (including the center)."<<endl;
