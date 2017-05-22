@@ -47,7 +47,7 @@ float xp1,yp1,xp2,yp2,teta1,teta2;
 /**
  * This value, initially set to '5', is the number of the samples in all approximations of interest for the 'Eight' shape. Specifically, its meaning depends on the 
  *
- * -) it may be the number 'n' of the vertices pairs (initially 'n=4') in the triangle fans, approximating the disks in the 'Eight' shape (i.e., in the variant #0 of the 'Eight' shape).
+ * -) it may be the number 'n' of the vertices (initially 'n=4', including the center) in the triangle fans, approximating the disks in the 'Eight' shape (i.e., in the variant #0 of the 'Eight' shape).
  * -) It may be the number 'k' of the vertices pairs (initially 'k=5') in the quad strips, approximating the 'Eight' shape (i.e., in the variant #1 of the 'Eight' shape).
  *
  * This value is interactively modified by pressing the '+' and the '-' keys.
@@ -108,8 +108,8 @@ int main(int argc,char **argv)
 	cout<<"\t\t   It is clear that both quad strips, approximating these pieces, can be merged into a unique quad strip (in 'red'), approximating each patch of the 'Eight' shape. This means that the variant #1 of the 'Eight' shape is formed by 2 quad strips"<<endl; 
 	cout<<"\t\t   (both in 'red')."<<endl<<endl;
 	cout<<"\tHere, the user cannot modify the radii and the centers for all disks in 2 variants of the 'Eight' shape, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
-	cout<<"\t\t-) increase the number 'n' of all vertices pairs in the triangle fans, or the number 'k' of all vertices pairs in the quad strips of interest by pressing the '+' key;"<<endl;
-	cout<<"\t\t-) decrease the number 'n' of all vertices pairs in the triangle fans, or the number 'k' of all vertices pairs in the quad strips of interest by pressing the '-' key;"<<endl;
+	cout<<"\t\t-) increase the number 'n' of all vertices in the triangle fans, or the number 'k' of all vertices pairs in the quad strips of interest by pressing the '+' key;"<<endl;
+	cout<<"\t\t-) decrease the number 'n' of all vertices in the triangle fans, or the number 'k' of all vertices pairs in the quad strips of interest by pressing the '-' key;"<<endl;
 	cout<<"\t\t-) choose to render a specific variant of the 'Eight' shape by pressing cyclically the ' ' (space) key. The custom settings for rendering the polygons in the corresponding tessellation are set independently."<<endl;
 	cout<<"\t\t-) Choose to render the 'wireframe' or the 'filled versions' of all triangles in the triangle fans or in the quad strips of interest by pressing cyclically the 'w' key. The variant of the 'Eight' shape to be drawn is chosen independently.";
 	cout<<endl<<endl;
@@ -162,7 +162,7 @@ void initialize()
 	cout<<"\tAt the beginning, ";
 	if(mode==GL_FILL) cout<<"the 'filled versions' of all ";
 	if(mode==GL_LINE) cout<<"the 'wireframe versions' of all ";
-	if(tessellation==0) cout<<"triangles, belonging to the triangle fans (formed by the minimum number 'n="<<(num_samples-1)<<"' as possible of the vertices pairs) in the variant #0 of the 'Eight' shape, are drawn."<<endl<<endl;
+	if(tessellation==0) cout<<"triangles, belonging to the triangle fans (formed by the minimum number 'n="<<(num_samples-1)<<"' as possible of the vertices) in the variant #0 of the 'Eight' shape, are drawn."<<endl<<endl;
 	if(tessellation==1) cout<<"quadrilaterals, belonging to the quad strips (formed by the minimum number 'k="<<num_samples<<"' as possible of the vertices pairs) in the variant #1 of the 'Eight' shape, are drawn."<<endl<<endl;
 	cout.flush();
 }
@@ -207,19 +207,19 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '+':
 		
-		/* The key is '+', thus we increase the number 'n' of the vertices pairs in the triangle fans, or the number 'k' of the vertices pairs in the quad strips of interest! */
+		/* The key is '+', thus we increase the number 'n' of the vertices in the triangle fans, or the number 'k' of the vertices pairs in the quad strips of interest! */
 		num_samples=num_samples+1;
 		glutPostRedisplay();
 		break;
 		
 		case '-':
 		
-		/* The key is '-', thus we decrease (if it is possible) the number 'n' of the vertices pairs in the triangle fans, or the number 'k' of the vertices pairs in the quad strips of interest! */
+		/* The key is '-', thus we decrease (if it is possible) the number 'n' of the vertices in the triangle fans, or the number 'k' of the vertices pairs in the quad strips of interest! */
 		if(num_samples>5) num_samples=num_samples-1;
 		else
 		{
 			cout<<"\tThe minimum number ";
-			if(tessellation==0) cout<<"'n=4' of the vertices pairs in the triangle fans of interest ";
+			if(tessellation==0) cout<<"'n=4' of the vertices in the triangle fans of interest ";
 			else cout<<"'k=5' of the vertices pairs in the quad strips of interest ";
 			cout<<"is reached, and it is not possible to decrease again this number."<<endl;
 		}
@@ -329,7 +329,7 @@ void draw()
 	glFlush();
 	if(mode==GL_FILL) cout<<"\tThe 'filled versions' of all ";
 	if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' of all ";
-	if(tessellation==0) cout<<"triangles, belonging to the triangle fans (all formed by 'n="<<aaa<<"' vertices pairs) in the variant #0 of the 'Eight' shape, are drawn."<<endl;
+	if(tessellation==0) cout<<"triangles, belonging to the triangle fans (all formed by 'n="<<aaa<<"' vertices) in the variant #0 of the 'Eight' shape, are drawn."<<endl;
 	if(tessellation==1) cout<<"quadrilaterals, belonging to the quad strips (all formed by 'k="<<aaa<<"' vertices pairs) in the variant #1 of the 'Eight' shape, are drawn."<<endl;
 	cout.flush();
 }
