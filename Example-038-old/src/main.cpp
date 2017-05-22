@@ -149,7 +149,6 @@ void initialize()
 {
 	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
-	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=5;
 	tessellation=0;
 	mode=GL_FILL;
