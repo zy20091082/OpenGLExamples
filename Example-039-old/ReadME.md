@@ -11,7 +11,7 @@ The <i>'Example-039 (Old Mode)'</i> Test draws several views of the <i>'Ring'</i
 <p><h5>Rendering the <i>'View #0'</i></h5>
 <p><table border=0 width=100%><tr>
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example038_old_tessellation0_edges.png' border='1'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example039_old_view0_wireframe_orthographic_0.png' border='1'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example038_old_tessellation0_50_edges.png' border='1'></td></tr>
 <tr>
 <td width=50%>				</td>
