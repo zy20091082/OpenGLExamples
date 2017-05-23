@@ -5,13 +5,13 @@
 The <i>'Example-040 (Old Mode)'</i> Test draws a polyline (in <i>'red'</i>), formed by an arbitrary number <i>'n'</i> of the vertices and the edges, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The polyline of interest approximates a variant of the <i>'Spiral'</i> curve. This latter is a curve on a plane that winds around a fixed center point at a continuously increasing or decreasing distance from the point. In this test, we consider a variant of the <i>'Spiral'</i> curve, defined as follows:<p><pre>x(t) = (1+t) * cos(t), y(t) = (1+t) * sin(t)</pre><p>for every <i>'t'</i> in <i>'[-6 * pi, 6 * pi]'</i>.<p>This test also provides a very basic interaction mechanism with the user, which can:<p><ul>
 <li>increase the number <i>'n'</i> of the vertices and the edges in the polyline of interest by pressing the <i>'+'</i> key;</li>
 <li>decrease the number <i>'n'</i> of the vertices and the edges in the polyline of interest by pressing the <i>'-'</i> key.</li></ul>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf0.png' border='1'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf1.png' border='1'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example040_old_conf0.png' border='1'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example040_old_conf1.png' border='1'></td></tr>
 <tr><td>Here, the number <i>'n'</i> of the vertices and the edges in the polyline is <i>'n=25'</i>.</td><td>Here, the number <i>'n'</i> of the vertices and the edges in the polyline is <i>'n=85'</i>.</td></tr>
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf2.png' border='1'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf3.png' border='1'></td></tr>
-<tr><td>Here, the number <i>'n'</i> of the vertices and the edges in the polyline is <i>'n=150'</i>.</td><td>Here, the number <i>'n'</i> of the vertices and the edges in the polyline is <i>'n=250'</i>.</td></tr></table><p><hr><p>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example040_old_conf2.png' border='1'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example040_old_conf3.png' border='1'></td></tr>
+<tr><td>Here, the number <i>'n'</i> of the vertices and the edges in the polyline is <i>'n=150'</i>.</td><td>Here, the number <i>'n'</i> of the vertices and the edges in the polyline is <i>'n=400'</i>.</td></tr></table><p><hr><p>
 
 <h4>Dependencies</h4>
 
