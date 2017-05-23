@@ -7,11 +7,11 @@ The <i>'Example-040 (Old Mode)'</i> Test draws a polyline (in <i>'red'</i>), for
 <li>decrease the number <i>'n'</i> of the vertices and the edges in the polyline of interest by pressing the <i>'-'</i> key.</li></ul>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf0.png' border='1'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf1.png' border='1'></td></tr>
-<tr><td>Here, the number <i>'n'</i> of the vertices and the edges <i>'n=25'</i>.</td><td>Here, the number <i>'n'</i> of the vertices and the edges <i>'n=85'</i>.</td></tr>
+<tr><td>Here, the number <i>'n'</i> of the vertices and the edges in the polyline is <i>'n=25'</i>.</td><td>Here, the number <i>'n'</i> of the vertices and the edges in the polyline is <i>'n=85'</i>.</td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf2.png' border='1'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf3.png' border='1'></td></tr>
-<tr><td>Here, the number <i>'n'</i> of the vertices and the edges <i>'n=150'</i>.</td><td>Here, the number <i>'n'</i> of the vertices and the edges <i>'n=250'</i>.</td></tr></table><p><hr><p>
+<tr><td>Here, the number <i>'n'</i> of the vertices and the edges in the polyline is <i>'n=150'</i>.</td><td>Here, the number <i>'n'</i> of the vertices and the edges in the polyline is <i>'n=250'</i>.</td></tr></table><p><hr><p>
 
 <h4>Dependencies</h4>
 
