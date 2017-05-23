@@ -3,7 +3,7 @@ height="97"></A>
 
 <H3>The <i>'Example-009 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-009 (Old Mode)'</i> Test draws the <i>'filled version'</i> of a square, such that a different color is associated with each of its vertices, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. This test also provides a very basic interaction mechanism with the user.<p>Here, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example009_old.png' border='1'><hr><p><h4>Dependencies</h4>
+The <i>'Example-009 (Old Mode)'</i> Test draws the <i>'filled version'</i> of a square, such that a different color is associated with each of its vertices, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. This test also provides a very basic interaction mechanism with the user.<p>Here, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example009_old.png' border='1'><hr><p><h4>Dependencies</h4>
 
 The <i>'Example-009 (Old Mode)'</i> Test is based on the so-called <i>OpenGL old (direct drawing) mode</i>, and requires the following dependencies:<ul>
 
