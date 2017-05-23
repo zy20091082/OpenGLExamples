@@ -72,6 +72,35 @@ The <i>'Example-039 (Old Mode)'</i> Test draws several views of the <i>'Ring'</i
 
 <p><h5>Rendering the <i>'View #2'</i></h5>
 
+<p><table border=0 width=100%>
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example039_old_view2_wireframe_orthographic_0.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example039_old_view2_wireframe_orthographic_50.png' border='0'></td></tr>
+<tr>
+<td width=50%>The <i>'n=5'</i> vertices pairs in the <i>'wireframe versions'</i> of the quadrilaterals (with the orthographic projection).</td>
+<td width=50%>The <i>'n=50'</i> vertices pairs in the <i>'wireframe versions'</i> of the quadrilaterals (with the orthographic projection).</td>
+</tr>
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example039_old_view2_filled_orthographic_0.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example039_old_view2_filled_orthographic_50.png' border='0'></td></tr>
+<tr>
+<td width=50%>The <i>'n=5'</i> vertices pairs in the <i>'filled versions'</i> of the quadrilaterals (with the orthographic projection).</td>
+<td width=50%>The <i>'n=5'</i> vertices pairs in the <i>'filled versions'</i> of the quadrilaterals (with the orthographic projection).</td>
+</tr>
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example039_old_view1_wireframe_perspective_0.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example039_old_view1_wireframe_perspective_50.png' border='0'></td></tr>
+<tr>
+<td width=50%>The <i>'n=5'</i> vertices pairs in the <i>'wireframe versions'</i> of the quadrilaterals (with the perspective projection).</td>
+<td width=50%>The <i>'n=50'</i> vertices pairs in the <i>'wireframe versions'</i> of the quadrilaterals (with the perspective projection).</td>
+</tr>
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example039_old_view1_filled_perspective_0.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example039_old_view1_filled_perspective_50.png' border='0'></td></tr>
+<tr>
+<td width=50%>The <i>'n=5'</i> vertices pairs in the <i>'filled versions'</i> of the quadrilaterals (with the perspective projection).</td>
+<td width=50%>The <i>'n=50'</i> vertices pairs in the <i>'filled versions'</i> of the quadrilaterals (with the perspective projection).</td>
+</tr></table>
 
 <p><hr><p><h4>Dependencies</h4>
 
