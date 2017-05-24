@@ -18,7 +18,7 @@ The <i>'Example-016 (Old Mode)'</i> Test draws several versions of the <i>'Squar
 <td>In this case, the <i>'front'</i> sides of all triangles in the <i>'Triangle Fan #1'</i> are not rendered, due to their vertices order. In the code, these latters are enumerated in the clockwise order, thus every triangle is a back-faced triangle. Hence, the <i>'Triangle Fan #1'</i> remains unchanged, when the user decides to render only the <i>'front'</i> sides of all triangles.<p>
 
 Instead, the <i>'Triangle Fan #0'</i> is formed only by front-faced triangles, thus the <i>'front sides'</i> of its triangles can be rendered.<p>This is true, even if changing the rendering type for all triangles (points, wireframe, filled).</td></tr>
-<tr><td width=50%>The <i>'filled versions'</i> (press the <code><i>'i'</i> or the <code><i>'I'</i></code> key) for all triangles in the triangle fans of interest.</td><td><b>IMPORTANT</b></td></tr></table><p><h5>Rendering only the <i>'back'</i> sides of all triangles</h5><p>
+<tr><td width=50%>The <i>'filled versions'</i> (press the <code><i>'i'</i></code> or the <code><i>'I'</i></code> key) for all triangles in the triangle fans of interest.</td><td><b>IMPORTANT</b></td></tr></table><p><h5>Rendering only the <i>'back'</i> sides of all triangles</h5><p>
 <table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example016_old_fan1_points.png' border='1' width='456' height='470'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example016_old_fan1_wireframe.png' border='1' width='456' height='470'></td></tr>
@@ -28,7 +28,7 @@ Instead, the <i>'Triangle Fan #0'</i> is formed only by front-faced triangles, t
 <td>In this case, the <i>'back'</i> sides of all triangles in the <i>'Triangle Fan #0'</i> are not rendered, due to their vertices order. In the code, these latters are enumerated in the counter-clockwise order, thus every triangle is a front-faced triangle. Hence, the <i>'Triangle Fan #0'</i> remains unchanged, when the user decides to render only the <i>'back'</i> sides of all triangles.<p>
 
 Instead, the <i>'Triangle Fan #1'</i> is formed only by back-faced triangles, thus the <i>'back sides'</i> of its triangles can be rendered.<p>This is true, even if changing the rendering type for all triangles (points, wireframe, filled).</td></tr>
-<tr><td width=50%>The <i>'filled version'</i> (press the <code><i>'i'</i></code> or the <code><i>'I'</i></code> key).</td><td><b>IMPORTANT</b></td></tr></table><p><h5>Rendering both the <i>'front'</i> and the <i>'back'</i> sides of all triangles</h5><p>
+<tr><td width=50%>The <i>'filled versions'</i> (press the <code><i>'i'</i></code> or the <code><i>'I'</i></code> key) for all triangles in the triangle fans of interest.</td><td><b>IMPORTANT</b></td></tr></table><p><h5>Rendering both the <i>'front'</i> and the <i>'back'</i> sides of all triangles</h5><p>
 <table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example016_old_points.png' border='1' width='456' height='470'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example016_old_wireframe.png' border='1' width='456' height='470'></td></tr>
