@@ -6,8 +6,8 @@ height="97"></A>
 The <i>'Example-005 (Old Mode)'</i> Test draws the <i>'filled version'</i> of a polygon (in <i>'red'</i>) in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window, and provides a basic interaction mechanism with the user. The polygon of interest is the intersection of the following elements:<p><ul>
 <li>the orthographic projection viewing box <code><i>'[0,100]' x '[0,100]' x '[-1,1]'</i>;</code></li>
 <li>the triangle of vertices <code><i>'(x,20,0)'</i> - <i>'(80,20,0)'</i> - <i>'(80,80,0)'</i></code>, for any <code><i>'x'</i></code> coordinate along the x-axis.</li></ul><p>Here, the orthographic viewing box is not modified. Instead, the <code><i>'x'</i></code> coordinate of the triangle, initially set as <code><i>'x=20'</i></code>, can be moved by the user along the x-axis. Specifically, the user can:<p><ul>
-<li>increase the <code><i>'x'</i></code> coordinate by 1.0 for the triangle of interest by pressing the <code><i>'+'</i></code> key;</li>
-<li>decrease the <code><i>'x'</i></code> coordinate by 1.0 for the triangle of interest by pressing the <code><i>'-'</i></code> key;</li>
+<li>increase the <code><i>'x'</i></code> coordinate by <code>1</code> for the triangle of interest by pressing the <code><i>'+'</i></code> key;</li>
+<li>decrease the <code><i>'x'</i></code> coordinate by <code>1</code> for the triangle of interest by pressing the <code><i>'-'</i></code> key;</li>
 <li>reset the <code><i>'x'</i></code> coordinate for the triangle of interest to its initial value <code><i>'x=20'</i></code> by pressing the <code><i>'='</i></code> key.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><table border=0 width=100%><tr>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example005_old_config0.png' border='1' width='456' height='470'></td>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example005_old_config1.png' border='1' width='456' height='470'></td></tr>
