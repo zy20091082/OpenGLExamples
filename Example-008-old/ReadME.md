@@ -3,15 +3,15 @@ height="97"></A>
 
 <H3>The <i>'Example-008 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-008 (Old Mode)'</i> Test draws the <i>'filled versions'</i> for 2 quadrilaterals of different size and with a not empty intersection (partial overlap) in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. In particular, the <i>'small'</i> quadrilateral may be completely covered by the <i>'large'</i> quadrilateral, depending on their rendering order. This latter corresponds to their color, which is defined as follows:<p><ul>
+The <i>'Example-008 (Old Mode)'</i> Test draws the <i>'filled versions'</i> for <code>'2'</code> quadrilaterals of different size and with a not empty intersection (partial overlap) in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. In particular, the <i>'small'</i> quadrilateral may be completely covered by the <i>'large'</i> quadrilateral, depending on their rendering order. This latter corresponds to their color, which is defined as follows:<p><ul>
 <li>the quadrilateral in <i>'red'</i> is rendered before in the scene;</li>
 <li>the quadrilateral in <i>'blue'</i> is rendered after in the scene.</li></ul><p>The rendering order of these quadrilaterals corresponds to the following <i>'viewing configurations'</i>, that can be activated upon request by the user:<p><ol>
-<li value="0">the <i>'large'</i> quadrilateral (in <i>'red'</i>) is rendered before, and the <i>'small'</i> quadrilateral (in <i>'blue'</i>) is rendered after in the <i>'viewing configuration #0'</i>. In this case, both the quadrilaterals are visible. The <i>'viewing configuration #0'</i> is activated upon request by pressing the <i>'0'</i> key.<p></li>
-<li value="1">The <i>'small'</i> quadrilateral (in <i>'red'</i>) is rendered before, and the <i>'large'</i> quadrilateral (in <i>'blue'</i>) is rendered after in the <i>'viewing configuration #1'</i>. In this case, only the <i>'large'</i> quadrilateral is visible. The <i>'viewing configuration #1'</i> is activated upon request by pressing the <i>'1'</i> key.<p></li></ol><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
+<li value="0">the <i>'large'</i> quadrilateral (in <i>'red'</i>) is rendered before, and the <i>'small'</i> quadrilateral (in <i>'blue'</i>) is rendered after in the <i>'viewing configuration #0'</i>. In this case, both the quadrilaterals are visible. The <i>'viewing configuration #0'</i> is activated upon request by pressing the <code><i>'0'</i></code> key.<p></li>
+<li value="1">The <i>'small'</i> quadrilateral (in <i>'red'</i>) is rendered before, and the <i>'large'</i> quadrilateral (in <i>'blue'</i>) is rendered after in the <i>'viewing configuration #1'</i>. In this case, only the <i>'large'</i> quadrilateral is visible. The <i>'viewing configuration #1'</i> is activated upon request by pressing the <code><i>'1'</i></code> key.<p></li></ol><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><table border=0 width=100%><tr>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example008_old_conf0.png' border='1' width='456' height='470'></td>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example008_old_conf1.png' border='1' width='456' height='470'></td></tr>
 <tr>
-<td>The <i>'viewing configuration #0'</i> (press the <i>'0'</i> key).</td><td>The <i>'viewing configuration #1'</i> (press the <i>'1'</i> key).</td>
+<td>The <i>'viewing configuration #0'</i> (press the <code><i>'0'</i></code> key).</td><td>The <i>'viewing configuration #1'</i> (press the <code><i>'1'</i></code> key).</td>
 </tr></table><hr><p>
 
 <h4>Dependencies</h4>
