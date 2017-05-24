@@ -3,7 +3,7 @@ height="97"></A>
 
 <H3>The <i>'Example-017 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-017 (Old Mode)'</i> Test draws 6 rectangles, defined through the <i>'glRectf()'</i> function, by using several rendering settings in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window, and provides a basic interaction mechanism with the user.<p>Here, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.
+The <i>'Example-017 (Old Mode)'</i> Test draws <code>'6'</code> rectangles, defined through the <i>'glRectf()'</i> function, by using several rendering settings in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window, and provides a basic interaction mechanism with the user.<p>Here, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.
 
 <IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example017_old.png' border='1'><hr><p>
 
