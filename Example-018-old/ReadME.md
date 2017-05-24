@@ -3,11 +3,11 @@ height="97"></A>
 
 <H3>The <i>'Example-018 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-018 (Old Mode)'</i> Test draws the <i>'filled'</i> and the <i>'wireframe versions'</i> of several convex (in <i>'red'</i>) and concave (in <i>'blue'</i>) polygons in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. This test also provides a very basic interaction mechanism with the user, which can cycle the vertices order in the polygons of interest by pressing the <i>'+'</i> key. While performing these operations, there may be <i>'strange'</i> situations, expecially when cycling the vertices in the <i>'filled versions'</i> of the concave polygons.<p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
+The <i>'Example-018 (Old Mode)'</i> Test draws the <i>'filled'</i> and the <i>'wireframe versions'</i> of several convex (in <i>'red'</i>) and concave (in <i>'blue'</i>) polygons in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. This test also provides a very basic interaction mechanism with the user, which can cycle the vertices order in the polygons of interest by pressing the <code><i>'+'</i></code> key. While performing these operations, there may be <i>'strange'</i> situations, expecially when cycling the vertices in the <i>'filled versions'</i> of the concave polygons.<p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><table border=0 width=100%><tr>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example018_old_conf0.png' border='1' width='456' height='470'></td>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example018_old_conf1.png' border='1' width='456' height='470'></td></tr>
 <tr>
-<td>Initial configuration.</td><td>Configuration after one cycle (press the <i>'+'</i> key).</td></tr></table><hr><p>
+<td>Initial configuration.</td><td>Configuration after one cycle (press the <code><i>'+'</i></code> key).</td></tr></table><hr><p>
 
 <h4>Dependencies</h4>
 
