@@ -61,7 +61,7 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-010' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws several graphic primitives in an OpenGL window, starting from a cloud of several 3D points."<<endl;
+	cout<<"\tIt draws several graphic primitives in an OpenGL window, starting from a cloud of 3D points."<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which can choose what graphic primitive must be exploited, as follows::"<<endl<<endl;
 	cout << "\t\t0. the 'GL_POINTS' primitive is chosen by pressing the '0' key for drawing several independent 3D points;" << endl;
 	cout << "\t\t1. the 'GL_LINES' primitive is chosen by pressing the '1' key for drawing several independent lines;" << endl;

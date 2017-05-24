@@ -3,24 +3,24 @@ height="97"></A>
 
 <H3>The <i>'Example-010 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-010 (Old Mode)'</i> Test draws several graphic primitives in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window, starting from a cloud of several 3D points. This test also provides a very basic interaction mechanism with the user, which can choose what graphic primitive must be exploited, as follows:<p><ol>
-<li value="0">the <i>'GL_POINTS'</i> primitive is chosen by pressing the <i>'0'</i> key for drawing several independent 3D points;</li>
-<li value="1">the <i>'GL_LINES'</i> primitive is chosen by pressing the <i>'1'</i> key for drawing several independent lines;</li>
-<li value="2">the <i>'GL_LINE_STRIP'</i> primitive is chosen by pressing the <i>'2'</i> key for drawing an open line strip;</li>
-<li value="3">the <i>'GL_LINE_LOOP'</i> primitive is chosen by pressing the <i>'3'</i> key for drawing a closed line loop;</li>
-<li value="4">the <i>'GL_TRIANGLES'</i> primitive is chosen by pressing the <i>'4'</i> key for drawing several independent triangles;</li>
-<li value="5">the <i>'GL_POLYGON'</i> primitive is chosen by pressing the <i>'5'</i> key for drawing only one polygon.</li></ol><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
+The <i>'Example-010 (Old Mode)'</i> Test draws several graphic primitives in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window, starting from a cloud of 3D points. This test also provides a very basic interaction mechanism with the user, which can choose what graphic primitive must be exploited, as follows:<p><ol>
+<li value="0">the <i>'GL_POINTS'</i> primitive is chosen by pressing the <code><i>'0'</i></code> key for drawing several independent 3D points;</li>
+<li value="1">the <i>'GL_LINES'</i> primitive is chosen by pressing the <code><i>'1'</i></code> key for drawing several independent lines;</li>
+<li value="2">the <i>'GL_LINE_STRIP'</i> primitive is chosen by pressing the <code><i>'2'</i></code> key for drawing an open line strip;</li>
+<li value="3">the <i>'GL_LINE_LOOP'</i> primitive is chosen by pressing the <code><i>'3'</i></code> key for drawing a closed line loop;</li>
+<li value="4">the <i>'GL_TRIANGLES'</i> primitive is chosen by pressing the <code><i>'4'</i></code> key for drawing several independent triangles;</li>
+<li value="5">the <i>'GL_POLYGON'</i> primitive is chosen by pressing the <code><i>'5'</i></code> key for drawing only one polygon.</li></ol><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><table border=0 width=100%><tr>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example010_old_conf0.png' border='1' width='456' height='470'></td>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example010_old_conf1.png' border='1' width='456' height='470'></td></tr>
-<tr><td>The <i>'GL_POINTS'</i> primitive (press the <i>'0'</i> key).</td><td>The <i>'GL_LINES'</i> primitive (press the <i>'1'</i> key).</td></tr>
+<tr><td>The <i>'GL_POINTS'</i> primitive (press the <code><i>'0'</i></code> key).</td><td>The <i>'GL_LINES'</i> primitive (press the <code><i>'1'</i></code> key).</td></tr>
 <tr>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example010_old_conf2.png' border='1' width='456' height='470'></td>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example010_old_conf3.png' border='1' width='456' height='470'></td></tr>
-<tr><td>The <i>'GL_LINE_STRIP'</i> primitive (press the <i>'2'</i> key).</td><td>The <i>'GL_LINE_LOOP'</i> primitive (press the <i>'3'</i> key).</td></tr>
+<tr><td>The <i>'GL_LINE_STRIP'</i> primitive (press the <code><i>'2'</i></code> key).</td><td>The <i>'GL_LINE_LOOP'</i> primitive (press the <code><i>'3'</i></code> key).</td></tr>
 <tr>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example010_old_conf4.png' border='1' width='456' height='470'></td>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example010_old_conf5.png' border='1' width='456' height='470'></td></tr>
-<tr><td>The <i>'GL_TRIANGLES'</i> primitive (press the <i>'4'</i> key).</td><td>The <i>'GL_POLYGON'</i> primitive (press the <i>'5'</i> key).</td></tr></table><hr><p>
+<tr><td>The <i>'GL_TRIANGLES'</i> primitive (press the <code><i>'4'</i></code> key).</td><td>The <i>'GL_POLYGON'</i> primitive (press the <code><i>'5'</i></code> key).</td></tr></table><hr><p>
 
 <h4>Dependencies</h4>
 
