@@ -60,7 +60,7 @@ int main(int argc,char **argv)
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-027' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of the vertices and the edges, in an OpenGL window. The polyline of interest approximates the 'Sine-like' curve in '[-pi,+pi]'."<<endl;
-	cout<<"\tIn particular, any 'Sine-like' curve is defined in the same spirit of the 'Sine' curve, but it requires an exponent 'k' for computing the sine function to the 'k'-th. The 'Sine-like' curve is defined as follows:"<<endl<<endl;
+	cout<<"\tNote that any 'Sine-like' curve is defined in the same spirit of the 'Sine' curve, but it requires an exponent 'k' for computing the sine function to the 'k'-th. The 'Sine-like' curve is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = t, y(t) = sin ^ k (t)"<<endl<<endl<<"\tfor any 'k>0', and for every 't' in '[-pi,pi]'."<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user. In fact, this latter must provide the exponent 'k', and can also:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the polyline of interest by pressing the '+' key;"<<endl;
