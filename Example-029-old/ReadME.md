@@ -3,16 +3,16 @@ height="97"></A>
 
 <H3>The <i>'Example-029 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-029 (Old Mode)'</i> Test draws a polyline (in <i>'blue'</i>), formed by an arbitrary number <i>'n'</i> of the vertices and the edges, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The polyline of interest approximates the <i>'Lissajous-like'</i> curve, which is defined as follows:<center><pre>x(t) = Rx * cos( Kx * t ), y(t) = Ry * sin( Ky * t )</pre></center><p>for every <i>'t'</i> in <i>'[0,2*pi]'</i>, and for any <i>'Kx>0'</i>, <i>'Ky>0'</i>, <i>'Rx>0'</i>, and <i>'Ry>0'</i>. For the sake of the simplicity, the parameters <i>'Rx', 'Ry', 'Kx',</i> and <i>'Ky'</i> are positive and not null 'integer' values.<p>This test also provides a very basic interaction mechanism with the user. In fact, this latter must provide the parameters <i>'Rx', 'Ry', 'Kx',</i> and <i>'Ky'</i>, and can also:<p><ul>
-<li>increase the number <i>'n'</i> of the vertices and the edges in the polyline of interest by pressing the <i>'+'</i> key;</li>
-<li>decrease the number <i>'n'</i> of the vertices and the edges in the polyline of interest by pressing the <i>'-'</i> key.</li></ul>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
+The <i>'Example-029 (Old Mode)'</i> Test draws a polyline (in <i>'blue'</i>), formed by an arbitrary number <code><i>'n'</i></code> of the vertices and the edges, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The polyline of interest approximates the <i>'Lissajous-like'</i> curve, which is defined as follows:<center><pre>x(t) = Rx * cos( Kx * t ), y(t) = Ry * sin( Ky * t )</pre></center><p>for every <code><i>'t'</i></code> in <code><i>'[0,2*pi]'</i></code>, and for any <code><i>'Kx>0'</i>, <i>'Ky>0'</i>, <i>'Rx>0'</i></i>, and <code><i>'Ry>0'</i>.</code> For the sake of the simplicity, the parameters <code><i>'Rx', 'Ry', 'Kx'</i></code>, and <code><i>'Ky'</i></code> are positive and not null 'integer' values.<p>This test also provides a very basic interaction mechanism with the user. In fact, this latter must provide the parameters <code><i>'Rx', 'Ry', 'Kx'</i></code>, and <code><i>'Ky'</i></code>, and can also:<p><ul>
+<li>increase the number <code><i>'n'</i></code> of the vertices and the edges in the polyline of interest by pressing the <code><i>'+'</i></code> key;</li>
+<li>decrease the number <code><i>'n'</i></code> of the vertices and the edges in the polyline of interest by pressing the <code><i>'-'</i></code> key.</li></ul>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example029_old_conf0.png' border='1' width="510" height="383"></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example029_old_conf1.png' border='1' width="510" height="383"></td></tr>
-<tr><td>Here, <i>'Kx=Rx=3'</i>, <i>'Ky=Ry=2'</i>, and <i>'n=7'</i>.</td><td>Here, <i>'Kx=Rx=3'</i>, <i>'Ky=Ry=2'</i>, and <i>'n=31'</i>.</td></tr>
+<tr><td>Here, <code><i>'Kx=Rx=3'</i>, <i>'Ky=Ry=2'</i></code>, and <code><i>'n=7'</i>.</code></td><td>Here, <code><i>'Kx=Rx=3'</i>, <i>'Ky=Ry=2'</i></code>, and <code><i>'n=31'</i>.</code></td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example029_old_conf2.png' border='1' width="510" height="383"></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example029_old_conf3.png' border='1' width="510" height="383"></td></tr>
-<tr><td>Here, <i>'Kx=Rx=3'</i>, <i>'Ky=Ry=2'</i>, and <i>'n=51'</i>.</td><td>Here, <i>'Kx=Rx=3'</i>, <i>'Ky=Ry=2'</i>, and <i>'n=151'</i>.</td></tr></table><p><hr><p>
+<tr><td>Here, <code><i>'Kx=Rx=3'</i>, <i>'Ky=Ry=2'</i></code>, and <code><i>'n=51'</i>.</code></td><td>Here, <code><i>'Kx=Rx=3'</i>, <i>'Ky=Ry=2'</i></code>, and <code><i>'n=151'</i>.</code></td></tr></table><p><hr><p>
 
 <h4>Dependencies</h4>
 
