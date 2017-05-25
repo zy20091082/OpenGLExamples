@@ -63,7 +63,7 @@ int main(int argc,char **argv)
 	cout<<"\tHere, the user cannot modify the orientations and the colors for 6 square faces in the 'Cube' shape of interest. Instead, the user can press cyclically the ' ' (space) key for choosing what 'viewing configuration' has to be applied"<<endl;
 	cout<<"\tbetween the following 'viewing configurations':"<<endl<<endl;
 	cout<<"\t\t-) the 'viewing configuration #0' is based on the viewing orthographic box '[-40,40]' x '[-40,40]' x '[-80,80]';"<<endl;
-	cout<<"\t\t-) the 'viewing configuration #1' is based on the viewing perspective box (frustum) '[-2.7,2.7]' x '[-2.7,2.7]' x '[2.0,70]'."<<endl<<endl;
+	cout<<"\t\t-) the 'viewing configuration #1' is based on the viewing perspective box '[-2.7,2.7]' x '[-2.7,2.7]' x '[2.0,70]'."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	
