@@ -11,7 +11,7 @@ The <i>'Example-022 (Old Mode)'</i> Test draws <code>'3'</code> approximations o
 <li>Decrease the number <code><i>'n'</i></code> of the samples in the approximation of interest by pressing the <code><i>'-'</i></code> key.<p></li></ul><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf0_case0.png' border='1' width='456' height='450'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf0_case1.png' border='1' width='456' height='450'></td></tr>
-<tr><td><i>'Approximation #0'</i>, <code><i>'R=1'</i>, <i>'(xc,yc)=(0,0)'</i></code>, and <code><i>'n=3'</i>.</code></td><td><i>'Approximation #0'</i>, <code><i>'R=1'</i>, <i>'(xc,yc)=(0,0)'</i></code>, and <code><i>'n=50'</i>.</code></td></tr>
+<tr><td>Here, we consider the <i>'Approximation #0'</i> with <code><i>'R=1'</i>, <i>'(xc,yc)=(0,0)'</i></code>, and <code><i>'n=3'</i>.</code></td><td><i>'Approximation #0'</i>, <code><i>'R=1'</i>, <i>'(xc,yc)=(0,0)'</i></code>, and <code><i>'n=50'</i>.</code></td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf1_case0.png' border='1' width='456' height='450'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf1_case1.png' border='1' width='456' height='450'></td></tr>
