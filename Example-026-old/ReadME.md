@@ -8,11 +8,11 @@ The <i>'Example-026 (Old Mode)'</i> Test draws a polyline (in <i>'red'</i>), for
 <li>decrease the number <code><i>'n'</i></code> of the vertices and the edges in the polyline of interest by pressing the <code><i>'-'</i></code> key.</li></ul>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example026_old_conf0.png' border='1' width='450' height='647'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example026_old_conf1.png' border='1' width='450' height='647'></td></tr>
-<tr><td>Here, <code><i>'Rx=2'</i>, <i>'Ry=3'</i>, <i>'(xc,yc)=(0,0)'</i>, <i>'k=3'</i></code>, and <code><i>'n=3'</i>.</code></td><td>Here, <code><i>'Rx=2'</i>, <i>'Ry=3'</i>, <i>'(xc,yc)=(0,0)'</i>, <i>'k=3'</i></code>, and <code><i>'n=8'</i>.</code></td></tr>
+<tr><td>Here, we consider <code><i>'Rx=2'</i>, <i>'Ry=3'</i>, <i>'(xc,yc)=(0,0)'</i>, <i>'k=3'</i></code>, and <code><i>'n=3'</i>.</code></td><td>Here, we consider <code><i>'Rx=2'</i>, <i>'Ry=3'</i>, <i>'(xc,yc)=(0,0)'</i>, <i>'k=3'</i></code>, and <code><i>'n=8'</i>.</code></td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example026_old_conf2.png' border='1' width='450' height='647'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example026_old_conf3.png' border='1' width='450' height='647'></td></tr>
-<tr><td>Here, <code><i>'Rx=2'</i>, <i>'Ry=3'</i>, <i>'(xc,yc)=(0,0)'</i>, <i>'k=3'</i></code>, and <code><i>'n=25'</i>.</code></td><td>Here, <code><i>'Rx=2'</i>, <i>'Ry=3'</i>, <i>'(xc,yc)=(0,0)'</i>, <i>'k=3'</i></code>, and <code><i>'n=70'</i>.</code></td></tr></table><p><hr><p>
+<tr><td>Here, we consider <code><i>'Rx=2'</i>, <i>'Ry=3'</i>, <i>'(xc,yc)=(0,0)'</i>, <i>'k=3'</i></code>, and <code><i>'n=25'</i>.</code></td><td>Here, we consider <code><i>'Rx=2'</i>, <i>'Ry=3'</i>, <i>'(xc,yc)=(0,0)'</i>, <i>'k=3'</i></code>, and <code><i>'n=70'</i>.</code></td></tr></table><p><hr><p>
 
 <h4>Dependencies</h4>
 
