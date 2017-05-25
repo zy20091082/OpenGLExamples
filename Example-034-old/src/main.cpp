@@ -63,8 +63,8 @@ int main(int argc,char **argv)
 	cout<<"\tx(t) = 20 * cos(t), y(t) = 20 * sin(t), z(t) = t - 60"<<endl<<endl<<"\tfor every 't' in '[-10*pi,10*pi]'."<<endl<<endl;
 	cout<<"\tHere, the user cannot modify the number of the samples in the polyline of interest, since they are fixed in advance. Instead, the user can press cyclically the ' ' (space) key for choosing what 'viewing configuration' has to be applied"<<endl;
 	cout<<"\tbetween the following 'viewing configurations':"<<endl<<endl;
-	cout<<"\t\t-) the 'viewing configuration #0' is based on the viewing orthographic box '[-50,50]' x '[-50,50]' x '[0,100]';"<<endl;
-	cout<<"\t\t-) the 'viewing configuration #1' is based on the viewing perspective box '[-5,5]' x '[-5,5]' x '[0,100]'."<<endl<<endl;
+	cout<<"\t\t-) the 'viewing configuration #0' is based on the orthographic box '[-50,50]' x '[-50,50]' x '[0,100]';"<<endl;
+	cout<<"\t\t-) the 'viewing configuration #1' is based on the perspective box '[-5,5]' x '[-5,5]' x '[0,100]'."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 
