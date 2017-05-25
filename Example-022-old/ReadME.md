@@ -3,23 +3,23 @@ height="97"></A>
 
 <H3>The <i>'Example-022 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-022 (Old Mode)'</i> Test draws 3 approximations of the <i>'Circle'</i> shape with radius <i>'R'</i> and center <i>'(xc,yc)'</i> in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The approximations of interest are activated upon request, and are formed by an arbitrary number <i>'n'</i> of the samples. The <i>'Circle'</i> shape is defined as follows:<p><pre>| x(t) - xc | <= R * cos(t), | y(t) - yc | <= R * sin(t)</pre><p>for any <i>'R>0'</i>, and for every <i>'t'</i> in <i>'[-pi,pi]'</i>.<p>This test also provides a very basic interaction mechanism with the user, which must provide the radius <i>'R'</i> and the center <i>'(xc,yc)'</i>. The user can:<p><ul>
-<li>approximate the boundary (in <i>'red'</i>) of the <i>'Circle'</i> shape through a polyline with an arbitrary number <i>'n'</i> of the vertices and the edges [ <i>'Approximation #0'</i> ] by pressing the <i>'l'</i> key.<p></li>
-<li>Approximate the <i>'Circle'</i> shape through the <i>'filled versions'</i> of <i>'n'</i> triangles in a triangle fan [ <i>'Approximation #1'</i> ] by pressing the <i>'f'</i> key. All triangles (in <i>'dark gray'</i>) are incident at the center <i>'(xc,yc)'</i> (in <i>'red')</i>.<p></li>
-<li>Approximate the <i>'Circle'</i> shape through the <i>'filled version'</i> of only one polygon (in <i>'red'</i>) with <i>'n'</i> vertices and edges [ <i>'Approximation #2'</i> ] by pressing the <i>'p'</i> key.<p></li>
-<li>Increase the number <i>'n'</i> of the samples in the approximation of interest by pressing the <i>'+'</i> key.<p></li>
-<li>Decrease the number <i>'n'</i> of the samples in the approximation of interest by pressing the <i>'-'</i> key.<p></li></ul><p>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
+The <i>'Example-022 (Old Mode)'</i> Test draws <code>'3'</code> approximations of the <i>'Circle'</i> shape with radius <code><i>'R'</i></code> and center <code><i>'(xc,yc)'</i></code> in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The approximations of interest are activated upon request, and are formed by an arbitrary number <code><i>'n'</i></code> of the samples. The <i>'Circle'</i> shape is defined as follows:<p><pre>| x(t) - xc | <= R * cos(t), | y(t) - yc | <= R * sin(t)</pre><p>for any <code><i>'R>0'</i></code>, and for every <code><i>'t'</i></code> in <code><i>'[-pi,pi]'</i>.</code><p>This test also provides a very basic interaction mechanism with the user, which must provide the radius <code><i>'R'</i></code> and the center <code><i>'(xc,yc)'</i>.</code> The user can:<p><ul>
+<li>approximate the boundary (in <i>'red'</i>) of the <i>'Circle'</i> shape through a polyline with an arbitrary number <code><i>'n'</i></code> of the vertices and the edges [ <i>'Approximation #0'</i> ] by pressing the <code><i>'l'</i></code> key.<p></li>
+<li>Approximate the <i>'Circle'</i> shape through the <i>'filled versions'</i> of <code><i>'n'</i></code> triangles in a triangle fan [ <i>'Approximation #1'</i> ] by pressing the <code><i>'f'</i></code> key. All triangles (in <i>'dark gray'</i>) are incident at the center <code><i>'(xc,yc)'</i></code> (in <i>'red')</i>.<p></li>
+<li>Approximate the <i>'Circle'</i> shape through the <i>'filled version'</i> of only one polygon (in <i>'red'</i>) with <code><i>'n'</i></code> vertices and edges [ <i>'Approximation #2'</i> ] by pressing the <code><i>'p'</i></code> key.<p></li>
+<li>Increase the number <code><i>'n'</i></code> of the samples in the approximation of interest by pressing the <code><i>'+'</i></code> key.<p></li>
+<li>Decrease the number <code><i>'n'</i></code> of the samples in the approximation of interest by pressing the <code><i>'-'</i></code> key.<p></li></ul><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf0_case0.png' border='1' width='456' height='450'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf0_case1.png' border='1' width='456' height='450'></td></tr>
-<tr><td><i>'Approximation #0'</i>, <i>'R=1'</i>, <i>'(xc,yc)=(0,0)'</i>, and <i>'n=3'</i>.</td><td><i>'Approximation #0'</i>, <i>'R=1'</i>, <i>'(xc,yc)=(0,0)'</i>, and <i>'n=50'</i>.</td></tr>
+<tr><td><i>'Approximation #0'</i>, <code><i>'R=1'</i>, <i>'(xc,yc)=(0,0)'</i></code>, and <code><i>'n=3'</i>.</code></td><td><i>'Approximation #0'</i>, <code><i>'R=1'</i>, <i>'(xc,yc)=(0,0)'</i></code>, and <code><i>'n=50'</i>.</code></td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf1_case0.png' border='1' width='456' height='450'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf1_case1.png' border='1' width='456' height='450'></td></tr>
-<tr><td><i>'Approximation #1'</i>, <i>'R=1'</i>, <i>'(xc,yc)=(0,0)'</i>, and <i>'n=3'</i>.</td><td><i>'Approximation #1'</i>, <i>'R=1'</i>, <i>'(xc,yc)=(0,0)'</i>, and <i>'n=50'</i>.</td></tr>
+<tr><td><i>'Approximation #1'</i>, <code><i>'R=1'</i>, <i>'(xc,yc)=(0,0)'</i></code>, and <code><i>'n=3'</i>.</code></td><td><i>'Approximation #1'</i>, <code><i>'R=1'</i>, <i>'(xc,yc)=(0,0)'</i></code>, and <code><i>'n=50'</i>.</code></td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf2_case0.png' border='1' width='456' height='450'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf2_case1.png' border='1' width='456' height='450'></td></tr>
-<tr><td><i>'Approximation #2'</i>, <i>'R=1'</i>, <i>'(xc,yc)=(0,0)'</i>, and <i>'n=3'</i>.</td><td><i>'Approximation #2'</i>, <i>'R=1'</i>, <i>'(xc,yc)=(0,0)'</i>, and <i>'n=50'</i>.</td></tr></table><p><hr><p>
+<tr><td><i>'Approximation #2'</i>, <code><i>'R=1'</i>, <i>'(xc,yc)=(0,0)'</i></code>, and <code><i>'n=3'</i>.</code></td><td><i>'Approximation #2'</i>, <code><i>'R=1'</i>, <i>'(xc,yc)=(0,0)'</i></code>, and <code><i>'n=50'</i>.</code></td></tr></table><p><hr><p>
 
 <h4>Dependencies</h4>
 
