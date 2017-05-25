@@ -12,14 +12,14 @@ The <i>'Example-012 (Old Mode)'</i> Test draws all triangles in a triangle strip
 <li>The <i>'filled versions'</i> for the sides of all triangles in the custom triangle strip to be drawn are rendered by pressing the <code><i>'i'</i></code> or the <code><i>'I'</i></code> key. The user can choose separately what sides of all triangles must be drawn.<p></li></ul><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example012_old_frontside_points.png' border='1' width='456' height='470'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example012_old_frontside_wireframe.png' border='1' width='456' height='470'></td></tr>
-<tr><td>The <i>'points rendering'</i> (press the <code><i>'p'</i></code> or the <code><i>'P'</i></code> key) for all triangles in the triangle strip of interest.</td><td>The <i>'wireframe versions'</i> (press the <i>'l'</i> or the <i>'L'</i> key) for all triangles in the triangle strip of interest.</td></tr>
+<tr><td>The <i>'points rendering'</i> (press the <code><i>'p'</i></code> or the <code><i>'P'</i></code> key) for all triangles in the triangle strip of interest.</td><td>The <i>'wireframe versions'</i> (press the <code><i>'l'</i></code> or the <code><i>'L'</i></code> key) for all triangles in the triangle strip of interest.</td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example012_old_frontside_filled.png' border='1' width='456' height='470'></td>
 <td>In this case, the <i>'back'</i> sides of all triangles are not rendered, due to their vertices order. In the code, these latters are enumerated in the counter-clockwise order, thus every triangle is a front-faced triangle.<p>
 
 Hence, the scene remains unchanged, when the user decides to render only the <i>'back'</i> sides of all triangles in the triangle strip.<p>This is true, even if changing the rendering type for all triangles (points, wireframe, filled).</td>
 </tr>
-<tr><td width=50%>The <i>'filled versions'</i> (press the <i>'i'</i> or the <i>'I'</i> key) for all triangles in the triangle strip of interest.</td><td><b>IMPORTANT</b></td></tr>
+<tr><td width=50%>The <i>'filled versions'</i> (press the <code><i>'i'</i></code> or the <code><i>'I'</i></code> key) for all triangles in the triangle strip of interest.</td><td><b>IMPORTANT</b></td></tr>
 </table><hr><p>
 
 <h4>Dependencies</h4>
