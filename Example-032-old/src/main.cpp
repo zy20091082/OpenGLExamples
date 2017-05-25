@@ -71,8 +71,8 @@ int main(int argc,char **argv)
 	cout<<"\t| x(t) - xc | <= R * cos(t), | y(t) - yc | <= R * sin(t)"<<endl<<endl<<"\tfor any 'R>0', and for every 't' in '[-pi,pi]'."<<endl<<endl;
 	cout<<"\tIn other words, any 'Bullseye' shape is the union of all circular crowns, bounded by the 'Circle' curves, that are the boundary for the pairs of the consecutive disks in the 'Bullseye' shape, if sorted with respect to the"<<endl;
 	cout<<"\tlengths of their radii. The 'Bullseye' shape often represents the targets in the shooting and the archery competitions."<<endl<<endl;
-	cout<<"\tHere, we restrict our attention to the approximation of the 'Bullseye' shape, formed by 5 concentric disks. However, the approximation of interest is not 'real', since it is the result of drawing the approximations of 5"<<endl;
-	cout<<"\t'Circle' shapes, placed at different z-depths. In this context, the scene is drawn by using the orthographic projection, such that the centers of the 'Circle' shapes are projected on the same point. Every 'Circle' shape"<<endl;
+	cout<<"\tHere, we restrict our attention to the approximation of the 'Bullseye' shape, formed by 5 concentric disks. In any case, the approximation of interest is not 'real', since it is the result of drawing the approximations of 5"<<endl;
+	cout<<"\t'Circle' shapes, placed at different z-depths. In this context, the scene is drawn by using the orthographic projection, such that the centers of the 'Circle' shapes are projected on the same point. Each 'Circle' shape"<<endl;
 	cout<<"\tof interest is approximated by a triangle fan of 'n' vertices (including the center), and is drawn by using the z-buffer (depth test) technique. Thus, the result will be a 'false' version of the 'Bullseye' shape, and will"<<endl;
 	cout<<"\tbe always the same, despite the rendering order of 5 'Circle' shapes."<<endl<<endl;
 	cout<<"\tHere, the user cannot modify the radius, the number, and the colors for the 'Circle' shapes of interest, since they are fixed in advance. Instead, the user can:"<<endl<<endl;

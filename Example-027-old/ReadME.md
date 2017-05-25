@@ -3,16 +3,16 @@ height="97"></A>
 
 <H3>The <i>'Example-027 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-027 (Old Mode)'</i> Test draws a polyline (in <i>'red'</i>), formed by an arbitrary number <i>'n'</i> of the vertices and the edges, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The polyline of interest approximates the <i>'Sine-like'</i> curve in the range <i>'[-pi,+pi]'</i>. In particular, any <i>'Sine-like'</i> curve is defined in the same spirit of the <i>'Sine'</i> curve, but it requires an exponent <i>'k'</i> for computing the sine function to the <i>'k'</i>-th. The <i>'Sine-like'</i> curve is defined as follows:<center><pre>x(t) = t, y(t) = sin ^ k (t)</pre></center><p>for any <i>'k>0'</i>, and for every <i>'t'</i> in <i>'[-pi,pi]'</i>.<p>This test also provides a very basic interaction mechanism with the user. In fact, this latter must provide the exponent <i>'k'</i>, and can also:<p><ul>
-<li>increase the number <i>'n'</i> of the vertices and the edges in the polyline of interest by pressing the <i>'+'</i> key;</li>
-<li>decrease the number <i>'n'</i> of the vertices and the edges in the polyline of interest by pressing the <i>'-'</i> key.</li></ul>Likewise, the window of interest can be closed by pressing any among the <i>'Q'</i>, the <i>'q'</i>, and the <i>'Esc'</i> keys.<p><table border=0 width=100%><tr>
+The <i>'Example-027 (Old Mode)'</i> Test draws a polyline (in <i>'red'</i>), formed by an arbitrary number <code><i>'n'</i></code> of the vertices and the edges, in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. The polyline of interest approximates the <i>'Sine-like'</i> curve in the range <code><i>'[-pi,+pi]'</i>.</code> In particular, any <i>'Sine-like'</i> curve is defined in the same spirit of the <i>'Sine'</i> curve, but it requires an exponent <code><i>'k'</i></code> for computing the sine function to the <code><i>'k'</i></code>-th. The <i>'Sine-like'</i> curve is defined as follows:<center><pre>x(t) = t, y(t) = sin ^ k (t)</pre></center><p>for any <code><i>'k>0'</i></code>, and for every <code><i>'t'</i></code> in <code><i>'[-pi,pi]'</i>.</code><p>This test also provides a very basic interaction mechanism with the user. In fact, this latter must provide the exponent <code><i>'k'</i></code>, and can also:<p><ul>
+<li>increase the number <code><i>'n'</i></code> of the vertices and the edges in the polyline of interest by pressing the <code><i>'+'</i></code> key;</li>
+<li>decrease the number <code><i>'n'</i></code> of the vertices and the edges in the polyline of interest by pressing the <code><i>'-'</i></code> key.</li></ul>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example027_old_conf0.png' border='1'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example027_old_conf1.png' border='1'></td></tr>
-<tr><td>Here, the <i>'Sine-like'</i> curve with <i>'k=2'</i>, and <i>'n=5'</i>.</td><td>Here, the <i>'Sine-like'</i> curve with <i>'k=2'</i>, and <i>'n=60'</i>.</td></tr>
+<tr><td>Here, the <i>'Sine-like'</i> curve with <code><i>'k=2'</i></code>, and <code><i>'n=5'</i>.</code></td><td>Here, the <i>'Sine-like'</i> curve with <code><i>'k=2'</i></code>, and <code><i>'n=60'</i>.</code></td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example027_old_conf2.png' border='1'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example027_old_conf3.png' border='1'></td></tr>
-<tr><td>Here, the <i>'Sine-like'</i> curve with <i>'k=3'</i>, and <i>'n=5'</i>.</td><td>Here, the <i>'Sine-like'</i> curve with <i>'k=3'</i>, and <i>'n=60'</i>.</td></tr></table><p><hr><p>
+<tr><td>Here, the <i>'Sine-like'</i> curve with <code><i>'k=3'</i></code>, and <code><i>'n=5'</i>.</code></td><td>Here, the <i>'Sine-like'</i> curve with <code><i>'k=3'</i></code>, and <code><i>'n=60'</i>.</code></td></tr></table><p><hr><p>
 
 <h4>Dependencies</h4>
 
