@@ -89,8 +89,8 @@ int main(int argc,char **argv)
 	cout<<"\tdisk, and the disk of radius 'rI' is the 'internal' disk."<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide the 'external' radius 'rE' and the 'internal' radius 'rI', as well as the center coodinates '(xc,yc)'. The user can also:"<<endl<<endl;
 	cout<<"\t\t-) render only the vertices for all quadrilaterals in the quadstrip of interest [ 'Configuration #0' ] by pressing the 'p' key;"<<endl;
-	cout<<"\t\t-) render only the 'wireframe versions' of all quadrilaterals in the quadstrip of interest [ 'Configuration #1' ] by pressing the 'l' key;"<<endl;
-	cout<<"\t\t-) render only the 'filled versions' of all quadrilaterals in the quadstrip of interest [ 'Configuration #2' ] by pressing the 'f' key;"<<endl;
+	cout<<"\t\t-) render the 'wireframe versions' of all quadrilaterals in the quadstrip of interest [ 'Configuration #1' ] by pressing the 'l' key;"<<endl;
+	cout<<"\t\t-) render the 'filled versions' of all quadrilaterals in the quadstrip of interest [ 'Configuration #2' ] by pressing the 'f' key;"<<endl;
 	cout<<"\t\t-) increase the number 'n' of all quadrilaterals in the quadstrip of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of all quadrilaterals in the quastrip of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
