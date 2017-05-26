@@ -58,7 +58,7 @@ unsigned int num_samples=5;
 /**
  * This flag assumes the following values:
  *
- * 0: it indicates to use the viewing orthographic box. This latter depends on which view of the 'Ring' shape we are rendering;
+ * 0: it indicates to use the viewing orthographic box.
  * 1: it indicates to use the viewing perspective box (frustum) [-20,20,-20,20,4,180].
  *
  * The user can choose what projection must be used by pressing cyclically the ' ' (space) key.
@@ -70,7 +70,7 @@ int projection=0;
  * This flag assumes the following values:
  *
  * 0: it indicates to render the 'View #0' of the 'Ring' shape along the canonical plane 'xz';
- * 1: it indicates to render the 'View #1' of the 'Ring' shape along the canonical plane 'yz';
+ * 1: it indicates to render the 'View #1' of the 'Ring' shape along the canonical plane 'zy';
  * 2: it indicates to render the 'View #2' of the 'Ring' shape along the canonical plane 'xy'.
  *
  * The user can choose what view must be rendered by pressing cyclically the 'c' key.
