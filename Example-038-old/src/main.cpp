@@ -47,7 +47,7 @@ float xp1,yp1,xp2,yp2,teta1,teta2;
 /**
  * This value, initially set to '5', is the number of the samples in all approximations of interest for the 'Eight' shape. Specifically, its meaning depends on the 
  *
- * -) it may be the number 'n' of the vertices (initially 'n=4', including the center) in the triangle fans, approximating the disks in the 'Eight' shape (i.e., in the variant #0 of the 'Eight' shape).
+ * -) it may be the number 'n' of the vertices (initially 'n=4') in the triangle fans, approximating the disks in the 'Eight' shape (i.e., in the variant #0 of the 'Eight' shape).
  * -) It may be the number 'k' of the vertices pairs (initially 'k=5') in the quad strips, approximating the 'Eight' shape (i.e., in the variant #1 of the 'Eight' shape).
  *
  * This value is interactively modified by pressing the '+' and the '-' keys.
@@ -98,7 +98,7 @@ int main(int argc,char **argv)
 	cout<<"\t\t0. the variant #0 is not 'real', since it is the result of drawing the approximations of 2 complete 'Circular Annulus' shapes, placed at different z-depths. Note that every 'Circular Annulus' shape is recursively rendered by drawing its"<<endl;
 	cout<<"\t\t   'external' (in 'red') and 'internal' (in 'white') disks. The scene is drawn by using the orthographic projection, such that the centers for the 'Circle' shapes of interest are projected on the same point. Here, the z-buffer (depth test)"<<endl;
 	cout<<"\t\t   technique is exploited. Thus, the result will be always the same, despite the rendering order of the 'Circle' shapes. Thus, they only seem to approximate the 'Circular Annulus' shape, and thus also the 'Eight' shape. In particular, there"<<endl;
-	cout<<"\t\t   exists a portion of the 'Eight' shape, which is shared by the 'inferior' and by the 'superior circular crown'. All 'Circle' shapes of interest are approximated by a triangle fan of 'n' vertices (including the center)."<<endl<<endl;
+	cout<<"\t\t   exists a portion of the 'Eight' shape, which is shared by the 'inferior' and by the 'superior circular crown'. All 'Circle' shapes of interest are approximated by a triangle fan of 'n' vertices."<<endl<<endl;
 	cout<<"\t\t1. The variant #1 is a 'real' approximation of the 'Eight' shape, and is defined with respect to its horizontal symmetry. Here, the 'Eight' shape is decomposed into the 'superior' and the 'inferior' patches, that correspond (broadly) to its"<<endl;
 	cout<<"\t\t   'superior' and 'inferior circular crowns' (but not completely). Every patch is recursively formed by 2 pieces. The first piece is the portion of the corresponding circular crown, which does not contain the intersection with other circular"<<endl;
 	cout<<"\t\t   crown. In other words, it is a sector of the corresponding circular crown, and is approximated by a quad strip. This latter is defined on 'k' pairs of the corresponding vertices in the 'Circle' curves, that bound both the 'internal' and "<<endl;
