@@ -15,15 +15,15 @@ The <i>'Example-038 (Old Mode)'</i> Test draws <code>'2'</code> variants of the 
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example038_old_tessellation0_edges.png' border='1'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example038_old_tessellation0_50_edges.png' border='1'></td></tr>
 <tr>
-<td width=50%>The number <code><i>'n'</i></code> of the vertices (including the center) is <code><i>'n=4'</i></code> for the <i>'wireframe versions'</i> of all triangles in the triangle fans of interest.</td>
-<td width=50%>The number <code><i>'n'</i></code> of the vertices (including the center) is <code><i>'n=50'</i></code> for the <i>'wireframe versions'</i> of all triangles in the triangle fans of interest.</td>
+<td width=50%>The number <code><i>'n'</i></code> of the vertices is <code><i>'n=4'</i></code> for the <i>'wireframe versions'</i> of all triangles in the triangle fans of interest.</td>
+<td width=50%>The number <code><i>'n'</i></code> of the vertices is <code><i>'n=50'</i></code> for the <i>'wireframe versions'</i> of all triangles in the triangle fans of interest.</td>
 </tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example038_old_tessellation0_filled.png' border='1'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example038_old_tessellation0_50_filled.png' border='1'></td></tr>
 <tr>
-<td width=50%>The number <code><i>'n'</i></code> of the vertices (including the center) is <code><i>'n=4'</i></code> for the <i>'filled versions'</i> of all triangles in the triangle fans of interest.</td>
-<td width=50%>The number <code><i>'n'</i></code> of the vertices (including the center) is <code><i>'n=50'</i></code> for the <i>'filled versions'</i> of all triangles in the triangle fans of interest.</td>
+<td width=50%>The number <code><i>'n'</i></code> of the vertices is <code><i>'n=4'</i></code> for the <i>'filled versions'</i> of all triangles in the triangle fans of interest.</td>
+<td width=50%>The number <code><i>'n'</i></code> of the vertices is <code><i>'n=50'</i></code> for the <i>'filled versions'</i> of all triangles in the triangle fans of interest.</td>
 </tr>
 </table><p>
 
