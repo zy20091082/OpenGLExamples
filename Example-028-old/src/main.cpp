@@ -60,7 +60,7 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-028' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of the vertices and the edges, in an OpenGL window. The polyline of interest approximates the 'Cosine-like' curve in the range '[-pi,+pi]'."<<endl;
+	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of the vertices and the edges, in an OpenGL window. The polyline of interest approximates the 'Cosine-like' curve in '[-pi,+pi]'."<<endl;
 	cout<<"\tIn particular, any 'Cosine-like' curve is defined in the same spirit of the 'Cosine' curve, but it requires an exponent 'k' for computing the cosine function to the 'k'-th. The 'Cosine-like' curve is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = t, y(t) = cos ^ k (t)"<<endl<<endl<<"\tfor any 'k>0', and for every 't' in '[-pi,pi]'."<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user. In fact, this latter must provide the exponent 'k', and can also:"<<endl<<endl;
