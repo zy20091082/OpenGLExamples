@@ -15,15 +15,15 @@ The <i>'Example-042 (Old Mode)'</i> Test draws several views of the <i>'Cone'</i
 
 <p><table border=0 width=100%>
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example039_old_view0_wireframe_orthographic_0.png' border='0'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example039_old_view0_wireframe_orthographic_50.png' border='0'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view0_wireframe_orthographic_0.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view0_wireframe_orthographic_50.png' border='0'></td></tr>
 <tr>
 <td width=50%>The <code><i>'n=5'</i></code> vertices in the <i>'wireframe versions'</i> of the triangles (with the orthographic projection).</td>
 <td width=50%>The <code><i>'n=50'</i></code> vertices in the <i>'wireframe versions'</i> of the triangles (with the orthographic projection).</td>
 </tr>
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example039_old_view0_filled_orthographic_0.png' border='0'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example039_old_view0_filled_orthographic_50.png' border='0'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view0_filled_orthographic_0.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view0_filled_orthographic_50.png' border='0'></td></tr>
 <tr>
 <td width=50%>The <code><i>'n=5'</i></code> vertices in the <i>'filled versions'</i> of the triangles (with the orthographic projection).</td>
 <td width=50%>The <code><i>'n=50'</i></code> vertices in the <i>'filled versions'</i> of the triangles (with the orthographic projection).</td>
