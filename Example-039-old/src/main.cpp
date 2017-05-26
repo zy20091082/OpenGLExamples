@@ -101,7 +101,7 @@ int main(int argc,char **argv)
 	cout<<"\t\t-) choose to apply the orthographic or the perspective projection to the current view of the 'Ring' shape by pressing cyclically the ' ' (space) key;"<<endl;
 	cout<<"\t\t-) choose to render the 'wireframe' or the 'filled versions' of all quadrilaterals in the current approximation of the 'Ring' shape by pressing cyclically the 'r' key;"<<endl;
 	cout<<"\t\t-) increase the number 'n' of all vertices pairs in the quad strips of interest by pressing the '+' key;"<<endl;
-	cout<<"\t\t-) decrease the number 'n' of all vertices pairs in the quad strips of interest by pressing the '+' key."<<endl<<endl;
+	cout<<"\t\t-) decrease the number 'n' of all vertices pairs in the quad strips of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	
 	/* If we arrive here, we can draw the 'Ring' shape of interest by using the rendering settings, chosen by the user. */

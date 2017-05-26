@@ -237,7 +237,7 @@ void draw()
 	}
 	else
 	{
-		/* The domain for the configuration #4 is [-35,35] x [-35,35] x [-95,-25]. The apex is the 3D point (0,0,-95), and all points of the circular basis have x-coordinate x=-25. */
+		/* The domain for the configuration #5 is [-35,35] x [-35,35] x [-95,-25]. The apex is the 3D point (0,0,-95), and all points of the circular basis have x-coordinate x=-25. */
 		glVertex3f(0,0,-95);
 		for(int k=0;k<num_samples;k++) { glVertex3f(35*cos(-PI+k*d),35*sin(-PI+k*d),-25); }
 	}

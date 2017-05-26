@@ -6,7 +6,7 @@ The <i>'Example-039 (Old Mode)'</i> Test draws several views of the <i>'Ring'</i
 <li>choose to apply the orthographic or the perspective projection to the current view of the <i>'Ring'</i> shape by pressing cyclically the <code><i>' '</i></code> (space) key;</li>
 <li>choose to render the <i>'wireframe'</i> or the <i>'filled versions'</i> of all quadrilaterals in the current approximation of the <i>'Ring'</i> shape by pressing cyclically the <code><i>'r'</i></code> key;</li>
 <li>increase the number <code><i>'n'</i></code> of all vertices pairs in the quad strips of interest by pressing the <code><i>'+'</i></code> key;</li>
-<li>decrease the number <code><i>'n'</i></code> of all vertices pairs in the quad strips of interest by pressing the <code><i>'+'</i></code> key.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.
+<li>decrease the number <code><i>'n'</i></code> of all vertices pairs in the quad strips of interest by pressing the <code><i>'-'</i></code> key.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.
 
 <p><h5>Rendering the <i>'View #0'</i></h5>
 <p><table border=0 width=100%>
