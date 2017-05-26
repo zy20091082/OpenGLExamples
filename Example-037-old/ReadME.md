@@ -3,7 +3,7 @@ height="97"></A>
 
 The <i>'Example-037 (Old Mode)'</i> Test draws several versions of the <i>'A'</i> shape in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window by using the rendering settings, chosen interactively by the user. Broadly speaking, the <i>'A'</i> shape represents the <i>'A'</i> letter, which is in the first letter and the first vowel in the ISO basic Latin alphabet. Here, we consider the upper-case version of the <i>'A'</i> letter, consisting of <code>'2'</code> slanting sides of a triangle, crossed in the middle by a horizontal bar (as usual).<p>In this test, we consider the following tessellations of the <i>'A'</i> shape, defined without adding any <i>'Steiner'</i> point:<ol start='0'>
 <li>the <i>'Tessellation #0'</i> of the <i>'A'</i> shape consists of a pure triangulation, formed by <code>'11'</code> triangles. A different color is assigned to each triangle.<p></li>
-<li>The <i>'Tessellation #1'</i> of the <i>'A'</i> shape consists of a quad-dominant mesh, formed by <code>'5'</code> quadrilaterals, and by only one triangle. Also in this case, a different color is assigned to the triangle and to each quadrilateral.<p></li>
+<li>The <i>'Tessellation #1'</i> of the <i>'A'</i> shape consists of a quad-dominant mesh, formed by <code>'5'</code> quadrilaterals, and by only <code>'1'</code> triangle. Also in this case, a different color is assigned to the triangle and to each quadrilateral.<p></li>
 <li>The <i>'Tessellation #2'</i> of the <i>'A'</i> shape consists of the same triangulation in the <i>'Tessellation #0'</i>. In this case, it is expressed by <code>'1'</code> triangle strip (in <i>'yellow'</i>), and by <code>'3'</code> triangle fans. The reference vertices for the triangle fans are depicted, respectively, in <i>'red'</i>, in <i>'blue'</i>, and in <i>'green'</i>. Instead, their triangles are depicted in <i>'grey'</i>.<p></li></ol><p>
 
 Here, the user cannot modify the vertices positions in the <i>'A'</i> shape, since they are fixed in advance. Instead, the user can choose interactively to exploit any among the tessellations of the <i>'A'</i> shape (mentioned above) by pressing cyclically the <code><i>'t'</i></code> key. Moreover, the user can decide interactively to render:<ul>
@@ -26,7 +26,7 @@ These triangles are rendered independently, and a different color is assigned to
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example037_old_tessellation1_edges.png' border='1' width='800' height='450'></td></tr>
 <tr><td>Only the points of all polygons are rendered.</td><td>The <i>'wireframe versions'</i> of all polygons are rendered.</td></tr>
 <tr><td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example037_old_tessellation1_filled.png' border='1' width='800' height='450'></td>
-<td width=50%>The <i>'Triangulation #1'</i> is a quad-dominant mesh, formed by only one triangle and by <code>'5'</code> quadrilaterals.<p>
+<td width=50%>The <i>'Triangulation #1'</i> is a quad-dominant mesh, formed by only <code>'1'</code> triangle and by <code>'5'</code> quadrilaterals.<p>
 
 These polygons are rendered independently, and a different color is assigned to each of them.</td></tr>
 <tr><td width=50%>The <i>'filled versions'</i> of all polygons are rendered.</td><td width=50%><b>REMARK</b></td></tr></table><p>
