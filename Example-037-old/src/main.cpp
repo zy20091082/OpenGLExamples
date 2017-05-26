@@ -72,7 +72,7 @@ int main(int argc,char **argv)
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-037' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws several versions of the 'A' shape in an OpenGL window by using the rendering settings, chosen interactively by the user. Broadly speaking, the 'A' shape represents the 'A' letter, which is in the first letter and the"<<endl;
-	cout<<"\tfirst vowel in the ISO basic Latin alphabet. Here, we consider the upper-case version of the 'A' letter, consisting of two slanting sides of a triangle, crossed in the middle by a horizontal bar (as usual)."<<endl<<endl;
+	cout<<"\tfirst vowel in the ISO basic Latin alphabet. Here, we consider the upper-case version of the 'A' letter, consisting of 2 slanting sides of a triangle, crossed in the middle by a horizontal bar (as usual)."<<endl<<endl;
 	cout<<"\tIn this test, we consider the following tessellations of the 'A' shape, defined without adding any 'Steiner' point:"<<endl<<endl;
 	cout<<"\t\t0. the 'Tessellation #0' of the 'A' shape consists of a pure triangulation, formed by 11 triangles. A different color is assigned to each triangle."<<endl;
 	cout<<"\t\t1. The 'Tessellation #1' of the 'A' shape consists of a quad-dominant mesh, formed by 5 quadrilaterals, and by only one triangle. Also in this case, a different color is assigned to the triangle and to each quadrilateral."<<endl;
