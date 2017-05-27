@@ -11,7 +11,7 @@ The <i>'Example-043 (Old Mode)'</i> Test draws the <i>'Sphere'</i> shape in an <
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example043_old_conf0.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example043_old_conf1.png' border='0'></td></tr>
 <tr>
-<td width=50%>Here, the rotation angle is <code><i>'0'</i></code>, as well as, respectively, the translation values along the <i>X</i>- and the <i>Y</i>-axis.</td>
+<td width=50%>Here, the rotation angle is <code><i>'0'</i></code>, and also the translation values along the <i>X</i>- and the <i>Y</i>-axis.</td>
 <td width=50%>Here, the rotation angle is <code><i>'200'</i></code>, the translation value along the <i>X</i>-axis is <code><i>'0.7'</i></code>, and the translation value along the <i>Y</i>-axis is <code><i>'0.1'</i></code>.</td>
 </tr></table>
 
