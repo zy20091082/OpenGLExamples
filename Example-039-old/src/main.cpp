@@ -96,7 +96,7 @@ int main(int argc,char **argv)
 	cout<<"\trequest) 3 views of the 'Ring' shape along the canonical planes 'xz' (the 'View #0'), 'zy' (the 'View #1'), and 'xy' (the 'View #2'), in order to give a more complete overview of its properties. Meanwhile, it is also possible to apply"<<endl;
 	cout<<"\t(upon request) any between the orthographic and the perspective projection, since some portions of the shape may overlap and not be visible in a specific view. Finally, it also possible to render (upon request) the 'wireframe' and the"<<endl;
 	cout<<"\t'filled versions' of all quadrilaterals in the current approximation of the 'Ring' shape. These aspects are orthogonal, and can be combined together in several ways."<<endl<<endl;
-	cout<<"\tHere, the user cannot modify the radius 'R'=35' and the centers for the basis of the 'Ring' shape, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
+	cout<<"\tHere, the user cannot modify the radius 'R=35' and the centers for the basis of the 'Ring' shape, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
 	cout<<"\t\t-) choose to render a specific view of the 'Ring' shape by pressing cyclically the 'c' key;"<<endl;
 	cout<<"\t\t-) choose to apply the orthographic or the perspective projection to the current view of the 'Ring' shape by pressing cyclically the ' ' (space) key;"<<endl;
 	cout<<"\t\t-) choose to render the 'wireframe' or the 'filled versions' of all quadrilaterals in the current approximation of the 'Ring' shape by pressing cyclically the 'r' key;"<<endl;
