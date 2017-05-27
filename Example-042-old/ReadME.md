@@ -109,20 +109,45 @@ The <i>'Example-042 (Old Mode)'</i> Test draws several views of the <i>'Cone'</i
 
 <p><h5>Rendering the <i>'View #3'</i></h5>
 
-
-
-
-
-
-
-
-
-
-
-
-
+<p><table border=0 width=100%>
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view3_wireframe_orthographic_0.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view3_wireframe_orthographic_50.png' border='0'></td></tr>
+<tr>
+<td width=50%>The <code><i>'n=5'</i></code> vertices in the <i>'wireframe versions'</i> of the triangles (with the orthographic projection).</td>
+<td width=50%>The <code><i>'n=50'</i></code> vertices in the <i>'wireframe versions'</i> of the triangles (with the orthographic projection).</td>
+</tr>
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view3_filled_orthographic_0.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view3_filled_orthographic_50.png' border='0'></td></tr>
+<tr>
+<td width=50%>The <code><i>'n=5'</i></code> vertices in the <i>'filled versions'</i> of the triangles (with the orthographic projection).</td>
+<td width=50%>The <code><i>'n=50'</i></code> vertices in the <i>'filled versions'</i> of the triangles (with the orthographic projection).</td>
+</tr>
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view3_wireframe_perspective_0.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view3_wireframe_perspective_50.png' border='0'></td></tr>
+<tr>
+<td width=50%>The <code><i>'n=5'</i></code> vertices in the <i>'wireframe versions'</i> of the triangles (with the perspective projection).</td>
+<td width=50%>The <code><i>'n=50'</i></code> vertices in the <i>'wireframe versions'</i> of the triangles (with the perspective projection).</td>
+</tr>
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view3_filled_perspective_0.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view3_filled_perspective_50.png' border='0'></td></tr>
+<tr>
+<td width=50%>The <code><i>'n=5'</i></code> vertices in the <i>'filled versions'</i> of the triangles (with the perspective projection).</td>
+<td width=50%>The <code><i>'n=50'</i></code> vertices in the <i>'filled versions'</i> of the triangles (with the perspective projection).</td>
+</tr></table>
 
 <p><h5>Rendering the <i>'View #4'</i></h5>
+
+
+
+
+
+
+
+
 
 <p><h5>Rendering the <i>'View #5'</i></h5>
 
