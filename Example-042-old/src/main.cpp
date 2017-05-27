@@ -249,7 +249,7 @@ void resize(int w, int h)
 /// This function draws the <i>'Cone'</i> shape in the OpenGL window of interest by using the preferences, chosen by the user.
 void draw()
 {
-	float d=(2*PI)/(num_samples);
+	float d=(2*PI)/(num_samples-1);
 
 	/* Now, we draw the 'Cone' shape of interest in the OpenGL window of interest by using the preferences, chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
@@ -279,7 +279,7 @@ void draw()
 	{
 		/* We draw the 'View #3' of the 'Cone' shape along the 'xz' plane (upturned version of the 'View #2'). */
 		glVertex3f(0,0,-60);
-		for(int k=0;k<num_samples;k++) { glVertex3f(70,35*sin(-PI+k*d),35*cos(-PI+k*d)-60); }
+		for(int k=0;k<=num_samples;k++) { glVertex3f(70,35*sin(-PI+k*d),35*cos(-PI+k*d)-60); }
 	}
 	else if(configuration==4)
 	{
