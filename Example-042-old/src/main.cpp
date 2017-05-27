@@ -105,7 +105,7 @@ int main(int argc,char **argv)
 	cout<<"\tin order to give a more complete overview of its properties."<<endl<<endl;
 	cout<<"\tMeanwhile, it is also possible to apply (upon request) any between the orthographic and the perspective projection, since some portions of the shape may overlap and not be visible in a specific view. Finally, it also possible to render (upon"<<endl;
 	cout<<"\trequest) the 'wireframe' and the 'filled versions' of all triangles in the current approximation of the 'Cone' shape. These aspects are orthogonal, and can be combined together in several ways."<<endl<<endl;
-	cout<<"\tHere, the user cannot modify the radius 'R'=35' and the center for the basis of the 'Cone' shape, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
+	cout<<"\tHere, the user cannot modify the radius 'R=35' and the center for the basis of the 'Cone' shape, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
 	cout<<"\t\t-) choose to render a specific view of the 'Cone' shape by pressing cyclically the 'c' key;"<<endl;
 	cout<<"\t\t-) choose to apply the orthographic or the perspective projection to the current view of the 'Cone' shape by pressing cyclically the ' ' (space) key;"<<endl;
 	cout<<"\t\t-) choose to render the 'wireframe' or the 'filled versions' of all triangles in the current approximation of the 'Cone' shape by pressing cyclically the 'r' key;"<<endl;
