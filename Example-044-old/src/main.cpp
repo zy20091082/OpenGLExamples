@@ -70,7 +70,7 @@ void drawString(void *font,string s,GLfloat x,GLfloat y);
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a new window! */
-	cout<<endl<<"\tThis is the 'Example-044' Example, based on the (Old Mode) OpenGL"<<endl<<endl;
+	cout<<endl<<"\tThis is the 'Example-044' Example, based on the (Old Mode) OpenGL"<<endl;
 	cout<<"\tIt draws 3 versions of the 'Moon' shape in an OpenGL window. Intuitively, the 'Moon' shape represents any lunar phase, namely the shape of any illuminated (sunlit) portion of the 'Moon' as seen by an observer on 'Earth'. In this case, "<<endl;
 	cout<<"\twe limit our attention to the 'Waning Crescent', the 'Last Quarter', and the 'Waning Gibbous' lunar phases as they are seen in the northern hemisphere of the 'Earth'."<<endl<<endl;
 	cout<<"\tEach lunar phase is bounded by 2 profiles, that are subdivided into 'n-1' horizontal stripes (in 'red') by using 'n' points. Every horizontal strip consists of a quadrilateral, which is defined by 2 pairs of adjacent vertices, belonging"<<endl;
