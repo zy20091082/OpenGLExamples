@@ -49,7 +49,7 @@ int num_samples=5;
  * -) the 'GL_LINE' value, used for rendering the 'wireframe versions' for all quadrilaterals in the quad strips of interest;
  * -) the 'GL_FILL' value, used for rendering the 'filled versions' for all quadrilaterals in the quad strips of interest.
  *
- * It is possible to cycle between these 2 renderings by pressing the ' ' (space) key.
+ * It is possible to cycle between these 2 renderings by pressing the 'r' (space) key.
  */
 GLenum mode=GL_FILL;
 
@@ -88,7 +88,7 @@ int main(int argc,char **argv)
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
 	glutInitWindowSize(560,350);
-	glutCreateWindow("The 'Example-044' Example, based on the (Old Mode) OpenGL");
+	glutCreateWindow("The 'Example-044' Test, based on the (Old Mode) OpenGL");
 	glutReshapeFunc(resize);
 	glutKeyboardFunc(manageKeys);
 	glutDisplayFunc(draw);
