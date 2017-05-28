@@ -65,7 +65,7 @@ void drawDisc(float R,float X,float Y,float Z);
 int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a new window! */
-	cout<<endl<<"\tThis is the 'Example-032' Test, based on the (Old Mode) OpenGL."<<endl<<endl;
+	cout<<endl<<"\tThis is the 'Example-032' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws an approximation of the 'Bullseye' shape in an OpenGL window. A generic 'Bullseye' shape is defined by several concentric 'Circle' shapes (disks) of different colors, same center '(xc,yc)', and radii of different"<<endl;
 	cout<<"\tlengths. Recall that the 'Circle' shape with radius 'R' and center '(xc,yc)' is defined as follows:"<<endl<<endl;
 	cout<<"\t| x(t) - xc | <= R * cos(t), | y(t) - yc | <= R * sin(t)"<<endl<<endl<<"\tfor any 'R>0', and for every 't' in '[-pi,pi]'."<<endl<<endl;
