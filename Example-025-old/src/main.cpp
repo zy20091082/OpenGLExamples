@@ -90,7 +90,7 @@ int main(int argc,char **argv)
 
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-025' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tdraws a polyline (in 'red'), formed by an arbitrary number 'n' of the vertices and the edges, in an OpenGL window. The polyline of interest approximates a portion of the 'Parabola' curve with vertex '(xv,yv)'. The portion of"<<endl;
+	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of the vertices and the edges, in an OpenGL window. The polyline of interest approximates a portion of the 'Parabola' curve with vertex '(xv,yv)'. The portion of"<<endl;
 	cout<<"\tinterest for the 'Parabola' curve is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = t, y(t) = a * t ^ 2 + b * t + c"<<endl<<endl<<"\tfor any not null 'a', and for every 't' in '[xv-R,xv+R]', with any 'R>0'."<<endl<<endl;
 	cout<<"\tThe parameters 'a', 'b', and 'c' determine the properties of the 'Parabola' curve. In particular, its vertex '(xv,yv)' is defined as follows:"<<endl<<endl;

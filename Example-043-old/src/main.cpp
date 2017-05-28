@@ -70,8 +70,8 @@ int main(int argc,char **argv)
 	cout<<"\tperspective projection."<<endl<<endl;
 	cout<<"\tHere, the user cannot modify the radius 'R, the center '(xc,yc)', and the numbers of the slices and the stacks in the approximation of interest for the 'Sphere' shape, since they are fixed in advance. Instead, the user can apply several"<<endl;
 	cout<<"\ttransformations on the scene, in particular the user can:"<<endl<<endl;
-	cout<<"\t\t-) translate the center '(xc,yc)' of the 'Sphere' shape along any of '2' directions of the X-axis by pressing the 'left' and the 'right' (arrow) keys, respectively;"<<endl;
-	cout<<"\t\t-) translate the center '(xc,yc)' of the 'Sphere' shape along any of '2' directions of the Y-axis by pressing the 'up' and the 'down' (arrow) keys, respectively;"<<endl;
+	cout<<"\t\t-) translate the center '(xc,yc)' of the 'Sphere' shape along any of 2 directions of the X-axis by pressing the 'left' and the 'right' (arrow) keys, respectively;"<<endl;
+	cout<<"\t\t-) translate the center '(xc,yc)' of the 'Sphere' shape along any of 2 directions of the Y-axis by pressing the 'up' and the 'down' (arrow) keys, respectively;"<<endl;
 	cout<<"\t\t-) rotate the 'Sphere' shape along the custom axis '[1,1,1]' by pressing the ' ' (space) key;"<<endl;
 	cout<<"\t\t-) reset all transformations to be applied on the 'Sphere' shape by pressing the 'r' key."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
@@ -102,7 +102,7 @@ void initialize()
 	xc=0.0;
 	yc=0.0;
 	Angle=0.0;
-	cout<<"\tAt the beginning, the 'Sphere' shape is drawn by exploiting the rotation angle: "<<Angle<<", the translation value along the x-axis: "<<xc<<", and the translation value along the y-axis: "<<yc<<endl<<endl;
+	cout<<"\tAt the beginning, the 'Sphere' shape is drawn by exploiting the rotation angle "<<Angle<<", the translation value "<<xc<<" along the x-axis, and the translation value "<<yc<<" along the y-axis"<<endl<<endl;
 	cout.flush();
 }
 
@@ -222,6 +222,6 @@ void draw()
    	glColor3f(0,0,1);
    	glutWireSphere(1, 16, 10);
    	glutSwapBuffers();
-   	cout<<"\tThe 'Sphere' shape is currently drawn by exploiting the rotation angle: "<<Angle<<", the translation value along the x-axis: "<<xc<<", and the translation value along the y-axis: "<<yc<<endl;
+   	cout<<"\tThe 'Sphere' shape is currently drawn by exploiting the rotation angle "<<Angle<<", the translation value "<<xc<<" along the x-axis, and the translation value "<<yc<<" along the y-axis"<<endl;
 	cout.flush();
 }

@@ -53,7 +53,7 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-040' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tdraws a polyline (in 'red'), formed by an arbitrary number 'n' of the vertices and the edges, in an OpenGL window. The polyline of interest approximates a variant of the 'Spiral' curve. This latter is a curve on a plane that winds around a"<<endl;
+	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of the vertices and the edges, in an OpenGL window. The polyline of interest approximates a variant of the 'Spiral' curve. This latter is a curve on a plane that winds around a"<<endl;
 	cout<<"\tfixed center point at a continuously increasing or decreasing distance from the point. In this test, we consider a variant of the 'Spiral' curve, defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = (1+t) * cos(t), y(t) = (1+t) * sin(t)"<<endl<<endl<<"\tfor every 't' in '[-6 * pi, 6 * pi]'."<<endl<<endl<<"\tThis test also provides a very basic interaction mechanism with the user, which can:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the polyline of interest by pressing the '+' key;"<<endl;
