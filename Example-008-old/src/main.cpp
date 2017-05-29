@@ -34,12 +34,12 @@ using namespace std;
 
 #endif
 
-/// This flag identifies what 'viewing configuration' must be applied to the scene.
+/// This flag identifies what viewing configuration must be applied to the scene.
 /**
  * It may assume these values:
  *
- * -) '0' for activating the 'viewing configuration #0'. Here, the 'large' quadrilateral is rendered before, but it is partially hidden by the 'small' quadrilateral.
- * -) '1' for activating the 'viewing configuration #1'. Here, the 'small' quadrilateral is rendered before, but it is completely hidden by the 'large' quadrilateral.
+ * -) '0' for activating the 'Viewing Configuration #0'. Here, the 'large' quadrilateral is rendered before, but it is partially hidden by the 'small' quadrilateral.
+ * -) '1' for activating the 'Viewing Configuration #1'. Here, the 'small' quadrilateral is rendered before, but it is completely hidden by the 'large' quadrilateral.
  */
 int choice;
 
@@ -61,11 +61,11 @@ int main(int argc,char **argv)
 	cout<<"\tIn particular, the 'small' quadrilateral may be completely covered by the 'large' quadrilateral, depending on their rendering order. This latter corresponds to their color, which is defined as follows:"<<endl<<endl;
 	cout<<"\t\t-) the quadrilateral in 'red' is rendered before in the scene;"<<endl;
 	cout<<"\t\t-) the quadrilateral in 'blue' is rendered after in the scene."<<endl<<endl;
-	cout<<"\tThe rendering order of these quadrilaterals corresponds to the following 'viewing configurations', that can be activated upon request by the user:"<<endl<<endl;
-	cout<<"\t\t0. the 'large' quadrilateral (in 'red') is rendered before, and the 'small' quadrilateral (in 'blue') is rendered after in the 'viewing configuration #0'. In this case, both the quadrilaterals are visible."<<endl;
-	cout<<"\t\t   The 'viewing configuration #0' is activated upon request by pressing the '0' key."<<endl<<endl;
-	cout<<"\t\t1. The 'small' quadrilateral (in 'red') is rendered before, and the 'large' quadrilateral (in 'blue') is rendered after in the 'viewing configuration #1'. In this case, only the 'large' quadrilateral is visible."<<endl;
-	cout<<"\t\t   The 'viewing configuration #1' is activated upon request by pressing the '1' key."<<endl<<endl;
+	cout<<"\tThe rendering order of these quadrilaterals corresponds to the following viewing configurations, that can be activated upon request by the user:"<<endl<<endl;
+	cout<<"\t\t0. the 'large' quadrilateral (in 'red') is rendered before, and the 'small' quadrilateral (in 'blue') is rendered after in the 'Viewing Configuration #0'. In this case, both the quadrilaterals are visible."<<endl;
+	cout<<"\t\t   The 'Viewing Configuration #0' is activated upon request by pressing the '0' key."<<endl<<endl;
+	cout<<"\t\t1. The 'small' quadrilateral (in 'red') is rendered before, and the 'large' quadrilateral (in 'blue') is rendered after in the 'Viewing Configuration #1'. In this case, only the 'large' quadrilateral is visible."<<endl;
+	cout<<"\t\t   The 'Viewing Configuration #1' is activated upon request by pressing the '1' key."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -95,10 +95,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws the <i>'filled versions'</i> of 2 quadrilaterals in the OpenGL window of interest by using the <i>'viewing configuration'</i>, chosen by the user.
+/// This function draws the <i>'filled versions'</i> of 2 quadrilaterals in the OpenGL window of interest by using the viewing configuration, chosen by the user.
 void draw()
 {
-	/* We draw the 'filled versions' of 2 quadrilaterals in the OpenGL window of interest by using the 'viewing configuration', chosen by the user. */
+	/* We draw the 'filled versions' of 2 quadrilaterals in the OpenGL window of interest by using the viewing configuration, chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0,0.0,0.0);
 	if(choice==0)
@@ -156,7 +156,7 @@ void initialize()
 	choice=0;
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	eol=false;
-	cout<<"\tAt the beginning, the 'viewing configuration #"<<choice<<"' is applied to the scene."<<endl<<endl;
+	cout<<"\tAt the beginning, the 'Viewing Configuration #"<<choice<<"' is applied to the scene."<<endl<<endl;
 	cout.flush();
 }
 
@@ -189,9 +189,9 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '0':
 		
-		/* The key is '0', thus we apply the 'viewing configuration #0' to the scene. */
+		/* The key is '0', thus we apply the 'Viewing Configuration #0' to the scene. */
 		choice=0;
-		cout<<"\tThe 'viewing configuration #"<<choice<<"' is currently applied to the scene."<<endl;
+		cout<<"\tThe 'Viewing Configuration #"<<choice<<"' is currently applied to the scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
@@ -199,9 +199,9 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '1':
 		
-		/* The key is '1', thus we apply the 'viewing configuration #1' to the scene. */
+		/* The key is '1', thus we apply the 'Viewing Configuration #1' to the scene. */
 		choice=1;
-		cout<<"\tThe 'viewing configuration #"<<choice<<"' is currently applied to the scene."<<endl;
+		cout<<"\tThe 'Viewing Configuration #"<<choice<<"' is currently applied to the scene."<<endl;
 		cout.flush();
 		eol=true;
 		glutPostRedisplay();
