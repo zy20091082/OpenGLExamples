@@ -48,8 +48,8 @@ static long font = (long)GLUT_BITMAP_8_BY_13;
  * It is initially set to 'n=5', which is the minimum number of the samples in all approximations of interest. It is interactively modified by pressing the '+' and the '-' keys.
  * Its meaning is different for every variant:
  *
- * -) in the variants #0 and #1, it is the number 'n' of the vertices (including the center) for constructing the triangle fans of interest.
- * -) In the variant #2, it is the number 'n' of the pairs, formed by the corresponding vertices in the external and the internal 'Circle' curves. These latter provides the boundary of the 'Circular Annulus' shape.
+ * -) in the 'Variants #0' and '#1', it is the number 'n' of the vertices (including the center) for constructing the triangle fans of interest.
+ * -) In the 'Variant #2', it is the number 'n' of the pairs, formed by the corresponding vertices in the external and the internal 'Circle' curves. These latter provides the boundary of the 'Circular Annulus' shape.
  */
 unsigned int num_samples=5;
 
@@ -83,12 +83,12 @@ int main(int argc,char **argv)
 	cout<<"\tIn other words, it is formed by all points in the circular crown, bounded by 2 (concentric) 'Circle' shapes (disks) of the same center '(xc,yc)' and of radius 'rI' and 'rE', respectively. The disk of radius 'rE' is the"<<endl;
 	cout<<"\t'external' disk, and the disk of radius 'rI' is the 'internal' disk."<<endl<<endl;
 	cout<<"\tSpecifically, this test draws the following variants of the 'Circular Annulus' shape:"<<endl<<endl;
-	cout<<"\t\t0. the variant #0 is not 'real', since it is the result of drawing the approximations of the 'external' (in 'red') and of the 'internal' (in 'blue') disks, placed at different z-depths. The 'external' disk is"<<endl;
+	cout<<"\t\t0. the 'Variant #0' is not 'real', since it is the result of drawing the approximations of the 'external' (in 'red') and of the 'internal' (in 'blue') disks, placed at different z-depths. The 'external' disk is"<<endl;
 	cout<<"\t\t   drawn before than the 'internal' disk. The scene is drawn by using the orthographic projection, such that the centers for the 'Circle' shapes of interest are projected on the same point. Thus, they only seem"<<endl;
 	cout<<"\t\t   to approximate the 'Circular Annulus' shape. Both the 'Circle' shapes of interest are approximated by a triangle fan of 'n' vertices (including the center)."<<endl<<endl;
-	cout<<"\t\t1. The variant #1 is basically the same as the variant #0, but the approximations of 2 'Circle' shapes (always at different z-depths) are drawn by using the z-buffer (depth test) technique. Thus, the result will"<<endl;
+	cout<<"\t\t1. The 'Variant #1' is basically the same as the 'Variant #0', but the approximations of 2 'Circle' shapes (always at different z-depths) are drawn by using the z-buffer (depth test) technique. Thus, the result will"<<endl;
 	cout<<"\t\t   be always the same, despite the rendering order of the 'Circle' shapes. Also in this case, both the 'Circle' shapes of interest are approximated by a triangle fan of 'n' vertices (including the center)."<<endl<<endl;
-	cout<<"\t\t2. The variant #2 is a real approximation of the 'Circular Annulus' shape through a triangle strip (in 'red'), defined over 'n' pairs of the corresponding vertices (including the center) between the approximations"<<endl;
+	cout<<"\t\t2. The 'Variant #2' is a real approximation of the 'Circular Annulus' shape through a triangle strip (in 'red'), defined over 'n' pairs of the corresponding vertices (including the center) between the approximations"<<endl;
 	cout<<"\t\t   of the 'Circle' curves, bounding the 'internal' and the 'external' disks."<<endl<<endl;
 	cout<<"\tEach variant of the 'Circular Annulus' shape is accompanied by an explicative label. Thus, this test also shows how writing and rendering some text in an OpenGL window."<<endl<<endl;
 	cout<<"\tHere, the user cannot modify the radii and the centers for 3 variants of the 'Circular Annulus' shape, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
@@ -212,9 +212,9 @@ void draw()
 {
 	float d=(2*PI)/(num_samples-1);
 
-	/* Now, we draw the variant #0 of the 'Circular Annulus' shape by using 2 triangle fans (approximating by the 'Circle' shape). Broadly speaking, they describe 2 disks at different depths, that are drawn by using the orthographic projection,
+	/* Now, we draw the 'Variant #0' of the 'Circular Annulus' shape by using 2 triangle fans (approximating by the 'Circle' shape). Broadly speaking, they describe 2 disks at different depths, that are drawn by using the orthographic projection,
 	 * such that the centers of the 'Circle' shapes are projected on the same point. Thus, the result seems to coincide with the 'Circular Annulus' shape. The external disk in 'red' is rendered before than the internal disk in 'blue', thus the 
-	 * result is 'the same as' the variant #1 of the 'Circular Annulus' shape. */
+	 * result is 'the same as' the 'Variant #1' of the 'Circular Annulus' shape. */
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 	glPolygonMode(GL_FRONT,mode);
 	glColor3f(1,0,0);
@@ -222,8 +222,8 @@ void draw()
 	glColor3f(0,0,1);
 	drawDisc(10,25,75,0);
 	
-	/* Now, we draw the variant #1 of the 'Circular Annulus' shape. This variant is basically 'the same as' the variant #0, but the z-buffer (depth test) technique is exploited. Thus, the result does not depend on their rendering order, and is
-	 * 'the same as' the variant #0 of the 'Circular Annulus' shape. */
+	/* Now, we draw the 'Variant #1' of the 'Circular Annulus' shape. This variant is basically 'the same as' the 'Variant #0', but the z-buffer (depth test) technique is exploited. Thus, the result does not depend on their rendering order, and is
+	 * 'the same as' the 'Variant #0' of the 'Circular Annulus' shape. */
 	glEnable(GL_DEPTH_TEST);
 	glColor3f(1,0,0);
 	drawDisc(20,75,75,0);
@@ -231,7 +231,7 @@ void draw()
 	drawDisc(10,75,75,0.5);
 	glDisable(GL_DEPTH_TEST);
 	
-	/* Now, we draw the variant #2 of the 'Circular Annulus' shape by using only triangle strip. Here, we consider 'n' pairs of the corresponding vertices in the approximations of the internal and the external 'Circle' curves, respectively. 
+	/* Now, we draw the 'Variant #2' of the 'Circular Annulus' shape by using only triangle strip. Here, we consider 'n' pairs of the corresponding vertices in the approximations of the internal and the external 'Circle' curves, respectively. 
 	 * These curves approximate the boundary of the 'Circular Annulus' shape. */
 	glColor3f(1,0,0);
 	glBegin(GL_TRIANGLE_STRIP);
