@@ -1,5 +1,6 @@
-<A href="http://www.opengl.org"><IMG src='https://www.khronos.org/assets/images/api_logos/opengl.png' border=0 width="180" 
-height="97"></A>
+<A href="http://www.opengl.org"><IMG src='https://www.khronos.org/assets/images/api_logos/opengl.png' border=0 width="180" height="97"></A>
+
+<H3>The <i>'Example-035 (Old Mode)'</i> Test</H3>
 
 The <i>'Example-035 (Old Mode)'</i> Test draws a specific <i>'Cube'</i> shape in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. Broadly speaking, any <i>'Cube'</i> shape is formed by <code>'8'</code> vertices, <code>'12'</code> edges, and <code>'6'</code> square faces, with three meeting at each vertex. In other words, it is the boundary of the <i>'Cube'</i> (or the <i>'Regular Hexahedron'</i>) solid.<p>In this test, we consider a specific <i>'Cube'</i> shape, such that a different color is assigned with each face, and such that its domain is <code><i>'[-30,30]' x '[-30,30]' x '[-60,-30]'</i>.</code><p>Here, the user cannot modify the orientations and the colors for <code>'6'</code> square faces in the <i>'Cube'</i> shape of interest. Instead, the user can press cyclically the <code><i>' '</i></code> (space) key for choosing what viewing configuration has to be applied between the following viewing configurations:<p><ul>
 <li>the <i>'Viewing Configuration #0'</i> is based on the orthographic box <code><i>'[-40,40]' x '[-40,40]' x '[-80,80]'</i></code>;</li>

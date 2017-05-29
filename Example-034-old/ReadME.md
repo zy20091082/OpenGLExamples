@@ -1,5 +1,6 @@
-<A href="http://www.opengl.org"><IMG src='https://www.khronos.org/assets/images/api_logos/opengl.png' border=0 width="180" 
-height="97"></A>
+<A href="http://www.opengl.org"><IMG src='https://www.khronos.org/assets/images/api_logos/opengl.png' border=0 width="180" height="97"></A>
+
+<H3>The <i>'Example-034 (Old Mode)'</i> Test</H3>
 
 The <i>'Example-034 (Old Mode)'</i> Test draws a specific <i>'Helix'</i> curve with center at the origin of the 3D space in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. Broadly speaking, any <i>'Helix'</i> curve turns around an axis at a constant or continuously varying distance, while moving parallel to the axis.<p>In this test, we consider a specific <i>'Helix'</i> curve, evolving along the z-axis, and approximated by a polyline (in <i>'red'</i>). The <i>'Helix'</i> curve of interest is defined as follows:<p><pre>x(t) = 20 * cos(t), y(t) = 20 * sin(t), z(t) = t - 60</pre><p>for every <code><i>'t'</i></code> in <code><i>'[-10 * pi,10 * pi]'.</i></code><p>Here, the user cannot modify the number of the samples in the polyline of interest, since they are fixed in advance. Instead, the user can press cyclically the <code><i>' '</i></code> (space) key for choosing what viewing configuration has to be applied between the following viewing configurations:<p><ul>
 <li>the <i>'Viewing Configuration #0'</i> is based on the orthographic box <code><i>'[-50,50]' x '[-50,50]' x '[0,100]'</i></code>;</li>

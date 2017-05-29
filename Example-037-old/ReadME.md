@@ -1,5 +1,6 @@
-<A href="http://www.opengl.org"><IMG src='https://www.khronos.org/assets/images/api_logos/opengl.png' border=0 width="180" 
-height="97"></A>
+<A href="http://www.opengl.org"><IMG src='https://www.khronos.org/assets/images/api_logos/opengl.png' border=0 width="180" height="97"></A>
+
+<H3>The <i>'Example-037 (Old Mode)'</i> Test</H3>
 
 The <i>'Example-037 (Old Mode)'</i> Test draws several versions of the <i>'A'</i> shape in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window by using the rendering settings, chosen interactively by the user. Broadly speaking, the <i>'A'</i> shape represents the <i>'A'</i> letter, which is in the first letter and the first vowel in the ISO basic Latin alphabet. Here, we consider the upper-case version of the <i>'A'</i> letter, consisting of <code>'2'</code> slanting sides of a triangle, crossed in the middle by a horizontal bar (as usual).<p>In this test, we consider the following tessellations of the <i>'A'</i> shape, defined without adding any <i>'Steiner'</i> point:<ol start='0'>
 <li>the <i>'Tessellation #0'</i> of the <i>'A'</i> shape consists of a pure triangulation, formed by <code>'11'</code> triangles. A different color is assigned to each triangle.<p></li>
