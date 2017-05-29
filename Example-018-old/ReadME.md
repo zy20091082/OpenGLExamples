@@ -1,5 +1,4 @@
-<A href="http://www.opengl.org"><IMG src='https://www.khronos.org/assets/images/api_logos/opengl.png' border=0 width="180" 
-height="97"></A>
+<A href="http://www.opengl.org"><IMG src='https://www.khronos.org/assets/images/api_logos/opengl.png' border=0 width="180" height="97"></A>
 
 <H3>The <i>'Example-018 (Old Mode)'</i> Test</H3>
 
