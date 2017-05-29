@@ -11,32 +11,32 @@ Here, the user cannot modify the vertices positions in the <i>'A'</i> shape, sin
 <li>the <i>'wireframe versions'</i> of all triangles and quadrilaterals in the tessellation of interest for the <i>'A'</i> shape;</li>
 <li>the <i>'filled versions'</i> of all triangles and quadrilaterals in the tessellation of interest for the <i>'A'</i> shape;</li></ul><p>by pressing cyclically the <code><i>' '</i></code> (space) key. As mentioned above, the tessellation of interest for the <i>'A'</i> shape to be drawn can be chosen independently.<p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p>
 
-<h5>Using the 'Tessellation #0'</h5><p><table border=0 width=100%><tr>
+<h5>Rendering the <i>'Tessellation #0'</i></h5><p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example037_old_tessellation0_vertices.png' border='1' width='800' height='450'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example037_old_tessellation0_edges.png' border='1' width='800' height='450'></td></tr>
 <tr><td>Only the points of all triangles are rendered.</td><td>The <i>'wireframe versions'</i> of all triangles are rendered.</td></tr>
 <tr><td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example037_old_tessellation0_filled.png' border='1' width='800' height='450'></td>
-<td width=50%>The <i>'Triangulation #0'</i> is a pure triangulation, formed by <code>'11'</code> triangles.<p>
+<td width=50%>The <i>'Tessellation #0'</i> is a pure triangulation, formed by <code>'11'</code> triangles.<p>
 
 These triangles are rendered independently, and a different color is assigned to each of them.</td></tr>
 <tr><td width=50%>The <i>'filled versions'</i> of all triangles are rendered.</td><td width=50%><b>REMARK</b></td></tr></table><p>
 
-<h5>Using the 'Tessellation #1'</h5><p><table border=0 width=100%><tr>
+<h5>Rendering the <i>'Tessellation #1'</i></h5><p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example037_old_tessellation1_vertices.png' border='1' width='800' height='450'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example037_old_tessellation1_edges.png' border='1' width='800' height='450'></td></tr>
 <tr><td>Only the points of all polygons are rendered.</td><td>The <i>'wireframe versions'</i> of all polygons are rendered.</td></tr>
 <tr><td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example037_old_tessellation1_filled.png' border='1' width='800' height='450'></td>
-<td width=50%>The <i>'Triangulation #1'</i> is a quad-dominant mesh, formed by only <code>'1'</code> triangle and by <code>'5'</code> quadrilaterals.<p>
+<td width=50%>The <i>'Tessellation #1'</i> is a quad-dominant mesh, formed by only <code>'1'</code> triangle and by <code>'5'</code> quadrilaterals.<p>
 
 These polygons are rendered independently, and a different color is assigned to each of them.</td></tr>
 <tr><td width=50%>The <i>'filled versions'</i> of all polygons are rendered.</td><td width=50%><b>REMARK</b></td></tr></table><p>
 
-<h5>Using the 'Tessellation #2'</h5><p><table border=0 width=100%><tr>
+<h5>Rendering the <i>'Tessellation #2'</i></h5><p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example037_old_tessellation2_vertices.png' border='1' width='800' height='450'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example037_old_tessellation2_edges.png' border='1' width='800' height='450'></td></tr>
 <tr><td>Only the points of all triangles are rendered.</td><td>The <i>'wireframe versions'</i> of all triangles are rendered.</td></tr>
 <tr><td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example037_old_tessellation2_filled.png' border='1' width='800' height='450'></td>
-<td width=50%>The <i>'Triangulation #2'</i> is the same as the <i>'Triangulation #0'</i>, formed by <code>'11'</code> triangles. In this case, it is expressed by <code>'1'</code> triangle strip (in <i>'yellow'</i>), and by <code>'3'</code> triangle fans.<p>
+<td width=50%>The <i>'Tessellation #2'</i> is the same as the <i>'Tessellation #0'</i>, formed by <code>'11'</code> triangles. In this case, it is expressed by <code>'1'</code> triangle strip (in <i>'yellow'</i>), and by <code>'3'</code> triangle fans.<p>
 
 The reference vertices for the triangle fans are depicted, respectively, in <i>'red'</i>, in <i>'blue'</i>, and in <i>'green'</i>. Instead, their triangles are depicted in <i>'grey'</i>.</td></tr>
 <tr><td width=50%>The <i>'filled versions'</i> of all triangles are rendered.</td><td width=50%><b>REMARK</b></td></tr></table><p><hr><p><h4>Dependencies</h4>

@@ -114,7 +114,7 @@ void initialize()
 	if(mode==0) cout<<"only the points of all polygons ";
 	else if(mode==1) cout<<"the 'wireframe versions' of all polygons ";
 	else if(mode==2) cout<<"the 'filled versions' of all polygons ";
-	cout<<"in the 'Tesselation #'"<<tessellation<<" of the 'A' shape are drawn."<<endl<<endl;
+	cout<<"in the 'Tesselation #"<<tessellation<<"' of the 'A' shape are drawn."<<endl<<endl;
 	cout.flush();
 }
 
@@ -191,7 +191,7 @@ void draw()
    	glPointSize(8);
 	if(tessellation==0)
    	{
-   		/* We draw a basic tessellation, formed only by 11 triangles. */
+   		/* We draw the 'Tessellation #0', formed only by 11 triangles. */
    		glBegin(GL_TRIANGLES);
    	
 	   	/* Drawing the triangle #0 (A-B-E) [blue] */
@@ -263,7 +263,7 @@ void draw()
    	}
    	else if(tessellation==1)
    	{
-   		/* We draw a tessellation, formed only by 5 independent quadrilaterals and 1 triangle (a quad-dominant mesh). */
+   		/* We draw the 'Tessellation #1', formed only by 5 independent quadrilaterals and 1 triangle (a quad-dominant mesh). */
    		glLineWidth(3);
    		glPointSize(8);
    		glBegin(GL_QUADS);
@@ -314,7 +314,7 @@ void draw()
    	}
    	else
    	{
-   		/* We draw the same tesselation of the case #0 (with 11 independent triangles), but represented by using 3 triangle fans and 1 triangle strip. */
+   		/* We draw the 'Tessellation #2', which is the same as the 'Tessellation #0' (with 11 independent triangles), but represented by 3 triangle fans and 1 triangle strip. */
    		glLineWidth(3);
    		glPointSize(8);
    		
@@ -368,6 +368,6 @@ void draw()
    	if(mode==0) cout<<"\tOnly the points of all polygons ";
 	else if(mode==1) cout<<"\tThe 'wireframe versions' of all polygons ";
 	else if(mode==2) cout<<"\tThe 'filled versions' of all polygons ";
-	cout<<"in the 'Tesselation #'"<<tessellation<<" of the 'A' shape are currently drawn."<<endl;
+	cout<<"in the 'Tesselation #"<<tessellation<<"' of the 'A' shape are currently drawn."<<endl;
 	cout.flush();
 }
