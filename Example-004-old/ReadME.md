@@ -1,7 +1,7 @@
-<A href="http://www.opengl.org"><IMG src='https://www.khronos.org/assets/images/api_logos/opengl.png' border=0 width="180" 
-height="97"></A>
+<A href="http://www.opengl.org"><IMG src='https://www.khronos.org/assets/images/api_logos/opengl.png' border=0 width="180" height="97"></A>
 
 <H3>The <i>'Example-004 (Old Mode)'</i> Test</H3>
+
 The <i>'Example-004 (Old Mode)'</i> Test draws the <i>'filled versions'</i> of the following quadrilaterals in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window:<p><ol>
 <li value="0">the quadrilateral #0 (in <i>'red'</i>) with vertices <code><i>'(20,20,0)'</i> - <i>'(80,20,0)'</i> - <i>'(80,80,0)'</i> - <i>'(20,80,0)'</i></code>;</li>
 <li value="1">the quadrilateral #1 (in <i>'green'</i>) with vertices <code><i>'(120,120,0)'</i> - <i>'(180,120,0)'</i> - <i>'(180,180,0)'</i> - <i>'(120,180,0)'</i></code>;</li></ol><p>by using the following orthographic projections (activated upon request by the user):<p><ol>
