@@ -310,6 +310,6 @@ void draw()
 	cout<<"\tAll variants of the 'Circular Annulus' shape are currently approximated by the ";
 	if(mode==GL_FILL) cout<<"'filled versions' ";
 	else cout<<"'wireframe versions' ";
-	cout<<"of several triangles in 2 triangle fans [ using the 'Configuration #"<<odmode<<"' ] and in a triangle strip with 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"'"<<endl<<"\tvertices pairs, respectively."<<endl;
+	cout<<"of several triangles in 2 triangle fans (with the 'Configuration #"<<odmode<<"') and in a triangle strip with 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"'"<<endl<<"\tvertices pairs, respectively."<<endl;
 	cout.flush();
 }

@@ -62,8 +62,8 @@ int main(int argc,char **argv)
 	cout<<"\tIn this test, we consider a specific 'Cube' shape, such that a different color is assigned with each face, and such that its domain is '[-30,30]' x '[-30,30]' x '[-60,-30]'."<<endl<<endl;
 	cout<<"\tHere, the user cannot modify the orientations and the colors for 6 square faces in the 'Cube' shape of interest. Instead, the user can press cyclically the ' ' (space) key for choosing what viewing configuration has to be applied"<<endl;
 	cout<<"\tbetween the following viewing configurations:"<<endl<<endl;
-	cout<<"\t\t-) the 'Viewing Configuration #0' is based on the orthographic box '[-40,40]' x '[-40,40]' x '[-80,80]';"<<endl;
-	cout<<"\t\t-) the 'Viewing Configuration #1' is based on the perspective box '[-2.7,2.7]' x '[-2.7,2.7]' x '[2.0,70]'."<<endl<<endl;
+	cout<<"\t\t0. the 'Viewing Configuration #0' is based on the orthographic box '[-40,40]' x '[-40,40]' x '[-80,80]';"<<endl;
+	cout<<"\t\t1. the 'Viewing Configuration #1' is based on the perspective box '[-2.7,2.7]' x '[-2.7,2.7]' x '[2.0,70]'."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	

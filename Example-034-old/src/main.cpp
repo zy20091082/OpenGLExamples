@@ -41,7 +41,7 @@ using namespace std;
  * This flag assumes the following values:
  *
  * 0: it indicates to use the viewing orthographic box '[-50,50]' x '[-50,50]' x '[0,100]'
- * 1: it indicates to use the viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[0,100]'
+ * 1: it indicates to use the viewing perspective box '[-5,5]' x '[-5,5]' x '[0,100]'
  *
  * The user can choose what projection must be used by pressing cyclically the ' ' (space) key.
  */
@@ -63,8 +63,8 @@ int main(int argc,char **argv)
 	cout<<"\tx(t) = 20 * cos(t), y(t) = 20 * sin(t), z(t) = t - 60"<<endl<<endl<<"\tfor every 't' in '[-10*pi,10*pi]'."<<endl<<endl;
 	cout<<"\tHere, the user cannot modify the number of the samples in the polyline of interest, since they are fixed in advance. Instead, the user can press cyclically the ' ' (space) key for choosing what viewing configuration has to be applied"<<endl;
 	cout<<"\tbetween the following viewing configurations:"<<endl<<endl;
-	cout<<"\t\t-) the 'Viewing Configuration #0' is based on the orthographic box '[-50,50]' x '[-50,50]' x '[0,100]';"<<endl;
-	cout<<"\t\t-) the 'Viewing Configuration #1' is based on the perspective box '[-5,5]' x '[-5,5]' x '[0,100]'."<<endl<<endl;
+	cout<<"\t\t0. the 'Viewing Configuration #0' is based on the orthographic box '[-50,50]' x '[-50,50]' x '[0,100]';"<<endl;
+	cout<<"\t\t1. the 'Viewing Configuration #1' is based on the perspective box '[-5,5]' x '[-5,5]' x '[0,100]'."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 
@@ -105,7 +105,7 @@ void initialize()
 	projection=0;
 	cout<<"\tAt the beginning, the 'Helix' curve of interest is drawn by using the ";
 	if(projection==0) cout<<"viewing orthographic box '[-50,50]' x '[-50,50]' x '[0,100]' (thus, the 'Viewing Configuration #0').";
-	else cout<<"viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[0,100]' (thus, the 'Viewing Configuration #1').";
+	else cout<<"viewing perspective box '[-5,5]' x '[-5,5]' x '[0,100]' (thus, the 'Viewing Configuration #1').";
 	cout<<endl<<endl;
 	cout.flush();
 }
@@ -169,5 +169,5 @@ void draw()
    	glFlush();
    	cout<<"\tThe 'Helix' curve of interest is currently drawn by using the ";
 	if(projection==0) cout<<"viewing orthographic box '[-50,50]' x '[-50,50]' x '[0,100]' (thus, the 'Viewing Configuration #0')."<<endl;
-	else cout<<"viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[0,100]' (thus, the 'Viewing Configuration #1')."<<endl;
+	else cout<<"viewing perspective box '[-5,5]' x '[-5,5]' x '[0,100]' (thus, the 'Viewing Configuration #1')."<<endl;
 }
