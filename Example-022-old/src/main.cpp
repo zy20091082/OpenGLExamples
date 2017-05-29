@@ -85,10 +85,10 @@ int main(int argc,char **argv)
 	cout<<"\tThe 'Circle' shape is defined as follows:"<<endl<<endl;
 	cout<<"\t| x(t) - xc | <= R * cos(t), | y(t) - yc | <= R * sin(t)"<<endl<<endl<<"\tfor any 'R>0', and for every 't' in '[-pi,pi]'."<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide the radius 'R' and the center '(xc,yc)'. The user can:"<<endl<<endl;
-	cout<<"\t\t-) approximate the boundary (in 'red') of the 'Circle' shape through a polyline with an arbitrary number 'n' of the vertices and the edges [ 'Approximation #0' ] by pressing the 'l' key."<<endl<<endl;
-	cout<<"\t\t-) Approximate the 'Circle' shape through the 'filled versions' of 'n' triangles in a triangle fan [ 'Approximation #1' ] by pressing the 'f' key. All triangles (in 'dark gray') are incident at the center '(xc,yc)'"<<endl;
+	cout<<"\t\t-) approximate the boundary (in 'red') of the 'Circle' shape through a polyline with an arbitrary number 'n' of the vertices and the edges (the 'Approximation #0') by pressing the 'l' key."<<endl<<endl;
+	cout<<"\t\t-) Approximate the 'Circle' shape through the 'filled versions' of 'n' triangles in a triangle fan (the 'Approximation #1') by pressing the 'f' key. All triangles (in 'dark gray') are incident at the center '(xc,yc)'"<<endl;
 	cout<<"\t\t   (in 'red')."<<endl<<endl;
-	cout<<"\t\t-) Approximate the 'Circle' shape through the 'filled version' of only one polygon (in 'red') with 'n' vertices and edges [ 'Approximation #2' ] by pressing the 'p' key."<<endl<<endl;
+	cout<<"\t\t-) Approximate the 'Circle' shape through the 'filled version' of only one polygon (in 'red') with 'n' vertices and edges (the 'Approximation #2') by pressing the 'p' key."<<endl<<endl;
 	cout<<"\t\t-) Increase the number 'n' of the samples in the approximation of interest by pressing the '+' key."<<endl<<endl;
 	cout<<"\t\t-) Decrease the number 'n' of the samples in the approximation of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
@@ -198,9 +198,9 @@ void manageKeys(unsigned char key, int x, int y)
 		else
 		{
 			cout<<"\tThe minimum number 'n=3' of";
-			if(choice=='l') { cout<<" the vertices and the edges in the polyline, approximating the boundary of the 'Curve' shape [ 'Approximation #0' ], "; }
-			if(choice=='f') { cout<<" the 'filled versions' for all triangles in the triangle fan, approximating the 'Curve' shape [ 'Approximation #1' ], "; }
-			if(choice=='p') { cout<<" the vertices and the edges in the 'filled version' of the only one polygon, approximating the 'Curve' shape [ 'Approximation #2' ], "; }
+			if(choice=='l') { cout<<" the vertices and the edges in the polyline, approximating the boundary of the 'Curve' shape (the 'Approximation #0'), "; }
+			if(choice=='f') { cout<<" the 'filled versions' for all triangles in the triangle fan, approximating the 'Curve' shape (the 'Approximation #1'), "; }
+			if(choice=='p') { cout<<" the vertices and the edges in the 'filled version' of the only one polygon, approximating the 'Curve' shape (the 'Approximation #2'), "; }
 			cout<<"is reached, and it is not possible to decrease again this number."<<endl;
 			cout.flush();
 		}
@@ -262,7 +262,7 @@ void draw()
 		/* If we arrive here, all is ok */
 		glEnd();
 		glFlush();
-		cout<<"\tThe boundary for the 'Circle' shape of interest is currently approximated by a polyline with 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"' edges [ 'Approximation #0' ]."<<endl;
+		cout<<"\tThe boundary for the 'Circle' shape of interest is currently approximated by a polyline with 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"' edges (the 'Approximation #0')."<<endl;
 		cout.flush();
 	}
 	else if(choice=='f')
@@ -282,7 +282,7 @@ void draw()
 		/* If we arrive here, all is ok */
 		glEnd();
 		glFlush();
-		cout<<"\tThe 'Circle' shape of interest is currently approximated by the 'filled versions' of 'n="<<num_samples<<"' triangles in a triangle fan [ 'Approximation #1' ]."<<endl;
+		cout<<"\tThe 'Circle' shape of interest is currently approximated by the 'filled versions' of 'n="<<num_samples<<"' triangles in a triangle fan (the 'Approximation #1')."<<endl;
 		cout.flush();
 	}
 	else if(choice=='p')
@@ -300,7 +300,7 @@ void draw()
 		/* If we arrive here, all is ok */
 		glEnd();
 		glFlush();
-		cout<<"\tThe 'Circle' shape of interest is currently approximated by the 'filled version' of only one polygon with 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"' edges [ 'Approximation #2' ]."<<endl;
+		cout<<"\tThe 'Circle' shape of interest is currently approximated by the 'filled version' of only one polygon with 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"' edges (the 'Approximation #2')."<<endl;
 		cout.flush();
 	}
 }

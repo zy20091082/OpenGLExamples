@@ -88,9 +88,9 @@ int main(int argc,char **argv)
 	cout<<"\tIn other words, it is formed by all points in the circular crown, bounded by 2 (concentric) 'Circle' shapes (disks) of the same center '(xc,yc)' and of radius 'rI' and 'rE', respectively. The disk of radius 'rE' is the 'external'"<<endl;
 	cout<<"\tdisk, and the disk of radius 'rI' is the 'internal' disk."<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide the 'external' radius 'rE' and the 'internal' radius 'rI', as well as the center coodinates '(xc,yc)'. The user can also:"<<endl<<endl;
-	cout<<"\t\t-) render only the vertices for all quadrilaterals in the quadstrip of interest [ 'Configuration #0' ] by pressing the 'p' key;"<<endl;
-	cout<<"\t\t-) render the 'wireframe versions' of all quadrilaterals in the quadstrip of interest [ 'Configuration #1' ] by pressing the 'l' key;"<<endl;
-	cout<<"\t\t-) render the 'filled versions' of all quadrilaterals in the quadstrip of interest [ 'Configuration #2' ] by pressing the 'f' key;"<<endl;
+	cout<<"\t\t-) render only the vertices for all quadrilaterals in the quadstrip of interest (the 'Configuration #0') by pressing the 'p' key;"<<endl;
+	cout<<"\t\t-) render the 'wireframe versions' of all quadrilaterals in the quadstrip of interest (the 'Configuration #1') by pressing the 'l' key;"<<endl;
+	cout<<"\t\t-) render the 'filled versions' of all quadrilaterals in the quadstrip of interest (the 'Configuration #2') by pressing the 'f' key;"<<endl;
 	cout<<"\t\t-) increase the number 'n' of all quadrilaterals in the quadstrip of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of all quadrilaterals in the quastrip of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
@@ -236,7 +236,7 @@ void initialize()
 	num_quads=3;
 	choice='l';
 	cout<<"\tAt the beginning, the 'wireframe versions' of 'n="<<num_quads<<"' quadrilaterals (thus, the minimum number 'n' as possible of the quadrilaterals) in the quadstrip, approximating the 'Circular Annulus' shape of center '("<<xc<<","<<yc<<")',"<<endl;
-	cout<<"\tinternal radius 'rI="<<rI<<"', and external radius 'rE="<<rE<<"', are rendered [ 'Configuration #1' ]."<<endl<<endl;
+	cout<<"\tinternal radius 'rI="<<rI<<"', and external radius 'rE="<<rE<<"', are rendered (the 'Configuration #1')."<<endl<<endl;
 	cout.flush();
 }
 
@@ -269,19 +269,19 @@ void draw()
 	if(choice=='l') 
 	{ 
 		/* We draw the 'wireframe versions' (in 'red') for all quadrilaterals in the quadstrip of interest! */
-		cout<<"\tThe 'wireframe versions' of 'n="<<num_quads<<"' quadrilaterals in the quadstrip of interest are currently rendered [ 'Configuration #1' ]."<<endl; 
+		cout<<"\tThe 'wireframe versions' of 'n="<<num_quads<<"' quadrilaterals in the quadstrip of interest are currently rendered (the 'Configuration #1')."<<endl; 
 		cout.flush();
 	}
     else if(choice=='f') 
     {
     	/* We draw the 'filled versions' (in 'red') for all quadrilaterals in the quadstrip of interest! */
-    	cout<<"\tThe 'filled versions' of 'n="<<num_quads<<"' quadrilaterals in the quadstrip of interest are currently rendered [ 'Configuration #2' ]."<<endl; 
+    	cout<<"\tThe 'filled versions' of 'n="<<num_quads<<"' quadrilaterals in the quadstrip of interest are currently rendered (the 'Configuration #2')."<<endl; 
 		cout.flush();
     }
     else if(choice=='p') 
     { 
     	/* We draw only the vertices (in 'red') for all quadrilaterals in the quadstrip of interest! */
-    	cout<<"\tOnly the vertices of 'n="<<num_quads<<"' quadrilaterals in the quadstrip of interest are currently rendered [ 'Configuration #0' ]."<<endl;
+    	cout<<"\tOnly the vertices of 'n="<<num_quads<<"' quadrilaterals in the quadstrip of interest are currently rendered (the 'Configuration #0')."<<endl;
 		cout.flush();
     }
 }
