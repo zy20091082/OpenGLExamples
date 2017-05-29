@@ -65,14 +65,14 @@ int main(int argc,char **argv)
 	cout<<"\tIt draws a specific 'Helix' curve with center at the origin of the 3D space in an OpenGL window. Broadly speaking, any 'Helix' curve turns around an axis at a constant or continuously varying distance, while moving parallel to the axis."<<endl<<endl;
 	cout<<"\tIn this test, we consider a specific 'Helix' curve, evolving along the z-axis, and approximated by a polyline (in 'red'). The 'Helix' curve of interest is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = 20 * cos(t), y(t) = 20 * sin(t), z(t) = t - 60"<<endl<<endl<<"\tfor every 't' in '[-10*pi,10*pi]'. The domain, containing the 'Helix' curve of interest, is given by '[-20,20]' x '[-20,20]' x '[-91.4,-28.7]'."<<endl<<endl;
-	cout<<"\tHere, the user cannot modify the number of the samples in the polyline of interest, since they are fixed in advance. Instead, the user can press cyclically the ' ' (space) key for choosing what (perspective) 'viewing configuration' has "<<endl;
-	cout<<"\tto be applied between the following (perspective) 'viewing configurations':"<<endl<<endl;
-	cout<<"\t\t-) the 'viewing configuration #0' is based on the viewing perspective box '[-5,5]' x '[-5,5]' x '[0,100]';"<<endl;
-	cout<<"\t\t-) the 'viewing configuration #1' is based on the viewing perspective box '[-5,5]' x '[-5,5]' x '[5,120]';"<<endl;
-	cout<<"\t\t-) the 'viewing configuration #2' is based on the viewing perspective box '[-5,5]' x '[-5,5]' x '[10,100]';"<<endl;
-	cout<<"\t\t-) the 'viewing configuration #3' is based on the viewing perspective box '[-5,5]' x '[-5,5]' x '[2.5,100]';"<<endl;
-	cout<<"\t\t-) the 'viewing configuration #4' is based on the viewing perspective box '[-10,10]' x '[-10,10]' x '[5,100]';"<<endl;
-	cout<<"\t\t-) the 'viewing configuration #5' is based on the viewing perspective box '[-1,1]' x '[-3,3]' x '[5,100]'."<<endl<<endl;
+	cout<<"\tHere, the user cannot modify the number of the samples in the polyline of interest, since they are fixed in advance. Instead, the user can press cyclically the ' ' (space) key for choosing what (perspective) viewing configuration has "<<endl;
+	cout<<"\tto be applied between the following (perspective) viewing configurations:"<<endl<<endl;
+	cout<<"\t\t-) the 'Viewing Configuration #0' is based on the viewing perspective box '[-5,5]' x '[-5,5]' x '[0,100]';"<<endl;
+	cout<<"\t\t-) the 'Viewing Configuration #1' is based on the viewing perspective box '[-5,5]' x '[-5,5]' x '[5,120]';"<<endl;
+	cout<<"\t\t-) the 'Viewing Configuration #2' is based on the viewing perspective box '[-5,5]' x '[-5,5]' x '[10,100]';"<<endl;
+	cout<<"\t\t-) the 'Viewing Configuration #3' is based on the viewing perspective box '[-5,5]' x '[-5,5]' x '[2.5,100]';"<<endl;
+	cout<<"\t\t-) the 'Viewing Configuration #4' is based on the viewing perspective box '[-10,10]' x '[-10,10]' x '[5,100]';"<<endl;
+	cout<<"\t\t-) the 'Viewing Configuration #5' is based on the viewing perspective box '[-1,1]' x '[-3,3]' x '[5,100]'."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	
@@ -99,12 +99,12 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	projection=0;
 	cout<<"\tAt the beginning, the 'Helix' curve of interest is drawn by using the ";
-	if(projection==0) cout<<"viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[0,100]' (thus, the 'viewing configuration #0').";
-	else if(projection==1) cout<<"viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[5,120]' (thus, the 'viewing configuration #1').";
-	else if(projection==2) cout<<"viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[10,100]' (thus, the 'viewing configuration #2').";
-	else if(projection==3) cout<<"viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[2.5,100]' (thus, the 'viewing configuration #3').";
-	else if(projection==4) cout<<"viewing perspective box (frustum) '[-10,10]' x '[-10,10]' x '[5,100]' (thus, the 'viewing configuration #4').";
-	else if(projection==5) cout<<"viewing perspective box (frustum) '[-1,1]' x '[-3,3]' x '[5,100]' (thus, the 'viewing configuration #5').";
+	if(projection==0) cout<<"viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[0,100]' (thus, the 'Viewing Configuration #0').";
+	else if(projection==1) cout<<"viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[5,120]' (thus, the 'Viewing Configuration #1').";
+	else if(projection==2) cout<<"viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[10,100]' (thus, the 'Viewing Configuration #2').";
+	else if(projection==3) cout<<"viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[2.5,100]' (thus, the 'Viewing Configuration #3').";
+	else if(projection==4) cout<<"viewing perspective box (frustum) '[-10,10]' x '[-10,10]' x '[5,100]' (thus, the 'Viewing Configuration #4').";
+	else if(projection==5) cout<<"viewing perspective box (frustum) '[-1,1]' x '[-3,3]' x '[5,100]' (thus, the 'Viewing Configuration #5').";
 	cout<<endl<<endl;
 	cout.flush();
 }
@@ -184,12 +184,12 @@ void draw()
    	glEnd();
    	glFlush();
 	cout<<"\tThe 'Helix' curve of interest is currently drawn by using the ";
-	if(projection==0) cout<<"viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[0,100]' (thus, the 'viewing configuration #0').";
-	else if(projection==1) cout<<"viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[5,120]' (thus, the 'viewing configuration #1').";
-	else if(projection==2) cout<<"viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[10,100]' (thus, the 'viewing configuration #2').";
-	else if(projection==3) cout<<"viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[2.5,100]' (thus, the 'viewing configuration #3').";
-	else if(projection==4) cout<<"viewing perspective box (frustum) '[-10,10]' x '[-10,10]' x '[5,100]' (thus, the 'viewing configuration #4').";
-	else if(projection==5) cout<<"viewing perspective box (frustum) '[-1,1]' x '[-3,3]' x '[5,100]' (thus, the 'viewing configuration #5').";
+	if(projection==0) cout<<"viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[0,100]' (thus, the 'Viewing Configuration #0').";
+	else if(projection==1) cout<<"viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[5,120]' (thus, the 'Viewing Configuration #1').";
+	else if(projection==2) cout<<"viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[10,100]' (thus, the 'Viewing Configuration #2').";
+	else if(projection==3) cout<<"viewing perspective box (frustum) '[-5,5]' x '[-5,5]' x '[2.5,100]' (thus, the 'Viewing Configuration #3').";
+	else if(projection==4) cout<<"viewing perspective box (frustum) '[-10,10]' x '[-10,10]' x '[5,100]' (thus, the 'Viewing Configuration #4').";
+	else if(projection==5) cout<<"viewing perspective box (frustum) '[-1,1]' x '[-3,3]' x '[5,100]' (thus, the 'Viewing Configuration #5').";
 	cout<<endl;
 	cout.flush();
 }
