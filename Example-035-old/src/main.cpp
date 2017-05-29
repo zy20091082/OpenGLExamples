@@ -60,10 +60,10 @@ int main(int argc,char **argv)
 	cout<<"\tIt draws a specific 'Cube' shape in an OpenGL window. Broadly speaking, any 'Cube' shape is formed by 8 vertices, 12 edges, and 6 square faces, with three meeting at each vertex. In other words, it is the boundary of the 'Cube' (or"<<endl;
 	cout<<"\tthe 'Regular Hexahedron') solid."<<endl<<endl;
 	cout<<"\tIn this test, we consider a specific 'Cube' shape, such that a different color is assigned with each face, and such that its domain is '[-30,30]' x '[-30,30]' x '[-60,-30]'."<<endl<<endl;
-	cout<<"\tHere, the user cannot modify the orientations and the colors for 6 square faces in the 'Cube' shape of interest. Instead, the user can press cyclically the ' ' (space) key for choosing what 'viewing configuration' has to be applied"<<endl;
-	cout<<"\tbetween the following 'viewing configurations':"<<endl<<endl;
-	cout<<"\t\t-) the 'viewing configuration #0' is based on the orthographic box '[-40,40]' x '[-40,40]' x '[-80,80]';"<<endl;
-	cout<<"\t\t-) the 'viewing configuration #1' is based on the perspective box '[-2.7,2.7]' x '[-2.7,2.7]' x '[2.0,70]'."<<endl<<endl;
+	cout<<"\tHere, the user cannot modify the orientations and the colors for 6 square faces in the 'Cube' shape of interest. Instead, the user can press cyclically the ' ' (space) key for choosing what viewing configuration has to be applied"<<endl;
+	cout<<"\tbetween the following viewing configurations:"<<endl<<endl;
+	cout<<"\t\t-) the 'Viewing Configuration #0' is based on the orthographic box '[-40,40]' x '[-40,40]' x '[-80,80]';"<<endl;
+	cout<<"\t\t-) the 'Viewing Configuration #1' is based on the perspective box '[-2.7,2.7]' x '[-2.7,2.7]' x '[2.0,70]'."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	
@@ -149,8 +149,8 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	projection=0;
 	cout<<"\tAt the beginning, the 'Cube' shape of interest is drawn by using the ";
-	if(projection==0) cout<<"viewing orthographic box '[-40,40]' x '[-40,40]' x '[-80,80]' (thus, the 'viewing configuration #0').";
-	else cout<<"viewing perspective box (frustum) [-2.7,2.7]' x '[-2.7,2.7]' x '[2.0,7.0]' (thus, the 'viewing configuration #1').";
+	if(projection==0) cout<<"viewing orthographic box '[-40,40]' x '[-40,40]' x '[-80,80]' (thus, the 'Viewing Configuration #0').";
+	else cout<<"viewing perspective box (frustum) [-2.7,2.7]' x '[-2.7,2.7]' x '[2.0,7.0]' (thus, the 'Viewing Configuration #1').";
 	cout<<endl<<endl;
 	cout.flush();
 }
@@ -282,8 +282,8 @@ void draw()
 	
 	/* Now, we finalize this function! */
 	cout<<"\tThe 'Cube' shape of interest is currently drawn by using the ";
-	if(projection==0) cout<<"viewing orthographic box '[-40,40]' x '[-40,40]' x '[-80,80]' (thus, the 'viewing configuration #0').";
-	else cout<<"viewing perspective box (frustum) [-2.7,2.7]' x '[-2.7,2.7]' x '[2.0,7.0]' (thus, the 'viewing configuration #1').";
+	if(projection==0) cout<<"viewing orthographic box '[-40,40]' x '[-40,40]' x '[-80,80]' (thus, the 'Viewing Configuration #0').";
+	else cout<<"viewing perspective box (frustum) [-2.7,2.7]' x '[-2.7,2.7]' x '[2.0,7.0]' (thus, the 'Viewing Configuration #1').";
 	cout<<endl;
 	cout.flush();
 }
