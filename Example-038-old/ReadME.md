@@ -9,7 +9,7 @@ The <i>'Example-038 (Old Mode)'</i> Test draws <code>'2'</code> variants of the 
 <li>choose to render a specific variant of the <i>'Eight'</i> shape by pressing cyclically the <code><i>' '</i></code> (space) key. The custom settings for rendering the polygons in the corresponding tessellation are set independently.</li>
 <li>Choose to render the <i>'wireframe'</i> or the <i>'filled versions'</i> of all triangles in the triangle fans or in the quad strips of interest by pressing cyclically the <code><i>'w'</i></code> key. The variant of the <i>'Eight'</i> shape to be drawn is chosen independently.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.
 
-<p><h5>Using the <i>'Variant #0'</i></h5>
+<p><h5>Rendering the <i>'Variant #0'</i></h5>
 
 <p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example038_old_tessellation0_edges.png' border='1'></td>
@@ -27,7 +27,7 @@ The <i>'Example-038 (Old Mode)'</i> Test draws <code>'2'</code> variants of the 
 </tr>
 </table><p>
 
-<h5>Using the <i>'Variant #1'</i></h5>
+<h5>Rendering the <i>'Variant #1'</i></h5>
 
 <p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example038_old_tessellation1_edges.png' border='1'></td>
