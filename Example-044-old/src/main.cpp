@@ -116,7 +116,7 @@ void initialize()
 	cout<<"\tAt the beginning, the versions of the 'Moon' shape to be drawn are approximated by the ";
 	if(mode==GL_FILL) cout<<"'filled versions' ";
 	else cout<<"'wireframe versions' ";
-	cout<<"of all quadrilaterals in the quad strips, defined by 'n="<<num_samples<<" vertices pairs (thus by the minimum number 'n' as possible of the vertices pairs)."<<endl<<endl;
+	cout<<"of all quadrilaterals in the quad strips, defined by 'n="<<num_samples<<"' vertices pairs (thus by the minimum number 'n' as possible of the vertices pairs)."<<endl<<endl;
 	cout.flush();
 }
 
@@ -241,6 +241,6 @@ void draw()
 	cout<<"\tThe versions of the 'Moon' shape to be drawn are currently approximated by the ";
 	if(mode==GL_FILL) cout<<"'filled versions' ";
 	else cout<<"'wireframe versions' ";
-	cout<<"of all quadrilaterals in the quad strips, defined by 'n="<<num_samples<<" vertices pairs."<<endl;
+	cout<<"of all quadrilaterals in the quad strips, defined by 'n="<<num_samples<<"' vertices pairs."<<endl;
 	cout.flush();
 }

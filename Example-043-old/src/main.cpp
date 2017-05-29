@@ -102,7 +102,7 @@ void initialize()
 	xc=0.0;
 	yc=0.0;
 	Angle=0.0;
-	cout<<"\tAt the beginning, the 'Sphere' shape is drawn by exploiting the rotation angle "<<Angle<<", the translation value "<<xc<<" along the x-axis, and the translation value "<<yc<<" along the y-axis"<<endl<<endl;
+	cout<<"\tAt the beginning, the 'Sphere' shape is drawn by exploiting the rotation angle "<<Angle<<", the translation value "<<xc<<" along the x-axis, and the translation value "<<yc<<" along the y-axis."<<endl<<endl;
 	cout.flush();
 }
 
@@ -222,6 +222,6 @@ void draw()
    	glColor3f(0,0,1);
    	glutWireSphere(1, 16, 10);
    	glutSwapBuffers();
-   	cout<<"\tThe 'Sphere' shape is currently drawn by exploiting the rotation angle "<<Angle<<", the translation value "<<xc<<" along the x-axis, and the translation value "<<yc<<" along the y-axis"<<endl;
+   	cout<<"\tThe 'Sphere' shape is currently drawn by exploiting the rotation angle "<<Angle<<", the translation value "<<xc<<" along the x-axis, and the translation value "<<yc<<" along the y-axis."<<endl;
 	cout.flush();
 }
