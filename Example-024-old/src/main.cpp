@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: May 2017
+ * Last update: June 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -18,6 +18,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <cmath>
+#include <limits>
 #define PI 3.14159265358979324
 using namespace std;
 #ifdef __APPLE__
@@ -75,6 +76,7 @@ void draw();
 void initialize();
 void resize(int w,int h);
 void manageKeys(unsigned char key, int x, int y);
+void pause();
 
 /// The main function for the <i>'Example-024 (Old Mode)'</i> Test.
 int main(int argc,char **argv)
@@ -98,8 +100,9 @@ int main(int argc,char **argv)
 	cin>>rI;
 	if( (!cin) || (rI<=0) )
 	{
+		cin.clear();
 		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE) FOR THE INTERNAL RADIUS 'rI' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
-		cout.flush();
+		pause();
 		return EXIT_FAILURE;
 	}
 	
@@ -108,8 +111,9 @@ int main(int argc,char **argv)
 	cin>>rE;
 	if( (!cin) || (rE<=0) || (rE<=rI) )
 	{
+		cin.clear();
 		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE, SUCH THAT 'rE>"<<rI<<"') FOR THE EXTERNAL RADIUS 'rE' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
-		cout.flush();
+		pause();
 		return EXIT_FAILURE;
 	}
 	
@@ -119,8 +123,9 @@ int main(int argc,char **argv)
 	cin>>xc>>yc;
 	if(!cin)
 	{
+		cin.clear();
 		cout<<endl<<"\tPLEASE, INSERT THE CENTER COORDINATES '(xc,yc)' FOR THE 'CIRCULAR ANNULUS' SHAPE OF INTEREST (THUS, 2 FLOATING-POINT VALUES, SEPARATED BY A SPACE)."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
-		cout.flush();
+		pause();
 		return EXIT_FAILURE;
 	}
 	
@@ -163,24 +168,24 @@ void manageKeys(unsigned char key, int x, int y)
 		case 'q':
 	
 		/* The key is 'q', thus we can exit from this program. */
-		cout<<endl;
-		cout.flush();
+		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+		pause();
 		exit(EXIT_SUCCESS);
 		break;
 		
 		case 'Q':
 	
 		/* The key is 'Q', thus we can exit from this program. */
-		cout<<endl;
-		cout.flush();
+		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+		pause();
 		exit(EXIT_SUCCESS);
 		break;
 		
 		case 27:
 	
 		/* The key is 'Esc', thus we can exit from this program. */
-		cout<<endl;
-		cout.flush();
+		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+		pause();
 		exit(EXIT_SUCCESS);
 		break;
 		
@@ -285,3 +290,18 @@ void draw()
 		cout.flush();
     }
 }
+
+/// This function simulates a pause while this test runs.
+void pause()
+{
+	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	cin.clear();
+	cout << "\tPress the RETURN key to finish ... ";
+	cout.flush();
+	cin.get();
+	#ifndef _MSC_VER
+		cout << endl;
+		cout.flush();
+	#endif
+}
+
