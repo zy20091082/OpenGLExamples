@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  *
- * Last update: May 2017
+ * Last update: June 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
@@ -143,6 +143,13 @@ void manageKeys(unsigned char key, int x, int y)
 
 		/* The key is 'q', thus we can exit from this program! */
 		if(eol) cout<<endl;
+		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+		cout << "\tPress the RETURN key to finish ... ";
+		cin.get();
+		#ifndef _MSC_VER
+			cout << endl;
+			cout.flush();
+		#endif
 		exit(EXIT_SUCCESS);
 		break;
 
@@ -150,6 +157,13 @@ void manageKeys(unsigned char key, int x, int y)
 
 		/* The key is 'Q', thus we can exit from this program! */
 		if(eol) cout<<endl;
+		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+		cout << "\tPress the RETURN key to finish ... ";
+		cin.get();
+		#ifndef _MSC_VER
+			cout << endl;
+			cout.flush();
+		#endif
 		exit(EXIT_SUCCESS);
 		break;
 
@@ -157,6 +171,13 @@ void manageKeys(unsigned char key, int x, int y)
 
 		/* The key is 'Esc', thus we can exit from this program! */
 		if(eol) cout<<endl;
+		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+		cout << "\tPress the RETURN key to finish ... ";
+		cin.get();
+		#ifndef _MSC_VER
+			cout << endl;
+			cout.flush();
+		#endif
 		exit(EXIT_SUCCESS);
 		break;
 
@@ -268,3 +289,4 @@ void manageKeys(unsigned char key, int x, int y)
 		break;
 	}
 }
+
