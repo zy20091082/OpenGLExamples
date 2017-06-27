@@ -14,9 +14,23 @@ The <i>'Example-045 (Old Mode)'</i> Test draws the <i>'Hemisphere'</i> shape in 
 <li>increase the rotation angle <code><i>'Rz'</i></code> along the <code><i>'z'</i></code>-axis by pressing the <code><i>'Z'</i></code> key;</li>
 <li>decrease the rotation angle <code><i>'Rz'</i></code> along the <code><i>'z'</i></code>-axis by pressing the <code><i>'z'</i></code> key.</li></ul><p>Likewise, the window of interest can be closed by pressing the <code><i>'Esc'</i></code> key.<p>
 
+<p><table border=0 width=100%>
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example043_old_conf0.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example043_old_conf1.png' border='0'></td></tr>
+<tr>
+<td width=50%>Here, <code><i>'q=3'</i></code>, <code><i>'p=3'</i></code>, <code><i>'Rx=45'</i></code>, <code><i>'Ry=25'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+<td width=50%>Here, <code><i>'q=6'</i></code>, <code><i>'p=3'</i></code>, <code><i>'Rx=45'</i></code>, <code><i>'Ry=25'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+</tr>
 
-
-
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example043_old_conf0.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example043_old_conf1.png' border='0'></td></tr>
+<tr>
+<td width=50%>Here, <code><i>'q=6'</i></code>, <code><i>'p=24'</i></code>, <code><i>'Rx=45'</i></code>, <code><i>'Ry=25'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+<td width=50%>Here, <code><i>'q=20'</i></code>, <code><i>'p=24'</i></code>, <code><i>'Rx=45'</i></code>, <code><i>'Ry=25'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+</tr>
+</table>
 
 <p><hr><p><h4>Dependencies</h4>
 
