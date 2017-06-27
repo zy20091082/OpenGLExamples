@@ -68,7 +68,7 @@ int main(int argc,char **argv)
 	cout<<"\tHere, the 'Sphere' shape is drawn by exploiting the 'glutWireSphere()' function, offered by the OpenGL Utility Toolkit (GLUT) package (or the FreeGLUT package). This function approximates the 'Sphere' shape through a quad grid, formed by"<<endl;
 	cout<<"\t'slices' around the Z-axis (similar to the longitudinal lines) and by 'stacks' along the Z-axis (similar to the latitudinal lines). Specifically, the 'wireframe versions' of the elements in the grid (in 'blue') are rendered by using the"<<endl;
 	cout<<"\tperspective projection."<<endl<<endl;
-	cout<<"\tHere, the user cannot modify the radius 'R, the center '(xc,yc,zc)', and the numbers of the slices and the stacks in the approximation of interest for the 'Sphere' shape, since they are fixed in advance. Instead, the user can apply several"<<endl;
+	cout<<"\tHere, the user cannot modify the radius 'R, the center '(xc,yc,zc)', and the numbers of the 'slices' and the 'stacks' in the approximation of interest for the 'Sphere' shape, since they are fixed in advance. Instead, the user can apply several"<<endl;
 	cout<<"\ttransformations to the scene, in particular the user can:"<<endl<<endl;
 	cout<<"\t\t-) translate the center '(xc,yc,zc)' of the 'Sphere' shape along any of 2 directions of the X-axis by pressing the 'left' and the 'right' (arrow) keys, respectively;"<<endl;
 	cout<<"\t\t-) translate the center '(xc,yc,zc)' of the 'Sphere' shape along any of 2 directions of the Y-axis by pressing the 'up' and the 'down' (arrow) keys, respectively;"<<endl;
