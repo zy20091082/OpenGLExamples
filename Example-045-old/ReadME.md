@@ -7,12 +7,12 @@ The <i>'Example-045 (Old Mode)'</i> Test draws the <i>'Hemisphere'</i> shape in 
 <li>decrease the number <code><i>'p'</i></code> of the longitudinal slices by pressing the <code><i>'p'</i></code> key;</li>
 <li>increase the number <code><i>'q'</i></code> of the latitudinal slices by pressing the <code><i>'Q'</i></code> key;</li>
 <li>decrease the number <code><i>'q'</i></code> of the latitudinal slices by pressing the <code><i>'q'</i></code> key;</li>
-<i>increase the rotation angle <code>'Rx'</i> along the <code><i>'x'</i>-axis by pressing the <code><i>'X'</i></code> key;</li>
-<i>decrease the rotation angle <code>'Rx'</i> along the <code><i>'x'</i>-axis by pressing the <code><i>'x'</i></code> key;</li>
-<i>increase the rotation angle <code>'Ry'</i> along the <code><i>'y'</i>-axis by pressing the <code><i>'Y'</i></code> key;</li>
-<i>decrease the rotation angle <code>'Ry'</i> along the <code><i>'y'</i>-axis by pressing the <code><i>'y'</i></code> key;</li>
-<i>increase the rotation angle <code>'Rz'</i> along the <code><i>'z'</i>-axis by pressing the <code><i>'Z'</i></code> key;</li>
-<i>decrease the rotation angle <code>'Rz'</i> along the <code><i>'z'</i>-axis by pressing the <code><i>'z'</i></code> key.</li></ul><p>Likewise, the window of interest can be closed by pressing the <code><i>'Esc'</i></code> key.
+<li>increase the rotation angle <code>'Rx'</i> along the <code><i>'x'</i>-axis by pressing the <code><i>'X'</i></code> key;</li>
+<li>decrease the rotation angle <code>'Rx'</i> along the <code><i>'x'</i>-axis by pressing the <code><i>'x'</i></code> key;</li>
+<li>increase the rotation angle <code>'Ry'</i> along the <code><i>'y'</i>-axis by pressing the <code><i>'Y'</i></code> key;</li>
+<li>decrease the rotation angle <code>'Ry'</i> along the <code><i>'y'</i>-axis by pressing the <code><i>'y'</i></code> key;</li>
+<li>increase the rotation angle <code>'Rz'</i> along the <code><i>'z'</i>-axis by pressing the <code><i>'Z'</i></code> key;</li>
+<li>decrease the rotation angle <code>'Rz'</i> along the <code><i>'z'</i>-axis by pressing the <code><i>'z'</i></code> key.</li></ul><p>Likewise, the window of interest can be closed by pressing the <code><i>'Esc'</i></code> key.
 
 
 
