@@ -52,7 +52,7 @@ unsigned int lat_slices_num=3;
 
 /// The radius <i>'R'</i> of the <i>'Hemisphere'</i> shape.
 /**
- * This value is the radius 'R' of the 'Hemisphere' shape, and it cannot be modified by the user. It is fixed in advance as 'R'=5, and it is the distance among the points of the 'Hemisphere' shape and its center '(0,0').
+ * This value is the radius 'R' of the 'Hemisphere' shape, and it cannot be modified by the user. It is fixed in advance as 'R'=5, and it is the distance among the points of the 'Hemisphere' shape and its center '(0,0,0)'.
  */
 float radius=5.0;
 
