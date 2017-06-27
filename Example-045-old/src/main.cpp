@@ -85,7 +85,27 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-045' Test, based on the (Old Mode) OpenGL."<<endl;
-	
+	cout<<"\tIt draws the 'Hemisphere' shape in an OpenGL window. Intuitively, the 'Hemisphere' shape is basically any of '2' hemispheres of the 'Sphere' shape. This latter describes a perfectly round geometrical object in the 3D space, that is the surface of a"<<endl;
+	cout<<"\tcompletely round ball. Like the 'Circle' shape, which geometrically is an object in the 2D space, the 'Sphere' shape is defined mathematically as the set of points that are all at the same distance 'R' from a given point '(xc,yc)' in the 3D space. The"<<endl;
+	cout<<"\tdistance 'R' is the 'radius' of the 'Sphere' shape, and the given point '(xc,yc)' is its 'center'."<<endl<<endl;
+	cout<<"\tFor the sake of the simplicity, we consider the 'Hemisphere' shape as the superior hemisphere of the 'Sphere' shape of radius 'R' and center '(xc,yc)', and all its points are expressed as follows:"<<endl<<endl;
+	cout<<"\tx(r,s) = xc + R * cos(r) * cos(s), y(r,s) = yc + R * sin(r), z(r,s) = zc + R * cos(r) * sin(s)"<<endl<<endl<<"\tfor any 'R>0', for any 'r' in '[ 0, pi/2 ]', and for any 's' in '[ 0, 2*pi ]'."<<endl<<endl;
+	cout<<"\tHere, the 'Hemisphere' shape is approximated by a quad grid, formed by 'p' 'slices' around the Z-axis (similar to the longitudinal lines) and by 'q' 'stacks' along the Z-axis (similar to the latitudinal lines). Specifically, the 'wireframe versions' of the"<<endl;
+	cout<<"\telements in the grid (in 'blue') are rendered by using the perspective projection."<<endl<<endl;
+	cout<<"\tHere, the user cannot modify the radius 'R', and the center '(xc,yc,zc)', since they are fixed in advance. Instead, the user can modify the numbers 'p' and 'q' of the longitudinal and the latitudinal slices, respectively, as well as rotate the scene along"<<endl;
+	cout<<"\tthe coordinate axes. In particular the user can:"<<endl<<endl;
+	cout<<"\t\t-) increase the number 'p' of the longitudinal slices by pressing the 'P' key;"<<endl;
+	cout<<"\t\t-) decrease the number 'p' of the longitudinal slices by pressing the 'p' key;"<<endl;
+	cout<<"\t\t-) increase the number 'q' of the latitudinal slices by pressing the 'Q' key;"<<endl;
+	cout<<"\t\t-) decrease the number 'q' of the latitudinal slices by pressing the 'q' key;"<<endl;
+	cout<<"\t\t-) increase the rotation angle 'Rx' along the 'x'-axis by pressing the 'X' key;"<<endl;
+	cout<<"\t\t-) decrease the rotation angle 'Rx' along the 'x'-axis by pressing the 'x' key;"<<endl;
+	cout<<"\t\t-) increase the rotation angle 'Ry' along the 'y'-axis by pressing the 'Y' key;"<<endl;
+	cout<<"\t\t-) decrease the rotation angle 'Ry' along the 'y'-axis by pressing the 'y' key;"<<endl;
+	cout<<"\t\t-) increase the rotation angle 'Rz' along the 'z'-axis by pressing the 'Z' key;"<<endl;
+	cout<<"\t\t-) decrease the rotation angle 'Rz' along the 'z'-axis by pressing the 'z' key."<<endl<<endl<<"\tLikewise, the window of interest can be closed by pressing the 'Esc' key."<<endl<<endl;
+	cout.flush();
+
 	/* If we arrive here, we can draw the 'Hemisphere' shape of interest by using the rendering settings, chosen by the user. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
