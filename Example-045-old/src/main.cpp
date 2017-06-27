@@ -1,9 +1,9 @@
-/*******************************************************************************************************************************************************
+/****************************************************************************************************************************************************************************************************************
  * David Canino (canino.david@gmail.com)
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: February 2017
+ * Last update: June 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -11,49 +11,67 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
- * main.cpp - the main function for the 'Example-045 (Old Mode)' example
- *******************************************************************************************************************************************************/
-
+ * main.cpp - the main function for the 'Example-045 (Old Mode)' Test.
+ ****************************************************************************************************************************************************************************************************************/
+ 
 /* First, we must understand which platform we are using. */
 #include <cstdlib>
 #include <iostream>
 #include <cmath>
-#include <string>
-#include <cfloat>
 #define PI 3.14159265358979324
 using namespace std;
 #ifdef __APPLE__
 
-	/* We are using a MacOSX platform (Macintosh) */
+	/* We are using a MacOSX platform (Macintosh). */
 	#include "GL/glew.h"
 	#include "GLUT/glut.h"
 	#include "OpenGL/gl.h"
 
 #else
 
-	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU Linux, or a Microsoft Windows platform. */
+	/* We are not using a MacOSX platform. Thus, we have a generic Unix-like platform, like the GNU/Linux, or a Microsoft Windows platform. */
 	#include "GL/glew.h"
 	#include "GL/glut.h"
 	#include "GL/gl.h"
 
 #endif
 
-/// The number of the longitudinal slices in the <i>'Hemisphere'</i> shape of interest.
+/// The number <i>'p'</i> of the <i>'slices'</i> around the Z-axis, approximating the <i>'Hemisphere'</i> shape.
+/**
+ * By construction, the 'Hemisphere' shape is approximated by a number 'p' of 'slices' around the 'z' axis (similar to the longitudinal lines). This value contains the number 'p' of longitudinal lines, and it is initially set to 'p=3', which is the minimum number of longitudinal lines in the 'Hemisphere'
+ * shape. It is increased and decreased by pressing, respectively, the 'P' and the 'p' keys.
+ */
 unsigned int long_slices_num=3;
 
-/// The number of the latitudinal slides in the <i>'Hemisphere'</i> shape of interest.
+/// The number <i>'q'</i> of the <i>'stacks'</i> around the Z-axis, approximating the <i>'Hemisphere'</i> shape.
+/**
+ * By construction, the 'Hemisphere' shape is approximated by a number 'q' of 'stacks' around the 'z' axis (similar to the latitudinal lines). This value contains the number 'q' of latitudinal lines, and it is initially set to 'q=3', which is the minimum number of latitudinal lines in the 'Hemisphere'
+ * shape. It is increased and decreased by pressing, respectively, the 'Q' and the 'q' keys.
+ */
 unsigned int lat_slices_num=3;
 
-/// The radius for the <i>'Hemisphere'</i> shape of interest.
+/// The radius <i>'R'</i> of the <i>'Hemisphere'</i> shape.
+/**
+ * This value is the radius 'R' of the 'Hemisphere' shape, and it cannot be modified by the user. It is fixed in advance as 'R'=5, and it is the distance among the points of the 'Hemisphere' shape and its center '(0,0').
+ */
 float radius=5.0;
 
-/// The rotation angle along the x-axis.
+/// The rotation angle <i>'Rx'</i> for rotating the <i>'Hemisphere'</i> shape along the x-axis.
+/**
+ * This values indicates the angle 'Rx' for rotating the 'Hemisphere' shape along the x-axis '[1,0,0]'. This rotation angle is increased by pressing the 'X' key, and decreased by pressing the 'x' key.
+ */
 float Xangle=0.0;
 
-/// The rotation angle along the y-axis.
+/// The rotation angle <i>'Ry'</i> for rotating the <i>'Hemisphere'</i> shape along the y-axis.
+/**
+ * This values indicates the angle 'Ry' for rotating the 'Hemisphere' shape along the y-axis '[0,1,0]'. This rotation angle is increased by pressing the 'Y' key, and decreased by pressing the 'y' key.
+ */
 float Yangle=0.0;
 
-/// The rotation angle along the z-axis.
+/// The rotation angle <i>'Rz'</i> for rotating the <i>'Hemisphere'</i> shape along the z-axis.
+/**
+ * This values indicates the angle 'Rz' for rotating the 'Hemisphere' shape along the z-axis '[0,0,1]'. This rotation angle is increased by pressing the 'Z' key, and decreased by pressing the 'z' key.
+ */
 float Zangle=0.0;
 
 /* Prototypes for all functions of interest! */
@@ -62,17 +80,18 @@ void manageKeys(unsigned char key, int x, int y);
 void draw();
 void resize(int w,int h);
 
-/// The main function for the <i>'Example-045 (Old Mode)'</i> example.
+/// The main function for the <i>'Example-045 (Old Mode)'</i> Test.
 int main(int argc,char **argv)
 {
-	/* We initialize everything, and create a new window! */
-	cout<<endl<<"\tThis is the 'Example-045' Example, based on the (Old Mode) OpenGL"<<endl<<endl;
-	cout.flush();
+	/* We initialize everything, and create a very basic window! */
+	cout<<endl<<"\tThis is the 'Example-045' Test, based on the (Old Mode) OpenGL."<<endl;
+	
+	/* If we arrive here, we can draw the 'Hemisphere' shape of interest by using the rendering settings, chosen by the user. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
 	glutInitWindowSize(500,500);
-	glutCreateWindow("The 'Example-045' Example, based on the (Old Mode) OpenGL");
+	glutCreateWindow("The 'Example-045' Test, based on the (Old Mode) OpenGL");
 	glutReshapeFunc(resize);
 	glutKeyboardFunc(manageKeys);
 	glutDisplayFunc(draw);
@@ -83,6 +102,16 @@ int main(int argc,char **argv)
 	return EXIT_SUCCESS;
 }
 
+/// This function updates the viewport for the scene when it is resized. */
+void resize(int w, int h)
+{
+	/* We update only the projection matrix! */
+	glViewport(0, 0, w, h);
+   	glMatrixMode(GL_PROJECTION);
+   	glLoadIdentity();
+   	glFrustum(-5.0, 5.0, -5.0, 5.0, 5.0, 100.0);
+}
+
 /// This function initializes the OpenGL window of interest.
 void initialize() 
 {
@@ -91,124 +120,116 @@ void initialize()
 	long_slices_num=3;
 	lat_slices_num=3;
 	radius=5.0;
-	cout<<"\tWe draw the wireframe version of the 'Hemisphere' shape with radius R="<<radius<<". It is possible to:"<<endl<<endl;
-	cout<<"\t-) modify the number of the latitudinal slices in the 'Hemisphere' shape by pressing the 'q' (decrease) and the 'Q' (increase) keys"<<endl;
-	cout<<"\t-) modify the number of the longitudinal slices the 'Hemisphere' shape by pressing the 'p' (decrease) and the 'P' (increase) keys"<<endl;
-	cout<<"\t-) rotate the 'Hemisphere' shape along the x-axis by pressing the 'x' (decrease the angle) and the 'X' (increase the angle) keys"<<endl;
-	cout<<"\t-) rotate the 'Hemisphere' shape along the y-axis by pressing the 'y' (decrease the angle) and the 'Y' (increase the angle) keys"<<endl;
-	cout<<"\t-) rotate the 'Hemisphere' shape along the z-axis by pressing the 'z' (decrease the angle) and the 'Z' (increase the angle) keys"<<endl<<endl;
+	cout<<"\tAt the beginning, the 'wireframe version' of the 'Hemisphere' shape is drawn by exploiting 'q="<<lat_slices_num<<"' latitudinal slices and 'p="<<long_slices_num<<"' longitudinal slices (thus, the minimum numbers 'p' and 'q' as possible), as well as rotation angles 'Rx=";
+	cout<<Xangle<<"', "<<"'Ry="<<Yangle<<"', and 'Rz="<<Zangle<<"'."<<endl<<endl;
 	cout.flush();
 }
 
-/// This function updates the viewport for the scene when it is resized. */
-void resize(int w, int h)
-{
-	/* We update the projections and the modeling matrices! */
-	glViewport(0, 0, w, h);
-   	glMatrixMode(GL_PROJECTION);
-   	glLoadIdentity();
-   	glFrustum(-5.0, 5.0, -5.0, 5.0, 5.0, 100.0);
-}
-
-/// This function is the keyboard input processing routine for the OpenGL window of interest.
+/// This function is the keyboard input processing routine for the OpenGL window of interest (ASCII keys).
 void manageKeys(unsigned char key, int x, int y)
 {
 	/* We are interested only in the 'q' - 'Q' - 'p' - 'P' - 'x' - 'X' - 'y' - 'Y' - 'z' - 'Z' - 'Esc' - keys */
 	switch (key)
 	{
-		case 27:
-	
-		/* The key is 'Esc' */
-		cout<<endl;
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
-		
 		case 'q':
 	
-		/* The key is 'q', thus we reduce the number of the latitudinal slices. */
-		if(lat_slices_num>3) lat_slices_num=lat_slices_num-1;
-		else cout<<"\tThe minimum number 3 of the latitudinal slices is reached"<<endl;
-		cout.flush();
-		glutPostRedisplay();
-		break;
+			/* The key is 'q', thus we reduce the number 'q' of the latitudinal slices in the 'wireframe version' of the 'Hemisphere' shape. */
+			if(lat_slices_num>3) lat_slices_num=lat_slices_num-1;
+			else cout<<"\tThe minimum number 'q=3' of the latitudinal slices in the 'wireframe version' of the 'Hemisphere' shape is reached, and it is not possible to decrease again this number."<<endl;
+			cout.flush();
+			glutPostRedisplay();
+			break;
 		
 		case 'Q':
 	
-		/* The key is 'Q', thus we increase the number of the latitudinal slices. */
-		lat_slices_num=lat_slices_num+1;
-		glutPostRedisplay();
-		break;
+			/* The key is 'Q', thus we increase the number 'q' of the latitudinal slices in the 'wireframe version' of the 'Hemisphere' shape. */
+			lat_slices_num=lat_slices_num+1;
+			glutPostRedisplay();
+			break;
+
+		case 'p':
+	
+			/* The key is 'p', thus we reduce the number 'p' of the longitudinal slices in the 'wireframe version' of the 'Hemisphere' shape. */
+			if(long_slices_num>3) long_slices_num=long_slices_num-1;
+			else cout<<"\tThe minimum number 'p=3' of the longitudinal slices in the 'wireframe version' of the 'Hemisphere' shape is reached, and it is not possible to decrease again this number."<<endl;
+			cout.flush();
+			glutPostRedisplay();
+			break;
 		
 		case 'P':
 	
-		/* The key is 'P', thus we increase the number of the longitudinal slices. */
-		long_slices_num=long_slices_num+1;
-		glutPostRedisplay();
-		break;
-		
-		case 'p':
-	
-		/* The key is 'p', thus we reduce the number of the longitudinal slices. */
-		if(long_slices_num>3) long_slices_num=long_slices_num-1;
-		else cout<<"\tThe minimum number 3 of the longitudinal slices is reached"<<endl;
-		cout.flush();
-		glutPostRedisplay();
-		break;
+			/* The key is 'P', thus we increase the number 'p' of the longitudinal slices in the 'wireframe version' of the 'Hemisphere' shape. */
+			long_slices_num=long_slices_num+1;
+			glutPostRedisplay();
+			break;
 		
 		case 'x':
 		
-		/* The key is 'x', thus, we decrease the rotation angle along the x-axis. */
-		Xangle -= 5.0;
-		if(Xangle < 0.0) Xangle += 360.0;
-        glutPostRedisplay();
-        break;
-        
-        case 'y':
+			/* The key is 'x', thus we decrease the rotation angle 'Rx' for rotating the 'wireframe version' of the 'Hemisphere' shape along the X-axis. */
+			Xangle -= 5.0;
+			if(Xangle < 0.0) Xangle += 360.0;
+	        glutPostRedisplay();
+	        break;
 		
-		/* The key is 'y', thus, we decrease the rotation angle along the y-axis. */
-		Yangle -= 5.0;
-		if(Yangle < 0.0) Yangle += 360.0;
-        glutPostRedisplay();
-        break;
-        
-        case 'z':
-        
-        /* The key is 'z', thus, we decrease the rotation angle along the z-axis. */
-		Zangle -= 5.0;
-		if(Zangle < 0.0) Zangle += 360.0;
-        glutPostRedisplay();
-        break;
-
 		case 'X':
 		
-		/* The key is 'X', thus, we increase the rotation angle along the x-axis. */
-        Xangle += 5.0;
-		if (Xangle > 360.0) Xangle -= 360.0;
-        glutPostRedisplay();
-        break;
-        
-        case 'Y':
+			/* The key is 'X', thus we increase the rotation angle 'Rx' for rotating the 'wireframe version' of the 'Hemisphere' shape along the X-axis. */
+	        Xangle += 5.0;
+			if (Xangle > 360.0) Xangle -= 360.0;
+	        glutPostRedisplay();
+	        break;
 		
-		/* The key is 'Y', thus, we increase the rotation angle along the Y-axis. */
-        Yangle += 5.0;
-		if (Yangle > 360.0) Yangle -= 360.0;
-        glutPostRedisplay();
-        break;
-        
-        case 'Z':
+		case 'y':
 		
-		/* The key is 'Z', thus, we increase the rotation angle along the z-axis. */
-        Zangle += 5.0;
-		if (Zangle > 360.0) Zangle -= 360.0;
-        glutPostRedisplay();
-        break;
+			/* The key is 'y', thus we decrease the rotation angle 'Ry' for rotating the 'wireframe version' of the 'Hemisphere' shape along the Y-axis. */
+			Yangle -= 5.0;
+			if(Yangle < 0.0) Yangle += 360.0;
+	        glutPostRedisplay();
+	        break;
+		
+		case 'Y':
+		
+			/* The key is 'Y', thus we increase the rotation angle 'Ry' for rotating the 'wireframe version' of the 'Hemisphere' shape along the Y-axis. */
+	        Yangle += 5.0;
+			if (Yangle > 360.0) Yangle -= 360.0;
+	        glutPostRedisplay();
+	        break;
+		
+		case 'z':
+        
+	        /* The key is 'z', thus we decrease the rotation angle 'Rz' for rotating the 'wireframe version' of the 'Hemisphere' shape along the z-axis. */
+			Zangle -= 5.0;
+			if(Zangle < 0.0) Zangle += 360.0;
+	        glutPostRedisplay();
+	        break;
+        
+		case 'Z':
+		
+			/* The key is 'Z', thus we increase the rotation angle 'Rz' for rotating the 'wireframe version' of the 'Hemisphere' shape along the z-axis. */
+	        Zangle += 5.0;
+			if (Zangle > 360.0) Zangle -= 360.0;
+	        glutPostRedisplay();
+	        break;
+		
+		case 27:
+	
+			/* The key is 'Esc', thus we can exit from this program. */
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
+			cout.flush();
+			exit(EXIT_SUCCESS);
+			break;
 
 		default:
-
-    	/* Other keys are not important for us */
-    	break;
-	}
+		
+			/* Other keys are not important for us */
+			break;
+	}		
 }
 
 /// This function draws the <i>'Hemisphere'</i> shape in the OpenGL window of interest by using the preferences, chosen by the user.
@@ -232,7 +253,7 @@ void draw()
 	delta_q=PI/(2.0*lat_slices_num);
 	for(unsigned int j=0;j<lat_slices_num;j++)
 	{
-		/* Now, we consider the current latitudinal slice of the 'Hemisphere' shape (a quad strip). */
+		/* Now, we consider the current latitudinal slice of the 'Hemisphere' shape as a quad strip to be drawn. */
 		float psij=(float)j*delta_q,ppsi_j=(float)(j+1)*delta_q;
 		glBegin(GL_QUAD_STRIP);
 		for(unsigned int i=0;i<=long_slices_num;i++)
@@ -242,13 +263,13 @@ void draw()
 			glVertex3f(radius*cos(psij)*cos(tetha_i),radius*sin(psij),radius*cos(psij)*sin(tetha_i));
 		}
 		
-		/* Now, we finalize the current latitudinal slice of the 'Hemisphere' shape (a quad strip). */
+		/* Now, we finalize the current latitudinal slice of the 'Hemisphere' shape (thus a quad strip). */
 		glEnd();
 	}
 	
 	/* If we arrive here, we have finished! */
 	glFlush();
-	cout<<"\tApproximated and drawn the 'Hemisphere' shape by using "<<lat_slices_num<<" latitudinal slices and "<<long_slices_num<<" longitudinal slices, rotation angle around the x-axis: "<<Xangle<<", rotation angle around the y-axis: "<<Yangle;
-	cout<<", rotation angle around the z-axis: "<<Zangle<<endl;
+	cout<<"\tThe 'wireframe version' of the 'Hemisphere' shape is currently drawn by exploiting 'q="<<lat_slices_num<<"' latitudinal slices and 'p="<<long_slices_num<<"' longitudinal slices, as well as rotation angles 'Rx="<<Xangle<<"', "<<"'Ry="<<Yangle<<"', and 'Rz="<<Zangle<<"'."<<endl;
+	cout.flush();
 	cout.flush();
 }
