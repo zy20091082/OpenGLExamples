@@ -63,7 +63,7 @@ int main(int argc,char **argv)
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-043' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws the 'Sphere' shape in an OpenGL window. Intuitively, the 'Sphere' shape describes a perfectly round geometrical object in the 3D space, that is the surface of a completely round ball. Like the 'Circle' shape, which geometrically is"<<endl;
-	cout<<"\tan object in the 2D space, the 'Sphere' shape is defined mathematically as the set of 3D points that are all at the same distance 'R' from a given point '(xc,yc,zc)'. The distance 'R' is the 'radius' of the 'Sphere' shape, and the given point"<<endl;
+	cout<<"\tan object in the 2D space, the 'Sphere' shape is defined mathematically as the set of 3D points, that are all at the same distance 'R' from a given point '(xc,yc,zc)'. The distance 'R' is the 'radius' of the 'Sphere' shape, and the given point"<<endl;
 	cout<<"\t'(xc,yc,zc)' is its 'center'."<<endl<<endl;
 	cout<<"\tHere, the 'Sphere' shape is drawn by exploiting the 'glutWireSphere()' function, offered by the OpenGL Utility Toolkit (GLUT) package (or the FreeGLUT package). This function approximates the 'Sphere' shape through a quad grid, formed by 'slices'"<<endl;
 	cout<<"\taround the Z-axis (similar to the longitudinal lines) and by 'stacks' along the Z-axis (similar to the latitudinal lines). Specifically, the 'wireframe versions' of the elements in the quad grid (in 'blue') are rendered by using the perspective"<<endl;
