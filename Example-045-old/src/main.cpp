@@ -87,7 +87,7 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-045' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws the 'Hemisphere' shape in an OpenGL window. Intuitively, the 'Hemisphere' shape is basically any of '2' hemispheres of the 'Sphere' shape. This latter describes a perfectly round geometrical object in the 3D space, that is the surface of a completely"<<endl;
 	cout<<"\tround ball. Like the 'Circle' shape, which geometrically is an object in the 2D space, the 'Sphere' shape is defined mathematically as the set of 3D points, that are all at the same distance 'R' from a given point '(xc,yc,zc)'. The distance 'R' is the 'radius'"<<endl;
-	cout<<"\tof the 'Sphere' shape, and the given point '(xc,yc,zc)' is its 'center'."<<endl<<endl;
+	cout<<"\tof the 'Sphere' shape, and the point '(xc,yc,zc)' is its 'center'."<<endl<<endl;
 	cout<<"\tFor the sake of the simplicity, we consider the 'Hemisphere' shape as the superior hemisphere of the 'Sphere' shape of radius 'R' and center '(xc,yc,zc)', and all its points are expressed as follows:"<<endl<<endl;
 	cout<<"\tx(r,s) = xc + R * cos(r) * cos(s), y(r,s) = yc + R * sin(r), z(r,s) = zc + R * cos(r) * sin(s)"<<endl<<endl<<"\tfor any 'R>0', for any 'r' in '[ 0, pi/2 ]', and for any 's' in '[ 0, 2*pi ]'."<<endl<<endl;
 	cout<<"\tHere, the 'Hemisphere' shape is approximated by a quad grid, formed by 'p' 'slices' around the Z-axis (similar to the longitudinal lines) and by 'q' 'stacks' along the Z-axis (similar to the latitudinal lines). Specifically, the 'wireframe versions' of the"<<endl;
