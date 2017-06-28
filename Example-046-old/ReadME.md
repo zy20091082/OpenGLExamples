@@ -2,7 +2,7 @@
 
 <H3>The <i>'Example-046 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-046 (Old Mode)'</i> Test draws the <i>'Dome'</i> shape in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. Intuitively, the <i>'Dome'</i> shape is a portion of any of <code><i>'2'</i></code> hemispheres, often known as the  <i>'Hemisphere'</i> shape, of the <i>'Sphere'</i> shape. Broadly speaking, the <i>'Sphere'</i> shape describes a perfectly round geometrical object in the 3D space, that is the surface of a completely round ball. Like the <i>'Circle'</i> shape, which geometrically is an object in the 2D space, the <i>'Sphere'</i> shape is defined mathematically as the set of points that are all at the same distance <code><i>'R'</i></code> from a given point <code><i>'(xc,yc)'</i></code> in the 3D space. The distance <code><i>'R'</i></code> is the <i>'radius'</i> of the <i>'Sphere'</i> shape, and the given point <code><i>'(xc,yc)'</i></code> is its <i>'center'</i></code>.<p>For the sake of the simplicity, we consider the <i>'Dome'</i> shape as a portion of the superior hemisphere in the <i>'Sphere'</i> shape (thus the <i>'Hemisphere'</i> shape) of radius <code><i>'R'</i></code> and center <code><i>'(xc,yc)'</i></code>, and all its points are expressed as follows:<p><pre>x(r,s) = xc + R * cos(r) * cos(s), y(r,s) = yc + R * sin(r), z(r,s) = zc + R * cos(r) * sin(s)</pre><p>for any <code><i>'R>0'</i></code>, for any <code><i>'r'</i></code> in <code><i>'[ 0, pi/3 ]'</i></code>, and for any <code><i>'s'</i></code> in <code><i>'[ 0, 2*pi ]'</i></code>.<p>Here, the <i>'Dome'</i> shape is approximated by a quad grid, formed by <code><i>'p'</i></code> <i>'slices'</i> around the <i>Z</i>-axis (similar to the longitudinal lines) and by <code><i>'q'</i></code>  <i>'stacks'</i> along the <i>Z</i>-axis (similar to the latitudinal lines). Specifically, the <i>'wireframe versions'</i> of the elements in the grid (in <i>'blue'</i>) are rendered by using the perspective projection.<p>Here, the user cannot modify the radius <code><i>'R'</i></code>, and the center <code><i>'(xc,yc,zc)'</i></code>, since they are fixed in advance. Instead, the user can modify the numbers <code><i>'p'</i></code> and <code><i>'q'</i></code> of the longitudinal and the latitudinal slices, respectively, as well as rotate the scene along the coordinate axes. In particular the user can:<p><ul>
+The <i>'Example-046 (Old Mode)'</i> Test draws the <i>'Dome'</i> shape in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. Intuitively, the <i>'Dome'</i> shape is a portion of any of <code><i>'2'</i></code> hemispheres of the <i>'Sphere'</i> shape. Such hemisphere is often known as the  <i>'Hemisphere'</i> shape.  Broadly speaking, the <i>'Sphere'</i> shape describes a perfectly round geometrical object in the 3D space, that is the surface of a completely round ball. Like the <i>'Circle'</i> shape, which geometrically is an object in the 2D space, the <i>'Sphere'</i> shape is defined mathematically as the set of points that are all at the same distance <code><i>'R'</i></code> from a given point <code><i>'(xc,yc)'</i></code> in the 3D space. The distance <code><i>'R'</i></code> is the <i>'radius'</i> of the <i>'Sphere'</i> shape, and the given point <code><i>'(xc,yc)'</i></code> is its <i>'center'</i></code>.<p>For the sake of the simplicity, we consider the <i>'Dome'</i> shape as a portion of the superior hemisphere in the <i>'Sphere'</i> shape (thus the <i>'Hemisphere'</i> shape) of radius <code><i>'R'</i></code> and center <code><i>'(xc,yc)'</i></code>, and all its points are expressed as follows:<p><pre>x(r,s) = xc + R * cos(r) * cos(s), y(r,s) = yc + R * sin(r), z(r,s) = zc + R * cos(r) * sin(s)</pre><p>for any <code><i>'R>0'</i></code>, for any <code><i>'r'</i></code> in <code><i>'[ 0, pi/3 ]'</i></code>, and for any <code><i>'s'</i></code> in <code><i>'[ 0, 2*pi ]'</i></code>.<p>Here, the <i>'Dome'</i> shape is approximated by a quad grid, formed by <code><i>'p'</i></code> <i>'slices'</i> around the <i>Z</i>-axis (similar to the longitudinal lines) and by <code><i>'q'</i></code>  <i>'stacks'</i> along the <i>Z</i>-axis (similar to the latitudinal lines). Specifically, the <i>'wireframe versions'</i> of the elements in the quad grid (in <i>'blue'</i>) are rendered by using the perspective projection.<p>Here, the user cannot modify the radius <code><i>'R'</i></code>, and the center <code><i>'(xc,yc,zc)'</i></code>, since they are fixed in advance. Instead, the user can modify the numbers <code><i>'p'</i></code> and <code><i>'q'</i></code> of the longitudinal and the latitudinal slices, respectively, as well as rotate the scene along the coordinate axes. In particular the user can:<p><ul>
 <li>increase the number <code><i>'p'</i></code> of the longitudinal slices by pressing the <code><i>'P'</i></code> key;</li>
 <li>decrease the number <code><i>'p'</i></code> of the longitudinal slices by pressing the <code><i>'p'</i></code> key;</li>
 <li>increase the number <code><i>'q'</i></code> of the latitudinal slices by pressing the <code><i>'Q'</i></code> key;</li>
@@ -14,9 +14,32 @@ The <i>'Example-046 (Old Mode)'</i> Test draws the <i>'Dome'</i> shape in an <A 
 <li>increase the rotation angle <code><i>'Rz'</i></code> along the <code><i>'z'</i></code>-axis by pressing the <code><i>'Z'</i></code> key;</li>
 <li>decrease the rotation angle <code><i>'Rz'</i></code> along the <code><i>'z'</i></code>-axis by pressing the <code><i>'z'</i></code> key.</li></ul><p>Likewise, the window of interest can be closed by pressing the <code><i>'Esc'</i></code> key.<p>
 
+<p><table border=0 width=100%>
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example046_old_conf0.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example046_old_conf1.png' border='0'></td></tr>
+<tr>
+<td width=50%>Here, the <i>'Dome'</i> shape is approximated by a quad strip with <code><i>'q=3'</i></code> longitudinal slices and <code><i>'p=3'</i></code> latitudinal slices, and <code><i>'Rx=50'</i></code>, <code><i>'Ry=20'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+<td width=50%>Here, the <i>'Dome'</i> shape is approximated by a quad strip with <code><i>'q=6'</i></code> longitudinal slices and <code><i>'p=3'</i></code> latitudinal slices, and <code><i>'Rx=50'</i></code>, <code><i>'Ry=20'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+</tr>
 
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example046_old_conf2.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example046_old_conf3.png' border='0'></td></tr>
+<tr>
+<td width=50%>Here, the <i>'Dome'</i> shape is approximated by a quad strip with <code><i>'q=6'</i></code> longitudinal slices and <code><i>'p=24'</i></code> latitudinal slices, and <code><i>'Rx=50'</i></code>, <code><i>'Ry=20'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+<td width=50%>Here, the <i>'Dome'</i> shape is approximated by a quad strip with <code><i>'q=20'</i></code> longitudinal slices and <code><i>'p=24'</i></code> latitudinal slices, and <code><i>'Rx=50'</i></code>, <code><i>'Ry=20'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+</tr>
 
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example046_old_conf4.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example046_old_conf5.png' border='0'></td></tr>
+<tr>
+<td width=50%>Here, the <i>'Dome'</i> shape is approximated by a quad strip with <code><i>'q=3'</i></code> longitudinal slices and <code><i>'p=3'</i></code> latitudinal slices, and <code><i>'Rx=275'</i></code>, <code><i>'Ry=0'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+<td width=50%>Here, the <i>'Dome'</i> shape is approximated by a quad strip with <code><i>'q=10'</i></code> longitudinal slices and <code><i>'p=10'</i></code> latitudinal slices, and <code><i>'Rx=275'</i></code>, <code><i>'Ry=0'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+</tr>
 
+</table>
 
 <p><hr><p><h4>Dependencies</h4>
 
