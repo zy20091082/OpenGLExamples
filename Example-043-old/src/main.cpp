@@ -62,12 +62,12 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-043' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the 'Sphere' shape in an OpenGL window. Intuitively, the 'Sphere' shape describes a perfectly round geometrical object in the 3D space, that is the surface of a completely round ball. Like the 'Circle' shape, which geometrically"<<endl;
-	cout<<"\tis an object in the 2D space, the 'Sphere' shape is defined mathematically as the set of points that are all at the same distance 'R' from a given point '(xc,yc,zc)' in the 3D space. The distance 'R' is the 'radius' of the 'Sphere' shape,"<<endl;
-	cout<<"\tand the given point '(xc,yc,zc)' is its 'center'."<<endl<<endl;
-	cout<<"\tHere, the 'Sphere' shape is drawn by exploiting the 'glutWireSphere()' function, offered by the OpenGL Utility Toolkit (GLUT) package (or the FreeGLUT package). This function approximates the 'Sphere' shape through a quad grid, formed by"<<endl;
-	cout<<"\t'slices' around the Z-axis (similar to the longitudinal lines) and by 'stacks' along the Z-axis (similar to the latitudinal lines). Specifically, the 'wireframe versions' of the elements in the grid (in 'blue') are rendered by using the"<<endl;
-	cout<<"\tperspective projection."<<endl<<endl;
+	cout<<"\tIt draws the 'Sphere' shape in an OpenGL window. Intuitively, the 'Sphere' shape describes a perfectly round geometrical object in the 3D space, that is the surface of a completely round ball. Like the 'Circle' shape, which geometrically is"<<endl;
+	cout<<"\tan object in the 2D space, the 'Sphere' shape is defined mathematically as the set of 3D points that are all at the same distance 'R' from a given point '(xc,yc,zc)'. The distance 'R' is the 'radius' of the 'Sphere' shape, and the given point"<<endl;
+	cout<<"\t'(xc,yc,zc)' is its 'center'."<<endl<<endl;
+	cout<<"\tHere, the 'Sphere' shape is drawn by exploiting the 'glutWireSphere()' function, offered by the OpenGL Utility Toolkit (GLUT) package (or the FreeGLUT package). This function approximates the 'Sphere' shape through a quad grid, formed by 'slices'"<<endl;
+	cout<<"\taround the Z-axis (similar to the longitudinal lines) and by 'stacks' along the Z-axis (similar to the latitudinal lines). Specifically, the 'wireframe versions' of the elements in the quad grid (in 'blue') are rendered by using the perspective"<<endl;
+	cout<<"\tprojection."<<endl<<endl;
 	cout<<"\tHere, the user cannot modify the radius 'R, the center '(xc,yc,zc)', and the numbers of the 'slices' and the 'stacks' in the approximation of interest for the 'Sphere' shape, since they are fixed in advance. Instead, the user can apply several"<<endl;
 	cout<<"\ttransformations to the scene, in particular the user can:"<<endl<<endl;
 	cout<<"\t\t-) translate the center '(xc,yc,zc)' of the 'Sphere' shape along any of 2 directions of the X-axis by pressing the 'left' and the 'right' (arrow) keys, respectively;"<<endl;
