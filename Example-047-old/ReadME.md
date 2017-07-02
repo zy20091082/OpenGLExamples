@@ -13,4 +13,4 @@ The <i>'Example-047 (Old Mode)'</i> Test draws the <i>'Ellipsoid'</i> shape in a
 <li>decrease the rotation angle <code><i>'Ry'</i></code> along the <code><i>'y'</i></code>-axis by pressing the <code><i>'y'</i></code> key;</li>
 <li>increase the rotation angle <code><i>'Rz'</i></code> along the <code><i>'z'</i></code>-axis by pressing the <code><i>'Z'</i></code> key;</li>
 <li>decrease the rotation angle <code><i>'Rz'</i></code> along the <code><i>'z'</i></code>-axis by pressing the <code><i>'z'</i></code> key;</li>
-<li>choose to render either the <i>'wireframe'</i> or the <i>'filled version'</i> of the <i>'Ellipsoid'</i> shape by pressing cyclically the <code><i>'m'</i></code> key.</li></ul><p>Likewise, the window of interest can be closed by pressing the <code><i>'Esc'</i></code> key.<p>
+<li>render either the <i>'wireframe'</i> or the <i>'filled version'</i> of the <i>'Ellipsoid'</i> shape by pressing cyclically the <code><i>'m'</i></code> key.</li></ul><p>Likewise, the window of interest can be closed by pressing the <code><i>'Esc'</i></code> key.<p>
