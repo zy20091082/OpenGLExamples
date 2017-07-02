@@ -18,32 +18,32 @@ The <i>'Example-047 (Old Mode)'</i> Test draws the <i>'Ellipsoid'</i> shape in a
 <p><table border=0 width=100%>
 
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example045_old_conf0.png' border='0'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example045_old_conf1.png' border='0'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example047_old_conf0.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example047_old_conf1.png' border='0'></td></tr>
 <tr>
 <td width=50%>Here, the <i>'wireframe'</i> version of the <i>'Ellipsoid'</i> shape is approximated by 2 quad strips with <code><i>'q=3'</i></code> longitudinal slices and <code><i>'p=3'</i></code> latitudinal slices, and <code><i>'Rx=210'</i></code>, <code><i>'Ry=65'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
 <td width=50%>Here, the <i>'filled'</i> version of the <i>'Ellipsoid'</i> shape is approximated by 2 quad strips with <code><i>'q=3'</i></code> longitudinal slices and <code><i>'p=3'</i></code> latitudinal slices, and <code><i>'Rx=210'</i></code>, <code><i>'Ry=65'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
 </tr>
 
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example045_old_conf2.png' border='0'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example045_old_conf3.png' border='0'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example047_old_conf2.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example047_old_conf3.png' border='0'></td></tr>
 <tr>
 <td width=50%>Here, the <i>'wireframe'</i> version of the <i>'Ellipsoid'</i> shape is approximated by 2 quad strips with <code><i>'q=3'</i></code> longitudinal slices and <code><i>'p=10'</i></code> latitudinal slices, and <code><i>'Rx=210'</i></code>, <code><i>'Ry=65'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
 <td width=50%>Here, the <i>'filled'</i> version of the <i>'Ellipsoid'</i> shape is approximated by 2 quad strips with <code><i>'q=3'</i></code> longitudinal slices and <code><i>'p=10'</i></code> latitudinal slices, and <code><i>'Rx=210'</i></code>, <code><i>'Ry=65'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
 </tr>
 
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example045_old_conf4.png' border='0'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example045_old_conf5.png' border='0'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example047_old_conf4.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example047_old_conf5.png' border='0'></td></tr>
 <tr>
 <td width=50%>Here, the <i>'wireframe'</i> version of the <i>'Ellipsoid'</i> shape is approximated by 2 quad strips with <code><i>'q=10'</i></code> longitudinal slices and <code><i>'p=10'</i></code> latitudinal slices, and <code><i>'Rx=210'</i></code>, <code><i>'Ry=65'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
 <td width=50%>Here, the <i>'filled'</i> version of the <i>'Ellipsoid'</i> shape is approximated by 2 quad strips with <code><i>'q=10'</i></code> longitudinal slices and <code><i>'p=10'</i></code> latitudinal slices, and <code><i>'Rx=210'</i></code>, <code><i>'Ry=65'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
 </tr>
 
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example045_old_conf6.png' border='0'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example045_old_conf7.png' border='0'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example047_old_conf6.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example047_old_conf7.png' border='0'></td></tr>
 <tr>
 <td width=50%>Here, the <i>'wireframe'</i> version of the <i>'Ellipsoid'</i> shape is approximated by 2 quad strips with <code><i>'q=10'</i></code> longitudinal slices and <code><i>'p=30'</i></code> latitudinal slices, and <code><i>'Rx=210'</i></code>, <code><i>'Ry=65'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
 <td width=50%>Here, the <i>'filled'</i> version of the <i>'Ellipsoid'</i> shape is approximated by 2 quad strips with <code><i>'q=10'</i></code> longitudinal slices and <code><i>'p=30'</i></code> latitudinal slices, and <code><i>'Rx=210'</i></code>, <code><i>'Ry=65'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
