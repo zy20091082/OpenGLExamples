@@ -19,7 +19,7 @@ The <i>'Example-045 (Old Mode)'</i> Test draws the <i>'Hemisphere'</i> shape in 
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example045_old_conf0.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example045_old_conf1.png' border='0'></td></tr>
 <tr>
-<td width=50%>Here, the <i>'Hemisphere'</i> shape is approximated by a quad strip with <code><i>'q=3'</i></code> longitudinal slices and <code><i>'p=3'</i></code> latitudinal slices, and a<code><i>'Rx=45'</i></code>, <code><i>'Ry=25'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+<td width=50%>Here, the <i>'Hemisphere'</i> shape is approximated by a quad strip with <code><i>'q=3'</i></code> longitudinal slices and <code><i>'p=3'</i></code> latitudinal slices, and <code><i>'Rx=45'</i></code>, <code><i>'Ry=25'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
 <td width=50%>Here, the <i>'Hemisphere'</i> shape is approximated by a quad strip with <code><i>'q=6'</i></code> longitudinal slices and <code><i>'p=3'</i></code> latitudinal slices, and <code><i>'Rx=45'</i></code>, <code><i>'Ry=25'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
 </tr>
 
