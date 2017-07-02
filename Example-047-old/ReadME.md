@@ -49,7 +49,7 @@ The <i>'Example-047 (Old Mode)'</i> Test draws the <i>'Ellipsoid'</i> shape in a
 <td width=50%>     </td>
 </tr></table><p>
 <table border=1 width=100%>
-<tr><td><p><b>VERY IMPORTANT:</b><p>Note that the z-buffer technique and the normals are not exploited in this test, thus the rendering for the <i>'filled versions'</i> of the elements in the quad grids may contain several errors. This aspect goes beyond the scope of this test.</td></tr></table><p><hr><p><h4>Dependencies</h4>
+<tr><td><p><b>VERY IMPORTANT:</b><p>Note that the z-buffer technique and the normals are not exploited in this test, thus the rendering for the <i>'filled versions'</i> of the elements in the quad grids may contain any error. This aspect goes beyond the scope of this test.</td></tr></table><p><hr><p><h4>Dependencies</h4>
 
 The <i>'Example-047 (Old Mode)'</i> Test is based on the so-called <i>OpenGL old (direct drawing) mode</i>, and requires the following dependencies:<ul>
 
