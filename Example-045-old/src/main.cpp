@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: June 2017
+ * Last update: July 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -88,7 +88,7 @@ int main(int argc,char **argv)
 	cout<<"\tIt draws the 'Hemisphere' shape in an OpenGL window. Intuitively, the 'Hemisphere' shape is basically any of '2' hemispheres of the 'Sphere' shape. This latter describes a perfectly round geometrical object in the 3D space, that is the surface of a completely"<<endl;
 	cout<<"\tround ball. Like the 'Circle' shape, which geometrically is an object in the 2D space, the 'Sphere' shape is defined mathematically as the set of 3D points, that are all at the same distance 'R' from a given point '(xc,yc,zc)'. The distance 'R' is the 'radius'"<<endl;
 	cout<<"\tof the 'Sphere' shape, and the point '(xc,yc,zc)' is its 'center'."<<endl<<endl;
-	cout<<"\tFor the sake of the simplicity, we consider the 'Hemisphere' shape as the superior hemisphere of the 'Sphere' shape of radius 'R' and center '(xc,yc,zc)', and all its points are expressed as follows:"<<endl<<endl;
+	cout<<"\tFor the sake of the simplicity, we consider the 'Hemisphere' shape as the superior hemisphere of the 'Sphere' shape of radius 'R' and center '(xc,yc,zc)', such that its points are expressed as follows:"<<endl<<endl;
 	cout<<"\tx(r,s) = xc + R * cos(r) * cos(s), y(r,s) = yc + R * sin(r), z(r,s) = zc + R * cos(r) * sin(s)"<<endl<<endl<<"\tfor any 'R>0', for any 'r' in '[ 0, pi/2 ]', and for any 's' in '[ 0, 2*pi ]'."<<endl<<endl;
 	cout<<"\tHere, the 'Hemisphere' shape is approximated by a quad grid, formed by 'p' 'slices' around the Z-axis (similar to the longitudinal lines) and by 'q' 'stacks' along the Z-axis (similar to the latitudinal lines). Specifically, the 'wireframe versions' of the"<<endl;
 	cout<<"\telements in the quad grid (in 'blue') are rendered by using the perspective projection."<<endl<<endl;

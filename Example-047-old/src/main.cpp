@@ -86,7 +86,7 @@ float Yangle=0.0;
  */
 float Zangle=0.0;
 
-/// The custom settings for rendering the quadrilaterals of interest in the quad strips, approximating the <i>Ellipsoid'</i> shape.
+/// The custom settings for rendering the quadrilaterals of interest in the quad grids, approximating the <i>Ellipsoid'</i> shape.
 /**
  * The value of this flag may be one of the following values:
  *
