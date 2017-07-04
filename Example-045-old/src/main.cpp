@@ -85,14 +85,14 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-045' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the 'Hemisphere' shape in an OpenGL window. Intuitively, the 'Hemisphere' shape is basically any of '2' hemispheres of the 'Sphere' shape. This latter describes a perfectly round geometrical object in the 3D space, that is the surface of a completely"<<endl;
-	cout<<"\tround ball. Like the 'Circle' shape, which geometrically is an object in the 2D space, the 'Sphere' shape is defined mathematically as the set of 3D points, that are all at the same distance 'R' from a given point '(xc,yc,zc)'. The distance 'R' is the 'radius'"<<endl;
-	cout<<"\tof the 'Sphere' shape, and the point '(xc,yc,zc)' is its 'center'."<<endl<<endl;
-	cout<<"\tFor the sake of the simplicity, we consider the 'Hemisphere' shape as the superior hemisphere of the 'Sphere' shape of radius 'R' and center '(xc,yc,zc)', such that its points are expressed as follows:"<<endl<<endl;
+	cout<<"\tIt draws the 'Hemisphere' shape in an OpenGL window. Intuitively, the 'Hemisphere' shape is basically any of '2' hemispheres in the 'Sphere' shape. This latter describes a perfectly round geometrical object in the 3D space, that is the surface of a completely"<<endl;
+	cout<<"\tround ball. Like the 'Circle' shape, which geometrically is an object in the 2D space, the 'Sphere' shape is defined mathematically as the set of 3D points, that are at the same distance 'R' from a given point '(xc,yc,zc)'. The distance 'R' is the 'radius' of"<<endl;
+	cout<<"\tthe 'Sphere' shape, and the point '(xc,yc,zc)' is its 'center'."<<endl<<endl;
+	cout<<"\tFor the sake of the simplicity, we consider the 'Hemisphere' shape as the superior hemisphere in the 'Sphere' shape of 'radius' 'R' and 'center' '(xc,yc,zc)', such that its points are expressed as follows:"<<endl<<endl;
 	cout<<"\tx(r,s) = xc + R * cos(r) * cos(s), y(r,s) = yc + R * sin(r), z(r,s) = zc + R * cos(r) * sin(s)"<<endl<<endl<<"\tfor any 'R>0', for any 'r' in '[ 0, pi/2 ]', and for any 's' in '[ 0, 2*pi ]'."<<endl<<endl;
 	cout<<"\tHere, the 'Hemisphere' shape is approximated by a quad grid, formed by 'p' 'slices' around the Z-axis (similar to the longitudinal lines) and by 'q' 'stacks' along the Z-axis (similar to the latitudinal lines). Specifically, the 'wireframe versions' of the"<<endl;
 	cout<<"\telements in the quad grid (in 'blue') are rendered by using the perspective projection."<<endl<<endl;
-	cout<<"\tHere, the user cannot modify the radius 'R', and the center '(xc,yc,zc)', since they are fixed in advance. Instead, the user can modify the numbers 'p' and 'q' of the longitudinal and the latitudinal slices, respectively, as well as rotate the scene along"<<endl;
+	cout<<"\tHere, the user cannot modify the 'radius' 'R', and the 'center' '(xc,yc,zc)', since they are fixed in advance. Instead, the user can modify the numbers 'p' and 'q' of the longitudinal and the latitudinal slices, respectively, as well as rotate the scene along"<<endl;
 	cout<<"\tthe coordinate axes. In particular the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'p' of the longitudinal slices by pressing the 'P' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'p' of the longitudinal slices by pressing the 'p' key;"<<endl;
@@ -140,6 +140,9 @@ void initialize()
 	long_slices_num=3;
 	lat_slices_num=3;
 	radius=5.0;
+	Xangle=0.0;
+	Yangle=0.0;
+	Zangle=0.0;
 	cout<<"\tAt the beginning, the 'wireframe version' of the 'Hemisphere' shape is drawn by exploiting 'q="<<lat_slices_num<<"' latitudinal slices and 'p="<<long_slices_num<<"' longitudinal slices (thus, the minimum numbers 'p' and 'q' as possible), as well as rotation angles 'Rx=";
 	cout<<Xangle<<"', "<<"'Ry="<<Yangle<<"', and 'Rz="<<Zangle<<"'."<<endl<<endl;
 	cout.flush();
