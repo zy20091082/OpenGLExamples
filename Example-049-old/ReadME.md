@@ -12,17 +12,31 @@ The <i>'Example-049 (Old Mode)'</i> Test draws the <i>'Truncated Cone'</i> shape
 <li>increase the rotation angle <code><i>'Ry'</i></code> along the <code><i>'y'</i></code>-axis by pressing the <code><i>'Y'</i></code> key;</li>
 <li>decrease the rotation angle <code><i>'Ry'</i></code> along the <code><i>'y'</i></code>-axis by pressing the <code><i>'y'</i></code> key;</li>
 <li>increase the rotation angle <code><i>'Rz'</i></code> along the <code><i>'z'</i></code>-axis by pressing the <code><i>'Z'</i></code> key;</li>
-<li>decrease the rotation angle <code><i>'Rz'</i></code> along the <code><i>'z'</i></code>-axis by pressing the <code><i>'z'</i></code> key.</li></ul><p>Likewise, the window of interest can be closed by pressing the <code><i>'Esc'</i></code> key.<p>
+<li>decrease the rotation angle <code><i>'Rz'</i></code> along the <code><i>'z'</i></code>-axis by pressing the <code><i>'z'</i></code> key.</li></ul><p>Likewise, the window of interest can be closed by pressing the <code><i>'Esc'</i></code> key.<p><table border=0 width=100%>
 
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example048_old_conf0.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example048_old_conf1.png' border='0'></td></tr>
+<tr>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a triangle grid with <code><i>'r='</i></code> radial sectors and <code><i>'h='</i></code> horizontal slices, and <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a triangle grid with <code><i>'r='</i></code> radial sectors and <code><i>'h='</i></code> horizontal slices, and <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
+</tr>
 
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example048_old_conf2.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example048_old_conf3.png' border='0'></td></tr>
+<tr>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a triangle grid with <code><i>'r='</i></code> radial sectors and <code><i>'h='</i></code> horizontal slices, and <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a triangle grid with <code><i>'r='</i></code> radial sectors and <code><i>'h='</i></code> horizontal slices, and <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
+</tr>
 
-
-
-<table border=0 width=100%>
-
-
-
-</table>
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example048_old_conf4.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example048_old_conf5.png' border='0'></td></tr>
+<tr>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a triangle grid with <code><i>'r='</i></code> radial sectors and <code><i>'h='</i></code> horizontal slices, and <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a triangle grid with <code><i>'r='</i></code> radial sectors and <code><i>'h='</i></code> horizontal slices, and <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
+</tr></table>
 <p><hr><p><h4>Dependencies</h4>
 
 The <i>'Example-049 (Old Mode)'</i> Test is based on the so-called <i>OpenGL old (direct drawing) mode</i>, and requires the following dependencies:<ul>
