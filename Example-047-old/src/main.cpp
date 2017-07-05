@@ -117,7 +117,7 @@ int main(int argc,char **argv)
 	cout<<"\tx(r,s) = xc + a * cos(r) * cos(s), y(r,s) = yc - b * sin(r), z(r,s) = zc + c * cos(r) * sin(s)"<<endl<<endl;
 	cout<<"\tHere, the hemi-ellipsoids of the 'Ellipsoid' shape (in 'blue' and in 'red', respectively) are both approximated by a quad grid, formed by 'p' 'slices' around the Z-axis (similar to the longitudinal lines) and by 'q' 'stacks' along the Z-axis (similar to the"<<endl; 
 	cout<<"\tlatitudinal lines). Specifically, the 'filled' and the 'wireframe versions' of the elements in the quad grids are rendered by using the perspective projection."<<endl<<endl;
-	cout<<"\tHere, the user cannot modify the lengths 'a', 'b'', and 'c', as well as the center '(xc,yc,zc)', since they are fixed in advance. Instead, the user can modify the numbers 'p' and 'q' of the longitudinal and the latitudinal slices, respectively, as well as"<<endl; 
+	cout<<"\tIn this test, the user cannot modify the lengths 'a', 'b'', and 'c', as well as the 'center' '(xc,yc,zc)', since they are fixed in advance. Instead, the user can modify the numbers 'p' and 'q' of the longitudinal and the latitudinal slices, respectively, as well as"<<endl; 
 	cout<<"\trotate the scene along the coordinate axes. In particular the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'p' of the longitudinal slices by pressing the 'P' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'p' of the longitudinal slices by pressing the 'p' key;"<<endl;
