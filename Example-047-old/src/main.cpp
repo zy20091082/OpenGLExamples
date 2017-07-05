@@ -161,6 +161,9 @@ void initialize()
 	radiusY=3.0;
 	radiusZ=5.0;
 	mode=GL_LINE;
+	Xangle=0.0;
+	Yangle=0.0;
+	Zangle=0.0;
 	cout<<"\tAt the beginning, the ";
 	if(mode==GL_LINE) cout<<"'wireframe version' ";
 	else cout<<"'filled version' ";
