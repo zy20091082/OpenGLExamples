@@ -18,24 +18,24 @@ The <i>'Example-048 (Old Mode)'</i> Test draws the <i>'Wedge'</i> shape in an <A
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example048_old_conf0.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example048_old_conf1.png' border='0'></td></tr>
 <tr>
-<td width=50%>The <i>'wireframe'</i> version for the <i>'Wedge'</i> shape of interest is approximated by a grid with <code><i>'q=3'</i></code> longitudinal slices and <code><i>'p=3'</i></code> latitudinal slices, and <code><i>'Rx=0'</i></code>, <code><i>'Ry=315'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
-<td width=50%>The <i>'wireframe'</i> version for the <i>'Wedge'</i> shape of interest is approximated by a grid with <code><i>'q=3'</i></code> longitudinal slices and <code><i>'p=3'</i></code> latitudinal slices, and <code><i>'Rx=25'</i></code>, <code><i>'Ry=320'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Wedge'</i> shape is approximated by a grid with <code><i>'q=3'</i></code> longitudinal slices and <code><i>'p=3'</i></code> latitudinal slices, and <code><i>'Rx=0'</i></code>, <code><i>'Ry=315'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Wedge'</i> shape is approximated by a grid with <code><i>'q=3'</i></code> longitudinal slices and <code><i>'p=3'</i></code> latitudinal slices, and <code><i>'Rx=25'</i></code>, <code><i>'Ry=320'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
 </tr>
 
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example048_old_conf2.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example048_old_conf3.png' border='0'></td></tr>
 <tr>
-<td width=50%>The <i>'wireframe'</i> version for the <i>'Wedge'</i> shape of interest is approximated by a grid with <code><i>'q='</i></code> longitudinal slices and <code><i>'p='</i></code> latitudinal slices, and <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
-<td width=50%>The <i>'wireframe'</i> version for the <i>'Wedge'</i> shape of interest is approximated by a grid with <code><i>'q='</i></code> longitudinal slices and <code><i>'p='</i></code> latitudinal slices, and <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Wedge'</i> shape is approximated by a grid with <code><i>'q='</i></code> longitudinal slices and <code><i>'p='</i></code> latitudinal slices, and <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Wedge'</i> shape is approximated by a grid with <code><i>'q='</i></code> longitudinal slices and <code><i>'p='</i></code> latitudinal slices, and <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
 </tr>
 
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example048_old_conf4.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example048_old_conf5.png' border='0'></td></tr>
 <tr>
-<td width=50%>The <i>'wireframe'</i> version for the <i>'Wedge'</i> shape of interest is approximated by a grid with <code><i>'q='</i></code> longitudinal slices and <code><i>'p='</i></code> latitudinal slices, and <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
-<td width=50%>The <i>'wireframe'</i> version for the <i>'Wedge'</i> shape of interest is approximated by a grid with <code><i>'q='</i></code> longitudinal slices and <code><i>'p='</i></code> latitudinal slices, and <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Wedge'</i> shape is approximated by a grid with <code><i>'q='</i></code> longitudinal slices and <code><i>'p='</i></code> latitudinal slices, and <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Wedge'</i> shape is approximated by a grid with <code><i>'q='</i></code> longitudinal slices and <code><i>'p='</i></code> latitudinal slices, and <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
 </tr>
 </table>
 
