@@ -85,7 +85,7 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-046' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the 'Dome' shape in an OpenGL window. Intuitively, the 'Dome' shape is a portion of any between '2' hemispheres of the 'Sphere' shape. Such hemisphere is known as the 'Hemisphere' shape. Broadly speaking, the 'Sphere' shape describes a"<<endl;
+	cout<<"\tIt draws the 'Dome' shape in an OpenGL window. Intuitively, the 'Dome' shape is a portion of any between '2' hemispheres in the 'Sphere' shape. Such hemisphere is known as the 'Hemisphere' shape. Broadly speaking, the 'Sphere' shape describes a"<<endl;
 	cout<<"\tperfectly round geometrical object in the 3D space, that is the surface of a completely round ball. Like the 'Circle' shape, which geometrically is an object in the 2D space, the 'Sphere' shape is defined mathematically as the set of 3D points,"<<endl;
 	cout<<"\tthat are at the same distance 'R' from a given point '(xc,yc,zc)'. The distance 'R' is the 'radius' of the 'Sphere' shape, and the point '(xc,yc,zc)' is its 'center'."<<endl<<endl;
 	cout<<"\tFor the sake of the simplicity, we consider the 'Dome' shape as a portion of the superior hemisphere in the 'Sphere' shape (thus of the 'Hemisphere' shape) of 'radius' 'R' and 'center' '(xc,yc,zc)', such that its points are expressed as follows:"<<endl<<endl;
