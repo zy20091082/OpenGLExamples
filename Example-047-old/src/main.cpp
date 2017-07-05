@@ -112,13 +112,13 @@ int main(int argc,char **argv)
 	cout<<"\tgeometrical object in the 3D space, that is the surface of a completely round ball. Like the 'Circle' shape, which geometrically is an object in the 2D space, the 'Sphere' shape is defined mathematically as the set of 3D points, that are at the same distance"<<endl;
 	cout<<"\t'R' from a given point '(xc,yc,zc)'. The distance 'R' is the 'radius' of the 'Sphere' shape, and the point '(xc,yc,zc)' is its 'center'."<<endl<<endl;
 	cout<<"\tHere, we consider the 'Ellipsoid' shape as a variant of the 'Sphere' shape of the 'center' '(xc,yc,zc)', and such that its symmetry axes are scaled independently in order to have lengths 'a', 'b'', and 'c' (not necessarily the same). For the sake of the"<<endl;
-	cout<<"\tsimplicity, the 'Ellipsoid' shape is the union of 2 symmetric hemi-ellipsoids with the same 'center' '(xc,yc,zc)' for any 'a,b,c>0', any 'r' in '[ 0, pi/2 ]', and any 's' in '[ 0, 2*pi ]'. The points of the first hemi-ellipsoid are expressed as follows:"<<endl<<endl;
+	cout<<"\tsimplicity, the 'Ellipsoid' shape is the union of '2' symmetric hemi-ellipsoids with the same 'center' '(xc,yc,zc)' for any 'a,b,c>0', any 'r' in '[ 0, pi/2 ]', and any 's' in '[ 0, 2*pi ]'. The points of the first hemi-ellipsoid are expressed as follows:"<<endl<<endl;
 	cout<<"\tx(r,s) = xc + a * cos(r) * cos(s), y(r,s) = yc + b * sin(r), z(r,s) = zc + c * cos(r) * sin(s)"<<endl<<endl<<"\tInstead, the points of the second hemi-ellipsoid are expressed as follows:"<<endl<<endl;
 	cout<<"\tx(r,s) = xc + a * cos(r) * cos(s), y(r,s) = yc - b * sin(r), z(r,s) = zc + c * cos(r) * sin(s)"<<endl<<endl;
 	cout<<"\tHere, the hemi-ellipsoids of the 'Ellipsoid' shape (in 'blue' and in 'red', respectively) are both approximated by a quad grid, formed by 'p' 'slices' around the Z-axis (similar to the longitudinal lines) and by 'q' 'stacks' along the Z-axis (similar to the"<<endl; 
 	cout<<"\tlatitudinal lines). Specifically, the 'filled' and the 'wireframe versions' of the elements in the quad grids are rendered by using the perspective projection."<<endl<<endl;
 	cout<<"\tIn this test, the user cannot modify the lengths 'a', 'b'', and 'c', as well as the 'center' '(xc,yc,zc)', since they are fixed in advance. Instead, the user can modify the numbers 'p' and 'q' of the longitudinal and the latitudinal slices, respectively, as"<<endl;
-	cout<<"\t well as rotate the scene along the coordinate axes. In particular the user can:"<<endl<<endl;
+	cout<<"\t well as rotate the scene along the coordinate axes. In particular, the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'p' of the longitudinal slices by pressing the 'P' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'p' of the longitudinal slices by pressing the 'p' key;"<<endl;
 	cout<<"\t\t-) increase the number 'q' of the latitudinal slices by pressing the 'Q' key;"<<endl;

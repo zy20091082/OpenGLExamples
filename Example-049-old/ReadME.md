@@ -15,27 +15,27 @@ The <i>'Example-049 (Old Mode)'</i> Test draws the <i>'Truncated Cone'</i> shape
 <li>decrease the rotation angle <code><i>'Rz'</i></code> along the <code><i>'z'</i></code>-axis by pressing the <code><i>'z'</i></code> key.</li></ul><p>Likewise, the window of interest can be closed by pressing the <code><i>'Esc'</i></code> key.<p><table border=0 width=100%>
 
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example048_old_conf0.png' border='0'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example048_old_conf1.png' border='0'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example049_old_conf0.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example049_old_conf1.png' border='0'></td></tr>
 <tr>
-<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a triangle grid with <code><i>'r='</i></code> radial sectors and <code><i>'h='</i></code> horizontal slices, and <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
-<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a triangle grid with <code><i>'r='</i></code> radial sectors and <code><i>'h='</i></code> horizontal slices, and <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a triangle grid with <code><i>'r=3'</i></code> radial sectors and <code><i>'h=3'</i></code> horizontal slices, and <code><i>'Rx=90'</i></code>, <code><i>'Ry=180'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a triangle grid with <code><i>'r=3'</i></code> radial sectors and <code><i>'h=3'</i></code> horizontal slices, and <code><i>'Rx=90'</i></code>, <code><i>'Ry=360'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
 </tr>
 
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example048_old_conf2.png' border='0'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example048_old_conf3.png' border='0'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example049_old_conf2.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example049_old_conf3.png' border='0'></td></tr>
 <tr>
-<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a triangle grid with <code><i>'r='</i></code> radial sectors and <code><i>'h='</i></code> horizontal slices, and <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
-<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a triangle grid with <code><i>'r='</i></code> radial sectors and <code><i>'h='</i></code> horizontal slices, and <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a triangle grid with <code><i>'r=20'</i></code> radial sectors and <code><i>'h=3'</i></code> horizontal slices, and <code><i>'Rx=70'</i></code>, <code><i>'Ry=15'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a triangle grid with <code><i>'r=20'</i></code> radial sectors and <code><i>'h=10'</i></code> horizontal slices, and <code><i>'Rx=70'</i></code>, <code><i>'Ry=15'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
 </tr>
 
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example048_old_conf4.png' border='0'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example048_old_conf5.png' border='0'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example049_old_conf4.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example049_old_conf5.png' border='0'></td></tr>
 <tr>
-<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a triangle grid with <code><i>'r='</i></code> radial sectors and <code><i>'h='</i></code> horizontal slices, and <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
-<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a triangle grid with <code><i>'r='</i></code> radial sectors and <code><i>'h='</i></code> horizontal slices, and <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a triangle grid with <code><i>'r=20'</i></code> radial sectors and <code><i>'h=10'</i></code> horizontal slices, and <code><i>'Rx=340'</i></code>, <code><i>'Ry=205'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a triangle grid with <code><i>'r=20'</i></code> radial sectors and <code><i>'h=5'</i></code> horizontal slices, and <code><i>'Rx=85'</i></code>, <code><i>'Ry=315'</i></code>, and <code><i>'Rz=300'</i></code>.</td>
 </tr></table>
 <p><hr><p><h4>Dependencies</h4>
 

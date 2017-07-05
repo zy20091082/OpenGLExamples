@@ -93,7 +93,7 @@ int main(int argc,char **argv)
 	cout<<"\tHere, the 'Dome' shape is approximated by a quad grid, formed by 'p' 'slices' around the Z-axis (similar to the longitudinal lines) and by 'q' 'stacks' along the Z-axis (similar to the latitudinal lines). Specifically, the 'wireframe versions'"<<endl;
 	cout<<"\tof the elements in the quad grid (in 'blue') are rendered by using the perspective projection."<<endl<<endl;
 	cout<<"\tIn this test, the user cannot modify the 'radius' 'R', and the 'center' '(xc,yc,zc)', since they are fixed in advance. Instead, the user can modify the numbers 'p' and 'q' of the longitudinal and the latitudinal slices, respectively, as well as"<<endl;
-	cout<<"\trotate the scene along the coordinate axes. In particular the user can:"<<endl<<endl;
+	cout<<"\trotate the scene along the coordinate axes. In particular, the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'p' of the longitudinal slices by pressing the 'P' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'p' of the longitudinal slices by pressing the 'p' key;"<<endl;
 	cout<<"\t\t-) increase the number 'q' of the latitudinal slices by pressing the 'Q' key;"<<endl;

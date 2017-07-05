@@ -85,17 +85,17 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-048' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the 'Wedge' shape in an OpenGL window. Intuitively, the 'Wedge' shape is a portion of a completely round ball, bounded by two plane semidisks and a spherical lune (known as the 'wedge base'). The angle between the radii, lying"<<endl;
-	cout<<"\twithin the bounding semidisks, is the 'dihedral angle of the wedge'. It is well known that the surface of a completely round ball is described by the 'Sphere' shape. Like the 'Circle' shape, which geometrically is an object in the 2D space,"<<endl;
-	cout<<"\tthe 'Sphere' shape is defined mathematically as the set of 3D points, that are all at the same distance 'R' from a given point '(xc,yc,zc)'. The distance 'R' is the 'radius' of the 'Sphere' shape, and the point '(xc,yc,zc)' is its 'center'."<<endl<<endl;
-	cout<<"\tFor the sake of the simplicity, we consider the 'Wedge' shape as an angular portion of the superior hemisphere in the 'Sphere' shape (thus of the 'Hemisphere' shape) of radius 'R' and center '(xc,yc,zc)', such that its points are expressed"<<endl;
+	cout<<"\tIt draws the 'Wedge' shape in an OpenGL window. Intuitively, the 'Wedge' shape is a portion of a completely round ball, bounded by '2' plane semidisks (called the 'lateral Wedge sides'), a spherical lune, and a circular sector (known as the"<<endl;
+	cout<<"\t'Wedge basis'). The angle of the spherical lune is the 'dihedral Wedge angle'. It is well known that the surface of a completely round ball is described by the 'Sphere' shape. Like the 'Circle' shape, which geometrically is an object in the 2D"<<endl;
+	cout<<"\tspace, the 'Sphere' shape is defined mathematically as the set of 3D points, that are at the same distance 'R' from a given point '(xc,yc,zc)'. The distance 'R' is the 'radius' of the 'Sphere' shape, and the point '(xc,yc,zc)' is its 'center'."<<endl<<endl;
+	cout<<"\tFor the sake of the simplicity, we consider the 'Wedge' shape as an angular portion of the superior hemisphere in the 'Sphere' shape (thus of the 'Hemisphere' shape) of 'radius' 'R' and 'center' '(xc,yc,zc)', such that its points are expressed"<<endl;
 	cout<<"\tas follows:"<<endl<<endl;
 	cout<<"\tx(r,s) = xc + R * cos(r) * cos(s), y(r,s) = yc + R * sin(r), z(r,s) = zc + R * cos(r) * sin(s)"<<endl<<endl<<"\tfor any 'R>0', for any 'r' in '[ 0, pi/2 ]', and for any 's' in '[ 0, pi/2 ]'."<<endl<<endl;
-	cout<<"\tHere, the 'Wedge' shape is approximated by a quad grid, formed by 'p' 'slices' around the Z-axis (similar to the longitudinal lines) and by 'q' 'stacks' along the Z-axis (similar to the latitudinal lines). In addition, the basis of the"<<endl;
-	cout<<"\t'Wedge' shape is approximated by a triangle fan, imposed by the 'p' longitudinal lines, while the lateral sides of the 'Wedge' shape are also approximated by a quad grid, imposed by the 'q' longitudinal lines. By construction, it is"<<endl;
-	cout<<"\tpossible to merge these quad grids into a unique quad grid. Specifically, the 'wireframe versions' of the elements in the quad grid and in the triangle fan (in 'blue') are rendered by using the perspective projection."<<endl<<endl;
-	cout<<"\tHere, the user cannot modify the radius 'R', the center '(xc,yc,zc)', and the 'dihedral angle of the wedge', since they are fixed in advance. Instead, the user can modify the numbers 'p' and 'q' of the longitudinal and the latitudinal"<<endl;
-	cout<<"\tslices, respectively, as well as rotate the scene along the coordinate axes. In particular the user can:"<<endl<<endl;
+	cout<<"\tBoth the spherical lune and the 'lateral Wedge sides' are approximated by a quad grid, formed by 'p' 'slices' around the Z-axis (similar to the longitudinal lines) and by 'q' 'stacks' along the Z-axis (similar to the latitudinal lines). In"<<endl;
+	cout<<"\taddition, the 'Wedge basis' is approximated by a triangle fan, imposed by the 'p' longitudinal lines. By construction, it is possible to merge these grids into a unique quad-dominant grid. Specifically, the 'wireframe versions' of the elements"<<endl;
+	cout<<"\tin this quad-dominant grid (in 'blue') are rendered by using the perspective projection."<<endl<<endl;
+	cout<<"\tIn this test, the user cannot modify the 'radius' 'R', the 'center' '(xc,yc,zc)', and the 'dihedral Wedge angle', since they are fixed in advance. Instead, the user can modify the numbers 'p' and 'q' of the longitudinal and the latitudinal"<<endl;
+	cout<<"\tslices, respectively, as well as rotate the scene along the coordinate axes. In particular, the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'p' of the longitudinal slices by pressing the 'P' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'p' of the longitudinal slices by pressing the 'p' key;"<<endl;
 	cout<<"\t\t-) increase the number 'q' of the latitudinal slices by pressing the 'Q' key;"<<endl;
