@@ -69,7 +69,7 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-016' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws several versions of the 'Square Annulus' shape, in an OpenGL window. This shape is bounded by 2 (concentric) axis-parallel rectangles of different size in the same spirit of a circular crown. It is often known as the"<<endl;
+	cout<<"\tIt draws several versions of the 'Square Annulus' shape in an OpenGL window. This shape is bounded by 2 (concentric) axis-parallel rectangles of different size in the same spirit of a circular crown. It is often known as the"<<endl;
 	cout<<"\t'rectangular' crown. Its large rectangle is called the 'external' rectangle, and other rectangle is called the 'internal' rectangle."<<endl<<endl;
 	cout<<"\tHere, the 'Square Annulus' shape of interest is approximated by 2 triangles fans (in 'turquoise gray') without adding any 'Steiner' point. The reference vertices of the triangle fans are depicted, respectively, in 'red' (indicated"<<endl;
 	cout<<"\tas the 'Triangle Fan #0') and in 'blue' (indicated as the 'Triangle Fan #1'), while their triangles are depicted in 'turquoise gray'. It is not possible to modify the size and the position for the 'external' and the 'internal'"<<endl;
