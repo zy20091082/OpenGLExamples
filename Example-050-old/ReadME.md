@@ -17,16 +17,16 @@ The <i>'Example-050 (Old Mode)'</i> Test draws the <i>'Playground Slide'</i> sha
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example050_old_conf0.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example050_old_conf1.png' border='0'></td></tr>
 <tr>
-<td width=50%>The <i>'wireframe'</i> version for the <i>'Playground Slide'</i> shape of interest is approximated by extruding a parabolic profile with <code><i>'n='</i></code> samples, and rotation angles <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
-<td width=50%>The <i>'wireframe'</i> version for the <i>'Playground Slide'</i> shape of interest is approximated by extruding a parabolic profile with <code><i>'n='</i></code> samples, and rotation angles <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Playground Slide'</i> shape of interest is approximated by extruding a parabolic profile with <code><i>'n=3'</i></code> samples, and rotation angles <code><i>'Rx=10'</i></code>, <code><i>'Ry=0'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Playground Slide'</i> shape of interest is approximated by extruding a parabolic profile with <code><i>'n=3'</i></code> samples, and rotation angles <code><i>'Rx=10'</i></code>, <code><i>'Ry=335'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
 </tr>
 
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example050_old_conf2.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example050_old_conf3.png' border='0'></td></tr>
 <tr>
-<td width=50%>The <i>'wireframe'</i> version for the <i>'Playground Slide'</i> shape of interest is approximated by extruding a parabolic profile with <code><i>'n='</i></code> samples, and rotation angles <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
-<td width=50%>The <i>'wireframe'</i> version for the <i>'Playground Slide'</i> shape of interest is approximated by extruding a parabolic profile with <code><i>'n='</i></code> samples, and rotation angles <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Playground Slide'</i> shape of interest is approximated by extruding a parabolic profile with <code><i>'n=8'</i></code> samples, and rotation angles <code><i>'Rx=10'</i></code>, <code><i>'Ry=355'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Playground Slide'</i> shape of interest is approximated by extruding a parabolic profile with <code><i>'n=8'</i></code> samples, and rotation angles <code><i>'Rx=10'</i></code>, <code><i>'Ry=20'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
 </tr>
 
 <tr>
