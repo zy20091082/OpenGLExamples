@@ -12,7 +12,8 @@ The <i>'Example-049 (Old Mode)'</i> Test draws the <i>'Truncated Cone'</i> shape
 <li>increase the rotation angle <code><i>'Ry'</i></code> along the <code><i>'y'</i></code>-axis by pressing the <code><i>'Y'</i></code> key;</li>
 <li>decrease the rotation angle <code><i>'Ry'</i></code> along the <code><i>'y'</i></code>-axis by pressing the <code><i>'y'</i></code> key;</li>
 <li>increase the rotation angle <code><i>'Rz'</i></code> along the <code><i>'z'</i></code>-axis by pressing the <code><i>'Z'</i></code> key;</li>
-<li>decrease the rotation angle <code><i>'Rz'</i></code> along the <code><i>'z'</i></code>-axis by pressing the <code><i>'z'</i></code> key.</li></ul><p>Likewise, the window of interest can be closed by pressing the <code><i>'Esc'</i></code> key.<p><table border=0 width=100%>
+<li>decrease the rotation angle <code><i>'Rz'</i></code> along the <code><i>'z'</i></code>-axis by pressing the <code><i>'z'</i></code> key.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.
+<p><table border=0 width=100%>
 
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example049_old_conf0.png' border='0'></td>

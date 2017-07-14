@@ -100,7 +100,8 @@ int main(int argc,char **argv)
 	cout<<"\t\t-) increase the rotation angle 'Ry' along the 'y'-axis by pressing the 'Y' key;"<<endl;
 	cout<<"\t\t-) decrease the rotation angle 'Ry' along the 'y'-axis by pressing the 'y' key;"<<endl;
 	cout<<"\t\t-) increase the rotation angle 'Rz' along the 'z'-axis by pressing the 'Z' key;"<<endl;
-	cout<<"\t\t-) decrease the rotation angle 'Rz' along the 'z'-axis by pressing the 'z' key."<<endl<<endl<<"\tLikewise, the window of interest can be closed by pressing the 'Esc' key."<<endl<<endl;
+	cout<<"\t\t-) decrease the rotation angle 'Rz' along the 'z'-axis by pressing the 'z' key."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();	
 	
 	/* If we arrive here, we can draw the 'Truncated Cone' shape of interest by using the rendering settings, chosen by the user. */
@@ -201,6 +202,34 @@ void manageKeys(unsigned char key, int x, int y)
 		case 27:
 	
 			/* The key is 'Esc', thus we can exit from this program. */
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
+			cout.flush();
+			exit(EXIT_SUCCESS);
+			break;
+			
+		case 'q':
+	
+			/* The key is 'q', thus we can exit from this program. */
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
+			cout.flush();
+			exit(EXIT_SUCCESS);
+			break;
+			
+		case 'Q':
+	
+			/* The key is 'Q', thus we can exit from this program. */
 			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
 			cout << "\tPress the RETURN key to finish ... ";
 			cin.get();
