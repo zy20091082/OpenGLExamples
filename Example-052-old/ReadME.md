@@ -39,7 +39,12 @@ The <i>'Example-052 (Old Mode)'</i> Test draws several portions of the <i>'Squar
 <tr>
 <td width=50%>The <i>'wireframe versions'</i> for all triangles in the triangle strip of interest (thus, <code><i>'n=10'</i></code>) are rendered.</td>
 <td width=50%>The <i>'filled versions'</i> for all triangles in the triangle strip of interest (thus, <code><i>'n=10'</i></code>) are rendered.</td>
-</tr></table><p><hr><p><h4>Dependencies</h4>
+</tr></table><p>
+
+<table border=1><tr>
+<td width="100%"><p><b>IMPORTANT:</b><p>It is clear that the solution, offered by this test, has a lot of advantages, and allow to make easy the scene modeling, especially when the geometry does not change too much, or, in general, when only its optional parameters (like the colors) are modified. In any case, it is a custom solution, provided by the programmer, and provides a possible schema for solving similar problems.<p>In any case, an experienced programmer recognizes that this approach is totally equivalent to the <i>'vertex array'</i> technique, provided directly by the <A href="http://www.opengl.org"><i>OpenGL</i></A>. This technique will be validated and exploited in the next test.</td></tr></table><p>
+
+<hr><p><h4>Dependencies</h4>
 
 The <i>'Example-052 (Old Mode)'</i> Test is based on the so-called <i>OpenGL old (direct drawing) mode</i>, and requires the following dependencies:<ul>
 
