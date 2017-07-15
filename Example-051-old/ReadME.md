@@ -17,7 +17,9 @@ The <i>'Example-051 (Old Mode)'</i> Test draws several versions of the <i>'Squar
 
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example051_old_conf2.png' border='0'></td>
-<td width=50%>As mentioned above, it is necessary to enumerate explicitly all points of interest (together with their colors). Thus, it is clear that there is no centralized data structure for their management, some redundancy is introduced, and it is not easy to add new points or a different colors palette.<p>The techniques, based on the <i>'vertex array'</i> data structure, may alleviate these drawbacks, and will be validated in the next tests.</td>
+<td width=50%>As mentioned above, it is necessary to enumerate explicitly all points of interest (together with their colors). Thus, it is clear that there is no centralized data structure for their management, some redundancy is introduced, and it is not easy to add new points or a different colors palette.<p>
+
+The techniques, based on the <i>'vertex array'</i> data structure, may alleviate these drawbacks, and will be validated in the next tests.</td>
 </tr>
 <tr>
 <td width=50%>The <i>'filled versions'</i> of all triangles in the triangle strip of interest are rendered.</td>
