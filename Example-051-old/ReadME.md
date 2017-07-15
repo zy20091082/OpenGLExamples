@@ -5,21 +5,20 @@
 The <i>'Example-051 (Old Mode)'</i> Test draws several versions of the <i>'Square Annulus'</i> shape in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. This shape is bounded by <code><i>'2'</i></code> (concentric) axis-parallel rectangles of different size in the same spirit of a circular crown. It is often known as the <i>'rectangular'</i> crown. Its large rectangle is called the <i>'external'</i> rectangle, and other rectangle is called the <i>'internal'</i> rectangle. Thus, it requires at least <code><i>'8'</i></code> vertices with their optional attributes (colors).<p>Here, the <i>'Square Annulus'</i> shape of interest is approximated by an unique triangle strip, formed by <code><i>'8'</i></code> triangles, without adding any <i>'Steiner'</i> point. By construction, it is necessary to enumerate a collection of <code><i>'10'</i></code> points with their independent colors (<code><i>'2'</i></code> points and their colors are needed to be duplicated). This technique works, but it is not easy to be customized for a different number of vertices, or for a different colors palette.<p>In this test, it is not possible to modify the size and the position for the <i>'external'</i> and the <i>'internal'</i> rectangles of the <i>'Square Annulus'</i> shape. Instead, the user can decide interactively to render:<p><ul>
 <li>only the points in the triangle strip of interest, approximating the <i>'Square Annulus'</i> shape;</li>
 <li>the <i>'wireframe versions'</i> of all triangles in the triangle strip of interest, approximating the <i>'Square Annulus'</i> shape;</li>
-<li>the <i>'filled versions'</i> of all triangles in the triangle strip of interest, approximating the <i>'Square Annulus'</i> shape;</li></ul><p>by pressing cyclically the <code><i>' '</i></code> (space) key.<p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p>
-
-<table border=0 width=100%>
+<li>the <i>'filled versions'</i> of all triangles in the triangle strip of interest, approximating the <i>'Square Annulus'</i> shape;</li></ul><p>by pressing cyclically the <code><i>' '</i></code> (space) key.<p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><table border=0 width=100%>
 
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example050_old_conf0.png' border='0'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example050_old_conf1.png' border='0'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example051_old_conf0.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example051_old_conf1.png' border='0'></td></tr>
 <tr>
 <td width=50%>Only the points in the triangle strip of interest are rendered.</td>
 <td width=50%>The <i>'wireframe versions'</i> of all triangles in the triangle strip of interest are rendered.</td>
 </tr>
 
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example050_old_conf0.png' border='0'></td>
-<td width=50%></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example051_old_conf2.png' border='0'></td>
+<td width=50%>As mentioned above, it is necessary to enumerate explicitly all points of interest (together with their colors). Thus, it is clear that there is no centralized data structure for their management, some redundancy is introduced, and it is not easy to add new points or a different colors palette.<p>The techniques, based on the <i>'vertex array'</i> data structure, may alleviate these drawbacks, and will be validated in the next tests.</td>
+</tr>
 <tr>
 <td width=50%>The <i>'filled versions'</i> of all triangles in the triangle strip of interest are rendered.</td>
 <td width=50%><b>IMPORTANT</b></td>
