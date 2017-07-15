@@ -7,9 +7,25 @@ The <i>'Example-051 (Old Mode)'</i> Test draws several versions of the <i>'Squar
 <li>the <i>'wireframe versions'</i> of all triangles in the triangle strip of interest, approximating the <i>'Square Annulus'</i> shape;</li>
 <li>the <i>'filled versions'</i> of all triangles in the triangle strip of interest, approximating the <i>'Square Annulus'</i> shape;</li></ul><p>by pressing cyclically the <code><i>' '</i></code> (space) key.<p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p>
 
+<table border=0 width=100%>
 
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example050_old_conf0.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example050_old_conf1.png' border='0'></td></tr>
+<tr>
+<td width=50%>Only the points in the triangle strip of interest are rendered.</td>
+<td width=50%>The <i>'wireframe versions'</i> of all triangles in the triangle strip of interest are rendered.</td>
+</tr>
 
-<p><hr><p><h4>Dependencies</h4>
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example050_old_conf0.png' border='0'></td>
+<td width=50%></td></tr>
+<tr>
+<td width=50%>The <i>'filled versions'</i> of all triangles in the triangle strip of interest are rendered.</td>
+<td width=50%><b>IMPORTANT</b></td>
+</tr>
+
+<table><p><hr><p><h4>Dependencies</h4>
 
 The <i>'Example-051 (Old Mode)'</i> Test is based on the so-called <i>OpenGL old (direct drawing) mode</i>, and requires the following dependencies:<ul>
 
