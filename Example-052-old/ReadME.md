@@ -29,16 +29,16 @@ The <i>'Example-052 (Old Mode)'</i> Test draws several portions of the <i>'Squar
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example052_old_conf2.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example052_old_conf3.png' border='0'></td></tr>
 <tr>
-<td width=50%>Only the points for the desired triangles in the triangle strip of interest, defined by using <code><i>'n=3'</i></code> vertices, are rendered.</td>
-<td width=50%>The <i>'wireframe versions'</i> for the desired triangles in the triangle strip of interest, defined by using <code><i>'n=3'</i></code> vertices, are rendered.</td>
+<td width=50%>The <i>'wireframe versions'</i> for the desired triangles in the triangle strip of interest, defined by using <code><i>'n=7'</i></code> vertices, are rendered.</td>
+<td width=50%>The <i>'wireframe versions'</i> for the desired triangles in the triangle strip of interest, defined by using <code><i>'n=8'</i></code> vertices, are rendered.</td>
 </tr>
 
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example052_old_conf6.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example052_old_conf7.png' border='0'></td></tr>
 <tr>
-<td width=50%>Only the points for the desired triangles in the triangle strip of interest, defined by using <code><i>'n=3'</i></code> vertices, are rendered.</td>
-<td width=50%>The <i>'wireframe versions'</i> for the desired triangles in the triangle strip of interest, defined by using <code><i>'n=3'</i></code> vertices, are rendered.</td>
+<td width=50%>The <i>'wireframe versions'</i> for all triangles in the triangle strip of interest, defined by using <code><i>'n=10'</i></code> vertices, are rendered.</td>
+<td width=50%>The <i>'filled versions'</i> for all triangles in the triangle strip of interest, defined by using <code><i>'n=10'</i></code> vertices, are rendered.</td>
 </tr></table><p><hr><p><h4>Dependencies</h4>
 
 The <i>'Example-052 (Old Mode)'</i> Test is based on the so-called <i>OpenGL old (direct drawing) mode</i>, and requires the following dependencies:<ul>
