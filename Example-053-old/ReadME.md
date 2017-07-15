@@ -10,7 +10,7 @@ The <i>'Example-053 (Old Mode)'</i> Test draws several portions of the <i>'Squar
 <li>the <i>'filled versions'</i> for the desired triangles in the triangle strip of interest.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.
 
 
-<table><tr><td><p><b>VERY IMPORTANT:</b><p>This technique is easy to be customized for a different number of vertices, or for a different colors palette. In fact, it is sufficient to modify only the desired locations in the matrices of interest. These arrays may be precomputed in advance and reused many times, if necessary.
+<table border='1'><tr><td><p><b>IMPORTANT:</b><p>This technique is easy to be customized for a different number of vertices, or for a different colors palette. In fact, it is sufficient to modify only the desired locations in the matrices of interest. These arrays may be precomputed in advance and reused many times, if necessary.
 </td></tr></table><p>
 
 <hr><p><h4>Dependencies</h4>
