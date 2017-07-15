@@ -7,10 +7,42 @@ The <i>'Example-053 (Old Mode)'</i> Test draws several portions of the <i>'Squar
 <li>decrease the maximum number <code><i>'n'</i></code> of points to be considered by pressing the <code><i>'-'</i></code> key;</li></ul><p>and can press cyclically the <code><i>' '</i></code> (space) key for choosing to render:<p><ul>
 <li>only the points for the desired triangles in the triangle strip of interest;</li>
 <li>the <i>'wireframe versions'</i> for the desired triangles in the triangle strip of interest;</li>
-<li>the <i>'filled versions'</i> for the desired triangles in the triangle strip of interest.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.
+<li>the <i>'filled versions'</i> for the desired triangles in the triangle strip of interest.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><table border=0 width=100%>
+
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example052_old_conf0.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example052_old_conf1.png' border='0'></td></tr>
+<tr>
+<td width=50%>Only the points for the desired triangles in the triangle strip of interest, defined by using <code><i>'n=3'</i></code> vertices, are rendered.</td>
+<td width=50%>The <i>'wireframe versions'</i> for the desired triangles in the triangle strip of interest, defined by using <code><i>'n=5'</i></code> vertices, are rendered.</td>
+</tr>
+
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example052_old_conf4.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example052_old_conf5.png' border='0'></td></tr>
+<tr>
+<td width=50%>Only the points for the desired triangles in the triangle strip of interest, defined by using <code><i>'n=6'</i></code> vertices, are rendered.</td>
+<td width=50%>The <i>'filled versions'</i> for the desired triangles in the triangle strip of interest, defined by using <code><i>'n=6'</i></code> vertices, are rendered.</td>
+</tr>
+
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example052_old_conf2.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example052_old_conf3.png' border='0'></td></tr>
+<tr>
+<td width=50%>The <i>'wireframe versions'</i> for the desired triangles in the triangle strip of interest, defined by using <code><i>'n=7'</i></code> vertices, are rendered.</td>
+<td width=50%>The <i>'wireframe versions'</i> for the desired triangles in the triangle strip of interest, defined by using <code><i>'n=8'</i></code> vertices, are rendered.</td>
+</tr>
+
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example052_old_conf6.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example052_old_conf7.png' border='0'></td></tr>
+<tr>
+<td width=50%>The <i>'wireframe versions'</i> for all triangles in the triangle strip of interest (thus, <code><i>'n=10'</i></code>) are rendered.</td>
+<td width=50%>The <i>'filled versions'</i> for all triangles in the triangle strip of interest (thus, <code><i>'n=10'</i></code>) are rendered.</td>
+</tr></table><p>
 
 
-<table border='1'><tr><td><p><b>IMPORTANT:</b><p>The <i>'vertex array'</i> technique is easy to be customized for a different number of vertices, or for a different colors palette. In fact, it is sufficient to modify only the desired locations in the matrices of interest. These arrays may be precomputed in advance and reused many times, if necessary.<p>Note that there exist several variants of the <i>'vertex array'</i> technique, that allow to draw multiple vertices and their state parameters with an unique instruction. Broadly speaking, this technique is the basis for the recent <i>OpenGL old (undirect drawing) mode</i>. These techniques will be validated in the next tests.</td></tr></table><p>
+<table border='1'><tr><td><p><b>IMPORTANT:</b><p>The <i>'vertex array'</i> technique is easy to be customized for a different number of vertices, or for a different colors palette. In fact, it is sufficient to modify only the desired locations in the matrices of interest. These arrays may be precomputed in advance and reused many times, if necessary.<p>Note that there exist several variants of the <i>'vertex array'</i> technique, that allow to draw multiple vertices and their state parameters with an unique instruction. Broadly speaking, this technique is the basis for the recent <i>OpenGL old (indirect drawing) mode</i>. These techniques will be validated in the next tests.</td></tr></table><p>
 
 <hr><p><h4>Dependencies</h4>
 
