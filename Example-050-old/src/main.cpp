@@ -1,4 +1,4 @@
-/****************************************************************************************************************************************************************************************************************
+/********************************************************************************************************************************************************************
  * David Canino (canino.david@gmail.com)
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
@@ -12,7 +12,7 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
  * main.cpp - the main function for the 'Example-050 (Old Mode)' Test.
- ****************************************************************************************************************************************************************************************************************/
+ ********************************************************************************************************************************************************************/
  
 /* First, we must understand which platform we are using. */
 #include <cstdlib>
@@ -38,26 +38,29 @@ using namespace std;
 
 /// The rotation angle <i>'Rx'</i> for rotating the <i>'Playground Slide'</i> shape along the x-axis.
 /**
- * This values indicates the angle 'Rx' for rotating the 'Playground Slide' shape along the x-axis '[1,0,0]'. This rotation angle is increased by pressing the 'X' key, and decreased by pressing the 'x' key.
+ * This values indicates the angle 'Rx' for rotating the 'Playground Slide' shape along the x-axis '[1,0,0]'. This rotation angle is increased by pressing the 'X' key,
+ * and decreased by pressing the 'x' key.
  */
 float Xangle=0.0;
 
 /// The rotation angle <i>'Ry'</i> for rotating the <i>'Playground Slide'</i> shape along the y-axis.
 /**
- * This values indicates the angle 'Ry' for rotating the 'Playground Slide' shape along the y-axis '[0,1,0]'. This rotation angle is increased by pressing the 'Y' key, and decreased by pressing the 'y' key.
+ * This values indicates the angle 'Ry' for rotating the 'Playground Slide' shape along the y-axis '[0,1,0]'. This rotation angle is increased by pressing the 'Y' key,
+ * and decreased by pressing the 'y' key.
  */
 float Yangle=0.0;
 
 /// The rotation angle <i>'Rz'</i> for rotating the <i>'Playground Slide'</i> shape along the z-axis.
 /**
- * This values indicates the angle 'Rz' for rotating the 'Playground Slide' shape along the z-axis '[0,0,1]'. This rotation angle is increased by pressing the 'Z' key, and decreased by pressing the 'z' key.
+ * This values indicates the angle 'Rz' for rotating the 'Playground Slide' shape along the z-axis '[0,0,1]'. This rotation angle is increased by pressing the 'Z' key,
+ * and decreased by pressing the 'z' key.
  */
 float Zangle=0.0;
 
 /// The number <i>'n'</i> of the samples, approximating the parabolic profile to be extruded in order to form the <i>'Playground Slide'</i> shape of interest.
 /**
- * By construction, the 'Playground Slide' shape is defined by extruding a parabolic profile, This value contains the number 'n' of the samples, approximating the parabolic profile of interest. It is increased and
- * decreased by pressing, respectively, the '+' and the '-' keys.
+ * By construction, the 'Playground Slide' shape is defined by extruding a parabolic profile, This value contains the number 'n' of the samples, approximating the 
+ * parabolic profile of interest. It is increased and decreased by pressing, respectively, the '+' and the '-' keys.
  */
 unsigned int num_samples=3;
 
@@ -73,8 +76,8 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-050' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the 'Playground Slide' shape in an OpenGL window. Intuitively, this shape describes the classical playground slides, that can be found in parks, schools, playgrounds and backyards.";
-	cout<<"A slide may be flat, or (more often) half cylindrical in order to"<<endl;
+	cout<<"\tIt draws the 'Playground Slide' shape in an OpenGL window. Intuitively, this shape describes the classic playground slides, that can be found in parks, schools, playgrounds, and backyards. ";
+	cout<<"A slide may be flat, or (more often) half cylindrical, in order to"<<endl;
 	cout<<"\tprevent falls. Slides are usually constructed of plastic or metal, and they have a smooth surface, which is either straight or wavy. The user, typically a child, climbs to the top of the ";
 	cout<<"slide via a ladder or stairs, sits down on the top of the slide, and"<<endl;
 	cout<<"\tslides down the chute."<<endl<<endl;
