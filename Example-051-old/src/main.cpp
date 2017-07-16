@@ -40,7 +40,7 @@ using namespace std;
  * 
  * -) the '0' value, used for rendering the 'filled versions' of all triangles in the triangle strip of interest to be drawn, approximating the 'Square Annulus' shape;
  * -) the '1' value, used for rendering the 'wireframe versions' of all triangles in the triangle strip of interest to be drawn, approximating the 'Square Annulus'
- * shape;
+ *    shape;
  * -) the '2' value, used for rendering only the vertices of all triangles in the triangle strip of interest to be drawn, approximating the 'Square Annulus' shape.
  * 
  * The user can choose what rendering has to be exploited by pressing cyclically the ' ' (space) key.
@@ -231,3 +231,4 @@ void draw()
 	if(mode==1) cout<<"\tThe 'wireframe versions' of all triangles in the triangle strip of interest, approximating the 'Square Annulus' shape, are currently rendered in the scene."<<endl;
 	if(mode==0) cout<<"\tThe 'filled versions' of all triangles in the triangle strip of interest, approximating the 'Square Annulus' shape, are currently rendered in the scene."<<endl;
 }
+
