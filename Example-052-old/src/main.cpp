@@ -38,9 +38,12 @@ using namespace std;
 /**
  * The value of this flag may be one of the following values:
  * 
- * -) the '0' value, used for rendering the 'filled versions' of the desidered triangles in the triangle strip of interest to be drawn, approximating the 'Square Annulus' shape;
- * -) the '1' value, used for rendering the 'wireframe versions' of the desidered triangles in the triangle strip of interest to be drawn, approximating the 'Square Annulus' shape;
- * -) the '2' value, used for rendering only the vertices of the desidered triangles in the triangle strip of interest to be drawn, approximating the 'Square Annulus' shape.
+ * -) the '0' value, used for rendering the 'filled versions' of the desidered triangles in the triangle strip of interest to be drawn, approximating the 'Square
+ * 	  Annulus' shape;
+ * -) the '1' value, used for rendering the 'wireframe versions' of the desidered triangles in the triangle strip of interest to be drawn, approximating the 'Square 
+ * 	  Annulus' shape;
+ * -) the '2' value, used for rendering only the vertices of the desidered triangles in the triangle strip of interest to be drawn, approximating the 'Square Annulus' 
+ *    shape.
  * 
  * The user can choose what rendering has to be exploited by pressing cyclically the ' ' (space) key.
  */
@@ -48,8 +51,10 @@ int mode=0;
 
 /// The Euclidean 3D coordinates for all points in the triangle strip of interest, approximating the <i>'Square Annulus'</i> shape.
 /**
- * Each row of this matrix contains the Euclidean 3D coordinates of a point in the triangle strip of interest, approximating the 'Square Annulus' shape. Instead, the color of each point is stored in the 
- * corresponding row in the 'colors' matrix. Note that this matrix and the 'colors' matrix are precomputed in advance, and contain, respectively, the coordinates and the colors for all 8 vertices with no redundancy. 
+ * Each row of this matrix contains the Euclidean 3D coordinates of a point in the triangle strip of interest, approximating the 'Square Annulus' shape. Instead, the
+ * color of each point is stored in the corresponding row in the 'colors' matrix. Note that this matrix and the 'colors' matrix are precomputed in advance, and contain,
+ * respectively, the coordinates and the colors for all 8 vertices with no redundancy.
+ *
  * The user can choose what points have to be considered by modifying the global variable 'num' (see later).
  */
 static GLfloat vertices [8][3] = {
@@ -65,8 +70,10 @@ static GLfloat vertices [8][3] = {
 
 /// The colors for all points in the triangle strip of interest, approximating the <i>'Square Annulus'</i> shape.
 /**
- * Each row of this matrix contains the color of a point in the triangle strip of interest, approximating the 'Square Annulus' shape. Instead, the Euclidean 3D coordinates of each point are stored in the 
- * corresponding row in the 'vertices' matrix. Note that this matrix and the 'vertices' matrix are precomputed in advance, and contain, respectively, the colors and the coordinates for all 8 vertices with no redundancy.
+ * Each row of this matrix contains the color of a point in the triangle strip of interest, approximating the 'Square Annulus' shape. Instead, the Euclidean 3D
+ * coordinates of each point are stored in the corresponding row in the 'vertices' matrix. Note that this matrix and the 'vertices' matrix are precomputed in advance,
+ * and contain, respectively, the colors and the coordinates for all 8 vertices with no redundancy.
+ *
  * The user can choose what points have to be considered by modifying the global variable 'num' (see later).
  */
 static GLfloat colors [8][3] = {
@@ -82,11 +89,13 @@ static GLfloat colors [8][3] = {
 
 /// The number <i>'n'</i> for the subset of points to be considered in the triangle strip of interest, approximating the <i>'Square Annulus'</i> shape.
 /**
- * This value is the number 'n' of indices to be considered in the range '[3,n-1]' in order to access the 'vertices' and the 'colors' matrices in order to limit the triangles number to be drawn. Specifically, every
- * index 'j' in the range '[0,n-1]' is generated, and is used for accessing the location 'j mod 8' in the 'vertices' and the 'colors' matrices. The user can increase the number 'n' of interest (cyclically up to 10)
- * by pressing the '+' key, and can decrease it by pressing the '-' key.
+ * This value is the number 'n' of indices to be considered in the range '[3,n-1]' in order to access the 'vertices' and the 'colors' matrices in order to limit the
+ * triangles number to be drawn. Specifically, every index 'j' in the range '[0,n-1]' is generated, and is used for accessing the row 'j mod 8' in the 'vertices'
+ * and the 'colors' matrices. The user can increase the number 'n' of interest (cyclically up to 10) by pressing the '+' key, and can decrease it by pressing the '-'
+ * key.
  * 
- * This approach validates the use of this centralized infrastructure. This latter is a step towards the use of the 'vertex array' data structure, provided by the 'OpenGL'.
+ * This approach validates the use of this centralized infrastructure. This latter is a step towards the use of the 'vertex array' data structure, provided by the
+ * 'OpenGL'.
  */
 int num=3;
 
@@ -103,16 +112,16 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-052' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws several portions of the 'Square Annulus' shape in an OpenGL window. This shape is bounded by '2' (concentric) axis-parallel rectangles of different size in the same spirit of a circular ";
 	cout<<"crown. It is often known as the 'rectangular' crown. Its large"<<endl;
-	cout<<"\trectangle is called the 'external' rectangle, and other rectangle is called the 'internal' rectangle. Thus, it requires at least '8' vertices with their optional attributes (colors)."<<endl<<endl;
+	cout<<"\trectangle is called the 'external' rectangle, and other rectangle is called the 'internal' rectangle. Thus, it requires '8' vertices with their optional attributes (colors)."<<endl<<endl;
 	cout<<"\tHere, the 'Square Annulus' shape of interest is approximated by an unique triangle strip, formed by '8' triangles, without adding any 'Steiner' point. By construction, it is necessary to enumerate ";
-	cout<<"a collection of '10' points with their independent colors ('2'"<<endl<<"\tpoints and their colors are needed to be duplicated)."<<endl<<endl;
-	cout<<"\tFor the sake of the efficiency, we exploit a centralized data organization, consisting of '2' matrices, such that their rows contain, respectively, the '3D' coordinates and the colors for all '8' ";
-	cout<<"vertices (with no redundancy). Hence, it is sufficient to"<<endl;
-	cout<<"\taccess the locations of indices '0,...,8,0,1' in '2' matrices, mentioned above, in order to draw the triangle strip of interest. This technique works, and it is easy to be customized for a different ";
-	cout<<"number of vertices, or for a different colors palette. In"<<endl;
-	cout<<"\tfact it is sufficient to modify only the desired rows in the matrices of interest. These matrices may be precomputed in advance and reused many times, if necessary."<<endl<<endl;
+	cout<<"a sequence of '10' points with their independent colors ('2'"<<endl<<"\tpoints and their colors are needed to be duplicated)."<<endl<<endl;
+	cout<<"\tFor the sake of the efficiency, we exploit a centralized data organization, consisting of '2' matrices, such that their rows contain, respectively, the Euclidean '3D' coordinates and the colors for all '8' ";
+	cout<<"vertices (with no redundancy). Hence, it is sufficient "<<endl;
+	cout<<"\tto access the locations of indices '0,...,8,0,1' in '2' matrices, mentioned above, in order to draw the triangle strip of interest. This technique works perfectly, and it is easy to be customized for a different ";
+	cout<<"number of vertices, or for a different colors"<<endl;
+	cout<<"\tpalette. In fact, it is sufficient to modify only the desired rows in the matrices of interest. These matrices may be precomputed in advance and reused many times, if necessary."<<endl<<endl;
 	cout<<"\tIn order to show the actual validity of this approach, it is possible to limit our attention only on a specific portion of the 'Square Annulus' shape, defined by using only 'n' points, such that 'n' ";
-	cout<<"\tis in the range '[3,10]'. This means that only a subset of"<<endl;
+	cout<<"is in the range '[3,10]'. This means that only a subset of"<<endl;
 	cout<<"\tall triangles in the triangle strip of interest are drawn. Broadly speaking, every index 'j' in '[0,n-1]' is generated in order to access '2' rows of index 'j % 8' in the matrices of interest."<<endl<<endl;
 	cout<<"\tIn this test, it is not possible to modify the size and the position for the 'external' and the 'internal' rectangles of the 'Square Annulus' shape. Instead, the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the maximum number 'n' of points to be considered by pressing the '+' key;"<<endl;
@@ -244,7 +253,8 @@ void manageKeys(unsigned char key, int x, int y)
 /// This function draws the portion of interest for the triangle strip, approximating the <i>'Square Annulus'</i> shape, in the main OpenGL window by using the rendering preferences, chosen by the user.
 void draw()
 {
-	/* We draw the portion of interest for the triangle strip, approximating the <i>'Square Annulus'</i> shape, in the main OpenGL window by using the rendering preferences, chosen by the user. */
+	/* We draw the portion of interest for the triangle strip, approximating the <i>'Square Annulus'</i> shape, in the main OpenGL window by using the rendering
+	 * preferences, chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	if(mode==0) glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
 	if(mode==1) glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
@@ -267,3 +277,4 @@ void draw()
 	cout<<"the triangles in the triangle strip of interest, defined by using only 'n="<<num<<"' vertices, are currently drawn."<<endl;
 	cout.flush();
 }
+
