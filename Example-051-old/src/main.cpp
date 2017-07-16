@@ -39,7 +39,8 @@ using namespace std;
  * The value of this flag may be one of the following values:
  * 
  * -) the '0' value, used for rendering the 'filled versions' of all triangles in the triangle strip of interest to be drawn, approximating the 'Square Annulus' shape;
- * -) the '1' value, used for rendering the 'wireframe versions' of all triangles in the triangle strip of interest to be drawn, approximating the 'Square Annulus' shape;
+ * -) the '1' value, used for rendering the 'wireframe versions' of all triangles in the triangle strip of interest to be drawn, approximating the 'Square Annulus'
+ * shape;
  * -) the '2' value, used for rendering only the vertices of all triangles in the triangle strip of interest to be drawn, approximating the 'Square Annulus' shape.
  * 
  * The user can choose what rendering has to be exploited by pressing cyclically the ' ' (space) key.
@@ -59,10 +60,10 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-051' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws several versions of the 'Square Annulus' shape in an OpenGL window. This shape is bounded by 2 (concentric) axis-parallel rectangles of different size in the same spirit of a circular ";
 	cout<<"crown. It is often known as the 'rectangular' crown. Its"<<endl; 
-	cout<<"\tlarge rectangle is called the 'external' rectangle, and other rectangle is called the 'internal' rectangle. Thus, it requires at least 8 vertices with their optional attributes (colors)."<<endl<<endl;
+	cout<<"\tlarge rectangle is called the 'external' rectangle, and other rectangle is called the 'internal' rectangle. Thus, it requires 8 vertices with their optional attributes (colors)."<<endl<<endl;
 	cout<<"\tHere, the 'Square Annulus' shape of interest is approximated by an unique triangle strip, formed by '8' triangles, without adding any 'Steiner' point. By construction, it is necessary to enumerate ";
-	cout<<"a collection of '10' points with their independent"<<endl; 
-	cout<<"\tcolors ('2' points and their colors are needed to be duplicated). This is done explicitly. This technique works, but it is not easy to be customized for a different number of vertices, or for a ";
+	cout<<"a sequence of '10' points with their independent colors"<<endl; 
+	cout<<"\t('2' points and their colors are needed to be duplicated). This is done explicitly. This technique works perfectly, but it is not easy to be customized for a different number of vertices, or for a ";
 	cout<<"different colors palette."<<endl<<endl;
 	cout<<"\tIn this test, it is not possible to modify the size and the position for the 'external' and the 'internal' rectangles of the 'Square Annulus' shape. Instead, the user can decide interactively to ";
 	cout<<"render:"<<endl<<endl;
