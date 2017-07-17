@@ -68,11 +68,11 @@ static GLfloat vertices[] = {
 	10,90,0
 };
 
-/// The colors for all points in the triangle strip of interest, approximating the <i>'Square Annulus'</i> shape.
+/// The colors components for all points in the triangle strip of interest, approximating the <i>'Square Annulus'</i> shape.
 /**
- * The colors for all points in the triangle strip of interest are stored as consecutive 3 floating-point values. In particular, the color components, related to the
- * point of index (j % 8), for any j, are stored in locations '3*j' - '3*j+1' - '3*j+2' within this array. Instead, the Euclidean 3D coordinates for all points of
- * interest are stored in the 'vertices' array by using a similar approach.
+ * The colors components for all points in the triangle strip of interest are stored as consecutive 3 floating-point values. In particular, the color components,
+ * related to the point of index (j % 8), for any j, are stored in locations '3*j' - '3*j+1' - '3*j+2' within this array. Instead, the Euclidean 3D coordinates for all
+ * points of interest are stored in the 'vertices' array by using a similar approach.
  *
  * The user can choose what points have to be considered by modifying the global variable 'num' (see later).
  */
@@ -116,14 +116,14 @@ int main(int argc,char **argv)
 	cout<<"By construction, it is necessary to"<<endl;
 	cout<<"\tenumerate a sequence of '10' points with their independent colors ('2' points and their colors are needed to be duplicated)."<<endl<<endl;
 	cout<<"\tFor the sake of the efficiency, we exploit the 'vertex array' technique, provided directly by the OpenGL. This technique is used to group together ";
-	cout<<"several drawing instructions into"<<endl;
-	cout<<"\tonly one instruction for rendering (a subset of) the vertices and some of their state parameters. Here, we limit our attention to the Euclidean '3D' ";
+	cout<<"several drawing instructions into only"<<endl;
+	cout<<"\tone instruction for rendering (a subset of) the vertices and some of their state parameters. Here, we limit our attention to the Euclidean '3D' ";
 	cout<<"coordinates and the colors for all '8'"<<endl;
 	cout<<"\tvertices in the 'Square Annulus' shape of interest. In particular, '2' arrays are defined, containing, respectively, the Euclidean '3D' coordinates and ";
-	cout<<"the colors components for all '8' 
+	cout<<"the colors components for all '8' "<<endl;
 	cout<<"\tvertices (with no redundancy). This information is stored as '8' consecutive tuples of '3' floating-point values in every array, respectively. The ";
 	cout<<"locations, containing the Euclidean '3D' "<<endl;
-	cout<<"\tcoordinates and the colors components for the point of index 'j % 8' (for any 'j'), are stored in positions '3 * j', '3 * j + 1', and '3 * j + 2'. ";
+	cout<<"\tcoordinates and the color components for the point of index 'j % 8' (for any 'j'), are stored in positions '3 * j', '3 * j + 1', and '3 * j + 2'. ";
 	cout<<"Hence, it is sufficient to access the"<<endl;
 	cout<<"\tlocations, related to vertices of indices '0,...,7,0,1', in '2' arrays, mentioned above, in order to draw the triangle strip of interest. In this test, ";
 	cout<<"the 'glArrayElement()' function "<<endl;
