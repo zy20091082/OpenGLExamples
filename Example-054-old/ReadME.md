@@ -25,6 +25,22 @@ The <i>'Example-054 (Old Mode)'</i> Test draws several portions of the <i>'Squar
 <td width=50%>Only the points for the desired triangles in the triangle strip of interest, defined by using <code><i>'n=7'</i></code> vertices, are rendered.</td>
 </tr>
 
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example054_old_conf4.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example054_old_conf5.png' border='0'></td></tr>
+<tr>
+<td width=50%>The <i>'wireframe versions'</i> for the desired triangles in the triangle strip of interest, defined by using <code><i>'n=7'</i></code> vertices, are rendered.</td>
+<td width=50%>The <i>'filled versions'</i> for the desired triangles in the triangle strip of interest, defined by using <code><i>'n=7'</i></code> vertices, are rendered.</td>
+</tr>
+
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example054_old_conf6.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example054_old_conf7.png' border='0'></td></tr>
+<tr>
+<td width=50%>The <i>'wireframe versions'</i> for the desired triangles in the triangle strip of interest, defined by using <code><i>'n=8'</i></code> vertices, are rendered.</td>
+<td width=50%>The <i>'filled versions'</i> for the desired triangles in the triangle strip of interest, defined by using <code><i>'n=8'</i></code> vertices, are rendered.</td>
+</tr>
+
 
 
 </table><p>
