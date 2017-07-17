@@ -52,8 +52,8 @@ int mode=0;
 /// The Euclidean 3D coordinates for all points in the triangle strip of interest, approximating the <i>'Square Annulus'</i> shape.
 /**
  * Each row of this matrix contains the Euclidean 3D coordinates of a point in the triangle strip of interest, approximating the 'Square Annulus' shape. Instead, the
- * color of each point is stored in the corresponding row in the 'colors' matrix. Note that this matrix and the 'colors' matrix are precomputed in advance, and contain,
- * respectively, the coordinates and the colors for all 8 vertices with no redundancy.
+ * color components of each point are stored in the corresponding row in the 'colors' matrix. Note that this matrix and the 'colors' matrix are precomputed in advance,
+ * and contain, respectively, the Euclidean coordinates and the colors components for all 8 vertices with no redundancy.
  *
  * The user can choose what points have to be considered by modifying the global variable 'num' (see later).
  */
@@ -68,11 +68,11 @@ static GLfloat vertices [8][3] = {
 	{ 10,90,0 }	
 };
 
-/// The colors for all points in the triangle strip of interest, approximating the <i>'Square Annulus'</i> shape.
+/// The colors components for all points in the triangle strip of interest, approximating the <i>'Square Annulus'</i> shape.
 /**
- * Each row of this matrix contains the color of a point in the triangle strip of interest, approximating the 'Square Annulus' shape. Instead, the Euclidean 3D
- * coordinates of each point are stored in the corresponding row in the 'vertices' matrix. Note that this matrix and the 'vertices' matrix are precomputed in advance,
- * and contain, respectively, the colors and the coordinates for all 8 vertices with no redundancy.
+ * Each row of this matrix contains the color components of a point in the triangle strip of interest, approximating the 'Square Annulus' shape. Instead, the Euclidean
+ * 3D coordinates of each point are stored in the corresponding row in the 'vertices' matrix. Note that this matrix and the 'vertices' matrix are precomputed in advance,
+ * and contain, respectively, the colors components and the Euclidean coordinates for all 8 vertices with no redundancy.
  *
  * The user can choose what points have to be considered by modifying the global variable 'num' (see later).
  */
@@ -90,7 +90,7 @@ static GLfloat colors [8][3] = {
 /// The number <i>'n'</i> for the subset of points to be considered in the triangle strip of interest, approximating the <i>'Square Annulus'</i> shape.
 /**
  * This value is the number 'n' of indices to be considered in the range '[3,n-1]' in order to access the 'vertices' and the 'colors' matrices in order to limit the
- * triangles number to be drawn. Specifically, every index 'j' in the range '[0,n-1]' is generated, and is used for accessing the row 'j mod 8' in the 'vertices'
+ * triangles number to be drawn. Specifically, every index 'j' in the range '[0,n-1]' is generated, and is used for accessing the rows 'j mod 8' in the 'vertices'
  * and the 'colors' matrices. The user can increase the number 'n' of interest (cyclically up to 10) by pressing the '+' key, and can decrease it by pressing the '-'
  * key.
  * 
@@ -115,11 +115,11 @@ int main(int argc,char **argv)
 	cout<<"\trectangle is called the 'external' rectangle, and other rectangle is called the 'internal' rectangle. Thus, it requires '8' vertices with their optional attributes (colors)."<<endl<<endl;
 	cout<<"\tHere, the 'Square Annulus' shape of interest is approximated by an unique triangle strip, formed by '8' triangles, without adding any 'Steiner' point. By construction, it is necessary to enumerate ";
 	cout<<"a sequence of '10' points with their independent colors ('2'"<<endl<<"\tpoints and their colors are needed to be duplicated)."<<endl<<endl;
-	cout<<"\tFor the sake of the efficiency, we exploit a centralized data organization, consisting of '2' matrices, such that their rows contain, respectively, the Euclidean '3D' coordinates and the colors for all '8' ";
-	cout<<"vertices (with no redundancy). Hence, it is sufficient "<<endl;
-	cout<<"\tto access the locations of indices '0,...,8,0,1' in '2' matrices, mentioned above, in order to draw the triangle strip of interest. This technique works perfectly, and it is easy to be customized for a different ";
-	cout<<"number of vertices, or for a different colors"<<endl;
-	cout<<"\tpalette. In fact, it is sufficient to modify only the desired rows in the matrices of interest. These matrices may be precomputed in advance and reused many times, if necessary."<<endl<<endl;
+	cout<<"\tFor the sake of the efficiency, we exploit a centralized data organization, consisting of '2' matrices, such that their rows contain, respectively, the Euclidean '3D' coordinates and the colors components for all '8' ";
+	cout<<"vertices (with no redundancy). Hence, it"<<endl;
+	cout<<"\tis sufficient to access the locations of indices '0,...,7,0,1' in '2' matrices, mentioned above, in order to draw the triangle strip of interest. This technique works perfectly, and it is easy to be customized for a different ";
+	cout<<"number of vertices, or for a"<<endl; 
+	cout<<"\tdifferent colors palette. In fact, it is sufficient to modify only the desired rows in the matrices of interest. These matrices may be precomputed in advance and reused many times, if necessary."<<endl<<endl;
 	cout<<"\tIn order to show the actual validity of this approach, it is possible to limit our attention only on a specific portion of the 'Square Annulus' shape, defined by using only 'n' points, such that 'n' ";
 	cout<<"is in the range '[3,10]'. This means that only a subset of"<<endl;
 	cout<<"\tall triangles in the triangle strip of interest are drawn. Broadly speaking, every index 'j' in '[0,n-1]' is generated in order to access '2' rows of index 'j % 8' in the matrices of interest."<<endl<<endl;
