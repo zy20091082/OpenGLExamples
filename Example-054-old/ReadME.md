@@ -9,6 +9,21 @@ The <i>'Example-054 (Old Mode)'</i> Test draws several portions of the <i>'Squar
 <li>the <i>'wireframe versions'</i> for the desired triangles in the triangle strip of interest;</li>
 <li>the <i>'filled versions'</i> for the desired triangles in the triangle strip of interest.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><table border=0 width=100%>
 
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example054_old_conf0.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example054_old_conf1.png' border='0'></td></tr>
+<tr>
+<td width=50%>Only the points for the desired triangles in the triangle strip of interest, defined by using <code><i>'n=5'</i></code> vertices, are rendered.</td>
+<td width=50%>The <i>'wireframe versions'</i> for the desired triangles in the triangle strip of interest, defined by using <code><i>'n=5'</i></code> vertices, are rendered.</td>
+</tr>
+
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example054_old_conf2.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example054_old_conf3.png' border='0'></td></tr>
+<tr>
+<td width=50%>Only the points for the desired triangles in the triangle strip of interest, defined by using <code><i>'n=6'</i></code> vertices, are rendered.</td>
+<td width=50%>Only the points for the desired triangles in the triangle strip of interest, defined by using <code><i>'n=7'</i></code> vertices, are rendered.</td>
+</tr>
 
 
 
