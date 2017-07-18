@@ -13,8 +13,8 @@
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example055_old_conf2.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example055_old_conf3.png' border='0'></td></tr>
 <tr>
-<td width=50%>Here, the <i>'Hemisphere'</i> shape is approximated by a triangle grid with <code><i>'q='</i></code> latitudinal slices and <code><i>'p='</i></code> longitudinal slices, and <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
-<td width=50%>Here, the <i>'Hemisphere'</i> shape is approximated by a triangle grid with <code><i>'q='</i></code> latitudinal slices and <code><i>'p='</i></code> longitudinal slices, and <code><i>'Rx='</i></code>, <code><i>'Ry='</i></code>, and <code><i>'Rz='</i></code>.</td>
+<td width=50%>Here, the <i>'Hemisphere'</i> shape is approximated by a triangle grid with <code><i>'q=10'</i></code> latitudinal slices and <code><i>'p=10'</i></code> longitudinal slices, and <code><i>'Rx=270'</i></code>, <code><i>'Ry=0'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+<td width=50%>Here, the <i>'Hemisphere'</i> shape is approximated by a triangle grid with <code><i>'q=20'</i></code> latitudinal slices and <code><i>'p=30'</i></code> longitudinal slices, and <code><i>'Rx=45'</i></code>, <code><i>'Ry=25'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
 </tr>
 
 <tr>
