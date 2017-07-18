@@ -294,5 +294,4 @@ void draw()
 	glFlush();
 	cout<<"\tThe 'wireframe version' of the 'Hemisphere' shape is currently drawn by exploiting 'q="<<lat_slices_num<<"' latitudinal slices and 'p="<<long_slices_num<<"' longitudinal slices, as well as rotation angles 'Rx="<<Xangle<<"', "<<"'Ry="<<Yangle<<"', and 'Rz="<<Zangle<<"'."<<endl;
 	cout.flush();
-	cout.flush();
 }
