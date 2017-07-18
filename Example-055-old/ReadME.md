@@ -5,24 +5,24 @@
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example055_old_conf0.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example055_old_conf1.png' border='0'></td></tr>
 <tr>
-<td width=50%>The <i>'Hemisphere'</i> shape is approximated by a triangle grid with <code><i>'q=3'</i></code> latitudinal slices and <code><i>'p=3'</i></code> longitudinal slices, and <code><i>'Rx=45'</i></code>, <code><i>'Ry=25'</i></code>, and <code><i>'Rz='</i></code>.</td>
-<td width=50%>The <i>'Hemisphere'</i> shape is approximated by a triangle grid with <code><i>'q=3'</i></code> latitudinal slices and <code><i>'p=3'</i></code> longitudinal slices, and <code><i>'Rx=270'</i></code>, <code><i>'Ry=0'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+<td width=50%>The <i>'Hemisphere'</i> shape is approximated by a triangle grid with <code><i>'q=3'</i></code> latitudinal slices and <code><i>'p=3'</i></code> longitudinal slices, and <code><i>'Rx=45'</i></code>, <code><i>'Ry=25'</i></code>, and <code><i>'Rz='</i></code> angles.</td>
+<td width=50%>The <i>'Hemisphere'</i> shape is approximated by a triangle grid with <code><i>'q=3'</i></code> latitudinal slices and <code><i>'p=3'</i></code> longitudinal slices, and <code><i>'Rx=270'</i></code>, <code><i>'Ry=0'</i></code>, and <code><i>'Rz=0'</i></code> angles.</td>
 </tr>
 
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example055_old_conf2.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example055_old_conf3.png' border='0'></td></tr>
 <tr>
-<td width=50%>The <i>'Hemisphere'</i> shape is approximated by a triangle grid with <code><i>'q=10'</i></code> latitudinal slices and <code><i>'p=10'</i></code> longitudinal slices, and <code><i>'Rx=270'</i></code>, <code><i>'Ry=0'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
-<td width=50%>The <i>'Hemisphere'</i> shape is approximated by a triangle grid with <code><i>'q=20'</i></code> latitudinal slices and <code><i>'p=30'</i></code> longitudinal slices, and <code><i>'Rx=45'</i></code>, <code><i>'Ry=25'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+<td width=50%>The <i>'Hemisphere'</i> shape is approximated by a triangle grid with <code><i>'q=10'</i></code> latitudinal slices and <code><i>'p=10'</i></code> longitudinal slices, and <code><i>'Rx=270'</i></code>, <code><i>'Ry=0'</i></code>, and <code><i>'Rz=0'</i></code> angles.</td>
+<td width=50%>The <i>'Hemisphere'</i> shape is approximated by a triangle grid with <code><i>'q=20'</i></code> latitudinal slices and <code><i>'p=30'</i></code> longitudinal slices, and <code><i>'Rx=45'</i></code>, <code><i>'Ry=25'</i></code>, and <code><i>'Rz=0'</i></code> angles.</td>
 </tr>
 
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example055_old_conf4.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example055_old_conf5.png' border='0'></td></tr>
 <tr>
-<td width=50%>The <i>'Hemisphere'</i> shape is approximated by a triangle grid with <code><i>'q=10'</i></code> latitudinal slices and <code><i>'p=30'</i></code> longitudinal slices, and <code><i>'Rx=45'</i></code>, <code><i>'Ry=340'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
-<td width=50%>The <i>'Hemisphere'</i> shape is approximated by a triangle grid with <code><i>'q=30'</i></code> latitudinal slices and <code><i>'p=50'</i></code> longitudinal slices, and <code><i>'Rx=270'</i></code>, <code><i>'Ry=180'</i></code>, and <code><i>'Rz=90'</i></code>.</td>
+<td width=50%>The <i>'Hemisphere'</i> shape is approximated by a triangle grid with <code><i>'q=10'</i></code> latitudinal slices and <code><i>'p=30'</i></code> longitudinal slices, and <code><i>'Rx=45'</i></code>, <code><i>'Ry=340'</i></code>, and <code><i>'Rz=0'</i></code> angles.</td>
+<td width=50%>The <i>'Hemisphere'</i> shape is approximated by a triangle grid with <code><i>'q=30'</i></code> latitudinal slices and <code><i>'p=50'</i></code> longitudinal slices, and <code><i>'Rx=270'</i></code>, <code><i>'Ry=180'</i></code>, and <code><i>'Rz=90'</i></code> angles.</td>
 </tr>
 
 </table>
