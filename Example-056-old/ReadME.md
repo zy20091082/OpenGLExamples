@@ -9,7 +9,7 @@ The <i>'Example-056 (Old Mode)'</i> Test draws several portions of a custom shap
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example056_old_conf0.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example056_old_conf1.png' border='0'></td></tr>
 <tr>
-<td width=50%>   </td>
+<td width=50%>Only the points for the triangle and the polygons in the quad strip of interest, defined by using <code><i>'n=8'</i></code> vertices, are rendered.</td>
 <td width=50%>   </td>
 </tr>
 
