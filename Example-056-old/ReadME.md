@@ -12,23 +12,23 @@ The <i>'Example-056 (Old Mode)'</i> Test draws several portions of a custom shap
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example056_old_conf1.png' border='0'></td></tr>
 <tr>
 <td width=50%>Only the points for the triangle and the polygons in the quad strip of interest, defined by using <code><i>'n=10'</i></code> vertices, are rendered.</td>
-<td width=50%>The <i>'wireframe versions'</i> for the triangle and the polygons in the quad strip of interest, defined by using <code><i>'n=10'</i></code> vertices, are rendered.</td>
+<td width=50%>The <i>'filled versions'</i> for the triangle and the polygons in the quad strip of interest, defined by using <code><i>'n=10'</i></code> vertices, are rendered.</td>
 </tr>
 
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example056_old_conf2.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example056_old_conf3.png' border='0'></td></tr>
 <tr>
-<td width=50%>   </td>
-<td width=50%>   </td>
+<td width=50%>The <i>'wireframe versions'</i> for the triangle and the polygons in the quad strip of interest, defined by using <code><i>'n=4'</i></code> vertices, are rendered.</td>
+<td width=50%>The <i>'wireframe versions'</i> for the triangle and the polygons in the quad strip of interest, defined by using <code><i>'n=6'</i></code> vertices, are rendered.</td>
 </tr>
 
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example056_old_conf4.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example056_old_conf5.png' border='0'></td></tr>
 <tr>
-<td width=50%>   </td>
-<td width=50%>   </td>
+<td width=50%>The <i>'wireframe versions'</i> for the triangle and the polygons in the quad strip of interest, defined by using <code><i>'n=8'</i></code> vertices, are rendered.</td>
+<td width=50%>The <i>'wireframe versions'</i> for the triangle and the polygons in the quad strip of interest, defined by using <code><i>'n=10'</i></code> vertices, are rendered.</td>
 </tr>
 
 </table><p>
