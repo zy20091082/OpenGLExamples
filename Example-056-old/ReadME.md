@@ -35,7 +35,7 @@ The <i>'Example-056 (Old Mode)'</i> Test draws several portions of a custom shap
 
 </table><p>
 
-<table border='1'><tr><td><p><b>IMPORTANT:</b><p>The <i>'vertex array'</i> technique is easy to be customized for a different number of vertices, or for a different colors palette. In fact, it is sufficient to modify only the desired locations in the arrays of interest. These arrays may be precomputed in advance and reused many times, if necessary.<p>Note that there exist several variants of the <i>'vertex array'</i> technique, that allow to draw multiple vertices and their state parameters with an unique instruction. Broadly speaking, this technique is the basis for the recent <i>OpenGL old (indirect drawing) mode</i>. These techniques will be validated in the next tests.</td></tr></table><p>
+<table border='1'><tr><td><p><b>IMPORTANT:</b><p>The <i>'vertex array'</i> technique is easy to be customized for a different number of vertices, or for a different colors palette. In fact, it is sufficient to modify only the desired locations in the arrays of interest. These arrays may be precomputed in advance and reused many times, if necessary.<p>Note that there exist several variants of the <i>'vertex array'</i> technique, that allow to draw multiple vertices and their state parameters with an unique instruction. Broadly speaking, this technique is the basis for the recent <i>OpenGL indirect (retained) drawing mode</i>. These techniques will be validated in the next tests.</td></tr></table><p>
 
 <hr><p><h4>Dependencies</h4>
 
