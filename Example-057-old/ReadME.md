@@ -14,8 +14,16 @@ The <i>'Example-057 (Old Mode)'</i> Test draws several variants of the <i>'Circl
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example057_old_conf0.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example057_old_conf1.png' border='0'></td></tr>
 <tr>
-<td width=50%>Only the points for the triangles in the triangle fan of interest, defined by using all <code><i>'n=5'</i></code> vertices, are rendered.</td>
-<td width=50%>Only the points for the triangles in the triangle fan of interest, defined by using all <code><i>'n=300'</i></code> vertices, are rendered.</td>
+<td width=50%>Only the points for the triangles in the triangle fan of interest, defined by <code><i>'n=5'</i></code> vertices, are rendered.</td>
+<td width=50%>Only the points for the triangles in the triangle fan of interest, defined by <code><i>'n=300'</i></code> vertices, are rendered.</td>
+</tr>
+
+<tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example057_old_conf2.png' border='0'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example057_old_conf3.png' border='0'></td></tr>
+<tr>
+<td width=50%>The <i>'wireframe versions'</i> of the triangles in the triangle fan of interest, defined by <code><i>'n=5'</i></code> vertices, are rendered.</td>
+<td width=50%>The <i>'wireframe versions'</i> of the triangles in the triangle fan of interest, defined by <code><i>'n=300'</i></code> vertices, are rendered.</td>
 </tr>
 
 
