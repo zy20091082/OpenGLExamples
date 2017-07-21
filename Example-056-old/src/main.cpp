@@ -146,7 +146,7 @@ int main(int argc,char **argv)
 	cout<<"parameters. Here, we limit our attention to"<<endl;
 	cout<<"\tthe Euclidean '3D' coordinates and the colors for all '8' vertices in the 'Square Annulus' shape of interest, as well as for '3' vertices in the ";
 	cout<<"triangle."<<endl<<endl;
-	cout<<"\tHere, we exploit '2' different types of the 'vertex array' technique. When modeling the triangle, we exploit a array of '18' locations, containing the ";
+	cout<<"\tHere, we exploit '2' different types of the 'vertex array' technique. When modeling the triangle, we exploit an array of '18' locations, containing the ";
 	cout<<"interleaving of the Euclidean '3D'"<<endl;
 	cout<<"\tcoordinates and the colors components for every vertex. In this case, the 'glDrawArrays()' function is exploited for drawing directly the content of ";
 	cout<<"this array without using another"<<endl;
