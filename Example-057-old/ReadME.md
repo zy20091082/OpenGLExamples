@@ -6,9 +6,9 @@ The <i>'Example-057 (Old Mode)'</i> Test draws several variants of the <i>'Circl
 <li>increase the number <code><i>'n'</i></code> of the samples in the triangle fan by pressing the <code><i>'+'</i></code> key;<p></li>
 <li>decrease the number <code><i>'n'</i></code> of the samples in the triangle fan by pressing the <code><i>'-'</i></code> key;<p></li>
 </ul><p>and can press cyclically the <code><i>' '</i></code> (space) key for choosing to render:<p><ul>
-<li>only the points for all triangles in the triangle strip of interest;</li>
-<li>the <i>'wireframe versions'</i> for the triangle and the desired polygons in the quad strip of interest;</li>
-<li>the <i>'filled versions'</i> for the triangle and the desired polygons in the quad strip of interest.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><table border=0 width=100%>
+<li>only the points for all triangles in the triangle fan of interest;</li>
+<li>the <i>'wireframe versions'</i> for all triangles in the triangle fan of interest;</li>
+<li>the <i>'filled versions'</i> for all triangles in the triangle fan of interest.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><table border=0 width=100%>
 
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example057_old_conf0.png' border='0'></td>
