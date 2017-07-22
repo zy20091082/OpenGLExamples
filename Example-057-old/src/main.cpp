@@ -59,9 +59,8 @@ int num=5;
 /// The Euclidean 3D coordinates for all points in the triangle fan of interest, approximating the <i>'Circle'</i> shape.
 /**
  * The Euclidean 3D coordinates for all 'n' points in the triangle fan of interest, approximating the 'Circle' shape, are stored as consecutive 3 floating-point values.
- * By construction, this array contains '3*(n+1
- * In particular, the Euclidean 3D coordinates, related to the point of index (j % 8), for any j, are stored in locations '3*j' - '3*j+1' - '3*j+2' within this array.
- * Each point has the same color 'white', which is not consider in the vertex-array structure.
+ * By construction, this array contains '3*(n+1)' locations. In particular, the Euclidean 3D coordinates, related to the point of index (j % 8), for any j, are stored
+ * in locations '3*j' - '3*j+1' - '3*j+2' within this array. Each point has the same color 'white', which is not consider in the vertex-array structure.
  */
 float *pnts=NULL;
 
