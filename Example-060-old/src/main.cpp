@@ -186,7 +186,7 @@ void draw()
 	if(mode==0) cout<<"\tThe 'filled versions' ";
 	if(mode==1) cout<<"\tThe 'wireframe versions' ";
 	if(mode==2) cout<<"\tOnly the points ";
-	cout<<"of the triangles in the triangle fan, defined by using 'n="<<num<<"' vertices, are drawn."<<endl;
+	cout<<"of the triangles in the triangle fan, defined by using 'n="<<num<<"' vertices, are currently drawn."<<endl;
 	cout.flush();
 }
 
