@@ -70,19 +70,22 @@ float radiusZ=5.0;
 
 /// The rotation angle <i>'Rx'</i> for rotating the <i>Ellipsoid'</i> shape along the x-axis.
 /**
- * This values indicates the angle 'Rx' for rotating the Ellipsoid' shape along the x-axis '[1,0,0]'. This rotation angle is increased by pressing the 'X' key, and decreased by pressing the 'x' key.
+ * This value indicates the angle 'Rx' for rotating the Ellipsoid' shape along the x-axis '[1,0,0]'. This rotation angle is increased by pressing the 'X' key, and
+ * decreased by pressing the 'x' key.
  */
 float Xangle=0.0;
 
 /// The rotation angle <i>'Ry'</i> for rotating the <i>Ellipsoid'</i> shape along the y-axis.
 /**
- * This values indicates the angle 'Ry' for rotating the Ellipsoid' shape along the y-axis '[0,1,0]'. This rotation angle is increased by pressing the 'Y' key, and decreased by pressing the 'y' key.
+ * This value indicates the angle 'Ry' for rotating the Ellipsoid' shape along the y-axis '[0,1,0]'. This rotation angle is increased by pressing the 'Y' key, and
+ * decreased by pressing the 'y' key.
  */
 float Yangle=0.0;
 
 /// The rotation angle <i>'Rz'</i> for rotating the <i>Ellipsoid'</i> shape along the z-axis.
 /**
- * This values indicates the angle 'Rz' for rotating the Ellipsoid' shape along the z-axis '[0,0,1]'. This rotation angle is increased by pressing the 'Z' key, and decreased by pressing the 'z' key.
+ * This value indicates the angle 'Rz' for rotating the Ellipsoid' shape along the z-axis '[0,0,1]'. This rotation angle is increased by pressing the 'Z' key, and
+ * decreased by pressing the 'z' key.
  */
 float Zangle=0.0;
 

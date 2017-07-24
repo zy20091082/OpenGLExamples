@@ -46,7 +46,7 @@ float xc=0.0,yc=0.0;
 
 /// The rotation angle for rotating the <i>'Sphere'</i> shape.
 /**
- * This values indicates the angle for rotating the 'Sphere' shape along the custom axis '[1,1,1]' by pressing the 'r' key.
+ * This value indicates the angle for rotating the 'Sphere' shape along the custom axis '[1,1,1]' by pressing the 'r' key.
  */
 float Angle=0.0;
 

@@ -38,33 +38,38 @@ using namespace std;
 
 /// The rotation angle <i>'Rx'</i> for rotating the <i>'Truncated Cone'</i> shape along the x-axis.
 /**
- * This values indicates the angle 'Rx' for rotating the 'Truncated Cone' shape along the x-axis '[1,0,0]'. This rotation angle is increased by pressing the 'X' key, and decreased by pressing the 'x' key.
+ * This value indicates the angle 'Rx' for rotating the 'Truncated Cone' shape along the x-axis '[1,0,0]'. This rotation angle is increased by pressing the 'X' key, and
+ * decreased by pressing the 'x' key.
  */
 float Xangle=0.0;
 
 /// The rotation angle <i>'Ry'</i> for rotating the <i>'Truncated Cone'</i> shape along the y-axis.
 /**
- * This values indicates the angle 'Ry' for rotating the 'Truncated Cone' shape along the y-axis '[0,1,0]'. This rotation angle is increased by pressing the 'Y' key, and decreased by pressing the 'y' key.
+ * This value indicates the angle 'Ry' for rotating the 'Truncated Cone' shape along the y-axis '[0,1,0]'. This rotation angle is increased by pressing the 'Y' key, and
+ * decreased by pressing the 'y' key.
  */
 float Yangle=0.0;
 
 /// The rotation angle <i>'Rz'</i> for rotating the <i>'Truncated Cone'</i> shape along the z-axis.
 /**
- * This values indicates the angle 'Rz' for rotating the 'Truncated Cone' shape along the z-axis '[0,0,1]'. This rotation angle is increased by pressing the 'Z' key, and decreased by pressing the 'z' key.
+ * This value indicates the angle 'Rz' for rotating the 'Truncated Cone' shape along the z-axis '[0,0,1]'. This rotation angle is increased by pressing the 'Z' key, and
+ * decreased by pressing the 'z' key.
  */
 float Zangle=0.0;
 
 /// The number <i>'h'</i> of the horizontal slices across the <i>'y'</i> axis, approximating the <i>'Truncated Cone'</i> shape.
 /**
- * By construction, the <i>'Truncated Cone'</i> shape is approximated by a number 'h' of planes, parallel to the plane containing its basis, across the 'y' axis. This value contains the number 'h' of horizontal slices, and it is initially set to 'h=3', which is the minimum number of horizonal planes,
- * parallel to the basis of the 'Truncated Cone' shape. It is increased and decreased by pressing, respectively, the 'H' and the 'h' keys.
+ * By construction, the <i>'Truncated Cone'</i> shape is approximated by a number 'h' of planes, parallel to the plane containing its basis, across the 'y' axis. This
+ * value contains the number 'h' of horizontal slices, and it is initially set to 'h=3', which is the minimum number of horizonal planes, parallel to the basis of the
+ * 'Truncated Cone' shape. It is increased and decreased by pressing, respectively, the 'H' and the 'h' keys.
  */
 unsigned int height_slices_num=3;
 
 /// The number <i>'r'</i> of the radial sectors in the basis of the <i>'Truncated Cone'</i> shape.
 /**
- * By construction, the basis of the 'Truncated Cone' shape is approximated by a number 'r' of radial sectors, such that each point is connected to its apex. This value contains the number 'r' of radial sectors, and it is initially set to 'r=3', which is the minimum number of radial sectors in the
- * basis of the 'Truncated Cone' shape. It is increased and decreased by pressing, respectively, the 'R' and the 'r' keys.
+ * By construction, the basis of the 'Truncated Cone' shape is approximated by a number 'r' of radial sectors, such that each point is connected to its apex. This value 
+ * contains the number 'r' of radial sectors, and it is initially set to 'r=3', which is the minimum number of radial sectors in the basis of the 'Truncated Cone'
+ * shape. It is increased and decreased by pressing, respectively, the 'R' and the 'r' keys.
  */
 unsigned int radial_slices_num=3;
 

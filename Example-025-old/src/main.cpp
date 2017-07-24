@@ -66,13 +66,15 @@ float xv,yv;
 
 /// The x- and the y-ranges for the scene, where the polyline, approximating the <i>'Parabola'</i> curve of interest, must be drawn.
 /**
- * The values are useful for fixing the orthographic projection, used for drawing the scene. Here, the x-range of the 'Parabola' curve is '[ xv - R, xv + R ]' (by construction). Instead, the y-range depends on the specific 'Parabola' curve of interest.
+ * These values are useful for fixing the orthographic projection, used for drawing the scene. Here, the x-range of the 'Parabola' curve is '[ xv - R, xv + R ]' (by
+ * construction). Instead, the y-range depends on the specific 'Parabola' curve of interest.
  */
 float xmin,xmax,ymin,ymax;
 
 /// The radius <i>'R'</i> for the interval <i>['xv-R,xv+R']</i>, where the polyline, approximating the <i>'Parabola'</i> curve of interest, must be drawn.
 /**
- * It must be a positive and not null floating-point value, provided interactively by the user. In this case, the 'Parabola' curve of interest is centered with respect to its vertex '(xv,yv)', and its x-range is '[ xv - R, xv + R ]' (by construction).
+ * It must be a positive and not null floating-point value, provided interactively by the user. In this case, the 'Parabola' curve of interest is centered with respect
+ * to its vertex '(xv,yv)', and its x-range is '[ xv - R, xv + R ]' (by construction).
  */
 float R;
 

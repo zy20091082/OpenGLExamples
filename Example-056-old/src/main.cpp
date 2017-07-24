@@ -51,9 +51,9 @@ int mode=0;
 
 /// The Euclidean 3D coordinates for all points in the quad strip of interest, approximating the <i>'Square Annulus'</i> shape.
 /**
- * The Euclidean 3D coordinates for all points in the quad strip of interest, approximating the 'Square Annulus' shape, are stored as consecutive 3 floating-point values.
- * In particular, the Euclidean 3D coordinates, related to the point of index (j % 8), for any j, are stored in locations '3*j' - '3*j+1' - '3*j+2' within this array.
- * Instead, the colors for all points of interest are stored in the 'colors' array by using a similar approach.
+ * The Euclidean 3D coordinates for all points in the quad strip of interest, approximating the 'Square Annulus' shape, are stored as consecutive 3 floating-point 
+ * values. In particular, the Euclidean 3D coordinates, related to the point of index (j % 8), for any j, are stored in locations '3*j' - '3*j+1' - '3*j+2' within this
+ * array. Instead, the colors for all points of interest are stored in the 'colors' array by using a similar approach.
  *
  * The user can choose what points have to be considered by modifying the global variable 'num' (see later).
  */
