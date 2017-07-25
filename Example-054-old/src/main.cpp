@@ -137,7 +137,7 @@ int main(int argc,char **argv)
 	cout<<"\tcoordinates and the color components for the point of index 'j % 8' (for any 'j'), are stored in positions '3 * j', '3 * j + 1', and '3 * j + 2'. ";
 	cout<<"Hence, it is sufficient to access the"<<endl;
 	cout<<"\tlocations, related to vertices of indices '0,...,7,0,1', in '2' arrays, mentioned above, in order to draw the triangle strip of interest. In this ";
-	cout<<"test, the 'glDrawElement()' function is"<<endl;
+	cout<<"test, the 'glDrawElements()' function is"<<endl;
 	cout<<"\texploited for drawing a specific OpenGL primitive, formed by a bunch of vertices (not necessarily only one vertex). This is done by a single instruction, ";
 	cout<<"and requires the list of indices"<<endl;
 	cout<<"\tto the vertices to be considered, as mentioned above."<<endl<<endl;
@@ -147,7 +147,7 @@ int main(int argc,char **argv)
 	cout<<"every index 'j' in '[0,n-1]' is"<<endl;
 	cout<<"\tgenerated in order to access the locations, corresponding to the point of index 'j % 8', in the arrays of interest. These indices 'j' are passed as ";
 	cout<<"argument to the unique invocation"<<endl;
-	cout<<"\tof the 'glDrawElement()' function in the code, which automatically takes into the account their corresponding state parameters."<<endl<<endl;
+	cout<<"\tof the 'glDrawElements()' function in the code, which automatically takes into the account their corresponding state parameters."<<endl<<endl;
 	cout<<"\tIn this test, it is not possible to modify the size and the position for the 'external' and the 'internal' rectangles of the 'Square Annulus' shape. ";
 	cout<<"Instead, the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the maximum number 'n' of points to be considered by pressing the '+' key;"<<endl;

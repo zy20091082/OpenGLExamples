@@ -104,18 +104,31 @@ GLfloat *bottom_basis=NULL;
  */
 GLfloat *top_basis=NULL;
 
-/// The Euclidean 3D coordinates for all vertices, belonging to the 'lateral surface' of the <i>'Truncated Cone'</i> shape.
+/// The Euclidean 3D coordinates for all vertices, belonging to the <i>'lateral surface'</i> of the <i>'Truncated Cone'</i> shape.
 /**
  * This matrix contains the Euclidean 3D coordinates (i.e., 3 floating-point values) for all vertices, belonging to the 'lateral surface' of the 'Truncated Cone' shape.
  * By construction, the 'lateral surface' is approximated by a grid, formed by 'r' radial sectors, and by 'h' horizontal slices around the 'y'-axis. Each row of this 
  * matrix corresponds to any horizontal slice, which is approximated by a quad strip. Thus, this matrix has 'h' rows. Furthermore, it is needed to enumerate '2*(r+1)'
- * points (and their for completing correctly a quad strip. Thus, each row of this matrix contains '6*(r+1)' floating-points
+ * points (and their Euclidean 3D coordinates) for completing correctly a quad strip. As a consequence, each row of this matrix contains '6*(r+1)' floating-point values.
+ * Each row of this matrix is indirectly used by the 'glDrawElements()' function by using the degree of indirection, provided by the 'ind_side' array (see later).
 
  * The content of this matrix (including the content of other auxiliary data structures) is recomputed by the 'computePoints()' function, when the values 'r' and 'h' are
  * modified by the user. Instead, their content is deallocated by the 'clearPoints()' function.
  */
 GLfloat **sides=NULL;
 
+/// The indices, necessary for drawing the <i>'lateral surface'</i> of the <i>'Truncated Cone'</i> shape.
+/**
+ * This array contains all indices, necessary for drawing the 'lateral surface' of the 'Truncated Cone' shape. By construction, the 'lateral surface' is approximated by
+ * a grid, formed by 'r' radial sectors, and by 'h' horizontal slices around the 'y'-axis. Each row of the 'sides' matrix corresponds to any horizontal slice, which is
+ * approximated by a quad strip. Thus, the 'sides' matrix has 'h' rows. Furthermore, it is needed to enumerate '2*(r+1)' points (and their Euclidean 3D coordinates) for
+ * completing correctly a quad strip. Note that it is necessary to access, for each row, always the locations of the same indices 0, ... , 2*(r+1)-1. This array contains
+ * these indices in order to be reused for accessing the locations of interest, belonging to the rows of the 'sides' matrix. This operation is performed, for each row,
+ * by the 'glDrawElements()' function.
+ *
+ * The content of this array (including the content of other auxiliary data structures) is recomputed by the 'computePoints()' function, when the values 'r' and 'h' are
+ * modified by the user. Instead, their content is deallocated by the 'clearPoints()' function.
+ */
 uint *ind_side=NULL;
 
 /* Prototypes for all functions of interest! */
@@ -131,7 +144,54 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-059' Test, based on the (Old Mode) OpenGL."<<endl;
-
+	cout<<"\tIt draws the 'Truncated Cone' shape in an OpenGL window. Intuitively, this shape is a portion of any 'Cone' shape. This latter is a 3D geometric shape, ";
+	cout<<"that tapers smoothly from a 'basis' (not necessarily circular) to a point "<<endl;
+	cout<<"\t'(xv,yv,zv)', called the 'apex' of the 'Cone' shape. In other words, any 'Cone' ";
+	cout<<"shape is formed by a set of line segments, connecting its 'apex' to all "<<endl;
+	cout<<"\tpoints in the 'basis', such that its support plane does not contain the 'apex'. The boundary, formed by these lines, is called the 'lateral surface' of ";
+	cout<<"the 'Cone' shape. The 'axis' of the 'Cone' shape is the straight line,"<<endl;
+	cout<<"\tpassing through its 'apex', about which 'Cone' shape may have a circular symmetry. Here, we limit our attention to a 'Right Circular Cone' shape, such ";
+	cout<<"that its basis is circular, and its 'axis' passes through the 'basis' center"<<endl;
+	cout<<"\tat right angles to its support plane."<<endl<<endl;
+	cout<<"\tIn this test, we consider the 'Truncated Cone' shape as any given 'Right Circular Cone' shape, cut off by a plane, and not including its 'apex'. For the ";
+	cout<<"sake of the simplicity, the 'axis' of the 'Cone' shape is the 'y'-axis, the"<<endl;
+	cout<<"\tsupport plane for the circular basis is the 'xz' plane, and the truncation plane is parallel to the 'xz' plane. The intersection between the truncation ";
+	cout<<"plane and the cone results into another circle, parallel to the first basis"<<endl;
+	cout<<"\tin the 'xz' plane. Broadly speaking, the 'Truncated Cone' shape may be considered as a prism with '2' circular basis of different radii."<<endl<<endl;
+	cout<<"\tThe 'lateral surface' of the 'Truncated Cone' shape is approximated by a quad grid, formed by 'r' radial sectors, and by 'h' horizontal slices around ";
+	cout<<"the 'y'-axis. In addition, each of '2' basis of the 'Truncated Cone' shape"<<endl;
+	cout<<"\tis approximated by a triangle fan, imposed by the 'r' radial sectors. Specifically, the 'wireframe versions' of the polygons in these grids (in 'blue') ";
+	cout<<"are rendered by using the perspective projection."<<endl<<endl;
+	cout<<"\tFor the sake of the efficiency, we exploit the 'vertex array' technique, provided directly by the OpenGL, for modeling the 'lateral surface' and the ";
+	cout<<"basis of interest. This technique is used to group together several drawing"<<endl;
+	cout<<"\tinstructions into only one instruction for rendering (a subset of) the vertices and some of their state parameters. Here, we limit our attention to the ";
+	cout<<"Euclidean '3D' coordinates for all vertices in the 'Truncated Cone' shape "<<endl;
+	cout<<"\t(i.e, '3' floating-point values). Here, we exploit '2' different types of the 'vertex array' technique. When modeling both the basis of the 'Truncated Cone' ";
+	cout<<"shape, we exploit '2' arrays, both of '3*(r+2)' locations, for storing"<<endl;
+	cout<<"\tthe Euclidean '3D' coordinates for every vertex. In this case, the 'glDrawArrays()' function is exploited for drawing directly the content of these arrays ";
+	cout<<"without using another indirection level. Instead, we define a matrix,"<<endl;
+	cout<<"\tcontaining the Euclidean '3D' coordinates for all vertices in the quad strip of interest. By construction, each row of this matrix corresponds to a ";
+	cout<<"horizontal slice, approximated by a quad strip. Here, a quadrilateral is bounded"<<endl;
+	cout<<"\tby a pair of radial sectors. This means that it is necessary to enumerate '2*(r+1)' points and their Euclidean '3D' coordinates), thus '6 * (r+1)' ";
+	cout<<"floating-point values, for each of its 'h' rows. Each row is independently drawn"<<endl;
+	cout<<"\tby using the 'glDrawElements()' function. This is done by a single instruction, and requires the list of indices to the vertices to be considered, as ";
+	cout<<"mentioned above."<<endl<<endl;
+	cout<<"\tIn this test, the user cannot modify the position of the truncation plane, the position, and the radii of '2' basis in the 'Truncated Cone' shape of ";
+	cout<<"interest, since they are fixed in advance. Instead, the user can modify the numbers"<<endl;
+	cout<<"\t'r' and 'h' of the radial sectors and the horizontal slices, respectively, as well as rotate the scene along the coordinate axes. In particular the user ";
+	cout<<"can:"<<endl<<endl;
+	cout<<"\t\t-) increase the number 'r' of the radial sectors by pressing the 'R' key;"<<endl;
+	cout<<"\t\t-) decrease the number 'r' of the radial sectors by pressing the 'r' key;"<<endl;
+	cout<<"\t\t-) increase the number 'h' of the horizontal slices by pressing the 'H' key;"<<endl;
+	cout<<"\t\t-) decrease the number 'h' of the horizontal slices by pressing the 'h' key;"<<endl;
+	cout<<"\t\t-) increase the rotation angle 'Rx' along the 'x'-axis by pressing the 'X' key;"<<endl;
+	cout<<"\t\t-) decrease the rotation angle 'Rx' along the 'x'-axis by pressing the 'x' key;"<<endl;
+	cout<<"\t\t-) increase the rotation angle 'Ry' along the 'y'-axis by pressing the 'Y' key;"<<endl;
+	cout<<"\t\t-) decrease the rotation angle 'Ry' along the 'y'-axis by pressing the 'y' key;"<<endl;
+	cout<<"\t\t-) increase the rotation angle 'Rz' along the 'z'-axis by pressing the 'Z' key;"<<endl;
+	cout<<"\t\t-) decrease the rotation angle 'Rz' along the 'z'-axis by pressing the 'z' key."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+	cout.flush();
 
 	/* If we arrive here, we can draw the 'Truncated Cone' shape of interest by using the rendering settings, chosen by the user. */
 	glutInit(&argc,argv);
@@ -149,6 +209,17 @@ int main(int argc,char **argv)
 	return EXIT_SUCCESS;
 }
 
+/// This function deallocates all auxiliary data structures, used for drawing the <i>'Truncated Cone'</i> shape.
+/**
+ * Specifically, this function deallocates the following auxiliary data structures:
+ *
+ * -) the 'bottom_basis' array, containing the Euclidean 3D coordinates for all vertices, belonging to the inferior basis of the 'Truncated Cone' shape;
+ * -) the 'top_basis' array, containing the Euclidean 3D coordinates for all vertices, belonging to the inferior basis of the 'Truncated Cone' shape;
+ * -) the 'sides' matrix, containing the Euclidean 3D coordinates for all vertices, belonging to the 'lateral surface' of the 'Truncated Cone' shape;
+ * -) the 'ind_side' array, containing the indices for accessing the locations of interest in the 'sides' matrix.
+ *
+ * The content of these auxiliary data structures is recomputed by the 'computePoints()' function, when the values 'r' and 'h' are modified by the user.
+ */
 void clearPoints()
 {
 	/* Now, we deallocate all auxiliary arrays! */
@@ -162,6 +233,17 @@ void clearPoints()
 	sides=NULL;
 }
 
+/// This function allocates and initializes all auxiliary data structures, used for drawing the <i>'Truncated Cone'</i> shape.
+/**
+ * Specifically, this function allocates and initializes the content of the following data structures:
+ *
+ * -) the 'bottom_basis' array, containing the Euclidean 3D coordinates for all vertices, belonging to the inferior basis of the 'Truncated Cone' shape;
+ * -) the 'top_basis' array, containing the Euclidean 3D coordinates for all vertices, belonging to the inferior basis of the 'Truncated Cone' shape;
+ * -) the 'sides' matrix, containing the Euclidean 3D coordinates for all vertices, belonging to the 'lateral surface' of the 'Truncated Cone' shape;
+ * -) the 'ind_side' array, containing the indices for accessing the locations of interest in the 'sides' matrix.
+ *
+ * The content of these auxiliary data structures is completely deallocated by the 'clearPoints()' function, when the values 'r' and 'h' are modified by the user.
+ */
 void computePoints()
 {
 	float delta_radial,delta_vert;

@@ -157,7 +157,7 @@ int main(int argc,char **argv)
 	cout<<"\tcoordinates and the color components for the point of index 'j % 8' (for any 'j'), are stored in positions '3 * j', '3 * j + 1', and '3 * j + 2'. ";
 	cout<<"Hence, it is sufficient to access the "<<endl;
 	cout<<"\tlocations, related to vertices of indices '0,...,7,0,1', in '2' arrays, mentioned above, in order to draw the quad strip of interes by using the ";
-	cout<<"'glDrawElement()' function. This is done"<<endl;
+	cout<<"'glDrawElements()' function. This is done"<<endl;
 	cout<<"\tby a single instruction, and requires the list of indices to the vertices to be considered, as mentioned above."<<endl<<endl;
 	cout<<"\tIn order to show the actual validity of this approach, it is possible to limit our attention only on a specific portion of the 'Square Annulus' shape, ";
 	cout<<"defined by using only 'n' points,"<<endl;
@@ -165,7 +165,7 @@ int main(int argc,char **argv)
 	cout<<"every index 'j' in '[0,n-1]' is "<<endl;
 	cout<<"\tgenerated in order to access the locations, corresponding to the point of index 'j % 8', in the arrays of interest. These indices 'j' are passed as ";
 	cout<<"argument to the unique invocation of the"<<endl;
-	cout<<"\t'glDrawElement()' function in the code, which automatically takes into the account their corresponding state parameters. Instead, the array, necessary ";
+	cout<<"\t'glDrawElements()' function in the code, which automatically takes into the account their corresponding state parameters. Instead, the array, necessary ";
 	cout<<"for modeling the triangle, is always"<<endl;
 	cout<<"\tconsidered interely by the 'glDrawArrays()' function."<<endl<<endl;
 	cout<<"\tIn this test, it is not possible to modify the size and the position for the 'external' and the 'internal' rectangles of the 'Square Annulus' shape. ";

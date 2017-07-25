@@ -139,7 +139,7 @@ int main(int argc,char **argv)
 	cout<<"attention only to the Euclidean '3D' coordinates of all points in the triangle grid"<<endl;
 	cout<<"\tof interest. They are stored in a matrix with 'q' rows and '6 * (p+1)' columns. Each row of this matrix corresponds to a 'stack' along the Z-axis, ";
 	cout<<"approximated by a triangle strip, and contains the Euclidean '3D' coordinates"<<endl;
-	cout<<"\t(consisting of '3' floating-point values) for all '2 * (p+1)' points in the corresponding triangle strip. In this test, the 'glDrawElement()' function is ";
+	cout<<"\t(consisting of '3' floating-point values) for all '2 * (p+1)' points in the corresponding triangle strip. In this test, the 'glDrawElements()' function is ";
 	cout<<"exploited for drawing every horizontal slice of the 'Hemisphere' shape,"<<endl;
 	cout<<"\tdescribed by a row of the matrix, mentioned above. This is done by a single instruction, and requires the list of indices to the vertices '[0, ..., 2*(p+1)-1]', ";
 	cout<<"which is always the same for each slice."<<endl<<endl;
