@@ -20,27 +20,27 @@ The <i>'Example-059 (Old Mode)'</i> Test draws the <i>'Truncated Cone'</i> shape
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example059_old_conf0.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example059_old_conf1.png' border='0'></td></tr>
 <tr>
-<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a grid with <code><i>'r=3'</i></code> radial sectors and <code><i>'h=3'</i></code> horizontal slices, and <code><i>'Rx=50'</i></code>, <code><i>'Ry=35'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
-<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a grid with <code><i>'r=30'</i></code> radial sectors and <code><i>'h=3'</i></code> horizontal slices, and <code><i>'Rx=50'</i></code>, <code><i>'Ry=35'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a poly-grid with <code><i>'r=3'</i></code> radial sectors and <code><i>'h=3'</i></code> horizontal slices, and <code><i>'Rx=50'</i></code>, <code><i>'Ry=35'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a poly-grid with <code><i>'r=30'</i></code> radial sectors and <code><i>'h=3'</i></code> horizontal slices, and <code><i>'Rx=50'</i></code>, <code><i>'Ry=35'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
 </tr>
 
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example059_old_conf2.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example059_old_conf3.png' border='0'></td></tr>
 <tr>
-<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a grid with <code><i>'r=30'</i></code> radial sectors and <code><i>'h=10'</i></code> horizontal slices, and <code><i>'Rx=50'</i></code>, <code><i>'Ry=35'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
-<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a grid with <code><i>'r=30'</i></code> radial sectors and <code><i>'h=10'</i></code> horizontal slices, and <code><i>'Rx=50'</i></code>, <code><i>'Ry=325'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a poly-grid with <code><i>'r=30'</i></code> radial sectors and <code><i>'h=10'</i></code> horizontal slices, and <code><i>'Rx=50'</i></code>, <code><i>'Ry=35'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a poly-grid with <code><i>'r=30'</i></code> radial sectors and <code><i>'h=10'</i></code> horizontal slices, and <code><i>'Rx=50'</i></code>, <code><i>'Ry=325'</i></code>, and <code><i>'Rz=0'</i></code>.</td>
 </tr>
 
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example059_old_conf4.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example059_old_conf5.png' border='0'></td></tr>
 <tr>
-<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a grid with <code><i>'r=3'</i></code> radial sectors and <code><i>'h=3'</i></code> horizontal slices, and <code><i>'Rx=270'</i></code>, <code><i>'Ry=360'</i></code>, and <code><i>'Rz=180'</i></code>.</td>
-<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a grid with <code><i>'r=50'</i></code> radial sectors and <code><i>'h=3'</i></code> horizontal slices, and <code><i>'Rx=90'</i></code>, <code><i>'Ry=360'</i></code>, and <code><i>'Rz=180'</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a poly-grid with <code><i>'r=3'</i></code> radial sectors and <code><i>'h=3'</i></code> horizontal slices, and <code><i>'Rx=270'</i></code>, <code><i>'Ry=360'</i></code>, and <code><i>'Rz=180'</i></code>.</td>
+<td width=50%>The <i>'wireframe'</i> version for the <i>'Truncated Cone'</i> shape of interest is approximated by a poly-grid with <code><i>'r=50'</i></code> radial sectors and <code><i>'h=3'</i></code> horizontal slices, and <code><i>'Rx=90'</i></code>, <code><i>'Ry=360'</i></code>, and <code><i>'Rz=180'</i></code>.</td>
 </tr></table>
 
-<table border='1'><tr><td><p><b>IMPORTANT:</b><p>The <i>'vertex array'</i> technique is easy to be customized for a different number of vertices. In fact, it is sufficient to modify only the desired locations in the array/matrix of interest. For instance, the matrix, containing all Euclidean <code><i>'3D'</i></code> coordinates in this test, is recomputed only when the value <i><code>'n'</code></i> is modified (as mentioned above). In any case, this matrix may be precomputed in advance and reused many times, if necessary.<p>Note that there exist several variants of the <i>'vertex array'</i> technique, that allow to draw multiple vertices and their state parameters with an unique instruction. Broadly speaking, this technique is the basis for the recent <i>OpenGL indirect (retained) drawing mode</i>. These techniques will be validated in the next tests.</td></tr></table>
+<table border='1'><tr><td><p><b>IMPORTANT:</b><p>The <i>'vertex array'</i> technique is easy to be customized for a different number of samples. In fact, it is sufficient to modify only the desired locations in the array/matrix of interest. For instance, the matrix, containing the Euclidean <code><i>'3D'</i></code> coordinates for all vertices in this test, is recomputed only when the values <i><code>'h'</code></i> and <i><code>'r'</code></i> are modified (as mentioned above). In any case, this matrix may be precomputed in advance and reused many times, if necessary.<p>Note that there exist several variants of the <i>'vertex array'</i> technique, that allow to draw multiple vertices and their state parameters with an unique instruction. Broadly speaking, this technique is the basis for the recent <i>OpenGL indirect (retained) drawing mode</i>. These techniques will be validated in the next tests.</td></tr></table>
 
 <p><hr><p><h4>Dependencies</h4>
 
