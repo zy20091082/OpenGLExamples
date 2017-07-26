@@ -59,7 +59,7 @@ float Zangle=0.0;
 
 /// The number <i>'n'</i> of the samples, approximating the parabolic profile to be extruded in order to form the <i>'Playground Slide'</i> shape of interest.
 /**
- * By construction, the 'Playground Slide' shape is defined by extruding a parabolic profile, This value contains the number 'n' of the samples, approximating the 
+ * By construction, the 'Playground Slide' shape is defined by extruding a parabolic profile. This value contains the number 'n' of the samples, approximating the 
  * parabolic profile of interest. It is increased and decreased by pressing, respectively, the '+' and the '-' keys.
  */
 unsigned int num_samples=3;

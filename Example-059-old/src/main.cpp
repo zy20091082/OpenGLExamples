@@ -111,7 +111,7 @@ GLfloat *top_basis=NULL;
  * matrix corresponds to any horizontal slice, which is approximated by a quad strip. Thus, this matrix has 'h' rows. Furthermore, it is needed to enumerate '2*(r+1)'
  * points (and their Euclidean 3D coordinates) for completing correctly a quad strip. As a consequence, each row of this matrix contains '6*(r+1)' floating-point values.
  * Each row of this matrix is indirectly used by the 'glDrawElements()' function by using the degree of indirection, provided by the 'ind_side' array (see later).
-
+ *
  * The content of this matrix (including the content of other auxiliary data structures) is recomputed by the 'computePoints()' function, when the values 'r' and 'h' are
  * modified by the user. Instead, their content is deallocated by the 'clearPoints()' function.
  */
