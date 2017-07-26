@@ -173,7 +173,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 'y':
 		
-			/* The key is 'y', thus we decrease the rotation angle 'Ry' for rotating the 'wireframe version' of the 'Truncated Cone' shape along the Y-axis. */
+			/* The key is 'y', thus we decrease the rotation angle 'Ry' for rotating the 'wireframe version' of the 'Playground Slide' shape along the Y-axis. */
 			Yangle -= 5.0;
 			if(Yangle < 0.0) Yangle += 360.0;
 	        glutPostRedisplay();
@@ -181,7 +181,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 'Y':
 		
-			/* The key is 'Y', thus we increase the rotation angle 'Ry' for rotating the 'wireframe version' of the 'Truncated Cone' shape along the Y-axis. */
+			/* The key is 'Y', thus we increase the rotation angle 'Ry' for rotating the 'wireframe version' of the 'Playground Slide' shape along the Y-axis. */
 	        Yangle += 5.0;
 			if (Yangle > 360.0) Yangle -= 360.0;
 	        glutPostRedisplay();
@@ -189,7 +189,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 'z':
         
-	        /* The key is 'z', thus we decrease the rotation angle 'Rz' for rotating the 'wireframe version' of the 'Truncated Cone' shape along the z-axis. */
+	        /* The key is 'z', thus we decrease the rotation angle 'Rz' for rotating the 'wireframe version' of the 'Playground Slide' shape along the z-axis. */
 			Zangle -= 5.0;
 			if(Zangle < 0.0) Zangle += 360.0;
 	        glutPostRedisplay();
@@ -197,7 +197,7 @@ void manageKeys(unsigned char key, int x, int y)
         
 		case 'Z':
 		
-			/* The key is 'Z', thus we increase the rotation angle 'Rz' for rotating the 'wireframe version' of the 'Truncated Cone' shape along the z-axis. */
+			/* The key is 'Z', thus we increase the rotation angle 'Rz' for rotating the 'wireframe version' of the 'Playground Slide' shape along the z-axis. */
 	        Zangle += 5.0;
 			if (Zangle > 360.0) Zangle -= 360.0;
 	        glutPostRedisplay();

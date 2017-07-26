@@ -474,8 +474,6 @@ void manageKeys(unsigned char key, int x, int y)
 /// This function draws the <i>'Truncated Cone'</i> shape in the OpenGL window of interest by using the preferences, chosen by the user.
 void draw()
 {
-	float delta_radial,delta_vert;
-
 	/* Now, we draw the 'Truncated Cone' shape in the OpenGL window of interest by using the preferences, chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glMatrixMode(GL_MODELVIEW);
