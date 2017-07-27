@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: June 2017
+ * Last update: July 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -45,7 +45,8 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-007' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the 'filled versions' for 12 quadrilaterals with different colors in an OpenGL window, and provides a basic interaction mechanism with the user."<<endl<<endl;
+	cout<<"\tIt draws the 'filled versions' for 12 quadrilaterals with different colors in an OpenGL window, and provides a basic interaction mechanism with the user.";
+	cout<<endl<<endl;
 	cout<<"\tHere, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -249,3 +250,4 @@ void manageKeys(unsigned char key, int x, int y)
     	break;
 	}
 }
+

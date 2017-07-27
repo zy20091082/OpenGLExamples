@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: June 2017
+ * Last update: July 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -63,8 +63,10 @@ int main(int argc,char **argv)
 	cout<<"\t\t0. the quadrilateral #0 (in 'red') with vertices '(20,20,0)' - '(80,20,0)' - '(80,80,0)' - '(20,80,0)';"<<endl;
 	cout<<"\t\t1. the quadrilateral #1 (in 'green') with vertices '(120,120,0)' - '(180,120,0)' - '(180,180,0)' - '(120,180,0)';"<<endl<<endl;
 	cout<<"\tby using the following orthographic projections (activated upon request by the user):"<<endl<<endl;
-	cout<<"\t\t0. the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' is activated by pressing the '0' key (the 'Viewing Configuration #0'). In this case, only the quadrilateral #0 is shown."<<endl;
-	cout<<"\t\t1. The ortographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' is activated by pressing the '1' key (the 'Viewing Configuration #1'). In this case, both the quadrilaterals #0 and #1 are shown."<<endl<<endl;
+	cout<<"\t\t0. the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' is activated by pressing the '0' key (the 'Viewing Configuration #0'). In this case, ";
+	cout<<"only the quadrilateral #0 is shown."<<endl;
+	cout<<"\t\t1. The ortographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' is activated by pressing the '1' key (the 'Viewing Configuration #1'). In this case, ";
+	cout<<"both the quadrilaterals #0 and #1 are shown."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -97,7 +99,8 @@ void resize(int w, int h)
 /// This function draws the <i>'filled versions'</i> of 2 quadrilaterals (respectively, in <i>'red'</i> and in <i>'green'</i>) in the OpenGL window of interest by using the orthographic projection, chosen by the user.
 void draw()
 {
-	/* We draw the 'filled versions' of 2 quadrilaterals (respectively, in 'red' and in 'green') in the OpenGL window of interest by using the orthographic projection, chosen by the user. */
+	/* We draw the 'filled versions' of 2 quadrilaterals (respectively, in 'red' and in 'green') in the OpenGL window of interest by using the orthographic projection,
+	 * chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0, 0.0, 0.0);
   	glBegin(GL_POLYGON);
@@ -129,7 +132,8 @@ void initialize()
 	far_value=1.0;
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	eol=false;
-	cout<<"\tAt the beginning, the 'Viewing Configuration #0', corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', is applied to the scene."<<endl<<endl;
+	cout<<"\tAt the beginning, the 'Viewing Configuration #0', corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', is applied to the scene.";
+	cout<<endl<<endl;
 	cout.flush();
 }
 
@@ -187,7 +191,8 @@ void manageKeys(unsigned char key, int x, int y)
 		case '0':
 		
 		/* The key is '0', thus we exploit the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' (the 'Viewing Configuration #0'). */
-		cout<<"\tThe 'Viewing Configuration #0', corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', is currently applied to the scene."<<endl;
+		cout<<"\tThe 'Viewing Configuration #0', corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', is currently applied to the scene.";
+		cout<<endl;
 		cout.flush();
 		eol=true;
 		left_value=0.0;
@@ -204,7 +209,8 @@ void manageKeys(unsigned char key, int x, int y)
 		case '1':
 		
 		/* The key is '1', thus we exploit the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' (the 'Viewing Configuration #1'). */
-		cout<<"\tThe 'Viewing Configuration #1', corresponding to the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]', is currently applied to the scene."<<endl;
+		cout<<"\tThe 'Viewing Configuration #1', corresponding to the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]', is currently applied to the scene.";
+		cout<<endl;
 		cout.flush();
 		eol=true;
 		left_value=0.0;
@@ -224,3 +230,4 @@ void manageKeys(unsigned char key, int x, int y)
     	break;
 	}	
 }
+

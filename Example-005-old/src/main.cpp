@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: June 2017
+ * Last update: July 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -58,7 +58,8 @@ int main(int argc,char **argv)
 	cout<<"\tThe polygon of interest is the intersection of the following elements:"<<endl<<endl;
 	cout<<"\t\t-) the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]';"<<endl;
 	cout<<"\t\t-) the triangle with vertices '(x,20,0)' - '(80,20,0)' - '(80,80,0)', for any 'x' coordinate along the x-axis."<<endl<<endl;
-	cout<<"\tHere, the orthographic viewing box is not modified. Instead, the 'x' coordinate of the triangle, initially set to 'x=20', can be moved by the user along the x-axis. Specifically, the user can:"<<endl<<endl;
+	cout<<"\tHere, the orthographic viewing box is not modified. Instead, the 'x' coordinate of the triangle, initially set to 'x=20', can be moved by the user along ";
+	cout<<"the x-axis. Specifically, the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the 'x' coordinate by 1.0 for the triangle of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the 'x' coordinate by 1.0 for the triangle of interest by pressing the '-' key;"<<endl;
 	cout<<"\t\t-) reset the 'x' coordinate for the triangle of interest to its initial value 'x=20' by pressing the '=' key."<<endl<<endl;
@@ -207,3 +208,4 @@ void manageKeys(unsigned char key, int x, int y)
     	break;
 	}
 }
+

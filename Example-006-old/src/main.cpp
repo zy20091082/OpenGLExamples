@@ -81,7 +81,8 @@ void resize(int w, int h)
 /// This function draws the <i>'filled version'</i> of the polygon (in <i>'red'</i>), which is the intersection with the maximum number 7 of the edges and the vertices between a triangle and the ortographic viewing box, in the OpenGL window of interest.
 void draw()
 {
-	/* We draw the 'filled' version' of a polygon (in 'red') in the OpenGL window of interest. It is the intersection with the maximum number 7 of the edges and the vertices between:
+	/* We draw the 'filled' version' of a polygon (in 'red') in the OpenGL window of interest. It is the intersection with the maximum number 7 of the edges and the
+	 * vertices between:
 	 *
 	 * -) the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1];
 	 * -) the triangle with vertices '(-50,-30,0)' - '(150,-50,0)' - '(50,150,0).
@@ -153,3 +154,4 @@ void manageKeys(unsigned char key, int x, int y)
     	break;
 	}
 }
+

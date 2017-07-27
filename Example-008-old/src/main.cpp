@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: June 2017
+ * Last update: July 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -58,14 +58,18 @@ int main(int argc,char **argv)
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-008' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws the 'filled versions' for 2 quadrilaterals of different size and with a not empty intersection (partial overlap) in an OpenGL window."<<endl;
-	cout<<"\tIn particular, the 'small' quadrilateral may be completely covered by the 'large' quadrilateral, depending on their rendering order. This latter corresponds to their color, which is defined as follows:"<<endl<<endl;
+	cout<<"\tIn particular, the 'small' quadrilateral may be completely covered by the 'large' quadrilateral, depending on their rendering order. This latter ";
+	cout<<"corresponds to their color, which is defined"<<endl<<"\tas follows:"<<endl<<endl;
 	cout<<"\t\t-) the quadrilateral in 'red' is rendered before in the scene;"<<endl;
 	cout<<"\t\t-) the quadrilateral in 'blue' is rendered after in the scene."<<endl<<endl;
-	cout<<"\tThe rendering order of these quadrilaterals corresponds to the following viewing configurations, that can be activated upon request by the user:"<<endl<<endl;
-	cout<<"\t\t0. the 'large' quadrilateral (in 'red') is rendered before, and the 'small' quadrilateral (in 'blue') is rendered after in the 'Viewing Configuration #0'. In this case, both the quadrilaterals are visible."<<endl;
-	cout<<"\t\t   The 'Viewing Configuration #0' is activated upon request by pressing the '0' key."<<endl<<endl;
-	cout<<"\t\t1. The 'small' quadrilateral (in 'red') is rendered before, and the 'large' quadrilateral (in 'blue') is rendered after in the 'Viewing Configuration #1'. In this case, only the 'large' quadrilateral is visible."<<endl;
-	cout<<"\t\t   The 'Viewing Configuration #1' is activated upon request by pressing the '1' key."<<endl<<endl;
+	cout<<"\tThe rendering order of these quadrilaterals corresponds to the following viewing configurations, that can be activated upon request by the user:";
+	cout<<endl<<endl;
+	cout<<"\t\t0. the 'large' quadrilateral (in 'red') is rendered before, and the 'small' quadrilateral (in 'blue') is rendered after in the 'Viewing Configuration ";
+	cout<<"#0'. In this case, both the"<<endl<<"\t\t   quadrilaterals are visible. The 'Viewing Configuration #0' is activated upon request by pressing the '0' key.";
+	cout<<endl<<endl;
+	cout<<"\t\t1. The 'small' quadrilateral (in 'red') is rendered before, and the 'large' quadrilateral (in 'blue') is rendered after in the 'Viewing Configuration ";
+	cout<<"#1'. In this case, only the "<<endl<<"\t\t   'large' quadrilateral is visible. The 'Viewing Configuration #1' is activated upon request by pressing the '1' ";
+	cout<<"key."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -237,3 +241,4 @@ void manageKeys(unsigned char key, int x, int y)
     	break;
 	}
 }
+
