@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: June 2017
+ * Last update: July 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -62,7 +62,8 @@ int main(int argc,char **argv)
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-010' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws several graphic primitives in an OpenGL window, starting from a cloud of 3D points."<<endl;
-	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which can choose what graphic primitive must be exploited, as follows::"<<endl<<endl;
+	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which can choose what graphic primitive must be exploited, as follows:";
+	cout<<endl<<endl;
 	cout << "\t\t0. the 'GL_POINTS' primitive is chosen by pressing the '0' key for drawing several independent 3D points;" << endl;
 	cout << "\t\t1. the 'GL_LINES' primitive is chosen by pressing the '1' key for drawing several independent lines;" << endl;
 	cout << "\t\t2. the 'GL_LINE_STRIP' primitive is chosen by pressing the '2' key for drawing an open line strip;" << endl;
@@ -247,3 +248,4 @@ void manageKeys(unsigned char key, int x, int y)
     	break;
 	}
 }
+

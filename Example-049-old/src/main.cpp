@@ -95,7 +95,7 @@ int main(int argc,char **argv)
 	cout<<"\ttriangle fan, imposed by the 'r' radial sectors. By construction, it is possible to merge these grids into a unique triangle grid. Specifically, the 'wireframe versions' of the triangles in this triangle grid (in 'blue') are rendered by using the"<<endl;
 	cout<<"\tperspective projection."<<endl<<endl;
 	cout<<"\tIn this test, the user cannot modify the position of the truncation plane, the position, and the radii of '2' basis in the 'Truncated Cone' shape of interest, since they are fixed in advance. Instead, the user can modify the numbers 'r' and"<<endl;
-	cout<<"\t'h' of the radial sectors and the horizontal slices, respectively, as well as rotate the scene along the coordinate axes. In particular the user can:"<<endl<<endl;
+	cout<<"\t'h' of the radial sectors and the horizontal slices, respectively, as well as rotate the scene along the coordinate axes. In particular, the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'r' of the radial sectors by pressing the 'R' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'r' of the radial sectors by pressing the 'r' key;"<<endl;
 	cout<<"\t\t-) increase the number 'h' of the horizontal slices by pressing the 'H' key;"<<endl;

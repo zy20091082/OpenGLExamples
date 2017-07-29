@@ -200,7 +200,8 @@ void initialize()
 	pnts=NULL;
 	glEnableClientState(GL_VERTEX_ARRAY);
 	computeEllipseVertices();
-	cout<<"\tAt the beginning, the 'filled versions' of the triangles in the triangle fan, defined by using 'n=5' vertices (the minimum number 'n' as possible), are drawn."<<endl<<endl;
+	cout<<"\tAt the beginning, the 'filled versions' of the triangles in the triangle fan, defined by using 'n=5' vertices (the minimum number 'n' as possible), are ";
+	cout<<"drawn."<<endl<<endl;
 	cout.flush();
 }
 
@@ -273,9 +274,19 @@ void manageKeys(unsigned char key, int x, int y)
 		case '-':
 		
 			/* We decrease the number of the vertices to be considered in the triangle fan, approximating the 'Ellipse' shape. */
-			if(num>5) { num=num-1; computeEllipseVertices(); }
-			else cout<<"\tThe minimum number 'n=5' of the vertices to be considered in the triangle fan of interest is reached, and it is not possible to decrease again this number."<<endl;
-			cout.flush();
+			if(num>5)
+			{
+				num=num-1;
+				computeEllipseVertices(); 
+			}
+			else
+			{
+				cout<<"\tThe minimum number 'n=5' of the vertices to be considered in the triangle fan of interest is reached, and it is not possible to decrease ";
+				cout<<"again this number."<<endl;
+				cout.flush();
+			}
+
+			/* If we arrive here, this case is finished! */
 			glutPostRedisplay();
 			break;
 

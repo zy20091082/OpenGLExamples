@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: June 2017
+ * Last update: July 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -71,8 +71,10 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-018' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the 'filled' and the 'wireframe versions' of several convex (in 'red') and concave (in 'blue') polygons in an OpenGL window. This test also provides a very basic interaction mechanism with the user, which can cycle the"<<endl;
-	cout<<"\tvertices order in the polygons of interest by pressing the '+' key. While performing these operations, there may be 'strange' situations, expecially when cycling the vertices in the 'filled versions' of the concave polygons."<<endl<<endl;
+	cout<<"\tIt draws the 'filled' and the 'wireframe versions' of several convex (in 'red') and concave (in 'blue') polygons in an OpenGL window. This test also ";
+	cout<<"provides a very basic interaction mechanism with the user, which can cycle the"<<endl;
+	cout<<"\tvertices order in the polygons of interest by pressing the '+' key. While performing these operations, there may be 'strange' situations, expecially when";
+	cout<<" cycling the vertices in the 'filled versions' of the concave polygons."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -107,7 +109,8 @@ void draw()
 {
 	int pp,jj;
 
-	/* We draw the 'filled' and the 'wireframe versions' of several convex (in 'red') and concave (in 'blue') polygons in the OpenGL window of interest. First, we draw the 'filled version' of the convex polygon #0 (in 'red'). */
+	/* We draw the 'filled' and the 'wireframe versions' of several convex (in 'red') and concave (in 'blue') polygons in the OpenGL window of interest. First, we draw
+	 * the 'filled version' of the convex polygon #0 (in 'red'). */
 	pp = (iconvex%5);
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(10.0);
@@ -237,3 +240,4 @@ void manageKeys(unsigned char key, int x, int y)
     	break;
 	}
 }
+

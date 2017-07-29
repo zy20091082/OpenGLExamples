@@ -178,7 +178,7 @@ int main(int argc,char **argv)
 	cout<<"mentioned above."<<endl<<endl;
 	cout<<"\tIn this test, the user cannot modify the position of the truncation plane, the position, and the radii of '2' basis in the 'Truncated Cone' shape of ";
 	cout<<"interest, since they are fixed in advance. Instead, the user can modify the numbers"<<endl;
-	cout<<"\t'r' and 'h' of the radial sectors and the horizontal slices, respectively, as well as rotate the scene along the coordinate axes. In particular the user ";
+	cout<<"\t'r' and 'h' of the radial sectors and the horizontal slices, respectively, as well as rotate the scene along the coordinate axes. In particular, the user ";
 	cout<<"can:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'r' of the radial sectors by pressing the 'R' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'r' of the radial sectors by pressing the 'r' key;"<<endl;

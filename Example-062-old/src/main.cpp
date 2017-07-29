@@ -58,8 +58,8 @@ int mode=0;
  * sequence of '2*(n+1)' points. Hence, each quad strip occupies '6*2*(n+1) = 12*(n+1)' locations in this array. It is clear that storing all 3 quad strips, needed for
  * modeling correctly the 'Bullseye' shape requires '36*(n+1)' locations, and each location of this array stores a floating-point value.
  *
- * The content of this array, including the content of other auxiliary arrays (see later), is recomputed by the 'computePoints()' function, when the number 'n' is 
- * modified by the user. Instead, the content of these auxiliary arrays is deallocated by the 'destroyPoints()' function.
+ * The content of this array, including the content of other auxiliary data structures (see later), is recomputed by the 'computePoints()' function, when the number 'n'
+ * is modified by the user. Instead, the content of these auxiliary data structures is deallocated by the 'destroyPoints()' function.
  */
 GLfloat *quads=NULL;
 
@@ -71,8 +71,8 @@ GLfloat *quads=NULL;
  * quad strip. This implies that each quad strip is described by a sequence of '2*(n+1)' points. Hence, this array has always 3 locations, and each location is equal to
  * '2*(n+1)'.
  *
- * The content of this array, including the content of other auxiliary arrays (see later), is recomputed by the 'computePoints()' function, when the number 'n' is 
- * modified by the user. Instead, the content of these auxiliary arrays is deallocated by the 'destroyPoints()' function. 
+ * The content of this array, including the content of other auxiliary data structures (see later), is recomputed by the 'computePoints()' function, when the number 'n'
+ * is modified by the user. Instead, the content of these auxiliary data structures is deallocated by the 'destroyPoints()' function. 
  */
 int *cnt=NULL;
 
@@ -85,8 +85,8 @@ int *cnt=NULL;
  * implies that each quad strip is described by a sequence of '2*(n+1)' points. As a consequence, this matrix has '3' rows (one for each quad strip), and each row
  * contains the '2*(n+1)' indices to the locations of the 'quads' array, describing the points of the corresponding quad strip.
  *
- * The content of this matrix, including the content of other auxiliary arrays (see later), is recomputed by the 'computePoints()' function, when the number 'n' is 
- * modified by the user. Instead, the content of these auxiliary arrays is deallocated by the 'destroyPoints()' function. 
+ * The content of this matrix, including the content of other auxiliary data structures (see later), is recomputed by the 'computePoints()' function, when the number
+ * 'n' is modified by the user. Instead, the content of these auxiliary data structures is deallocated by the 'destroyPoints()' function. 
  */
 uint** inds=NULL;
 
@@ -108,138 +108,6 @@ void draw();
 void resize(int w,int h);
 void computePoints();
 void destroyPoints();
-
-/// This function initializes the OpenGL window of interest.
-void initialize() 
-{
-	/* We initialize the OpenGL window of interest! */
-	glClearColor(0.0, 0.0, 0.0, 0.0);
-	mode=0;
-	cnt=NULL;
-	inds=NULL;
-	quads=NULL;
-	num_samples=3;
-	glEnableClientState(GL_VERTEX_ARRAY);
-	glEnableClientState(GL_COLOR_ARRAY);
-	computePoints();
-	cout<<"\tAt the beginning, the 'filled versions' of the quadrilaterals in the quad strips, defined by using 'n=3' sectors (the minimum number 'n' as possible), are drawn."<<endl<<endl;
-	cout.flush();
-}
-
-/// This function updates the viewport for the scene when it is resized. */
-void resize(int w, int h)
-{
-	/* We update the projection and the modeling matrices! */
-	glViewport(0, 0, w, h);
-   	glMatrixMode(GL_PROJECTION);
-   	glLoadIdentity();
-   	glOrtho(-30,30,-30,30,-1,1);
-   	glMatrixMode(GL_MODELVIEW);
-   	glLoadIdentity();
-}
-
-/// This function deallocates all auxiliary arrays in this test.
-/**
- * This function deallocates all auxiliary arrays, used in this test, for modeling correctly the 'Bullseye' shape through the 'vertex array' technique. This operation
- * is needed when the number 'n' of the sectors is modified. In the case, it is necessary to recompute correctly the content of all auxiliary arrays by using the
- * 'computePoints()' member function.
- */
-void destroyPoints()
-{
-	/* Now, we destroy all auxiliary arrays for modeling correctly the 'Bullseye' shape through the 'vertex array' technique. */
-	if(quads!=NULL) delete quads;
-	quads=NULL;
-	if(cnt!=NULL) delete cnt;
-	cnt=NULL;
-	if(inds!=NULL)
-	{
-		for(uint k=0;k<3;k++) if(inds[k]!=NULL) { delete inds[k]; inds[k]=NULL; }
-		delete inds;
-		inds=NULL;
-	}
-}
-
-/// This function is the keyboard input processing routine for the OpenGL window of interest.
-void manageKeys(unsigned char key, int x, int y)
-{
-	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' - ' ' (space) keys. */
-	switch (key)
-	{
-		case 'q':
-	
-			/* The key is 'q', thus we can exit from this program. */
-			destroyPoints();
-			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-			cout << "\tPress the RETURN key to finish ... ";
-			cin.get();
-			#ifndef _MSC_VER
-				cout << endl;
-				cout.flush();
-			#endif
-			cout.flush();
-			exit(EXIT_SUCCESS);
-			break;
-		
-		case 'Q':
-	
-			/* The key is 'Q', thus we can exit from this program. */
-			destroyPoints();
-			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-			cout << "\tPress the RETURN key to finish ... ";
-			cin.get();
-			#ifndef _MSC_VER
-				cout << endl;
-				cout.flush();
-			#endif
-			cout.flush();
-			exit(EXIT_SUCCESS);
-			break;
-		
-		case 27:
-	
-			/* The key is 'Esc', thus we can exit from this program. */
-			destroyPoints();
-			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-			cout << "\tPress the RETURN key to finish ... ";
-			cin.get();
-			#ifndef _MSC_VER
-				cout << endl;
-				cout.flush();
-			#endif
-			cout.flush();
-			exit(EXIT_SUCCESS);
-			break;
-		
-		case ' ':
-		
-			/* We update the rendering mode for the quadrilaterals in the quad strips, approximating the 'Bullseye' shape. */
-			mode=(mode+1)%3;
-			glutPostRedisplay();
-			break;
-		
-		case '+':
-		
-			/* We increase the number of the sectors for the quad strips, approximating the 'Bullseye' shape. */
-			num_samples=num_samples+1;
-			computePoints();
-			glutPostRedisplay();
-			break;
-		
-		case '-':
-		
-			/* We decrease the number of the sectors for the quadrilaterals for the quad strips, approximating 'Bullseye' shape. */
-			if(num_samples>3) { num_samples=num_samples-1; computePoints(); }
-			else cout<<"\tThe minimum number 'n=5' of the sectors to be considered in the quad strips of interest is reached, and it is not possible to decrease again this number."<<endl;
-			cout.flush();
-			glutPostRedisplay();
-			break;
-
-		default:
-
-			/* Other keys are not important for us */
-			break;
-	}
-}
 
 /// The main function for the <i>'Example-062 (Old Mode)'</i> Test.
 int main(int argc,char **argv)
@@ -302,32 +170,39 @@ int main(int argc,char **argv)
 	return EXIT_SUCCESS;
 }
 
-/// This function draws the quadrilaterals in the quad strips, approximating the <i>'Bullseye'</i> shape, in the main OpenGL window by using the rendering preferences, chosen by the user.
-void draw()
+/// This function deallocates all auxiliary data structures in this test.
+/**
+ * This function deallocates all auxiliary data structures, used in this test, for modeling correctly the 'Bullseye' shape through the 'vertex array' technique. This
+ * operation is needed when the number 'n' of the sectors is modified. In the case, it is necessary to recompute correctly the content of all auxiliary data structures
+ * by using the 'computePoints()' member function.
+ */
+void destroyPoints()
 {
-	/* We draw the quadrilaterals in the quad strips, approximating the <i>'Bullseye'</i> shape, in the main OpenGL window by using the rendering preferences, chosen 
-	 * by the user. */
-	glClear(GL_COLOR_BUFFER_BIT);
-	if(mode==0) glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
-	if(mode==1) glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
-	if(mode==2) glPolygonMode(GL_FRONT_AND_BACK,GL_POINT);
-	glPointSize(5);
-	glLineWidth(2);
-	glMultiDrawElements(GL_QUAD_STRIP,cnt,GL_UNSIGNED_INT,(const void**)inds,3);
-	glFlush();
-	if(mode==0) cout<<"\tThe 'filled versions' ";
-	if(mode==1) cout<<"\tThe 'wireframe versions' ";
-	if(mode==2) cout<<"\tOnly the points ";
-	cout<<"of the quadrilaterals in the quad strips of interest, defined by using 'n="<<num_samples<<"' sectors, are currently drawn."<<endl;
-	cout.flush();
+	/* Now, we destroy all auxiliary data structures for modeling correctly the 'Bullseye' shape through the 'vertex array' technique. */
+	if(quads!=NULL) delete quads;
+	quads=NULL;
+	if(cnt!=NULL) delete cnt;
+	cnt=NULL;
+	if(inds!=NULL)
+	{
+		for(uint k=0;k<3;k++) if(inds[k]!=NULL) { delete inds[k]; inds[k]=NULL; }
+		delete inds;
+		inds=NULL;
+	}
 }
 
+/// This function allocates and computes all auxiliary data structures in this test.
+/**
+ * This function allocates and computes all auxiliary data structures, used in this test, for modeling correctly the 'Bullseye' shape through the 'vertex array'
+ * technique. This operation is needed when the number 'n' of the sectors is modified. The content of these auxiliary data structures is deallocated by the
+ * 'destroyPoints()' function.
+ */
 void computePoints()
 {
 	float delta=(2*PI)/(num_samples);
 	uint v;
 
-	/* Now, we allocate and compute all auxiliary arrays for drawing the quad strips of interest in the 'Bullseye' shape (see the above description). Here:
+	/* Now, we allocate and compute all auxiliary data structures for drawing the quad strips of interest in the 'Bullseye' shape (see the above description). Here:
 	 *
  	 * -) we have 3 'Circular Annulus' shapes, approximated by 3 quad strips (thus, the 'inds' matrix and the 'cnt' array have 3 locations).
 	 * -) Each 'Circular Annulus' is approximated by a quad strip, defined by 'n' pairs of points (as mentioned above). Since the first pair of points must be duplicated
@@ -337,7 +212,6 @@ void computePoints()
 	 * 	  coordinates, and 3 floating-point values for storing its color components (thus 6 floating-point values for each point). This means that the 'quads' array
 	 * 	  (i.e, the 'vertex array' structure in this test) have '36*(n+1)' locations.
 	 */
-	destroyPoints();
 	inds=new uint*[3];
 	for(uint k=0;k<3;k++) { inds[k]=new uint[2*(num_samples+1)]; }
 	cnt=new int[3];
@@ -432,5 +306,149 @@ void computePoints()
 	/* If we arrive here, we enable the 'vertex array' over the 'quads' array. */
 	glVertexPointer(3,GL_FLOAT,6*sizeof(float),&quads[0]);
 	glColorPointer(3,GL_FLOAT,6*sizeof(float),&quads[3]);
+}
+
+/// This function draws the quadrilaterals in the quad strips, approximating the <i>'Bullseye'</i> shape, in the main OpenGL window by using the rendering preferences, chosen by the user.
+void draw()
+{
+	/* We draw the quadrilaterals in the quad strips, approximating the 'Bullseye' shape, in the main OpenGL window by using the rendering preferences, chosen by the
+	 * user. */
+	glClear(GL_COLOR_BUFFER_BIT);
+	if(mode==0) glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
+	if(mode==1) glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
+	if(mode==2) glPolygonMode(GL_FRONT_AND_BACK,GL_POINT);
+	glPointSize(5);
+	glLineWidth(2);
+	glMultiDrawElements(GL_QUAD_STRIP,cnt,GL_UNSIGNED_INT,(const void**)inds,3);
+	glFlush();
+	if(mode==0) cout<<"\tThe 'filled versions' ";
+	if(mode==1) cout<<"\tThe 'wireframe versions' ";
+	if(mode==2) cout<<"\tOnly the points ";
+	cout<<"of the quadrilaterals in the quad strips of interest, defined by using 'n="<<num_samples<<"' sectors, are currently drawn."<<endl;
+	cout.flush();
+}
+
+/// This function initializes the OpenGL window of interest.
+void initialize() 
+{
+	/* We initialize the OpenGL window of interest! */
+	glClearColor(0.0, 0.0, 0.0, 0.0);
+	mode=0;
+	cnt=NULL;
+	inds=NULL;
+	quads=NULL;
+	num_samples=3;
+	glEnableClientState(GL_VERTEX_ARRAY);
+	glEnableClientState(GL_COLOR_ARRAY);
+	computePoints();
+	cout<<"\tAt the beginning, the 'filled versions' of the quadrilaterals in the quad strips, defined by using 'n=3' sectors (the minimum number 'n' as possible), ";
+	cout<<"are drawn."<<endl<<endl;
+	cout.flush();
+}
+
+/// This function updates the viewport for the scene when it is resized. */
+void resize(int w, int h)
+{
+	/* We update the projection and the modeling matrices! */
+	glViewport(0, 0, w, h);
+   	glMatrixMode(GL_PROJECTION);
+   	glLoadIdentity();
+   	glOrtho(-30,30,-30,30,-1,1);
+   	glMatrixMode(GL_MODELVIEW);
+   	glLoadIdentity();
+}
+
+/// This function is the keyboard input processing routine for the OpenGL window of interest.
+void manageKeys(unsigned char key, int x, int y)
+{
+	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' - ' ' (space) keys. */
+	switch (key)
+	{
+		case 'q':
+	
+			/* The key is 'q', thus we can exit from this program. */
+			destroyPoints();
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
+			cout.flush();
+			exit(EXIT_SUCCESS);
+			break;
+		
+		case 'Q':
+	
+			/* The key is 'Q', thus we can exit from this program. */
+			destroyPoints();
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
+			cout.flush();
+			exit(EXIT_SUCCESS);
+			break;
+		
+		case 27:
+	
+			/* The key is 'Esc', thus we can exit from this program. */
+			destroyPoints();
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
+			cout.flush();
+			exit(EXIT_SUCCESS);
+			break;
+		
+		case ' ':
+		
+			/* We update the rendering mode for the quadrilaterals in the quad strips, approximating the 'Bullseye' shape. */
+			mode=(mode+1)%3;
+			glutPostRedisplay();
+			break;
+		
+		case '+':
+		
+			/* We increase the number 'n' of the sectors for the quad strips, approximating the 'Bullseye' shape. */
+			destroyPoints();
+			num_samples=num_samples+1;
+			computePoints();
+			glutPostRedisplay();
+			break;
+		
+		case '-':
+		
+			/* We decrease the number 'n' of the sectors for the quadrilaterals for the quad strips, approximating 'Bullseye' shape. */
+			if(num_samples>3)
+			{
+				destroyPoints();
+				num_samples=num_samples-1;
+				computePoints(); 
+			}
+			else
+			{
+				cout<<"\tThe minimum number 'n=5' of the sectors to be considered in the quad strips of interest is reached, and it is not possible to decrease again ";
+				cout<<"this number."<<endl;
+				cout.flush();
+			}
+
+			/* If we arrive here, then this case is finished! */
+			glutPostRedisplay();
+			break;
+
+		default:
+
+			/* Other keys are not important for us */
+			break;
+	}
 }
 

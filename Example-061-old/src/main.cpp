@@ -225,36 +225,164 @@ int main(int argc,char **argv)
 	return EXIT_SUCCESS;
 }
 
-/// This function evaluates the parabolic profile for the <i>'Playground Slide'</i> shape at a given point.
-float evaluateSlide(float v) { return ( 0.03875*pow(v,2)-1.225*v+10.0); }
-
-/// This function updates the viewport for the scene when it is resized. */
-void resize(int w, int h)
+/// This function is the keyboard input processing routine for the OpenGL window of interest (ASCII keys).
+void manageKeys(unsigned char key, int x, int y)
 {
-	/* We update only the projection matrix! */
-	glViewport(0, 0, w, h);
-   	glMatrixMode(GL_PROJECTION);
-   	glLoadIdentity();
-   	glFrustum(-5.0, 5.0, -10.0, 10.0, 4.0, 100.0);
+	/* We are interested only in the '+' - '-' - 'x' - 'X' - 'y' - 'Y' - 'z' - 'Z' - 'Esc' - 'q' - 'Q' keys */
+	switch (key)
+	{
+		case 'x':
+		
+			/* The key is 'x', thus we decrease the rotation angle 'Rx' for rotating the 'wireframe version' of the 'Playground Slide' shape along the X-axis. */
+			Xangle -= 5.0;
+			if(Xangle < 0.0) Xangle += 360.0;
+	        glutPostRedisplay();
+	        break;
+		
+		case 'X':
+		
+			/* The key is 'X', thus we increase the rotation angle 'Rx' for rotating the 'wireframe version' of the 'Playground Slide' shape along the X-axis. */
+	        Xangle += 5.0;
+			if (Xangle > 360.0) Xangle -= 360.0;
+	        glutPostRedisplay();
+	        break;
+		
+		case 'y':
+		
+			/* The key is 'y', thus we decrease the rotation angle 'Ry' for rotating the 'wireframe version' of the 'Playground Slide' shape along the Y-axis. */
+			Yangle -= 5.0;
+			if(Yangle < 0.0) Yangle += 360.0;
+	        glutPostRedisplay();
+	        break;
+		
+		case 'Y':
+		
+			/* The key is 'Y', thus we increase the rotation angle 'Ry' for rotating the 'wireframe version' of the 'Playground Slide' shape along the Y-axis. */
+	        Yangle += 5.0;
+			if (Yangle > 360.0) Yangle -= 360.0;
+	        glutPostRedisplay();
+	        break;
+		
+		case 'z':
+        
+	        /* The key is 'z', thus we decrease the rotation angle 'Rz' for rotating the 'wireframe version' of the 'Playground Slide' shape along the z-axis. */
+			Zangle -= 5.0;
+			if(Zangle < 0.0) Zangle += 360.0;
+	        glutPostRedisplay();
+	        break;
+        
+		case 'Z':
+		
+			/* The key is 'Z', thus we increase the rotation angle 'Rz' for rotating the 'wireframe version' of the 'Playground Slide' shape along the z-axis. */
+	        Zangle += 5.0;
+			if (Zangle > 360.0) Zangle -= 360.0;
+	        glutPostRedisplay();
+	        break;
+		
+		case 27:
+	
+			/* The key is 'Esc', thus we can exit from this program. */
+			destroyPoints();
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
+			cout.flush();
+			exit(EXIT_SUCCESS);
+			break;
+			
+		case 'q':
+	
+			/* The key is 'q', thus we can exit from this program. */
+			destroyPoints();
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
+			cout.flush();
+			exit(EXIT_SUCCESS);
+			break;
+			
+		case 'Q':
+	
+			/* The key is 'Q', thus we can exit from this program. */
+			destroyPoints();
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
+			cout.flush();
+			exit(EXIT_SUCCESS);
+			break;
+			
+		case '+':
+			
+			/* The key is '+', thus we increase the number of the samples in the parabolic profile in the 'Playground Slide' shape. */
+			destroyPoints();
+			num_samples=num_samples+1;
+			computePoints();
+			glutPostRedisplay();
+			break;
+		
+		case '-':
+			
+			/* The key is '-', thus we reduce the number of the samples in the parabolic profile in the 'Playground Slide' shape. */
+			if(num_samples>3) 
+			{
+				destroyPoints();
+				num_samples=num_samples-1;
+				computePoints(); 
+			}
+			else 
+			{ 
+				cout<<"\tThe minimum number 'n=3' of the samples in the parabolic profile of the 'Playground Slide' shape is reached, and it is not possible to ";
+				cout<<"decrease again this number."<<endl;
+				cout.flush();
+			}
+			
+			/* If we arrive here, this case is finished! */
+			glutPostRedisplay();
+			break;
+
+		default:
+		
+			/* Other keys are not important for us */
+			break;
+	}
 }
 
-/// This function initializes the OpenGL window of interest.
-void initialize() 
+/// This function deallocates all auxiliary data structures, used for drawing the <i>'Playground Slide'</i> shape.
+/**
+ * Specifically, this function deallocates the following auxiliary data structures:
+ *
+ * -)	the 'vertices' array, containing the Euclidean 3D coordinates for the vertices in all triangle strips of interest;
+ * -)	the 'inds' matrix, containing the locations indices in the 'vertices' array, that correspond to the vertices for all triangle strips of interest;
+ * -)	the 'cnt' array, containing the vertices numbers in the triangle strips of interest (with respect to the 'vertices' array).
+ *
+ * The content of these auxiliary data structures is recomputed by the 'computePoints()' function, when the value 'n' is modified by the user.
+ */
+void destroyPoints()
 {
-	/* We initialize the OpenGL window of interest! */
-	glClearColor(0.0, 0.0, 0.0, 0.0);
-	Xangle=10.0;
-	Yangle=0.0;
-	Zangle=0.0;
-	num_samples=3;
+	/* First, we destroy the 'vertices' and the 'cnt' arrays. Finally, we destroy the 'inds' matrix. */
+	if(vertices!=NULL) delete vertices;
 	vertices=NULL;
-	inds=NULL;
+	if(cnt!=NULL) delete cnt;
 	cnt=NULL;
-	computePoints();
-	glEnableClientState(GL_VERTEX_ARRAY);
-	cout<<"\tAt the beginning, the 'wireframe version' of the 'Playground Slide' shape is drawn by exploiting 'n="<<num_samples<<"' samples in its parabolic profile, ";
-	cout<<"as well as rotation angles 'Rx="<<Xangle<<"', "<<"'Ry="<<Yangle<<"', and 'Rz="<<Zangle<<"'."<<endl<<endl;
-	cout.flush();
+	if(inds!=NULL)
+	{
+		for(unsigned int j=0;j<4;j++) if(inds[j]!=NULL) { delete inds[j]; inds[j]=NULL; } 
+		delete inds;
+		inds=NULL;
+	}
 }
 
 /// This function allocates and initializes the content of all auxiliary data structures, used for drawing the <i>'Playground Slide'</i> shape.
@@ -272,8 +400,7 @@ void computePoints()
 	float dv=40.0/(num_samples-1);
 	uint ind=0;
 
-	/* First, we deallocate the existing points. Then, we allocate all auxiliary arrays, and other variables. */
-	destroyPoints();
+	/* First, we allocate all auxiliary arrays, and other variables. */
 	inds=new uint*[4];
 	for(uint k=0;k<4;k++) inds[k]=NULL;
 	cnt=new int[4];
@@ -384,35 +511,10 @@ void computePoints()
 	}
 }
 
-/// This function deallocates all auxiliary data structures, used for drawing the <i>'Playground Slide'</i> shape.
-/**
- * Specifically, this function deallocates the following auxiliary data structures:
- *
- * -)	the 'vertices' array, containing the Euclidean 3D coordinates for the vertices in all triangle strips of interest;
- * -)	the 'inds' matrix, containing the locations indices in the 'vertices' array, that correspond to the vertices for all triangle strips of interest;
- * -)	the 'cnt' array, containing the vertices numbers in the triangle strips of interest (with respect to the 'vertices' array).
- *
- * The content of these auxiliary data structures is recomputed by the 'computePoints()' function, when the value 'n' is modified by the user.
- */
-void destroyPoints()
-{
-	/* First, we destroy the 'vertices' and the 'cnt' arrays. Finally, we destroy the 'inds' matrix. */
-	if(vertices!=NULL) delete vertices;
-	vertices=NULL;
-	if(cnt!=NULL) delete cnt;
-	cnt=NULL;
-	if(inds!=NULL)
-	{
-		for(unsigned int j=0;j<4;j++) if(inds[j]!=NULL) { delete inds[j]; inds[j]=NULL; } 
-		delete inds;
-		inds=NULL;
-	}
-}
-
 /// This function draws the <i>'Playground Slide'</i> shape in the OpenGL window of interest by using the preferences, chosen by the user.
 void draw()
 {
-	/* Now, we draw the Playground Slide' shape in the OpenGL window of interest by using the preferences, chosen by the user. */
+	/* Now, we draw the 'Playground Slide' shape in the OpenGL window of interest by using the preferences, chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glMatrixMode(GL_MODELVIEW);
    	glLoadIdentity();
@@ -431,125 +533,35 @@ void draw()
 	cout.flush();
 }
 
-/// This function is the keyboard input processing routine for the OpenGL window of interest (ASCII keys).
-void manageKeys(unsigned char key, int x, int y)
-{
-	/* We are interested only in the '+' - '-' - 'x' - 'X' - 'y' - 'Y' - 'z' - 'Z' - 'Esc' - 'q' - 'Q' keys */
-	switch (key)
-	{
-		case 'x':
-		
-			/* The key is 'x', thus we decrease the rotation angle 'Rx' for rotating the 'wireframe version' of the 'Playground Slide' shape along the X-axis. */
-			Xangle -= 5.0;
-			if(Xangle < 0.0) Xangle += 360.0;
-	        glutPostRedisplay();
-	        break;
-		
-		case 'X':
-		
-			/* The key is 'X', thus we increase the rotation angle 'Rx' for rotating the 'wireframe version' of the 'Playground Slide' shape along the X-axis. */
-	        Xangle += 5.0;
-			if (Xangle > 360.0) Xangle -= 360.0;
-	        glutPostRedisplay();
-	        break;
-		
-		case 'y':
-		
-			/* The key is 'y', thus we decrease the rotation angle 'Ry' for rotating the 'wireframe version' of the 'Playground Slide' shape along the Y-axis. */
-			Yangle -= 5.0;
-			if(Yangle < 0.0) Yangle += 360.0;
-	        glutPostRedisplay();
-	        break;
-		
-		case 'Y':
-		
-			/* The key is 'Y', thus we increase the rotation angle 'Ry' for rotating the 'wireframe version' of the 'Playground Slide' shape along the Y-axis. */
-	        Yangle += 5.0;
-			if (Yangle > 360.0) Yangle -= 360.0;
-	        glutPostRedisplay();
-	        break;
-		
-		case 'z':
-        
-	        /* The key is 'z', thus we decrease the rotation angle 'Rz' for rotating the 'wireframe version' of the 'Playground Slide' shape along the z-axis. */
-			Zangle -= 5.0;
-			if(Zangle < 0.0) Zangle += 360.0;
-	        glutPostRedisplay();
-	        break;
-        
-		case 'Z':
-		
-			/* The key is 'Z', thus we increase the rotation angle 'Rz' for rotating the 'wireframe version' of the 'Playground Slide' shape along the z-axis. */
-	        Zangle += 5.0;
-			if (Zangle > 360.0) Zangle -= 360.0;
-	        glutPostRedisplay();
-	        break;
-		
-		case 27:
-	
-			/* The key is 'Esc', thus we can exit from this program. */
-			destroyPoints();
-			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-			cout << "\tPress the RETURN key to finish ... ";
-			cin.get();
-			#ifndef _MSC_VER
-				cout << endl;
-				cout.flush();
-			#endif
-			cout.flush();
-			exit(EXIT_SUCCESS);
-			break;
-			
-		case 'q':
-	
-			/* The key is 'q', thus we can exit from this program. */
-			destroyPoints();
-			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-			cout << "\tPress the RETURN key to finish ... ";
-			cin.get();
-			#ifndef _MSC_VER
-				cout << endl;
-				cout.flush();
-			#endif
-			cout.flush();
-			exit(EXIT_SUCCESS);
-			break;
-			
-		case 'Q':
-	
-			/* The key is 'Q', thus we can exit from this program. */
-			destroyPoints();
-			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-			cout << "\tPress the RETURN key to finish ... ";
-			cin.get();
-			#ifndef _MSC_VER
-				cout << endl;
-				cout.flush();
-			#endif
-			cout.flush();
-			exit(EXIT_SUCCESS);
-			break;
-			
-		case '+':
-			
-			/* The key is '+', thus we increase the number of the samples in the parabolic profile in the 'Playground Slide' shape. */
-			num_samples=num_samples+1;
-			computePoints();
-			glutPostRedisplay();
-			break;
-		
-		case '-':
-			
-			/* The key is '-', thus we reduce the number of the samples in the parabolic profile in the 'Playground Slide' shape. */
-			if(num_samples>3) { num_samples=num_samples-1; computePoints(); }
-			else { cout<<"\tThe minimum number 'n=3' of the samples in the parabolic profile of the 'Playground Slide' shape is reached, and it is not possible to decrease again this number."<<endl; }
-			glutPostRedisplay();
-			break;
+/// This function evaluates the parabolic profile for the <i>'Playground Slide'</i> shape at a given point.
+float evaluateSlide(float v) { return ( 0.03875*pow(v,2)-1.225*v+10.0); }
 
-		default:
-		
-			/* Other keys are not important for us */
-			break;
-	}
+/// This function updates the viewport for the scene when it is resized. */
+void resize(int w, int h)
+{
+	/* We update only the projection matrix! */
+	glViewport(0, 0, w, h);
+   	glMatrixMode(GL_PROJECTION);
+   	glLoadIdentity();
+   	glFrustum(-5.0, 5.0, -10.0, 10.0, 4.0, 100.0);
+}
+
+/// This function initializes the OpenGL window of interest.
+void initialize() 
+{
+	/* We initialize the OpenGL window of interest! */
+	glClearColor(0.0, 0.0, 0.0, 0.0);
+	Xangle=10.0;
+	Yangle=0.0;
+	Zangle=0.0;
+	num_samples=3;
+	vertices=NULL;
+	inds=NULL;
+	cnt=NULL;
+	computePoints();
+	glEnableClientState(GL_VERTEX_ARRAY);
+	cout<<"\tAt the beginning, the 'wireframe version' of the 'Playground Slide' shape is drawn by exploiting 'n="<<num_samples<<"' samples in its parabolic profile, ";
+	cout<<"as well as rotation angles 'Rx="<<Xangle<<"', "<<"'Ry="<<Yangle<<"', and 'Rz="<<Zangle<<"'."<<endl<<endl;
+	cout.flush();
 }
 

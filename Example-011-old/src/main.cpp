@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: June 2017
+ * Last update: July 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -69,14 +69,21 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-011' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a custom polygon (in 'red') in an OpenGL window. It is not possible to modify the size and the position for its vertices. Instead, the settings for rendering the custom polygon of interest"<<endl;
-	cout<<"\tcan be modified interactively by the user as follows:"<<endl<<endl;
-	cout<<"\t\t-) only the 'front' side of the custom polygon is rendered by pressing the 'f' or the 'F' key. The corresponding rendering type is chosen by the user separately."<<endl;
-	cout<<"\t\t-) Only the 'back' side of the custom polygon is rendered by pressing the 'b' or the 'B' key. The corresponding rendering type is chosen by the user separately."<<endl;
-	cout<<"\t\t-) Both the 'front' and the 'back' sides of the custom polygon are rendered by pressing the 't' or the 'T' key. The corresponding rendering type is chosen by the user separately."<<endl;
-	cout<<"\t\t-) Only the vertices for the sides of the custom polygon to be drawn are rendered by pressing the 'p' or the 'P' key. The user can choose separately what sides of the custom polygon must be drawn."<<endl;
-	cout<<"\t\t-) The 'wireframe versions' for the sides of the custom polygon to be drawn are rendered by pressing the 'l' or the 'L' key. The user can choose separately what sides of the custom polygon must be drawn."<<endl;
-	cout<<"\t\t-) The 'filled versions' for the sides of the custom polygon to be drawn are rendered by pressing the 'i' or the 'I' key. The user can choose separately what sides of the custom polygon must be drawn."<<endl<<endl;
+	cout<<"\tIt draws a custom polygon (in 'red') in an OpenGL window. It is not possible to modify the size and the position for its vertices. Instead, the settings ";
+	cout<<"for rendering the custom polygon of interest can be modified"<<endl;
+	cout<<"\tinteractively by the user as follows:"<<endl<<endl;
+	cout<<"\t\t-) only the 'front' side of the custom polygon is rendered by pressing the 'f' or the 'F' key. The corresponding rendering type is chosen by the user ";
+	cout<<"separately."<<endl;
+	cout<<"\t\t-) Only the 'back' side of the custom polygon is rendered by pressing the 'b' or the 'B' key. The corresponding rendering type is chosen by the user ";
+	cout<<"separately."<<endl;
+	cout<<"\t\t-) Both the 'front' and the 'back' sides of the custom polygon are rendered by pressing the 't' or the 'T' key. The corresponding rendering type is ";
+	cout<<"chosen by the user separately."<<endl;
+	cout<<"\t\t-) Only the vertices for the sides of the custom polygon to be drawn are rendered by pressing the 'p' or the 'P' key. The user can choose separately ";
+	cout<<"what sides of the custom polygon must be drawn."<<endl;
+	cout<<"\t\t-) The 'wireframe versions' for the sides of the custom polygon to be drawn are rendered by pressing the 'l' or the 'L' key. The user can choose ";
+	cout<<"separately what sides of the custom polygon must be drawn."<<endl;
+	cout<<"\t\t-) The 'filled versions' for the sides of the custom polygon to be drawn are rendered by pressing the 'i' or the 'I' key. The user can choose ";
+	cout<<"separately what sides of the custom polygon must be drawn."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -198,42 +205,48 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 'I':
 
-		/* The key is 'I', thus we render the 'filled versions' for the sides of the custom polygon to be drawn. The user can choose separately what sides of the custom polygon must be drawn. */
+		/* The key is 'I', thus we render the 'filled versions' for the sides of the custom polygon to be drawn. The user can choose separately what sides of the custom
+		 * polygon must be drawn. */
 		mode=GL_FILL;
 		glutPostRedisplay();
 		break;
 		
 		case 'i':
 
-		/* The key is 'i', thus we render the 'filled versions' for the sides of the custom polygon to be drawn. The user can choose separately what sides of the custom polygon must be drawn. */
+		/* The key is 'i', thus we render the 'filled versions' for the sides of the custom polygon to be drawn. The user can choose separately what sides of the custom
+		 * polygon must be drawn. */
 		mode=GL_FILL;
 		glutPostRedisplay();
 		break;
 		
 		case 'L':
 
-		/* The key is 'L', thus we render the 'wireframe versions' for the sides of the custom polygon to be drawn. The user can choose separately what sides of the custom polygon must be drawn. */
+		/* The key is 'L', thus we render the 'wireframe versions' for the sides of the custom polygon to be drawn. The user can choose separately what sides of the
+		 * custom polygon must be drawn. */
 		mode=GL_LINE;
 		glutPostRedisplay();
 		break;
 		
 		case 'l':
 
-		/* The key is 'l', thus we render the 'wireframe versions' for the sides of the custom polygon to be drawn. The user can choose separately what sides of the custom polygon must be drawn. */
+		/* The key is 'l', thus we render the 'wireframe versions' for the sides of the custom polygon to be drawn. The user can choose separately what sides of the
+		 * custom polygon must be drawn. */
 		mode=GL_LINE;
 		glutPostRedisplay();
 		break;
 		
 		case 'P':
 		
-		/* The key is 'P', thus we render only the vertices in the sides of the custom polygon to be drawn. The user can choose separately what sides of the custom polygon must be drawn. */
+		/* The key is 'P', thus we render only the vertices in the sides of the custom polygon to be drawn. The user can choose separately what sides of the custom
+		 * polygon must be drawn. */
 		mode=GL_POINT;
 		glutPostRedisplay();
 		break;
 		
 		case 'p':
 		
-		/* The key is 'p', thus we render only the vertices in the sides of the custom polygon to be drawn. The user can choose separately what sides of the custom polygon must be drawn. */
+		/* The key is 'p', thus we render only the vertices in the sides of the custom polygon to be drawn. The user can choose separately what sides of the custom
+		 * polygon must be drawn. */
 		mode=GL_POINT;
 		glutPostRedisplay();
 		break;
@@ -298,3 +311,4 @@ void draw()
 		if(mode==GL_FILL) cout<<"\tThe 'filled versions' for both the 'front' and the 'back' sides of the custom polygon are currently rendered in the scene."<<endl;
 	}
 }
+

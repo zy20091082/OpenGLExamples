@@ -63,8 +63,8 @@ float Ry;
 
 /// The custom exponent <i>'k'</i> to be used for defining and drawing the polyline, approximating the <i>'Ellipse-like'</i> curve of interest.
 /**
- * In particular, any 'Ellipse-like' curve is defined in the same spirit of the 'Ellipse' curve, but it requires an exponent 'k' for computing the cosine and the sine functions to the 'k'-th. Clearly, it must be a positive and not null 'integer value', provided 
- * interactively by the user.
+ * In particular, any 'Ellipse-like' curve is defined in the same spirit of the 'Ellipse' curve, but it requires an exponent 'k' for computing the cosine and the sine
+ * functions to the 'k'-th. Clearly, it must be a positive and not null 'integer value', provided interactively by the user.
  */
 int k;
 

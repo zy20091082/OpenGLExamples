@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: June 2017
+ * Last update: July 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -45,12 +45,16 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-020' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws 2 versions of the 'Double Square Annulus' shape in an OpenGL window. This shape is bounded by an 'external' axis-parallel rectangle, and by 2 'internal' axis-parallel rectangles, entirely contained in the 'external'"<<endl;
-	cout<<"\trectangle. Broadly speaking, any 'Double Square Annulus' shape is the union of 2 'Square Annulus' shapes, connected along one side of their 'external' rectangles. Recall that any 'Square Annulus' shape is contained between"<<endl;
+	cout<<"\tIt draws 2 versions of the 'Double Square Annulus' shape in an OpenGL window. This shape is bounded by an 'external' axis-parallel rectangle, and by 2 ";
+	cout<<"'internal' axis-parallel rectangles, entirely contained in the 'external'"<<endl;
+	cout<<"\trectangle. Broadly speaking, any 'Double Square Annulus' shape is the union of 2 'Square Annulus' shapes, connected along one side of their 'external' ";
+	cout<<"rectangles. Recall that any 'Square Annulus' shape is contained between"<<endl;
 	cout<<"\t2 (concentric) axis-parallel rectangles of different size."<<endl<<endl;
-	cout<<"\tHere, the 'Double Square Annulus' shape of interest is approximated by only one triangle strip, where a bunch of 'Steiner' points are added in order to make this possible. Specifically, this test draws the 'filled' and the"<<endl;
+	cout<<"\tHere, the 'Double Square Annulus' shape of interest is approximated by only one triangle strip, where a bunch of 'Steiner' points are added in order to ";
+	cout<<"make this possible. Specifically, this test draws the 'filled' and the"<<endl;
 	cout<<"\t'wireframe versions' of all triangles in the triangle strip of interest (in 'red')."<<endl<<endl;
-	cout<<"\tThis test also provides a very basic interaction mechanism with the user. Here, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+	cout<<"\tThis test also provides a very basic interaction mechanism with the user. Here, the window of interest can be closed by pressing any among the 'Q', the ";
+	cout<<"'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
@@ -140,8 +144,8 @@ void manageKeys(unsigned char key, int x, int y)
 /// This function draws the <i>'filled'</i> and the <i>'wireframe versions'</i> of the triangle strip (in <i>'red'</i>), which approximates the <i>'Double Square Annulus'</i> shape, in the OpenGL window of interest.
 void draw()
 {
-	/* We draw the 'filled' and the 'wireframe versions' of the triangle strip (in 'red'), which approximates the 'Double Square Annulus' shape, in the OpenGL window of interest.	
-	 * First, we draw the 'wireframe version' for the triangle strip of interest (in 'red'). */
+	/* We draw the 'filled' and the 'wireframe versions' of the triangle strip (in 'red'), which approximates the 'Double Square Annulus' shape, in the OpenGL window 
+	 * of interest. First, we draw the 'wireframe version' for the triangle strip of interest (in 'red'). */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0,0.0,0.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
@@ -196,3 +200,4 @@ void draw()
 	glEnd();
 	glFlush();
 }
+

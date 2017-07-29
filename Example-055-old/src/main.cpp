@@ -176,27 +176,6 @@ int main(int argc,char **argv)
 	return EXIT_SUCCESS;
 }
 
-/// This function initializes the OpenGL window of interest.
-void initialize() 
-{
-	/* We initialize the OpenGL window of interest! */
-	glClearColor(1.0, 1.0, 1.0, 0.0);
-	long_slices_num=3;
-	lat_slices_num=3;
-	radius=5.0;
-	Xangle=0.0;
-	Yangle=0.0;
-	Zangle=0.0;
-	vertices=NULL;
-	inds=NULL;
-	glEnableClientState(GL_VERTEX_ARRAY);
-	computePoints();
-	cout<<"\tAt the beginning, the 'wireframe version' of the 'Hemisphere' shape is drawn by exploiting 'q="<<lat_slices_num<<"' latitudinal slices and 'p=";
-	cout<<long_slices_num<<"' longitudinal slices (thus, the minimum numbers 'p' and 'q' as possible), as well as rotation angles 'Rx="<<Xangle<<"', "<<"'Ry=";
-	cout<<Yangle<<"', and 'Rz="<<Zangle<<"'."<<endl<<endl;
-	cout.flush();
-}
-
 /// This function initializes the auxiliary data structures, necessary for exploiting the <i>'vertex array'</i> technique in this test.
 /**
  * Specifically, this function allocates the 'inds' array and the 'vertices' matrix, necessary for exploiting the 'vertex array' technique in this test, and computes
@@ -207,8 +186,6 @@ void computePoints()
 	float delta_p,delta_q;
 	
 	/* First, we allocate the 'inds' array! */
-	if(inds!=NULL) delete inds;
-	inds=NULL;
 	inds=new uint[2*(long_slices_num+1)];
 	for(uint h=0;h<2*(long_slices_num+1);h++) inds[h]=h;
 	delta_p=(2.0*PI)/(long_slices_num);
@@ -267,7 +244,7 @@ void manageKeys(unsigned char key, int x, int y)
 				computePoints();
 			}
 			else 
-			{ cout<<"\tThe minimum number 'q=3' of the latitudinal slices in the 'wireframe version' of the 'Hemisphere' shape is reached, and it is not possible to decrease again this number."<<endl; }
+			{ cout<<"\tThe minimum number 'q=3' of the latitudinal slices in the 'wireframe version' of the 'Hemisphere' shape is reached, and it is not possible to decrease again this number."<<endl; cout.flush(); }
 			glutPostRedisplay();
 			break;
 		
@@ -289,7 +266,7 @@ void manageKeys(unsigned char key, int x, int y)
 				long_slices_num=long_slices_num-1;
 				computePoints();
 			}
-			else { cout<<"\tThe minimum number 'p=3' of the longitudinal slices in the 'wireframe version' of the 'Hemisphere' shape is reached, and it is not possible to decrease again this number."<<endl; }
+			else { cout<<"\tThe minimum number 'p=3' of the longitudinal slices in the 'wireframe version' of the 'Hemisphere' shape is reached, and it is not possible to decrease again this number."<<endl; cout.flush(); }
 			glutPostRedisplay();
 			break;
 		
@@ -407,7 +384,29 @@ void draw()
 
 	/* If we arrive here, we have finished! */
 	glFlush();
-	cout<<"\tThe 'wireframe version' of the 'Hemisphere' shape is currently drawn by exploiting 'q="<<lat_slices_num<<"' latitudinal slices and 'p="<<long_slices_num<<"' longitudinal slices, as well as rotation angles 'Rx="<<Xangle<<"', "<<"'Ry="<<Yangle<<"', and 'Rz="<<Zangle<<"'."<<endl;
+	cout<<"\tThe 'wireframe version' of the 'Hemisphere' shape is currently drawn by exploiting 'q="<<lat_slices_num<<"' latitudinal slices and 'p="<<long_slices_num;
+	cout<<"' longitudinal slices, as well as rotation angles 'Rx="<<Xangle<<"', "<<"'Ry="<<Yangle<<"', and 'Rz="<<Zangle<<"'."<<endl;
+	cout.flush();
+}
+
+/// This function initializes the OpenGL window of interest.
+void initialize() 
+{
+	/* We initialize the OpenGL window of interest! */
+	glClearColor(1.0, 1.0, 1.0, 0.0);
+	long_slices_num=3;
+	lat_slices_num=3;
+	radius=5.0;
+	Xangle=0.0;
+	Yangle=0.0;
+	Zangle=0.0;
+	vertices=NULL;
+	inds=NULL;
+	glEnableClientState(GL_VERTEX_ARRAY);
+	computePoints();
+	cout<<"\tAt the beginning, the 'wireframe version' of the 'Hemisphere' shape is drawn by exploiting 'q="<<lat_slices_num<<"' latitudinal slices and 'p=";
+	cout<<long_slices_num<<"' longitudinal slices (thus, the minimum numbers 'p' and 'q' as possible), as well as rotation angles 'Rx="<<Xangle<<"', "<<"'Ry=";
+	cout<<Yangle<<"', and 'Rz="<<Zangle<<"'."<<endl<<endl;
 	cout.flush();
 }
 
