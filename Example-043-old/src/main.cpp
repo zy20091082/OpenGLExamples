@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: June 2017
+ * Last update: July 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -62,16 +62,23 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-043' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the 'Sphere' shape in an OpenGL window. Intuitively, the 'Sphere' shape describes a perfectly round geometrical object in the 3D space, that is the surface of a completely round ball. Like the 'Circle' shape, which geometrically is"<<endl;
-	cout<<"\tan object in the 2D space, the 'Sphere' shape is defined mathematically as the set of 3D points, that are all at the same distance 'R' from a given point '(xc,yc,zc)'. The distance 'R' is the 'radius' of the 'Sphere' shape, and the point '(xc,yc,zc)'"<<endl;
-	cout<<"\tis its 'center'."<<endl<<endl;
-	cout<<"\tHere, the 'Sphere' shape is drawn by exploiting the 'glutWireSphere()' function, offered by the OpenGL Utility Toolkit (GLUT) package (or the FreeGLUT package). This function approximates the 'Sphere' shape through a quad grid, formed by 'slices'"<<endl;
-	cout<<"\taround the Z-axis (similar to the longitudinal lines) and by 'stacks' along the Z-axis (similar to the latitudinal lines). Specifically, the 'wireframe versions' of the elements in the quad grid (in 'blue') are rendered by using the perspective"<<endl;
-	cout<<"\tprojection."<<endl<<endl;
-	cout<<"\tHere, the user cannot modify the radius 'R, the center '(xc,yc,zc)', and the numbers of the 'slices' and the 'stacks' in the approximation of interest for the 'Sphere' shape, since they are fixed in advance. Instead, the user can apply several"<<endl;
-	cout<<"\ttransformations to the scene, in particular, the user can:"<<endl<<endl;
-	cout<<"\t\t-) translate the center '(xc,yc,zc)' of the 'Sphere' shape along any of 2 directions of the X-axis by pressing the 'left' and the 'right' (arrow) keys, respectively;"<<endl;
-	cout<<"\t\t-) translate the center '(xc,yc,zc)' of the 'Sphere' shape along any of 2 directions of the Y-axis by pressing the 'up' and the 'down' (arrow) keys, respectively;"<<endl;
+	cout<<"\tIt draws the 'Sphere' shape in an OpenGL window. Intuitively, the 'Sphere' shape describes a perfectly round geometrical object in the 3D space, that is ";
+	cout<<"the surface of a completely round ball. Like the 'Circle' shape, which"<<endl;
+	cout<<"\tgeometrically is an object in the 2D space, the 'Sphere' shape is defined mathematically as the set of 3D points, that are all at the same distance 'R' ";
+	cout<<"from a given point '(xc,yc,zc)'. The distance 'R' is the 'radius' of the"<<endl;
+	cout<<"\t'Sphere' shape, and the point '(xc,yc,zc)' is its 'center'."<<endl<<endl;
+	cout<<"\tHere, the 'Sphere' shape is drawn by exploiting the 'glutWireSphere()' function, offered by the OpenGL Utility Toolkit (GLUT) package (or the FreeGLUT";
+	cout<<" package). This function approximates the 'Sphere' shape through a quad grid,"<<endl;
+	cout<<"\tformed by 'slices' around the Z-axis (similar to the longitudinal lines) and by 'stacks' along the Z-axis (similar to the latitudinal lines). ";
+	cout<<"Specifically, the 'wireframe versions' of the elements in the"<<endl;
+	cout<<"\tquad grid (in 'blue') are rendered by using the perspective projection."<<endl<<endl;
+	cout<<"\tHere, the user cannot modify the radius 'R, the center '(xc,yc,zc)', and the numbers of the 'slices' and the 'stacks' in the approximation of interest for";
+	cout<<"the 'Sphere' shape, since they are fixed in advance. Instead, the user"<<endl;
+	cout<<"\tcan apply several transformations to the scene, in particular, the user can:"<<endl<<endl;
+	cout<<"\t\t-) translate the center '(xc,yc,zc)' of the 'Sphere' shape along any of 2 directions of the X-axis by pressing the 'left' and the 'right' (arrow) keys, ";
+	cout<<"respectively;"<<endl;
+	cout<<"\t\t-) translate the center '(xc,yc,zc)' of the 'Sphere' shape along any of 2 directions of the Y-axis by pressing the 'up' and the 'down' (arrow) keys, ";
+	cout<<"respectively;"<<endl;
 	cout<<"\t\t-) rotate the 'Sphere' shape along the custom axis '[1,1,1]' by pressing the ' ' (space) key;"<<endl;
 	cout<<"\t\t-) reset all transformations, applied to the 'Sphere' shape, by pressing the 'r' key."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
@@ -102,7 +109,8 @@ void initialize()
 	xc=0.0;
 	yc=0.0;
 	Angle=0.0;
-	cout<<"\tAt the beginning, the 'Sphere' shape is drawn by exploiting the rotation angle "<<Angle<<", the translation value "<<xc<<" along the x-axis, and the translation value "<<yc<<" along the y-axis."<<endl<<endl;
+	cout<<"\tAt the beginning, the 'Sphere' shape is drawn by exploiting the rotation angle "<<Angle<<", the translation value "<<xc<<" along the x-axis, and the ";
+	cout<<"translation value "<<yc<<" along the y-axis."<<endl<<endl;
 	cout.flush();
 }
 
@@ -240,6 +248,8 @@ void draw()
    	glColor3f(0,0,1);
    	glutWireSphere(1, 16, 10);
    	glutSwapBuffers();
-   	cout<<"\tThe 'Sphere' shape is currently drawn by exploiting the rotation angle "<<Angle<<", the translation value "<<xc<<" along the x-axis, and the translation value "<<yc<<" along the y-axis."<<endl;
+   	cout<<"\tThe 'Sphere' shape is currently drawn by exploiting the rotation angle "<<Angle<<", the translation value "<<xc<<" along the x-axis, and the translation ";
+	cout<<"value "<<yc<<" along the y-axis."<<endl;
 	cout.flush();
 }
+

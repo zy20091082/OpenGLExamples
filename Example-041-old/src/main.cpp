@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: June 2017
+ * Last update: July 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -38,7 +38,8 @@ using namespace std;
 
 /// The number <i>'n'</i> of the vertices and the edges in the polyline, used for approximating the variant of the <i>'Spiral'</i> curve of interest.
 /**
- * It is initially set to 'n=100', which is the minimum number 'n' of the vertices and the edges in the polyline of interest. It is interactively modified by pressing the '+' and the '-' keys.
+ * It is initially set to 'n=100', which is the minimum number 'n' of the vertices and the edges in the polyline of interest. It is interactively modified by pressing
+ * the '+' and the '-' keys.
  */
 int num_samples=100;
 
@@ -53,9 +54,12 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-041' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of the vertices and the edges, in an OpenGL window. The polyline of interest approximates a variant of the 'Spiral' curve. This latter is a curve on a plane that winds"<<endl;
-	cout<<"\taround a fixed center point at a continuously increasing or decreasing distance from the point. In this test, we consider a variant of the 'Spiral' curve, defined as follows:"<<endl<<endl;
-	cout<<"\tx(t) = R(t) * cos(t), y(t) = R(t) * sin(t)"<<endl<<endl<<"\tfor every 't' in '[-10 * pi, 10 * pi]', such that 'R(0) = 0.5' and 'R(t) = R(t-1) + 0.05'."<<endl<<endl;
+	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of the vertices and the edges, in an OpenGL window. The polyline of interest ";
+	cout<<"approximates a variant of the 'Spiral' curve. This latter is a curve on a plane,"<<endl;
+	cout<<"\that winds around a fixed center point at a continuously increasing or decreasing distance from the point. In this test, we consider a variant of the ";
+	cout<<"'Spiral' curve, defined as follows:"<<endl<<endl;
+	cout<<"\tx(t) = R(t) * cos(t), y(t) = R(t) * sin(t)"<<endl<<endl<<"\tfor every 't' in '[-10 * pi, 10 * pi]', such that 'R(0) = 0.5' and 'R(t) = R(t-1) + 0.05'.";
+	cout<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which can:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of the vertices and the edges in the polyline of interest by pressing the '-' key."<<endl<<endl;
@@ -94,7 +98,8 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=100;
-	cout<<"\tAt the beginning, the polyline, approximating the variant of the 'Spiral' curve, is formed by 'n="<<num_samples<<"' vertices and edges (thus by the minimum number 'n' as possible of the vertices and the edges)."<<endl<<endl;
+	cout<<"\tAt the beginning, the polyline, approximating the variant of the 'Spiral' curve, is formed by 'n="<<num_samples<<"' vertices and edges (thus by the ";
+	cout<<"minimum number 'n' as possible of the vertices and the edges)."<<endl<<endl;
 	cout.flush();
 }
 
@@ -157,8 +162,14 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-', thus we decrease the number 'n' of the vertices and the edges (if possible) in the polyline of interest. */
 		if(num_samples>100) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 'n=100' of the vertices and the edges in the polyline of interest is reached, and it is not possible to decrease again this number."<<endl;
-		cout.flush();
+		else
+		{
+			cout<<"\tThe minimum number 'n=100' of the vertices and the edges in the polyline of interest is reached, and it is not possible to decrease again this ";
+			cout<<"number."<<endl;
+			cout.flush();
+		}
+
+		/* If we arrive here, then this case is finished! */
 		glutPostRedisplay();
 		break;
 
@@ -190,6 +201,8 @@ void draw()
 	/* If we arrive here, then all is ok! */
 	glEnd();
 	glFlush();
-	cout<<"\tThe variant of the 'Spiral' curve of interest is currently approximated by a polyline with 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"' edges."<<endl;
+	cout<<"\tThe variant of the 'Spiral' curve of interest is currently approximated by a polyline with 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"' edges.";
+	cout<<endl;
 	cout.flush();
 }
+

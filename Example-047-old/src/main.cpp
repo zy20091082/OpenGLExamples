@@ -1,4 +1,4 @@
-/****************************************************************************************************************************************************************************************************************
+/*********************************************************************************************************************************************************************
  * David Canino (canino.david@gmail.com)
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
@@ -12,7 +12,7 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
  * main.cpp - the main function for the 'Example-047 (Old Mode)' Test.
- ****************************************************************************************************************************************************************************************************************/
+ *********************************************************************************************************************************************************************/
  
 /* First, we must understand which platform we are using. */
 #include <cstdlib>
@@ -38,15 +38,17 @@ using namespace std;
 
 /// The number <i>'p'</i> of the <i>'slices'</i> around the Z-axis, approximating the <i>'Ellipsoid'</i> shape.
 /**
- * By construction, each hemisphere of the 'Ellipsoid' shape is approximated by a number 'p' of 'slices' around the 'z' axis (similar to the longitudinal lines). This value contains the number 'p' of longitudinal lines, and it is initially set to 'p=3', which is the minimum number of longitudinal lines in
- * each hemisphere of the Ellipsoid' shape. It is increased and decreased by pressing, respectively, the 'P' and the 'p' keys.
+ * By construction, each hemisphere of the 'Ellipsoid' shape is approximated by a number 'p' of 'slices' around the 'z' axis (similar to the longitudinal lines). This
+ * value contains the number 'p' of longitudinal lines, and it is initially set to 'p=3', which is the minimum number of longitudinal lines in each hemisphere of the
+ * Ellipsoid' shape. It is increased and decreased by pressing, respectively, the 'P' and the 'p' keys.
  */
 unsigned int long_slices_num=3;
 
 /// The number <i>'q'</i> of the <i>'stacks'</i> around the Z-axis, approximating the <i>'Ellipsoid'</i> shape.
 /**
- * By construction, each hemisphere of the 'Ellipsoid' shape is approximated by a number 'q' of 'stacks' around the 'z' axis (similar to the latitudinal lines). This value contains the number 'q' of latitudinal lines, and it is initially set to 'q=3', which is the minimum number of latitudinal lines in each
- * hemisphere of the  Ellipsoid' shape. It is increased and decreased by pressing, respectively, the 'Q' and the 'q' keys.
+ * By construction, each hemisphere of the 'Ellipsoid' shape is approximated by a number 'q' of 'stacks' around the 'z' axis (similar to the latitudinal lines). This 
+ * value contains the number 'q' of latitudinal lines, and it is initially set to 'q=3', which is the minimum number of latitudinal lines in each hemisphere of the 
+ * Ellipsoid' shape. It is increased and decreased by pressing, respectively, the 'Q' and the 'q' keys.
  */
 unsigned int lat_slices_num=3;
 
@@ -111,17 +113,27 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-047' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the 'Ellipsoid' shape in an OpenGL window. Intuitively, the 'Ellipsoid' shape is a surface, which may be obtained from the 'Sphere' shape by deforming it through an affine transformation. Recall that the 'Sphere' shape describes a perfectly round"<<endl;
-	cout<<"\tgeometrical object in the 3D space, that is the surface of a completely round ball. Like the 'Circle' shape, which geometrically is an object in the 2D space, the 'Sphere' shape is defined mathematically as the set of 3D points, that are at the same distance"<<endl;
-	cout<<"\t'R' from a given point '(xc,yc,zc)'. The distance 'R' is the 'radius' of the 'Sphere' shape, and the point '(xc,yc,zc)' is its 'center'."<<endl<<endl;
-	cout<<"\tHere, we consider the 'Ellipsoid' shape as a variant of the 'Sphere' shape of the 'center' '(xc,yc,zc)', and such that its symmetry axes are scaled independently in order to have lengths 'a', 'b'', and 'c' (not necessarily the same). For the sake of the"<<endl;
-	cout<<"\tsimplicity, the 'Ellipsoid' shape is the union of '2' symmetric hemi-ellipsoids with the same 'center' '(xc,yc,zc)' for any 'a,b,c>0', any 'r' in '[ 0, pi/2 ]', and any 's' in '[ 0, 2*pi ]'. The points of the first hemi-ellipsoid are expressed as follows:"<<endl<<endl;
-	cout<<"\tx(r,s) = xc + a * cos(r) * cos(s), y(r,s) = yc + b * sin(r), z(r,s) = zc + c * cos(r) * sin(s)"<<endl<<endl<<"\tInstead, the points of the second hemi-ellipsoid are expressed as follows:"<<endl<<endl;
+	cout<<"\tIt draws the 'Ellipsoid' shape in an OpenGL window. Intuitively, the 'Ellipsoid' shape is a surface, which may be obtained from the 'Sphere' shape by ";
+	cout<<"deforming it through an affine transformation. Recall that the 'Sphere' shape"<<endl;
+	cout<<"\tdescribes a perfectly round geometrical object in the 3D space, that is the surface of a completely round ball. Like the 'Circle' shape, which ";
+	cout<<"geometrically is an object in the 2D space, the 'Sphere' shape is defined mathematically"<<endl;
+	cout<<"\tas the set of 3D points, that are at the same distance 'R' from a given point '(xc,yc,zc)'. The distance 'R' is the 'radius' of the 'Sphere' shape, and ";
+	cout<<"the point '(xc,yc,zc)' is its 'center'."<<endl<<endl;
+	cout<<"\tHere, we consider the 'Ellipsoid' shape as a variant of the 'Sphere' shape of the 'center' '(xc,yc,zc)', and such that its symmetry axes are scaled ";
+	cout<<"independently in order to have lengths 'a', 'b'', and 'c' (not necessarily the"<<endl;
+	cout<<"\tsame). For the sake of the simplicity, the 'Ellipsoid' shape is the union of '2' symmetric hemi-ellipsoids with the same 'center' '(xc,yc,zc)' for any ";
+	cout<<"'a,b,c>0', any 'r' in '[ 0, pi/2 ]', and any 's' in '[ 0, 2*pi ]'. The points of"<<endl;
+	cout<<"\tthe first hemi-ellipsoid are expressed as follows:"<<endl<<endl;
+	cout<<"\tx(r,s) = xc + a * cos(r) * cos(s), y(r,s) = yc + b * sin(r), z(r,s) = zc + c * cos(r) * sin(s)"<<endl<<endl<<"\tInstead, the points of the second ";
+	cout<<"hemi-ellipsoid are expressed as follows:"<<endl<<endl;
 	cout<<"\tx(r,s) = xc + a * cos(r) * cos(s), y(r,s) = yc - b * sin(r), z(r,s) = zc + c * cos(r) * sin(s)"<<endl<<endl;
-	cout<<"\tHere, the hemi-ellipsoids of the 'Ellipsoid' shape (in 'blue' and in 'red', respectively) are both approximated by a quad grid, formed by 'p' 'slices' around the Z-axis (similar to the longitudinal lines) and by 'q' 'stacks' along the Z-axis (similar to the"<<endl; 
-	cout<<"\tlatitudinal lines). Specifically, the 'filled' and the 'wireframe versions' of the elements in the quad grids are rendered by using the perspective projection."<<endl<<endl;
-	cout<<"\tIn this test, the user cannot modify the lengths 'a', 'b'', and 'c', as well as the 'center' '(xc,yc,zc)', since they are fixed in advance. Instead, the user can modify the numbers 'p' and 'q' of the longitudinal and the latitudinal slices, respectively, as"<<endl;
-	cout<<"\t well as rotate the scene along the coordinate axes. In particular, the user can:"<<endl<<endl;
+	cout<<"\tHere, the hemi-ellipsoids of the 'Ellipsoid' shape (in 'blue' and in 'red', respectively) are both approximated by a quad grid, formed by 'p' 'slices' ";
+	cout<<" around the Z-axis (similar to the longitudinal lines) and by 'q' 'stacks' along "<<endl;
+	cout<<"\tthe Z-axis (similar to the latitudinal lines). Specifically, the 'filled' and the 'wireframe versions' of the elements in the quad grids are rendered by";
+	cout<<" using the perspective projection."<<endl<<endl;
+	cout<<"\tIn this test, the user cannot modify the lengths 'a', 'b'', and 'c', as well as the 'center' '(xc,yc,zc)', since they are fixed in advance. Instead, the ";
+	cout<<"user can modify the numbers 'p' and 'q' of the longitudinal and the latitudinal"<<endl;
+	cout<<"\tslices, respectively, as well as rotate the scene along the coordinate axes. In particular, the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'p' of the longitudinal slices by pressing the 'P' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'p' of the longitudinal slices by pressing the 'p' key;"<<endl;
 	cout<<"\t\t-) increase the number 'q' of the latitudinal slices by pressing the 'Q' key;"<<endl;
@@ -132,9 +144,11 @@ int main(int argc,char **argv)
 	cout<<"\t\t-) decrease the rotation angle 'Ry' along the 'y'-axis by pressing the 'y' key;"<<endl;
 	cout<<"\t\t-) increase the rotation angle 'Rz' along the 'z'-axis by pressing the 'Z' key;"<<endl;
 	cout<<"\t\t-) decrease the rotation angle 'Rz' along the 'z'-axis by pressing the 'z' key;"<<endl;
-	cout<<"\t\t-) render either the 'wireframe' or the 'filled version' of the 'Ellipsoid' shape by pressing cyclically the 'm' key."<<endl<<endl<<"\tLikewise, the window of interest can be closed by pressing the 'Esc' key."<<endl<<endl;
+	cout<<"\t\t-) render either the 'wireframe' or the 'filled version' of the 'Ellipsoid' shape by pressing cyclically the 'm' key."<<endl<<endl<<"\tLikewise, the ";
+	cout<<"window of interest can be closed by pressing the 'Esc' key."<<endl<<endl;
 	cout<<"\tVERY IMPORTANT:"<<endl;
-	cout<<"\tNote that the z-buffer technique and the normals are not exploited in this test, thus the rendering for the 'filled versions' of the elements in the quad grids may contain any error. This aspect goes beyond the scope of this test."<<endl<<endl;
+	cout<<"\tNote that the z-buffer technique and the normals are not exploited in this test, thus the rendering for the 'filled versions' of the elements in the quad";
+	cout<<" grids may contain any error. This aspect goes beyond the scope of this test."<<endl<<endl;
 	cout.flush();
 
 	/* If we arrive here, we can draw the 'Ellipsoid' shape of interest by using the rendering settings, chosen by the user. */
@@ -170,8 +184,9 @@ void initialize()
 	cout<<"\tAt the beginning, the ";
 	if(mode==GL_LINE) cout<<"'wireframe version' ";
 	else cout<<"'filled version' ";
-	cout<<"of the 'Ellipsoid' shape is drawn by exploiting 'q="<<lat_slices_num<<"' latitudinal slices and 'p="<<long_slices_num<<"' longitudinal slices (thus, the minimum numbers 'p' and 'q' as possible), as well as rotation angles 'Rx=";
-	cout<<Xangle<<"', "<<"'Ry="<<Yangle<<"', and 'Rz="<<Zangle<<"'."<<endl<<endl;
+	cout<<"of the 'Ellipsoid' shape is drawn by exploiting 'q="<<lat_slices_num<<"' latitudinal slices and 'p="<<long_slices_num<<"' longitudinal slices (thus, the ";
+	cout<<"minimum numbers 'p' and 'q' as possible), as well as rotation angles"<<endl;
+	cout<<"\t'Rx="<<Xangle<<"', "<<"'Ry="<<Yangle<<"', and 'Rz="<<Zangle<<"'."<<endl<<endl;
 	cout.flush();
 }
 
@@ -185,8 +200,14 @@ void manageKeys(unsigned char key, int x, int y)
 	
 			/* The key is 'q', thus we reduce the number 'q' of the latitudinal slices in the 'wireframe version' of the 'Ellipsoid' shape. */
 			if(lat_slices_num>3) lat_slices_num=lat_slices_num-1;
-			else cout<<"\tThe minimum number 'q=3' of the latitudinal slices in the 'wireframe version' of the 'Ellipsoid' shape is reached, and it is not possible to decrease again this number."<<endl;
-			cout.flush();
+			else
+			{
+				cout<<"\tThe minimum number 'q=3' of the latitudinal slices in the 'wireframe version' of the 'Ellipsoid' shape is reached, and it is not possible to";
+				cout<<" decrease again this number."<<endl;
+				cout.flush();
+			}
+
+			/* If we arrive here, then this case is finished! */
 			glutPostRedisplay();
 			break;
 		
@@ -201,8 +222,14 @@ void manageKeys(unsigned char key, int x, int y)
 	
 			/* The key is 'p', thus we reduce the number 'p' of the longitudinal slices in the 'wireframe version' of the 'Ellipsoid' shape. */
 			if(long_slices_num>3) long_slices_num=long_slices_num-1;
-			else cout<<"\tThe minimum number 'p=3' of the longitudinal slices in the 'wireframe version' of the 'Ellipsoid' shape is reached, and it is not possible to decrease again this number."<<endl;
-			cout.flush();
+			else
+			{
+				cout<<"\tThe minimum number 'p=3' of the longitudinal slices in the 'wireframe version' of the 'Ellipsoid' shape is reached, and it is not possible to";
+				cout<<" decrease again this number."<<endl;
+				cout.flush();
+			}
+
+			/* If we arrive here, then this case is finished! */
 			glutPostRedisplay();
 			break;
 		
@@ -352,6 +379,8 @@ void draw()
 	glFlush();
 	if(mode==GL_LINE) cout<<"\tThe 'wireframe version' ";
 	else cout<<"\tThe 'filled version' ";
-	cout<<"of the 'Ellipsoid' shape is currently drawn by exploiting 'q="<<lat_slices_num<<"' latitudinal slices and 'p="<<long_slices_num<<"' longitudinal slices, as well as rotation angles 'Rx="<<Xangle<<"', "<<"'Ry="<<Yangle<<"', and 'Rz="<<Zangle<<"'."<<endl;
+	cout<<"of the 'Ellipsoid' shape is currently drawn by exploiting 'q="<<lat_slices_num<<"' latitudinal slices and 'p="<<long_slices_num<<"' longitudinal slices, as";
+	cout<<" well as rotation angles 'Rx="<<Xangle<<"', "<<"'Ry="<<Yangle<<"', and 'Rz="<<Zangle<<"'."<<endl;
 	cout.flush();
 }
+

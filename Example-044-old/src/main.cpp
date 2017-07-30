@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: June 2017
+ * Last update: July 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -38,7 +38,8 @@ using namespace std;
 
 /// The number <i>'n'</i> of the samples in all versions of interest for the <i>'Moon'</i> shape.
 /**
- * It is initially set to 'n=5', which is the minimum number of the samples in all versions of interest. It is interactively modified by pressing the '+' and the '-' keys.
+ * It is initially set to 'n=5', which is the minimum number of the samples in all versions of interest. It is interactively modified by pressing the '+' and the '-'
+ * keys.
  */
 int num_samples=5;
 
@@ -71,22 +72,28 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a new window! */
 	cout<<endl<<"\tThis is the 'Example-044' Example, based on the (Old Mode) OpenGL"<<endl;
-	cout<<"\tIt draws 3 versions of the 'Moon' shape in an OpenGL window. Intuitively, the 'Moon' shape represents any lunar phase, namely the shape of any illuminated (sunlit) portion of the 'Moon' as seen by an observer on 'Earth'. In this case, "<<endl;
-	cout<<"\twe limit our attention to the 'Waning Crescent', the 'Last Quarter', and the 'Waning Gibbous' lunar phases as they are seen in the northern hemisphere of the 'Earth'."<<endl<<endl;
-	cout<<"\tEach lunar phase is bounded by 2 profiles, that are subdivided into 'n-1' horizontal stripes (in 'red') by using 'n' points. Every horizontal strip consists of a quadrilateral, which is defined by 2 pairs of adjacent vertices, belonging"<<endl;
-	cout<<"\tto the profiles in the variant of the 'Moon' shape to be drawn. Thus, this latter is approximated by a quad strip, defined on 'n' pairs of corresponding vertices."<<endl<<endl;
-	cout<<"\tEach variant of the 'Moon' shape is accompanied by an explicative label. Thus, this test also shows how writing and rendering some text in an OpenGL window."<<endl<<endl;
-	cout<<"\tHere, the user cannot modify the position and the profiles for '3' versions of the 'Moon' shape, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
+	cout<<"\tIt draws 3 versions of the 'Moon' shape in an OpenGL window. Intuitively, the 'Moon' shape represents any lunar phase, namely the shape of any illuminated";
+	cout<<" (sunlit) portion of the 'Moon' as seen by an observer on 'Earth'. In this"<<endl;
+	cout<<"\tcase, we limit our attention to the 'Waning Crescent', the 'Last Quarter', and the 'Waning Gibbous' lunar phases as they are seen in the northern ";
+	cout<<"hemisphere of the 'Earth'."<<endl<<endl;
+	cout<<"\tEach lunar phase is bounded by 2 profiles, that are subdivided into 'n-1' horizontal stripes (in 'red') by using 'n' points. Every horizontal strip ";
+	cout<<"consists of a quadrilateral, which is defined by 2 pairs of adjacent vertices,"<<endl;
+	cout<<"\tbelonging to the profiles in the variant of the 'Moon' shape to be drawn. Thus, this latter is approximated by a quad strip, defined on 'n' pairs of ";
+	cout<<"corresponding vertices."<<endl<<endl;
+	cout<<"\tEach variant of the 'Moon' shape is accompanied by an explicative label. Thus, this test also shows how writing and rendering some text in an OpenGL ";
+	cout<<"window."<<endl<<endl;
+	cout<<"\tHere, the user cannot modify the position and the profiles for '3' versions of the 'Moon' shape, since they are fixed in advance. Instead, the user can:";
+	cout<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of all vertices in the quad strips of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of all vertices in the quad strips of interest by pressing the '-' key;"<<endl;
-	cout<<"\t\t-) choose to render the 'wireframe' or the 'filled versions' for all quadrilaterals in the quad strips of interest by pressing cyclically the 'r' (space) key."<<endl<<endl;
+	cout<<"\t\t-) choose to render the 'wireframe' or the 'filled versions' for all quadrilaterals in the quad strips of interest by pressing cyclically the 'r' ";
+	cout<<"(space) key."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	
 	/* If we arrive here, we can draw 3 versions of the 'Moon' shape of interest by using the rendering settings, chosen by the user. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
-	glutInitWindowPosition(0,0);
 	glutInitWindowSize(560,350);
 	glutCreateWindow("The 'Example-044' Test, based on the (Old Mode) OpenGL");
 	glutReshapeFunc(resize);
@@ -116,7 +123,7 @@ void initialize()
 	cout<<"\tAt the beginning, the versions of the 'Moon' shape to be drawn are approximated by the ";
 	if(mode==GL_FILL) cout<<"'filled versions' ";
 	else cout<<"'wireframe versions' ";
-	cout<<"of all quadrilaterals in the quad strips, defined by 'n="<<num_samples<<"' vertices pairs (thus by the minimum number 'n' as possible of the vertices pairs)."<<endl<<endl;
+	cout<<"of all quadrilaterals in the quad strips, defined by 'n="<<num_samples<<"' vertices pairs (thus by the minimum number 'n' as possible)."<<endl<<endl;
 	cout.flush();
 }
 
@@ -191,8 +198,14 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-', thus we decrease the number 'n' of the vertices pairs in the quad strips of interest! */
 		if(num_samples>5) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 'n=5' of the vertices pairs in the quad strips of interest is reached, and it is not possible to decrease again this number."<<endl;
-		cout.flush();
+		else
+		{
+			cout<<"\tThe minimum number 'n=5' of the vertices pairs in the quad strips of interest is reached, and it is not possible to decrease again this number.";
+			cout<<endl;
+			cout.flush();
+		}
+
+		/* If we arrive here, then this case is finished! */
 		glutPostRedisplay();
 		break;
 		
@@ -262,3 +275,4 @@ void draw()
 	cout<<"of all quadrilaterals in the quad strips, defined by 'n="<<num_samples<<"' vertices pairs."<<endl;
 	cout.flush();
 }
+

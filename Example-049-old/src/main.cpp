@@ -1,4 +1,4 @@
-/****************************************************************************************************************************************************************************************************************
+/***********************************************************************************************************************************************************************
  * David Canino (canino.david@gmail.com)
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
@@ -12,8 +12,8 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
  * main.cpp - the main function for the 'Example-049 (Old Mode)' Test.
- ****************************************************************************************************************************************************************************************************************/
- 
+ **********************************************************************************************************************************************************************/
+
 /* First, we must understand which platform we are using. */
 #include <cstdlib>
 #include <iostream>
@@ -84,18 +84,28 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-049' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the 'Truncated Cone' shape in an OpenGL window. Intuitively, this shape is a portion of any 'Cone' shape. This latter is a 3D geometric shape, that tapers smoothly from a 'basis' (not necessarily circular) to a point '(xv,yv,zv)', called the"<<endl;
-	cout<<"\t'apex' of the 'Cone' shape. In other words, any 'Cone' shape is formed by a set of line segments, connecting its 'apex' to all points in the 'basis', such that its support plane does not contain the 'apex'. The boundary, formed by these lines, is called"<<endl;
-	cout<<"\tthe 'lateral surface' of the 'Cone' shape. The 'axis' of the 'Cone' shape is the straight line, passing through its 'apex', about which 'Cone' shape may have a circular symmetry. Here, we limit our attention to a 'Right Circular Cone' shape, such that"<<endl;
-	cout<<"\tits basis is circular, and its 'axis' passes through the 'basis' center at right angles to its support plane."<<endl<<endl;
-	cout<<"\tIn this test, we consider the 'Truncated Cone' shape as any given 'Right Circular Cone' shape, cut off by a plane, and not including its 'apex'. For the sake of the simplicity, the 'axis' of the 'Cone' shape is the 'y'-axis, the support plane for the"<<endl;
-	cout<<"\tcircular basis is the 'xz' plane, and the truncation plane is parallel to the 'xz' plane. The intersection between the truncation plane and the cone results into another circle, parallel to the first basis in the 'xz' plane. Broadly speaking, the"<<endl;
-	cout<<"\t'Truncated Cone' shape may be considered as a prism with '2' circular basis of different radii."<<endl<<endl;
-	cout<<"\tThe 'lateral surface' of the 'Truncated Cone' shape is approximated by a triangle grid, formed by 'r' radial sectors, and by 'h' horizontal slices around the 'y'-axis. In addition, each of '2' basis of the 'Truncated Cone' shape is approximated by a"<<endl;
-	cout<<"\ttriangle fan, imposed by the 'r' radial sectors. By construction, it is possible to merge these grids into a unique triangle grid. Specifically, the 'wireframe versions' of the triangles in this triangle grid (in 'blue') are rendered by using the"<<endl;
-	cout<<"\tperspective projection."<<endl<<endl;
-	cout<<"\tIn this test, the user cannot modify the position of the truncation plane, the position, and the radii of '2' basis in the 'Truncated Cone' shape of interest, since they are fixed in advance. Instead, the user can modify the numbers 'r' and"<<endl;
-	cout<<"\t'h' of the radial sectors and the horizontal slices, respectively, as well as rotate the scene along the coordinate axes. In particular, the user can:"<<endl<<endl;
+	cout<<"\tIt draws the 'Truncated Cone' shape in an OpenGL window. Intuitively, this shape is a portion of any 'Cone' shape. This latter is a 3D geometric shape, ";
+	cout<<"that tapers smoothly from a 'basis' (not necessarily circular) to a point"<<endl;
+	cout<<"\t'(xv,yv,zv)', called the 'apex' of the 'Cone' shape. In other words, any 'Cone' shape is formed by a set of line segments, connecting its 'apex' to all ";
+	cout<<"points in the 'basis', such that its support plane does not contain the"<<endl;
+	cout<<"\t'apex'. The boundary, formed by these lines, is called the 'lateral surface' of the 'Cone' shape. The 'axis' of the 'Cone' shape is the straight line, ";
+	cout<<"passing through its 'apex', about which 'Cone' shape may have a circular"<<endl;
+	cout<<"\tsymmetry. Here, we limit our attention to a 'Right Circular Cone' shape, such that its basis is circular, and its 'axis' passes through the 'basis' center";
+	cout<<" at right angles to its support plane."<<endl<<endl;
+	cout<<"\tIn this test, we consider the 'Truncated Cone' shape as any given 'Right Circular Cone' shape, cut off by a plane, and not including its 'apex'. For the ";
+	cout<<"sake of the simplicity, the 'axis' of the 'Cone' shape is the 'y'-axis,"<<endl;
+	cout<<"\tthe support plane for the circular basis is the 'xz' plane, and the truncation plane is parallel to the 'xz' plane. The intersection between the ";
+	cout<<"truncation plane and the cone results into another circle, parallel to the first"<<endl;
+	cout<<"\tbasis in the 'xz' plane. Broadly speaking, the 'Truncated Cone' shape may be considered as a prism with '2' circular basis of different radii."<<endl<<endl;
+	cout<<"\tThe 'lateral surface' of the 'Truncated Cone' shape is approximated by a triangle grid, formed by 'r' radial sectors, and by 'h' horizontal slices around ";
+	cout<<"the 'y'-axis. In addition, each of '2' basis of the 'Truncated Cone'"<<endl;
+	cout<<"\tshape is approximated by a triangle fan, imposed by the 'r' radial sectors. By construction, it is possible to merge these grids into a unique triangle ";
+	cout<<"grid. Specifically, the 'wireframe versions' of the triangles in this"<<endl;
+	cout<<"\ttriangle grid (in 'blue') are rendered by using the perspective projection."<<endl<<endl;
+	cout<<"\tIn this test, the user cannot modify the position of the truncation plane, the position, and the radii of '2' basis in the 'Truncated Cone' shape of ";
+	cout<<"interest, since they are fixed in advance. Instead, the user can modify the"<<endl;
+	cout<<"\tnumbers 'r' and 'h' of the radial sectors and the horizontal slices, respectively, as well as rotate the scene along the coordinate axes. In ";
+	cout<<"particular, the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'r' of the radial sectors by pressing the 'R' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'r' of the radial sectors by pressing the 'r' key;"<<endl;
 	cout<<"\t\t-) increase the number 'h' of the horizontal slices by pressing the 'H' key;"<<endl;
@@ -145,8 +155,9 @@ void initialize()
 	Zangle=0.0;
 	height_slices_num=3;
 	radial_slices_num=3;
-	cout<<"\tAt the beginning, the 'wireframe version' of the 'Truncated Cone' shape is drawn by exploiting 'h="<<height_slices_num<<"' horizontal slices and 'r="<<radial_slices_num<<"' radial sectors (thus, the minimum numbers 'r' and 'h' as possible), as well as rotation angles 'Rx=";
-	cout<<Xangle<<"', "<<"'Ry="<<Yangle<<"', and 'Rz="<<Zangle<<"'."<<endl<<endl;
+	cout<<"\tAt the beginning, the 'wireframe version' of the 'Truncated Cone' shape is drawn by exploiting 'h="<<height_slices_num<<"' horizontal slices and 'r=";
+	cout<<radial_slices_num<<"' radial sectors (thus, the minimum numbers 'r' and 'h' as possible), as well as rotation angles"<<endl;
+	cout<<"\t'Rx="<<Xangle<<"', "<<"'Ry="<<Yangle<<"', and 'Rz="<<Zangle<<"'."<<endl<<endl;
 	cout.flush();	
 }
 
@@ -250,8 +261,14 @@ void manageKeys(unsigned char key, int x, int y)
 		
 			/* The key is 'h', thus we reduce the number of the horizontal slices in the 'wireframe version' of the 'Truncated Cone' shape. */
 			if(height_slices_num>3) height_slices_num=height_slices_num-1;
-			else cout<<"\tThe minimum number 'h=3' of the horizontal slices in the 'wireframe version' of the 'Truncated Cone' shape is reached, and it is not possible to decrease again this number."<<endl;
-			cout.flush();
+			else
+			{
+				cout<<"\tThe minimum number 'h=3' of the horizontal slices in the 'wireframe version' of the 'Truncated Cone' shape is reached, and it is not possible";
+				cout<<" to decrease again this number."<<endl;
+				cout.flush();
+			}
+
+			/* If we arrive here, then this case is finished! */
 			glutPostRedisplay();
 			break;
 		
@@ -259,8 +276,14 @@ void manageKeys(unsigned char key, int x, int y)
 		
 			/* The key is 'r', thus we reduce the number of the radial sectors in the 'wireframe version' of the 'Truncated Cone' shape. */
 			if(radial_slices_num>3) radial_slices_num=radial_slices_num-1;
-			else cout<<"\tThe minimum number 'h=3' of the radial sectors in the 'wireframe version' of the 'Truncated Cone' shape is reached, and it is not possible to decrease again this number."<<endl;
-			cout.flush();
+			else
+			{
+				cout<<"\tThe minimum number 'h=3' of the radial sectors in the 'wireframe version' of the 'Truncated Cone' shape is reached, and it is not possible to";
+				cout<<" decrease again this number."<<endl;
+				cout.flush();
+			}
+
+			/* If we arrive here, then this case is finished! */
 			glutPostRedisplay();
 			break;
 		
@@ -335,7 +358,8 @@ void draw()
 	
 	/* Finally, the scene is complete! */
 	glFlush();
-	cout<<"\tThe 'wireframe version' of the 'Truncated Cone' shape is currently drawn by exploiting 'h="<<height_slices_num<<"' horizontal slices and 'r="<<radial_slices_num<<"' radial sectors, as well as rotation angles 'Rx=";
-	cout<<Xangle<<"', "<<"'Ry="<<Yangle<<"', and 'Rz="<<Zangle<<"'."<<endl;
+	cout<<"\tThe 'wireframe version' of the 'Truncated Cone' shape is currently drawn by exploiting 'h="<<height_slices_num<<"' horizontal slices and 'r=";
+	cout<<radial_slices_num<<"' radial sectors, as well as rotation angles 'Rx="<<Xangle<<"', "<<"'Ry="<<Yangle<<"', and 'Rz="<<Zangle<<"'."<<endl;
 	cout.flush();
 }
+

@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: June 2017
+ * Last update: July 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -49,8 +49,8 @@ GLenum mode=GL_FILL;
 
 /// The number of the samples in all approximations of interest for the <i>'Cone'</i> shape.
 /**
- * This value, initially set to '5', is the number of the samples in all approximations of interest for the 'Cone' shape. Broadly speaking, it is the number of vertices in the triangle fans of interest. It is interactively modified by pressing the '+' 
- * and the '-' keys.
+ * This value, initially set to '5', is the number of the samples in all approximations of interest for the 'Cone' shape. Broadly speaking, it is the number of vertices
+ * in the triangle fans of interest. It is interactively modified by pressing the '+' and the '-' keys.
  */
 unsigned int num_samples=5;
 
@@ -91,24 +91,32 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-042' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws several views of the 'Cone' shape in an OpenGL window by using the rendering settings, chosen interactively by the user. Broadly speaking, the 'Cone' shape tapers smoothly from a flat base (frequently, though not necessarily, described";
-	cout<<endl;
-	cout<<"\tby a 'Circle' shape) to a given point, called the 'apex' or the 'vertex'. In other words, the 'Cone' shape is formed by a collection of lines, connecting the 'apex' to all of the points on a base, which does not contain the 'apex'. The 'axis' of";
-	cout<<endl<<"\tthe 'Cone' shape is the line, passing through the 'apex', about which the 'Cone' shape has a circular symmetry."<<endl<<endl;
-	cout<<"\tHere, we limit our attention to a 'Cone', where the basis is described by a 'Circle' shape of radius 'R=35', and the point '(0,70,0)' as the 'apex' of the 'Cone' shape. The 'Cone' shape of interest is open, thus we consider only the boundary of";
-	cout<<endl;
-	cout<<"\tthe 'Circle' shape, described by the 'Circle' curve."<<endl<<endl;
-	cout<<"\tIn this case, the 'Cone' shape of interest is described by a triangle fan (in 'red') with 'n' vertices. Thanks to its symmetry properties, it is interesting to analyze (upon request) 6 views of the 'Cone' shape, in particular:"<<endl<<endl;
+	cout<<"\tIt draws several views of the 'Cone' shape in an OpenGL window by using the rendering settings, chosen interactively by the user. Broadly speaking, the ";
+	cout<<"'Cone' shape tapers smoothly from a flat base (frequently, though not"<<endl;
+	cout<<"\tnecessarily, described by a 'Circle' shape) to a given point, called the 'apex' or the 'vertex'. In other words, the 'Cone' shape is formed by a ";
+	cout<<"collection of lines, connecting the 'apex' to all of the points on a base,"<<endl;
+	cout<<"\twhich does not contain the 'apex'. The 'axis' of the 'Cone' shape is the line, passing through the 'apex', about which the 'Cone' shape has a circular ";
+	cout<<"symmetry."<<endl<<endl;
+	cout<<"\tHere, we limit our attention to a 'Cone', where the basis is described by a 'Circle' shape of radius 'R=35', and the point '(0,70,0)' as the 'apex' of the";
+	cout<<" 'Cone' shape. The 'Cone' shape of interest is open, thus we consider"<<endl;
+	cout<<"\tonly the boundary of the 'Circle' shape, described by the 'Circle' curve."<<endl<<endl;
+	cout<<"\tIn this case, the 'Cone' shape of interest is described by a triangle fan (in 'red') with 'n' vertices. Thanks to its symmetry properties, it is ";
+	cout<<"interesting to analyze (upon request) 6 views of the 'Cone' shape, in particular:"<<endl<<endl;
 	cout<<"\t\t-) a view along the canonical plane 'xz' and its upturned version (indicated as the 'View #0' and the 'View #1');"<<endl;
 	cout<<"\t\t-) a view along the canonical plane 'yz' and its upturned version (indicated as the 'View #2' and the 'View #3');"<<endl;
 	cout<<"\t\t-) a view along the canonical plane 'xy' and its upturned version (indicated as the 'View #4' and the 'View #5');"<<endl<<endl;
 	cout<<"\tin order to give a more complete overview of its properties."<<endl<<endl;
-	cout<<"\tMeanwhile, it is also possible to apply (upon request) any between the orthographic and the perspective projection, since some portions of the shape may overlap and not be visible in a specific view. Finally, it also possible to render (upon"<<endl;
-	cout<<"\trequest) the 'wireframe' and the 'filled versions' of all triangles in the current approximation of the 'Cone' shape. These aspects are orthogonal, and can be combined together in several ways."<<endl<<endl;
-	cout<<"\tHere, the user cannot modify the radius 'R=35' and the center for the basis of the 'Cone' shape, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
+	cout<<"\tMeanwhile, it is also possible to apply (upon request) any between the orthographic and the perspective projection, since some portions of the shape may ";
+	cout<<"overlap and not be visible in a specific view. Finally, it also possible"<<endl;
+	cout<<"\tto render (upon request) the 'wireframe' and the 'filled versions' of all triangles in the current approximation of the 'Cone' shape. These aspects are ";
+	cout<<"orthogonal, and can be combined together in several ways."<<endl<<endl;
+	cout<<"\tHere, the user cannot modify the radius 'R=35' and the center for the basis of the 'Cone' shape, since they are fixed in advance. Instead, the user can:";
+	cout<<endl<<endl;
 	cout<<"\t\t-) choose to render a specific view of the 'Cone' shape by pressing cyclically the 'c' key;"<<endl;
-	cout<<"\t\t-) choose to apply the orthographic or the perspective projection to the current view of the 'Cone' shape by pressing cyclically the ' ' (space) key;"<<endl;
-	cout<<"\t\t-) choose to render the 'wireframe' or the 'filled versions' of all triangles in the current approximation of the 'Cone' shape by pressing cyclically the 'r' key;"<<endl;
+	cout<<"\t\t-) choose to apply the orthographic or the perspective projection to the current view of the 'Cone' shape by pressing cyclically the ' ' (space) key;";
+	cout<<endl;
+	cout<<"\t\t-) choose to render the 'wireframe' or the 'filled versions' of all triangles in the current approximation of the 'Cone' shape by pressing cyclically ";
+	cout<<"the 'r' key;"<<endl;
 	cout<<"\t\t-) increase the number 'n' of all vertices in the triangle fans of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of all vertices in the triangle fans of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
@@ -142,7 +150,8 @@ void initialize()
 	cout<<"\tAt the beginning, ";
 	if(mode==GL_FILL) cout<<"the 'filled versions' of all ";
 	if(mode==GL_LINE) cout<<"the 'wireframe versions' of all ";
-	cout<<"triangles in the triangle fans (formed by the minimum number 'n="<<num_samples<<"' as possible of the vertices) in the 'View #"<<configuration<<"' are drawn by using the ";
+	cout<<"triangles in the triangle fans (formed by the minimum number 'n="<<num_samples<<"' as possible of the vertices) in the 'View #"<<configuration<<"' are ";
+	cout<<"drawn by using the ";
 	if(projection==0) cout<<"orthographic projection."<<endl<<endl;
 	else cout<<"perspective projection."<<endl<<endl;
 	cout.flush();
@@ -322,3 +331,4 @@ void draw()
 	else cout<<"perspective projection."<<endl;
 	cout.flush();
 }
+
