@@ -58,19 +58,22 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-051' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws several versions of the 'Square Annulus' shape in an OpenGL window. This shape is bounded by 2 (concentric) axis-parallel rectangles of different size in the same spirit of a circular ";
-	cout<<"crown. It is often known as the 'rectangular' crown. Its"<<endl; 
-	cout<<"\tlarge rectangle is called the 'external' rectangle, and other rectangle is called the 'internal' rectangle. Thus, it requires 8 vertices with their optional attributes (colors)."<<endl<<endl;
-	cout<<"\tHere, the 'Square Annulus' shape of interest is approximated by an unique triangle strip, formed by '8' triangles, without adding any 'Steiner' point. By construction, it is necessary to enumerate ";
-	cout<<"a sequence of '10' points with their independent colors"<<endl; 
-	cout<<"\t('2' points and their colors are needed to be duplicated). This is done explicitly. This technique works perfectly, but it is not easy to be customized for a different number of vertices, or for a ";
-	cout<<"different colors palette."<<endl<<endl;
-	cout<<"\tIn this test, it is not possible to modify the size and the position for the 'external' and the 'internal' rectangles of the 'Square Annulus' shape. Instead, the user can decide interactively to ";
-	cout<<"render:"<<endl<<endl;
+	cout<<"\tIt draws several versions of the 'Square Annulus' shape in an OpenGL window. This shape is bounded by 2 (concentric) axis-parallel rectangles of different";
+	cout<<" size in the same spirit of a circular crown. It is often known as the"<<endl;
+	cout<<"\t'rectangular' crown. Its large rectangle is called the 'external' rectangle, and other rectangle is called the 'internal' rectangle. Thus, it requires 8";
+	cout<<" vertices with their optional attributes (colors)."<<endl<<endl;
+	cout<<"\tHere, the 'Square Annulus' shape of interest is approximated by an unique triangle strip, formed by '8' triangles, without adding any 'Steiner' point. By";
+	cout<<" construction, it is necessary to enumerate a sequence of '10' points"<<endl;
+	cout<<"\twith their independent colors ('2' points and their colors are needed to be duplicated). This is done explicitly. This technique works perfectly, but it ";
+	cout<<"is not easy to be customized for a different number of vertices, or for"<<endl;
+	cout<<"\ta different colors palette."<<endl<<endl;
+	cout<<"\tIn this test, it is not possible to modify the size and the position for the 'external' and the 'internal' rectangles of the 'Square Annulus' shape. ";
+	cout<<"Instead, the user can decide interactively to render:"<<endl<<endl;
 	cout<<"\t\t-) only the points in the triangle strip of interest, approximating the 'Square Annulus' shape;"<<endl;
 	cout<<"\t\t-) the 'wireframe versions' of all triangles in the triangle strip of interest, approximating the 'Square Annulus' shape;"<<endl;
 	cout<<"\t\t-) the 'filled versions' of all triangles in the triangle strip of interest, approximating the 'Square Annulus' shape;"<<endl<<endl;
-	cout<<"\tby pressing cyclically the ' ' (space) key."<<endl<<endl<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+	cout<<"\tby pressing cyclically the ' ' (space) key."<<endl<<endl<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and ";
+	cout<<"the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 
 	/* If we arrive here, we can draw the 'Square Annulus' shape of interest by using the rendering settings, chosen by the user. */
@@ -107,7 +110,8 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	mode=0;
-	cout<<"\tAt the beginning, the 'filled versions' for all triangles in the triangle strip of interest, approximating the 'Square Annulus' shape, are rendered in the scene."<<endl<<endl;
+	cout<<"\tAt the beginning, the 'filled versions' for all triangles in the triangle strip of interest, approximating the 'Square Annulus' shape, are rendered in ";
+	cout<<"the scene."<<endl<<endl;
 	cout.flush();
 }
 
@@ -176,7 +180,8 @@ void manageKeys(unsigned char key, int x, int y)
 /// This function draws all triangles in a triangle strip, approximating the <i>'Square Annulus'</i> shape, in the OpenGL window of interest by using the rendering preferences, chosen by the user.
 void draw()
 {
-	/* We draw all triangles in a triangle strip, approximating the 'Square Annulus' shape, in the OpenGL window of interest by using the rendering preferences, chosen by the user. */
+	/* We draw all triangles in a triangle strip, approximating the 'Square Annulus' shape, in the OpenGL window of interest by using the rendering preferences, chosen
+	 * by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	if(mode==0) glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
 	if(mode==1) glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
@@ -227,8 +232,10 @@ void draw()
 	
 	glEnd();
 	glFlush();
-	if(mode==2) cout<<"\tOnly the vertices of all triangles in the triangle strip of interest, approximating the 'Square Annulus' shape, are currently rendered in the scene."<<endl;
-	if(mode==1) cout<<"\tThe 'wireframe versions' of all triangles in the triangle strip of interest, approximating the 'Square Annulus' shape, are currently rendered in the scene."<<endl;
-	if(mode==0) cout<<"\tThe 'filled versions' of all triangles in the triangle strip of interest, approximating the 'Square Annulus' shape, are currently rendered in the scene."<<endl;
+	if(mode==2) cout<<"\tOnly the vertices ";
+	if(mode==1) cout<<"\tThe 'wireframe versions' ";
+	if(mode==0) cout<<"\tThe 'filled versions' ";
+	cout<<"of all triangles in the triangle strip of interest, approximating the 'Square Annulus' shape, are currently rendered in the scene."<<endl;
+	cout.flush();
 }
 

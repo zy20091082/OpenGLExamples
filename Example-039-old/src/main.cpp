@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: June 2017
+ * Last update: July 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -49,8 +49,8 @@ GLenum mode=GL_FILL;
 
 /// The number of the samples in all approximations of interest for the <i>'Ring'</i> shape.
 /**
- * This value, initially set to '5', is the number of the samples in all approximations of interest for the 'Ring' shape. Broadly speaking, it is the number of vertices pairs in the quad strips of interest. It is interactively modified by pressing the '+' 
- * and the '-' keys.
+ * This value, initially set to '5', is the number of the samples in all approximations of interest for the 'Ring' shape. Broadly speaking, it is the number of vertices
+ * pairs in the quad strips of interest. It is interactively modified by pressing the '+' and the '-' keys.
  */
 unsigned int num_samples=5;
 
@@ -88,18 +88,27 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-039' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws several views of the 'Ring' shape in an OpenGL window by using the rendering settings, chosen interactively by the user. Broadly speaking, the 'Ring' shape is an open cylinder without considering its basis, described by 2 'Circle'"<<endl;
-	cout<<"\tcurves. Recall that a 'cylinder' is the surface formed by the points at a fixed distance 'R' (known as the 'radius' of the cylinder) from a given straight line, called the 'axis' of the cylinder. A cylinder of radius 'R' and with the 'z'"<<endl;
-	cout<<"\taxis as its axis may be defined as follows:"<<endl<<endl;
-	cout<<"\tx(t)= R * cos(t), y(t) = R * sin(t), z(t) = z"<<endl<<endl<<"\tfor every 't' in '[-pi,pi]' and every 'z' in '[a,b]'. Here we limit our attention to 'R=35', and every 'z' in '[0,70]'."<<endl<<endl;
-	cout<<"\tIn this case, the 'Ring' shape is approximated by a quad strip (in 'red'), formed by 'n' pairs of corresponding vertices in its 2 basis, i.e., in 2 'Circle' shapes. Thanks to its symmetry properties, it is interesting to analyze (upon"<<endl;
-	cout<<"\trequest) 3 views of the 'Ring' shape along the canonical planes 'xz' (the 'View #0'), 'zy' (the 'View #1'), and 'xy' (the 'View #2'), in order to give a more complete overview of its properties. Meanwhile, it is also possible to apply"<<endl;
-	cout<<"\t(upon request) any between the orthographic and the perspective projection, since some portions of the shape may overlap and not be visible in a specific view. Finally, it also possible to render (upon request) the 'wireframe' and the"<<endl;
-	cout<<"\t'filled versions' of all quadrilaterals in the current approximation of the 'Ring' shape. These aspects are orthogonal, and can be combined together in several ways."<<endl<<endl;
-	cout<<"\tHere, the user cannot modify the radius 'R=35' and the centers for the basis of the 'Ring' shape, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
+	cout<<"\tIt draws several views of the 'Ring' shape in an OpenGL window by using the rendering settings, chosen interactively by the user. Broadly speaking, the ";
+	cout<<"'Ring' shape is an open cylinder without considering its basis, described by"<<endl;
+	cout<<"\t2 'Circle' curves. Recall that a 'cylinder' is the surface formed by the points at a fixed distance 'R' (known as the 'radius' of the cylinder) from a ";
+	cout<<"given straight line, called the 'axis' of the cylinder. A cylinder of radius"<<endl;
+	cout<<"\t'R' and with the 'z' axis as its axis may be defined as follows:"<<endl<<endl;
+	cout<<"\tx(t)= R * cos(t), y(t) = R * sin(t), z(t) = z"<<endl<<endl<<"\tfor every 't' in '[-pi,pi]' and every 'z' in '[a,b]'. Here we limit our attention to ";
+	cout<<"'R=35', and every 'z' in '[0,70]'."<<endl<<endl;
+	cout<<"\tIn this case, the 'Ring' shape is approximated by a quad strip (in 'red'), formed by 'n' pairs of corresponding vertices in its 2 basis, i.e., in 2 ";
+	cout<<"'Circle' shapes. Thanks to its symmetry properties, it is interesting to analyze"<<endl;
+	cout<<"\t(upon request) 3 views of the 'Ring' shape along the canonical planes 'xz' (the 'View #0'), 'zy' (the 'View #1'), and 'xy' (the 'View #2'), in ";
+	cout<<"order to give a more complete overview of its properties. Meanwhile, it is also possible"<<endl;
+	cout<<"\tto apply (upon request) any between the orthographic and the perspective projection, since some portions of the shape may overlap and not be visible in";
+	cout<<" a specific view. Finally, it also possible to render (upon request) the"<<endl;
+	cout<<"\t'wireframe' and the 'filled versions' of all quadrilaterals in the current approximation of the 'Ring' shape. These aspects are orthogonal, and can be";
+	cout<<" combined together in several ways."<<endl<<endl;
+	cout<<"\tHere, the user cannot modify the radius 'R=35' and the centers for the basis of the 'Ring' shape, since they are fixed in advance. Instead, the user can:";
+	cout<<endl<<endl;
 	cout<<"\t\t-) choose to render a specific view of the 'Ring' shape by pressing cyclically the 'c' key;"<<endl;
-	cout<<"\t\t-) choose to apply the orthographic or the perspective projection to the current view of the 'Ring' shape by pressing cyclically the ' ' (space) key;"<<endl;
-	cout<<"\t\t-) choose to render the 'wireframe' or the 'filled versions' of all quadrilaterals in the current approximation of the 'Ring' shape by pressing cyclically the 'r' key;"<<endl;
+	cout<<"\t\t-) choose to apply the orthographic or the perspective projection to the current view of the 'Ring' shape by pressing cyclically the ' ' (space) key;";
+	cout<<endl<<"\t\t-) choose to render the 'wireframe' or the 'filled versions' of all quadrilaterals in the current approximation of the 'Ring' shape by pressing ";
+	cout<<"cyclically the 'r' key;"<<endl;
 	cout<<"\t\t-) increase the number 'n' of all vertices pairs in the quad strips of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of all vertices pairs in the quad strips of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
@@ -132,7 +141,8 @@ void initialize()
 	cout<<"\tAt the beginning, ";
 	if(mode==GL_FILL) cout<<"the 'filled versions' of all ";
 	if(mode==GL_LINE) cout<<"the 'wireframe versions' of all ";
-	cout<<"quadrilaterals in the quad strips (formed by the minimum number 'n="<<num_samples<<"' as possible of the vertices pairs) in the 'View #"<<configuration<<"' are drawn by using the ";
+	cout<<"quadrilaterals in the quad strips (formed by the minimum number 'n="<<num_samples<<"' as possible of the vertices pairs) in the 'View #"<<configuration<<"'";
+	cout<<" are drawn by using the ";
 	if(projection==0) cout<<"orthographic projection."<<endl<<endl;
 	else cout<<"perspective projection."<<endl<<endl;
 	cout.flush();
@@ -197,7 +207,13 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-', thus we decrease (if it is possible) the number 'n' of the vertices pairs in the quad strips of interest! */
 		if(num_samples>5) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 'n=5' of the vertices pairs in the quad strips of interest is reached, and it is not possible to decrease again this number."<<endl;
+		else
+		{
+			cout<<"\tThe minimum number 'n=5' of the vertices pairs in the quad strips of interest is reached, and it is not possible to decrease again this number.";
+			cout<<endl;
+		}
+
+		/* If we arrive here, then this case is finished! */
 		glutPostRedisplay();
 		break;
 		
@@ -298,3 +314,4 @@ void draw()
 	else cout<<"perspective projection."<<endl;
 	cout.flush();
 }
+

@@ -62,7 +62,7 @@ float Zangle=0.0;
 
 /// The number <i>'h'</i> of the horizontal slices across the <i>'y'</i> axis, approximating the <i>'Truncated Cone'</i> shape.
 /**
- * By construction, the <i>'Truncated Cone'</i> shape is approximated by a number 'h' of planes, parallel to the plane containing its basis, across the 'y' axis. This 
+ * By construction, the 'Truncated Cone' shape is approximated by a number 'h' of planes, parallel to the plane containing its basis, across the 'y' axis. This 
  * value contains the number 'h' of horizontal slices, and it is initially set to 'h=3', which is the minimum number of horizonal planes, parallel to the basis of the
  * 'Truncated Cone' shape. It is increased and decreased by pressing, respectively, the 'H' and the 'h' keys.
  */

@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: June 2017
+ * Last update: July 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -45,13 +45,15 @@ unsigned int num_samples=7;
 
 /// The coefficients <i>'Kx'</i> and <i>'Ky'</i> to be used for defining and drawing the polyline, approximating the <i>'Lissajous-like'</i> curve of interest.
 /**
- * The <i>'Lissajous-like'</i> curve is defined as follows: x(t) = Rx * cos( Kx * t ), y(t) = Ry * sin( Ky * t ). The coefficients 'Kx' and 'Ky' must be positive and not null 'integer' values.
+ * The 'Lissajous-like' curve is defined as follows: x(t) = Rx * cos( Kx * t ), y(t) = Ry * sin( Ky * t ). The coefficients 'Kx' and 'Ky' must be positive and not null
+ * 'integer' values.
  */
 int Kx,Ky;
 
 /// The coefficients <i>'Rx'</i> and <i>'Ry'</i> to be used for defining and drawing the polyline, approximating the <i>'Lissajous-like'</i> curve of interest.
 /**
- * The <i>'Lissajous-like'</i> curve is defined as follows: x(t) = Rx * cos( Kx * t ), y(t) = Ry * sin( Ky * t ). The coefficients 'Rx' and 'Ry' must be positive and not null 'integer' values.
+ * The 'Lissajous-like' curve is defined as follows: x(t) = Rx * cos( Kx * t ), y(t) = Ry * sin( Ky * t ). The coefficients 'Rx' and 'Ry' must be positive and 
+ * not null 'integer' values.
  */
 int Rx,Ry;
 
@@ -67,10 +69,13 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-029' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polyline (in 'blue'), formed by an arbitrary number 'n' of the vertices and the edges, in an OpenGL window. The polyline of interest approximates the 'Lissajous-like' curve, which is defined as follows:"<<endl<<endl;
+	cout<<"\tIt draws a polyline (in 'blue'), formed by an arbitrary number 'n' of the vertices and the edges, in an OpenGL window. The polyline of interest ";
+	cout<<"approximates the 'Lissajous-like' curve, which is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = Rx * cos( Kx * t ), y(t) = Ry * sin( Ky * t )"<<endl<<endl;
-	cout<<"\tfor every 't' in '[0,2*pi]', and for any 'Kx>0', 'Ky>0', 'Rx>0', and 'Ry>0'. For the sake of the simplicity, the parameters 'Rx', 'Ry', 'Kx', and 'Ky' are positive and not null 'integer' values."<<endl<<endl;
-	cout<<"\tThis test also provides a very basic interaction mechanism with the user. In fact, this latter must provide the parameters 'Rx', 'Ry', 'Kx', and 'Ky', and can also:"<<endl<<endl;
+	cout<<"\tfor every 't' in '[0,2*pi]', and for any 'Kx>0', 'Ky>0', 'Rx>0', and 'Ry>0'. For the sake of the simplicity, the parameters 'Rx', 'Ry', 'Kx', and 'Ky' ";
+	cout<<"are positive and not null 'integer' values."<<endl<<endl;
+	cout<<"\tThis test also provides a very basic interaction mechanism with the user. In fact, this latter must provide the parameters 'Rx', 'Ry', 'Kx', and 'Ky', ";
+	cout<<"and can also:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of the vertices and the edges in the polyline of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
@@ -79,7 +84,8 @@ int main(int argc,char **argv)
 	if( (!cin) || (Kx<=0) )
 	{
 		cin.clear();
-		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL 'INTEGER' VALUE) FOR THE COEFFICIENT 'Kx' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL 'INTEGER' VALUE) FOR THE COEFFICIENT 'Kx' OF INTEREST."<<endl<<endl;
+		cout<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		pause();
 		return EXIT_FAILURE;
 	}
@@ -90,7 +96,8 @@ int main(int argc,char **argv)
 	if( (!cin) || (Ky<=0) )
 	{
 		cin.clear();
-		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL 'INTEGER' VALUE) FOR THE COEFFICIENT 'Ky' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL 'INTEGER' VALUE) FOR THE COEFFICIENT 'Ky' OF INTEREST."<<endl<<endl;
+		cout<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		pause();
 		return EXIT_FAILURE;
 	}
@@ -101,7 +108,8 @@ int main(int argc,char **argv)
 	if( (!cin) || (Rx<=0) )
 	{
 		cin.clear();
-		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL 'INTEGER' VALUE) FOR THE COEFFICIENT 'Rx' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL 'INTEGER' VALUE) FOR THE COEFFICIENT 'Rx' OF INTEREST."<<endl<<endl;
+		cout<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		pause();
 		return EXIT_FAILURE;
 	}
@@ -112,7 +120,8 @@ int main(int argc,char **argv)
 	if( (!cin) || (Ry<=0) )
 	{
 		cin.clear();
-		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL 'INTEGER' VALUE) FOR THE COEFFICIENT 'Ry' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL 'INTEGER' VALUE) FOR THE COEFFICIENT 'Ry' OF INTEREST."<<endl<<endl;
+		cout<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		pause();
 		return EXIT_FAILURE;
 	}
@@ -153,8 +162,9 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=7;
-	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Lissajous-like' curve with the coefficients 'Rx="<<Rx<<"', 'Ry="<<Ry<<"', 'Kx="<<Kx<<"', and 'Ky="<<Ky<<"', is formed by 'n="<<num_samples<<"' vertices and edges (thus by the minimum number 'n'";
-	cout<<" as possible of the"<<endl<<"\tvertices and the edges)."<<endl<<endl;
+	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Lissajous-like' curve with the coefficients 'Rx="<<Rx<<"', 'Ry="<<Ry<<"', 'Kx="<<Kx<<"', and ";
+	cout<<" 'Ky="<<Ky<<"', is formed by 'n="<<num_samples<<"' vertices and edges (thus by the minimum number 'n' as possible of the"<<endl<<"\tvertices and the edges).";
+	cout<<endl<<endl;
 	cout.flush();
 }
 
@@ -199,8 +209,14 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-', thus we decrease the number 'n' of the vertices and the edges (if possible) in the polyline of interest. */
 		if(num_samples>7) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 'n=7' of the vertices and the edges in the polyline of interest is reached, and it is not possible to decrease again this number."<<endl;
-		cout.flush();
+		else
+		{
+			cout<<"\tThe minimum number 'n=7' of the vertices and the edges in the polyline of interest is reached, and it is not possible to decrease again this ";
+			cout<<"number."<<endl;
+			cout.flush();
+		}
+
+		/* If we arrive here, then this case is finished! */
 		glutPostRedisplay();
 		break;
 

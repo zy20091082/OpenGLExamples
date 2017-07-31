@@ -77,33 +77,29 @@ int main(int argc,char **argv)
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-050' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws the 'Playground Slide' shape in an OpenGL window. Intuitively, this shape describes the classic playground slides, that can be found in parks, ";
-	cout<<"schools, playgrounds, and backyards. ";
-	cout<<"A slide may be flat, or (more often) half cylindrical, in order to"<<endl;
-	cout<<"\tprevent falls. Slides are usually constructed of plastic or metal, and they have a smooth surface, which is either straight or wavy. The user, typically ";
-	cout<<"a child, climbs to the top of the ";
-	cout<<"slide via a ladder or stairs, sits down on the top of the slide, and"<<endl;
-	cout<<"\tslides down the chute."<<endl<<endl;
+	cout<<"schools, playgrounds, and backyards. A slide may be flat, or (more often) half"<<endl;
+	cout<<"\tcylindrical, in order to prevent falls. Slides are usually constructed of plastic or metal, and they have a smooth surface, which is either straight or ";
+	cout<<"wavy. The user, typically a child, climbs to the top of the slide via a ladder"<<endl;
+	cout<<"\tor stairs, sits down on the top of the slide, andslides down the chute."<<endl<<endl;
 	cout<<"\tIn this case, we try to model this physical object by considering a parabolic profile to be extruded. A parabolic profile is a portion of the 'Parabola' ";
 	cout<<"curve, defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = t, y(t) = a * t ^ 2 + b * t + c"<<endl<<endl<<"\tfor any not null 'a', and for every 't'. The parameters 'a', 'b', and 'c' determine the ";
-	cout<<"properties "; of the 'Parabola' curve."<<endl<<endl;
+	cout<<"properties of the 'Parabola' curve."<<endl<<endl;
 	cout<<"\tHere, we limit our attention to every 't' in a given range in order to obtain a parabolic profile, which is extruded along the 'z'-axis in order to ";
-	cout<<"obtain the slide of interest (specifically ";
-	cout<<"a curvilinear '2D' shape). In order to obtain a '3D' solid, we"<<endl;
-	cout<<"\talso consider '2' lateral surfaces, bounded by the parabolic profiles and by the 'xz' coordinate plane, as well as '2' quadrilaterals, that are the ";
-	cout<<"frontward and the backward sides of ";
-	cout<<"the solid, plus another quadrilateral, which is the bottom basis in the"<<endl;
-	cout<<"\tthe 'xz' coordinate plane. Broadly speaking, the 'Playground Slide' shape is the '2D' shape, bounding this '3D' solid."<<endl<<endl;
+	cout<<"obtain the slide of interest (specifically a curvilinear '2D' shape). In order to"<<endl;
+	cout<<"\tobtain a '3D' solid, we also consider '2' lateral surfaces, bounded by the parabolic profiles and by the 'xz' coordinate plane, as well as '2' ";
+	cout<<"quadrilaterals, that are the frontward and the backward sides of the solid, plus another"<<endl;
+	cout<<"\tquadrilateral, which is the bottom basis in the 'xz' coordinate plane. Broadly speaking, the 'Playground Slide' shape is the '2D' shape, bounding his '3D'";
+	cout<<" solid."<<endl<<endl;
 	cout<<"\tThe parabolic profile of interest is approximated by a polyline with 'n' vertices and edges. This implies that each lateral side as well as the bottom ";
-	cout<<"basis of the 'Playgrond Slide' shape ";
-	cout<<"can be approximated by a quad strip. Instead, the frontward and the"<<endl;
-	cout<<"\tbackward sides of the 'Playground Slide' shape are simply quadrilaterals. By construction, it is possible to merge these grids into a unique quad grid. ";
-	cout<<"Specifically, the 'wireframe ";
-	cout<<"versions' of the quadrilaterals in this quad grid (in 'blue') are rendered"<<endl<<"\tby using the perspective projection."<<endl<<endl;
+	cout<<"basis of the 'Playgrond Slide' shape can be approximated by a quad strip."<<endl;
+	cout<<"\tInstead, the frontward and the backward sides of the 'Playground Slide' shape are simply quadrilaterals. By construction, it is possible to merge these ";
+	cout<<"grids into a unique quad grid. Specifically, the 'wireframe versions' of the"<<endl;
+	cout<<"\tquadrilaterals in this quad grid (in 'blue') are rendered by using the perspective projection."<<endl<<endl;
 	cout<<"\tIn this test, the user cannot modify the parameters of the parabolic profile to be extruded (like the parabola equation and the position), as well as the ";
-	cout<<"extrusion parameters for the 'Playground Slide' shape of interest, since they are fixed in advance."<<endl;
-	cout<<"\tInstead, the user can modify the number 'n' of the samples in the parabolic profile, as well as rotate the scene along the coordinate axes. In ";
-	cout<<"particular, the user can:"<<endl<<endl;
+	cout<<"extrusion parameters for the 'Playground Slide' shape of interest, since they"<<endl;
+	cout<<"\tare fixed in advance. Instead, the user can modify the number 'n' of the samples in the parabolic profile, as well as rotate the scene along the ";
+	cout<<"coordinate axes. In particular, the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of the samples by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of the samples by pressing the '-' key;"<<endl;
 	cout<<"\t\t-) increase the rotation angle 'Rx' along the 'x'-axis by pressing the 'X' key;"<<endl;
@@ -265,7 +261,13 @@ void manageKeys(unsigned char key, int x, int y)
 			
 			/* The key is '-', thus we reduce the number of the samples in the parabolic profile in the 'Playground Slide' shape. */
 			if(num_samples>3) num_samples=num_samples-1;
-			else cout<<"\tThe minimum number 'n=3' of the samples in the parabolic profile of the 'Playground Slide' shape is reached, and it is not possible to decrease again this number."<<endl;
+			else
+			{
+				cout<<"\tThe minimum number 'n=3' of the samples in the parabolic profile of the 'Playground Slide' shape is reached, and it is not possible to ";
+				cout<<" decrease again this number."<<endl;
+			}
+
+			/* If we arrive here, then this case is complete! */
 			glutPostRedisplay();
 			break;
 

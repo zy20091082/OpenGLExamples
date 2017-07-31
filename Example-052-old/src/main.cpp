@@ -110,20 +110,26 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-052' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws several portions of the 'Square Annulus' shape in an OpenGL window. This shape is bounded by '2' (concentric) axis-parallel rectangles of different size in the same spirit of a circular ";
-	cout<<"crown. It is often known as the 'rectangular' crown. Its large"<<endl;
-	cout<<"\trectangle is called the 'external' rectangle, and other rectangle is called the 'internal' rectangle. Thus, it requires '8' vertices with their optional attributes (colors)."<<endl<<endl;
-	cout<<"\tHere, the 'Square Annulus' shape of interest is approximated by an unique triangle strip, formed by '8' triangles, without adding any 'Steiner' point. By construction, it is necessary to enumerate ";
-	cout<<"a sequence of '10' points with their independent colors ('2'"<<endl<<"\tpoints and their colors are needed to be duplicated)."<<endl<<endl;
-	cout<<"\tFor the sake of the efficiency, we exploit a centralized data organization, consisting of '2' matrices, such that their rows contain, respectively, the Euclidean '3D' coordinates and the colors components for all '8' ";
-	cout<<"vertices (with no redundancy). Hence, it"<<endl;
-	cout<<"\tis sufficient to access the locations of indices '0,...,7,0,1' in '2' matrices, mentioned above, in order to draw the triangle strip of interest. This technique works perfectly, and it is easy to be customized for a different ";
-	cout<<"number of vertices, or for a"<<endl; 
-	cout<<"\tdifferent colors palette. In fact, it is sufficient to modify only the desired rows in the matrices of interest. These matrices may be precomputed in advance and reused many times, if necessary."<<endl<<endl;
-	cout<<"\tIn order to show the actual validity of this approach, it is possible to limit our attention only on a specific portion of the 'Square Annulus' shape, defined by using only 'n' points, such that 'n' ";
-	cout<<"is in the range '[3,10]'. This means that only a subset of"<<endl;
-	cout<<"\tall triangles in the triangle strip of interest are drawn. Broadly speaking, every index 'j' in '[0,n-1]' is generated in order to access '2' rows of index 'j % 8' in the matrices of interest."<<endl<<endl;
-	cout<<"\tIn this test, it is not possible to modify the size and the position for the 'external' and the 'internal' rectangles of the 'Square Annulus' shape. Instead, the user can:"<<endl<<endl;
+	cout<<"\tIt draws several portions of the 'Square Annulus' shape in an OpenGL window. This shape is bounded by '2' (concentric) axis-parallel rectangles of ";
+	cout<<"different size in the same spirit of a circular crown. It is often known as the"<<endl;
+	cout<<"\t'rectangular' crown. Its large rectangle is called the 'external' rectangle, and other rectangle is called the 'internal' rectangle. Thus, it requires ";
+	cout<<"'8' vertices with their optional attributes (colors)."<<endl<<endl;
+	cout<<"\tHere, the 'Square Annulus' shape of interest is approximated by an unique triangle strip, formed by '8' triangles, without adding any 'Steiner' point. By";
+	cout<<" construction, it is necessary to enumerate a sequence of '10' points with"<<endl;
+	cout<<"\ttheir independent colors ('2'points and their colors are needed to be duplicated)."<<endl<<endl;
+	cout<<"\tFor the sake of the efficiency, we exploit a centralized data organization, consisting of '2' matrices, such that their rows contain, respectively, the ";
+	cout<<"Euclidean '3D' coordinates and the colors components for all '8' vertices"<<endl;
+	cout<<"\t(with no redundancy). Hence, it is sufficient to access the locations of indices '0,...,7,0,1' in '2' matrices, mentioned above, in order to draw the ";
+	cout<<"triangle strip of interest. This technique works perfectly, and it is easy to"<<endl;
+	cout<<"\tbe customized for a different number of vertices, or for a different colors palette. In fact, it is sufficient to modify only the desired rows in the";
+	cout<<" matrices of interest. These matrices may be precomputed in advance and reused"<<endl;
+	cout<<"\tmany times, if necessary."<<endl<<endl;
+	cout<<"\tIn order to show the actual validity of this approach, it is possible to limit our attention only on a specific portion of the 'Square Annulus' shape, ";
+	cout<<"defined by using only 'n' points, such that 'n' is in the range '[3,10]'."<<endl;
+	cout<<"\tThis means that only a subset of all triangles in the triangle strip of interest are drawn. Broadly speaking, every index 'j' in '[0,n-1]' is generated ";
+	cout<<"in order to access '2' rows of index 'j % 8' in the matrices of interest."<<endl<<endl;
+	cout<<"\tIn this test, it is not possible to modify the size and the position for the 'external' and the 'internal' rectangles of the 'Square Annulus' shape. ";
+	cout<<"Instead, the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the maximum number 'n' of points to be considered by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the maximum number 'n' of points to be considered by pressing the '-' key;"<<endl<<endl;
 	cout<<"\tand can press cyclically the ' ' (space) key for choosing to render:"<<endl<<endl;
@@ -168,7 +174,8 @@ void initialize()
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	mode=0;
 	num=3;
-	cout<<"\tAt the beginning, the 'filled versions' of the triangles in the triangle strip of interest, defined by using only 'n=3' vertices (the minimum number 'n' as possible), are drawn."<<endl<<endl;
+	cout<<"\tAt the beginning, the 'filled versions' of the triangles in the triangle strip of interest, defined by using only 'n=3' vertices (the minimum number 'n' ";
+	cout<<"as possible), are drawn."<<endl<<endl;
 	cout.flush();
 }
 
@@ -239,7 +246,13 @@ void manageKeys(unsigned char key, int x, int y)
 		
 			/* We decrease the number of the vertices to be considered in the triangle strip, approximating the 'Square Annulus' shape. */
 			if(num>3) num=num-1;
-			else cout<<"\tThe minimum number 'n=3' of the vertices to be considered in the triangle strip of interest is reached, and it is not possible to decrease again this number."<<endl;
+			else
+			{
+				cout<<"\tThe minimum number 'n=3' of the vertices to be considered in the triangle strip of interest is reached, and it is not possible to decrease ";
+				cout<<"again this number."<<endl;
+			}
+
+			/* If we arrive here, then this case is finished! */
 			glutPostRedisplay();
 			break;
 
@@ -253,7 +266,7 @@ void manageKeys(unsigned char key, int x, int y)
 /// This function draws the portion of interest for the triangle strip, approximating the <i>'Square Annulus'</i> shape, in the main OpenGL window by using the rendering preferences, chosen by the user.
 void draw()
 {
-	/* We draw the portion of interest for the triangle strip, approximating the <i>'Square Annulus'</i> shape, in the main OpenGL window by using the rendering
+	/* We draw the portion of interest for the triangle strip, approximating the 'Square Annulus' shape, in the main OpenGL window by using the rendering
 	 * preferences, chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	if(mode==0) glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);

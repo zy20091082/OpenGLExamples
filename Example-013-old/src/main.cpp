@@ -34,27 +34,29 @@ using namespace std;
 
 #endif
 
-/// The custom settings for choosing which side of all triangles in the triangle strip of interest must be rendered.
+/// The custom settings for choosing what triangles sides in the triangle strip of interest must be rendered.
 /**
  * The value of this flag may be one of the following values:
  * 
- * -) the 'GL_FRONT' value, used for rendering only the 'front' side of all triangles in the triangle strip of interest (press the 'f' or the 'F' key);
- * -) the 'GL_BACK' value, used for rendering only the 'back' side of all triangles in the triangle strip of interest (press the 'b' or the 'B' key);
- * -) the 'GL_FRONT_AND_BACK' value, used for rendering both the 'front' and the 'back' sides of all triangles in the triangle strip of interest (press the 't' or the 'T' key).
+ * -) the 'GL_FRONT' value, used for rendering only the 'front' triangles sides in the triangle strip of interest (press the 'f' or the 'F' key);
+ * -) the 'GL_BACK' value, used for rendering only the 'back' triangles sides in the triangle strip of interest (press the 'b' or the 'B' key);
+ * -) the 'GL_FRONT_AND_BACK' value, used for rendering both the 'front' and the 'back' triangles sides in the triangle strip of interest (press the 't' or the
+ * 	  'T' key).
  *
  * The rendering type to be exploited is chosen separately by the user.
  */
 GLenum face;
 
-/// The custom settings for rendering the sides of interest for all triangles in the triangle strip of interest.
+/// The custom settings for rendering the triangles sides in the triangle strip of interest.
 /**
  * The value of this flag may be one of the following values:
  *
- * -) the 'GL_POINT' value, used for rendering only the vertices for the sides of all triangles in the triangle strip of interest to be drawn (press the 'p' or the 'P' key);
- * -) the 'GL_LINE' value, used for rendering the 'wireframe versions' for the sides of all triangles in the triangle strip of interest to be drawn (press the 'l' or the 'L' key);
- * -) the 'GL_FILL' value, used for rendering the 'filled versions' for the sides of all triangles in the triangle strip of interest to be drawn (press the 'i' or the 'I' key).
+ * -) the 'GL_POINT' value, used for rendering only the vertices of the triangles sides in the triangle strip of interest to be drawn (press the 'p' or the 'P' key);
+ * -) the 'GL_LINE' value, used for rendering the 'wireframe versions' of the triangles sides in the triangle strip of interest to be drawn (press the 'l' or the 'L'
+ * 	  key);
+ * -) the 'GL_FILL' value, used for rendering the 'filled versions' for the triangles sides in the triangle strip of interest to be drawn (press the 'i' or the 'I' key).
  *
- * The choice for what sides of all triangles in the triangle strip of interest must be drawn is performed separately by the user.
+ * The choice for what triangles sides in the triangle strip of interest must be drawn is performed separately by the user.
  */
 GLenum mode;
 
@@ -103,7 +105,8 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	face=GL_FRONT_AND_BACK;
 	mode=GL_FILL;
-	cout<<"\tAt the beginning, the 'filled versions' for both the 'front' and the 'back' sides of all triangles in the triangle strip of interest are rendered in the scene."<<endl<<endl;
+	cout<<"\tAt the beginning, the 'filled versions' for both the 'front' and the 'back' sides of all triangles in the triangle strip of interest are rendered in the";
+	cout<<" scene."<<endl<<endl;
 	cout.flush();
 }
 
@@ -169,84 +172,96 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 'F':
 
-		/* The key is 'F', thus we draw only the 'front' sides of all triangles in the triangle strip, approximating the 'Square Annulus' shape of interest, by using the rendering type, chosen by the user. */
+		/* The key is 'F', thus we draw only the 'front' sides of all triangles in the triangle strip, approximating the 'Square Annulus' shape of interest, by using
+		 * the rendering type, chosen by the user. */
 		face=GL_FRONT;
 		glutPostRedisplay();
 		break;
 		
 		case 'f':
 
-		/* The key is 'f', thus we draw only the 'front' sides of all triangles in the triangle strip, approximating the 'Square Annulus' shape of interest, by using the rendering type, chosen by the user. */
+		/* The key is 'f', thus we draw only the 'front' sides of all triangles in the triangle strip, approximating the 'Square Annulus' shape of interest, by using
+		 * the rendering type, chosen by the user. */
 		face=GL_FRONT;
 		glutPostRedisplay();
 		break;
 		
 		case 'B':
 
-		/* The key is 'B', thus we draw only the 'back' sides of all triangles in the triangle strip, approximating the 'Square Annulus' shape of interest, by using the rendering type, chosen by the user. */
+		/* The key is 'B', thus we draw only the 'back' sides of all triangles in the triangle strip, approximating the 'Square Annulus' shape of interest, by using
+		 * the rendering type, chosen by the user. */
 		face=GL_BACK;
 		glutPostRedisplay();
 		break;
 		
 		case 'b':
 
-		/* The key is 'b', thus we draw only the 'back' sides of all triangles in the triangle strip, approximating the 'Square Annulus' shape of interest, by using the rendering type, chosen by the user. */
+		/* The key is 'b', thus we draw only the 'back' sides of all triangles in the triangle strip, approximating the 'Square Annulus' shape of interest, by using 
+		 * the rendering type, chosen by the user. */
 		face=GL_BACK;
 		glutPostRedisplay();
 		break;
 		
 		case 'T':
 
-		/* The key is 'T', thus we draw both the 'front' and the 'back' sides of all triangles in the triangle strip, approximating the 'Square Annulus' shape of interest, by using the rendering type, chosen by the user. */
+		/* The key is 'T', thus we draw both the 'front' and the 'back' sides of all triangles in the triangle strip, approximating the 'Square Annulus' shape of
+		 * interest, by using the rendering type, chosen by the user. */
 		face=GL_FRONT_AND_BACK;
 		glutPostRedisplay();
 		break;
 		
 		case 't':
 
-		/* The key is 't', thus we draw both the 'front' and the 'back' sides of all triangles in the triangle strip, approximating the 'Square Annulus' shape of interest, by using the rendering type, chosen by the user. */
+		/* The key is 't', thus we draw both the 'front' and the 'back' sides of all triangles in the triangle strip, approximating the 'Square Annulus' shape of
+		 * interest, by using the rendering type, chosen by the user. */
 		face=GL_FRONT_AND_BACK;
 		glutPostRedisplay();
 		break;
 		
 		case 'I':
 
-		/* The key is 'I', thus we render the 'filled versions' for the sides to be drawn of all triangles in the triangle strip, approximating the 'Square Annulus' shape of interest. The user can choose separately what sides of all triangles must be drawn. */
+		/* The key is 'I', thus we render the 'filled versions' for the sides to be drawn of all triangles in the triangle strip, approximating the 'Square Annulus'
+		 * shape of interest. The user can choose separately what sides of all triangles must be drawn. */
 		mode=GL_FILL;
 		glutPostRedisplay();
 		break;
 		
 		case 'i':
 
-		/* The key is 'i', thus we render the 'filled versions' for the sides to be drawn of all triangles in the triangle strip, approximating the 'Square Annulus' shape of interest. The user can choose separately what sides of all triangles must be drawn. */
+		/* The key is 'i', thus we render the 'filled versions' for the sides to be drawn of all triangles in the triangle strip, approximating the 'Square Annulus'
+		 * shape of interest. The user can choose separately what sides of all triangles must be drawn. */
 		mode=GL_FILL;
 		glutPostRedisplay();
 		break;
 		
 		case 'L':
 
-		/* The key is 'L', thus we render the 'wireframe versions' for the sides to be drawn of all triangles in the triangle strip, approximating the 'Square Annulus' shape of interest. The user can choose separately what sides of all triangles must be drawn. */
+		/* The key is 'L', thus we render the 'wireframe versions' for the sides to be drawn of all triangles in the triangle strip, approximating the 'Square Annulus'
+		 * shape of interest. The user can choose separately what sides of all triangles must be drawn. */
 		mode=GL_LINE;
 		glutPostRedisplay();
 		break;
 		
 		case 'l':
 
-		/* The key is 'l', thus we render the 'wireframe versions' for the sides to be drawn of all triangles in the triangle strip, approximating the 'Square Annulus' shape of interest. The user can choose separately what sides of all triangles must be drawn. */
+		/* The key is 'l', thus we render the 'wireframe versions' for the sides to be drawn of all triangles in the triangle strip, approximating the 'Square Annulus'
+		 * shape of interest. The user can choose separately what sides of all triangles must be drawn. */
 		mode=GL_LINE;
 		glutPostRedisplay();
 		break;
 		
 		case 'P':
 		
-		/* The key is 'P', thus we render only the vertices for the sides to be drawn of all triangles in the triangle strip, approximating the 'Square Annulus' shape of interest. The user can choose separately what sides of all triangles must be drawn. */
+		/* The key is 'P', thus we render only the vertices for the sides to be drawn of all triangles in the triangle strip, approximating the 'Square Annulus' shape
+		 * of interest. The user can choose separately what sides of all triangles must be drawn. */
 		mode=GL_POINT;
 		glutPostRedisplay();
 		break;
 		
 		case 'p':
 		
-		/* The key is 'p', thus we render only the vertices for the sides to be drawn of all triangles in the triangle strip, approximating the 'Square Annulus' shape of interest. The user can choose separately what sides of all triangles must be drawn. */
+		/* The key is 'p', thus we render only the vertices for the sides to be drawn of all triangles in the triangle strip, approximating the 'Square Annulus' shape
+		 * of interest. The user can choose separately what sides of all triangles must be drawn. */
 		mode=GL_POINT;
 		glutPostRedisplay();
 		break;
@@ -261,7 +276,8 @@ void manageKeys(unsigned char key, int x, int y)
 /// This function draws all triangles in a triangle strip (in <i>'turquoise gray'</i>), approximating the <i>'Square Annulus'</i> shape, in the OpenGL window of interest by using the rendering preferences, chosen by the user.
 void draw()
 {
-	/* We draw all triangles in a triangle strip (in 'turquoise gray'), approximating the 'Square Annulus' shape, in the OpenGL window of interest by using the rendering preferences, chosen by the user. */
+	/* We draw all triangles in a triangle strip (in 'turquoise gray'), approximating the 'Square Annulus' shape, in the OpenGL window of interest by using the
+	 * rendering preferences, chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(10.0);
 	glLineWidth(2.0);
