@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: July 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -127,7 +127,7 @@ int main(int argc,char **argv)
 		return EXIT_FAILURE;
 	}
 	
-	/* If we arrive here, we can draw the approximation of interest for the 'Circle' shape! */
+	/* If we arrive here, then we can draw the approximation of interest for the 'Circle' shape! */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -164,8 +164,7 @@ void initialize()
 	choice='l';
 	cout<<endl<<"\tAt the beginning, the boundary of the 'Circle' shape with center '("<<xc<<","<<yc<<")' and radius '"<<radius<<"' is approximated by a polyline, ";
 	cout<<"formed by 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"' edges (thus by the ";
-	cout<<"minimum number 'n' as possible of the vertices"<<endl;
-	cout<<"\tand the edges) [ 'Approximation #0' ]."<<endl<<endl;
+	cout<<"minimum number 'n' as possible) ['Approximation #0']."<<endl<<endl;
 	cout.flush();
 }
 
@@ -220,7 +219,7 @@ void manageKeys(unsigned char key, int x, int y)
 			cout.flush();
 		}
 		
-		/* We finalize this case. */
+		/* If we arrive here, then this case is finished! */
 		glutPostRedisplay();
 		break;
 		
@@ -277,7 +276,7 @@ void draw()
 			t=t+(2*PI/num_samples);
 		}
 		
-		/* If we arrive here, all is ok */
+		/* If we arrive here, then all is ok */
 		glEnd();
 		glFlush();
 		cout<<"\tThe boundary for the 'Circle' shape of interest is currently approximated by a polyline with 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"'";
@@ -298,7 +297,7 @@ void draw()
 			t=t+(2*PI/num_samples);
 		}
 		
-		/* If we arrive here, all is ok */
+		/* If we arrive here, then all is ok */
 		glEnd();
 		glFlush();
 		cout<<"\tThe 'Circle' shape of interest is currently approximated by the 'filled versions' of 'n="<<num_samples<<"' triangles in a triangle fan (the ";
@@ -317,7 +316,7 @@ void draw()
 			t=t+(2*PI/num_samples);
 		}
 		
-		/* If we arrive here, all is ok */
+		/* If we arrive here, then all is ok */
 		glEnd();
 		glFlush();
 		cout<<"\tThe 'Circle' shape of interest is currently approximated by the 'filled version' of only one polygon with 'n="<<num_samples<<"' vertices and 'n=";

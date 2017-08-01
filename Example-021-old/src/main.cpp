@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: July 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -77,13 +77,14 @@ int main(int argc,char **argv)
 	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of the vertices and the edges in the polyline of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+	cout.flush();
 	cout<<"\tPlease, insert the radius 'R' (thus, a positive and not null floating-point value) for the 'Circle' curve of interest: ";
 	cin>>radius;
 	if( (!cin) || (radius<=0) )
 	{
 		cin.clear();
-		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE) FOR THE RADIUS 'R' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM";
-		cout<<" IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE) FOR THE RADIUS 'R' OF INTEREST."<<endl<<endl;
+		cout<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		pause();
 		return EXIT_FAILURE;
 	}
@@ -101,7 +102,7 @@ int main(int argc,char **argv)
 		return EXIT_FAILURE;
 	}
 	
-	/* If we arrive here, we can draw the polyline, approximating the 'Circle' curve! */
+	/* If we arrive here, then we can draw the polyline, approximating the 'Circle' curve! */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -136,8 +137,7 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=3;
 	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Circle' curve of center '("<<xc<<","<<yc<<")' and radius '"<<radius<<"', is formed by 'n=";
-	cout<<num_samples<<"' vertices and edges (thus by the minimum number 'n' as possible of";
-	cout<<" the vertices and the edges)."<<endl<<endl;
+	cout<<num_samples<<"' vertices and 'n="<<num_samples<<"' edges (thus by the minimum number 'n' as possible)."<<endl<<endl;
 	cout.flush();
 }
 
@@ -216,7 +216,7 @@ void draw()
 		t=t+(2*PI/num_samples);
 	}
 	
-	/* If we arrive here, all is ok */
+	/* If we arrive here, then all is ok */
 	glEnd();
 	glFlush();
 	cout<<"\tThe 'Circle' curve of interest is currently approximated by a polyline with 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"' edges."<<endl;

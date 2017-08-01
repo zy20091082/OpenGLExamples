@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: June 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -45,13 +45,15 @@ float xc,yc;
 
 /// The radius <i>'rE'</i> of the external circle to be used for defining and drawing the quadstrip, approximating the <i>'Circular Annulus'</i> shape of interest.
 /**
- * The radius 'rE' is also called the 'external radius' for the 'Circular Annulus' shape of interest. Clearly, it must be a positive and not null floating-point value, provided interactively by the user.
+ * The radius 'rE' is also called the 'external radius' for the 'Circular Annulus' shape of interest. Clearly, it must be a positive and not null floating-point value,
+ * provided interactively by the user.
  */
 float rE;
 
 /// The radius <i>'rI'</i> of the internal circle to be used for defining and drawing the quadstrip, approximating the <i>'Circular Annulus'</i> shape of interest.
 /**
- * The radius 'rI' is also called the 'internal radius' for the 'Circular Annulus' shape of interest. Clearly, it must be a positive and not null floating-point value, provided interactively by the user.
+ * The radius 'rI' is also called the 'internal radius' for the 'Circular Annulus' shape of interest. Clearly, it must be a positive and not null floating-point value, 
+ * provided interactively by the user.
  */
 float rI;
 
@@ -65,9 +67,12 @@ unsigned int num_quads=3;
 /**
  * The value of this flag may be one of the following values:
  *
- * -) the 'p' char value, used for choosing to render only the vertices for all quadrilaterals in the quadstrip, used for approximating the 'Circular Annulus' shape of interest;
- * -) the 'l' char value, used for choosing to render the 'wireframe versions' for all quadrilaterals in the quadstrip, used for approximating the 'Circular Annulus' shape of interest;
- * -) the 'f' char value, used for choosing to render the 'filled versions' for all quadrilaterals in the quadstrip, used for approximating the 'Circular Annulus' shape of interest.
+ * -) the 'p' char value, used for choosing to render only the vertices for all quadrilaterals in the quadstrip, used for approximating the 'Circular Annulus' shape of  
+ *	  interest;
+ * -) the 'l' char value, used for choosing to render the 'wireframe versions' for all quadrilaterals in the quadstrip, used for approximating the 'Circular Annulus' 
+ * 	  shape of interest;
+ * -) the 'f' char value, used for choosing to render the 'filled versions' for all quadrilaterals in the quadstrip, used for approximating the 'Circular Annulus' shape
+ * 	  of interest.
  */
 char choice;
 
@@ -83,36 +88,43 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-024' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws all quadrilaterals (in 'red') in a quadstrip, formed by an arbitrary number 'n' of the quadrilaterals, in an OpenGL window. The quadstrip of interest approximates the 'Circular Annulus' shape with 'internal' radius 'rI',"<<endl;
+	cout<<"\tIt draws all quadrilaterals (in 'red') in a quadstrip, formed by an arbitrary number 'n' of the quadrilaterals, in an OpenGL window. The quadstrip of ";
+	cout<<"interest approximates the 'Circular Annulus' shape with 'internal' radius 'rI',"<<endl;
 	cout<<"\t'external' radius 'rE', and center '(xc,yc)'. The 'Circular Annulus' shape is defined as follows:"<<endl<<endl;
 	cout<<"\t| rI * cos(t) | <= | x(t) - xc | <= | rE * cos(t) |, | rI * sin(t) | <= | y(t) - yc | <= | rE * sin(t) |"<<endl<<endl;
 	cout<<"\tfor every 't' in '[-pi,pi]', and for any 'rI>0' and 'rE>0', such that 'rI<rE'."<<endl<<endl;
-	cout<<"\tIn other words, it is formed by all points in the circular crown, bounded by 2 (concentric) 'Circle' shapes (disks) of the same center '(xc,yc)' and of radius 'rI' and 'rE', respectively. The disk of radius 'rE' is the 'external'"<<endl;
+	cout<<"\tIn other words, it is formed by all points in the circular crown, bounded by 2 (concentric) 'Circle' shapes (disks) of the same center '(xc,yc)' and of ";
+	cout<<"radius 'rI' and 'rE', respectively. The disk of radius 'rE' is the 'external'"<<endl;
 	cout<<"\tdisk, and the disk of radius 'rI' is the 'internal' disk."<<endl<<endl;
-	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide the 'external' radius 'rE' and the 'internal' radius 'rI', as well as the center coodinates '(xc,yc)'. The user can also:"<<endl<<endl;
+	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide the 'external' radius 'rE' and the 'internal' radius 'rI', ";
+	cout<<"as well as the center coodinates '(xc,yc)'. The user can also:"<<endl<<endl;
 	cout<<"\t\t-) render only the vertices for all quadrilaterals in the quadstrip of interest (the 'Configuration #0') by pressing the 'p' key;"<<endl;
 	cout<<"\t\t-) render the 'wireframe versions' of all quadrilaterals in the quadstrip of interest (the 'Configuration #1') by pressing the 'l' key;"<<endl;
 	cout<<"\t\t-) render the 'filled versions' of all quadrilaterals in the quadstrip of interest (the 'Configuration #2') by pressing the 'f' key;"<<endl;
 	cout<<"\t\t-) increase the number 'n' of all quadrilaterals in the quadstrip of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of all quadrilaterals in the quastrip of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+	cout.flush();
 	cout<<"\tPlease, insert the internal radius 'rI' (thus, a positive and not null floating-point value) for the 'Circular Annulus' shape of interest: ";
 	cin>>rI;
 	if( (!cin) || (rI<=0) )
 	{
 		cin.clear();
-		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE) FOR THE INTERNAL RADIUS 'rI' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE) FOR THE INTERNAL RADIUS 'rI' OF INTEREST."<<endl<<endl;
+		cout<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		pause();
 		return EXIT_FAILURE;
 	}
 	
 	/* Now, we read the external radius 'rE' for the 'Circular Annulus' shape of interest. */
-	cout<<"\tPlease, insert the external radius 'rE' (thus, a positive and not null floating-point value, such that 'rE>"<<rI<<"') for the 'Circular Annulus' shape of interest: ";
+	cout<<"\tPlease, insert the external radius 'rE' (thus, a positive and not null floating-point value, such that 'rE>"<<rI<<"') for the 'Circular Annulus' shape ";
+	cout<<"of interest: ";
 	cin>>rE;
 	if( (!cin) || (rE<=0) || (rE<=rI) )
 	{
 		cin.clear();
-		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE, SUCH THAT 'rE>"<<rI<<"') FOR THE EXTERNAL RADIUS 'rE' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE, SUCH THAT 'rE>"<<rI<<"') FOR THE EXTERNAL RADIUS 'rE' OF ";
+		cout<<"INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		pause();
 		return EXIT_FAILURE;
 	}
@@ -124,12 +136,13 @@ int main(int argc,char **argv)
 	if(!cin)
 	{
 		cin.clear();
-		cout<<endl<<"\tPLEASE, INSERT THE CENTER COORDINATES '(xc,yc)' FOR THE 'CIRCULAR ANNULUS' SHAPE OF INTEREST (THUS, 2 FLOATING-POINT VALUES, SEPARATED BY A SPACE)."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT THE CENTER COORDINATES '(xc,yc)' FOR THE 'CIRCULAR ANNULUS' SHAPE OF INTEREST (THUS, 2 FLOATING-POINT VALUES, SEPARATED BY A ";
+		cout<<"SPACE)."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		pause();
 		return EXIT_FAILURE;
 	}
 	
-	/* If we arrive here, we can draw the quadstrip, approximating the 'Circular Annulus' shape, by exploiting the rendering settings, chosen by the user. */
+	/* If we arrive here, then we can draw the quadstrip, approximating the 'Circular Annulus' shape, by exploiting the rendering settings, chosen by the user. */
 	cout<<endl;
 	cout.flush();
 	glutInit(&argc,argv);
@@ -200,28 +213,37 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-', thus we decrease the number 'n' of all quadrilaterals (if possible) in the quadstrip of interest. */
 		if(num_quads>3) num_quads=num_quads-1;
-		else cout<<"\tThe minimum number 'n=3' of all quadrilaterals in the quadstrip of interest is reached, and it is not possible to decrease again this number."<<endl;
-		cout.flush();
+		else 
+		{
+			cout<<"\tThe minimum number 'n=3' of all quadrilaterals in the quadstrip of interest is reached, and it is not possible to decrease again this number.";
+			cout<<endl;
+			cout.flush();
+		}
+
+		/* If we arrive here, then this case is finished! */
 		glutPostRedisplay();
 		break;
 		
 		case 'l':
 
-		/* The key is 'l', thus we choose to render only the 'wireframe versions' of all quadrilaterals in the quadstrip, used for approximating the 'Circular Annulus' shape of interest. */
+		/* The key is 'l', thus we choose to render only the 'wireframe versions' of all quadrilaterals in the quadstrip, used for approximating the 'Circular Annulus'
+		 * shape of interest. */
 		choice='l';
 		glutPostRedisplay();
 		break;
 		
 		case 'f':
 		
-		/* The key is 'f', thus we choose to render only the 'filled versions' of all quadrilaterals in the quadstrip, used for approximating the 'Circular Annulus' shape of interest. */
+		/* The key is 'f', thus we choose to render only the 'filled versions' of all quadrilaterals in the quadstrip, used for approximating the 'Circular Annulus'
+		 * shape of interest. */
 		choice='f';
 		glutPostRedisplay();
 		break;
 		
 		case 'p':
 		
-		/* The key is 'p', thus we choose to render only the vertices of all quadrilaterals in the quadstrip, used for approximating the 'Circular Annulus' shape of interest. */
+		/* The key is 'p', thus we choose to render only the vertices of all quadrilaterals in the quadstrip, used for approximating the 'Circular Annulus' shape of
+		 * interest. */
 		choice='p';
 		glutPostRedisplay();
 		break;
@@ -240,8 +262,9 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_quads=3;
 	choice='l';
-	cout<<"\tAt the beginning, the 'wireframe versions' of 'n="<<num_quads<<"' quadrilaterals (thus, the minimum number 'n' as possible of the quadrilaterals) in the quadstrip, approximating the 'Circular Annulus' shape of center '("<<xc<<","<<yc<<")',"<<endl;
-	cout<<"\tinternal radius 'rI="<<rI<<"', and external radius 'rE="<<rE<<"', are rendered (the 'Configuration #1')."<<endl<<endl;
+	cout<<"\tAt the beginning, the 'wireframe versions' of 'n="<<num_quads<<"' quadrilaterals (thus, the minimum number 'n' as possible) in the quadstrip, ";
+	cout<<"approximating the 'Circular Annulus' shape of center '("<<xc<<","<<yc<<")', internal radius 'rI="<<rI<<"', and external"<<endl;
+	cout<<"\tradius 'rE="<<rE<<"', are rendered (the 'Configuration #1')."<<endl<<endl;
 	cout.flush();
 }
 
@@ -267,7 +290,7 @@ void draw()
 		t=t+(2*PI/num_quads);
 	}
 	
-	/* If we arrive here, all is ok */
+	/* If we arrive here, then all is ok */
 	glEnd();
 	glFlush();
 	glFlush();

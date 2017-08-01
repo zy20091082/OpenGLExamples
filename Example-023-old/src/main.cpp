@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: June 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -73,19 +73,23 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-023' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of the vertices and the edges, in an OpenGL window. The polyline of interest approximates the 'Ellipse' curve with semi-axis 'Rx' and 'Ry' (respectively along"<<endl;
-	cout<<"\tthe x- and the y-axis), as well as center '(xc,yc)'. The 'Ellipse' curve is defined as follows:"<<endl<<endl;
+	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of the vertices and the edges, in an OpenGL window. The polyline of interest ";
+	cout<<"approximates the 'Ellipse' curve with semi-axis 'Rx' and 'Ry' (respectively along the"<<endl;
+	cout<<"\tx- and the y-axis), as well as center '(xc,yc)'. The 'Ellipse' curve is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = xc + Rx * cos(t), y(t) = yc + Ry * sin(t)"<<endl<<endl<<"\tfor any 'Rx>0', 'Ry>0', and for every't' in '[-pi,pi]'."<<endl<<endl;
-	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide the semi-axis 'Rx' and 'Ry', as well as the center '(xc,yc)'. The user can also:"<<endl<<endl;
+	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide the semi-axis 'Rx' and 'Ry', as well as the center '(xc,yc)'.";
+	cout<<" The user can also:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of the vertices and the edges in the polyline of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+	cout.flush();
 	cout<<"\tPlease, insert the semi-axis 'Rx' (thus, a positive and not null floating-point value) for the 'Ellipse' curve of interest: ";
 	cin>>Rx;
 	if( (!cin) || (Rx<=0) )
 	{
 		cin.clear();
-		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE) FOR THE SEMI-AXIS 'Rx' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE) FOR THE SEMI-AXIS 'Rx' OF INTEREST."<<endl<<endl;
+		cout<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		pause();
 		return EXIT_FAILURE;
 	}
@@ -96,7 +100,8 @@ int main(int argc,char **argv)
 	if( (!cin) || (Ry<=0) )
 	{
 		cin.clear();
-		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE) FOR THE SEMI-AXIS 'Ry' OF INTEREST."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE) FOR THE SEMI-AXIS 'Ry' OF INTEREST."<<endl<<endl;
+		cout<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		pause();
 		return EXIT_FAILURE;
 	}
@@ -108,12 +113,13 @@ int main(int argc,char **argv)
 	if(!cin)
 	{
 		cin.clear();
-		cout<<endl<<"\tPLEASE, INSERT THE CENTER COORDINATES '(xc,yc)' FOR THE 'ELLIPSE' CURVE OF INTEREST (THUS, 2 FLOATING-POINT VALUES, SEPARATED BY A SPACE)."<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT THE CENTER COORDINATES '(xc,yc)' FOR THE 'ELLIPSE' CURVE OF INTEREST (THUS, 2 FLOATING-POINT VALUES, SEPARATED BY A SPACE).";
+		cout<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		pause();
 		return EXIT_FAILURE;
 	}
 	
-	/* If we arrive here, we can draw the polyline, approximating the 'Ellipse' curve! */
+	/* If we arrive here, then we can draw the polyline, approximating the 'Ellipse' curve! */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -149,9 +155,8 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=3;
-	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Ellipse' curve of center '("<<xc<<","<<yc<<")', semi-axis 'Rx="<<Rx<<"', and semi-axis 'Ry="<<Ry<<"', is formed by 'n="<<num_samples<<"' vertices and edges (thus by the minimum ";
-	cout<<"number 'n' as possible of the vertices"<<endl;
-	cout<<"\tand the edges)."<<endl<<endl;
+	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Ellipse' curve of center '("<<xc<<","<<yc<<")', semi-axis 'Rx="<<Rx<<"', and semi-axis ";
+	cout<<"'Ry="<<Ry<<"', is formed by 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"' edges (thus by the minimum number 'n' as possible)."<<endl<<endl;
 	cout.flush();
 }
 
@@ -196,8 +201,14 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-', thus we decrease the number 'n' of the vertices and the edges (if possible) in the polyline of interest. */
 		if(num_samples>3) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 'n=3' of the vertices and the edges in the polyline of interest is reached, and it is not possible to decrease again this number."<<endl;
-		cout.flush();
+		else 
+		{
+			cout<<"\tThe minimum number 'n=3' of the vertices and the edges in the polyline of interest is reached, and it is not possible to decrease again this ";
+			cout<<"number."<<endl;
+			cout.flush();
+		}
+
+		/* If we arrive here, then this case is finished! */
 		glutPostRedisplay();
 		break;
 
@@ -224,7 +235,7 @@ void draw()
 		t=t+(2*PI/num_samples);
 	}
 	
-	/* If we arrive here, all is ok */
+	/* If we arrive here, then all is ok */
 	glEnd();
 	glFlush();
 	cout<<"\tThe 'Ellipse' curve of interest is currently approximated by a polyline with 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"' edges."<<endl;

@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: July 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -52,8 +52,8 @@ int Kx,Ky;
 
 /// The coefficients <i>'Rx'</i> and <i>'Ry'</i> to be used for defining and drawing the polyline, approximating the <i>'Lissajous-like'</i> curve of interest.
 /**
- * The 'Lissajous-like' curve is defined as follows: x(t) = Rx * cos( Kx * t ), y(t) = Ry * sin( Ky * t ). The coefficients 'Rx' and 'Ry' must be positive and 
- * not null 'integer' values.
+ * The 'Lissajous-like' curve is defined as follows: x(t) = Rx * cos( Kx * t ), y(t) = Ry * sin( Ky * t ). The coefficients 'Rx' and 'Ry' must be positive and not null
+ * 'integer' values.
  */
 int Rx,Ry;
 
@@ -79,6 +79,7 @@ int main(int argc,char **argv)
 	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of the vertices and the edges in the polyline of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+	cout.flush();
 	cout<<"\tPlease, insert the coefficient 'Kx' (thus, a positive and not null 'integer' value) for the 'Lissajous-like' curve of interest: ";
 	cin>>Kx;
 	if( (!cin) || (Kx<=0) )
@@ -126,7 +127,7 @@ int main(int argc,char **argv)
 		return EXIT_FAILURE;
 	}
 	
-	/* If we arrive here, we can draw the polyline, approximating the 'Lissajous-like' curve! */
+	/* If we arrive here, then we can draw the polyline, approximating the 'Lissajous-like' curve! */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -162,9 +163,8 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=7;
-	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Lissajous-like' curve with the coefficients 'Rx="<<Rx<<"', 'Ry="<<Ry<<"', 'Kx="<<Kx<<"', and ";
-	cout<<" 'Ky="<<Ky<<"', is formed by 'n="<<num_samples<<"' vertices and edges (thus by the minimum number 'n' as possible of the"<<endl<<"\tvertices and the edges).";
-	cout<<endl<<endl;
+	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Lissajous-like' curve with coefficients 'Rx="<<Rx<<"', 'Ry="<<Ry<<"', 'Kx="<<Kx<<"', and ";
+	cout<<"'Ky="<<Ky<<"', is formed by 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"' edges (thus by the minimum number 'n' as possible)."<<endl<<endl;
 	cout.flush();
 }
 
@@ -243,7 +243,7 @@ void draw()
 		glVertex3f(Rx*cos(Kx*t),Ry*sin(Ky*t),0);
 	}
 	
-	/* If we arrive here, all is ok */
+	/* If we arrive here, then all is ok */
 	glEnd();
 	glFlush();
 	cout<<"\tThe 'Lissajous-like' curve of interest is currently approximated by a polyline with 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"' edges."<<endl;

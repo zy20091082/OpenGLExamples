@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: July 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -71,6 +71,7 @@ int main(int argc,char **argv)
 	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of the vertices and the edges in the polyline of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+	cout.flush();
 	cout<<"\tPlease, insert the exponent 'k' (thus, a positive and not null 'integer' value) for the 'Cosine-like' curve of interest: ";
 	cin>>k;
 	if( (!cin) || (k<=0) )
@@ -82,7 +83,7 @@ int main(int argc,char **argv)
 		return EXIT_FAILURE;
 	}
 	
-	/* If we arrive here, we can draw the polyline, approximating the 'Cosine-like' curve! */
+	/* If we arrive here, then we can draw the polyline, approximating the 'Cosine-like' curve! */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -119,7 +120,7 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=5;
 	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Cosine-like' curve with exponent 'k="<<k<<"', is formed by 'n="<<num_samples<<"' vertices and ";
-	cout<<"edges (thus by the minimum number 'n' as possible of the vertices and the edges)."<<endl<<endl;
+	cout<<"'n="<<num_samples<<"' edges (thus by the minimum number 'n' as possible)."<<endl<<endl;
 	cout.flush();
 }
 
@@ -198,7 +199,7 @@ void draw()
 		glVertex3f(t,pow(cos(t),k),0);
 	}
 	
-	/* If we arrive here, all is ok */
+	/* If we arrive here, then all is ok */
 	glEnd();
 	glFlush();
 	cout<<"\tThe 'Cosine-like' curve of interest is currently approximated by a polyline with 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"' edges."<<endl;
