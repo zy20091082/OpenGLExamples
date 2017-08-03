@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: July 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -91,7 +91,7 @@ int main(int argc,char **argv)
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	
-	/* If we arrive here, we can draw 3 versions of the 'Moon' shape of interest by using the rendering settings, chosen by the user. */
+	/* If we arrive here, then we can draw 3 versions of the 'Moon' shape of interest by using the rendering settings, chosen by the user. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowSize(560,350);
@@ -262,7 +262,7 @@ void draw()
 		glVertex2f(110-30*cos(PI/2+k*d),60*sin(PI/2+k*d));
 	}
 	
-	/* If we arrive here, we can write the labels, and the scene will be complete! */
+	/* If we arrive here, then we can write the labels, and the scene will be complete! */
 	glEnd();
 	glColor3f(0,0,0);
 	drawString((void*)font,"Waning Crescent",-170.0,-70.0);

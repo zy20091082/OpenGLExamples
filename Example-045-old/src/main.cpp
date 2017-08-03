@@ -1,9 +1,9 @@
-/****************************************************************************************************************************************************************************************************************
+/********************************************************************************************************************************************************
  * David Canino (canino.david@gmail.com)
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: July 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -12,8 +12,8 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
  * main.cpp - the main function for the 'Example-045 (Old Mode)' Test.
- ****************************************************************************************************************************************************************************************************************/
- 
+ ********************************************************************************************************************************************************/
+
 /* First, we must understand which platform we are using. */
 #include <cstdlib>
 #include <iostream>
@@ -119,7 +119,7 @@ int main(int argc,char **argv)
 	cout<<"pressing the 'Esc' key."<<endl<<endl;
 	cout.flush();
 
-	/* If we arrive here, we can draw the 'Hemisphere' shape of interest by using the rendering settings, chosen by the user. */
+	/* If we arrive here, then we can draw the 'Hemisphere' shape of interest by using the rendering settings, chosen by the user. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -316,7 +316,7 @@ void draw()
 		glEnd();
 	}
 	
-	/* If we arrive here, we have finished! */
+	/* If we arrive here, then we have finished! */
 	glFlush();
 	cout<<"\tThe 'wireframe version' of the 'Hemisphere' shape is currently drawn by exploiting 'q="<<lat_slices_num<<"' latitudinal slices and 'p="<<long_slices_num;
 	cout<<"' longitudinal slices, as well as rotation angles 'Rx="<<Xangle<<"', "<<"'Ry="<<Yangle<<"', and 'Rz="<<Zangle<<"'."<<endl;

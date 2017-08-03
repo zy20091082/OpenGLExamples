@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: July 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -124,7 +124,7 @@ int main(int argc,char **argv)
 	cout<<"pressing the 'Esc' key."<<endl<<endl;
 	cout.flush();
 	
-	/* If we arrive here, we can draw the 'Wedge' shape of interest by using the rendering settings, chosen by the user. */
+	/* If we arrive here, then we can draw the 'Wedge' shape of interest by using the rendering settings, chosen by the user. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -325,7 +325,7 @@ void draw()
 		glEnd();
 	}
 	
-	/* If we arrive here, we can close the bottom of the 'Wedge' shape. */
+	/* If we arrive here, then we can close the bottom of the 'Wedge' shape. */
 	glBegin(GL_TRIANGLE_FAN);
 	glVertex3f(0,0,0);
 	for(unsigned int i=0;i<long_slices_num;i++)
@@ -341,3 +341,4 @@ void draw()
 	cout<<" longitudinal slices, as well as rotation angles 'Rx="<<Xangle<<"', "<<"'Ry="<<Yangle<<"', and 'Rz="<<Zangle<<"'."<<endl;
 	cout.flush();
 }
+

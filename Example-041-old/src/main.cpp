@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: July 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -56,7 +56,7 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-041' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of the vertices and the edges, in an OpenGL window. The polyline of interest ";
 	cout<<"approximates a variant of the 'Spiral' curve. This latter is a curve on a plane,"<<endl;
-	cout<<"\that winds around a fixed center point at a continuously increasing or decreasing distance from the point. In this test, we consider a variant of the ";
+	cout<<"\tthat winds around a fixed center point at a continuously increasing or decreasing distance from the point. In this test, we consider a variant of the ";
 	cout<<"'Spiral' curve, defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = R(t) * cos(t), y(t) = R(t) * sin(t)"<<endl<<endl<<"\tfor every 't' in '[-10 * pi, 10 * pi]', such that 'R(0) = 0.5' and 'R(t) = R(t-1) + 0.05'.";
 	cout<<endl<<endl;
@@ -66,7 +66,7 @@ int main(int argc,char **argv)
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	
-	/* If we arrive here, we can draw the polyline, approximating the variant of the 'Spiral' curve! */
+	/* If we arrive here, then we can draw the polyline, approximating the variant of the 'Spiral' curve! */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -98,8 +98,8 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=100;
-	cout<<"\tAt the beginning, the polyline, approximating the variant of the 'Spiral' curve, is formed by 'n="<<num_samples<<"' vertices and edges (thus by the ";
-	cout<<"minimum number 'n' as possible of the vertices and the edges)."<<endl<<endl;
+	cout<<"\tAt the beginning, the polyline, approximating the variant of the 'Spiral' curve, is formed by 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"'";
+	cout<<" edges (thus by the minimum number 'n' as possible)."<<endl<<endl;
 	cout.flush();
 }
 

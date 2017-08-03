@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: July 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -47,10 +47,10 @@ using namespace std;
  */
 GLenum mode=GL_FILL;
 
-/// The number of the samples in all approximations of interest for the <i>'Cone'</i> shape.
+/// The number <i>'n'</i> of the samples in all approximations of interest for the <i>'Cone'</i> shape.
 /**
- * This value, initially set to '5', is the number of the samples in all approximations of interest for the 'Cone' shape. Broadly speaking, it is the number of vertices
- * in the triangle fans of interest. It is interactively modified by pressing the '+' and the '-' keys.
+ * This value, initially set to 'n=5', is the number of the samples in all approximations of interest for the 'Cone' shape. Broadly speaking, it is the number 'n' of
+ * vertices in the triangle fans of interest. It is interactively modified by pressing the '+' and the '-' keys.
  */
 unsigned int num_samples=5;
 
@@ -122,7 +122,7 @@ int main(int argc,char **argv)
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	
-	/* If we arrive here, we can draw the 'Cone' shape of interest by using the rendering settings, chosen by the user. */
+	/* If we arrive here, then we can draw the 'Cone' shape of interest by using the rendering settings, chosen by the user. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -216,7 +216,13 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-', thus we decrease (if it is possible) the number 'n' of the vertices in the triangle fans of interest! */
 		if(num_samples>5) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 'n=5' of the vertices in the triangle fans of interest is reached, and it is not possible to decrease again this number."<<endl;
+		else
+		{
+			cout<<"\tThe minimum number 'n=5' of the vertices in the triangle fans of interest is reached, and it is not possible to decrease again this number."<<endl;
+			cout.flush();
+		}
+
+		/* If we arrive here, then this case is finished! */
 		glutPostRedisplay();
 		break;
 		
@@ -321,7 +327,7 @@ void draw()
 		for(int k=0;k<=num_samples;k++) { glVertex3f(35*cos(-PI+k*d),70,35*sin(-PI+k*d)-60); }
 	}
 	
-	/* If we arrive here, the scene is complete! */
+	/* If we arrive here, then the scene is complete! */
 	glEnd();
 	glFlush();
 	if(mode==GL_FILL) cout<<"\tThe 'filled versions' of all ";

@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: July 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -119,7 +119,7 @@ int main(int argc,char **argv)
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();	
 	
-	/* If we arrive here, we can draw the 'Truncated Cone' shape of interest by using the rendering settings, chosen by the user. */
+	/* If we arrive here, then we can draw the 'Truncated Cone' shape of interest by using the rendering settings, chosen by the user. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -346,7 +346,7 @@ void draw()
 		glEnd();
 	}
 	
-	/* If we arrive here, we draw the bottom and the top triangle fans! */
+	/* If we arrive here, then we draw the bottom and the top triangle fans! */
 	glBegin(GL_TRIANGLE_FAN);
 	glVertex3f(0,0,0);
 	for(unsigned int k=0;k<=radial_slices_num;k++) glVertex3f(5.0*cos(k*delta_radial),0,5.0*sin(k*delta_radial));
