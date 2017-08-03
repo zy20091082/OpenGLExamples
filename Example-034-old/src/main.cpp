@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: June 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -58,17 +58,21 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-034' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a specific 'Helix' curve with center at the origin of the 3D space in an OpenGL window. Broadly speaking, any 'Helix' curve turns around an axis at a constant or continuously varying distance, while moving parallel to the axis."<<endl<<endl;
-	cout<<"\tIn this test, we consider a specific 'Helix' curve, evolving along the z-axis, and approximated by a polyline (in 'red'). The 'Helix' curve of interest is defined as follows:"<<endl<<endl;
+	cout<<"\tIt draws a specific 'Helix' curve with center at the origin of the 3D space in an OpenGL window. Broadly speaking, any 'Helix' curve turns around an axis ";
+	cout<<"at a constant or continuously varying distance, while moving parallel to"<<endl;
+	cout<<"\tthe axis."<<endl<<endl;
+	cout<<"\tIn this test, we consider a specific 'Helix' curve, evolving along the z-axis, and approximated by a polyline (in 'red'). The 'Helix' curve of interest is";
+	cout<<" defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = 20 * cos(t), y(t) = 20 * sin(t), z(t) = t - 60"<<endl<<endl<<"\tfor every 't' in '[-10*pi,10*pi]'."<<endl<<endl;
-	cout<<"\tHere, the user cannot modify the number of the samples in the polyline of interest, since they are fixed in advance. Instead, the user can press cyclically the ' ' (space) key for choosing what viewing configuration has to be applied"<<endl;
-	cout<<"\tbetween the following viewing configurations:"<<endl<<endl;
+	cout<<"\tHere, the user cannot modify the number of the samples in the polyline of interest, since they are fixed in advance. Instead, the user can press ";
+	cout<<"cyclically the ' ' (space) key for choosing what viewing configuration has to be"<<endl;
+	cout<<"\tapplied between the following viewing configurations:"<<endl<<endl;
 	cout<<"\t\t0. the 'Viewing Configuration #0' is based on the orthographic box '[-50,50]' x '[-50,50]' x '[0,100]';"<<endl;
 	cout<<"\t\t1. the 'Viewing Configuration #1' is based on the perspective box '[-5,5]' x '[-5,5]' x '[0,100]'."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 
-	/* If we arrive here, we can draw the 'Helix' curve of interest. */
+	/* If we arrive here, then we can draw the 'Helix' curve of interest. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -189,3 +193,4 @@ void draw()
 	if(projection==0) cout<<"viewing orthographic box '[-50,50]' x '[-50,50]' x '[0,100]' (thus, the 'Viewing Configuration #0')."<<endl;
 	else cout<<"viewing perspective box '[-5,5]' x '[-5,5]' x '[0,100]' (thus, the 'Viewing Configuration #1')."<<endl;
 }
+

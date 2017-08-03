@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: July 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -47,10 +47,10 @@ using namespace std;
  */
 GLenum mode=GL_FILL;
 
-/// The number of the samples in all approximations of interest for the <i>'Ring'</i> shape.
+/// The number <i>'n'</i> of the samples in all approximations of interest for the <i>'Ring'</i> shape.
 /**
- * This value, initially set to '5', is the number of the samples in all approximations of interest for the 'Ring' shape. Broadly speaking, it is the number of vertices
- * pairs in the quad strips of interest. It is interactively modified by pressing the '+' and the '-' keys.
+ * This value, initially set to 'n=5', is the number 'n' of the samples in all approximations of interest for the 'Ring' shape. Broadly speaking, it is the number 'n' 
+ * of vertices pairs in the quad strips of interest. It is interactively modified by pressing the '+' and the '-' keys.
  */
 unsigned int num_samples=5;
 
@@ -112,8 +112,9 @@ int main(int argc,char **argv)
 	cout<<"\t\t-) increase the number 'n' of all vertices pairs in the quad strips of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of all vertices pairs in the quad strips of interest by pressing the '-' key."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+	cout.flush();
 	
-	/* If we arrive here, we can draw the 'Ring' shape of interest by using the rendering settings, chosen by the user. */
+	/* If we arrive here, then we can draw the 'Ring' shape of interest by using the rendering settings, chosen by the user. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -211,6 +212,7 @@ void manageKeys(unsigned char key, int x, int y)
 		{
 			cout<<"\tThe minimum number 'n=5' of the vertices pairs in the quad strips of interest is reached, and it is not possible to decrease again this number.";
 			cout<<endl;
+			cout.flush();
 		}
 
 		/* If we arrive here, then this case is finished! */
@@ -304,7 +306,7 @@ void draw()
 		}
 	}
 	
-	/* If we arrive here, the scene is complete! */
+	/* If we arrive here, then the scene is complete! */
 	glEnd();
 	glFlush();
 	if(mode==GL_FILL) cout<<"\tThe 'filled versions' of all ";

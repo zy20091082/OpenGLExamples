@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: June 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -57,17 +57,20 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-035' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a specific 'Cube' shape in an OpenGL window. Broadly speaking, any 'Cube' shape is formed by 8 vertices, 12 edges, and 6 square faces, with three meeting at each vertex. In other words, it is the boundary of the 'Cube' (or"<<endl;
+	cout<<"\tIt draws a specific 'Cube' shape in an OpenGL window. Broadly speaking, any 'Cube' shape is formed by 8 vertices, 12 edges, and 6 square faces, with ";
+	cout<<"three meeting at each vertex. In other words, it is the boundary of the 'Cube' (or"<<endl;
 	cout<<"\tthe 'Regular Hexahedron') solid."<<endl<<endl;
-	cout<<"\tIn this test, we consider a specific 'Cube' shape, such that a different color is assigned with each face, and such that its domain is '[-30,30]' x '[-30,30]' x '[-60,-30]'."<<endl<<endl;
-	cout<<"\tHere, the user cannot modify the orientations and the colors for 6 square faces in the 'Cube' shape of interest. Instead, the user can press cyclically the ' ' (space) key for choosing what viewing configuration has to be applied"<<endl;
+	cout<<"\tIn this test, we consider a specific 'Cube' shape, such that a different color is assigned with each face, and such that its domain is '[-30,30]' x ";
+	cout<<"'[-30,30]' x '[-60,-30]'."<<endl<<endl;
+	cout<<"\tHere, the user cannot modify the orientations and the colors for 6 square faces in the 'Cube' shape of interest. Instead, the user can press cyclically ";
+	cout<<"the ' ' (space) key for choosing what viewing configuration has to be applied"<<endl;
 	cout<<"\tbetween the following viewing configurations:"<<endl<<endl;
 	cout<<"\t\t0. the 'Viewing Configuration #0' is based on the orthographic box '[-40,40]' x '[-40,40]' x '[-80,80]';"<<endl;
 	cout<<"\t\t1. the 'Viewing Configuration #1' is based on the perspective box '[-2.7,2.7]' x '[-2.7,2.7]' x '[2.0,70]'."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	
-	/* If we arrive here, we can draw the 'Cube' shape of interest. */
+	/* If we arrive here, then we can draw the 'Cube' shape of interest. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -305,3 +308,4 @@ void draw()
 	cout<<endl;
 	cout.flush();
 }
+

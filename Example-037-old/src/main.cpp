@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: June 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -52,9 +52,11 @@ int mode=2;
  * It assumes the following values:
  *
  * -) 0: 	used for indicating the use of the 'Tessellation #0', consisting of a pure triangulation with 11 triangles. A different color is assigned to each triangle.
- * -) 1: 	used for indicating the use of the 'Tessellation #1', consisting of a quad-dominant mesh with 5 quadrilaterals and 1 triangle. A different color is assigned to the triangle and to each quadrilateral.
- * -) 2: 	used for indicating the use of the 'Tessellation #2', consisting of the same triangulation in the 'Tessellation #0'. In this case, it is expressed by 1 triangle strip (in 'yellow'), and by 3 triangle fans. The reference vertices for
- *    		the triangle fans are depicted, respectively, in 'red', in 'blue', and in 'green'. Instead, their triangles are depicted in 'grey'.
+ * -) 1: 	used for indicating the use of the 'Tessellation #1', consisting of a quad-dominant mesh with 5 quadrilaterals and 1 triangle. A different color is assigned
+ * 			to the triangle and to each quadrilateral.
+ * -) 2: 	used for indicating the use of the 'Tessellation #2', consisting of the same triangulation in the 'Tessellation #0'. In this case, it is expressed by 1
+ * 			triangle strip (in 'yellow'), and by 3 triangle fans. The reference vertices for the triangle fans are depicted, respectively, in 'red', in 'blue', and in
+ * 			'green'. Instead, their triangles are depicted in 'grey'.
  *
  * The rendering settings for drawing the polygons of interest are set independently.
  */
@@ -71,23 +73,29 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-037' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws several versions of the 'A' shape in an OpenGL window by using the rendering settings, chosen interactively by the user. Broadly speaking, the 'A' shape represents the 'A' letter, which is in the first letter and the"<<endl;
-	cout<<"\tfirst vowel in the ISO basic Latin alphabet. Here, we consider the upper-case version of the 'A' letter, consisting of 2 slanting sides of a triangle, crossed in the middle by a horizontal bar (as usual)."<<endl<<endl;
+	cout<<"\tIt draws several versions of the 'A' shape in an OpenGL window by using the rendering settings, chosen interactively by the user. Broadly speaking, the ";
+	cout<<"'A' shape represents the 'A' letter, which is in the first letter and the"<<endl;
+	cout<<"\tfirst vowel in the ISO basic Latin alphabet. Here, we consider the upper-case version of the 'A' letter, consisting of 2 slanting sides of a triangle, ";
+	cout<<"crossed in the middle by a horizontal bar (as usual)."<<endl<<endl;
 	cout<<"\tIn this test, we consider the following tessellations of the 'A' shape, defined without adding any 'Steiner' point:"<<endl<<endl;
-	cout<<"\t\t0. the 'Tessellation #0' of the 'A' shape consists of a pure triangulation, formed by 11 triangles. A different color is assigned to each triangle."<<endl;
-	cout<<"\t\t1. The 'Tessellation #1' of the 'A' shape consists of a quad-dominant mesh, formed by 5 quadrilaterals, and by only 1 triangle. Also in this case, a different color is assigned to the triangle and to each quadrilateral."<<endl;
-	cout<<"\t\t2. The 'Tessellation #2' of the 'A' shape consists of the same triangulation in the 'Tessellation #0'. In this case, it is expressed by 1 triangle strip (in 'yellow'), and by 3 triangle fans. The reference vertices for"<<endl; 
+	cout<<"\t\t0. the 'Tessellation #0' of the 'A' shape consists of a pure triangulation, formed by 11 triangles. A different color is assigned to each triangle.";
+	cout<<endl;
+	cout<<"\t\t1. The 'Tessellation #1' of the 'A' shape consists of a quad-dominant mesh, formed by 5 quadrilaterals, and by only 1 triangle. Also in this case, a ";
+	cout<<"different color is assigned to the triangle and to each quadrilateral."<<endl;
+	cout<<"\t\t2. The 'Tessellation #2' of the 'A' shape consists of the same triangulation in the 'Tessellation #0'. In this case, it is expressed by 1 triangle strip";
+	cout<<" (in 'yellow'), and by 3 triangle fans. The reference vertices for"<<endl; 
 	cout<<"\t\t   the triangle fans are depicted, respectively, in 'red', in 'blue', and in 'green'. Instead, their triangles are depicted in 'grey'."<<endl<<endl;
-	cout<<"\tHere, the user cannot modify the vertices positions in the 'A' shape, since they are fixed in advance. Instead, the user can choose interactively to exploit any among the tessellations of the 'A' shape (mentioned above) by"<<endl;
+	cout<<"\tHere, the user cannot modify the vertices positions in the 'A' shape, since they are fixed in advance. Instead, the user can choose interactively to ";
+	cout<<"exploit any among the tessellations of the 'A' shape (mentioned above) by"<<endl;
 	cout<<"\tpressing cyclically the 't' key. Moreover, the user can decide interactively to render:"<<endl<<endl;
 	cout<<"\t\t-) only the points in the tessellation of interest for the 'A' shape;"<<endl;
 	cout<<"\t\t-) the 'wireframe versions' of all triangles and quadrilaterals in the tessellation of interest for the 'A' shape;"<<endl;
 	cout<<"\t\t-) the 'filled versions' of all triangles and quadrilaterals in the tessellation of interest for the 'A' shape;"<<endl<<endl;
-	cout<<"\tby pressing cyclically the ' ' (space) key. As mentioned above, the tessellation of interest for the 'A' shape to be drawn can be chosen independently."<<endl<<endl;
-	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+	cout<<"\tby pressing cyclically the ' ' (space) key. As mentioned above, the tessellation of interest for the 'A' shape to be drawn can be chosen  independently.";
+	cout<<endl<<endl<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	
-	/* If we arrive here, we can draw the 'A' shape of interest. */
+	/* If we arrive here, then we can draw the 'A' shape of interest. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -332,7 +340,8 @@ void draw()
    	}
    	else
    	{
-   		/* We draw the 'Tessellation #2', which is the same as the 'Tessellation #0' (with 11 independent triangles), but represented by 3 triangle fans and 1 triangle strip. */
+   		/* We draw the 'Tessellation #2', which is the same as the 'Tessellation #0' (with 11 independent triangles), but represented by 3 triangle fans and 1 triangle
+		 * strip. */
    		glLineWidth(3);
    		glPointSize(8);
    		
@@ -381,7 +390,7 @@ void draw()
    		glEnd();
    	}
    	
-   	/* If we arrive here, we have finished! */
+   	/* If we arrive here, then we have finished! */
    	glFlush();
    	if(mode==0) cout<<"\tOnly the points of all polygons ";
 	else if(mode==1) cout<<"\tThe 'wireframe versions' of all polygons ";
@@ -389,3 +398,4 @@ void draw()
 	cout<<"in the 'Tesselation #"<<tessellation<<"' of the 'A' shape are currently drawn."<<endl;
 	cout.flush();
 }
+

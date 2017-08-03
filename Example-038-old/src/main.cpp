@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: June 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -38,8 +38,9 @@ using namespace std;
 
 /// The coordinates and the angles for the intersection points between the <i>'Circular Annulus'</i> shapes, forming the <i>'Eight'</i> shape of interest.
 /**
- * By construction, the 'Circular Annulus' shapes, forming the 'Eight' shape of interest, have 2 intersection points '(xp1,yp1)' and '(xp2,yp2)', such that 'yp1=yp2' and 'xp2=-xp1', along the frontiers of their 'external' disks. These points are 
- * also determined by 2 elevation angles 'teta1' and 'teta2', such that 'teta2=pi/2+teta1'.
+ * By construction, the 'Circular Annulus' shapes, forming the 'Eight' shape of interest, have 2 intersection points '(xp1,yp1)' and '(xp2,yp2)', such that 'yp1=yp2'
+ * and 'xp2=-xp1', along the frontiers of their 'external' disks. These points are also determined by 2 elevation angles 'teta1' and 'teta2', such that 
+ * 'teta2=pi/2+teta1'.
  */
 float xp1,yp1,xp2,yp2,teta1,teta2;
 
@@ -47,8 +48,10 @@ float xp1,yp1,xp2,yp2,teta1,teta2;
 /**
  * This value, initially set to '5', is the number of the samples in all approximations of interest for the 'Eight' shape. Specifically, its meaning depends on the 
  *
- * -) it may be the number 'n' of the vertices (initially 'n=4') in the triangle fans, approximating the disks in the 'Eight' shape (i.e., in the 'Variant #0' of the 'Eight' shape).
- * -) It may be the number 'k' of the vertices pairs (initially 'k=5') in the quad strips, approximating the 'Eight' shape (i.e., in the 'Variant #1' of the 'Eight' shape).
+ * -)    it may be the number 'n' of the vertices (initially 'n=4') in the triangle fans, approximating the disks in the 'Eight' shape (i.e., in the 'Variant #0' of the
+ * 	     'Eight' shape).
+ * -)    It may be the number 'k' of the vertices pairs (initially 'k=5') in the quad strips, approximating the 'Eight' shape (i.e., in the 'Variant #1' of the 'Eight'
+ * 	     shape).
  *
  * This value is interactively modified by pressing the '+' and the '-' keys.
  */
@@ -88,35 +91,58 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-038' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws 2 variants of the 'Eight' shape in an OpenGL window by using the rendering settings, chosen interactively by the user. Broadly speaking, the 'Eight' shape represents the '8' number. Intuitively, this shape can be seen as the union"<<endl;
-	cout<<"\tof 2 'Circular Annulus' shapes, partially overlapped. Recall that any 'Circular Annulus' shape with 'internal' radius 'rI', 'external' radius 'rE', and center '(xc,yc)' is defined as follows:"<<endl<<endl;
+	cout<<"\tIt draws 2 variants of the 'Eight' shape in an OpenGL window by using the rendering settings, chosen interactively by the user. Broadly speaking, the ";
+	cout<<"'Eight' shape represents the '8' number. Intuitively, this shape can be seen as"<<endl; 
+	cout<<"\tthe union of 2 'Circular Annulus' shapes, partially overlapped. Recall that any 'Circular Annulus' shape with 'internal' radius 'rI', 'external' radius";
+	cout<<" 'rE', and center '(xc,yc)' is defined as follows:"<<endl<<endl;
 	cout<<"\t| rI * cos(t) | <= | x(t) - xc | <= | rE * cos(t) |, | rI * sin(t) | <= | y(t) - yc | <= | rE * sin(t) |"<<endl<<endl;
-	cout<<"\tfor every 't' in '[-pi,pi]', and for any 'rI>0' and 'rE>0', such that 'rI<rE'."<<endl<<endl<<"\tIn other words, any 'Circular Annulus' shape is formed by all points in the circular crown, bounded by 2 (concentric) 'Circle' shapes (disks) of"<<endl;
-	cout<<"\tthe same center '(xc,yc)' and of radius 'rI' and 'rE', respectively. The disk of radius 'rE' is the 'external' disk, and the disk of radius 'rI' is the 'internal' disk."<<endl<<endl;
-	cout<<"\tFor the sake of simplicity, the 'Circular Annulus' shape in the superior portion of the 'Eight' shape is indicated as the 'superior circular crown', while the 'Circular Annulus' shape in the inferior portion of the 'Eight' shape is indicated"<<endl;
-	cout<<"\tas the 'inferior circular crown'."<<endl<<endl<<"\tSpecifically, this test draws the following variants of the 'Eight' shape:"<<endl<<endl;
-	cout<<"\t\t0. the 'Variant #0' is not 'real', since it is the result of drawing the approximations of 2 complete 'Circular Annulus' shapes, placed at different z-depths. Note that every 'Circular Annulus' shape is recursively rendered by drawing its"<<endl;
-	cout<<"\t\t   'external' (in 'red') and 'internal' (in 'white') disks. The scene is drawn by using the orthographic projection, such that the centers for the 'Circle' shapes of interest are projected on the same point. Here, the z-buffer (depth test)"<<endl;
-	cout<<"\t\t   technique is exploited. Thus, the result will be always the same, despite the rendering order of the 'Circle' shapes. Thus, they only seem to approximate the 'Circular Annulus' shape, and thus also the 'Eight' shape. In particular, there"<<endl;
-	cout<<"\t\t   exists a portion of the 'Eight' shape, which is shared by the 'inferior' and by the 'superior circular crown'. All 'Circle' shapes of interest are approximated by a triangle fan of 'n' vertices."<<endl<<endl;
-	cout<<"\t\t1. The 'Variant #1' is a 'real' approximation of the 'Eight' shape, and is defined with respect to its horizontal symmetry. Here, the 'Eight' shape is decomposed into the 'superior' and the 'inferior' patches, that correspond (broadly) to its"<<endl;
-	cout<<"\t\t   'superior' and 'inferior circular crowns' (but not completely). Every patch is recursively formed by 2 pieces. The first piece is the portion of the corresponding circular crown, which does not contain the intersection with other circular"<<endl;
-	cout<<"\t\t   crown. In other words, it is a sector of the corresponding circular crown, and is approximated by a quad strip. This latter is defined on 'k' pairs of the corresponding vertices in the 'Circle' curves, that bound both the 'internal' and "<<endl;
-	cout<<"\t\t   'external' disks of the corresponding circular crown. Other piece of the patch is a variant of the circular sector in the corresponding circular crown, which is bounded by the frontier of the 'internal' disk and by the horizontal symmetry"<<endl;
-	cout<<"\t\t   axis. Also this piece is approximated by a quad strip, which is defined on 'k/4' pairs of the corresponding vertices in the horizontal symmetry axis and in the frontier of the 'internal' disk. For the sake of the simplicity, 2 vertices"<<endl;
-	cout<<"\t\t   pairs are duplicated here, since they already belong to the first piece of the patch."<<endl<<endl;
-	cout<<"\t\t   It is clear that both quad strips, approximating these pieces, can be merged into a unique quad strip (in 'red'), approximating each patch of the 'Eight' shape. This means that the 'Variant #1' of the 'Eight' shape is formed by 2 quad strips";
-	cout<<endl<<"\t\t   (both in 'red')."<<endl<<endl;
-	cout<<"\tHere, the user cannot modify the radii and the centers for all disks in 2 variants of the 'Eight' shape, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
-	cout<<"\t\t-) increase the number 'n' of all vertices in the triangle fans, or the number 'k' of all vertices pairs in the quad strips of interest by pressing the '+' key;"<<endl;
-	cout<<"\t\t-) decrease the number 'n' of all vertices in the triangle fans, or the number 'k' of all vertices pairs in the quad strips of interest by pressing the '-' key;"<<endl;
-	cout<<"\t\t-) choose to render a specific variant of the 'Eight' shape by pressing cyclically the ' ' (space) key. The custom settings for rendering the polygons in the corresponding tessellation are set independently."<<endl;
-	cout<<"\t\t-) Choose to render the 'wireframe' or the 'filled versions' of all triangles in the triangle fans or in the quad strips of interest by pressing cyclically the 'w' key. The variant of the 'Eight' shape to be drawn is chosen independently.";
-	cout<<endl<<endl;
+	cout<<"\tfor every 't' in '[-pi,pi]', and for any 'rI>0' and 'rE>0', such that 'rI<rE'."<<endl<<endl;
+	cout<<"\tIn other words, any 'Circular Annulus' shape is formed by all points in the circular crown, bounded by 2 (concentric) 'Circle' shapes (disks) of the same ";
+	cout<<"center '(xc,yc)' and of radius 'rI' and 'rE', respectively. The disk of radius"<<endl;
+	cout<<"\t'rE' is the 'external' disk, and the disk of radius 'rI' is the 'internal' disk."<<endl<<endl;
+	cout<<"\tFor the sake of simplicity, the 'Circular Annulus' shape in the superior portion of the 'Eight' shape is indicated as the 'superior circular crown', while";
+	cout<<" the 'Circular Annulus' shape in the inferior portion of the 'Eight' shape is"<<endl;
+	cout<<"\tindicated as the 'inferior circular crown'."<<endl<<endl;
+	cout<<"\tSpecifically, this test draws the following variants of the 'Eight' shape:"<<endl<<endl;
+	cout<<"\t\t0. the 'Variant #0' is not 'real', since it is the result of drawing the approximations of 2 complete 'Circular Annulus' shapes, placed at different";
+	cout<<" z-depths. Note that every 'Circular Annulus' shape is recursively rendered"<<endl;
+	cout<<"\t\t   by drawing its 'external' (in 'red') and 'internal' (in 'white') disks. The scene is drawn by using the orthographic projection, such that the ";
+	cout<<"centers for the 'Circle' shapes of interest are projected on the same point."<<endl;
+	cout<<"\t\t   Here, the z-buffer (depth test) technique is exploited. Thus, the result will be always the same, despite the rendering order of the 'Circle' shapes.";
+	cout<<" Thus, they only seem to approximate the 'Circular Annulus' shape, and "<<endl;
+	cout<<"\t\t   thus also the 'Eight' shape. In particular, there exists a portion of the 'Eight' shape, which is shared by the 'inferior' and by the 'superior ";
+	cout<<"circular crown'. All 'Circle' shapes of interest are approximated by a"<<endl;
+	cout<<"\t\t   triangle fan of 'n' vertices."<<endl<<endl;
+	cout<<"\t\t1. The 'Variant #1' is a 'real' approximation of the 'Eight' shape, and is defined with respect to its horizontal symmetry. Here, the 'Eight' shape is";
+	cout<<" decomposed into the 'superior' and the 'inferior' patches, corresponding"<<endl;
+	cout<<"\t\t   (broadly) to its 'superior' and 'inferior circular crowns' (but not completely). Every patch is recursively formed by 2 pieces. The first piece is ";
+	cout<<"the portion of the corresponding circular crown, which does not contain"<<endl;
+	cout<<"\t\t   the intersection with other circular crown. In other words, it is a sector of the corresponding circular crown, and is approximated by a quad strip.";
+	cout<<" This latter is defined on 'k' pairs of the corresponding vertices in the"<<endl;
+	cout<<"\t\t   'Circle' curves, that bound both the 'internal' and 'external' disks of the corresponding circular crown. Other piece of the patch is a variant of ";
+	cout<<"the circular sector in the corresponding circular crown, which is bounded"<<endl;
+	cout<<"\t\t   by the frontier of the 'internal' disk and by the horizontal symmetry axis. Also this piece is approximated by a quad strip, which is defined on ";
+	cout<<"'k/4' pairs of the corresponding vertices in the horizontal symmetry axis"<<endl;
+	cout<<"\t\t   and in the frontier of the 'internal' disk. For the sake of the simplicity, 2 vertices pairs are duplicated here, since they already belong to the ";
+	cout<<"first piece of the patch."<<endl<<endl;
+	cout<<"\t\t   It is clear that both quad strips, approximating these pieces, can be merged into a unique quad strip (in 'red'), approximating each patch of the ";
+	cout<<"'Eight' shape. This means that the 'Variant #1' of the 'Eight' shape is"<<endl;
+	cout<<"\t\t   formed by 2 quad strips (both in 'red')."<<endl<<endl;
+	cout<<"\tHere, the user cannot modify the radii and the centers for all disks in 2 variants of the 'Eight' shape, since they are fixed in advance. Instead, the ";
+	cout<<"user can:"<<endl<<endl;
+	cout<<"\t\t-) increase the number 'n' of all vertices in the triangle fans, or the number 'k' of all vertices pairs in the quad strips of interest by pressing the";
+	cout<<" '+' key;"<<endl;
+	cout<<"\t\t-) decrease the number 'n' of all vertices in the triangle fans, or the number 'k' of all vertices pairs in the quad strips of interest by pressing the";
+	cout<<" '-' key;"<<endl;
+	cout<<"\t\t-) choose to render a specific variant of the 'Eight' shape by pressing cyclically the ' ' (space) key. The custom settings for rendering the polygons ";
+	cout<<" in the corresponding tessellation are set independently."<<endl;
+	cout<<"\t\t-) Choose to render the 'wireframe' or the 'filled versions' of all triangles in the triangle fans or in the quad strips of interest by pressing ";
+	cout<<"cyclically the 'w' key. The variant of the 'Eight' shape to be drawn is chosen"<<endl;
+	cout<<"\t\t   independently."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	
-	/* If we arrive here, we can draw the 'Eight' shape of interest by using the rendering settings, chosen by the user. */
+	/* If we arrive here, then we can draw the 'Eight' shape of interest by using the rendering settings, chosen by the user. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE|GLUT_DEPTH);
 	glutInitWindowPosition(0,0);
@@ -162,9 +188,18 @@ void initialize()
 	cout<<"\tAt the beginning, ";
 	if(mode==GL_FILL) cout<<"the 'filled versions' of all ";
 	if(mode==GL_LINE) cout<<"the 'wireframe versions' of all ";
-	if(tessellation==0) cout<<"triangles, belonging to the triangle fans (formed by the minimum number 'n="<<(num_samples-1)<<"' as possible of the vertices) in the 'Variant #0' of the 'Eight' shape, are drawn."<<endl<<endl;
-	if(tessellation==1) cout<<"quadrilaterals, belonging to the quad strips (formed by the minimum number 'k="<<num_samples<<"' as possible of the vertices pairs) in the 'Variant #1' of the 'Eight' shape, are drawn."<<endl<<endl;
-	cout.flush();
+	if(tessellation==0) 
+	{
+		cout<<"triangles, belonging to the triangle fans (formed by the minimum number 'n="<<(num_samples-1)<<"' as possible of the vertices) in the ";
+		cout<<"'Variant #0' of the 'Eight' shape, are drawn."<<endl<<endl;
+		cout.flush();
+	}
+	else if(tessellation==1)
+	{
+		cout<<"quadrilaterals, belonging to the quad strips (formed by the minimum number 'k="<<num_samples<<"' as possible of the vertices pairs) in the 'Variant #1'";
+		cout<<" of the 'Eight' shape, are drawn."<<endl<<endl;
+		cout.flush();
+	}
 }
 
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
@@ -225,14 +260,16 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '+':
 		
-		/* The key is '+', thus we increase the number 'n' of the vertices in the triangle fans, or the number 'k' of the vertices pairs in the quad strips of interest! */
+		/* The key is '+', thus we increase the number 'n' of the vertices in the triangle fans, or the number 'k' of the vertices pairs in the quad strips of 
+		 * interest! */
 		num_samples=num_samples+1;
 		glutPostRedisplay();
 		break;
 		
 		case '-':
 		
-		/* The key is '-', thus we decrease (if it is possible) the number 'n' of the vertices in the triangle fans, or the number 'k' of the vertices pairs in the quad strips of interest! */
+		/* The key is '-', thus we decrease (if it is possible) the number 'n' of the vertices in the triangle fans, or the number 'k' of the vertices pairs in the 
+		 * quad strips of interest! */
 		if(num_samples>5) num_samples=num_samples-1;
 		else
 		{
@@ -241,7 +278,8 @@ void manageKeys(unsigned char key, int x, int y)
 			else cout<<"'k=5' of the vertices pairs in the quad strips of interest ";
 			cout<<"is reached, and it is not possible to decrease again this number."<<endl;
 		}
-		
+
+		/* If we arrive here, then this case is finished! */
 		glutPostRedisplay();
 		break;
 		
@@ -272,7 +310,7 @@ void drawDisc(float R,float X,float Y,float Z)
 		glVertex3f(X+R*cos(t),Y+R*sin(t),Z);
 	}
 	
-	/* If we arrive here, all is ok. */
+	/* If we arrive here, then all is ok. */
 	glEnd();
 }
 
@@ -343,11 +381,20 @@ void draw()
 		glEnd();
 	}
 	
-	/* If we arrive here, all is ok! */
+	/* If we arrive here, then all is ok! */
 	glFlush();
 	if(mode==GL_FILL) cout<<"\tThe 'filled versions' of all ";
 	if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' of all ";
-	if(tessellation==0) cout<<"triangles, belonging to the triangle fans (all formed by 'n="<<aaa<<"' vertices) in the 'Variant #0' of the 'Eight' shape, are currently drawn."<<endl;
-	if(tessellation==1) cout<<"quadrilaterals, belonging to the quad strips (all formed by 'k="<<aaa<<"' vertices pairs) in the 'Variant #1' of the 'Eight' shape, are currently drawn."<<endl;
-	cout.flush();
+	if(tessellation==0) 
+	{
+		cout<<"triangles, belonging to the triangle fans (all formed by 'n="<<aaa<<"' vertices) in the 'Variant #0' of the 'Eight' shape, are currently drawn."<<endl;
+		cout.flush();
+	}
+	else if(tessellation==1) 
+	{
+		cout<<"quadrilaterals, belonging to the quad strips (all formed by 'k="<<aaa<<"' vertices pairs) in the 'Variant #1' of the 'Eight' shape, are currently ";
+		cout<<"drawn."<<endl;
+		cout.flush();
+	}
 }
+

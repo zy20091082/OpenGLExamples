@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: July 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -50,7 +50,7 @@ static long font = (long)GLUT_BITMAP_8_BY_13;
  *
  * -) in the 'Variants #0' and '#1', it is the number 'n' of the vertices (including the center) for constructing the triangle fans of interest.
  * -) In the 'Variant #2', it is the number 'n' of the pairs, formed by the corresponding vertices in the external and the internal 'Circle' curves. These latter
- * 	  provides the boundary of the 'Circular Annulus' shape.
+ * 	  provide the boundary of the 'Circular Annulus' shape.
  */
 unsigned int num_samples=5;
 
@@ -128,7 +128,7 @@ int main(int argc,char **argv)
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 
-	/* If we arrive here, we can draw all variants of the 'Circular Annulus' shape in the scene. */
+	/* If we arrive here, then we can draw all variants of the 'Circular Annulus' shape in the scene. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE|GLUT_DEPTH);
 	glutInitWindowPosition(0,0);
@@ -156,8 +156,9 @@ void initialize()
 	if(mode==GL_FILL) cout<<"'filled versions' ";
 	else cout<<"'wireframe versions' ";
 	cout<<"of all triangles in 2 triangle fans with 'n="<<num_samples<<"' vertices and in a triangle strip with 'n="<<num_samples<<"' vertices pairs (thus with the";
-	cout<<" minimum number"<<endl<<"\t'n' as possible of the vertices and the vertices pairs). The 'Configuration #"<<odmode<<"' for the 'Variant #0' of the ";
-	cout<<"'Circular Annulus' shape is initially considered."<<endl<<endl;
+	cout<<" minimum number"<<endl<<"\t'n' as possible). The 'Configuration #"<<odmode<<"' for the 'Variant #0' of the 'Circular Annulus' shape is initially considered.";
+	cout<<endl<<endl;
+	cout.flush();
 }
 
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
@@ -280,7 +281,7 @@ void drawDisc(float R,float X,float Y,float Z)
 		glVertex3f(X+R*cos(t),Y+R*sin(t),Z);
 	}
 	
-	/* If we arrive here, all is ok. */
+	/* If we arrive here, then all is ok. */
 	glEnd();
 }
 
@@ -335,7 +336,7 @@ void draw()
 		glVertex3f(50+20*cos(t),25+20*sin(t),0);
 	}
 	
-	/* If we arrive here, we draw the informative labels for all variants of interest. */
+	/* If we arrive here, then we draw the informative labels for all variants of interest. */
 	glEnd();
 	glColor3f(0.0, 0.0, 0.0);
     glRasterPos3f(5.0, 51.0, 0.0);
@@ -349,7 +350,7 @@ void draw()
    	glRasterPos3f(7,1,0);
    	drawString((void*)font,"A 'Circular Annulus' shape with only one triangle strip");
    	
-   	/* If we arrive here, all is ok! */
+   	/* If we arrive here, then all is ok! */
 	glFlush();
 	cout<<"\tAll 'Circular Annulus' shapes are currently approximated by the ";
 	if(mode==GL_FILL) cout<<"'filled versions' ";

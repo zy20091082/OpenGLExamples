@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: June 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -46,9 +46,12 @@ unsigned int num_samples=10;
 /**
  * It may assume the following values:
  *
- * -) 0, if the 'Variant #0' of the 'Helix-like' curve (evolving along the z-axis) must be drawn. It is defined by: x(t) = 40 * cos(t), y(t) = 40 * sin(t), z(t) = t, for every 't' in '[-10*pi,10*pi]'.
- * -) 1: if the 'Variant #1' of the 'Helix-like' curve (evolving along the x-axis) must be drawn. It is defined by: x(t) = t, y(t) = 40 * cos(t), z(t) = 40 * sin(t), for every 't' in '[-10*pi,10*pi]'.
- * -) 2: if the 'Variant #2' of the 'Helix-like' curve (evolving along the y-axis) must be drawn. It is defined by: x(t) = 40 * cos(t), y(t) = t, z(t) = 40 * sin(t), for every 't' in '[-10*pi,10*pi]'.
+ * -) 	0, if the 'Variant #0' of the 'Helix-like' curve (evolving along the z-axis) must be drawn. It is defined by: x(t) = 40 * cos(t), y(t) = 40 * sin(t), z(t) = t,
+ * 		for every 't' in '[-10*pi,10*pi]'.
+ * -) 	1: if the 'Variant #1' of the 'Helix-like' curve (evolving along the x-axis) must be drawn. It is defined by: x(t) = t, y(t) = 40 * cos(t), z(t) = 40 * sin(t),
+ * 		for every 't' in '[-10*pi,10*pi]'.
+ * -) 	2: if the 'Variant #2' of the 'Helix-like' curve (evolving along the y-axis) must be drawn. It is defined by: x(t) = 40 * cos(t), y(t) = t, z(t) = 40 * sin(t),
+ * 		for every 't' in '[-10*pi,10*pi]'.
  *
  * The user can choose the variant of interest by pressing cyclically the ' ' (space) key.
  */
@@ -65,24 +68,28 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-033' Test, based on the (Old Mode) OpenGL."<<endl;
-    cout<<"\tIt draws 3 variants of the 'Helix-like' curve with center at the origin of the 3D space in an OpenGL window. Broadly speaking, any 'Helix-like' curve turns around an axis at a constant or continuously varying"<<endl;
-    cout<<"\tdistance, while moving parallel to the axis."<<endl<<endl;
-    cout<<"\tIn this test, we consider all variants of the 'Helix-like' curve, evolving along 3 Cartesian axes. Every variant of interest is approximated by a polyline (in 'red'), formed by an arbitrary number 'n' of the"<<endl; 
-    cout<<"\tvertices and the edges, and is drawn by using the same orthographic projection viewing box '[-50,50]' x '[-50,50]' x '[-50,50]'."<<endl<<endl;
+    cout<<"\tIt draws 3 variants of the 'Helix-like' curve with center at the origin of the 3D space in an OpenGL window. Broadly speaking, any 'Helix-like' curve ";
+	cout<<"turns around an axis at a constant or continuously varying distance, while moving"<<endl;
+	cout<<"\tparallel to the axis."<<endl<<endl;
+    cout<<"\tIn this test, we consider all variants of the 'Helix-like' curve, evolving along 3 Cartesian axes. Every variant of interest is approximated by a polyline";
+	cout<<" (in 'red'), formed by an arbitrary number 'n' of the vertices and the edges,"<<endl;
+	cout<<"\tand is drawn by using the same orthographic projection viewing box '[-50,50]' x '[-50,50]' x '[-50,50]'."<<endl<<endl;
     cout<<"\tHere, the 'Variant #0' of the 'Helix-like' curve, evolving along the z-axis, is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = 40 * cos(t), y(t) = 40 * sin(t), z(t) = t"<<endl<<endl<<"\tfor every 't' in '[-10*pi,10*pi]'."<<endl<<endl;
 	cout<<"\tInstead, the 'Variant #1' of the 'Helix-like' curve, evolving along the x-axis, is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = t, y(t) = 40 * cos(t), z(t) = 40 * sin(t)"<<endl<<endl<<"\tfor every 't' in '[-10*pi,10*pi]'."<<endl<<endl;
 	cout<<"\tFinally, the 'Variant #2' of the 'Helix-like' curve, evolving along the y-axis, is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = 40 * cos(t), y(t) = t, z(t) = 40 * sin(t)"<<endl<<endl<<"\tfor every 't' in '[-10*pi,10*pi]'."<<endl<<endl;
-	cout<<"\tHere, the user cannot modify the projection and the size for 3 variants of the 'Helix-like' curve, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
+	cout<<"\tHere, the user cannot modify the projection and the size for 3 variants of the 'Helix-like' curve, since they are fixed in advance. Instead, the user can:";
+	cout<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the polyline of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of the vertices and the edges in the polyline of interest by pressing the '-' key;"<<endl;
-	cout<<"\t\t-) choose what variant of the 'Helix-like' curve must be drawn by pressing cyclically the ' ' (space) key. At each choice, the number 'n' of the samples is resetted to the default value '10'."<<endl<<endl;
+	cout<<"\t\t-) choose what variant of the 'Helix-like' curve must be drawn by pressing cyclically the ' ' (space) key. At each choice, the number 'n' of the samples";
+	cout<<" is resetted to the default value '10'."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	
-	/* If we arrive here, we can draw the polyline, approximating the 'Helix-like' curve! */
+	/* If we arrive here, then we can draw the polyline, approximating the 'Helix-like' curve! */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -117,7 +124,8 @@ void initialize()
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=10;
 	orient=0;
-	cout<<"\tAt the beginning, the polyline, approximating the 'Variant #"<<orient<<"' of the 'Helix-like' curve, is formed by 'n="<<num_samples<<"' vertices and edges (thus by the minimum number 'n' as possible of the vertices and the edges)."<<endl<<endl;
+	cout<<"\tAt the beginning, the polyline, approximating the 'Variant #"<<orient<<"' of the 'Helix-like' curve, is formed by 'n="<<num_samples<<"' vertices and ";
+	cout<<"'n="<<num_samples<<"' edges (thus by the minimum number 'n' as possible)."<<endl<<endl;
 	cout.flush();
 }
 
@@ -180,8 +188,14 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '-', thus we decrease the number 'n' of the vertices and the edges (if possible) in the polyline of interest. */
 		if(num_samples>10) num_samples=num_samples-1;
-		else cout<<"\tThe minimum number 'n=10' of the vertices and the edges in the polyline of interest is reached, and it is not possible to decrease again this number."<<endl;
-		cout.flush();
+		else
+		{
+			cout<<"\tThe minimum number 'n=10' of the vertices and the edges in the polyline of interest is reached, and it is not possible to decrease again this ";
+			cout<<"number."<<endl;
+			cout.flush();
+		}
+
+		/* If we arrive here, then this case is finished! */
 		glutPostRedisplay();
 		break;
 		
@@ -236,9 +250,11 @@ void draw()
 		}
 	}
 	
-	/* If we arrive here, we have finished! */
+	/* If we arrive here, then we have finished! */
 	glEnd();
 	glFlush();
-	cout<<"\tThe 'Variant #"<<orient<<"' of the 'Helix-like' curve of interest is currently approximated by a polyline with 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"' edges."<<endl;
+	cout<<"\tThe 'Variant #"<<orient<<"' of the 'Helix-like' curve of interest is currently approximated by a polyline with 'n="<<num_samples<<"' vertices and ";
+	cout<<"'n="<<num_samples<<"' edges."<<endl;
 	cout.flush();
 }
+
