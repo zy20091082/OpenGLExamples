@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: July 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -158,7 +158,7 @@ void draw()
    		glVertex3f(not_convex_points[jj][0]+100,not_convex_points[jj][1],not_convex_points[jj][2]);
    	}
 	
-	/* If we arrive here, all is ok! */
+	/* If we arrive here, then all is ok! */
 	glEnd();
 	glFlush();
 }

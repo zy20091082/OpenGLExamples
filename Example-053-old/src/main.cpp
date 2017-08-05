@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: July 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -34,15 +34,15 @@ using namespace std;
 
 #endif
 
-/// The custom settings for rendering the desidered triangles in the triangle strip of interest, approximating the <i>'Square Annulus'</i> shape.
+/// The custom settings for rendering the desired triangles in the triangle strip of interest, approximating the <i>'Square Annulus'</i> shape.
 /**
  * The value of this flag may be one of the following values:
  * 
- * -) the '0' value, used for rendering the 'filled versions' of the desidered triangles in the triangle strip of interest to be drawn, approximating the 'Square
+ * -) the '0' value, used for rendering the 'filled versions' of the desired triangles in the triangle strip of interest to be drawn, approximating the 'Square
  * 	  Annulus' shape;
- * -) the '1' value, used for rendering the 'wireframe versions' of the desidered triangles in the triangle strip of interest to be drawn, approximating the 'Square 
+ * -) the '1' value, used for rendering the 'wireframe versions' of the desired triangles in the triangle strip of interest to be drawn, approximating the 'Square 
  * 	  Annulus' shape;
- * -) the '2' value, used for rendering only the vertices of the desidered triangles in the triangle strip of interest to be drawn, approximating the 'Square Annulus' 
+ * -) the '2' value, used for rendering only the vertices of the desired triangles in the triangle strip of interest to be drawn, approximating the 'Square Annulus' 
  *    shape.
  * 
  * The user can choose what rendering has to be exploited by pressing cyclically the ' ' (space) key.
@@ -141,7 +141,7 @@ int main(int argc,char **argv)
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 
-	/* If we arrive here, we can draw the 'Square Annulus' shape of interest by using the rendering settings, chosen by the user. */
+	/* If we arrive here, then we can draw the 'Square Annulus' shape of interest by using the rendering settings, chosen by the user. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);

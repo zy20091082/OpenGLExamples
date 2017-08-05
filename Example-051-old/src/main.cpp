@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: July 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -76,7 +76,7 @@ int main(int argc,char **argv)
 	cout<<"the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 
-	/* If we arrive here, we can draw the 'Square Annulus' shape of interest by using the rendering settings, chosen by the user. */
+	/* If we arrive here, then we can draw the 'Square Annulus' shape of interest by using the rendering settings, chosen by the user. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -229,7 +229,8 @@ void draw()
 	/* We draw Point #1 (again) with coordinates (10,10,0) and color (1,0,0). */
 	glColor3f(1,0,0);
 	glVertex3f(10,10,0);
-	
+
+	/* If we arrive here, then the scene is complete! */	
 	glEnd();
 	glFlush();
 	if(mode==2) cout<<"\tOnly the vertices ";

@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: July 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -115,36 +115,33 @@ int main(int argc,char **argv)
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-062' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws several variants of the 'Bullseye' shape, often representing the targets in the shooting and the archery competitions, in an OpenGL window. A ";
-	cout<<"generic 'Bullseye' shape is defined by"<<endl;
-	cout<<"\tseveral concentric 'Circle' shapes (disks) of different colors, same center '(xc,yc)', and radii of different lengths. Recall that the 'Circle' shape ";
-	cout<<"with radius 'R' and center '(xc,yc)' is"<<endl;
-	cout<<"\tdefined as follows:"<<endl<<endl;
+	cout<<"generic 'Bullseye' shape is defined by several concentric 'Circle' shapes"<<endl;
+	cout<<"\t(disks) of different colors, same center '(xc,yc)', and radii of different lengths. Recall that the 'Circle' shape with radius 'R' and center '(xc,yc)' ";
+	cout<<"is defined as follows:"<<endl<<endl;
 	cout<<"\t| x(t) - xc | <= R * cos(t), | y(t) - yc | <= R * sin(t)"<<endl<<endl;
 	cout<<"\tfor any 'R>0', and for every 't' in '[-pi,pi]'."<<endl<<endl;
 	cout<<"\tIn other words, any 'Bullseye' shape is the union of all circular crowns, bounded by the 'Circle' curves, that are the boundary for the pairs of the ";
-	cout<<"consecutive disks in the 'Bullseye' shape"<<endl;
-	cout<<"\t(also known as the 'Circular Annulus' shapes), if sorted with respect to the lengths of their radii. Any 'Circular Annulus' shape is bounded by '2' ";
-	cout<<"circumferences of different radii. In this"<<endl;
-	cout<<"\tcontext, the circumference with the smallest radius is indicated as the 'internal circumference', while the circumference with the biggest radius ";
-	cout<<"is indicated as the 'external circumference'"<<endl<<"\tof the 'Circular Annulus' shape."<<endl<<endl;
+	cout<<"consecutive disks in the 'Bullseye' shape (also known as the 'Circular Annulus'"<<endl;
+	cout<<"\tshapes), if sorted with respect to the lengths of their radii. Any 'Circular Annulus' shape is bounded by '2' circumferences of different radii. In this ";
+	cout<<"context, the circumference with the smallest radius is indicated as the"<<endl;
+	cout<<"\t'internal circumference', while the circumference with the biggest radius is indicated as the 'external circumference' of the 'Circular Annulus' shape.";
+	cout<<endl<<endl;
 	cout<<"\tHere, we restrict our attention to the approximation of the 'Bullseye' shape, formed by '3' (concentric) 'Circular Annulus' shapes of different colors. ";
-	cout<<"Each of them is approximated by a quad"<<endl;
-	cout<<"\tstrip, defined over 'n' circular sectors. In this case, it is necessary to enumerate a pairs of vertices for each sector. More specifically, one vertex ";
-	cout<<"lays on the 'internal circumference',"<<endl;
-	cout<<"\twhile the other vertex lays on the 'external circumference'. Since the first pair of vertices must be duplicated for closing correctly the quad strip, ";
-	cout<<"it is necessary to enumerate '2*(n+1)'"<<endl;
-	cout<<"\tvertices for each quad strip."<<endl<<endl;
+	cout<<"Each of them is approximated by a quad strip, defined over 'n' circular"<<endl;
+	cout<<"\tsectors. In this case, it is necessary to enumerate a pairs of vertices for each sector. More specifically, one vertex lays on the 'internal ";
+	cout<<"circumference', while the other vertex lays on the 'external circumference'. Since the"<<endl;
+	cout<<"\tfirst pair of vertices must be duplicated for closing correctly the quad strip, it is necessary to enumerate '2*(n+1)' vertices for each quad strip.";
+	cout<<endl<<endl;
 	cout<<"\tFor the sake of the efficiency, we exploit the 'vertex array' technique, provided directly by the OpenGL, for modeling '3' quad strips of interest. This ";
-	cout<<"technique is used to group together"<<endl;
-	cout<<"\tseveral drawing instructions into only one instruction for rendering (a subset of) the vertices and some of their state parameters. Here, we limit our ";
-	cout<<"attention to the Euclidean '3D' "<<endl;
-	cout<<"\tcoordinates and the color components (thus '6' floating-point values) for every point in '3' quad strips of interest. These floating-point values are ";
-	cout<<"stored in a unique array, formed by"<<endl;
-	cout<<"\t'36 * (n+1)' locations. The content of this array is recomputed when modifying the number 'n' of the sectors in the quad strips. In this case, the ";
-	cout<<"'glMultiDrawElements()' function is"<<endl;
-	cout<<"\texploited for drawing directly the content of this array (in only one step) by using another indirection level."<<endl<<endl;
+	cout<<"technique is used to group together several drawing instructions into only"<<endl;
+	cout<<"\tone instruction for rendering (a subset of) the vertices and some of their state parameters. Here, we limit our attention to the Euclidean '3D' ";
+	cout<<"coordinates and the color components (thus '6' floating-point values) for every"<<endl;
+	cout<<"\tpoint in '3' quad strips of interest. These floating-point values are stored in a unique array, formed by '36 * (n+1)' locations. The content of this ";
+	cout<<"array is recomputed when modifying the number 'n' of the sectors in the quad"<<endl;
+	cout<<"\tstrips. In this case, the 'glMultiDrawElements()' function is exploited for drawing directly the content of this array (in only one step) by using another";
+	cout<<" indirection level."<<endl<<endl;
 	cout<<"\tIn this test, it is not possible to modify the radii and the colors of the 'Circular Annulus' shapes, as well as the center '(xc,yc)' for the 'Bullseye' ";
-	cout<<"shape, since they are fixed in advance."<<endl<<"\tInstead, the user can:"<<endl<<endl;
+	cout<<"shape, since they are fixed in advance. Instead, the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of the sectors in the quad strips of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of the sectors in the quad strips of interest by pressing the '-' key;"<<endl<<endl;
 	cout<<"\tand can press cyclically the ' ' (space) key for choosing to render:"<<endl<<endl;
@@ -153,8 +150,8 @@ int main(int argc,char **argv)
 	cout<<"\t\t-) the 'filled versions' for all quadrilaterals in the quad strips of interest."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
-
-	/* If we arrive here, we can draw the 'Bullseye' shape of interest by using the rendering settings, chosen by the user. */
+	
+	/* If we arrive here, then we can draw the 'Bullseye' shape of interest by using the rendering settings, chosen by the user. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -303,29 +300,9 @@ void computePoints()
 		quads[6*v+5]=0.0;
 	}
 
-	/* If we arrive here, we enable the 'vertex array' over the 'quads' array. */
+	/* If we arrive here, then we enable the 'vertex array' over the 'quads' array. */
 	glVertexPointer(3,GL_FLOAT,6*sizeof(float),&quads[0]);
 	glColorPointer(3,GL_FLOAT,6*sizeof(float),&quads[3]);
-}
-
-/// This function draws the quadrilaterals in the quad strips, approximating the <i>'Bullseye'</i> shape, in the main OpenGL window by using the rendering preferences, chosen by the user.
-void draw()
-{
-	/* We draw the quadrilaterals in the quad strips, approximating the 'Bullseye' shape, in the main OpenGL window by using the rendering preferences, chosen by the
-	 * user. */
-	glClear(GL_COLOR_BUFFER_BIT);
-	if(mode==0) glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
-	if(mode==1) glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
-	if(mode==2) glPolygonMode(GL_FRONT_AND_BACK,GL_POINT);
-	glPointSize(5);
-	glLineWidth(2);
-	glMultiDrawElements(GL_QUAD_STRIP,cnt,GL_UNSIGNED_INT,(const void**)inds,3);
-	glFlush();
-	if(mode==0) cout<<"\tThe 'filled versions' ";
-	if(mode==1) cout<<"\tThe 'wireframe versions' ";
-	if(mode==2) cout<<"\tOnly the points ";
-	cout<<"of the quadrilaterals in the quad strips of interest, defined by using 'n="<<num_samples<<"' sectors, are currently drawn."<<endl;
-	cout.flush();
 }
 
 /// This function initializes the OpenGL window of interest.
@@ -450,5 +427,25 @@ void manageKeys(unsigned char key, int x, int y)
 			/* Other keys are not important for us */
 			break;
 	}
+}
+
+/// This function draws the quadrilaterals in the quad strips, approximating the <i>'Bullseye'</i> shape, in the main OpenGL window by using the rendering preferences, chosen by the user.
+void draw()
+{
+	/* We draw the quadrilaterals in the quad strips, approximating the 'Bullseye' shape, in the main OpenGL window by using the rendering preferences, chosen by the
+	 * user. */
+	glClear(GL_COLOR_BUFFER_BIT);
+	if(mode==0) glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
+	if(mode==1) glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
+	if(mode==2) glPolygonMode(GL_FRONT_AND_BACK,GL_POINT);
+	glPointSize(5);
+	glLineWidth(2);
+	glMultiDrawElements(GL_QUAD_STRIP,cnt,GL_UNSIGNED_INT,(const void**)inds,3);
+	glFlush();
+	if(mode==0) cout<<"\tThe 'filled versions' ";
+	if(mode==1) cout<<"\tThe 'wireframe versions' ";
+	if(mode==2) cout<<"\tOnly the points ";
+	cout<<"of the quadrilaterals in the quad strips of interest, defined by using 'n="<<num_samples<<"' sectors, are currently drawn."<<endl;
+	cout.flush();
 }
 

@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: July 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -111,7 +111,7 @@ int main(int argc,char **argv)
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 	
-	/* If we arrive here, we can draw the 'Playground Slide' shape of interest by using the rendering settings, chosen by the user. */
+	/* If we arrive here, then we can draw the 'Playground Slide' shape of interest by using the rendering settings, chosen by the user. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -306,12 +306,12 @@ void draw()
 		glVertex3f(-5,p,v);
 	}
 	
-	/* If we arrive here, we complete the two vertical basis (front and back) for the 'Playground Slide' shape. */
+	/* If we arrive here, then we complete the two vertical basis (front and back) for the 'Playground Slide' shape. */
 	glVertex3f(5,0,20);
 	glVertex3f(-5,0,20);
 	glEnd();
 	
-	/* If we arrive here, we draw the lateral side #0 of the 'Playground Slide' shape. */
+	/* If we arrive here, then we draw the lateral side #0 of the 'Playground Slide' shape. */
 	glBegin(GL_QUAD_STRIP);
 	for(unsigned int k=0;k<num_samples;k++)
 	{

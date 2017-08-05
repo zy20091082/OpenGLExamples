@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: July 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -34,15 +34,15 @@ using namespace std;
 
 #endif
 
-/// The custom settings for rendering the desidered triangles in the triangle strip of interest, approximating the <i>'Square Annulus'</i> shape.
+/// The custom settings for rendering the desired triangles in the triangle strip of interest, approximating the <i>'Square Annulus'</i> shape.
 /**
  * The value of this flag may be one of the following values:
  * 
- * -) the '0' value, used for rendering the 'filled versions' of the desidered triangles in the triangle strip of interest to be drawn, approximating the 'Square
+ * -) the '0' value, used for rendering the 'filled versions' of the desired triangles in the triangle strip of interest to be drawn, approximating the 'Square
  * 	  Annulus' shape;
- * -) the '1' value, used for rendering the 'wireframe versions' of the desidered triangles in the triangle strip of interest to be drawn, approximating the 'Square 
+ * -) the '1' value, used for rendering the 'wireframe versions' of the desired triangles in the triangle strip of interest to be drawn, approximating the 'Square 
  * 	  Annulus' shape;
- * -) the '2' value, used for rendering only the vertices of the desidered triangles in the triangle strip of interest to be drawn, approximating the 'Square Annulus' 
+ * -) the '2' value, used for rendering only the vertices of the desired triangles in the triangle strip of interest to be drawn, approximating the 'Square Annulus' 
  *    shape.
  * 
  * The user can choose what rendering has to be exploited by pressing cyclically the ' ' (space) key.
@@ -119,35 +119,30 @@ int main(int argc,char **argv)
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-054' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws several portions of the 'Square Annulus' shape in an OpenGL window. This shape is bounded by '2' (concentric) axis-parallel rectangles of ";
-	cout<<"different size in the same spirit of"<<endl;
-	cout<<"\ta circular crown. It is often known as the 'rectangular' crown. Its large rectangle is called the 'external' rectangle, and other rectangle is ";
-	cout<<"called the 'internal' rectangle. Thus,"<<endl;
-	cout<<"\tit requires '8' vertices with their optional attributes (colors)."<<endl<<endl;
+	cout<<"different size in the same spirit of a circular crown. It is often known as the"<<endl;
+	cout<<"\t'rectangular' crown. Its large rectangle is called the 'external' rectangle, and other rectangle is called the 'internal' rectangle. Thus, it requires ";
+	cout<<"'8' vertices with their optional attributes (colors)."<<endl<<endl;
 	cout<<"\tHere, the 'Square Annulus' shape of interest is approximated by an unique triangle strip, formed by '8' triangles, without adding any 'Steiner' ";
-	cout<<"point. By construction, it is necessary"<<endl;
-	cout<<"\tto enumerate a sequence of '10' points with their independent colors ('2' points and their colors are needed to be duplicated)."<<endl<<endl;
+	cout<<"point. By construction, it is necessary to enumerate a sequence of '10' points with"<<endl;
+	cout<<"\ttheir independent colors ('2' points and their colors are needed to be duplicated)."<<endl<<endl;
 	cout<<"\tFor the sake of the efficiency, we exploit the 'vertex array' technique, provided directly by the OpenGL. This technique is used to group together ";
-	cout<<"several drawing instructions into only"<<endl;
-	cout<<"\tone instruction for rendering (a subset of) the vertices and some of their state parameters. Here, we limit our attention to the Euclidean '3D' ";
-	cout<<"coordinates and the colors for all '8'"<<endl;
-	cout<<"\tvertices in the 'Square Annulus' shape of interest. In particular, '2' arrays are defined, containing, respectively, the Euclidean '3D' coordinates ";
-	cout<<"and the colors components for all '8'"<<endl;
-	cout<<"\tvertices (with no redundancy). This information is stored as '8' consecutive tuples of '3' floating-point values in every array, respectively. The ";
-	cout<<"locations, containing the Euclidean '3D'"<<endl;
-	cout<<"\tcoordinates and the color components for the point of index 'j % 8' (for any 'j'), are stored in positions '3 * j', '3 * j + 1', and '3 * j + 2'. ";
-	cout<<"Hence, it is sufficient to access the"<<endl;
-	cout<<"\tlocations, related to vertices of indices '0,...,7,0,1', in '2' arrays, mentioned above, in order to draw the triangle strip of interest. In this ";
-	cout<<"test, the 'glDrawElements()' function is"<<endl;
-	cout<<"\texploited for drawing a specific OpenGL primitive, formed by a bunch of vertices (not necessarily only one vertex). This is done by a single instruction, ";
-	cout<<"and requires the list of indices"<<endl;
-	cout<<"\tto the vertices to be considered, as mentioned above."<<endl<<endl;
+	cout<<"several drawing instructions into only one instruction for rendering (a subset of)"<<endl;
+	cout<<"\tthe vertices and some of their state parameters. Here, we limit our attention to the Euclidean '3D' coordinates and the colors for all '8' vertices ";
+	cout<<"in the 'Square Annulus' shape of interest. In particular, '2' arrays are defined,"<<endl;
+	cout<<"\tcontaining, respectively, the Euclidean '3D' coordinates and the colors components for all '8' vertices (with no redundancy). This information is stored ";
+	cout<<"as '8' consecutive tuples of '3' floating-point values in every array,"<<endl;
+	cout<<"\trespectively. The locations, containing the Euclidean '3D' coordinates and the color components for the point of index 'j % 8' (for any 'j'), are stored";
+	cout<<" in positions '3 * j', '3 * j + 1', and '3 * j + 2'. Hence, it is sufficient"<<endl;
+	cout<<"\tto access the locations, related to vertices of indices '0,...,7,0,1', in '2' arrays, mentioned above, in order to draw the triangle strip of interest. ";
+	cout<<"In this test, the 'glDrawElements()' function is exploited for drawing a "<<endl;
+	cout<<"\tspecific OpenGL primitive, formed by a bunch of vertices (not necessarily only one vertex). This is done by a single instruction, and requires the list ";
+	cout<<"of indices to the vertices to be considered, as mentioned above."<<endl<<endl;
 	cout<<"\tIn order to show the actual validity of this approach, it is possible to limit our attention only on a specific portion of the 'Square Annulus' shape, ";
-	cout<<"defined by using only 'n' points,"<<endl;
-	cout<<"\tsuch that 'n' is in the range '[3,10]'. This means that only a subset of all triangles in the triangle strip of interest are drawn. Broadly speaking, ";
-	cout<<"every index 'j' in '[0,n-1]' is"<<endl;
-	cout<<"\tgenerated in order to access the locations, corresponding to the point of index 'j % 8', in the arrays of interest. These indices 'j' are passed as ";
-	cout<<"argument to the unique invocation"<<endl;
-	cout<<"\tof the 'glDrawElements()' function in the code, which automatically takes into the account their corresponding state parameters."<<endl<<endl;
+	cout<<"defined by using only 'n' points, such that 'n' is in the range '[3,10]'. This"<<endl;
+	cout<<"\tmeans that only a subset of all triangles in the triangle strip of interest are drawn. Broadly speaking, every index 'j' in '[0,n-1]' is generated";
+	cout<<" in order to access the locations, corresponding to the point of index 'j % 8', in"<<endl;
+	cout<<"\tthe arrays of interest. These indices 'j' are passed as argument to the unique invocation of the 'glDrawElements()' function in the code, which ";
+	cout<<"automatically takes into the account their corresponding state parameters."<<endl<<endl;
 	cout<<"\tIn this test, it is not possible to modify the size and the position for the 'external' and the 'internal' rectangles of the 'Square Annulus' shape. ";
 	cout<<"Instead, the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the maximum number 'n' of points to be considered by pressing the '+' key;"<<endl;
@@ -159,7 +154,7 @@ int main(int argc,char **argv)
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 
-	/* If we arrive here, we can draw the 'Square Annulus' shape of interest by using the rendering settings, chosen by the user. */
+	/* If we arrive here, then we can draw the 'Square Annulus' shape of interest by using the rendering settings, chosen by the user. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -254,7 +249,14 @@ void manageKeys(unsigned char key, int x, int y)
 		
 			/* We decrease the number of the vertices to be considered in the triangle strip, approximating the 'Square Annulus' shape. */
 			if(num>3) num=num-1;
-			else cout<<"\tThe minimum number 'n=3' of the vertices to be considered in the triangle strip of interest is reached, and it is not possible to decrease again this number."<<endl;
+			else
+			{
+				cout<<"\tThe minimum number 'n=3' of the vertices to be considered in the triangle strip of interest is reached, and it is not possible to decrease ";
+				cout<<"again this number."<<endl;
+				cout.flush();
+			}
+
+			/* If we arrive here, then this case is finished! */
 			glutPostRedisplay();
 			break;
 
@@ -276,15 +278,16 @@ void initialize()
 	glEnableClientState(GL_COLOR_ARRAY);
 	glVertexPointer(3,GL_FLOAT,0,vertices);
 	glColorPointer(3,GL_FLOAT,0,colors);
-	cout<<"\tAt the beginning, the 'filled versions' of the triangles in the triangle strip of interest, defined by using only 'n=3' vertices (the minimum number 'n' as possible), are drawn."<<endl<<endl;
+	cout<<"\tAt the beginning, the 'filled versions' of the triangles in the triangle strip of interest, defined by using only 'n=3' vertices (the minimum number ";
+	cout<<"'n' as possible), are drawn."<<endl<<endl;
 	cout.flush();
 }
 
 /// This function draws the portion of interest for the triangle strip, approximating the <i>'Square Annulus'</i> shape, in the main OpenGL window by using the rendering preferences, chosen by the user.
 void draw()
 {
-	/* We draw the portion of interest for the triangle strip, approximating the <i>'Square Annulus'</i> shape, in the main OpenGL window by using the rendering
-	 * preferences, chosen by the user. */
+	/* We draw the portion of interest for the triangle strip, approximating the 'Square Annulus' shape, in the main OpenGL window by using the rendering preferences,
+	 * chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	if(mode==0) glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
 	if(mode==1) glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);

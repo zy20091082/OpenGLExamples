@@ -87,7 +87,7 @@ float Zangle=0.0;
 
 /// The Euclidean 3D coordinates for all points in the triangle strips of interest, approximating the <i>'Hemisphere'</i> shape.
 /**
- * This matrix contains the Euclidean 3D coordinates for all points in the triangle strips of interest, approximating the <i>'Hemisphere'</i> shape. In particular, this
+ * This matrix contains the Euclidean 3D coordinates for all points in the triangle strips of interest, approximating the 'Hemisphere' shape. In particular, this
  * matrix has 'q' rows and '6*(p+1)' columns. Note that each row corresponds to a 'stack' around the 'z' axis (similar to a latitudinal slice), approximated by a
  * triangle strip, and this row contains the Euclidean 3D coordinates for all '2(p+1)' points in this triangle strip. The Euclidean 3D coordinates are stored as
  * consecutive tuples of 3 floating-point values.
@@ -99,7 +99,7 @@ GLfloat **vertices=NULL;
 
 /// The indices to the vertices to be considered when drawing the <i>'Hemisphere'</i> shape.
 /**
- * This array contains the indices to the vertices to be considered when drawing the <i>'Hemisphere'</i> shape. In particular, this array contains the indices to be
+ * This array contains the indices to the vertices to be considered when drawing the 'Hemisphere' shape. In particular, this array contains the indices to be
  * used for accessing correctly the columns of the 'vertices' matrix, when we want to draw a 'stack' around the 'z' axis (corresponding to any row of the 'vertices'
  * matrix). In this context, the sequence of indices to be considered is the same for all rows.
  *

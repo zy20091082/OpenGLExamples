@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: July 2017
+ * Last update: August 2017
  *
  * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
@@ -86,6 +86,8 @@ int main(int argc,char **argv)
 	cout<<" choose separately what triangles sides must be drawn."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
+
+	/* If we arrive here, then we can draw the triangle strip of interest, as requested by the user! */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -300,6 +302,7 @@ void draw()
 		if(mode==GL_POINT) cout<<"\tOnly the vertices of the 'front' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
 		if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' of the 'front' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
 		if(mode==GL_FILL) cout<<"\tThe 'filled versions' of the 'front' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
+		cout.flush();
 	}
 	else if(face==GL_BACK)
 	{
@@ -307,6 +310,7 @@ void draw()
 		if(mode==GL_POINT) cout<<"\tOnly the vertices of the 'back' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
 		if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' of the 'back' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
 		if(mode==GL_FILL) cout<<"\tThe 'filled versions' of the 'back' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
+		cout.flush();
 	}
 	else
 	{
@@ -318,6 +322,7 @@ void draw()
 		if(mode==GL_FILL)
 		cout<<"\tThe 'filled versions' of both the 'front' and the 'back' sides for triangles sides in the custom triangle strip are currently rendered in the scene.";
 		cout<<endl;
+		cout.flush();
 	}
 }
 
