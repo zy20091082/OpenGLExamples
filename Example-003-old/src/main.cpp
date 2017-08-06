@@ -45,8 +45,18 @@ using namespace std;
  */
 GLfloat left_value, right_value, bottom_value, top_value, near_value, far_value;
 
-/// This boolean flag is useful for completing the textual interface.
-bool eol=false;
+/// The orthographic projection to be applied for rendering the scene.
+/*
+ * This value may be one of the following values:
+ *
+ * -) 0: it corresponds to the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', activated by pressing the '0' key (the 'Viewing Configuration #0');
+ * -) 1: it corresponds to the orthographic viewing box '[-100,100]' x '[-100,100]' x '[-1,1]', activated by pressing the '1' key (the 'Viewing Configuration #1');
+ * -) 2: it corresponds to the orthographic viewing box '[20,80]' x '[20,80]' x '[-1,1]', activated by pressing the '2' key (the 'Viewing Configuration #2');
+ * -) 3: it corresponds to the orthographic viewing box '[0,100]' x '[0,100]' x '[-2,5]', activated by pressing the '3' key (the 'Viewing Configuration #3');
+ * -) 4: it corresponds to the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]', activated by pressing the '4' key (the 'Viewing Configuration #4');
+ * -) 5: it corresponds to the orthographic viewing box '[120,200]' x '[90,200]' x '[-1,3]', activated by pressing the '5' key (the 'Viewing Configuration #5').
+ */
+int scene=0;
 
 /* Prototypes for all functions of interest! */
 void draw();
@@ -82,6 +92,8 @@ int main(int argc, char **argv)
 	cout<<"\t\t   projection of the quadrilateral, which is not rendered at all."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
+
+	/* If we arrive here, then we can draw the polygon of interest by using the rendering settings, requested by the user. */
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_RGBA | GLUT_SINGLE);
 	glutInitWindowPosition(50, 25);
@@ -115,6 +127,9 @@ void draw()
 	/* We draw the 'filled version' of a quadrilateral (in 'red') in the OpenGL window of interest by using the orthographic projection, chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0, 0.0, 0.0);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	glOrtho(left_value, right_value, bottom_value, top_value, near_value, far_value);
 	glBegin(GL_POLYGON);
 	glVertex3f(30.0, 20.0, 0.0);
 	glVertex3f(80.0, 20.0, 0.0);
@@ -122,6 +137,61 @@ void draw()
 	glVertex3f(20.0, 80.0, 0.0);
 	glEnd();
 	glFlush();
+	switch(scene)
+	{
+		case 0:
+	
+		/* The 'Viewing Configuration #0' is currently applied to the scene. */
+		cout<<"\tThe 'Viewing Configuration #0', corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', is currently applied to the scene.";
+		cout<<endl;
+		cout.flush();
+		break;
+
+		case 1:
+		
+		/* The 'Viewing Configuration #1' is currently applied to the scene. */
+		cout<<"\tThe 'Viewing Configuration #1', corresponding to the orthographic viewing box '[-100,100]' x '[-100,100]' x '[-1,1]', is currently applied to the ";
+		cout<<"scene."<<endl;
+		cout.flush();
+		break;
+
+		case 2:
+
+		/* The 'Viewing Configuration #2' is currently applied to the scene. */
+		cout<<"\tThe 'Viewing Configuration #2', corresponding to the orthographic viewing box '[20,80]' x '[20,80]' x '[-1,1]', is currently applied to the scene.";
+		cout<<endl;
+		cout.flush();
+		break;
+
+		case 3:
+
+		/* The 'Viewing Configuration #3' is currently applied to the scene. */
+		cout<<"\tThe 'Viewing Configuration #3', corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-2,5]', is currently applied to the scene.";
+		cout<<endl;
+		cout.flush();
+		break;
+
+		case 4:
+
+		/* The 'Viewing Configuration #4' is currently applied to the scene. */
+		cout<<"\tThe 'Viewing Configuration #4', corresponding to the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]', is currently applied to the scene.";
+		cout<<endl;
+		cout.flush();
+		break;
+
+		case 5:
+
+		/* The 'Viewing Configuration #5' is currently applied to the scene. */
+		cout<<"\tThe 'Viewing Configuration #5', corresponding to the orthographic viewing box '[120,200]' x '[90,200]' x '[-1,3]', is currently applied to the scene.";
+		cout<<endl;
+		cout.flush();
+		break;
+
+		default:
+
+		/* Something is wrong here. We do nothing! */
+		break;
+	}
 }
 
 /// This function initializes the OpenGL window of interest. */
@@ -135,7 +205,7 @@ void initialize()
 	near_value = -1.0;
 	far_value = 1.0;
 	glClearColor(1.0, 1.0, 1.0, 0.0);
-	eol=false;
+	scene=0;
 	cout<<"\tAt the beginning, the 'Viewing Configuration #0', corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', is applied to the scene.";
 	cout<<endl<<endl;
 	cout.flush();
@@ -150,7 +220,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case 'q':
 
 		/* The key is 'q', thus we can exit from this program! */
-		if(eol) cout<<endl;
+		cout<<endl;
 		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
 		cout << "\tPress the RETURN key to finish ... ";
 		cin.get();
@@ -164,7 +234,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case 'Q':
 
 		/* The key is 'Q', thus we can exit from this program! */
-		if(eol) cout<<endl;
+		cout<<endl;
 		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
 		cout << "\tPress the RETURN key to finish ... ";
 		cin.get();
@@ -178,7 +248,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case 27:
 
 		/* The key is 'Esc', thus we can exit from this program! */
-		if(eol) cout<<endl;
+		cout<<endl;
 		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
 		cout << "\tPress the RETURN key to finish ... ";
 		cin.get();
@@ -192,108 +262,78 @@ void manageKeys(unsigned char key, int x, int y)
 		case '0':
 
 		/* The key is '0', thus we exploit the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' (thus, the 'Viewing Configuration #0'). */
-		cout<<"\tThe 'Viewing Configuration #0', corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', is currently applied to the scene.";
-		cout<<endl;
-		cout.flush();
-		eol=true;
+		scene=0;
 		left_value = 0.0;
 		right_value = 100.0;
 		bottom_value = 0.0;
 		top_value = 100.0;
 		near_value = -1.0;
 		far_value = 1.0;
-		resize(480, 480);
-		glutReshapeWindow(480, 480);
 		glutPostRedisplay();
 		break;
 
 		case '1':
 
 		/* The key is '1', thus we exploit the orthographic viewing box '[-100,100]' x '[-100,100]' x '[-1,1]' (thus, the 'Viewing Configuration #1'). */
-		cout<<"\tThe 'Viewing Configuration #1', corresponding to the orthographic viewing box '[-100,100]' x '[-100,100]' x '[-1,1]', is currently applied to the ";
-		cout<<"scene."<<endl;
-		cout.flush();
-		eol=true;
+		scene=1;
 		left_value = -100.0;
 		right_value = 100.0;
 		bottom_value = -100.0;
 		top_value = 100.0;
 		near_value = -1.0;
 		far_value = 1.0;
-		resize(480, 480);
-		glutReshapeWindow(480, 480);
 		glutPostRedisplay();
 		break;
 
 		case '2':
 
 		/* The key is '2', thus we exploit the orthographic viewing box '[20,80]' x '[20,80]' x '[-1,1]' (thus, the 'Viewing Configuration #2'). */
-		cout<<"\tThe 'Viewing Configuration #2', corresponding to the orthographic viewing box '[20,80]' x '[20,80]' x '[-1,1]', is currently applied to the scene.";
-		cout<<endl;
-		cout.flush();
-		eol=true;
+		scene=2;
 		left_value = 20;
 		right_value = 80;
 		bottom_value = 20;
 		top_value = 80;
 		near_value = -1.0;
 		far_value = 1.0;
-		resize(480, 480);
-		glutReshapeWindow(480, 480);
 		glutPostRedisplay();
 		break;
 
 		case '3':
 
 		/* The key is '3', thus we exploit the orthographic viewing box '[0,100]' x '[0,100]' x '[-2,5]' (thus, the 'Viewing Configuration #3'). */
-		cout<<"\tThe 'Viewing Configuration #3', corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-2,5]', is currently applied to the scene.";
-		cout<<endl;
-		cout.flush();
-		eol=true;
+		scene=3;
 		left_value = 0;
 		right_value = 100;
 		bottom_value = 0;
 		top_value = 100;
 		near_value = -2.0;
 		far_value = 5.0;
-		resize(480, 480);
-		glutReshapeWindow(480, 480);
 		glutPostRedisplay();
 		break;
 
 		case '4':
 
 		/* The key is '4', thus we exploit the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' (thus, the 'Viewing Configuration #4'). */
-		cout<<"\tThe 'Viewing Configuration #4', corresponding to the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]', is currently applied to the scene.";
-		cout<<endl;
-		cout.flush();
-		eol=true;
+		scene=4;
 		left_value = 0;
 		right_value = 200;
 		bottom_value = 0;
 		top_value = 200;
 		near_value = -1.0;
 		far_value = 1.0;
-		resize(480, 480);
-		glutReshapeWindow(480, 480);
 		glutPostRedisplay();
 		break;
 
 		case '5':
 
 		/* The key is '5', thus we exploit the orthographic viewing box '[120,200]' x '[90,200]' x '[-1,3]' (thus, the 'Viewing Configuration #5'). */
-		cout<<"\tThe 'Viewing Configuration #5', corresponding to the orthographic viewing box '[120,200]' x '[90,200]' x '[-1,3]', is currently applied to the scene.";
-		cout<<endl;
-		cout.flush();
-		eol=true;
+		scene=5;
 		left_value = 120;
 		right_value = 200;
 		bottom_value = 90;
 		top_value = 200;
 		near_value = -1.0;
 		far_value = 3.0;
-		resize(480, 480);
-		glutReshapeWindow(480, 480);
 		glutPostRedisplay();
 		break;
 

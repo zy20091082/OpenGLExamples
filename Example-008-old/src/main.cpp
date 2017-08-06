@@ -57,7 +57,7 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-008' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the 'filled versions' for 2 quadrilaterals of different size and with a not empty intersection (partial overlap) in an OpenGL window."<<endl;
+	cout<<"\tIt draws the 'filled versions' for '2' quadrilaterals of different size and with a not empty intersection (partial overlap) in an OpenGL window."<<endl;
 	cout<<"\tIn particular, the 'small' quadrilateral may be completely covered by the 'large' quadrilateral, depending on their rendering order. This latter ";
 	cout<<"corresponds to their color, which is defined as follows:"<<endl<<endl;
 	cout<<"\t\t-) the quadrilateral in 'red' is rendered before in the scene;"<<endl;
@@ -72,6 +72,8 @@ int main(int argc,char **argv)
 	cout<<"key."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
+
+	/* If we arrive here, then we can draw the initial version of the scene. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -149,8 +151,10 @@ void draw()
 		glEnd();
 	}
 	
-	/* If we arrive here, all is finished! */
+	/* If we arrive here, then all is finished! */
 	glFlush();
+	cout<<"\tThe 'Viewing Configuration #"<<choice<<"' is currently applied to the scene."<<endl;
+	cout.flush();
 }
 
 /// This function initializes the OpenGL window of interest.
@@ -219,8 +223,6 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '0', thus we apply the 'Viewing Configuration #0' to the scene. */
 		choice=0;
-		cout<<"\tThe 'Viewing Configuration #"<<choice<<"' is currently applied to the scene."<<endl;
-		cout.flush();
 		eol=true;
 		glutPostRedisplay();
 		break;
@@ -229,8 +231,6 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '1', thus we apply the 'Viewing Configuration #1' to the scene. */
 		choice=1;
-		cout<<"\tThe 'Viewing Configuration #"<<choice<<"' is currently applied to the scene."<<endl;
-		cout.flush();
 		eol=true;
 		glutPostRedisplay();
 		break;

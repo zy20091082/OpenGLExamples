@@ -45,8 +45,8 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-006' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the 'filled version' of the polygon (in 'red') in an OpenGL window, and provides a basic interaction mechanism with the user."<<endl;
-	cout<<"\tThe polygon of interest is the intersection with the maximum number 7 of the edges and the vertices between the following elements:"<<endl<<endl;
+	cout<<"\tIt draws the 'filled version' of a polygon (in 'red') in an OpenGL window, and provides a basic interaction mechanism with the user."<<endl;
+	cout<<"\tThe polygon of interest is the intersection with the maximum number '7' of the edges and the vertices between the following elements:"<<endl<<endl;
 	cout<<"\t\t-) the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]';"<<endl;
 	cout<<"\t\t-) the triangle with vertices '(-50,-30,0)' - '(150,-50,0)' - '(50,150,0)'."<<endl<<endl;
 	cout<<"\tHere, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
@@ -78,10 +78,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws the <i>'filled version'</i> of the polygon (in <i>'red'</i>), which is the intersection with the maximum number 7 of the edges and the vertices between a triangle and the ortographic viewing box, in the OpenGL window of interest.
+/// This function draws the <i>'filled version'</i> of the polygon (in <i>'red'</i>), which is the intersection with the maximum number '7' of the edges and the vertices between a triangle and the ortographic viewing box, in the OpenGL window of interest.
 void draw()
 {
-	/* We draw the 'filled' version' of a polygon (in 'red') in the OpenGL window of interest. It is the intersection with the maximum number 7 of the edges and the
+	/* We draw the 'filled' version' of a polygon (in 'red') in the OpenGL window of interest. It is the intersection with the maximum number '7' of the edges and the
 	 * vertices between:
 	 *
 	 * -) the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1];

@@ -11,9 +11,7 @@ The <i>'Example-008 (Old Mode)'</i> Test draws the <i>'filled versions'</i> for 
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example008_old_conf1.png' border='1' width='456' height='470'></td></tr>
 <tr>
 <td>The <i>'Viewing Configuration #0'</i> (press the <code><i>'0'</i></code> key).</td><td>The <i>'Viewing Configuration #1'</i> (press the <code><i>'1'</i></code> key).</td>
-</tr></table><hr><p>
-
-<h4>Dependencies</h4>
+</tr></table><hr><p><h4>Dependencies</h4>
 
 The <i>'Example-008 (Old Mode)'</i> Test is based on the so-called <i>OpenGL old (direct drawing) mode</i>, and requires the following dependencies:<ul>
 

@@ -4,9 +4,7 @@
 
 The <i>'Example-006 (Old Mode)'</i> Test draws the <i>'filled version'</i> of a polygon (in <i>'red'</i>) in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window, and provides a basic interaction mechanism with the user. The polygon of interest is the intersection with the maximum number <code>'7'</code> of the edges and the vertices between the following elements:<p><ul>
 <li value="0">the orthographic projection viewing box <code><i>'[0,100]' x '[0,100]' x '[-1,1]'</i></code>;</li>
-<li>the triangle of vertices <code><i>'(-50,-30,0)'</i> - <i>'(150,-50,0)'</i> - <i>'(50,150,0)'</i>.</code></li></ul><p>Here, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p>
-
-<IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example006_old.png' border='0'>
+<li>the triangle of vertices <code><i>'(-50,-30,0)'</i> - <i>'(150,-50,0)'</i> - <i>'(50,150,0)'</i>.</code></li></ul><p>Here, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example006_old.png' border='0'>
 <hr><p>
 
 <h4>Dependencies</h4>
