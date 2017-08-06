@@ -43,9 +43,6 @@ using namespace std;
  */
 int choice;
 
-/// This boolean flag is useful for completing the textual interface.
-bool eol=false;
-
 /* Prototypes for all functions of interest! */
 void draw();
 void initialize();
@@ -163,7 +160,6 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	choice=0;
 	glClearColor(1.0, 1.0, 1.0, 0.0);
-	eol=false;
 	cout<<"\tAt the beginning, the 'Viewing Configuration #"<<choice<<"' is applied to the scene."<<endl<<endl;
 	cout.flush();
 }
@@ -177,8 +173,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case 'q':
 	
 		/* The key is 'q', thus we can exit from this program. */
-		if(eol) cout<<endl;
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
 		cout << "\tPress the RETURN key to finish ... ";
 		cin.get();
 		#ifndef _MSC_VER
@@ -192,8 +187,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case 'Q':
 	
 		/* The key is 'Q', thus we can exit from this program. */
-		if(eol) cout<<endl;
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
 		cout << "\tPress the RETURN key to finish ... ";
 		cin.get();
 		#ifndef _MSC_VER
@@ -207,8 +201,7 @@ void manageKeys(unsigned char key, int x, int y)
 		case 27:
 	
 		/* The key is 'Esc', thus we can exit from this program. */
-		if(eol) cout<<endl;
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
 		cout << "\tPress the RETURN key to finish ... ";
 		cin.get();
 		#ifndef _MSC_VER
@@ -223,7 +216,6 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '0', thus we apply the 'Viewing Configuration #0' to the scene. */
 		choice=0;
-		eol=true;
 		glutPostRedisplay();
 		break;
 		
@@ -231,7 +223,6 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		/* The key is '1', thus we apply the 'Viewing Configuration #1' to the scene. */
 		choice=1;
-		eol=true;
 		glutPostRedisplay();
 		break;
 		
