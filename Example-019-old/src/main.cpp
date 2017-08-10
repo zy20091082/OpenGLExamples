@@ -43,7 +43,7 @@ void manageKeys(unsigned char key, int x, int y);
 /// The main function for the <i>'Example-019 (Old Mode)'</i> Test.
 int main(int argc,char **argv)
 {
-	/* We initialize everything, and create a very basic window! */
+	/* We initialize everything, and create a very basic window! */ 
 	cout<<endl<<"\tThis is the 'Example-019' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws '2' versions of the 'Double Square Annulus' shape in an OpenGL window. This shape is bounded by an 'external' axis-parallel rectangle, and by '2'";
 	cout<<" 'internal' axis-parallel rectangles, entirely contained in the 'external'"<<endl;
@@ -52,10 +52,14 @@ int main(int argc,char **argv)
 	cout<<"\t(concentric) axis-parallel rectangles of different size."<<endl<<endl;
 	cout<<"\tHere, the 'Double Square Annulus' shape of interest is approximated by '2' triangle strips (respectively, in 'red' and in 'blue'), where a bunch of ";
 	cout<<"'Steiner' points are added in order to make this possible. They approximate,"<<endl;
-	cout<<"\trespectively, the 'Square Annulus' shapes (mentioned above), such that their union form the 'Double Square Annulus' shape."<<endl<<endl;
+	cout<<"\trespectively, the 'Square Annulus' shapes (mentioned above), such that their union form the 'Double Square Annulus' shape. Specifically, this test draws ";
+	cout<<"the 'filled' and the 'wireframe versions' of all triangles in '2' triangle"<<endl;
+	cout<<"\tstrips, just mentioned."<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user. Here, the window of interest can be closed by pressing any among the 'Q', the ";
 	cout<<"'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
+
+	/* If we arrive here, then we draw the 'wireframe' and the 'filled' versions for the triangle strips of interest. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
