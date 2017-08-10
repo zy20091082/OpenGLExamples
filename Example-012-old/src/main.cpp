@@ -126,6 +126,55 @@ void initialize()
 	cout.flush();
 }
 
+/// This function draws all triangles in the triangle strip (in <i>'turquoise gray'</i>), approximating a custom shape, in the OpenGL window of interest by using the rendering preferences, chosen by the user.
+void draw()
+{
+	/* We draw a triangle strip (in 'turquoise gray'), approximating a custom shape, in the OpenGL window of interest by using the rendering preferences, chosen by 
+	 * the user. */
+	glClear(GL_COLOR_BUFFER_BIT);
+	glPointSize(10.0);
+	glLineWidth(2.0);
+	glColor3f(0.6,0.7,0.7);
+	glPolygonMode(face,mode);
+	glBegin(GL_TRIANGLE_STRIP);
+	glVertex3f(10.0, 90.0, 0.0);
+   	glVertex3f(10.0, 10.0, 0.0);
+   	glVertex3f(35.0, 75.0, 0.0);
+    glVertex3f(30.0, 20.0, 0.0);
+    glVertex3f(90.0, 90.0, 0.0);
+   	glVertex3f(80.0, 40.0, 0.0);
+	glEnd();
+	glFlush();
+	if(face==GL_FRONT)
+	{
+		/* We must draw only the 'front' triangles sides in the custom triangle strip by using the rendering type, chosen by the user. */
+		if(mode==GL_POINT) cout<<"\tOnly the vertices of the 'front' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
+		if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' of the 'front' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
+		if(mode==GL_FILL) cout<<"\tThe 'filled versions' of the 'front' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
+		cout.flush();
+	}
+	else if(face==GL_BACK)
+	{
+		/* We must draw only the 'back' triangles sides in the custom triangle strip by using the rendering type, chosen by the user. */
+		if(mode==GL_POINT) cout<<"\tOnly the vertices of the 'back' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
+		if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' of the 'back' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
+		if(mode==GL_FILL) cout<<"\tThe 'filled versions' of the 'back' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
+		cout.flush();
+	}
+	else
+	{
+		/* We must draw both the 'front' and the 'back' triangles sides in the custom triangle strip by using the rendering type, chosen by the user. */
+		if(mode==GL_POINT) 
+		cout<<"\tOnly the vertices of both the 'front' and the 'back' triangles sides in the custom triangle strip are currently rendered in the scene.";
+		if(mode==GL_LINE) 
+		cout<<"\tThe 'wireframe versions' of both the 'front' and the 'back' triangles sides in the custom triangle strip are currently rendered in the scene.";
+		if(mode==GL_FILL)
+		cout<<"\tThe 'filled versions' of both the 'front' and the 'back' sides for triangles sides in the custom triangle strip are currently rendered in the scene.";
+		cout<<endl;
+		cout.flush();
+	}
+}
+
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
@@ -274,55 +323,6 @@ void manageKeys(unsigned char key, int x, int y)
 
     	/* Other keys are not important for us! */
     	break;
-	}
-}
-
-/// This function draws all triangles in the triangle strip (in <i>'turquoise gray'</i>), approximating a custom shape, in the OpenGL window of interest by using the rendering preferences, chosen by the user.
-void draw()
-{
-	/* We draw a triangle strip (in 'turquoise gray'), approximating a custom shape, in the OpenGL window of interest by using the rendering preferences, chosen by 
-	 * the user. */
-	glClear(GL_COLOR_BUFFER_BIT);
-	glPointSize(10.0);
-	glLineWidth(2.0);
-	glColor3f(0.6,0.7,0.7);
-	glPolygonMode(face,mode);
-	glBegin(GL_TRIANGLE_STRIP);
-	glVertex3f(10.0, 90.0, 0.0);
-   	glVertex3f(10.0, 10.0, 0.0);
-   	glVertex3f(35.0, 75.0, 0.0);
-    glVertex3f(30.0, 20.0, 0.0);
-    glVertex3f(90.0, 90.0, 0.0);
-   	glVertex3f(80.0, 40.0, 0.0);
-	glEnd();
-	glFlush();
-	if(face==GL_FRONT)
-	{
-		/* We must draw only the 'front' triangles sides in the custom triangle strip by using the rendering type, chosen by the user. */
-		if(mode==GL_POINT) cout<<"\tOnly the vertices of the 'front' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
-		if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' of the 'front' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
-		if(mode==GL_FILL) cout<<"\tThe 'filled versions' of the 'front' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
-		cout.flush();
-	}
-	else if(face==GL_BACK)
-	{
-		/* We must draw only the 'back' triangles sides in the custom triangle strip by using the rendering type, chosen by the user. */
-		if(mode==GL_POINT) cout<<"\tOnly the vertices of the 'back' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
-		if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' of the 'back' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
-		if(mode==GL_FILL) cout<<"\tThe 'filled versions' of the 'back' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
-		cout.flush();
-	}
-	else
-	{
-		/* We must draw both the 'front' and the 'back' triangles sides in the custom triangle strip by using the rendering type, chosen by the user. */
-		if(mode==GL_POINT) 
-		cout<<"\tOnly the vertices of both the 'front' and the 'back' triangles sides in the custom triangle strip are currently rendered in the scene.";
-		if(mode==GL_LINE) 
-		cout<<"\tThe 'wireframe versions' of both the 'front' and the 'back' triangles sides in the custom triangle strip are currently rendered in the scene.";
-		if(mode==GL_FILL)
-		cout<<"\tThe 'filled versions' of both the 'front' and the 'back' sides for triangles sides in the custom triangle strip are currently rendered in the scene.";
-		cout<<endl;
-		cout.flush();
 	}
 }
 
