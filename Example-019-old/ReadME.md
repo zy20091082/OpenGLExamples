@@ -2,16 +2,6 @@
 
 <H3>The <i>'Example-019 (Old Mode)'</i> Test</H3>
 
-
-They approximate,"<<endl;
-	cout<<"\trespectively, the 'Square Annulus' shapes (mentioned above), such that their union form the 'Double Square Annulus' shape. 
-
-
-
-	cout<<"\tThis test also provides a very basic interaction mechanism with the user. Here, the window of interest can be closed by pressing any among the 'Q', the ";
-	cout<<"'q', and the 'Esc' keys."<<endl<<endl;
-	cout.flush();
-
 The <i>'Example-019 (Old Mode)'</i> Test draws <code>'2'</code> versions of the <i>'Double Square Annulus'</i> shape in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. This shape is bounded by an <i>'external'</i> axis-parallel rectangle, and by <code>'2'</code> <i>'internal'</i> axis-parallel rectangles, entirely contained in the <i>'external'</i> rectangle. Broadly speaking, any <i>'Double Square Annulus'</i> shape is the union of <code>'2'</code> <i>'Square Annulus'</i> shapes, connected along one side of their <i>'external'</i> rectangles. Recall that any <i>'Square Annulus'</i> shape is contained between <code>'2'</code> (concentric) axis-parallel rectangles of different size.<p>Here, the <i>'Double Square Annulus'</i> shape of interest is approximated by <code>'2'</code> triangle strips (respectively, in <i>'red'</i> and in <i>'blue'</i>), where a bunch of <i>'Steiner'</i> points are added in order to make this possible. They approximate, respectively, the <i>'Square Annulus'</i> shapes (mentioned above), such that their union form the <i>'Double Square Annulus'</i> shape. Specifically, this test draws the <i>'filled'</i> and the <i>'wireframe versions'</i> of all triangles in <code>'2'</code> triangle strips, just mentioned.<p>This test also provides a very basic interaction mechanism with the user. Here, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example019_old.png' border='1'><p><table border=1><tr><td><p><b>ATTENTION:</b><p>Instead, the <A href="https://github.com/davidcanino/OpenGLExamples/tree/master/Example-020-old"><i>'Example-020 (Old Mode)'</i></A> Test draws the <i>'filled'</i> and the <i>'wireframe versions'</i> of all triangles, belonging to only one triangle strip, which approximates the <i>'Double Square Annulus'</i> shape.</td></tr></table><hr><p>
 
 <h4>Dependencies</h4>
