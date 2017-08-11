@@ -51,10 +51,10 @@ int main(int argc,char **argv)
 	cout<<"rectangles. Recall that any 'Square Annulus' shape is contained between '2'"<<endl;
 	cout<<"\t(concentric) axis-parallel rectangles of different size."<<endl<<endl;
 	cout<<"\tHere, the 'Double Square Annulus' shape of interest is approximated by '2' triangle strips (respectively, in 'red' and in 'blue'), where a bunch of ";
-	cout<<"'Steiner' points are added in order to make this possible. These triangle"<<endl;
-	cout<<"\tstrips approximate, respectively, the 'Square Annulus' shapes (mentioned above), such that their union form the 'Double Square Annulus' shape. ";
-	cout<<"Specifically, this test draws the 'filled' and the 'wireframe versions' of"<<endl;
-	cout<<"\tall triangles in '2' triangle strips, just mentioned."<<endl<<endl;
+	cout<<"'Steiner' points are added in order to make this possible. These triangle strips"<<endl;
+	cout<<"\tapproximate, respectively, the 'Square Annulus' shapes (mentioned above), such that their union form the 'Double Square Annulus' shape. Specifically, this";
+	cout<<" test draws the 'filled' and the 'wireframe versions' of all triangles in"<<endl;
+	cout<<"\t'2' triangle strips, just mentioned."<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user. Here, the window of interest can be closed by pressing any among the 'Q', the ";
 	cout<<"'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
