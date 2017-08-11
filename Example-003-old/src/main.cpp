@@ -141,51 +141,51 @@ void draw()
 	{
 		case 0:
 	
-		/* The 'Viewing Configuration #0' is currently applied to the scene. */
-		cout<<"\tThe 'Viewing Configuration #0', corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', is currently applied to the scene.";
-		cout<<endl;
-		cout.flush();
-		break;
+			/* The 'Viewing Configuration #0' is currently applied to the scene. */
+			cout<<"\tThe 'Viewing Configuration #0', corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', is currently applied to the scene.";
+			cout<<endl;
+			cout.flush();
+			break;
 
 		case 1:
 		
-		/* The 'Viewing Configuration #1' is currently applied to the scene. */
-		cout<<"\tThe 'Viewing Configuration #1', corresponding to the orthographic viewing box '[-100,100]' x '[-100,100]' x '[-1,1]', is currently applied to the ";
-		cout<<"scene."<<endl;
-		cout.flush();
-		break;
+			/* The 'Viewing Configuration #1' is currently applied to the scene. */
+			cout<<"\tThe 'Viewing Configuration #1', corresponding to the orthographic viewing box '[-100,100]' x '[-100,100]' x '[-1,1]', is currently applied to the ";
+			cout<<"scene."<<endl;
+			cout.flush();
+			break;
 
 		case 2:
 
-		/* The 'Viewing Configuration #2' is currently applied to the scene. */
-		cout<<"\tThe 'Viewing Configuration #2', corresponding to the orthographic viewing box '[20,80]' x '[20,80]' x '[-1,1]', is currently applied to the scene.";
-		cout<<endl;
-		cout.flush();
-		break;
+			/* The 'Viewing Configuration #2' is currently applied to the scene. */
+			cout<<"\tThe 'Viewing Configuration #2', corresponding to the orthographic viewing box '[20,80]' x '[20,80]' x '[-1,1]', is currently applied to the scene.";
+			cout<<endl;
+			cout.flush();
+			break;
 
 		case 3:
 
-		/* The 'Viewing Configuration #3' is currently applied to the scene. */
-		cout<<"\tThe 'Viewing Configuration #3', corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-2,5]', is currently applied to the scene.";
-		cout<<endl;
-		cout.flush();
-		break;
+			/* The 'Viewing Configuration #3' is currently applied to the scene. */
+			cout<<"\tThe 'Viewing Configuration #3', corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-2,5]', is currently applied to the scene.";
+			cout<<endl;
+			cout.flush();
+			break;
 
 		case 4:
 
-		/* The 'Viewing Configuration #4' is currently applied to the scene. */
-		cout<<"\tThe 'Viewing Configuration #4', corresponding to the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]', is currently applied to the scene.";
-		cout<<endl;
-		cout.flush();
-		break;
+			/* The 'Viewing Configuration #4' is currently applied to the scene. */
+			cout<<"\tThe 'Viewing Configuration #4', corresponding to the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]', is currently applied to the scene.";
+			cout<<endl;
+			cout.flush();
+			break;
 
 		case 5:
 
-		/* The 'Viewing Configuration #5' is currently applied to the scene. */
-		cout<<"\tThe 'Viewing Configuration #5', corresponding to the orthographic viewing box '[120,200]' x '[90,200]' x '[-1,3]', is currently applied to the scene.";
-		cout<<endl;
-		cout.flush();
-		break;
+			/* The 'Viewing Configuration #5' is currently applied to the scene. */
+			cout<<"\tThe 'Viewing Configuration #5', corresponding to the orthographic viewing box '[120,200]' x '[90,200]' x '[-1,3]', is currently applied to the ";
+			cout<<"scene."<<endl;
+			cout.flush();
+			break;
 
 		default:
 
@@ -219,128 +219,128 @@ void manageKeys(unsigned char key, int x, int y)
 	{
 		case 'q':
 
-		/* The key is 'q', thus we can exit from this program! */
-		cout<<endl;
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
-			cout.flush();
-		#endif
-		exit(EXIT_SUCCESS);
-		break;
+			/* The key is 'q', thus we can exit from this program! */
+			cout<<endl;
+			cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
+			exit(EXIT_SUCCESS);
+			break;
 
 		case 'Q':
 
-		/* The key is 'Q', thus we can exit from this program! */
-		cout<<endl;
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
-			cout.flush();
-		#endif
-		exit(EXIT_SUCCESS);
-		break;
+			/* The key is 'Q', thus we can exit from this program! */
+			cout<<endl;
+			cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
+			exit(EXIT_SUCCESS);
+			break;
 
 		case 27:
 
-		/* The key is 'Esc', thus we can exit from this program! */
-		cout<<endl;
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
-			cout.flush();
-		#endif
-		exit(EXIT_SUCCESS);
-		break;
+			/* The key is 'Esc', thus we can exit from this program! */
+			cout<<endl;
+			cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
+			exit(EXIT_SUCCESS);
+			break;
 
 		case '0':
 
-		/* The key is '0', thus we exploit the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' (thus, the 'Viewing Configuration #0'). */
-		scene=0;
-		left_value = 0.0;
-		right_value = 100.0;
-		bottom_value = 0.0;
-		top_value = 100.0;
-		near_value = -1.0;
-		far_value = 1.0;
-		glutPostRedisplay();
-		break;
+			/* The key is '0', thus we exploit the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' (thus, the 'Viewing Configuration #0'). */
+			scene=0;
+			left_value = 0.0;
+			right_value = 100.0;
+			bottom_value = 0.0;
+			top_value = 100.0;
+			near_value = -1.0;
+			far_value = 1.0;
+			glutPostRedisplay();
+			break;
 
 		case '1':
 
-		/* The key is '1', thus we exploit the orthographic viewing box '[-100,100]' x '[-100,100]' x '[-1,1]' (thus, the 'Viewing Configuration #1'). */
-		scene=1;
-		left_value = -100.0;
-		right_value = 100.0;
-		bottom_value = -100.0;
-		top_value = 100.0;
-		near_value = -1.0;
-		far_value = 1.0;
-		glutPostRedisplay();
-		break;
+			/* The key is '1', thus we exploit the orthographic viewing box '[-100,100]' x '[-100,100]' x '[-1,1]' (thus, the 'Viewing Configuration #1'). */
+			scene=1;
+			left_value = -100.0;
+			right_value = 100.0;
+			bottom_value = -100.0;
+			top_value = 100.0;
+			near_value = -1.0;
+			far_value = 1.0;
+			glutPostRedisplay();
+			break;
 
 		case '2':
 
-		/* The key is '2', thus we exploit the orthographic viewing box '[20,80]' x '[20,80]' x '[-1,1]' (thus, the 'Viewing Configuration #2'). */
-		scene=2;
-		left_value = 20;
-		right_value = 80;
-		bottom_value = 20;
-		top_value = 80;
-		near_value = -1.0;
-		far_value = 1.0;
-		glutPostRedisplay();
-		break;
+			/* The key is '2', thus we exploit the orthographic viewing box '[20,80]' x '[20,80]' x '[-1,1]' (thus, the 'Viewing Configuration #2'). */
+			scene=2;
+			left_value = 20;
+			right_value = 80;
+			bottom_value = 20;
+			top_value = 80;
+			near_value = -1.0;
+			far_value = 1.0;
+			glutPostRedisplay();
+			break;
 
 		case '3':
 
-		/* The key is '3', thus we exploit the orthographic viewing box '[0,100]' x '[0,100]' x '[-2,5]' (thus, the 'Viewing Configuration #3'). */
-		scene=3;
-		left_value = 0;
-		right_value = 100;
-		bottom_value = 0;
-		top_value = 100;
-		near_value = -2.0;
-		far_value = 5.0;
-		glutPostRedisplay();
-		break;
+			/* The key is '3', thus we exploit the orthographic viewing box '[0,100]' x '[0,100]' x '[-2,5]' (thus, the 'Viewing Configuration #3'). */
+			scene=3;
+			left_value = 0;
+			right_value = 100;
+			bottom_value = 0;
+			top_value = 100;
+			near_value = -2.0;
+			far_value = 5.0;
+			glutPostRedisplay();
+			break;
 
 		case '4':
 
-		/* The key is '4', thus we exploit the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' (thus, the 'Viewing Configuration #4'). */
-		scene=4;
-		left_value = 0;
-		right_value = 200;
-		bottom_value = 0;
-		top_value = 200;
-		near_value = -1.0;
-		far_value = 1.0;
-		glutPostRedisplay();
-		break;
+			/* The key is '4', thus we exploit the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' (thus, the 'Viewing Configuration #4'). */
+			scene=4;
+			left_value = 0;
+			right_value = 200;
+			bottom_value = 0;
+			top_value = 200;
+			near_value = -1.0;
+			far_value = 1.0;
+			glutPostRedisplay();
+			break;
 
 		case '5':
 
-		/* The key is '5', thus we exploit the orthographic viewing box '[120,200]' x '[90,200]' x '[-1,3]' (thus, the 'Viewing Configuration #5'). */
-		scene=5;
-		left_value = 120;
-		right_value = 200;
-		bottom_value = 90;
-		top_value = 200;
-		near_value = -1.0;
-		far_value = 3.0;
-		glutPostRedisplay();
-		break;
+			/* The key is '5', thus we exploit the orthographic viewing box '[120,200]' x '[90,200]' x '[-1,3]' (thus, the 'Viewing Configuration #5'). */
+			scene=5;
+			left_value = 120;
+			right_value = 200;
+			bottom_value = 90;
+			top_value = 200;
+			near_value = -1.0;
+			far_value = 3.0;
+			glutPostRedisplay();
+			break;
 
 		default:
 
-		/* Other keys are not important for us! */
-		break;
+			/* Other keys are not important for us! */
+			break;
 	}
 }
 

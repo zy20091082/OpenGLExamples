@@ -66,17 +66,17 @@ int main(int argc,char **argv)
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-004' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws the 'filled versions' of the following quadrilaterals in an OpenGL window:"<<endl<<endl;
-	cout<<"\t\t0. the quadrilateral #0 (in 'red') with vertices '(20,20,0)' - '(80,20,0)' - '(80,80,0)' - '(20,80,0)';"<<endl;
-	cout<<"\t\t1. the quadrilateral #1 (in 'green') with vertices '(120,120,0)' - '(180,120,0)' - '(180,180,0)' - '(120,180,0)';"<<endl<<endl;
+	cout<<"\t\t0. the 'Quadrilateral #0' (in 'red') with vertices '(20,20,0)' - '(80,20,0)' - '(80,80,0)' - '(20,80,0)';"<<endl;
+	cout<<"\t\t1. the 'Quadrilateral #1' (in 'green') with vertices '(120,120,0)' - '(180,120,0)' - '(180,180,0)' - '(120,180,0)';"<<endl<<endl;
 	cout<<"\tby using the following orthographic projections (activated upon request by the user):"<<endl<<endl;
 	cout<<"\t\t0. the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' is activated by pressing the '0' key (the 'Viewing Configuration #0'). In this case, ";
-	cout<<"only the quadrilateral #0 is shown."<<endl;
+	cout<<"only the 'Quadrilateral #0' is shown."<<endl;
 	cout<<"\t\t1. The ortographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' is activated by pressing the '1' key (the 'Viewing Configuration #1'). In this case, ";
-	cout<<"both the quadrilaterals #0 and #1 are shown."<<endl<<endl;
+	cout<<"both the 'Quadrilateral #0' and the 'Quadrilateral '#1' are shown."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 
-	/* If we arrive here, then we can draw 2 quadrilaterals of interest by using the orthographic viewing box, requested by the user. */
+	/* If we arrive here, then we can draw '2' quadrilaterals of interest by using the orthographic viewing box, requested by the user. */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -104,10 +104,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws the <i>'filled versions'</i> of 2 quadrilaterals (respectively, in <i>'red'</i> and in <i>'green'</i>) in the OpenGL window of interest by using the orthographic projection, chosen by the user.
+/// This function draws the <i>'filled versions'</i> of <i>'2'</i> quadrilaterals (respectively, in <i>'red'</i> and in <i>'green'</i>) in the OpenGL window of interest by using the orthographic projection, chosen by the user.
 void draw()
 {
-	/* We draw the 'filled versions' of 2 quadrilaterals (respectively, in 'red' and in 'green') in the OpenGL window of interest by using the orthographic projection,
+	/* We draw the 'filled versions' of '2' quadrilaterals (respectively, in 'red' and in 'green') in the OpenGL window of interest by using the orthographic projection,
 	 * chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0, 0.0, 0.0);
@@ -170,79 +170,79 @@ void manageKeys(unsigned char key, int x, int y)
 	{
 		case 'q':
 	
-		/* The key is 'q', thus we can exit from this program. */
-		cout<<endl;
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'q', thus we can exit from this program. */
+			cout<<endl;
+			cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 'Q':
 	
-		/* The key is 'Q', thus we can exit from this program. */
-		cout<<endl;
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'Q', thus we can exit from this program. */
+			cout<<endl;
+			cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 27:
 	
-		/* The key is 'Esc', thus we can exit from this program. */
-		cout<<endl;
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'Esc', thus we can exit from this program. */
+			cout<<endl;
+			cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case '0':
 		
-		/* The key is '0', thus we exploit the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' (the 'Viewing Configuration #0'). */
-		scene=0;
-		left_value=0.0;
-		right_value=100.0;
-		bottom_value=0.0;
-		top_value=100.0;
-		near_value=-1.0;
-		far_value=1.0;
-		glutPostRedisplay();
-		break;
+			/* The key is '0', thus we exploit the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' (the 'Viewing Configuration #0'). */
+			scene=0;
+			left_value=0.0;
+			right_value=100.0;
+			bottom_value=0.0;
+			top_value=100.0;
+			near_value=-1.0;
+			far_value=1.0;
+			glutPostRedisplay();
+			break;
 
 		case '1':
 		
-		/* The key is '1', thus we exploit the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' (the 'Viewing Configuration #1'). */
-		scene=1;
-		left_value=0.0;
-		right_value=200.0;
-		bottom_value=0;
-		top_value=200.0;
-		near_value=-1;
-		far_value=1.0;
-		glutPostRedisplay();
-		break;
+			/* The key is '1', thus we exploit the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' (the 'Viewing Configuration #1'). */
+			scene=1;
+			left_value=0.0;
+			right_value=200.0;
+			bottom_value=0;
+			top_value=200.0;
+			near_value=-1;
+			far_value=1.0;
+			glutPostRedisplay();
+			break;
 
 		default:
 
-    	/* Other keys are not important for us! */
-    	break;
+			/* Other keys are not important for us! */
+			break;
 	}	
 }
 

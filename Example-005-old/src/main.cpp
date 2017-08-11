@@ -36,7 +36,8 @@ using namespace std;
 
 /// The <i>'x'</i> coordinate value for the triangle of interest.
 /**
- * It is initially set to 'x=20', and can be modified by pressing the '+' (increasing 'x' by 1), the '-' (decreasing 'x' by 1), and the '=' (resetting 'x=20') keys.
+ * It is initially set to 'x=20.0', and can be modified by pressing the '+' (increasing 'x' by 1.0), the '-' (decreasing 'x' by 1.0), and the '=' (resetting 'x=20.0')
+ * keys.
  */
 GLfloat xcoord=20;
 
@@ -58,13 +59,15 @@ int main(int argc,char **argv)
 	cout<<"\tThe polygon of interest is the intersection of the following elements:"<<endl<<endl;
 	cout<<"\t\t-) the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]';"<<endl;
 	cout<<"\t\t-) the triangle with vertices '(x,20,0)' - '(80,20,0)' - '(80,80,0)', for any 'x' coordinate along the x-axis."<<endl<<endl;
-	cout<<"\tHere, the orthographic viewing box is not modified. Instead, the 'x' coordinate of the triangle, initially set to 'x=20', can be moved by the user along ";
-	cout<<"the x-axis. Specifically, the user can:"<<endl<<endl;
+	cout<<"\tHere, the orthographic viewing box is not modified. Instead, the 'x' coordinate of the triangle, initially set to 'x=20.0', can be moved by the user along";
+	cout<<" the x-axis. Specifically, the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the 'x' coordinate by '1.0' for the triangle of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the 'x' coordinate by '1.0' for the triangle of interest by pressing the '-' key;"<<endl;
-	cout<<"\t\t-) reset the 'x' coordinate for the triangle of interest to its initial value 'x=20' by pressing the '=' key."<<endl<<endl;
+	cout<<"\t\t-) reset the 'x' coordinate for the triangle of interest to its initial value 'x=20.0' by pressing the '=' key."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
+
+	/* If we arrive here, then we draw the initial version of the scene (with 'x=20.0')! */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -129,83 +132,83 @@ void manageKeys(unsigned char key, int x, int y)
 	{
 		case 'q':
 	
-		/* The key is 'q', thus we can exit from this program. */
-		if(eol) cout<<endl;
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'q', thus we can exit from this program. */
+			if(eol) cout<<endl;
+			cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 'Q':
 	
-		/* The key is 'Q', thus we can exit from this program. */
-		if(eol) cout<<endl;
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'Q', thus we can exit from this program. */
+			if(eol) cout<<endl;
+			cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 27:
 	
-		/* The key is 'Esc', thus we can exit from this program. */
-		if(eol) cout<<endl;
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'Esc', thus we can exit from this program. */
+			if(eol) cout<<endl;
+			cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case '+':
 		
-		/* The key is '+, thus we increase the 'x' coordinate by 1 for the triangle of interest. */
-		xcoord=xcoord+(GLfloat)1.0;
-		cout<<"\tThe 'x' coordinate for the triangle of interest is currently increased to 'x="<<xcoord<<"' in the scene."<<endl;
-		cout.flush();
-		eol=true;
-		glutPostRedisplay();
-		break;
+			/* The key is '+, thus we increase the 'x' coordinate by '1.0' for the triangle of interest. */
+			xcoord=xcoord+(GLfloat)1.0;
+			cout<<"\tThe 'x' coordinate for the triangle of interest is currently increased to 'x="<<xcoord<<"' in the scene."<<endl;
+			cout.flush();
+			eol=true;
+			glutPostRedisplay();
+			break;
 		
 		case '-':
 		
-		/* The key is '-', thus we decrease the 'x' coordinate by 1 for the triangle of interest. */
-		xcoord=xcoord-(GLfloat)1.0;
-		cout<<"\tThe 'x' coordinate for the triangle of interest is currently decreased to 'x="<<xcoord<<"' in the scene."<<endl;
-		cout.flush();
-		eol=true;
-		glutPostRedisplay();
-		break;
+			/* The key is '-', thus we decrease the 'x' coordinate by '1.0' for the triangle of interest. */
+			xcoord=xcoord-(GLfloat)1.0;
+			cout<<"\tThe 'x' coordinate for the triangle of interest is currently decreased to 'x="<<xcoord<<"' in the scene."<<endl;
+			cout.flush();
+			eol=true;
+			glutPostRedisplay();
+			break;
 		
 		case '=':
 		
-		/* The key is '=', thus we reinitialize the 'x' coordinate to 'x=20' for the triangle of interest. */
-		xcoord=20.0;
-		eol=true;
-		cout<<"\tThe 'x' coordinate for the triangle of interest is currently set to its default value 'x="<<xcoord<<"' in the scene."<<endl;
-		cout.flush();
-		glutPostRedisplay();
-		break;
+			/* The key is '=', thus we reinitialize the 'x' coordinate to 'x=20.0' for the triangle of interest. */
+			xcoord=20.0;
+			eol=true;
+			cout<<"\tThe 'x' coordinate for the triangle of interest is currently set to its default value 'x="<<xcoord<<"' in the scene."<<endl;
+			cout.flush();
+			glutPostRedisplay();
+			break;
 		
 		default:
 
-    	/* Other keys are not important for us! */
-    	break;
+			/* Other keys are not important for us! */
+			break;
 	}
 }
 

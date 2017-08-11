@@ -57,12 +57,12 @@ int main(int argc,char **argv)
 	cout<<"\tIt draws the 'filled versions' for '2' quadrilaterals of different size and with a not empty intersection (partial overlap) in an OpenGL window."<<endl;
 	cout<<"\tIn particular, the 'small' quadrilateral may be completely covered by the 'large' quadrilateral, depending on their rendering order. This latter ";
 	cout<<"corresponds to their color, which is defined as follows:"<<endl<<endl;
-	cout<<"\t\t-) the quadrilateral in 'red' is rendered before in the scene;"<<endl;
-	cout<<"\t\t-) the quadrilateral in 'blue' is rendered after in the scene."<<endl<<endl;
+	cout<<"\t\t-) the quadrilateral in 'red' is rendered before in the scene (the 'Quadrilateral #0');"<<endl;
+	cout<<"\t\t-) the quadrilateral in 'blue' is rendered after in the scene (the 'Quadrilateral #1')."<<endl<<endl;
 	cout<<"\tThe rendering order of these quadrilaterals corresponds to the following viewing configurations, that can be activated upon request by the user:";
 	cout<<endl<<endl;
 	cout<<"\t\t0. the 'large' quadrilateral (in 'red') is rendered before, and the 'small' quadrilateral (in 'blue') is rendered after in the 'Viewing Configuration ";
-	cout<<"#0'. In this case, both the quadrilaterals"<<endl<<"\t\t   are visible. The 'Viewing Configuration #0' is activated upon request by pressing the '0' key.";
+	cout<<"#0'. In this case, both the quadrilaterals are"<<endl<<"\t\t   visible. The 'Viewing Configuration #0' is activated upon request by pressing the '0' key.";
 	cout<<endl<<endl;
 	cout<<"\t\t1. The 'small' quadrilateral (in 'red') is rendered before, and the 'large' quadrilateral (in 'blue') is rendered after in the 'Viewing Configuration ";
 	cout<<"#1'. In this case, only the 'large' quadrilateral"<<endl<<"\t\t   is visible. The 'Viewing Configuration #1' is activated upon request by pressing the '1' ";
@@ -98,10 +98,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws the <i>'filled versions'</i> of 2 quadrilaterals in the OpenGL window of interest by using the viewing configuration, chosen by the user.
+/// This function draws the <i>'filled versions'</i> of <i>'2'</i> quadrilaterals in the OpenGL window of interest by using the viewing configuration, chosen by the user.
 void draw()
 {
-	/* We draw the 'filled versions' of 2 quadrilaterals in the OpenGL window of interest by using the viewing configuration, chosen by the user. */
+	/* We draw the 'filled versions' of '2' quadrilaterals in the OpenGL window of interest by using the viewing configuration, chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0,0.0,0.0);
 	if(choice==0)
@@ -172,64 +172,64 @@ void manageKeys(unsigned char key, int x, int y)
 	{
 		case 'q':
 	
-		/* The key is 'q', thus we can exit from this program. */
-		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'q', thus we can exit from this program. */
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 'Q':
 	
-		/* The key is 'Q', thus we can exit from this program. */
-		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'Q', thus we can exit from this program. */
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 27:
 	
-		/* The key is 'Esc', thus we can exit from this program. */
-		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'Esc', thus we can exit from this program. */
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case '0':
 		
-		/* The key is '0', thus we apply the 'Viewing Configuration #0' to the scene. */
-		choice=0;
-		glutPostRedisplay();
-		break;
+			/* The key is '0', thus we apply the 'Viewing Configuration #0' to the scene. */
+			choice=0;
+			glutPostRedisplay();
+			break;
 		
 		case '1':
 		
-		/* The key is '1', thus we apply the 'Viewing Configuration #1' to the scene. */
-		choice=1;
-		glutPostRedisplay();
-		break;
+			/* The key is '1', thus we apply the 'Viewing Configuration #1' to the scene. */
+			choice=1;
+			glutPostRedisplay();
+			break;
 		
 		default:
 
-    	/* Other keys are not important for us! */
-    	break;
+			/* Other keys are not important for us! */
+			break;
 	}
 }
 

@@ -49,6 +49,8 @@ int main(int argc,char **argv)
 	cout<<"user."<<endl<<endl;
 	cout<<"\tHere, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
+
+	/* If we arrive here, then we draw the current scene! */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -76,13 +78,13 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws the <i>'filled versions'</i> for 12 quadrilaterals with different colors in the OpenGL window of interest.
+/// This function draws the <i>'filled versions'</i> for <i>'12'</i> quadrilaterals with different colors in the OpenGL window of interest.
 void draw()
 {
-	/* We draw the 'filled versions' for 12 quadrilaterals with different colors in the OpenGL window of interest. */
+	/* We draw the 'filled versions' for '12' quadrilaterals with different colors in the OpenGL window of interest. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	
-	/* We draw the quadrilateral #0 by using the 'black' color. */
+	/* We draw the 'Quadrilateral #0' by using the 'black' color. */
 	glColor3f(0.0, 0.0, 0.0);
 	glBegin(GL_POLYGON);
 	glVertex3f(20,90,0);
@@ -91,7 +93,7 @@ void draw()
 	glVertex3f(20,110,0);
 	glEnd();
 	
-	/* We draw the quadrilateral #1 by using the 'red' color. */
+	/* We draw the 'Quadrilateral #1' by using the 'red' color. */
 	glColor3f(1.0, 0.0, 0.0);
 	glBegin(GL_POLYGON);
 	glVertex3f(50,90,0);
@@ -100,7 +102,7 @@ void draw()
 	glVertex3f(50,110,0);
 	glEnd();
 	
-	/* We draw the quadrilateral #2 by using the 'green' color. */
+	/* We draw the 'Quadrilateral #2' by using the 'green' color. */
 	glColor3f(0.0, 1.0, 0.0);
 	glBegin(GL_POLYGON);
 	glVertex3f(80,90,0);
@@ -109,7 +111,7 @@ void draw()
 	glVertex3f(80,110,0);
 	glEnd();
 	
-	/* We draw the quadrilateral #3 by using the 'blue' color. */
+	/* We draw the 'Quadrilateral #3' by using the 'blue' color. */
 	glColor3f(0.0, 0.0, 1.0);
 	glBegin(GL_POLYGON);
 	glVertex3f(20,60,0);
@@ -118,7 +120,7 @@ void draw()
 	glVertex3f(20,80,0);
 	glEnd();
 	
-	/* We draw the quadrilateral #4 by using the 'yellow' color. */
+	/* We draw the 'Quadrilateral #4' by using the 'yellow' color. */
 	glColor3f(1.0, 1.0, 0.0);
 	glBegin(GL_POLYGON);
 	glVertex3f(50,60,0);
@@ -127,7 +129,7 @@ void draw()
 	glVertex3f(50,80,0);
 	glEnd();
 	
-	/* We draw the quadrilateral #5 by using the 'magenta' color. */
+	/* We draw the 'Quadrilateral #5' by using the 'magenta' color. */
 	glColor3f(1.0, 0.0, 1.0);
 	glBegin(GL_POLYGON);
 	glVertex3f(80,60,0);
@@ -136,7 +138,7 @@ void draw()
 	glVertex3f(80,80,0);
 	glEnd();
 	
-	/* We draw the quadrilateral #6 by using the 'cyan' color. */
+	/* We draw the 'Quadrilateral #6' by using the 'cyan' color. */
 	glColor3f(0.0, 1.0, 1.0);
 	glBegin(GL_POLYGON);
 	glVertex3f(20,30,0);
@@ -145,7 +147,7 @@ void draw()
 	glVertex3f(20,50,0);
 	glEnd();
 	
-	/* We draw the quadrilateral #7 by using a custom color. */
+	/* We draw the 'Quadrilateral #7' by using a custom color. */
 	glColor3f(0.2,0.2,0.2);
 	glBegin(GL_POLYGON);
 	glVertex3f(50,30,0);
@@ -154,7 +156,7 @@ void draw()
 	glVertex3f(50,50,0);
 	glEnd();
 	
-	/* We draw the quadrilateral #8 by using a custom color. */
+	/* We draw the 'Quadrilateral #8' by using a custom color. */
 	glColor3f(0.5,0.5,0.5);
 	glBegin(GL_POLYGON);
 	glVertex3f(80,30,0);
@@ -163,7 +165,7 @@ void draw()
 	glVertex3f(80,50,0);
 	glEnd();
 	
-	/* We draw the quadrilateral #9 by using a custom color. */
+	/* We draw the 'Quadrilateral #9' by using a custom color. */
 	glColor3f(0.8,0.8,0.8);
 	glBegin(GL_POLYGON);
 	glVertex3f(50,0,0);
@@ -172,7 +174,7 @@ void draw()
 	glVertex3f(50,20,0);
 	glEnd();
 	
-	/* We draw the quadrilateral #10 by using a custom color. */
+	/* We draw the 'Quadrilateral #10' by using a custom color. */
 	glColor3f(0.8,0,0.8);
 	glBegin(GL_POLYGON);
 	glVertex3f(20,0,0);
@@ -181,7 +183,7 @@ void draw()
 	glVertex3f(20,20,0);
 	glEnd();
 	
-	/* We draw the quadrilateral #11 by using a custom color. */
+	/* We draw the 'Quadrilateral #11' by using a custom color. */
 	glColor3f(0,0.3,0);
 	glBegin(GL_POLYGON);
 	glVertex3f(80,0,0);
