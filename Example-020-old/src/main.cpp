@@ -45,16 +45,18 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-020' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws 2 versions of the 'Double Square Annulus' shape in an OpenGL window. This shape is bounded by an 'external' axis-parallel rectangle, and by 2 ";
-	cout<<"'internal' axis-parallel rectangles, entirely contained in the 'external'"<<endl;
-	cout<<"\trectangle. Broadly speaking, any 'Double Square Annulus' shape is the union of 2 'Square Annulus' shapes, connected along one side of their 'external' ";
-	cout<<"rectangles. Recall that any 'Square Annulus' shape is contained between"<<endl;
-	cout<<"\t2 (concentric) axis-parallel rectangles of different size."<<endl<<endl;
-	cout<<"\tHere, the 'Double Square Annulus' shape of interest is approximated by only one triangle strip, where a bunch of 'Steiner' points are added in order to ";
-	cout<<"make this possible. Specifically, this test draws the 'filled' and the"<<endl;
-	cout<<"\t'wireframe versions' of all triangles in the triangle strip of interest (in 'red')."<<endl<<endl;
+	cout<<"\tIt draws '2' versions of the 'Double Square Annulus' shape in an OpenGL window. This shape is bounded by an 'external' axis-parallel rectangle, and by '2'";
+	cout<<" 'internal' axis-parallel rectangles, entirely contained in the 'external'"<<endl;
+	cout<<"\trectangle. Broadly speaking, any 'Double Square Annulus' shape is the union of '2' 'Square Annulus' shapes, connected along one side of their 'external' ";
+	cout<<"rectangles. Recall that any 'Square Annulus' shape is contained between '2'"<<endl;
+	cout<<"\t(concentric) axis-parallel rectangles of different size."<<endl<<endl;
+	cout<<"\tHere, the 'Double Square Annulus' shape of interest is approximated by only one triangle strip (in 'red'), where a bunch of 'Steiner' points are added in ";
+	cout<<"order to make this possible. Specifically, this test draws the 'filled'"<<endl;
+	cout<<"\tand the 'wireframe versions' of all triangles in the triangle strip, just mentioned."<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user. Here, the window of interest can be closed by pressing any among the 'Q', the ";
 	cout<<"'q', and the 'Esc' keys."<<endl<<endl;
+
+	/* If we arrive here, then we draw the 'wireframe' and the 'filled' versions for the triangle strip of interest. */
 	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
