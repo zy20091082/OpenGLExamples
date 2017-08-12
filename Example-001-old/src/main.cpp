@@ -52,6 +52,8 @@ int main(int argc,char **argv)
 	cout<<"\tBroadly speaking, it creates an empty OpenGL window with the 'black' background, and provides no interaction mechanism with the user."<<endl<<endl;
 	cout<<"\tHere, the window of interest must be stopped through an enforced closure."<<endl<<endl;
 	cout.flush();
+
+	/* If we arrive here, then we can create a rough window without user interaction! */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(50,25);

@@ -206,50 +206,50 @@ void manageKeys(unsigned char key, int x, int y)
 	{
 		case 'q':
 	
-		/* The key is 'q', thus we can exit from this program. */
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'q', thus we can exit from this program. */
+			cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 'Q':
 	
-		/* The key is 'Q', thus we can exit from this program. */
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'Q', thus we can exit from this program. */
+			cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 27:
 	
-		/* The key is 'Esc', thus we can exit from this program. */
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'Esc', thus we can exit from this program. */
+			cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		default:
 
-    	/* Other keys are not important for us! */
-    	break;
+			/* Other keys are not important for us! */
+			break;
 	}
 }
 

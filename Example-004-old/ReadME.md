@@ -3,10 +3,10 @@
 <H3>The <i>'Example-004 (Old Mode)'</i> Test</H3>
 
 The <i>'Example-004 (Old Mode)'</i> Test draws the <i>'filled versions'</i> of the following quadrilaterals in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window:<p><ol>
-<li value="0">the quadrilateral #0 (in <i>'red'</i>) with vertices <code><i>'(20,20,0)'</i> - <i>'(80,20,0)'</i> - <i>'(80,80,0)'</i> - <i>'(20,80,0)'</i></code>;</li>
-<li value="1">the quadrilateral #1 (in <i>'green'</i>) with vertices <code><i>'(120,120,0)'</i> - <i>'(180,120,0)'</i> - <i>'(180,180,0)'</i> - <i>'(120,180,0)'</i></code>;</li></ol><p>by using the following orthographic projections (activated upon request by the user):<p><ol>
-<li value="0">the ortographic viewing box <code><i>'[0,100]' x '[0,100]' x '[-1,1]'</i></code> is activated by pressing the <code><i>'0'</i></code> key (the <i>'Viewing Configuration #0'</i>). In this case, only the quadrilateral #0 is shown.<p></li>
-<li value="1">The ortographic viewing box <code><i>'[0,200]' x '[0,200]' x '[-1,1]'</i></code> is activated by pressing the <code><i>'1'</i></code> key (the <i>'Viewing Configuration #1'</i>). In this case, both the quadrilaterals #0 and #1 are shown.</li></ol><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><table border=0 width=100%><tr>
+<li value="0">the <i>'Quadrilateral #0'</i> (in <i>'red'</i>) with vertices <code><i>'(20,20,0)'</i> - <i>'(80,20,0)'</i> - <i>'(80,80,0)'</i> - <i>'(20,80,0)'</i></code>;</li>
+<li value="1">the <i>'Quadrilateral #1'</i> (in <i>'green'</i>) with vertices <code><i>'(120,120,0)'</i> - <i>'(180,120,0)'</i> - <i>'(180,180,0)'</i> - <i>'(120,180,0)'</i></code>;</li></ol><p>by using the following orthographic projections (activated upon request by the user):<p><ol>
+<li value="0">the ortographic viewing box <code><i>'[0,100]' x '[0,100]' x '[-1,1]'</i></code> is activated by pressing the <code><i>'0'</i></code> key (the <i>'Viewing Configuration #0'</i>). In this case, only the <i>'Quadrilateral #0'</i> is shown.<p></li>
+<li value="1">The ortographic viewing box <code><i>'[0,200]' x '[0,200]' x '[-1,1]'</i></code> is activated by pressing the <code><i>'1'</i></code> key (the <i>'Viewing Configuration #1'</i>). In this case, both the <i>'Quadrilateral #0'</i> and the <i>'Quadrilateral #1'</i> are shown.</li></ol><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><table border=0 width=100%><tr>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example004_old_conf0.png' border='1' width='456' height='470'></td>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example004_old_conf1.png' border='1' width='456' height='470'></td></tr>
 <tr>

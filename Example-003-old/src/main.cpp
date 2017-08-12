@@ -189,8 +189,8 @@ void draw()
 
 		default:
 
-		/* Something is wrong here. We do nothing! */
-		break;
+			/* Something is wrong here. We do nothing! */
+			break;
 	}
 }
 
