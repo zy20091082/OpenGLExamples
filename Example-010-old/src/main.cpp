@@ -69,6 +69,8 @@ int main(int argc,char **argv)
 	cout << "\t\t5. the 'GL_POLYGON' primitive is chosen by pressing the '5' key for drawing only one polygon."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
+
+	/* If we arrive here, then we draw the initial scene! */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -171,8 +173,8 @@ void draw()
 
 		default:
 
-		/* Something is wrong here. We do nothing! */
-		break;
+			/* Something is wrong here. We do nothing! */
+			break;
 	}
 }
 
@@ -184,92 +186,92 @@ void manageKeys(unsigned char key, int x, int y)
 	{
 		case 'q':
 	
-		/* The key is 'q', thus we can exit from this program. */
-		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'q', thus we can exit from this program. */
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 'Q':
 	
-		/* The key is 'Q', thus we can exit from this program. */
-		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'Q', thus we can exit from this program. */
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 27:
 	
-		/* The key is 'Esc', thus we can exit from this program. */
-		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'Esc', thus we can exit from this program. */
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 	
 		case '0':
 		
-		/* The key is '0', thus the 'GL_POINTS' primitive is currently used for drawing several independent 3D points in the scene. */
-		rendering=GL_POINTS;
-		glutPostRedisplay();
-		break;
+			/* The key is '0', thus the 'GL_POINTS' primitive is currently used for drawing several independent 3D points in the scene. */
+			rendering=GL_POINTS;
+			glutPostRedisplay();
+			break;
 
 		case '1':
 		
-		/* The key is '1', thus the 'GL_LINES' primitive is currently used for drawing several independent lines in the scene. */
-		rendering=GL_LINES;
-		glutPostRedisplay();
-		break;
+			/* The key is '1', thus the 'GL_LINES' primitive is currently used for drawing several independent lines in the scene. */
+			rendering=GL_LINES;
+			glutPostRedisplay();
+			break;
 		
 		case '2':
 		
-		/* The key is '2', thus the 'GL_LINE_STRIP' primitive is currently used for drawing an open line strip in the scene. */
-		rendering=GL_LINE_STRIP;
-		glutPostRedisplay();
-		break;
+			/* The key is '2', thus the 'GL_LINE_STRIP' primitive is currently used for drawing an open line strip in the scene. */
+			rendering=GL_LINE_STRIP;
+			glutPostRedisplay();
+			break;
 		
 		case '3':
 		
-		/* The key is '3', thus the 'GL_LINE_LOOP' primitive is currently used for drawing a closed line loop in the scene. */
-		rendering=GL_LINE_LOOP;
-		glutPostRedisplay();
-		break;
+			/* The key is '3', thus the 'GL_LINE_LOOP' primitive is currently used for drawing a closed line loop in the scene. */
+			rendering=GL_LINE_LOOP;
+			glutPostRedisplay();
+			break;
 		
 		case '4':
 		
-		/* The key is '4', thus the 'GL_TRIANGLES' primitive is currently used for drawing several triangles in the scene. */
-		rendering=GL_TRIANGLES;
-		glutPostRedisplay();
-		break;
+			/* The key is '4', thus the 'GL_TRIANGLES' primitive is currently used for drawing several triangles in the scene. */
+			rendering=GL_TRIANGLES;
+			glutPostRedisplay();
+			break;
 
 		case '5':
 		
-		/* The key is '5', thus the 'GL_POLYGON' primitive is currently used for drawing only one polygon in the scene. */
-		rendering=GL_POLYGON;
-		glutPostRedisplay();
-		break;
+			/* The key is '5', thus the 'GL_POLYGON' primitive is currently used for drawing only one polygon in the scene. */
+			rendering=GL_POLYGON;
+			glutPostRedisplay();
+			break;
 		
 		default:
 
-    	/* Other keys are not important for us! */
-    	break;
+			/* Other keys are not important for us! */
+			break;
 	}
 }
 
