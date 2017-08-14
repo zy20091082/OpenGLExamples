@@ -34,16 +34,16 @@ using namespace std;
 
 #endif
 
-/// The counter index for cycling the vertices order for all possible versions of the convex polygons (in <i>'red'</i>).
+/// The counter index for cycling the vertices order for all possible versions of the convex <i>'Polygon #0'</i> (in <i>'red'</i>).
 int iconvex;
 
-/// The counter index for cycling the vertices order for all possible versions of the concave polygons (in <i>'blue'</i>).
+/// The counter index for cycling the vertices order for all possible versions of the concave <i>'Polygon #1'</i> (in <i>'blue'</i>).
 int inconvex;
 
 /// This boolean flag is useful for completing the textual interface.
 bool eol=false;
 
-/// The 3D coordinates of the points in the convex polygons (in <i>'red'</i>).
+/// The 3D coordinates of the points in the convex convex <i>'Polygon #0'</i> (in <i>'red'</i>).
 float convex_points[][3]={
 			{ 20.0,20.0,0.0},
 			{ 50,20,0 },
@@ -52,7 +52,7 @@ float convex_points[][3]={
 			{ 20,80,0 }
 	};
 
-/// The 3D coordinates of the points in the concave polygons (in <i>'blue'</i>).
+/// The 3D coordinates of the points in the concave convex <i>'Polygon #1'</i> (in <i>'blue'</i>).
 float not_convex_points[][3]={
 			{20,120,0},
 			{80,120,0},
@@ -74,9 +74,11 @@ int main(int argc,char **argv)
 	cout<<"\tIt draws the 'filled' and the 'wireframe versions' of several convex (in 'red') and concave (in 'blue') polygons in an OpenGL window. This test also ";
 	cout<<"provides a very basic interaction mechanism with the user, which can cycle the"<<endl;
 	cout<<"\tvertices order in the polygons of interest by pressing the '+' key. While performing these operations, there may be 'strange' situations, expecially when";
-	cout<<" cycling the vertices in the 'filled versions' of the concave polygons."<<endl<<endl;
+	cout<<" cycling the vertices order in the 'filled versions' of the concave polygons."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
+
+	/* If we arrive here, then we can draw the desired scene! */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -110,7 +112,7 @@ void draw()
 	int pp,jj;
 
 	/* We draw the 'filled' and the 'wireframe versions' of several convex (in 'red') and concave (in 'blue') polygons in the OpenGL window of interest. First, we draw
-	 * the 'filled version' of the convex polygon #0 (in 'red'). */
+	 * the 'filled version' of the convex 'Polygon #0' (in 'red'). */
 	pp = (iconvex%5);
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(10.0);
@@ -124,7 +126,7 @@ void draw()
    		glVertex3f(convex_points[jj][0],convex_points[jj][1],convex_points[jj][2]);
    	}
    	
-   	/* We draw the 'wireframe version' of the convex polygon #0 (in 'red'). */
+   	/* We draw the 'wireframe version' of the convex 'Polygon #0' (in 'red'). */
    	glEnd();
    	glColor3f(1.0,0.0,0.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
@@ -135,7 +137,7 @@ void draw()
    		glVertex3f(convex_points[jj][0]+100,convex_points[jj][1],convex_points[jj][2]);
    	}
    	
-   	/* We draw the 'filled version' of the concave polygon #1 (in 'blue'). */
+   	/* We draw the 'filled version' of the concave 'Polygon #1' (in 'blue'). */
 	glEnd();
 	glColor3f(0.0,0.0,1.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
@@ -146,7 +148,7 @@ void draw()
    		glVertex3f(not_convex_points[jj][0],not_convex_points[jj][1],not_convex_points[jj][2]);
    	}
 	
-	/* We draw the 'wireframe version' of the concave polygon #1 (in 'blue'). */
+	/* We draw the 'wireframe version' of the concave 'Polygon #1' (in 'blue'). */
 	glEnd();
 	glColor3f(0.0,0.0,1.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
@@ -181,63 +183,63 @@ void manageKeys(unsigned char key, int x, int y)
 	{
 		case 'q':
 	
-		/* The key is 'q', thus we can exit from this program. */
-		if(eol) cout<<endl;
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'q', thus we can exit from this program. */
+			if(eol) cout<<endl;
+			cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 'Q':
 	
-		/* The key is 'Q', thus we can exit from this program. */
-		if(eol) cout<<endl;
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'Q', thus we can exit from this program. */
+			if(eol) cout<<endl;
+			cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 27:
 	
-		/* The key is 'Esc', thus we can exit from this program. */
-		if(eol) cout<<endl;
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'Esc', thus we can exit from this program. */
+			if(eol) cout<<endl;
+			cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case '+':
 		
-		/* The key is '+', thus we must cycle the order of the vertices for all polygons of interest. */
-		iconvex=iconvex+1;
-		inconvex=inconvex+1;
-		eol=true;
-		cout<<"\tThe vertices for both the 'filled' and the 'wireframe versions' of several convex and concave polygons are cycled in advance."<<endl;
-		glutPostRedisplay();		
-		break;
+			/* The key is '+', thus we must cycle the order of the vertices for all polygons of interest. */
+			iconvex=iconvex+1;
+			inconvex=inconvex+1;
+			eol=true;
+			cout<<"\tThe vertices for both the 'filled' and the 'wireframe versions' of several convex and concave polygons are cycled in advance."<<endl;
+			glutPostRedisplay();		
+			break;
 
 		default:
 
-    	/* Other keys are not important for us! */
-    	break;
+			/* Other keys are not important for us! */
+			break;
 	}
 }
 
