@@ -49,6 +49,8 @@ int main(int argc,char **argv)
 	cout<<"interaction mechanism with the user."<<endl<<endl;
 	cout<<"\tHere, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
+
+	/* If we arrive here, then we draw the desired scene! */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -76,10 +78,10 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws 6 rectangles by using several rendering settings in the OpenGL window of interest.
+/// This function draws <i>'6'</i> rectangles by using several rendering settings in the OpenGL window of interest.
 void draw()
 {
-	/* We draw 6 rectangles, defined through the 'glRectf()' function, by using several rendering settings in the OpenGL window of interest. */
+	/* We draw '6' rectangles, defined through the 'glRectf()' function, by using several rendering settings in the OpenGL window of interest. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(10.0);
 	glLineWidth(2.0);
