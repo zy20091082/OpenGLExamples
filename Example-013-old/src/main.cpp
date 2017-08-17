@@ -139,146 +139,146 @@ void manageKeys(unsigned char key, int x, int y)
 	{
 		case 'q':
 	
-		/* The key is 'q', thus we can exit from this program. */
-		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'q', thus we can exit from this program. */
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 'Q':
 	
-		/* The key is 'Q', thus we can exit from this program. */
-		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'Q', thus we can exit from this program. */
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 27:
 	
-		/* The key is 'Esc', thus we can exit from this program. */
-		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'Esc', thus we can exit from this program. */
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 'F':
 
-		/* The key is 'F', thus we draw only the 'front' triangles sides in the triangle strip, approximating the custom shape of interest, by using the rendering type,
-		 * chosen by the user. */
-		face=GL_FRONT;
-		glutPostRedisplay();
-		break;
+			/* The key is 'F', thus we draw only the 'front' triangles sides in the triangle strip, approximating the custom shape of interest, by using the rendering
+			 * type, chosen by the user. */
+			face=GL_FRONT;
+			glutPostRedisplay();
+			break;
 		
 		case 'f':
 
-		/* The key is 'f', thus we draw only the 'front' triangles sides in the triangle strip, approximating the custom shape of interest, by using the rendering type,
-	 	 * chosen by the user. */
-		face=GL_FRONT;
-		glutPostRedisplay();
-		break;
+			/* The key is 'f', thus we draw only the 'front' triangles sides in the triangle strip, approximating the custom shape of interest, by using the rendering
+			 * type, chosen by the user. */
+			face=GL_FRONT;
+			glutPostRedisplay();
+			break;
 		
 		case 'B':
 
-		/* The key is 'B', thus we draw only the 'back' triangles sides in the triangle strip, approximating the custom shape of interest, by using the rendering type,
-		 * chosen by the user. */
-		face=GL_BACK;
-		glutPostRedisplay();
-		break;
+			/* The key is 'B', thus we draw only the 'back' triangles sides in the triangle strip, approximating the custom shape of interest, by using the rendering
+			 * type, chosen by the user. */
+			face=GL_BACK;
+			glutPostRedisplay();
+			break;
 		
 		case 'b':
 
-		/* The key is 'b', thus we draw only the 'back' triangles sides in the triangle strip, approximating the custom shape of interest, by using the rendering type,
-		 * chosen by the user. */
-		face=GL_BACK;
-		glutPostRedisplay();
-		break;
+			/* The key is 'b', thus we draw only the 'back' triangles sides in the triangle strip, approximating the custom shape of interest, by using the rendering
+			 * type, chosen by the user. */
+			face=GL_BACK;
+			glutPostRedisplay();
+			break;
 		
 		case 'T':
 
-		/* The key is 'T', thus we draw both the 'front' and the 'back' triangles sides in the triangle strip, approximating the custom shape of interest, by using the
-		 * rendering type, chosen by the user. */
-		face=GL_FRONT_AND_BACK;
-		glutPostRedisplay();
-		break;
+			/* The key is 'T', thus we draw both the 'front' and the 'back' triangles sides in the triangle strip, approximating the custom shape of interest, by using
+			 * the rendering type, chosen by the user. */
+			face=GL_FRONT_AND_BACK;
+			glutPostRedisplay();
+			break;
 		
 		case 't':
 
-		/* The key is 't', thus we draw both the 'front' and the 'back' triangles sides in the triangle strip, approximating the custom shape of interest, by using the
-		 * rendering type, chosen by the user. */
-		face=GL_FRONT_AND_BACK;
-		glutPostRedisplay();
-		break;
+			/* The key is 't', thus we draw both the 'front' and the 'back' triangles sides in the triangle strip, approximating the custom shape of interest, by using
+			 * the rendering type, chosen by the user. */
+			face=GL_FRONT_AND_BACK;
+			glutPostRedisplay();
+			break;
 		
 		case 'I':
 
-		/* The key is 'I', thus we render the 'filled versions' for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape of
-	 	 * interest. The user can choose separately what triangles sides must be drawn. */
-		mode=GL_FILL;
-		glutPostRedisplay();
-		break;
+			/* The key is 'I', thus we render the 'filled versions' for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape of
+		 	 * interest. The user can choose separately what triangles sides must be drawn. */
+			mode=GL_FILL;
+			glutPostRedisplay();
+			break;
 		
 		case 'i':
 
-		/* The key is 'i', thus we render the 'filled versions' for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape of
-		 * interest. The user can choose separately what triangles sides must be drawn. */
-		mode=GL_FILL;
-		glutPostRedisplay();
-		break;
+			/* The key is 'i', thus we render the 'filled versions' for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape of
+			 * interest. The user can choose separately what triangles sides must be drawn. */
+			mode=GL_FILL;
+			glutPostRedisplay();
+			break;
 		
 		case 'L':
 
-		/* The key is 'L', thus we render the 'wireframe versions' for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape of
-		 * interest. The user can choose separately what triangles sides must be drawn. */
-		mode=GL_LINE;
-		glutPostRedisplay();
-		break;
+			/* The key is 'L', thus we render the 'wireframe versions' for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape
+			 * of interest. The user can choose separately what triangles sides must be drawn. */
+			mode=GL_LINE;
+			glutPostRedisplay();
+			break;
 		
 		case 'l':
 
-		/* The key is 'l', thus we render the 'wireframe versions' for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape of
-		 * interest. The user can choose separately what triangles sides must be drawn. */
-		mode=GL_LINE;
-		glutPostRedisplay();
-		break;
+			/* The key is 'l', thus we render the 'wireframe versions' for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape
+			 * of interest. The user can choose separately what triangles sides must be drawn. */
+			mode=GL_LINE;
+			glutPostRedisplay();
+			break;
 		
 		case 'P':
 		
-		/* The key is 'P', thus we render only the vertices for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape of
-		 * interest. The user can choose separately what triangles sides must be drawn. */
-		mode=GL_POINT;
-		glutPostRedisplay();
-		break;
+			/* The key is 'P', thus we render only the vertices for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape of
+			 * interest. The user can choose separately what triangles sides must be drawn. */
+			mode=GL_POINT;
+			glutPostRedisplay();
+			break;
 		
 		case 'p':
 		
-		/* The key is 'p', thus we render only the vertices for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape of
-		 * interest. The user can choose separately what triangles sides must be drawn. */
-		mode=GL_POINT;
-		glutPostRedisplay();
-		break;
+			/* The key is 'p', thus we render only the vertices for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape of
+			 * interest. The user can choose separately what triangles sides must be drawn. */
+			mode=GL_POINT;
+			glutPostRedisplay();
+			break;
 		
 		default:
 
-    	/* Other keys are not important for us! */
-    	break;
+			/* Other keys are not important for us! */
+			break;
 	}
 }
 
