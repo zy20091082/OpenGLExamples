@@ -86,50 +86,50 @@ void manageKeys(unsigned char key, int x, int y)
 	{
 		case 'q':
 	
-		/* The key is 'q', thus we can exit from this program. */
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'q', thus we can exit from this program. */
+			cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 'Q':
 	
-		/* The key is 'Q', thus we can exit from this program. */
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'Q', thus we can exit from this program. */
+			cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 27:
 	
-		/* The key is 'Esc', thus we can exit from this program. */
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'Esc', thus we can exit from this program. */
+			cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 
 		default:
 
-    	/* Other keys are not important for us! */
-    	break;
+			/* Other keys are not important for us! */
+			break;
 	}
 }
 
@@ -145,11 +145,11 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws the <i>'filled'</i> and the <i>'wireframe versions'</i> of all triangles in 2 triangle strips (respectively, in <i>'red'</i> and in <i>'blue'</i>), that approximate the <i>'Double Square Annulus'</i> shape, in the OpenGL window of interest.
+/// This function draws the <i>'filled'</i> and the <i>'wireframe versions'</i> of all triangles in <i>'2'</i> triangle strips (respectively, in <i>'red'</i> and in <i>'blue'</i>), that approximate the <i>'Double Square Annulus'</i> shape, in the OpenGL window of interest.
 void draw()
 {
-	/* We draw the 'filled' and the 'wireframe versions' of all triangles in 2 triangle strips (respectively, in 'red' and in 'blue'), that approximate the 'Double
-	 * Square Annulus' shape, in the OpenGL window of interest. We start from the 'wireframe versions' of all triangles in the triangle strip #0 (in 'red'). */
+	/* We draw the 'filled' and the 'wireframe versions' of all triangles in '2' triangle strips (respectively, in 'red' and in 'blue'), that approximate the 'Double
+	 * Square Annulus' shape, in the OpenGL window of interest. We start from the 'wireframe versions' of all triangles in the 'Triangle Strip #0' (in 'red'). */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0,0.0,0.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
@@ -166,7 +166,7 @@ void draw()
 	glVertex3f(40,100,0);
 	glEnd();
 	
-	/* Now, we draw the 'filled versions' of all triangles in the triangle strip #0 (in 'red'). */
+	/* Now, we draw the 'filled versions' of all triangles in the 'Triangle Strip #0' (in 'red'). */
 	glColor3f(1.0,0.0,0.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
 	glBegin(GL_TRIANGLE_STRIP);
@@ -182,7 +182,7 @@ void draw()
 	glVertex3f(40,220,0);
 	glEnd();
 	
-	/* Now, we draw the 'wireframe versions' of all triangles in the triangle strip #1 (in 'blue'). */
+	/* Now, we draw the 'wireframe versions' of all triangles in the 'Triangle Strip #1' (in 'blue'). */
 	glColor3f(0.0,0.0,1.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
 	glBegin(GL_TRIANGLE_STRIP);
@@ -198,7 +198,7 @@ void draw()
 	glVertex3f(100,100,0);
 	glEnd();
 	
-	/* Now, we draw the 'filled versions' of all triangles in the triangle strip #1 (in 'blue'). */
+	/* Now, we draw the 'filled versions' of all triangles in the 'Triangle Strip #1' (in 'blue'). */
 	glColor3f(0.0,0.0,1.0);
 	glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
 	glBegin(GL_TRIANGLE_STRIP);
