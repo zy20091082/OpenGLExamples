@@ -39,16 +39,16 @@ using namespace std;
 /// The number <i>'p'</i> of the <i>'slices'</i> around the Z-axis, approximating the <i>'Hemisphere'</i> shape.
 /**
  * By construction, the 'Hemisphere' shape is approximated by a number 'p' of 'slices' around the 'z' axis (similar to the longitudinal lines). This value contains the 
- * number 'p' of longitudinal lines, and it is initially set to 'p=3', which is the minimum number of longitudinal lines in the 'Hemisphere' shape. It is increased and
- * decreased by pressing, respectively, the 'P' and the 'p' keys.
+ * number 'p' of longitudinal lines, and it is initially set to 'p=3', which is the minimum number 'p' of longitudinal lines in the 'Hemisphere' shape. The value of 'p'
+ * is increased and decreased by pressing, respectively, the 'P' and the 'p' keys.
  */
 unsigned int long_slices_num=3;
 
 /// The number <i>'q'</i> of the <i>'stacks'</i> around the Z-axis, approximating the <i>'Hemisphere'</i> shape.
 /**
  * By construction, the 'Hemisphere' shape is approximated by a number 'q' of 'stacks' around the 'z' axis (similar to the latitudinal lines). This value contains the
- * number 'q' of latitudinal lines, and it is initially set to 'q=3', which is the minimum number of latitudinal lines in the 'Hemisphere' shape. It is increased and
- * decreased by pressing, respectively, the 'Q' and the 'q' keys.
+ * number 'q' of latitudinal lines, and it is initially set to 'q=3', which is the minimum number 'q' of latitudinal lines in the 'Hemisphere' shape. The value of 'q'
+ * is increased and decreased by pressing, respectively, the 'Q' and the 'q' keys.
  */
 unsigned int lat_slices_num=3;
 
@@ -102,7 +102,7 @@ int main(int argc,char **argv)
 	cout<<"]', and for any 's' in '[ 0, 2*pi ]'."<<endl<<endl;
 	cout<<"\tHere, the 'Hemisphere' shape is approximated by a quad grid, formed by 'p' 'slices' around the Z-axis (similar to the longitudinal lines) and by 'q' ";
 	cout<<"'stacks' along the Z-axis (similar to the latitudinal lines). Specifically, the"<<endl;
-	cout<<"\t'wireframe versions' of the elements in the quad grid (in 'blue') are rendered by using the perspective projection."<<endl<<endl;
+	cout<<"\t'wireframe versions' of the quadrilaterals in the quad grid (in 'blue') are rendered by using the perspective projection."<<endl<<endl;
 	cout<<"\tIn this test, the user cannot modify the 'radius' 'R', and the 'center' '(xc,yc,zc)', since they are fixed in advance. Instead, the user can modify the ";
 	cout<<"numbers 'p' and 'q' of the longitudinal and the latitudinal slices,"<<endl;
 	cout<<"\trespectively, as well as rotate the scene along the coordinate axes. In particular, the user can:"<<endl<<endl;
