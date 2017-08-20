@@ -39,14 +39,17 @@ using namespace std;
 /**
  * These values are the coordinates for the center '(xc,yc,zc)' of the 'Sphere' shape. This latter can be:
  *
- * -) translated along any of 2 directions of the X-axis by pressing the 'left' and the 'right' (arrow) keys, respectively;
- * -) translated along any of 2 directions of the Y-axis by pressing the 'up' and the 'down' (arrow) keys, respectively.
+ * -) translated along any of '2' directions of the X-axis by pressing the 'left' and the 'right' (arrow) keys, respectively;
+ * -) translated along any of '2' directions of the Y-axis by pressing the 'up' and the 'down' (arrow) keys, respectively.
+ *
+ * These values can be resetted by pressing the 'r' key, as well as the rotation angle (see later).
  */
 float xc=0.0,yc=0.0;
 
 /// The rotation angle for rotating the <i>'Sphere'</i> shape.
 /**
- * This value indicates the angle for rotating the 'Sphere' shape along the custom axis '[1,1,1]' by pressing the 'r' key.
+ * This value indicates the angle for rotating the 'Sphere' shape along the custom axis '[1,1,1]' by pressing the ' ' key. This value can be resetted by pressing the 'r'
+ * key, as well as the coordinates for the center '(xc,yc,zc)' of the 'Sphere' shape (see before).
  */
 float Angle=0.0;
 
@@ -70,14 +73,14 @@ int main(int argc,char **argv)
 	cout<<"\tHere, the 'Sphere' shape is drawn by exploiting the 'glutWireSphere()' function, offered by the OpenGL Utility Toolkit (GLUT) package (or the FreeGLUT";
 	cout<<" package). This function approximates the 'Sphere' shape through a quad grid,"<<endl;
 	cout<<"\tformed by 'slices' around the Z-axis (similar to the longitudinal lines) and by 'stacks' along the Z-axis (similar to the latitudinal lines). ";
-	cout<<"Specifically, the 'wireframe versions' of the elements in the"<<endl;
-	cout<<"\tquad grid (in 'blue') are rendered by using the perspective projection."<<endl<<endl;
+	cout<<"Specifically, the 'wireframe versions' of the quadrilaterals in the quad grid (in"<<endl;
+	cout<<"\t'blue') are rendered by using the perspective projection."<<endl<<endl;
 	cout<<"\tHere, the user cannot modify the radius 'R, the center '(xc,yc,zc)', and the numbers of the 'slices' and the 'stacks' in the approximation of interest for";
 	cout<<"the 'Sphere' shape, since they are fixed in advance. Instead, the user"<<endl;
 	cout<<"\tcan apply several transformations to the scene, in particular, the user can:"<<endl<<endl;
-	cout<<"\t\t-) translate the center '(xc,yc,zc)' of the 'Sphere' shape along any of 2 directions of the X-axis by pressing the 'left' and the 'right' (arrow) keys, ";
-	cout<<"respectively;"<<endl;
-	cout<<"\t\t-) translate the center '(xc,yc,zc)' of the 'Sphere' shape along any of 2 directions of the Y-axis by pressing the 'up' and the 'down' (arrow) keys, ";
+	cout<<"\t\t-) translate the center '(xc,yc,zc)' of the 'Sphere' shape along any of '2' directions of the X-axis by pressing the 'left' and the 'right' (arrow) ";
+	cout<<"keys, respectively;"<<endl;
+	cout<<"\t\t-) translate the center '(xc,yc,zc)' of the 'Sphere' shape along any of '2' directions of the Y-axis by pressing the 'up' and the 'down' (arrow) keys, ";
 	cout<<"respectively;"<<endl;
 	cout<<"\t\t-) rotate the 'Sphere' shape along the custom axis '[1,1,1]' by pressing the ' ' (space) key;"<<endl;
 	cout<<"\t\t-) reset all transformations, applied to the 'Sphere' shape, by pressing the 'r' key."<<endl<<endl;
@@ -132,36 +135,36 @@ void manageSpecialKeys(int key, int x, int y)
 	{
 		case GLUT_KEY_UP:
 		
-		/* The special key is the 'up' arrow. Thus, we increase the 'yc' translation value (towards the positive y-values) and redraw the scene. */
-		yc+=0.1;
-		glutPostRedisplay();
-		break;
+			/* The special key is the 'up' arrow. Thus, we increase the 'yc' translation value (towards the positive y-values) and redraw the scene. */
+			yc+=0.1;
+			glutPostRedisplay();
+			break;
 			
 		case GLUT_KEY_DOWN:
 		
-		/* The special key is the 'down' arrow. Thus, we decrease the 'yc' translation value (towards the negative y-values) and redraw the scene. */
-		yc-=0.1;
-		glutPostRedisplay();
-		break;
+			/* The special key is the 'down' arrow. Thus, we decrease the 'yc' translation value (towards the negative y-values) and redraw the scene. */
+			yc-=0.1;
+			glutPostRedisplay();
+			break;
 			
 		case GLUT_KEY_LEFT:
 		
-		/* The special key is the 'left' arrow. Thus, we decrease the 'xc' translation value (towards the negative x-values) and redraw the scene  */
-		xc-=0.1;
-		glutPostRedisplay();
-		break;
+			/* The special key is the 'left' arrow. Thus, we decrease the 'xc' translation value (towards the negative x-values) and redraw the scene  */
+			xc-=0.1;
+			glutPostRedisplay();
+			break;
 			
 		case GLUT_KEY_RIGHT:
 		
-		/* The special key is the 'right' arrow. Thus, we increase the 'xc' translation value (towards the positive x-values) and redraw the scene. */
-		xc+=0.1;
-		glutPostRedisplay();
-		break;
+			/* The special key is the 'right' arrow. Thus, we increase the 'xc' translation value (towards the positive x-values) and redraw the scene. */
+			xc+=0.1;
+			glutPostRedisplay();
+			break;
 		
 		default:
 		
-		/* Other keys are not important for us */
-		break;
+			/* Other keys are not important for us */
+			break;
 	}
 }
 
@@ -173,66 +176,67 @@ void manageKeys(unsigned char key, int x, int y)
 	{
 		case 'q':
 	
-		/* The key is 'q', thus we can exit from this program. */
-		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'q', thus we can exit from this program. */
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 'Q':
 	
-		/* The key is 'Q', thus we can exit from this program. */
-		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'Q', thus we can exit from this program. */
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 27:
 	
-		/* The key is 'Esc', thus we can exit from this program. */
-		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'Esc', thus we can exit from this program. */
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 'r':
 
-		/* The key is 'r', thus we reset the rotation angle and the translations. */
-		xc=0;
-		yc=0;
-		Angle=0;
-		glutPostRedisplay();
-		break;
+			/* The key is 'r', thus we reset the rotation angle along the custom axis '[1,1,1]' and the translations of the center '(xc,yc,zc)' along the x- and the 
+			 * y-axis. */
+			xc=0;
+			yc=0;
+			Angle=0;
+			glutPostRedisplay();
+			break;
 		
 		case ' ':
 		
-		/* The key is ' ' (space), thus we increase the rotation angle. */
-		Angle+=10.0;
-		glutPostRedisplay();
-		break;
+			/* The key is ' ' (space), thus we increase the rotation angle along the custom axis '[1,1,1]'. */
+			Angle+=10.0;
+			glutPostRedisplay();
+			break;
 		
 		default:
 		
-		/* Other keys are not important for us */
-		break;
+			/* Other keys are not important for us */
+			break;
 	}
 }
 
