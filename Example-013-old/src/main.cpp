@@ -70,11 +70,11 @@ int main(int argc,char **argv)
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-013' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws several versions of the 'Square Annulus' shape in an OpenGL window. This shape is bounded by '2' (concentric) axis-parallel rectangles of ";
-	cout<<"different size in the same spirit of a circular crown. It is often known as"<<endl;
-	cout<<"\tthe 'rectangular' crown. Its large rectangle is called the 'external' rectangle, and other rectangle is called the 'internal' rectangle."<<endl<<endl;
+	cout<<"different size in the same spirit of a circular crown. It is often known as the"<<endl;
+	cout<<"\t'rectangular' crown. Its large rectangle is called the 'outer' rectangle, and other rectangle is called the 'inner' rectangle."<<endl<<endl;
 	cout<<"\tHere, the 'Square Annulus' shape of interest is approximated by an unique triangle strip (in 'turquoise gray') without adding any 'Steiner' point. It is ";
-	cout<<"not possible to modify the size and the position for the 'external'"<<endl;
-	cout<<"\tand the 'internal' rectangles of the 'Square Annulus' shape. Instead, the settings for rendering all triangles in the triangle strip of interest can be ";
+	cout<<"not possible to modify the size and the position for the 'outer' and the"<<endl;
+	cout<<"\t'inner' rectangles of the 'Square Annulus' shape. Instead, the settings for rendering all triangles in the triangle strip of interest can be ";
 	cout<<"modified interactively by the user as follows:"<<endl<<endl;
 	cout<<"\t\t-) only the 'front' triangles sides in the custom triangle strip are rendered by pressing the 'f' or the 'F' key. The corresponding rendering type is ";
 	cout<<"chosen by the user separately."<<endl;
