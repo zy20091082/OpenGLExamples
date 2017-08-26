@@ -4,12 +4,6 @@
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
  * Last update: August 2017
- *
- * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
- * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
- *                                                                         
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
  * main.cpp - the main function for the 'Example-043 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
@@ -39,17 +33,17 @@ using namespace std;
 /**
  * These values are the coordinates for the center '(xc,yc,zc)' of the 'Sphere' shape. This latter can be:
  *
- * -) translated along any of '2' directions of the X-axis by pressing the 'left' and the 'right' (arrow) keys, respectively;
- * -) translated along any of '2' directions of the Y-axis by pressing the 'up' and the 'down' (arrow) keys, respectively.
+ * 	-) translated along any of '2' directions of the X-axis by pressing the 'left' and the 'right' (arrow) keys, respectively;
+ * 	-) translated along any of '2' directions of the Y-axis by pressing the 'up' and the 'down' (arrow) keys, respectively.
  *
- * These values can be resetted by pressing the 'r' key, as well as the rotation angle (see later).
+ * These values can be resetted by pressing the 'r' key. This latter re-initializes also the rotation angle along the custom axis '[1,1,1]' (see later).
  */
 float xc=0.0,yc=0.0;
 
 /// The rotation angle for rotating the <i>'Sphere'</i> shape.
 /**
  * This value indicates the angle for rotating the 'Sphere' shape along the custom axis '[1,1,1]' by pressing the ' ' key. This value can be resetted by pressing the 'r'
- * key, as well as the coordinates for the center '(xc,yc,zc)' of the 'Sphere' shape (see before).
+ * key. This latter re-initializes also the coordinates for the center '(xc,yc,zc)' of the 'Sphere' shape (see before).
  */
 float Angle=0.0;
 
