@@ -30,7 +30,7 @@ using namespace std;
 
 /// This flag identifies what graphic primitive must be exploited for rendering the cloud of several 3D points in the scene.
 /**
- * This global variable may assume any of the values:
+ * The value of this global variable indicates what graphic primitive must be exploited in the scene by following these conventions:
  *
  * 	-) the 'GL_POINTS' value, used for rendering several independent 3D points (key '0');
  * 	-) the 'GL_LINES' value, used for rendering several independent lines (key '1');
