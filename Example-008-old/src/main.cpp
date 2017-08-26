@@ -56,10 +56,10 @@ int main(int argc,char **argv)
 	cout<<"\tThe rendering order of these quadrilaterals corresponds to the following viewing configurations, that can be activated upon request by the user:";
 	cout<<endl<<endl;
 	cout<<"\t\t0. the 'large' quadrilateral (in 'red') is rendered before, and the 'small' quadrilateral (in 'blue') is rendered after in the 'Viewing Configuration ";
-	cout<<"#0'. In this case, both the quadrilaterals are"<<endl<<"\t\t   visible. The 'Viewing Configuration #0' is activated upon request by pressing the '0' key.";
+	cout<<"#0'. In this case, both the quadrilaterals are visible. The 'Viewing"<<endl<<"\t\t   Configuration #0' is activated upon request by pressing the '0' key.";
 	cout<<endl<<endl;
 	cout<<"\t\t1. The 'small' quadrilateral (in 'red') is rendered before, and the 'large' quadrilateral (in 'blue') is rendered after in the 'Viewing Configuration ";
-	cout<<"#1'. In this case, only the 'large' quadrilateral"<<endl<<"\t\t   is visible. The 'Viewing Configuration #1' is activated upon request by pressing the '1' ";
+	cout<<"#1'. In this case, only the 'large' quadrilateral is visible. The 'Viewing"<<endl<<"\t\t   Configuration #1' is activated upon request by pressing the '1' ";
 	cout<<"key."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
