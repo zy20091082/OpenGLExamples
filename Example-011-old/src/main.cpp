@@ -5,12 +5,6 @@
  * 
  * Last update: August 2017
  *
- * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
- * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
- *                                                                         
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
- * 
  * main.cpp - the main function for the 'Example-011 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
 
@@ -36,11 +30,11 @@ using namespace std;
 
 /// The custom settings for choosing which side of the custom polygon must be rendered.
 /**
- * The value of this flag may be one of the following values:
+ * The value of this global variable indicates what side of the custom polygon must be rendered by following these conventions:
  * 
- * -) the 'GL_FRONT' value, used for rendering only the 'front' side of the custom polygon (press the 'f' or the 'F' key);
- * -) the 'GL_BACK' value, used for rendering only the 'back' side of the custom polygon (press the 'b' or the 'B' key);
- * -) the 'GL_FRONT_AND_BACK' value, used for rendering both the 'front' and the 'back' sides of the custom polygon (press the 't' or the 'T' key).
+ * 	-) the 'GL_FRONT' value, used for rendering only the 'front' side of the custom polygon (press the 'f' or the 'F' key);
+ * 	-) the 'GL_BACK' value, used for rendering only the 'back' side of the custom polygon (press the 'b' or the 'B' key);
+ * 	-) the 'GL_FRONT_AND_BACK' value, used for rendering both the 'front' and the 'back' sides of the custom polygon (press the 't' or the 'T' key).
  *
  * The rendering type to be exploited is chosen separately by the user.
  */
@@ -48,11 +42,11 @@ GLenum face;
 
 /// The custom settings for rendering the sides of interest in the custom polygon.
 /**
- * The value of this flag may be one of the following values:
+ * The value of this global variable indicates the rendering type for the sides of the custom polygon by following these conventions:
  *
- * -) the 'GL_POINT' value, used for rendering only the vertices for the sides of the custom polygon to be drawn (press the 'p' or the 'P' key);
- * -) the 'GL_LINE' value, used for rendering the 'wireframe versions' for the sides of the custom polygon to be drawn (press the 'l' or the 'L' key);
- * -) the 'GL_FILL' value, used for rendering the 'filled versions' for the sides of the custom polygon to be drawn (press the 'i' or the 'I' key).
+ * 	-) the 'GL_POINT' value, used for rendering only the vertices for the sides of the custom polygon to be drawn (press the 'p' or the 'P' key);
+ * 	-) the 'GL_LINE' value, used for rendering the 'wireframe versions' for the sides of the custom polygon to be drawn (press the 'l' or the 'L' key);
+ * 	-) the 'GL_FILL' value, used for rendering the 'filled versions' for the sides of the custom polygon to be drawn (press the 'i' or the 'I' key).
  *
  * The choice for what sides of the custom polygon must be drawn is performed separately by the user.
  */
@@ -70,8 +64,8 @@ int main(int argc,char **argv)
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-011' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws a custom polygon (in 'red') in an OpenGL window. It is not possible to modify the size and the position for its vertices. Instead, the settings ";
-	cout<<"for rendering the custom polygon of interest can be modified"<<endl;
-	cout<<"\tinteractively by the user as follows:"<<endl<<endl;
+	cout<<"for rendering the custom polygon of interest can be modified interactively by"<<endl;
+	cout<<"\tthe user as follows:"<<endl<<endl;
 	cout<<"\t\t-) only the 'front' side of the custom polygon is rendered by pressing the 'f' or the 'F' key. The corresponding rendering type is chosen by the user ";
 	cout<<"separately."<<endl;
 	cout<<"\t\t-) Only the 'back' side of the custom polygon is rendered by pressing the 'b' or the 'B' key. The corresponding rendering type is chosen by the user ";

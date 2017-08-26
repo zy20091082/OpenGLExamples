@@ -14,7 +14,7 @@ The <i>'Example-011 (Old Mode)'</i> Test draws a custom polygon (in <i>'red'</i>
 <tr><td>The <i>'points rendering'</i> (press the <code><i>'p'</i></code> or the <code><i>'P'</i></code> key) for the polygon of interest.</td><td>The <i>'wireframe version'</i> (press the <code><i>'l'</i></code> or the <code><i>'L'</i></code> key) for the polygon of interest.</td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example011_old_frontside_filled.png' border='1' width='456' height='470'></td>
-<td>In this case, the <i>'back'</i> side of the polygon is not rendered, due to its vertices order. In the code, these latters are enumerated in the counter-clockwise order, thus the polygon is a front-faced polygon.<p>
+<td>In this case, the <i>'back'</i> side of the polygon is not visible, due to its vertices order. In the code, these latters are enumerated in the counter-clockwise order, thus the polygon is a front-faced polygon.<p>
 
 Hence, the scene remains unchanged, when the user decides to render only the <i>'back'</i> side of the polygon.<p>This is true, even if changing the rendering type for the polygon (points, wireframe, filled).</td>
 </tr>
