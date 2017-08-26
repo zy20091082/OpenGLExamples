@@ -28,7 +28,7 @@ using namespace std;
 
 #endif
 
-/// These global variables define the orthographic view of interest to be applied in the scene.
+/// These variables define the orthographic view of interest to be applied in the scene.
 /*
  * -) the 'left_value' global variable indicates the minimum value of the range along the 'x'-axis;
  * -) the 'right_value' global variable indicates the maximum value of the range along the 'x'-axis;
@@ -41,7 +41,7 @@ GLfloat left_value, right_value, bottom_value, top_value, near_value, far_value;
 
 /// The orthographic projection to be applied for rendering the scene.
 /*
- * This value may be one of the following values:
+ * The value of this global variable indicates what orthographic viewing box must be applied to the scene by following these conventions:
  *
  * -) 0: it corresponds to the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', activated by pressing the '0' key (the 'Viewing Configuration #0');
  * -) 1: it corresponds to the orthographic viewing box '[-100,100]' x '[-100,100]' x '[-1,1]', activated by pressing the '1' key (the 'Viewing Configuration #1');

@@ -41,7 +41,7 @@ GLfloat left_value, right_value, bottom_value, top_value, near_value, far_value;
 
 /// The orthographic view of interest to be applied in the scene.
 /**
- * This value indicates what orthographic view must be applied to the scene by following these conventions:
+ * The value of this global variable indicates what orthographic view must be applied to the scene by following these conventions:
  *
  * -) 0: it corresponds to the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', activated by pressing the '0' key (the 'Viewing Configuration #0');
  * -) 1: it corresponds to the ortographic viewing box '[0,200]' x '[0,200]' x '[-1,1]', activated by pressing the '1' key (the 'Viewing Configuration #1').

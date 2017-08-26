@@ -30,7 +30,7 @@ using namespace std;
 
 /// This flag identifies what viewing configuration must be applied to the scene.
 /**
- * It may assume these values:
+ * The value of this global variable indicates what 'viewing configuration' must be applied to the scene by following these conventions:
  *
  * -) '0' for activating the 'Viewing Configuration #0'. Here, the 'large' quadrilateral is rendered before, but it is partially hidden by the 'small' quadrilateral.
  * -) '1' for activating the 'Viewing Configuration #1'. Here, the 'small' quadrilateral is rendered before, but it is completely hidden by the 'large' quadrilateral.
