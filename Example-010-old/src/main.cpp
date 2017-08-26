@@ -4,12 +4,6 @@
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
  * Last update: August 2017
- *
- * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
- * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
- *                                                                         
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
  * main.cpp - the main function for the 'Example-010 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
@@ -36,14 +30,16 @@ using namespace std;
 
 /// This flag identifies what graphic primitive must be exploited for rendering the cloud of several 3D points in the scene.
 /**
- * It may be one of the following values:
+ * This global variable may assume any of the values:
  *
- * -) the 'GL_POINTS' value, used for rendering several independent 3D points;
- * -) the 'GL_LINES' value, used for rendering several independent lines;
- * -) the 'GL_LINE_STRIP' value, used for rendering an open line strip;
- * -) the 'GL_LINE_LOOP' value, used for rendering a closed line strip;
- * -) the 'GL_TRIANGLES' value, used for rendering several triangles;
- * -) the 'GL_POLYGON' value, used for rendering a unique polygon.
+ * 	-) the 'GL_POINTS' value, used for rendering several independent 3D points (key '0');
+ * 	-) the 'GL_LINES' value, used for rendering several independent lines (key '1');
+ * 	-) the 'GL_LINE_STRIP' value, used for rendering an open line strip (key '2');
+ * 	-) the 'GL_LINE_LOOP' value, used for rendering a closed line strip (key '3');
+ * 	-) the 'GL_TRIANGLES' value, used for rendering several triangles (key '4');
+ * 	-) the 'GL_POLYGON' value, used for rendering a unique polygon (key '5').
+ *
+ * The user can choose what graphic primitive must be exploited by pressing, respectively, the '0' ... '5' keys.
  */
 int rendering;
 
