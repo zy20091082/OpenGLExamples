@@ -5,12 +5,6 @@
  * 
  * Last update: August 2017
  *
- * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
- * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
- *                                                                         
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
- * 
  * main.cpp - the main function for the 'Example-018 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
 
@@ -43,7 +37,7 @@ int inconvex;
 /// This boolean flag is useful for completing the textual interface.
 bool eol=false;
 
-/// The 3D coordinates of the points in the convex convex <i>'Polygon #0'</i> (in <i>'red'</i>).
+/// The 3D coordinates of the points in the convex <i>'Polygon #0'</i> (in <i>'red'</i>).
 float convex_points[][3]={
 			{ 20.0,20.0,0.0},
 			{ 50,20,0 },
@@ -52,8 +46,8 @@ float convex_points[][3]={
 			{ 20,80,0 }
 	};
 
-/// The 3D coordinates of the points in the concave convex <i>'Polygon #1'</i> (in <i>'blue'</i>).
-float not_convex_points[][3]={
+/// The 3D coordinates of the points in the concave <i>'Polygon #1'</i> (in <i>'blue'</i>).
+float concave_points[][3]={
 			{20,120,0},
 			{80,120,0},
 			{40,140,0},
@@ -71,10 +65,11 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-018' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws the 'filled' and the 'wireframe versions' of several convex (in 'red') and concave (in 'blue') polygons in an OpenGL window. This test also ";
-	cout<<"provides a very basic interaction mechanism with the user, which can cycle the"<<endl;
-	cout<<"\tvertices order in the polygons of interest by pressing the '+' key. While performing these operations, there may be 'strange' situations, expecially when";
-	cout<<" cycling the vertices order in the 'filled versions' of the concave polygons."<<endl<<endl;
+	cout<<"\tIt draws the 'filled' and the 'wireframe versions' of both the convex 'Polygon #0' (in 'red') and the concave 'Polygon #1' (in 'blue') in an OpenGL ";
+	cout<<"window. This test also provides a very basic interaction mechanism with the user,"<<endl;
+	cout<<"\twhich can cycle the vertices order in the polygons of interest by pressing the '+' key. While performing these operations, there may be 'strange' ";
+	cout<<"situations, expecially when cycling the vertices order in the 'filled version' of the"<<endl;
+	cout<<"\tconcave 'Polygon #1'."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 
@@ -145,7 +140,7 @@ void draw()
 	for(int k=0;k<4;k++) 
    	{ 
    		jj=(k+pp)%4;
-   		glVertex3f(not_convex_points[jj][0],not_convex_points[jj][1],not_convex_points[jj][2]);
+   		glVertex3f(concave_points[jj][0],concave_points[jj][1],concave_points[jj][2]);
    	}
 	
 	/* We draw the 'wireframe version' of the concave 'Polygon #1' (in 'blue'). */
@@ -157,7 +152,7 @@ void draw()
 	for(int k=0;k<4;k++) 
    	{ 
    		jj=(k+pp)%4;
-   		glVertex3f(not_convex_points[jj][0]+100,not_convex_points[jj][1],not_convex_points[jj][2]);
+   		glVertex3f(concave_points[jj][0]+100,concave_points[jj][1],concave_points[jj][2]);
    	}
 	
 	/* If we arrive here, then all is ok! */
@@ -232,7 +227,9 @@ void manageKeys(unsigned char key, int x, int y)
 			iconvex=iconvex+1;
 			inconvex=inconvex+1;
 			eol=true;
-			cout<<"\tThe vertices for both the 'filled' and the 'wireframe versions' of several convex and concave polygons are cycled in advance."<<endl;
+			cout<<"\tThe vertices for both the 'filled' and the 'wireframe versions' of the convex 'Polygon #0' and the concave 'Polygon #1' are cycled in advance.";
+			cout<<endl;
+			cout.flush();
 			glutPostRedisplay();		
 			break;
 
