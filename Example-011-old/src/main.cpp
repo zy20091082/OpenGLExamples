@@ -30,7 +30,7 @@ using namespace std;
 
 /// The custom settings for choosing which side of the custom polygon must be rendered.
 /**
- * The value of this global variable indicates what side of the custom polygon must be rendered by following these conventions:
+ * The value of this global variable indicates which side of the custom polygon must be rendered by following these conventions:
  * 
  * 	-) the 'GL_FRONT' value, used for rendering only the 'front' side of the custom polygon (press the 'f' or the 'F' key);
  * 	-) the 'GL_BACK' value, used for rendering only the 'back' side of the custom polygon (press the 'b' or the 'B' key);
