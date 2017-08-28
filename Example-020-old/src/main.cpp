@@ -5,12 +5,6 @@
  * 
  * Last update: August 2017
  *
- * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
- * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
- *                                                                         
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
- * 
  * main.cpp - the main function for the 'Example-020 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
 
@@ -45,14 +39,14 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-020' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws '2' versions of the 'Double Square Annulus' shape in an OpenGL window. This shape is bounded by an 'external' axis-parallel rectangle, and by '2'";
-	cout<<" 'internal' axis-parallel rectangles, entirely contained in the 'external'"<<endl;
-	cout<<"\trectangle. Broadly speaking, any 'Double Square Annulus' shape is the union of '2' 'Square Annulus' shapes, connected along one side of their 'external' ";
-	cout<<"rectangles. Recall that any 'Square Annulus' shape is contained between '2'"<<endl;
-	cout<<"\t(concentric) axis-parallel rectangles of different size."<<endl<<endl;
+	cout<<"\tIt draws '2' versions of the 'Double Square Annulus' shape in an OpenGL window. This shape is bounded by an 'outer' axis-parallel rectangle, and by '2'";
+	cout<<" 'inner' axis-parallel rectangles, entirely contained in the 'outer' rectangle."<<endl;
+	cout<<"\tBroadly speaking, any 'Double Square Annulus' shape is the union of '2' 'Square Annulus' shapes, connected along one side of their 'outer' ";
+	cout<<"rectangles. Recall that any 'Square Annulus' shape is contained between '2' (concentric)"<<endl;
+	cout<<"\taxis-parallel rectangles of different size."<<endl<<endl;
 	cout<<"\tHere, the 'Double Square Annulus' shape of interest is approximated by only one triangle strip (in 'red'), where a bunch of 'Steiner' points are added in ";
-	cout<<"order to make this possible. Specifically, this test draws the 'filled'"<<endl;
-	cout<<"\tand the 'wireframe versions' of all triangles in the triangle strip, just mentioned."<<endl<<endl;
+	cout<<"order to make this possible. Specifically, this test draws the 'filled' and"<<endl;
+	cout<<"\tthe 'wireframe versions' of all triangles in the triangle strip, just mentioned."<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user. Here, the window of interest can be closed by pressing any among the 'Q', the ";
 	cout<<"'q', and the 'Esc' keys."<<endl<<endl;
 
@@ -96,50 +90,50 @@ void manageKeys(unsigned char key, int x, int y)
 	{
 		case 'q':
 	
-		/* The key is 'q', thus we can exit from this program. */
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'q', thus we can exit from this program. */
+			cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 'Q':
 	
-		/* The key is 'Q', thus we can exit from this program. */
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'Q', thus we can exit from this program. */
+			cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 27:
 	
-		/* The key is 'Esc', thus we can exit from this program. */
-		cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-		cout << "\tPress the RETURN key to finish ... ";
-		cin.get();
-		#ifndef _MSC_VER
-			cout << endl;
+			/* The key is 'Esc', thus we can exit from this program. */
+			cout<<"\tThis program is closing correctly ... "<<endl<<endl;
+			cout << "\tPress the RETURN key to finish ... ";
+			cin.get();
+			#ifndef _MSC_VER
+				cout << endl;
+				cout.flush();
+			#endif
 			cout.flush();
-		#endif
-		cout.flush();
-		exit(EXIT_SUCCESS);
-		break;
+			exit(EXIT_SUCCESS);
+			break;
 
 		default:
 
-    	/* Other keys are not important for us! */
-    	break;
+			/* Other keys are not important for us! */
+			break;
 	}
 }
 
