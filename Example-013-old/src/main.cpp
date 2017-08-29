@@ -28,27 +28,27 @@ using namespace std;
 
 #endif
 
-/// The custom settings for choosing what triangles sides in the custom triangle strip must be rendered.
+/// The custom settings for choosing what triangles sides in the triangle strip of interest must be rendered.
 /**
- * The value of this flag may be one of the following values:
+ * The value of this global variable indicates what triangles sides in the triangle strip of interest must be rendered by following these conventions:
  * 
- * -) the 'GL_FRONT' value, used for rendering only the 'front' triangles sides in the custom triangle strip (press the 'f' or the 'F' key);
- * -) the 'GL_BACK' value, used for rendering only the 'back' triangles sides in the custom triangle strip (press the 'b' or the 'B' key);
- * -) the 'GL_FRONT_AND_BACK' value, used for rendering both the 'front' and the 'back' triangles sides in the custom triangle strip (press the 't' or the 'T' key).
+ * 	-) the 'GL_FRONT' value, used for rendering only the 'front' triangles sides in the triangle strip of interest (press the 'f' or the 'F' key);
+ * 	-) the 'GL_BACK' value, used for rendering only the 'back' triangles sides in the triangle strip of interest (press the 'b' or the 'B' key);
+ * 	-) the 'GL_FRONT_AND_BACK' value, used for rendering both the 'front' and the 'back' triangles sides in the triangle strip of interest (press the 't' or the 'T' key).
  *
  * The rendering type to be exploited is chosen separately by the user.
  */
 GLenum face;
 
-/// The custom settings for rendering the triangles sides of interest in the custom triangle strip.
+/// The custom settings for rendering the triangles sides of interest in the triangle strip of interest.
 /**
- * The value of this flag may be one of the following values:
+ * The value of this global variable indicates the rendering type of the triangles sides in the triangle strip of interest by following these conventions:
  *
- * -) the 'GL_POINT' value, used for rendering only the vertices for the triangles sides in the custom triangle strip to be drawn (press the 'p' or the 'P' key);
- * -) the 'GL_LINE' value, used for rendering the 'wireframe versions' for the triangles sides in the custom triangle strip to be drawn (press the 'l' or the 'L' key);
- * -) the 'GL_FILL' value, used for rendering the 'filled versions' for the triangles sides in the custom triangle strip to be drawn (press the 'i' or the 'I' key).
+ * 	-) the 'GL_POINT' value, used for rendering only the vertices of the triangles sides in the triangle strip to be drawn (press the 'p' or the 'P' key);
+ * 	-) the 'GL_LINE' value, used for rendering the 'wireframe versions' of the triangles sides in the triangle strip to be drawn (press the 'l' or the 'L' key);
+ * 	-) the 'GL_FILL' value, used for rendering the 'filled versions' of the triangles sides in the triangle strip to be drawn (press the 'i' or the 'I' key).
  *
- * The choice for what triangles sides in the custom triangle strip must be drawn is performed separately by the user.
+ * The choice for what triangles sides in the triangle strip of interest must be drawn is performed separately by the user.
  */
 GLenum mode;
 
@@ -70,21 +70,21 @@ int main(int argc,char **argv)
 	cout<<"not possible to modify the size and the position for the 'outer' and the"<<endl;
 	cout<<"\t'inner' rectangles of the 'Square Annulus' shape. Instead, the settings for rendering all triangles in the triangle strip of interest can be ";
 	cout<<"modified interactively by the user as follows:"<<endl<<endl;
-	cout<<"\t\t-) only the 'front' triangles sides in the custom triangle strip are rendered by pressing the 'f' or the 'F' key. The corresponding rendering type is ";
-	cout<<"chosen by the user separately."<<endl;
-	cout<<"\t\t-) Only the 'back' triangles sides in the custom triangle strip are rendered by pressing the 'b' or the 'B' key. The corresponding rendering type is ";
-	cout<<"chosen by the user separately."<<endl;
-	cout<<"\t\t-) Both the 'front' and the 'back' triangles sides in the custom triangle strip are rendered by pressing the 't' or the 'T' key. The corresponding ";
+	cout<<"\t\t-) only the 'front' triangles sides in the triangle strip of interest are rendered by pressing the 'f' or the 'F' key. The corresponding rendering type ";
+	cout<<"is chosen by the user separately."<<endl;
+	cout<<"\t\t-) Only the 'back' triangles sides in the triangle strip of interest are rendered by pressing the 'b' or the 'B' key. The corresponding rendering type ";
+	cout<<"is chosen by the user separately."<<endl;
+	cout<<"\t\t-) Both the 'front' and the 'back' triangles sides in the triangle strip of interest are rendered by pressing the 't' or the 'T' key. The corresponding ";
 	cout<<"rendering type is chosen by the user separately."<<endl;
-	cout<<"\t\t-) Only the vertices of the triangles sides in the custom triangle strip to be drawn are rendered by pressing the 'p' or the 'P' key. The user can ";
+	cout<<"\t\t-) Only the vertices of the triangles sides in the triangle strip of interest to be drawn are rendered by pressing the 'p' or the 'P' key. The user can ";
 	cout<<"choose separately what triangles sides must be drawn."<<endl;
-	cout<<"\t\t-) The 'wireframe versions' of the triangles sides in the custom triangle strip to be drawn are rendered by pressing the 'l' or the 'L' key. The user ";
-	cout<<"can choose separately what triangles sides must be drawn."<<endl;
-	cout<<"\t\t-) The 'filled versions' of the triangles sides in the custom triangle strip to be drawn are rendered by pressing the 'i' or the 'I' key. The user can";
-	cout<<" choose separately what triangles sides must be drawn."<<endl<<endl;
+	cout<<"\t\t-) The 'wireframe versions' of the triangles sides in the triangle strip of interest to be drawn are rendered by pressing the 'l' or the 'L' key. The ";
+	cout<<"user can choose separately what triangles sides must be drawn."<<endl;
+	cout<<"\t\t-) The 'filled versions' of the triangles sides in the triangle strip of interest to be drawn are rendered by pressing the 'i' or the 'I' key. The user ";
+	cout<<"can choose separately what triangles sides must be drawn."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
-	
+
 	/* If we arrive here, then we can draw the triangle strip of interest, as requested by the user! */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
@@ -175,112 +175,108 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 'F':
 
-			/* The key is 'F', thus we draw only the 'front' triangles sides in the triangle strip, approximating the custom shape of interest, by using the rendering
-			 * type, chosen by the user. */
+			/* The key is 'F', thus we draw only the 'front' triangles sides in the triangle strip of interest by using the rendering type, chosen by the user. */
 			face=GL_FRONT;
 			glutPostRedisplay();
 			break;
 		
 		case 'f':
 
-			/* The key is 'f', thus we draw only the 'front' triangles sides in the triangle strip, approximating the custom shape of interest, by using the rendering
-			 * type, chosen by the user. */
+			/* The key is 'f', thus we draw only the 'front' triangles sides in the triangle strip of interest by using the rendering type, chosen by the user. */
 			face=GL_FRONT;
 			glutPostRedisplay();
 			break;
 		
 		case 'B':
 
-			/* The key is 'B', thus we draw only the 'back' triangles sides in the triangle strip, approximating the custom shape of interest, by using the rendering
-			 * type, chosen by the user. */
+			/* The key is 'B', thus we draw only the 'back' triangles sides in the triangle strip of interest by using the rendering type, chosen by the user. */
 			face=GL_BACK;
 			glutPostRedisplay();
 			break;
 		
 		case 'b':
 
-			/* The key is 'b', thus we draw only the 'back' triangles sides in the triangle strip, approximating the custom shape of interest, by using the rendering
-			 * type, chosen by the user. */
+			/* The key is 'b', thus we draw only the 'back' triangles sides in the triangle strip of interest by using the rendering type, chosen by the user. */
 			face=GL_BACK;
 			glutPostRedisplay();
 			break;
 		
 		case 'T':
 
-			/* The key is 'T', thus we draw both the 'front' and the 'back' triangles sides in the triangle strip, approximating the custom shape of interest, by using
-			 * the rendering type, chosen by the user. */
+			/* The key is 'T', thus we draw both the 'front' and the 'back' triangles sides in the triangle strip of interest by using the rendering type, chosen by the
+			 * user. */
 			face=GL_FRONT_AND_BACK;
 			glutPostRedisplay();
 			break;
 		
 		case 't':
 
-			/* The key is 't', thus we draw both the 'front' and the 'back' triangles sides in the triangle strip, approximating the custom shape of interest, by using
-			 * the rendering type, chosen by the user. */
+			/* The key is 't', thus we draw both the 'front' and the 'back' triangles sides in the triangle strip of interest by using the rendering type, chosen by the
+			 * user. */
 			face=GL_FRONT_AND_BACK;
 			glutPostRedisplay();
 			break;
 		
 		case 'I':
 
-			/* The key is 'I', thus we render the 'filled versions' for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape of
-		 	 * interest. The user can choose separately what triangles sides must be drawn. */
+			/* The key is 'I', thus we render the 'filled versions' of the triangles sides in the triangle strip of interest to be drawn. The user can choose separately
+			 * what triangles sides in the triangle strip of interest must be drawn. */
 			mode=GL_FILL;
 			glutPostRedisplay();
 			break;
 		
 		case 'i':
 
-			/* The key is 'i', thus we render the 'filled versions' for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape of
-			 * interest. The user can choose separately what triangles sides must be drawn. */
+			/* The key is 'i', thus we render the 'filled versions' of the triangles sides in the triangle strip of interest to be drawn. The user can choose separately
+			 * what triangles sides in the triangle strip of interest must be drawn. */
 			mode=GL_FILL;
 			glutPostRedisplay();
 			break;
 		
 		case 'L':
 
-			/* The key is 'L', thus we render the 'wireframe versions' for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape
-			 * of interest. The user can choose separately what triangles sides must be drawn. */
+			/* The key is 'L', thus we render the 'wireframe versions' of the triangles sides in the triangle strip of interest to be drawn. The user can choose
+			 * separately what triangles sides in the triangle strip of interest must be drawn. */
 			mode=GL_LINE;
 			glutPostRedisplay();
 			break;
 		
 		case 'l':
 
-			/* The key is 'l', thus we render the 'wireframe versions' for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape
-			 * of interest. The user can choose separately what triangles sides must be drawn. */
+			/* The key is 'l', thus we render the 'wireframe versions' of the triangles sides in the triangle strip of interest to be drawn. The user can choose
+			 * separately what triangles sides in the triangle strip of interest must be drawn. */
 			mode=GL_LINE;
 			glutPostRedisplay();
 			break;
 		
 		case 'P':
 		
-			/* The key is 'P', thus we render only the vertices for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape of
-			 * interest. The user can choose separately what triangles sides must be drawn. */
+			/* The key is 'P', thus we render only the vertices in the triangles sides in the triangle strip of interest to be drawn. The user can choose separately what
+		 	 * triangles sides in the triangle strip of interest must be drawn. */
 			mode=GL_POINT;
 			glutPostRedisplay();
 			break;
 		
 		case 'p':
 		
-			/* The key is 'p', thus we render only the vertices for the sides to be drawn of all triangles in the triangle strip, approximating the custom shape of
-			 * interest. The user can choose separately what triangles sides must be drawn. */
+			/* The key is 'p', thus we render only the vertices in the triangles sides in the triangle strip of interest to be drawn. The user can choose separately what
+		 	 * triangles sides in the triangle strip of interest must be drawn. */
 			mode=GL_POINT;
 			glutPostRedisplay();
 			break;
 		
 		default:
 
-			/* Other keys are not important for us! */
-			break;
+    		/* Other keys are not important for us! */
+    		break;
 	}
 }
 
-/// This function draws all triangles in the triangle strip (in <i>'turquoise gray'</i>), approximating a custom shape, in the OpenGL window of interest by using the rendering preferences, chosen by the user.
+/// This function draws the triangle strip (in <i>'turquoise gray'</i>), approximating the <i>'Square Annulus'</i> shape, in the OpenGL window of interest by using the rendering preferences, chosen by the user.
 void draw()
 {
-	/* We draw a triangle strip (in 'turquoise gray'), approximating a custom shape, in the OpenGL window of interest by using the rendering preferences, chosen by 
-	 * the user. */
+	/* We draw the triangle strip (in 'turquoise gray'), approximating the 'Square Annulus' shape, in the OpenGL window of interest by using the rendering preferences,
+	 * chosen by the user. */
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(10.0);
 	glLineWidth(2.0);
@@ -301,31 +297,27 @@ void draw()
 	glFlush();
 	if(face==GL_FRONT)
 	{
-		/* We must draw only the 'front' triangles sides in the custom triangle strip by using the rendering type, chosen by the user. */
-		if(mode==GL_POINT) cout<<"\tOnly the vertices of the 'front' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
-		if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' of the 'front' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
-		if(mode==GL_FILL) cout<<"\tThe 'filled versions' of the 'front' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
-		cout.flush();
+		/* We must draw only the 'front' triangles sides in the triangle strip of interest by using the rendering type, chosen by the user. */
+		if(mode==GL_POINT) cout<<"\tOnly the vertices of the 'front' triangles sides in the triangle strip of interest are currently rendered in the scene."<<endl;
+		if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' of the 'front' triangles sides in the triangle strip of interest are currently rendered in the scene."<<endl;
+		if(mode==GL_FILL) cout<<"\tThe 'filled versions' of the 'front' triangles sides in the triangle strip of interest are currently rendered in the scene."<<endl;
 	}
 	else if(face==GL_BACK)
 	{
-		/* We must draw only the 'back' triangles sides in the custom triangle strip by using the rendering type, chosen by the user. */
-		if(mode==GL_POINT) cout<<"\tOnly the vertices of the 'back' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
-		if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' of the 'back' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
-		if(mode==GL_FILL) cout<<"\tThe 'filled versions' of the 'back' triangles sides in the custom triangle strip are currently rendered in the scene."<<endl;
-		cout.flush();
+		/* We must draw only the 'back' triangles sides in the triangle strip of interest by using the rendering type, chosen by the user. */
+		if(mode==GL_POINT) cout<<"\tOnly the vertices of the 'back' triangles sides in the triangle strip of interest are currently rendered in the scene."<<endl;
+		if(mode==GL_LINE) cout<<"\tThe 'wireframe versions' of the 'back' triangles sides in the triangle strip of interest are currently rendered in the scene."<<endl;
+		if(mode==GL_FILL) cout<<"\tThe 'filled versions' of the 'back' triangles sides in the triangle strip of interest are currently rendered in the scene."<<endl;
 	}
 	else
 	{
-		/* We must draw both the 'front' and the 'back' triangles sides in the custom triangle strip by using the rendering type, chosen by the user. */
+		/* We must draw both the 'front' and the 'back' triangles sides in the triangle strip of interest by using the rendering type, chosen by the user. */
 		if(mode==GL_POINT) 
-		cout<<"\tOnly the vertices of both the 'front' and the 'back' triangles sides in the custom triangle strip are currently rendered in the scene.";
+		cout<<"\tOnly the vertices of both the 'front' and the 'back' triangles sides in the triangle strip of interest are currently rendered in the scene."<<endl;
 		if(mode==GL_LINE) 
-		cout<<"\tThe 'wireframe versions' of both the 'front' and the 'back' triangles sides in the custom triangle strip are currently rendered in the scene.";
-		if(mode==GL_FILL)
-		cout<<"\tThe 'filled versions' of both the 'front' and the 'back' sides for triangles sides in the custom triangle strip are currently rendered in the scene.";
-		cout<<endl;
-		cout.flush();
-	}	
+		cout<<"\tThe 'wireframe versions' of both the 'front' and the 'back' triangles sides in the triangle strip of interest are currently rendered in the scene."<<endl;
+		if(mode==GL_FILL) 
+		cout<<"\tThe 'filled versions' of both the 'front' and the 'back' triangles sides in the triangle strip of interest are currently rendered in the scene."<<endl;
+	}
 }
 
