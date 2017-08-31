@@ -4,12 +4,6 @@
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
  * Last update: August 2017
- *
- * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
- * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
- *                                                                         
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
  * 
  * main.cpp - the main function for the 'Example-045 (Old Mode)' Test.
  ********************************************************************************************************************************************************/
@@ -38,45 +32,48 @@ using namespace std;
 
 /// The number <i>'p'</i> of the <i>'slices'</i> around the Z-axis, approximating the <i>'Hemisphere'</i> shape.
 /**
- * By construction, the 'Hemisphere' shape is approximated by a number 'p' of 'slices' around the 'z' axis (similar to the longitudinal lines). This value contains the 
- * number 'p' of longitudinal lines, and it is initially set to 'p=3', which is the minimum number 'p' of longitudinal lines in the 'Hemisphere' shape. The value of 'p'
- * is increased and decreased by pressing, respectively, the 'P' and the 'p' keys.
+ * By construction, the 'Hemisphere' shape is approximated by a number 'p' of 'slices' around the 'z' axis (similar to the longitudinal lines). This global variable
+ * contains the number 'p' of longitudinal lines, and it is initially set to 'p=3', which is the minimum number 'p' of longitudinal lines in the 'Hemisphere' shape. The
+ * value of 'p' is increased and decreased by pressing, respectively, the 'P' and the 'p' keys. By construction, it is not possible to have 'p<3' (as mentioned above).
  */
 unsigned int long_slices_num=3;
 
 /// The number <i>'q'</i> of the <i>'stacks'</i> around the Z-axis, approximating the <i>'Hemisphere'</i> shape.
 /**
- * By construction, the 'Hemisphere' shape is approximated by a number 'q' of 'stacks' around the 'z' axis (similar to the latitudinal lines). This value contains the
- * number 'q' of latitudinal lines, and it is initially set to 'q=3', which is the minimum number 'q' of latitudinal lines in the 'Hemisphere' shape. The value of 'q'
- * is increased and decreased by pressing, respectively, the 'Q' and the 'q' keys.
+ * By construction, the 'Hemisphere' shape is approximated by a number 'q' of 'stacks' around the 'z' axis (similar to the latitudinal lines). This global variable 
+ * contains the number 'q' of latitudinal lines, and it is initially set to 'q=3', which is the minimum number 'q' of latitudinal lines in the 'Hemisphere' shape. The
+ * value of 'q' is increased and decreased by pressing, respectively, the 'Q' and the 'q' keys. By construction, it is not possible to have 'q<3' (as mentioned above).
  */
 unsigned int lat_slices_num=3;
 
 /// The radius <i>'R'</i> of the <i>'Hemisphere'</i> shape.
 /**
- * This value is the radius 'R' of the 'Hemisphere' shape, and it cannot be modified by the user. It is fixed in advance as 'R'=5, and it is the distance among the 
- * points of the 'Hemisphere' shape and its center '(0,0,0)'.
+ * This global variable contains the value of the radius 'R' for the 'Hemisphere' shape, and it cannot be modified by the user. It is fixed in advance as 'R'=5, and it
+ * is the distance among the points of the 'Hemisphere' shape and its center '(0,0,0)'.
  */
 float radius=5.0;
 
 /// The rotation angle <i>'Rx'</i> for rotating the <i>'Hemisphere'</i> shape along the x-axis.
 /**
- * This value indicates the angle 'Rx' for rotating the 'Hemisphere' shape along the x-axis '[1,0,0]'. This rotation angle is increased by pressing the 'X' key, and 
- * decreased by pressing the 'x' key.
+ * This global variable contains the value of the angle 'Rx' for rotating the 'Hemisphere' shape along the x-axis '[1,0,0]'. The rotation angle 'Rx' is increased by
+ * pressing the 'X' key, and decreased by pressing the 'x' key. The value of the angle 'Rx' (i.e, the value of this global variable) is automatically limited within the
+ * range '[0,360]'.
  */
 float Xangle=0.0;
 
 /// The rotation angle <i>'Ry'</i> for rotating the <i>'Hemisphere'</i> shape along the y-axis.
 /**
- * This value indicates the angle 'Ry' for rotating the 'Hemisphere' shape along the y-axis '[0,1,0]'. This rotation angle is increased by pressing the 'Y' key, and
- * decreased by pressing the 'y' key.
+ * This global variable contains the value of the angle 'Ry' for rotating the 'Hemisphere' shape along the y-axis '[0,1,0]'. The rotation angle 'Ry' is increased by
+ * pressing the 'Y' key, and decreased by pressing the 'y' key. The value of the angle 'Ry' (i.e, the value of this global variable) is automatically limited within the
+ * range '[0,360]'.
  */
 float Yangle=0.0;
 
 /// The rotation angle <i>'Rz'</i> for rotating the <i>'Hemisphere'</i> shape along the z-axis.
 /**
- * This value indicates the angle 'Rz' for rotating the 'Hemisphere' shape along the z-axis '[0,0,1]'. This rotation angle is increased by pressing the 'Z' key, and
- * decreased by pressing the 'z' key.
+ * This global variable contains the value of the angle 'Rz' for rotating the 'Hemisphere' shape along the z-axis '[0,0,1]'. The rotation angle 'Rz' is increased by
+ * pressing the 'Z' key, and decreased by pressing the 'z' key. The value of the angle 'Rz' (i.e, the value of this global variable) is automatically limited within the
+ * range '[0,360]'.
  */
 float Zangle=0.0;
 
@@ -100,23 +97,29 @@ int main(int argc,char **argv)
 	cout<<"'(xc,yc,zc)', such that its points are expressed as follows:"<<endl<<endl;
 	cout<<"\tx(r,s) = xc + R * cos(r) * cos(s), y(r,s) = yc + R * sin(r), z(r,s) = zc + R * cos(r) * sin(s)"<<endl<<endl<<"\tfor any 'R>0', for any 'r' in '[ 0, pi/2 ";
 	cout<<"]', and for any 's' in '[ 0, 2*pi ]'."<<endl<<endl;
-	cout<<"\tHere, the 'Hemisphere' shape is approximated by a quad grid, formed by 'p' 'slices' around the Z-axis (similar to the longitudinal lines) and by 'q' ";
-	cout<<"'stacks' along the Z-axis (similar to the latitudinal lines). Specifically, the"<<endl;
-	cout<<"\t'wireframe versions' of the quadrilaterals in the quad grid (in 'blue') are rendered by using the perspective projection."<<endl<<endl;
-	cout<<"\tIn this test, the user cannot modify the 'radius' 'R', and the 'center' '(xc,yc,zc)', since they are fixed in advance. Instead, the user can modify the ";
-	cout<<"numbers 'p' and 'q' of the longitudinal and the latitudinal slices,"<<endl;
-	cout<<"\trespectively, as well as rotate the scene along the coordinate axes. In particular, the user can:"<<endl<<endl;
+	cout<<"\tHere, the 'Hemisphere' shape is approximated by a quad grid, consisting of 'p' 'slices' around the Z-axis (similar to the longitudinal lines) and of";
+	cout<<" 'q' 'stacks' along the Z-axis (similar to the latitudinal lines). By construction,"<<endl;
+	cout<<"\t'p>=3' and 'q>=3'. Specifically, the 'wireframe versions' of all quadrilaterals in the quad grid of interest (in 'blue') are rendered by using the ";
+	cout<<"perspective projection."<<endl<<endl;
+	cout<<"\tIn this test, the user cannot modify the 'radius' 'R', and the 'center' '(xc,yc,zc)' of the 'Hemisphere' shape, since they are fixed in advance. Instead,";
+	cout<<" the user can modify the numbers 'p' and 'q' of the longitudinal and the"<<endl;
+	cout<<"\tlatitudinal slices, respectively, as well as rotate the scene along the coordinate axes. In particular, the user can:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'p' of the longitudinal slices by pressing the 'P' key;"<<endl;
-	cout<<"\t\t-) decrease the number 'p' of the longitudinal slices by pressing the 'p' key;"<<endl;
-	cout<<"\t\t-) increase the number 'q' of the latitudinal slices by pressing the 'Q' key;"<<endl;
-	cout<<"\t\t-) decrease the number 'q' of the latitudinal slices by pressing the 'q' key;"<<endl;
-	cout<<"\t\t-) increase the rotation angle 'Rx' along the 'x'-axis by pressing the 'X' key;"<<endl;
-	cout<<"\t\t-) decrease the rotation angle 'Rx' along the 'x'-axis by pressing the 'x' key;"<<endl;
-	cout<<"\t\t-) increase the rotation angle 'Ry' along the 'y'-axis by pressing the 'Y' key;"<<endl;
-	cout<<"\t\t-) decrease the rotation angle 'Ry' along the 'y'-axis by pressing the 'y' key;"<<endl;
-	cout<<"\t\t-) increase the rotation angle 'Rz' along the 'z'-axis by pressing the 'Z' key;"<<endl;
-	cout<<"\t\t-) decrease the rotation angle 'Rz' along the 'z'-axis by pressing the 'z' key."<<endl<<endl<<"\tLikewise, the window of interest can be closed by ";
-	cout<<"pressing the 'Esc' key."<<endl<<endl;
+	cout<<"\t\t-) decrease the number 'p' of the longitudinal slices by pressing the 'p' key. By construction, it is not possible to have 'p<3'."<<endl;
+	cout<<"\t\t-) Increase the number 'q' of the latitudinal slices by pressing the 'Q' key;"<<endl;
+	cout<<"\t\t-) decrease the number 'q' of the latitudinal slices by pressing the 'q' key. By construction, it is not possible to have 'q<3'."<<endl;
+	cout<<"\t\t-) Increase the rotation angle 'Rx' along the 'x'-axis by pressing the 'X' key. By construction, the value of 'Rx' is automatically limited within the";
+	cout<<" '[0,360]' range."<<endl;
+	cout<<"\t\t-) Decrease the rotation angle 'Rx' along the 'x'-axis by pressing the 'x' key. By construction, the value of 'Rx' is automatically limited within the";
+	cout<<" '[0,360]' range."<<endl;
+	cout<<"\t\t-) Increase the rotation angle 'Ry' along the 'y'-axis by pressing the 'Y' key. By construction, the value of 'Ry' is automatically limited within the";
+	cout<<" '[0,360]' range."<<endl;
+	cout<<"\t\t-) Decrease the rotation angle 'Ry' along the 'y'-axis by pressing the 'y' key. By construction, the value of 'Ry' is automaitcally limited within the";
+	cout<<" '[0,360]' range."<<endl;
+	cout<<"\t\t-) Increase the rotation angle 'Rz' along the 'z'-axis by pressing the 'Z' key. By construction, the value of 'Rz' is automatically limited within the";
+	cout<<" '[0,360]' range."<<endl;
+	cout<<"\t\t-) Decrease the rotation angle 'Rz' along the 'z'-axis by pressing the 'z' key. By construction, the value of 'Rz' is automatically limited within the";
+	cout<<" '[0,360]' range."<<endl<<endl<<"\tLikewise, the window of interest can be closed by pressing the 'Esc' key."<<endl<<endl;
 	cout.flush();
 
 	/* If we arrive here, then we can draw the 'Hemisphere' shape of interest by using the rendering settings, chosen by the user. */
@@ -162,15 +165,24 @@ void initialize()
 	cout.flush();
 }
 
-/// This function is the keyboard input processing routine for the OpenGL window of interest (ASCII keys).
+/// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
 	/* We are interested only in the 'q' - 'Q' - 'p' - 'P' - 'x' - 'X' - 'y' - 'Y' - 'z' - 'Z' - 'Esc' - keys */
 	switch (key)
 	{
+		case 'Q':
+	
+			/* The key is 'Q', thus we increase the number 'q' of the latitudinal slices in the quad strip, approximating the 'wireframe version' of the 'Hemisphere'
+			 * shape. By construction, it is not possible to have 'q<3'. */
+			lat_slices_num=lat_slices_num+1;
+			glutPostRedisplay();
+			break;
+
 		case 'q':
 	
-			/* The key is 'q', thus we reduce the number 'q' of the latitudinal slices in the 'wireframe version' of the 'Hemisphere' shape. */
+			/* The key is 'q', thus we reduce the number 'q' of the latitudinal slices in the quad strip, approximating the 'wireframe version' of the 'Hemisphere'
+			 * shape. By construction, it is not possible to have 'q<3'. */
 			if(lat_slices_num>3) lat_slices_num=lat_slices_num-1;
 			else 
 			{
@@ -182,17 +194,19 @@ void manageKeys(unsigned char key, int x, int y)
 			/* If we arrive here, then this case is finished! */
 			glutPostRedisplay();
 			break;
-		
-		case 'Q':
+
+		case 'P':
 	
-			/* The key is 'Q', thus we increase the number 'q' of the latitudinal slices in the 'wireframe version' of the 'Hemisphere' shape. */
-			lat_slices_num=lat_slices_num+1;
+			/* The key is 'P', thus we increase the number 'p' of the longitudinal slices in the quad strip, approximating the 'wireframe version' of the 'Hemisphere'
+			 * shape. By construction, it is not possible to have 'p<3'. */
+			long_slices_num=long_slices_num+1;
 			glutPostRedisplay();
 			break;
 
 		case 'p':
 	
-			/* The key is 'p', thus we reduce the number 'p' of the longitudinal slices in the 'wireframe version' of the 'Hemisphere' shape. */
+			/* The key is 'p', thus we reduce the number 'p' of the longitudinal slices in the quad strip, approximating the 'wireframe version' of the 'Hemisphere'
+			 * shape. By construction, it is not possible to have 'p<3'. */
 			if(long_slices_num>3) long_slices_num=long_slices_num-1;
 			else
 			{
@@ -205,24 +219,19 @@ void manageKeys(unsigned char key, int x, int y)
 			glutPostRedisplay();
 			break;
 		
-		case 'P':
-	
-			/* The key is 'P', thus we increase the number 'p' of the longitudinal slices in the 'wireframe version' of the 'Hemisphere' shape. */
-			long_slices_num=long_slices_num+1;
-			glutPostRedisplay();
-			break;
-		
 		case 'x':
 		
-			/* The key is 'x', thus we decrease the rotation angle 'Rx' for rotating the 'wireframe version' of the 'Hemisphere' shape along the X-axis. */
+			/* The key is 'x', thus we decrease the rotation angle 'Rx' for rotating the quad strip, approximating the 'wireframe version' of the 'Hemisphere' shape,
+			 * along the X-axis. Here, the value of 'Rx' is automatically limited within the '[0,360]' range. */
 			Xangle -= 5.0;
 			if(Xangle < 0.0) Xangle += 360.0;
-	        glutPostRedisplay();
-	        break;
-		
+			glutPostRedisplay();
+			break;
+
 		case 'X':
 		
-			/* The key is 'X', thus we increase the rotation angle 'Rx' for rotating the 'wireframe version' of the 'Hemisphere' shape along the X-axis. */
+			/* The key is 'X', thus we increase the rotation angle 'Rx' for rotating the quad strip, approximating the 'wireframe version' of the 'Hemisphere' shape,
+			 * along the X-axis. Here, the value of 'Rx' is automatically limited within the '[0,360]' range. */
 	        Xangle += 5.0;
 			if (Xangle > 360.0) Xangle -= 360.0;
 	        glutPostRedisplay();
@@ -230,35 +239,39 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case 'y':
 		
-			/* The key is 'y', thus we decrease the rotation angle 'Ry' for rotating the 'wireframe version' of the 'Hemisphere' shape along the Y-axis. */
+			/* The key is 'y', thus we decrease the rotation angle 'Ry' for rotating the quad strip, approximating the 'wireframe version' of the 'Hemisphere' shape,
+			 * along the Y-axis. Here, the value of 'Ry' is automatically limited within the '[0,360]' range. */
 			Yangle -= 5.0;
 			if(Yangle < 0.0) Yangle += 360.0;
-	        glutPostRedisplay();
-	        break;
-		
+			glutPostRedisplay();
+			break;
+
 		case 'Y':
 		
-			/* The key is 'Y', thus we increase the rotation angle 'Ry' for rotating the 'wireframe version' of the 'Hemisphere' shape along the Y-axis. */
-	        Yangle += 5.0;
+			/* The key is 'Y', thus we increase the rotation angle 'Ry' for rotating the quad strip, approximating the 'wireframe version' of the 'Hemisphere' shape,
+			 * along the Y-axis. Here, the value of 'Ry' is automatically limited within the '[0,360]' range. */
+			Yangle += 5.0;
 			if (Yangle > 360.0) Yangle -= 360.0;
-	        glutPostRedisplay();
-	        break;
-		
+			glutPostRedisplay();
+			break;
+
 		case 'z':
         
-	        /* The key is 'z', thus we decrease the rotation angle 'Rz' for rotating the 'wireframe version' of the 'Hemisphere' shape along the z-axis. */
+	        /* The key is 'z', thus we decrease the rotation angle 'Rz' for rotating the quad strip, approximating the 'wireframe version' of the 'Hemisphere' shape,
+			 * along the Z-axis. Here, the value of 'Rz' is automatically limited within the '[0,360]' range. */
 			Zangle -= 5.0;
 			if(Zangle < 0.0) Zangle += 360.0;
-	        glutPostRedisplay();
+			glutPostRedisplay();
 	        break;
-        
+		
 		case 'Z':
 		
-			/* The key is 'Z', thus we increase the rotation angle 'Rz' for rotating the 'wireframe version' of the 'Hemisphere' shape along the z-axis. */
-	        Zangle += 5.0;
+			/* The key is 'Z', thus we increase the rotation angle 'Rz' for rotating the quad strip, approximating the 'wireframe version' of the 'Hemisphere' shape,
+			 * along the Z-axis. Here, the value of 'Rz' is automatically limited within the '[0,360]' range. */
+			Zangle += 5.0;
 			if (Zangle > 360.0) Zangle -= 360.0;
-	        glutPostRedisplay();
-	        break;
+			glutPostRedisplay();
+			break;		
 		
 		case 27:
 	
@@ -278,7 +291,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 			/* Other keys are not important for us */
 			break;
-	}		
+	}
 }
 
 /// This function draws the <i>'Hemisphere'</i> shape in the OpenGL window of interest by using the preferences, chosen by the user.
@@ -315,7 +328,7 @@ void draw()
 		/* Now, we finalize the current latitudinal slice of the 'Hemisphere' shape (thus a quad strip). */
 		glEnd();
 	}
-	
+
 	/* If we arrive here, then we have finished! */
 	glFlush();
 	cout<<"\tThe 'wireframe version' of the 'Hemisphere' shape is currently drawn by exploiting 'q="<<lat_slices_num<<"' latitudinal slices and 'p="<<long_slices_num;
