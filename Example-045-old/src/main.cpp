@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: August 2017
+ * Last update: September 2017
  * 
  * main.cpp - the main function for the 'Example-045 (Old Mode)' Test.
  ********************************************************************************************************************************************************/
@@ -114,7 +114,7 @@ int main(int argc,char **argv)
 	cout<<" '[0,360]' range."<<endl;
 	cout<<"\t\t-) Increase the rotation angle 'Ry' along the 'y'-axis by pressing the 'Y' key. By construction, the value of 'Ry' is automatically limited within the";
 	cout<<" '[0,360]' range."<<endl;
-	cout<<"\t\t-) Decrease the rotation angle 'Ry' along the 'y'-axis by pressing the 'y' key. By construction, the value of 'Ry' is automaitcally limited within the";
+	cout<<"\t\t-) Decrease the rotation angle 'Ry' along the 'y'-axis by pressing the 'y' key. By construction, the value of 'Ry' is automatically limited within the";
 	cout<<" '[0,360]' range."<<endl;
 	cout<<"\t\t-) Increase the rotation angle 'Rz' along the 'z'-axis by pressing the 'Z' key. By construction, the value of 'Rz' is automatically limited within the";
 	cout<<" '[0,360]' range."<<endl;
