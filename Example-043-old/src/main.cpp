@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: August 2017
+ * Last update: September 2017
  * 
  * main.cpp - the main function for the 'Example-043 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
@@ -71,14 +71,16 @@ int main(int argc,char **argv)
 	cout<<"\t'blue') are rendered by using the perspective projection."<<endl<<endl;
 	cout<<"\tHere, the user cannot modify the radius 'R, the center '(xc,yc,zc)', and the numbers of the 'slices' and the 'stacks' in the approximation of interest for";
 	cout<<"the 'Sphere' shape, since they are fixed in advance. Instead, the user"<<endl;
-	cout<<"\tcan apply several transformations to the scene, in particular, the user can:"<<endl<<endl;
+	cout<<"\tcan apply several transformations to the scene. In particular, the user can:"<<endl<<endl;
 	cout<<"\t\t-) translate the center '(xc,yc,zc)' of the 'Sphere' shape along any of '2' directions of the X-axis by pressing the 'left' and the 'right' (arrow) ";
 	cout<<"keys, respectively;"<<endl;
 	cout<<"\t\t-) translate the center '(xc,yc,zc)' of the 'Sphere' shape along any of '2' directions of the Y-axis by pressing the 'up' and the 'down' (arrow) keys, ";
 	cout<<"respectively;"<<endl;
 	cout<<"\t\t-) rotate the 'Sphere' shape along the custom axis '[1,1,1]' by pressing the ' ' (space) key;"<<endl;
 	cout<<"\t\t-) reset all transformations, applied to the 'Sphere' shape, by pressing the 'r' key."<<endl<<endl;
-	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl;
+	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
+	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
 	cout.flush();
 	
 	/* If we arrive here, then we can draw the 'Sphere' shape of interest by using the rendering settings, chosen by the user. */

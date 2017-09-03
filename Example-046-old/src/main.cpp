@@ -126,7 +126,9 @@ int main(int argc,char **argv)
 	cout<<"\t\t-) Increase the rotation angle 'Rz' along the 'z'-axis by pressing the 'Z' key. By construction, the value of 'Rz' is automatically limited within the";
 	cout<<" '[0,360]' range."<<endl;
 	cout<<"\t\t-) Decrease the rotation angle 'Rz' along the 'z'-axis by pressing the 'z' key. By construction, the value of 'Rz' is automatically limited within the";
-	cout<<" '[0,360]' range."<<endl<<endl<<"\tLikewise, the window of interest can be closed by pressing the 'Esc' key."<<endl<<endl;
+	cout<<" '[0,360]' range."<<endl<<endl<<"\tLikewise, the window of interest can be closed by pressing the 'Esc' key."<<endl;
+	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
+	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
 	cout.flush();
 
 	/* If we arrive here, then we can draw the 'Dome' shape of interest by using the rendering settings, chosen by the user. */

@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: August 2017
+ * Last update: September 2017
  *
  * main.cpp - the main function for the 'Example-042 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
@@ -118,7 +118,9 @@ int main(int argc,char **argv)
 	cout<<"\t\t-) increase the number 'n' of all vertices (including the 'apex') in the triangle fan, approximating the 'Cone' shape, by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the number 'n' of all vertices (including the 'apex') in the triangle fan, approximating the 'Cone' shape, by pressing the '-' key. It is ";
 	cout<<"not possible to have 'n<5' (by construction)."<<endl;
-	cout<<endl<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+	cout<<endl<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl;
+	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
+	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
 	cout.flush();
 
 	/* If we arrive here, then we can draw the 'Cone' shape of interest by using the rendering settings, chosen by the user. */
@@ -210,9 +212,9 @@ void initialize()
 	if(mode==GL_FILL) cout<<"the 'filled versions' of all ";
 	if(mode==GL_LINE) cout<<"the 'wireframe versions' of all ";
 	cout<<"triangles in the 'View #"<<configuration<<"' for the triangle fan of interest (formed by the minimum number 'n="<<num_samples<<"' as possible of the ";
-	cout<<"vertices, including the 'apex') are drawn by using the"<<endl;
-	if(projection==0) cout<<"\torthographic projection."<<endl<<endl;
-	else cout<<"\tperspective projection."<<endl<<endl;
+	cout<<"vertices, including the 'apex') are drawn by using the ";
+	if(projection==0) cout<<"orthographic"<<endl<<"\tprojection."<<endl<<endl;
+	else cout<<"perspective"<<endl<<"\tprojection."<<endl<<endl;
 	cout.flush();
 }
 
