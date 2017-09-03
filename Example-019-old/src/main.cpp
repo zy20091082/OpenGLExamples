@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: August 2017
+ * Last update: September 2017
  * 
  * main.cpp - the main function for the 'Example-019 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
@@ -50,7 +50,9 @@ int main(int argc,char **argv)
 	cout<<" test draws the 'filled' and the 'wireframe versions' of all triangles in"<<endl;
 	cout<<"\t'2' triangle strips, just mentioned."<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user. Here, the window of interest can be closed by pressing any among the 'Q', the ";
-	cout<<"'q', and the 'Esc' keys."<<endl<<endl;
+	cout<<"'q', and the 'Esc' keys."<<endl;
+	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
+	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
 	cout.flush();
 
 	/* If we arrive here, then we draw the 'wireframe' and the 'filled' versions for the triangle strips of interest. */

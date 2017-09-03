@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: August 2017
+ * Last update: September 2017
  * 
  * main.cpp - the main function for the 'Example-010 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
@@ -63,7 +63,9 @@ int main(int argc,char **argv)
 	cout << "\t\t3. the 'GL_LINE_LOOP' primitive is chosen by pressing the '3' key for drawing a closed line loop;" << endl;
 	cout << "\t\t4. the 'GL_TRIANGLES' primitive is chosen by pressing the '4' key for drawing several independent triangles;" << endl;
 	cout << "\t\t5. the 'GL_POLYGON' primitive is chosen by pressing the '5' key for drawing only one polygon."<<endl<<endl;
-	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl;
+	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
+	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
 	cout.flush();
 
 	/* If we arrive here, then we draw the initial scene! */

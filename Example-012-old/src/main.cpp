@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: August 2017
+ * Last update: September 2017
  *
  * main.cpp - the main function for the 'Example-012 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
@@ -78,7 +78,9 @@ int main(int argc,char **argv)
 	cout<<"can choose separately what triangles sides must be drawn."<<endl;
 	cout<<"\t\t-) The 'filled versions' of the triangles sides in the custom triangle strip to be drawn are rendered by pressing the 'i' or the 'I' key. The user can";
 	cout<<" choose separately what triangles sides must be drawn."<<endl<<endl;
-	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl;
+	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
+	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
 	cout.flush();
 	
 	/* If we arrive here, then we can draw the custom triangle strip, as requested by the user. */

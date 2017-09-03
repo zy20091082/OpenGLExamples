@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: August 2017
+ * Last update: September 2017
  *
  * main.cpp - the main function for the 'Example-018 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
@@ -70,7 +70,9 @@ int main(int argc,char **argv)
 	cout<<"\twhich can cycle the vertices order in the polygons of interest by pressing the '+' key. While performing these operations, there may be 'strange' ";
 	cout<<"situations, expecially when cycling the vertices order in the 'filled version' of the"<<endl;
 	cout<<"\tconcave 'Polygon #1'."<<endl<<endl;
-	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl;
+	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
+	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
 	cout.flush();
 
 	/* If we arrive here, then we can draw the desired scene! */

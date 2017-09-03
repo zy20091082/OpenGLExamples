@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: August 2017
+ * Last update: September 2017
  *
  * main.cpp - the main function for the 'Example-017 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
@@ -41,7 +41,9 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-017' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws '6' rectangles, defined through the 'glRectf()' function, by using several rendering settings in an OpenGL window, and provides a basic ";
 	cout<<"interaction mechanism with the user."<<endl<<endl;
-	cout<<"\tHere, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+	cout<<"\tHere, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl;
+	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
+	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
 	cout.flush();
 
 	/* If we arrive here, then we draw the desired scene! */
