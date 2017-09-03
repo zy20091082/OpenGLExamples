@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: August 2017
+ * Last update: September 2017
  *
  * main.cpp - the main function for the 'Example-005 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
@@ -58,7 +58,9 @@ int main(int argc,char **argv)
 	cout<<"\t\t-) increase the 'x' coordinate by '1.0' for the triangle of interest by pressing the '+' key;"<<endl;
 	cout<<"\t\t-) decrease the 'x' coordinate by '1.0' for the triangle of interest by pressing the '-' key;"<<endl;
 	cout<<"\t\t-) reset the 'x' coordinate for the triangle of interest to its initial value 'x=20.0' by pressing the '=' key."<<endl<<endl;
-	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl;
+	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
+	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
 	cout.flush();
 
 	/* If we arrive here, then we draw the initial version of the scene (with 'x=20.0')! */

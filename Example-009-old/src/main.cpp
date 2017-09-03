@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: August 2017
+ * Last update: September 2017
  *
  * main.cpp - the main function for the 'Example-009 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
@@ -42,6 +42,8 @@ int main(int argc,char **argv)
 	cout<<"\tIt draws the 'filled version' of a square, such that a different color is associated with each of its vertices, in an OpenGL window."<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user."<<endl<<endl;
 	cout<<"\tHere, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl;
+	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
+	cout<<"------------------------------------------------------------------------------"<<endl;
 	cout.flush();
 
 	/* If we arrive here, then we draw the square of interest! */

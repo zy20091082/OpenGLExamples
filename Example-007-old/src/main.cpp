@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: August 2017
+ * Last update: September 2017
  *
  * main.cpp - the main function for the 'Example-007 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
@@ -41,7 +41,9 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-007' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws the 'filled versions' for '12' quadrilaterals with different colors in an OpenGL window, and provides a basic interaction mechanism with the ";
 	cout<<"user."<<endl<<endl;
-	cout<<"\tHere, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+	cout<<"\tHere, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl;
+	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
+	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
 	cout.flush();
 
 	/* If we arrive here, then we draw the current scene! */

@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: August 2017
+ * Last update: September 2017
  *
  * main.cpp - the main function for the 'Example-001 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
@@ -44,7 +44,9 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-001' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt is similar to the classic 'Hello World' program for testing the correctness of the building infrastructure."<<endl;
 	cout<<"\tBroadly speaking, it creates an empty OpenGL window with the 'black' background, and provides no interaction mechanism with the user."<<endl<<endl;
-	cout<<"\tHere, the window of interest must be stopped through an enforced closure."<<endl<<endl;
+	cout<<"\tHere, the window of interest must be stopped through an enforced closure."<<endl;
+	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
+	cout<<"------------------------------------------------------------------------------"<<endl;
 	cout.flush();
 
 	/* If we arrive here, then we can create a rough window without user interaction! */

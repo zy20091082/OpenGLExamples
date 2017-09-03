@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  *
- * Last update: August 2017
+ * Last update: September 2017
  *
  * main.cpp - the main function for the 'Example-003 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
@@ -84,7 +84,9 @@ int main(int argc, char **argv)
 	cout<<"\t\t5. The orthographic viewing box '[120,200]' x '[90,200]' x '[-1,3]' is activated by pressing the '5' key (the 'Viewing Configuration #5'). This ";
 	cout<<"orthographic viewing box does not intersect the orthographic projection of the"<<endl;
 	cout<<"\t\t   quadrilateral, which is not rendered at all."<<endl<<endl;
-	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl;
+	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
+	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
 	cout.flush();
 
 	/* If we arrive here, then we can draw the polygon of interest by using the rendering settings, requested by the user. */

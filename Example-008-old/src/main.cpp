@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: August 2017
+ * Last update: September 2017
  *
  * main.cpp - the main function for the 'Example-008 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
@@ -61,7 +61,9 @@ int main(int argc,char **argv)
 	cout<<"\t\t1. The 'small' quadrilateral (in 'red') is rendered before, and the 'large' quadrilateral (in 'blue') is rendered after in the 'Viewing Configuration ";
 	cout<<"#1'. In this case, only the 'large' quadrilateral is visible. The 'Viewing"<<endl<<"\t\t   Configuration #1' is activated upon request by pressing the '1' ";
 	cout<<"key."<<endl<<endl;
-	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl;
+	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
+	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
 	cout.flush();
 
 	/* If we arrive here, then we can draw the initial version of the scene. */
