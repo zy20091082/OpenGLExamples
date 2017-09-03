@@ -9,11 +9,11 @@ The <i>'Example-014 (Old Mode)'</i> Test draws all triangles in a triangle strip
 <li>Only the vertices of the triangles sides in the custom triangle strip to be drawn are rendered by pressing the <code><i>'p'</i></code> or the <code><i>'P'</i></code> key. The user can choose separately what triangles sides must be drawn.<p></li>
 <li>The <i>'wireframe versions'</i> of the triangles sides in the custom triangle strip to be drawn are rendered by pressing the <code><i>'l'</i></code> or the <code><i>'L'</i></code> key. The user can choose separately what triangles sides must be drawn.<p></li>
 <li>The <i>'filled versions'</i> of the triangles sides in the custom triangle strip to be drawn are rendered by pressing the <code><i>'i'</i></code> or the <code><i>'I'</i></code> key. The user can choose separately what triangles sides must be drawn.<p></li></ul><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><table border=0 width=100%><tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example014_old_frontside_points.png' border='1' width='456' height='470'></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example014_old_frontside_wireframe.png' border='1' width='456' height='470'></td></tr>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example014_old_backsides_points.png' border='1' width='456' height='470'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example014_old_backsides_wireframe.png' border='1' width='456' height='470'></td></tr>
 <tr><td>The <i>'points rendering'</i> (press the <code><i>'p'</i></code> or the <code><i>'P'</i></code> key) for all triangles in the triangle strip of interest.</td><td>The <i>'wireframe versions'</i> (press the <code><i>'l'</i></code> or the <code><i>'L'</i></code> key) for all triangles in the triangle strip of interest.</td></tr>
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example014_old_frontside_filled.png' border='1' width='456' height='470'></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example014_old_backsides_filled.png' border='1' width='456' height='470'></td>
 <td>In this case, the <i>'front'</i> triangles sides are not visible, due to their vertices order. In the code, these latters are enumerated in the clockwise order, thus every triangle is a back-faced triangle.<p>
 
 Hence, the scene remains unchanged, when the user decides to render only the <i>'front'</i> triangles sides in the triangle strip.<p>This is true, even if changing the rendering type for all triangles (points, wireframe, filled).</td>
