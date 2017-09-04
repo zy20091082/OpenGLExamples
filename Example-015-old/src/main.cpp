@@ -43,7 +43,10 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-015' Test, based on the (Old Mode) OpenGL."<<endl;
-
+	cout<<"\tIt draws all triangles in a triangle fan, approximating a custom shape, in an OpenGL window. By construction, all triangles in the custom triangle fan of ";
+	cout<<"interest (in 'turquoise gray') are incident at the same 'reference vertex' (in"<<endl;
+	cout<<"\t'red'). It is not possible to modify the size and the position for the vertices of the custom shape. Instead, the settings for rendering all triangles in";
+	cout<<" the custom triangle fan of interest can be modified interactively by the user"<<endl<<"\tas follows:"<<endl<<endl;
 	cout<<"\t\t-) only the 'front' triangles sides in the custom triangle fan are rendered by pressing the 'f' or the 'F' key. The corresponding rendering type is ";
 	cout<<"chosen by the user separately."<<endl;
 	cout<<"\t\t-) Only the 'back' triangles sides in the custom triangle fan are rendered by pressing the 'b' or the 'B' key. The corresponding rendering type is ";
