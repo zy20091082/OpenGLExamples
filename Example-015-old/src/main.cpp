@@ -28,8 +28,28 @@ using namespace std;
 
 #endif
 
+/// The custom settings for choosing what triangles sides in the custom triangle fan must be rendered.
+/**
+ * The value of this global variable indicates what triangles sides in the custom triangle fan must be rendered by following these conventions:
+ * 
+ * 	-) the 'GL_FRONT' value, used for rendering only the 'front' triangles sides in the custom triangle fan (press the 'f' or the 'F' key);
+ * 	-) the 'GL_BACK' value, used for rendering only the 'back' triangles sides in the custom triangle fan (press the 'b' or the 'B' key);
+ * 	-) the 'GL_FRONT_AND_BACK' value, used for rendering both the 'front' and the 'back' triangles sides in the custom triangle fan (press the 't' or the 'T' key).
+ *
+ * The rendering type to be exploited is chosen separately by the user.
+ */
 GLenum face;
 
+/// The custom settings for rendering the triangles sides of interest in the custom triangle fan.
+/**
+ * The value of this global variable indicates the rendering type of the triangles sides in the custom triangle fan by following these conventions:
+ *
+ * 	-) the 'GL_POINT' value, used for rendering only the vertices of the triangles sides in the custom triangle fan to be drawn (press the 'p' or the 'P' key);
+ * 	-) the 'GL_LINE' value, used for rendering the 'wireframe versions' of the triangles sides in the custom triangle fan to be drawn (press the 'l' or the 'L' key);
+ * 	-) the 'GL_FILL' value, used for rendering the 'filled versions' of the triangles sides in the custom triangle fan to be drawn (press the 'i' or the 'I' key).
+ *
+ * The choice for what triangles sides in the custom triangle fan must be drawn is performed separately by the user.
+ */
 GLenum mode;
 
 /* Prototypes for all functions of interest! */

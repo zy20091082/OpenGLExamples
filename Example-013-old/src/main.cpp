@@ -34,7 +34,8 @@ using namespace std;
  * 
  * 	-) the 'GL_FRONT' value, used for rendering only the 'front' triangles sides in the triangle strip of interest (press the 'f' or the 'F' key);
  * 	-) the 'GL_BACK' value, used for rendering only the 'back' triangles sides in the triangle strip of interest (press the 'b' or the 'B' key);
- * 	-) the 'GL_FRONT_AND_BACK' value, used for rendering both the 'front' and the 'back' triangles sides in the triangle strip of interest (press the 't' or the 'T' key).
+ * 	-) the 'GL_FRONT_AND_BACK' value, used for rendering both the 'front' and the 'back' triangles sides in the triangle strip of interest (press the 't' or the 'T'
+ * 	   key).
  *
  * The rendering type to be exploited is chosen separately by the user.
  */
