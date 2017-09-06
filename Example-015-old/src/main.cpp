@@ -40,7 +40,7 @@ using namespace std;
  */
 GLenum face;
 
-/// The custom settings for rendering the triangles sides of interest in the custom triangle fan.
+/// The custom settings for rendering the triangles sides of interest in the custom triangle fan to be drawn.
 /**
  * The value of this global variable indicates the rendering type of the triangles sides in the custom triangle fan by following these conventions:
  *

@@ -40,7 +40,7 @@ using namespace std;
  */
 GLenum face;
 
-/// The custom settings for rendering the sides of interest in the custom polygon.
+/// The custom settings for rendering the sides of interest in the custom polygon to be drawn.
 /**
  * The value of this global variable indicates the rendering type for the sides of the custom polygon by following these conventions:
  *

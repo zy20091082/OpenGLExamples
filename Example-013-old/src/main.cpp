@@ -41,7 +41,7 @@ using namespace std;
  */
 GLenum face;
 
-/// The custom settings for rendering the triangles sides of interest in the triangle strip of interest.
+/// The custom settings for rendering the triangles sides of interest in the triangle strip to be drawn.
 /**
  * The value of this global variable indicates the rendering type of the triangles sides in the triangle strip of interest by following these conventions:
  *
