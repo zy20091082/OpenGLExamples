@@ -105,10 +105,13 @@ int main(int argc,char **argv)
 	cout<<"\tHere, the user cannot modify the position, the radii, and the centers for '3' variants of the 'Circular Annulus' shape, since they are fixed in advance. ";
 	cout<<"Instead, the user can:"<<endl<<endl;
 	cout<<"\t\t-) choose to render either the 'wireframe' or the 'filled versions' for all triangles of interest by pressing cyclically the ' ' (space) key;"<<endl;
-	cout<<"\t\t-) increase the number 'n' of vertices in the triangle fans, thus also the number 'm=n-1' of vertices pairs in the triangle strip, by pressing the '+' ";
-	cout<<"key. By construction, it is not possible to have 'n<5', thus 'm<4'."<<endl;
-	cout<<"\t\t-) Decrease the number 'n' of vertices in the triangle fans, thus also the number 'm=n-1' of vertices pairs in the triangle strip, by pressing the '+' ";
-	cout<<"key. By construction, it is not possible to have 'n<5', thus 'm<4'."<<endl<<endl;
+	cout<<endl;
+	cout<<"\t\t-) increase the number 'n' of vertices in the triangle fans (including their 'reference vertices'), thus also the number 'm=n-1' of vertices pairs ";
+	cout<<"in the triangle strip, by pressing the '+' key. By construction, it is not"<<endl;
+	cout<<"\t\t   possible to have 'n<5', thus 'm<4'."<<endl<<endl;
+	cout<<"\t\t-) Decrease the number 'n' of vertices in the triangle fans (including their 'reference vertices'), thus also the number 'm=n-1' of vertices pairs ";
+	cout<<"in the triangle strip, by pressing the '-' key. By construction, it is not"<<endl;
+	cout<<"\t\t   possible to have 'n<5', thus 'm<4'."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl;
 	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
 	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
