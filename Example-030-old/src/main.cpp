@@ -43,8 +43,8 @@ static long font = (long)GLUT_BITMAP_8_BY_13;
  * This global variable contains the number 'n' of the samples in all approximations of interest for the 'Circular Annulus' shape. Here, the value of 'n' is the number
  * 'n' of the vertices in '2' triangle fans of interest (including the 'reference vertex'), that approximate the 'Variant #0' and the 'Variant #1' of the 'Circular
  * Annulus' shape. Moreover, recall that 'm=n-1' is the number of the vertices pairs in the triangle strip, approximating the 'Variant #3' of the 'Circular Annulus'
- * shape. By construction, it is not possible to have 'n<5', thus 'm<4'. The number 'n' of the samples (i.e., the content of this global variable) can be increased and
- * decreased upon request by pressing, respectively, the '+' and the '-' keys.
+ * shape. By construction, it is not possible to have 'n<5', thus to have 'm<4'. The number 'n' of the samples (i.e., the content of this global variable) can be
+ * increased and decreased upon request by pressing, respectively, the '+' and the '-' keys.
  */
 unsigned int num_samples=5;
 
@@ -89,10 +89,10 @@ int main(int argc,char **argv)
 	cout<<"possible to modify their rendering order. Thus, the 'Variant #0' seems to"<<endl;
 	cout<<"\t\t   coincide with the 'Circular Annulus' shape without being a 'real' approximation of this shape."<<endl<<endl;
 	cout<<"\t\t1. The 'Variant #1' of the 'Circular Annulus' shape is defined in the same spirit of the 'Variant #0', but the z-buffer (depth test) technique is ";
-	cout<<"exploited here for rendering '2' disks of interest. Also in this case, both of"<<endl;
-	cout<<"\t\t   them are approximated by triangle fans with 'n' vertices, including their 'reference vertices', and it is not possible to have 'n<5'. Thus, the ";
-	cout<<"resulting scene does not depend on the rendering order of '2' disks, and is"<<endl;
-	cout<<"\t\t   'the same as' the 'Variant #0' of the 'Circular Annulus' shape."<<endl<<endl;
+	cout<<"exploited here for rendering '2' disks of interest. Also in this case, each of"<<endl;
+	cout<<"\t\t   them is approximated by '2' triangle fans with 'n' vertices, including their 'reference vertices', and it is not possible to have 'n<5'. Thus, the ";
+	cout<<"resulting scene does not depend on the rendering order of '2' disks, and"<<endl;
+	cout<<"\t\t   is 'the same as' the 'Variant #0' of the 'Circular Annulus' shape."<<endl<<endl;
 	cout<<"\t\t2. The 'Variant #2' of the 'Circular Annulus' shape is defined by only one triangle strip, formed by 'm=n-1' pairs of the corresponding vertices (thus ";
 	cout<<"'2*n-2' vertices) in the 'inner' and the 'outer' circles, respectively."<<endl;
 	cout<<"\t\t   These curves approximate the boundary of the 'Circular Annulus' shape. Broadly speaking, we consider the orthographic projections of all 'n' ";
@@ -106,12 +106,12 @@ int main(int argc,char **argv)
 	cout<<"Instead, the user can:"<<endl<<endl;
 	cout<<"\t\t-) choose to render either the 'wireframe' or the 'filled versions' for all triangles of interest by pressing cyclically the ' ' (space) key;"<<endl;
 	cout<<endl;
-	cout<<"\t\t-) increase the number 'n' of vertices in the triangle fans (including their 'reference vertices'), thus also the number 'm=n-1' of vertices pairs ";
-	cout<<"in the triangle strip, by pressing the '+' key. By construction, it is not"<<endl;
-	cout<<"\t\t   possible to have 'n<5', thus 'm<4'."<<endl<<endl;
-	cout<<"\t\t-) Decrease the number 'n' of vertices in the triangle fans (including their 'reference vertices'), thus also the number 'm=n-1' of vertices pairs ";
-	cout<<"in the triangle strip, by pressing the '-' key. By construction, it is not"<<endl;
-	cout<<"\t\t   possible to have 'n<5', thus 'm<4'."<<endl<<endl;
+	cout<<"\t\t-) increase the number 'n' of the vertices in the triangle fans (including their 'reference vertices'), thus also the number 'm=n-1' of the vertices ";
+	cout<<"pairs in the triangle strip, by pressing the '+' key. By construction, it"<<endl;
+	cout<<"\t\t   is not possible to have 'n<5', thus to have 'm<4'."<<endl<<endl;
+	cout<<"\t\t-) Decrease the number 'n' of the vertices in the triangle fans (including their 'reference vertices'), thus also the number 'm=n-1' of the vertices ";
+	cout<<"pairs in the triangle strip, by pressing the '-' key. By construction, it"<<endl;
+	cout<<"\t\t   is not possible to have 'n<5', thus to have 'm<4'."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl;
 	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
 	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
@@ -185,7 +185,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 			/* The key is '+', thus we increase the number 'n' of the vertices in '2' triangle fans of interest (including the 'reference vertex'), that approximate the
 			 * 'Variant #0' and the 'Variant #1' of the 'Circular Annulus' shape. Moreover, recall that 'm=n-1' is the number of the vertices pairs in the triangle
-			 * strip, approximating the 'Variant #3' of the 'Circular Annulus' shape. By construction, it is not possible to have 'n<5', thus 'm<4'. */
+			 * strip, approximating the 'Variant #3' of the 'Circular Annulus' shape. By construction, it is not possible to have 'n<5', thus to have 'm<4'. */
 			num_samples=num_samples+1;
 			glutPostRedisplay();
 			break;
@@ -194,7 +194,8 @@ void manageKeys(unsigned char key, int x, int y)
 		
 			/* The key is '-', thus we decrease the number 'n' of the vertices (if possible) in '2' triangle fans of interest (including the 'reference vertex'), that
 			 * approximate the 'Variant #0' and the 'Variant #1' of the 'Circular Annulus' shape. Moreover, recall that 'm=n-1' is the number of the vertices pairs in
-			 * the triangle strip, approximating the 'Variant #3' of the 'Circular Annulus' shape. By construction, it is not possible to have 'n<5', thus 'm<4'. */
+			 * the triangle strip, approximating the 'Variant #3' of the 'Circular Annulus' shape. By construction, it is not possible to have 'n<5', thus to have
+		 	 * 'm<4'. */
 			if(num_samples>5) num_samples=num_samples-1;
 			else
 			{
