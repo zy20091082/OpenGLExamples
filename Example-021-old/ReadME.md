@@ -7,12 +7,12 @@ The <i>'Example-021 (Old Mode)'</i> Test draws a (closed) polyline (in <i>'red'<
 <li>Decrease the number <code><i>'n'</i></code> of the vertices and the edges in the (closed) polyline of interest by pressing the <code><i>'-'</i></code> key. By construction, it is not possible to have <code><i>'n<3'.</i></code></li></ul>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf0.png' border='1' width='456' height='450'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf1.png' border='1' width='456' height='450'></td></tr>
-<tr><td>Here, the <i>'Curve'</i> shape of radius <code><i>'R=1.0'</i></code> and center coordinates <code><i>'(xc,yc)=(0.0,0.0)'</i></code> is approximated by a (closed) polyline with <code><i>'n=3'</i></code> vertices and edges.</td><td>Here, the <i>'Curve'</i> shape of radius <code><i>'R=1.0'</i></code> and center coordinates <code><i>'(xc,yc)=(0.0,0.0)'</i></code> is approximated by a (closed) polyline with <code><i>'n=8'</i></code> vertices and edges.</code></td></tr>
+<tr><td>Here, the <i>'Curve'</i> curve of radius <code><i>'R=1.0'</i></code> and center coordinates <code><i>'(xc,yc)=(0.0,0.0)'</i></code> is approximated by a (closed) polyline with <code><i>'n=3'</i></code> vertices and edges.</td><td>Here, the <i>'Curve'</i> curve of radius <code><i>'R=1.0'</i></code> and center coordinates <code><i>'(xc,yc)=(0.0,0.0)'</i></code> is approximated by a (closed) polyline with <code><i>'n=8'</i></code> vertices and edges.</code></td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf2.png' border='1' width='456' height='450'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example021_old_conf3.png' border='1' width='456' height='450'></td></tr>
-<tr><td>Here, the <i>'Curve'</i> shape of radius <code><i>'R=1.0'</i></code> and center coordinates <code><i>'(xc,yc)=(0.0,0.0)'</i></code> is approximated by a (closed) polyline with <code><i>'n=15'</i></code> vertices and edges.</td>
-<td>Here, the <i>'Curve'</i> shape of radius <code><i>'R=1.0'</i></code> and center coordinates <code><i>'(xc,yc)=(0.0,0.0)'</i></code> is approximated by a (closed) polyline with <code><i>'n=85'</i></code> vertices and edges.</td></tr></table><p><hr><p>
+<tr><td>Here, the <i>'Curve'</i> curve of radius <code><i>'R=1.0'</i></code> and center coordinates <code><i>'(xc,yc)=(0.0,0.0)'</i></code> is approximated by a (closed) polyline with <code><i>'n=15'</i></code> vertices and edges.</td>
+<td>Here, the <i>'Curve'</i> curve of radius <code><i>'R=1.0'</i></code> and center coordinates <code><i>'(xc,yc)=(0.0,0.0)'</i></code> is approximated by a (closed) polyline with <code><i>'n=85'</i></code> vertices and edges.</td></tr></table><p><hr><p>
 
 <h4>Dependencies</h4>
 
