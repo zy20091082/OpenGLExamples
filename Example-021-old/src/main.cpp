@@ -75,7 +75,7 @@ int main(int argc,char **argv)
 	cout<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide interactively the radius 'R' (as a positive and not null ";
 	cout<<"floating-point value) and the center coordinates '(xc,yc)' (as '2' floating-point"<<endl;
-	cout<<"\tvalues). In this context, the user can also:"<<endl<<endl;
+	cout<<"\tvalues). The scene center coincides with the point '(xc,yc)'. In this context, the user can also:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the (closed) polyline of interest by pressing the '+' key. By construction, it is not ";
 	cout<<"possible to have 'n<3'."<<endl;
 	cout<<"\t\t-) Decrease the number 'n' of the vertices and the edges in the (closed) polyline of interest by pressing the '-' key. By construction, it is not ";
