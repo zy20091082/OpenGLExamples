@@ -76,10 +76,10 @@ int main(int argc,char **argv)
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide interactively the radius 'R' (as a positive and not null ";
 	cout<<"floating-point value) and the center coordinates '(xc,yc)' (as '2' floating-point"<<endl;
 	cout<<"\tvalues). In this context, the user can also:"<<endl<<endl;
-	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the polyline of interest by pressing the '+' key. By construction, it is not possible to";
-	cout<<" have 'n<3'."<<endl;
-	cout<<"\t\t-) Decrease the number 'n' of the vertices and the edges in the polyline of interest by pressing the '-' key. By construction, it is not possible to";
-	cout<<" have 'n<3'."<<endl<<endl;
+	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the (closed) polyline of interest by pressing the '+' key. By construction, it is not ";
+	cout<<"possible to have 'n<3'."<<endl;
+	cout<<"\t\t-) Decrease the number 'n' of the vertices and the edges in the (closed) polyline of interest by pressing the '-' key. By construction, it is not ";
+	cout<<"possible to have 'n<3'."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
 	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
