@@ -3,14 +3,8 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: August 2017
+ * Last update: September 2017
  *
- * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
- * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
- *                                                                         
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
- * 
  * main.cpp - the main function for the 'Example-023 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
 
@@ -18,6 +12,8 @@
 #include <cstdlib>
 #include <iostream>
 #include <cmath>
+#include <string>
+#include <climits>
 #include <limits>
 #define PI 3.14159265358979324
 using namespace std;
@@ -37,27 +33,34 @@ using namespace std;
 
 #endif
 
-/// The center coordinates <i>'(xc,yc)'</i> to be used for defining and drawing the polyline, approximating the <i>'Ellipse'</i> curve of interest.
+/// The center coordinates <i>'(xc,yc)'</i> to be used for defining and drawing the (closed) polyline, approximating the <i>'Ellipse'</i> curve of interest.
 /**
- * Clearly, the center for the 'Ellipse' curve of interest is formed by 2 floating-point values, provided interactively by the user.
+ * The values of these global variables contain, respectively, the center coordinates '(xc,yc)' for the (closed) polyline, approximating the 'Ellipse' curve of interest.
+ * Clearly, the center coordinates for the 'Ellipse' curve of interest consist of '2' floating-point values, that are provided interactively by the user.
  */
 float xc,yc;
 
-/// The number <i>'n'</i> of the vertices and the edges in the polyline, used for approximating the <i>'Ellipse'</i> curve of interest.
+/// The number <i>'n'</i> of the vertices (and also of the edges) to be used for defining the (closed) polyline, approximating the <i>'Ellipse'</i> curve of interest.
 /**
- * It is initially set to 'n=3', which is the minimum number 'n' of the vertices and the edges. It is interactively modified by pressing the '+' and the '-' keys.
+ * The value of this global variable is the number 'n' of the vertices (and also of the edges) to be used for defining the (closed) polyline, approximating the 'Ellipse'
+ * curve of interest. The value of 'n', initially set to 'n=3', can be increased and decreased by pressing the '+' and the '-' keys, respectively. By construction, it
+ * is not possible to have 'n<3'.
  */
 unsigned int num_samples=3;
 
-/// The semi-axis <i>'Rx'</i> along the x-axis to be used for defining and drawing the polyline, approximating the <i>'Ellipse'</i> curve of interest.
+/// The length of the principal x-axis <i>'Rx'</i> to be used for defining and drawing the (closed) polyline, approximating the <i>'Ellipse'</i> curve of interest.
 /**
- * Clearly, it must be a positive and not null floating-point value, provided interactively by the user.
+ * The value of this global variable is the length of the principal x-axis 'Rx' to be used for defining and drawing the (closed) polyline, approximating the 'Ellipse'
+ * curve of interest. Clearly, the principal x-axis for the 'Ellipse' curve of interest consists of a positive and not null floating-point value, that is provided
+ * interactively by the user.
  */
 float Rx;
 
-/// The semi-axis <i>'Ry'</i> along the y-axis to be used for defining and drawing the polyline, approximating the <i>'Ellipse'</i> curve of interest.
+/// The length of the principal y-axis <i>'Ry'</i> to be used for defining and drawing the (closed) polyline, approximating the <i>'Ellipse'</i> curve of interest.
 /**
- * Clearly, it must be a positive and not null floating-point value, provided interactively by the user.
+ * The value of this global variable is the length of the principal y-axis 'Ry' to be used for defining and drawing the (closed) polyline, approximating the 'Ellipse'
+ * curve of interest. Clearly, the principal y-axis for the 'Ellipse' curve of interest consists of a positive and not null floating-point value, that is provided
+ * interactively by the user.
  */
 float Ry;
 
@@ -73,39 +76,51 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-023' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of the vertices and the edges, in an OpenGL window. The polyline of interest ";
-	cout<<"approximates the 'Ellipse' curve with semi-axis 'Rx' and 'Ry' (respectively along the"<<endl;
-	cout<<"\tx- and the y-axis), as well as center '(xc,yc)'. The 'Ellipse' curve is defined as follows:"<<endl<<endl;
-	cout<<"\tx(t) = xc + Rx * cos(t), y(t) = yc + Ry * sin(t)"<<endl<<endl<<"\tfor any 'Rx>0', 'Ry>0', and for every't' in '[-pi,pi]'."<<endl<<endl;
-	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide the semi-axis 'Rx' and 'Ry', as well as the center '(xc,yc)'.";
-	cout<<" The user can also:"<<endl<<endl;
-	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the polyline of interest by pressing the '+' key;"<<endl;
-	cout<<"\t\t-) decrease the number 'n' of the vertices and the edges in the polyline of interest by pressing the '-' key."<<endl<<endl;
+	cout<<"\tIt draws a (closed) polyline (in 'red'), which is formed by an arbitrary number 'n>2' of the vertices (and thus also of the edges), in an OpenGL window.";
+	cout<<" The (closed) polyline of interest approximates the 'Ellipse' curve of principal"<<endl;
+	cout<<"\tx-axis 'Rx', principal y-axis 'Ry', and center coordinates '(xc,yc)'. The 'Ellipse' curve is defined as follows:"<<endl<<endl;
+	cout<<"\tx(t) = xc + Rx * cos(t), y(t) = yc + Ry * sin(t)"<<endl<<endl<<"\tfor any 'Rx>0', 'Ry>0', and for every 't' in '[-pi,pi]'."<<endl<<endl;
+	cout<<"\tBroadly speaking, the 'Ellipse' curve is obtained from the 'Circle' curve through an affine transformation. Recall that the 'Circle' curve is the boundary";
+	cout<<" of the 'Circle' shape, containing all points at distance at most 'R' from the"<<endl;
+	cout<<"\tcenter '(xc,yc)'. In fact, it is sufficient to scale independently the principal x- and y-axes of the 'Circle' shape in order to have lengths 'Rx' and ";
+	cout<<"'Ry', respectively (not necessarily the same), thus to have an 'Ellipse' curve."<<endl;
+	cout<<"\tNote that we obtain again a 'Circle' curve, if 'Rx=Ry'."<<endl<<endl;
+	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide interactively the principal axes 'Rx' and 'Ry' (as ";
+	cout<<"'2' positive and not null floating-point values), as well as the center coordinates"<<endl;
+	cout<<"\t'(xc,yc)' (as '2' floating-point values). The scene center coincides with the point '(xc,yc)'. In this context, the user can also:"<<endl<<endl;
+	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the (closed) polyline of interest by pressing the '+' key. By construction, it is not ";
+	cout<<"possible to have 'n<3'."<<endl;
+	cout<<"\t\t-) Decrease the number 'n' of the vertices and the edges in the (closed) polyline of interest by pressing the '-' key. By construction, it is not ";
+	cout<<"possible to have 'n<3'."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
+	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
 	cout.flush();
-	cout<<"\tPlease, insert the semi-axis 'Rx' (thus, a positive and not null floating-point value) for the 'Ellipse' curve of interest: ";
+	
+	/* If we arrive here, then we can read the principal x-axis 'Rx' for the 'Ellipse' curve of interest. */
+	cout<<"\tPlease, insert the principal x-axis 'Rx' (thus, a positive and not null floating-point value) for the 'Ellipse' curve of interest: ";
 	cin>>Rx;
 	if( (!cin) || (Rx<=0) )
 	{
 		cin.clear();
-		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE) FOR THE SEMI-AXIS 'Rx' OF INTEREST."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE) FOR THE PRINCIPAL X-AXIS 'RX' OF INTEREST."<<endl<<endl;
 		cout<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		pause();
 		return EXIT_FAILURE;
 	}
-	
-	/* Now, we read the length of the second semi-axis 'Ry' (along the y-axis) for the 'Ellipse' curve of interest. */
-	cout<<"\tPlease, insert the semi-axis 'Ry' (thus, a positive and not null floating-point value) for the 'Ellipse' curve of interest: ";
+
+	/* If we arrive here, then we can read the principal y-axis 'Ry' for the 'Ellipse' curve of interest. */
+	cout<<"\tPlease, insert the principal y-axis 'Ry' (thus, a positive and not null floating-point value) for the 'Ellipse' curve of interest: ";
 	cin>>Ry;
 	if( (!cin) || (Ry<=0) )
 	{
 		cin.clear();
-		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE) FOR THE SEMI-AXIS 'Ry' OF INTEREST."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE) FOR THE PRINCIPAL Y-AXIS 'RY' OF INTEREST."<<endl<<endl;
 		cout<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		pause();
 		return EXIT_FAILURE;
 	}
-	
+
 	/* Now, we read the center coordinates '(xc,yc)' for the 'Ellipse' curve of interest. */
 	cout<<"\tPlease, insert the center coordinates '(xc,yc)' for the 'Ellipse' curve of interest (thus, 2 floating-point values, separated by a space): ";
 	cout.flush();
@@ -118,8 +133,12 @@ int main(int argc,char **argv)
 		pause();
 		return EXIT_FAILURE;
 	}
-	
-	/* If we arrive here, then we can draw the polyline, approximating the 'Ellipse' curve! */
+
+	/* If we arrive here, then we can draw the (closed) polyline, approximating the 'Ellipse' curve! */
+	cout<<endl;
+	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
+	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
+	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -149,14 +168,29 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
+/// This function simulates a pause while this test runs.
+void pause()
+{
+	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	cin.clear();
+	cout << "\tPress the RETURN key to finish ... ";
+	cout.flush();
+	cin.get();
+	#ifndef _MSC_VER
+		cout << endl;
+		cout.flush();
+	#endif
+}
+
 /// This function initializes the OpenGL window of interest.
 void initialize() 
 {
 	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=3;
-	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Ellipse' curve of center '("<<xc<<","<<yc<<")', semi-axis 'Rx="<<Rx<<"', and semi-axis ";
-	cout<<"'Ry="<<Ry<<"', is formed by 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"' edges (thus by the minimum number 'n' as possible)."<<endl<<endl;
+	cout<<"\tAt the beginning, the (closed) polyline, approximating the 'Ellipse' curve of center '("<<xc<<","<<yc<<")' principal x-axis 'Rx="<<Rx<<"', and principal ";
+	cout<<"y-axis 'Ry="<<Ry<<"', is formed by 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"' edges (thus by the minimum number 'n'"<<endl;
+	cout<<"\tas possible)."<<endl<<endl;
 	cout.flush();
 }
 
@@ -168,63 +202,66 @@ void manageKeys(unsigned char key, int x, int y)
 	{
 		case 'q':
 	
-		/* The key is 'q', thus we can exit from this program. */
-		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-		pause();
-		exit(EXIT_SUCCESS);
-		break;
+			/* The key is 'q', thus we can exit from this program. */
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			pause();
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 'Q':
 	
-		/* The key is 'Q', thus we can exit from this program. */
-		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-		pause();
-		exit(EXIT_SUCCESS);
-		break;
+			/* The key is 'Q', thus we can exit from this program. */
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			pause();
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case 27:
 	
-		/* The key is 'Esc', thus we can exit from this program. */
-		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-		pause();
-		exit(EXIT_SUCCESS);
-		break;
+			/* The key is 'Esc', thus we can exit from this program. */
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			pause();
+			exit(EXIT_SUCCESS);
+			break;
 		
 		case '+':
 		
-		/* The key is '+', thus we increase the number 'n' of the vertices and the edges in the polyline of interest! */
-		num_samples=num_samples+1;
-		glutPostRedisplay();
-		break;
+			/* The key is '+', thus we increase the number 'n' of the vertices and the edges in the (closed) polyline of interest. By construction, it is not possible to
+			 * have 'n<3'. */
+			num_samples=num_samples+1;
+			glutPostRedisplay();
+			break;
 		
 		case '-':
 		
-		/* The key is '-', thus we decrease the number 'n' of the vertices and the edges (if possible) in the polyline of interest. */
-		if(num_samples>3) num_samples=num_samples-1;
-		else 
-		{
-			cout<<"\tThe minimum number 'n=3' of the vertices and the edges in the polyline of interest is reached, and it is not possible to decrease again this ";
-			cout<<"number."<<endl;
-			cout.flush();
-		}
+			/* The key is '-', thus we decrease the number 'n' of the vertices and the edges (if possible) in the (closed) polyline of interest. By construction, it is
+			 * not possible to have 'n<3'. */
+			if(num_samples>3) num_samples=num_samples-1;
+			else
+			{
+				/* Here, we have already 'n=3', and it is not possible to decrease again the value of 'n'. */
+				cout<<"\tThe minimum number 'n=3' of the vertices and the edges in the (closed) polyline of interest is reached, and it is not possible to decrease ";
+				cout<<"again this number."<<endl;
+				cout.flush();
+			}
 
-		/* If we arrive here, then this case is finished! */
-		glutPostRedisplay();
-		break;
+			/* If we arrive here, then this case is finished! */
+			glutPostRedisplay();
+			break;
 
 		default:
 
-    	/* Other keys are not important for us! */
-    	break;
+    		/* Other keys are not important for us! */
+    		break;
 	}
 }
 
-/// This function draws the polyline (in <i>'red'</i>), approximating the <i>'Ellipse'</i> curve of interest, in the main OpenGL window.
+/// This function draws the (closed) polyline (in <i>'red'</i>), approximating the <i>'Ellipse'</i> curve of interest, in the main OpenGL window.
 void draw()
 {
 	float t;
 
-	/* We draw the polyline (in 'red'), approximating the 'Ellipse' curve of interest, in the main OpenGL window. */
+	/* We draw the (closed) polyline (in 'red'), approximating the 'Ellipse' curve of interest, in the main OpenGL window. */
 	t=0;
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0,0.0,0.0);
@@ -238,21 +275,8 @@ void draw()
 	/* If we arrive here, then all is ok */
 	glEnd();
 	glFlush();
-	cout<<"\tThe 'Ellipse' curve of interest is currently approximated by a polyline with 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"' edges."<<endl;
+	cout<<"\tThe 'Ellipse' curve of interest is currently approximated by a (closed) polyline with 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"' edges.";
+	cout<<endl;
 	cout.flush();
-}
-
-/// This function simulates a pause while this test runs.
-void pause()
-{
-	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	cin.clear();
-	cout << "\tPress the RETURN key to finish ... ";
-	cout.flush();
-	cin.get();
-	#ifndef _MSC_VER
-		cout << endl;
-		cout.flush();
-	#endif
 }
 
