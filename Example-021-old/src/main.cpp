@@ -70,9 +70,9 @@ int main(int argc,char **argv)
 	cout<<"\tIt draws a (closed) polyline (in 'red'), which is formed by an arbitrary number 'n>2' of the vertices (and thus also of the edges), in an OpenGL window.";
 	cout<<" The (closed) polyline of interest approximates the 'Circle' curve of radius 'R'"<<endl;
 	cout<<"\tand center coordinates '(xc,yc)'. The 'Circle' curve is defined as follows:"<<endl<<endl;
-	cout<<"\tx(t) = xc + R * cos(t), y(t) = yc + R * sin(t)"<<endl<<endl<<"\tfor any 'R>0', and for every 't' in '[-pi,pi]'."<<endl<<endl;
- 	cout<<"\tBroadly speaking, the 'Circle' curve is the boundary of the 'Circle' shape, containing all points at distance at most 'R' from the center '(xc,yc)'. ";
-	cout<<"The center of the scene, drawn by this test, coincides with the center '(xc,yc)' of"<<endl<<"\tthe 'Circle' shape/curve."<<endl<<endl;
+	cout<<"\tx(t) = xc + R * cos(t), y(t) = yc + R * sin(t)"<<endl<<endl<<"\tfor any 'R>0', and for every 't' in '[-pi,pi]'. Broadly speaking, the 'Circle' curve is ";
+	cout<<"the boundary of the 'Circle' shape, containing all points at distance at most 'R' from the center '(xc,yc)'."<<endl<<endl;
+	cout<<"\tThe center of the scene, drawn by this test, coincides with the center '(xc,yc)' of the 'Circle' shape/curve."<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide interactively the radius 'R' (as a positive and not null ";
 	cout<<"floating-point value) and the center coordinates '(xc,yc)' (as '2' floating-point"<<endl;
 	cout<<"\tvalues). In this context, the user can also:"<<endl<<endl;
