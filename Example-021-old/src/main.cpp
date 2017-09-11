@@ -72,7 +72,7 @@ int main(int argc,char **argv)
 	cout<<"\tand center coordinates '(xc,yc)'. The 'Circle' curve is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = xc + R * cos(t), y(t) = yc + R * sin(t)"<<endl<<endl<<"\tfor any 'R>0', and for every 't' in '[-pi,pi]'. Broadly speaking, the 'Circle' curve is ";
 	cout<<"the boundary of the 'Circle' shape, containing all points at distance at most 'R' from the center '(xc,yc)'."<<endl<<endl;
-	cout<<"\tThe center of the scene, drawn by this test, coincides with the center '(xc,yc)' of the 'Circle' shape/curve."<<endl<<endl;
+	cout<<"\tThe center of the scene, drawn by this test, coincides with the center '(xc,yc)' of the 'Circle' shape/curve (in 'blue')."<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide interactively the radius 'R' (as a positive and not null ";
 	cout<<"floating-point value) and the center coordinates '(xc,yc)' (as '2' floating-point"<<endl;
 	cout<<"\tvalues). In this context, the user can also:"<<endl<<endl;
@@ -245,7 +245,12 @@ void draw()
 		t=t+(2*PI/num_samples);
 	}
 	
-	/* If we arrive here, then all is ok */
+	/* If we arrive here, then all is ok, and we can draw the center '(xc,yc)' of the 'Circle' curve of interest (in 'blue'). */
+	glEnd();
+	glColor3f(0.0,0.0,1.0);
+	glPointSize(5);
+	glBegin(GL_POINTS);
+	glVertex3f(xc,yc,0);
 	glEnd();
 	glFlush();
 	cout<<"\tThe 'Circle' curve of interest is currently approximated by a (closed) polyline with 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"' edges."<<endl;
