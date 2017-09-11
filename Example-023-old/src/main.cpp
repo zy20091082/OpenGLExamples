@@ -79,15 +79,16 @@ int main(int argc,char **argv)
 	cout<<"\tIt draws a (closed) polyline (in 'red'), which is formed by an arbitrary number 'n>2' of the vertices (and thus also of the edges), in an OpenGL window.";
 	cout<<" The (closed) polyline of interest approximates the 'Ellipse' curve of principal"<<endl;
 	cout<<"\tx-axis 'Rx', principal y-axis 'Ry', and center coordinates '(xc,yc)'. The 'Ellipse' curve is defined as follows:"<<endl<<endl;
-	cout<<"\tx(t) = xc + Rx * cos(t), y(t) = yc + Ry * sin(t)"<<endl<<endl<<"\tfor any 'Rx>0', 'Ry>0', and for every 't' in '[-pi,pi]'."<<endl<<endl;
-	cout<<"\tBroadly speaking, the 'Ellipse' curve is obtained from the 'Circle' curve through an affine transformation. Recall that the 'Circle' curve is the boundary";
-	cout<<" of the 'Circle' shape, containing all points at distance at most 'R' from the"<<endl;
-	cout<<"\tcenter '(xc,yc)'. In fact, it is sufficient to scale independently the principal x- and y-axes of the 'Circle' shape in order to have lengths 'Rx' and ";
-	cout<<"'Ry', respectively (not necessarily the same), thus to have an 'Ellipse' curve."<<endl;
-	cout<<"\tNote that we obtain again a 'Circle' curve, if 'Rx=Ry'."<<endl<<endl;
+	cout<<"\tx(t) = xc + Rx * cos(t), y(t) = yc + Ry * sin(t)"<<endl<<endl;
+	cout<<"\tfor any 'Rx>0', 'Ry>0', and for every 't' in '[-pi,pi]'. Broadly speaking, the 'Ellipse' curve is obtained from the 'Circle' curve through an affine ";
+	cout<<"transformation. Recall that the 'Circle' curve is the boundary of the 'Circle'"<<endl;
+	cout<<"\tshape, containing all points at distance at most 'R' from the center '(xc,yc)'. In fact, it is sufficient to scale independently the principal x- and ";
+	cout<<"y-axes of the 'Circle' shape in order to have lengths 'Rx' and 'Ry', respectively"<<endl;
+	cout<<"\t(not necessarily the same), thus to have an 'Ellipse' curve. Note that we obtain again the 'Circle' curve, if 'Rx=Ry'."<<endl<<endl;
+	cout<<"\tThe center of the scene, drawn by this test, coincides with the center '(xc,yc)' of the 'Ellipse' curve (in 'blue')."<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide interactively the principal axes 'Rx' and 'Ry' (as ";
 	cout<<"'2' positive and not null floating-point values), as well as the center coordinates"<<endl;
-	cout<<"\t'(xc,yc)' (as '2' floating-point values). The scene center coincides with the point '(xc,yc)'. In this context, the user can also:"<<endl<<endl;
+	cout<<"\t'(xc,yc)' (as '2' floating-point values). In this context, the user can also:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the (closed) polyline of interest by pressing the '+' key. By construction, it is not ";
 	cout<<"possible to have 'n<3'."<<endl;
 	cout<<"\t\t-) Decrease the number 'n' of the vertices and the edges in the (closed) polyline of interest by pressing the '-' key. By construction, it is not ";
@@ -272,7 +273,12 @@ void draw()
 		t=t+(2*PI/num_samples);
 	}
 	
-	/* If we arrive here, then all is ok */
+	/* If we arrive here, then all is ok, and we can draw the center '(xc,yc)' of the 'Ellipse' curve of interest (in 'blue'). */
+	glEnd();
+	glColor3f(0.0,0.0,1.0);
+	glPointSize(5);
+	glBegin(GL_POINTS);
+	glVertex3f(xc,yc,0);
 	glEnd();
 	glFlush();
 	cout<<"\tThe 'Ellipse' curve of interest is currently approximated by a (closed) polyline with 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"' edges.";
