@@ -71,11 +71,11 @@ int main(int argc,char **argv)
 	cout<<" The (closed) polyline of interest approximates the 'Circle' curve of radius 'R'"<<endl;
 	cout<<"\tand center coordinates '(xc,yc)'. The 'Circle' curve is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = xc + R * cos(t), y(t) = yc + R * sin(t)"<<endl<<endl<<"\tfor any 'R>0', and for every 't' in '[-pi,pi]'."<<endl<<endl;
- 	cout<<"\tBroadly speaking, the 'Circle' curve is the boundary of the 'Circle' shape, containing all points at distance at most 'R' from the center '(xc,yc)'.";
-	cout<<endl<<endl;
+ 	cout<<"\tBroadly speaking, the 'Circle' curve is the boundary of the 'Circle' shape, containing all points at distance at most 'R' from the center '(xc,yc)'. ";
+	cout<<"Here, the scene center coincides with the point '(xc,yc)'."<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide interactively the radius 'R' (as a positive and not null ";
 	cout<<"floating-point value) and the center coordinates '(xc,yc)' (as '2' floating-point"<<endl;
-	cout<<"\tvalues). The scene center coincides with the point '(xc,yc)'. In this context, the user can also:"<<endl<<endl;
+	cout<<"\tvalues). In this context, the user can also:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the (closed) polyline of interest by pressing the '+' key. By construction, it is not ";
 	cout<<"possible to have 'n<3'."<<endl;
 	cout<<"\t\t-) Decrease the number 'n' of the vertices and the edges in the (closed) polyline of interest by pressing the '-' key. By construction, it is not ";
