@@ -11,7 +11,7 @@ The <i>'Example-025 (Old Mode)'</i> Test draws a (open) polyline (in <i>'red'</i
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example025_old_conf2.png' border='1' width='456' height='560'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example025_old_conf3.png' border='1' width='456' height='560'></td></tr>
-<tr><td>Here, <code><i>y = 5 * x^2</i>, <i>'R=0.5'</i>,</code> and <code><i>'n=20'</i>.</code></td><td>Here, <code><i>y = 5 * x^2</i>, <i>'R=0.5'</i>,</code> and <code><i>'n=50'</i>.</code></td></tr></table><p><hr><p>
+<tr><td>Here, the <i>'Parabola'</i> curve of equation <code><i>'y = 5 * x^2'</i></code> is approximated in the <code>x</i></code>-range <code><i>'[-0.5,0.5]'</i></code> by a (open) polyline with <code><i>'n=20'</i></code> vertices and <code><i>'m=19'</i></code> edges.</td><td>Here, the <i>'Parabola'</i> curve of equation <code><i>'y = 5 * x^2'</i></code> is approximated in the <code>x</i></code>-range <code><i>'[-0.5,0.5]'</i></code> by a (open) polyline with <code><i>'n=50'</i></code> vertices and <code><i>'m=49'</i></code> edges.</td></tr></table><p><hr><p>
 
 <h4>Dependencies</h4>
 
