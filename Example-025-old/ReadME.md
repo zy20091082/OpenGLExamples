@@ -7,7 +7,7 @@ The <i>'Example-025 (Old Mode)'</i> Test draws a (open) polyline (in <i>'red'</i
 <li>Decrease the number <code><i>'n'</i></code> of the vertices in the (open) polyline of interest by pressing the <code><i>'-'</i></code> key. By construction, it is not possible to have <code><i>'n<3'</i></code> and <code><i>'m<2'.</i></code></li></ul>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example025_old_conf0.png' border='1' width='456' height='560'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example025_old_conf1.png' border='1' width='456' height='560'></td></tr>
-<tr><td>Here, <code><i>y = 5 * x^2</i>, <i>'R=0.5'</i>,</code> and <code><i>'n=3'</i>.</code></td><td> Here, <code><i>y = 5 * x^2</i>, <i>'R=0.5'</i>,</code> and <code><i>'n=5'</i>.</code></td></tr>
+<tr><td>Here, the <i>'Parabola' curve of equation <code><i>y = 5 * x^2</i> is approximated in the <code>x</i>-range <code><i>'[-0.5,0.5]'</i></code> by a (open) polyline with <code><i>'n=3'</i> vertices and <code><i>'m=2'</i></code> edges.</td><td> Here, <code><i>y = 5 * x^2</i>, <i>'R=0.5'</i>,</code> and <code><i>'n=5'</i>.</code></td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example025_old_conf2.png' border='1' width='456' height='560'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example025_old_conf3.png' border='1' width='456' height='560'></td></tr>
