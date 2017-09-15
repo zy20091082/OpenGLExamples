@@ -9,8 +9,8 @@ The <i>'Example-042 (Old Mode)'</i> Test draws several views of the <i>'Cone'</i
 <li>choose to render a specific view of the <i>'Cone'</i> shape (among the views, mentioned above) by pressing cyclically the <code><i>'c'</i></code> key;</li>
 <li>choose to apply either the orthographic or the perspective projection to the triangle fan, approximating the <i>'Cone'</i> shape, by pressing cyclically the <code><i>' '</i></code> (space) key;</li>
 <li>choose to render either the <i>'wireframe'</i> or the <i>'filled versions'</i> of all triangles in the triangle fan, approximating the <i>'Cone'</i> shape, by pressing cyclically the <code><i>'r'</i></code> key;
-<li>increase the number <code><i>'n'</i></code> of all vertices (including the <i>'apex'</i>) in the triangle fan, approximating the <i>'Cone'</i> shape, by pressing the <code><i>'+'</i></code> key;</li>
-<li>decrease the number <code><i>'n'</i></code> of all vertices (including the <i>'apex'</i>) in the triangle fan, approximating the <i>'Cone'</i> shape, by pressing the <code><i>'-'</i></code> key. It is not possible to have <code><i>'n<5'</i></code> (by construction).</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.
+<li>increase the number <code><i>'n'</i></code> of all vertices (including the <i>'apex'</i>) in the triangle fan, approximating the <i>'Cone'</i> shape, by pressing the <code><i>'+'</i></code> key. By construction, it is not possible to have <code><i>'n<5'.</i></code></li>
+<li>Decrease the number <code><i>'n'</i></code> of all vertices (including the <i>'apex'</i>) in the triangle fan, approximating the <i>'Cone'</i> shape, by pressing the <code><i>'-'</i></code> key. By construction, it is not possible to have <code><i>'n<5'.</i></code></li></ul><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.
 
 <p><h5>Rendering the <i>'View #0'</i></h5>
 

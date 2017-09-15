@@ -104,10 +104,10 @@ int main(int argc,char **argv)
 	cout<<"\tIn this test, the user cannot modify the 'radius' 'R', and the 'center' '(xc,yc,zc)' of the 'Hemisphere' shape, since they are fixed in advance. Instead,";
 	cout<<" the user can modify the numbers 'p' and 'q' of the longitudinal and the"<<endl;
 	cout<<"\tlatitudinal slices, respectively, as well as rotate the scene along the coordinate axes. In particular, the user can:"<<endl<<endl;
-	cout<<"\t\t-) increase the number 'p' of the longitudinal slices by pressing the 'P' key;"<<endl;
-	cout<<"\t\t-) decrease the number 'p' of the longitudinal slices by pressing the 'p' key. By construction, it is not possible to have 'p<3'."<<endl;
-	cout<<"\t\t-) Increase the number 'q' of the latitudinal slices by pressing the 'Q' key;"<<endl;
-	cout<<"\t\t-) decrease the number 'q' of the latitudinal slices by pressing the 'q' key. By construction, it is not possible to have 'q<3'."<<endl;
+	cout<<"\t\t-) increase the number 'p' of the longitudinal slices by pressing the 'P' key. By construction, it is not possible to have 'p<3'."<<endl;
+	cout<<"\t\t-) Decrease the number 'p' of the longitudinal slices by pressing the 'p' key. By construction, it is not possible to have 'p<3'."<<endl;
+	cout<<"\t\t-) Increase the number 'q' of the latitudinal slices by pressing the 'Q' key. By construction, it is not possible to have 'q<3'."<<endl;
+	cout<<"\t\t-) Decrease the number 'q' of the latitudinal slices by pressing the 'q' key. By construction, it is not possible to have 'q<3'."<<endl;
 	cout<<"\t\t-) Increase the rotation angle 'Rx' along the 'x'-axis by pressing the 'X' key. By construction, the value of 'Rx' is automatically limited within the";
 	cout<<" '[0,360]' range."<<endl;
 	cout<<"\t\t-) Decrease the rotation angle 'Rx' along the 'x'-axis by pressing the 'x' key. By construction, the value of 'Rx' is automatically limited within the";

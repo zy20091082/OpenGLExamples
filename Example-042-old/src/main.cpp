@@ -115,9 +115,10 @@ int main(int argc,char **argv)
 	cout<<"the ' ' (space) key;"<<endl;
 	cout<<"\t\t-) choose to render either the 'wireframe' or the 'filled versions' of all triangles in the triangle fan, approximating the 'Cone' shape, by pressing ";
 	cout<<"cyclically the 'r' key;"<<endl;
-	cout<<"\t\t-) increase the number 'n' of all vertices (including the 'apex') in the triangle fan, approximating the 'Cone' shape, by pressing the '+' key;"<<endl;
-	cout<<"\t\t-) decrease the number 'n' of all vertices (including the 'apex') in the triangle fan, approximating the 'Cone' shape, by pressing the '-' key. It is ";
-	cout<<"not possible to have 'n<5' (by construction)."<<endl;
+	cout<<"\t\t-) increase the number 'n' of all vertices (including the 'apex') in the triangle fan, approximating the 'Cone' shape, by pressing the '+' key. By ";
+	cout<<"construction, it is not possible to have 'n<5'."<<endl;
+	cout<<"\t\t-) Decrease the number 'n' of all vertices (including the 'apex') in the triangle fan, approximating the 'Cone' shape, by pressing the '-' key. By ";
+	cout<<"construction, it is not possible to have 'n<5'."<<endl;
 	cout<<endl<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl;
 	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
 	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
