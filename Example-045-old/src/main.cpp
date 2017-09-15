@@ -97,10 +97,9 @@ int main(int argc,char **argv)
 	cout<<"'(xc,yc,zc)', such that its points are expressed as follows:"<<endl<<endl;
 	cout<<"\tx(r,s) = xc + R * cos(r) * cos(s), y(r,s) = yc + R * sin(r), z(r,s) = zc + R * cos(r) * sin(s)"<<endl<<endl<<"\tfor any 'R>0', for any 'r' in '[ 0, pi/2 ";
 	cout<<"]', and for any 's' in '[ 0, 2*pi ]'."<<endl<<endl;
-	cout<<"\tHere, the 'Hemisphere' shape is approximated by a quad grid, consisting of 'p' 'slices' around the Z-axis (similar to the longitudinal lines) and of";
-	cout<<" 'q' 'stacks' along the Z-axis (similar to the latitudinal lines). By construction,"<<endl;
-	cout<<"\t'p>=3' and 'q>=3'. Specifically, the 'wireframe versions' of all quadrilaterals in the quad grid of interest (in 'blue') are rendered by using the ";
-	cout<<"perspective projection."<<endl<<endl;
+	cout<<"\tHere, the 'Hemisphere' shape is approximated by a quad grid, consisting of 'p>2' 'slices' around the Z-axis (similar to the longitudinal lines) and of";
+	cout<<" 'q>2' 'stacks' along the Z-axis (similar to the latitudinal lines). Specifically,"<<endl;
+	cout<<"\tthe 'wireframe versions' of all quadrilaterals in the quad grid of interest (in 'blue') are rendered by using the perspective projection."<<endl<<endl;
 	cout<<"\tIn this test, the user cannot modify the 'radius' 'R', and the 'center' '(xc,yc,zc)' of the 'Hemisphere' shape, since they are fixed in advance. Instead,";
 	cout<<" the user can modify the numbers 'p' and 'q' of the longitudinal and the"<<endl;
 	cout<<"\tlatitudinal slices, respectively, as well as rotate the scene along the coordinate axes. In particular, the user can:"<<endl<<endl;
