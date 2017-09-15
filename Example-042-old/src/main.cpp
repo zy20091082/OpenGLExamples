@@ -96,7 +96,7 @@ int main(int argc,char **argv)
 	cout<<"\tHere, we limit our attention to the 'Cone' shape, where the basis is described by a 'Circle' shape of radius 'R=35', and the point '(0,70,0)' as the ";
 	cout<<"'apex' of the 'Cone' shape. The 'Cone' shape of interest is open, thus we consider"<<endl;
 	cout<<"\tonly the boundary of the 'Circle' shape, described by the 'Circle' curve. In this case, the 'Cone' shape of interest is described by a triangle fan (in ";
-	cout<<"'red') with 'n' vertices (including the 'apex'), such that its triangles are"<<endl;
+	cout<<"'red') with 'n>4' vertices (including the 'apex'), such that its triangles are"<<endl;
 	cout<<"\tincident at the 'apex'. Thanks to its symmetry properties, it is interesting to analyze (upon request) '6' views of the 'Cone' shape, defined as follows:";
 	cout<<endl<<endl;
 	cout<<"\t\t-) a view along the canonical plane 'xz' and the corresponding upturned version (indicated as the 'View #0' and the 'View #1', respectively);"<<endl;
