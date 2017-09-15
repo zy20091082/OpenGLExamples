@@ -43,9 +43,9 @@ GLenum mode=GL_FILL;
 
 /// The number <i>'n'</i> of the vertices (including the <i>'apex'</i>) in the approximation of interest for the <i>'Cone'</i> shape.
 /**
- * The value of this global variable, initially set to 'n=5', is the number 'n' of the vertices in the approximation of interest for the 'Cone' shape. Broadly speaking,
- * it is the number 'n' of all vertices (including the 'apex') in the triangle fan of interest. The value 'n' (i.e., the value of this global variable) can be modified
- * interactively by pressing the '+' and the '-' keys.
+ * The value of this global variable, initially set to 'n=5', is the number 'n>4' of the vertices in the approximation of interest for the 'Cone' shape. Broadly
+ * speaking, it is the number 'n>4' of all vertices (including the 'apex') in the triangle fan of interest. The value 'n>4' (i.e., the value of this global variable)
+ * can be modified interactively by pressing the '+' and the '-' keys.
  */
 unsigned int num_samples=5;
 
@@ -289,14 +289,16 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '+':
 		
-			/* The key is '+', thus we increase the number 'n' of the vertices (including the 'apex') in the triangle fan of interest! */
+			/* The key is '+', thus we increase the number 'n>4' of the vertices (including the 'apex') in the triangle fan of interest. By construction, it is not
+ 			 * possible to have 'n<5'. */
 			num_samples=num_samples+1;
 			glutPostRedisplay();
 			break;
 		
 		case '-':
 		
-			/* The key is '-', thus we decrease (if it is possible) the number 'n' of the vertices (including the 'apex') in the triangle fan of interest! */
+			/* The key is '-', thus we decrease (if it is possible) the number 'n>4' of the vertices (including the 'apex') in the triangle fan of interest. By
+			 * construction, it is not possible to have 'n<5'. */
 			if(num_samples>5) num_samples=num_samples-1;
 			else
 			{

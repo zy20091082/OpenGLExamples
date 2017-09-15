@@ -40,9 +40,10 @@ unsigned int long_slices_num=3;
 
 /// The number <i>'q'</i> of the <i>'stacks'</i> around the Z-axis, approximating the <i>'Hemisphere'</i> shape.
 /**
- * By construction, the 'Hemisphere' shape is approximated by a number 'q' of 'stacks' around the 'z' axis (similar to the latitudinal lines). This global variable 
- * contains the number 'q' of latitudinal lines, and it is initially set to 'q=3', which is the minimum number 'q' of latitudinal lines in the 'Hemisphere' shape. The
- * value of 'q' is increased and decreased by pressing, respectively, the 'Q' and the 'q' keys. By construction, it is not possible to have 'q<3' (as mentioned above).
+ * By construction, the 'Hemisphere' shape is approximated by a number 'q>2' of 'stacks' around the 'z' axis (similar to the latitudinal lines). This global variable 
+ * contains the number 'q>2' of latitudinal lines, and it is initially set to 'q=3', which is the minimum number 'q>2' of latitudinal lines in the 'Hemisphere' shape.
+ * The value of 'q>2' is increased and decreased by pressing, respectively, the 'Q' and the 'q' keys. By construction, it is not possible to have 'q<3' (as mentioned
+ * above).
  */
 unsigned int lat_slices_num=3;
 
@@ -174,7 +175,7 @@ void manageKeys(unsigned char key, int x, int y)
 	{
 		case 'Q':
 	
-			/* The key is 'Q', thus we increase the number 'q' of the latitudinal slices in the quad strip, approximating the 'wireframe version' of the 'Hemisphere'
+			/* The key is 'Q', thus we increase the number 'q>2' of the latitudinal slices in the quad strip, approximating the 'wireframe version' of the 'Hemisphere'
 			 * shape. By construction, it is not possible to have 'q<3'. */
 			lat_slices_num=lat_slices_num+1;
 			glutPostRedisplay();
@@ -182,7 +183,7 @@ void manageKeys(unsigned char key, int x, int y)
 
 		case 'q':
 	
-			/* The key is 'q', thus we reduce the number 'q' of the latitudinal slices in the quad strip, approximating the 'wireframe version' of the 'Hemisphere'
+			/* The key is 'q', thus we reduce the number 'q>2' of the latitudinal slices in the quad strip, approximating the 'wireframe version' of the 'Hemisphere'
 			 * shape. By construction, it is not possible to have 'q<3'. */
 			if(lat_slices_num>3) lat_slices_num=lat_slices_num-1;
 			else 

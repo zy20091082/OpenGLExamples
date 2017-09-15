@@ -32,17 +32,18 @@ using namespace std;
 
 /// The number <i>'p'</i> of the <i>'slices'</i> around the Z-axis, approximating the <i>'Ellipsoid'</i> shape.
 /**
- * By construction, the 'Ellipsoid' shape is approximated by a number 'p' of 'slices' around the 'z' axis (similar to the longitudinal lines). This global variable
- * contains the number 'p' of longitudinal lines, and it is initially set to 'p=3', which is the minimum number 'p' of longitudinal lines in the 'Ellipsoid' shape. The
- * value of 'p' is increased and decreased by pressing, respectively, the 'P' and the 'p' keys. By construction, it is not possible to have 'p<3' (as mentioned above).
+ * By construction, the 'Ellipsoid' shape is approximated by a number 'p>2' of 'slices' around the 'z' axis (similar to the longitudinal lines). This global variable
+ * contains the number 'p>2' of longitudinal lines, and it is initially set to 'p=3', which is the minimum number 'p>2' of longitudinal lines in the 'Ellipsoid' shape.
+ * The value of 'p>2' is increased and decreased by pressing, respectively, the 'P' and the 'p' keys. By construction, it is not possible to have 'p<3' (as mentioned
+ * above).
  */
 unsigned int long_slices_num=3;
 
 /// The number <i>'q'</i> of the <i>'stacks'</i> around the Z-axis, approximating the <i>'Ellipsoid'</i> shape.
 /**
- * By construction, the 'Ellipsoid' shape is approximated by a number 'q' of 'stacks' around the 'z' axis (similar to the latitudinal lines). This global variable
- * contains the number 'q' of latitudinal lines, and it is initially set to 'q=3', which is the minimum number 'q' of latitudinal lines in the 'Ellipsoid' shape. The
- * value of 'q' is increased and decreased by pressing, respectively, the 'Q' and the 'q' keys. By construction, it is not possible to have 'q<3' (as mentioned above).
+ * By construction, the 'Ellipsoid' shape is approximated by a number 'q>2' of 'stacks' around the 'z' axis (similar to the latitudinal lines). This global variable
+ * contains the number 'q>2' of latitudinal lines, and it is initially set to 'q=3', which is the minimum number 'q>2' of latitudinal lines in the 'Ellipsoid' shape. The
+ * value of 'q>2' is increased and decreased by pressing, respectively, the 'Q' and the 'q' keys. By construction, it is not possible to have 'q<3' (as mentioned above).
  */
 unsigned int lat_slices_num=3;
 
@@ -132,11 +133,10 @@ int main(int argc,char **argv)
 	cout<<" 's' in '[ 0, 2*pi ]'. Instead, the points of the second hemi-ellipsoid (known as the 'Hemi-Ellipsoid #1') are expressed as follows:"<<endl<<endl;
 	cout<<"\tx(r,s) = xc + a * cos(r) * cos(s), y(r,s) = yc - b * sin(r), z(r,s) = zc + c * cos(r) * sin(s)"<<endl<<endl;
 	cout<<"\talways for every 'r' in '[ 0, pi/2 ]', and every 's' in '[ 0, 2*pi ]'."<<endl<<endl;
-	cout<<"\tHere, each of '2' hemi-ellipsoids in the 'Ellipsoid' shape is approximated by a quad grid, formed by 'p' 'slices' around the Z-axis (similar to the ";
-	cout<<"longitudinal lines) and by 'q' 'stacks' along the Z-axis (similar to the latitudinal"<<endl;
-	cout<<"\tlines). By construction, 'p>=3' and 'q>=3', for each quad grid. Specifically, the 'wireframe' and the 'filled' versions' of all quadrilaterals in the quad";
-	cout<<" grids of interest (in 'blue' and in 'red', respectively) are rendered upon"<<endl;
-	cout<<"\trequest by using the perspective projection."<<endl<<endl;
+	cout<<"\tHere, each of '2' hemi-ellipsoids in the 'Ellipsoid' shape is approximated by a quad grid, formed by 'p>2' 'slices' around the Z-axis (similar to the ";
+	cout<<"longitudinal lines) and by 'q>2' 'stacks' along the Z-axis (similar to the"<<endl;
+	cout<<"\tlatitudinal lines). Specifically, the 'wireframe' and the 'filled' versions' of all quadrilaterals in the quad grids of interest (in 'blue' and in 'red', ";
+	cout<<"respectively) are rendered upon request by using the perspective projection."<<endl<<endl;
 	cout<<"\tIn this test, the user cannot modify the lengths 'a', 'b'', and 'c' for the principal axes, and the 'center' '(xc,yc,zc)' of the 'Ellipsoid' shape, since ";
 	cout<<"they are fixed in advance. Instead, the user can modify the numbers 'p' and"<<endl;
 	cout<<"\t'q' of the longitudinal and the latitudinal slices in each quad grid, respectively, as well as rotate the scene along the coordinate axes, and modify the";
@@ -144,10 +144,12 @@ int main(int argc,char **argv)
 	cout<<"\tparticular, the user can:"<<endl<<endl;
 	cout<<"\t\t-) choose to render either the 'wireframe' or the 'filled' versions' of all quadrilaterals in the quad grids of interest by pressing cyclically the ";
 	cout<<"'m' key;"<<endl;
-	cout<<"\t\t-) increase the number 'p' of the longitudinal slices by pressing the 'P' key;"<<endl;
-	cout<<"\t\t-) decrease the number 'p' of the longitudinal slices by pressing the 'p' key. By construction, it is not possible to have 'p<3' in each quad grid.";
-	cout<<endl<<"\t\t-) Increase the number 'q' of the latitudinal slices by pressing the 'Q' key;"<<endl;
-	cout<<"\t\t-) decrease the number 'q' of the latitudinal slices by pressing the 'q' key. By construction, it is not possible to have 'q<3' in each quad grid.";
+	cout<<"\t\t-) increase the number 'p' of the longitudinal slices by pressing the 'P' key. By construction, it is not possible to have 'p<3' in each quad grid.";
+	cout<<endl;
+	cout<<"\t\t-) Decrease the number 'p' of the longitudinal slices by pressing the 'p' key. By construction, it is not possible to have 'p<3' in each quad grid.";
+	cout<<endl<<"\t\t-) Increase the number 'q' of the latitudinal slices by pressing the 'Q' key. By construction, it is not possible to have 'q<3' in each quad grid.";
+	cout<<endl;
+	cout<<"\t\t-) Decrease the number 'q' of the latitudinal slices by pressing the 'q' key. By construction, it is not possible to have 'q<3' in each quad grid.";
 	cout<<endl;
 	cout<<"\t\t-) Increase the rotation angle 'Rx' along the 'x'-axis by pressing the 'X' key. By construction, the value of 'Rx' is automatically limited within the";
 	cout<<" '[0,360]' range."<<endl;
@@ -218,7 +220,7 @@ void manageKeys(unsigned char key, int x, int y)
 	{
 		case 'Q':
 	
-			/* The key is 'Q', thus we increase the number 'q' of the latitudinal slices in the quad strip, approximating the 'wireframe version' of the 'Ellipsoid'
+			/* The key is 'Q', thus we increase the number 'q>2' of the latitudinal slices in the quad strip, approximating the 'wireframe version' of the 'Ellipsoid'
 			 * shape. By construction, it is not possible to have 'q<3'. */
 			lat_slices_num=lat_slices_num+1;
 			glutPostRedisplay();
@@ -226,7 +228,7 @@ void manageKeys(unsigned char key, int x, int y)
 
 		case 'q':
 	
-			/* The key is 'q', thus we reduce the number 'q' of the latitudinal slices in the quad strip, approximating the 'wireframe version' of the 'Ellipsoid'
+			/* The key is 'q', thus we reduce the number 'q>2' of the latitudinal slices in the quad strip, approximating the 'wireframe version' of the 'Ellipsoid'
 			 * shape. By construction, it is not possible to have 'q<3'. */
 			if(lat_slices_num>3) lat_slices_num=lat_slices_num-1;
 			else 
@@ -242,7 +244,7 @@ void manageKeys(unsigned char key, int x, int y)
 
 		case 'P':
 	
-			/* The key is 'P', thus we increase the number 'p' of the longitudinal slices in the quad strip, approximating the 'wireframe version' of the 'Ellipsoid'
+			/* The key is 'P', thus we increase the number 'p>2' of the longitudinal slices in the quad strip, approximating the 'wireframe version' of the 'Ellipsoid'
 			 * shape. By construction, it is not possible to have 'p<3'. */
 			long_slices_num=long_slices_num+1;
 			glutPostRedisplay();
@@ -250,7 +252,7 @@ void manageKeys(unsigned char key, int x, int y)
 
 		case 'p':
 	
-			/* The key is 'p', thus we reduce the number 'p' of the longitudinal slices in the quad strip, approximating the 'wireframe version' of the 'Ellipsoid'
+			/* The key is 'p', thus we reduce the number 'p>2' of the longitudinal slices in the quad strip, approximating the 'wireframe version' of the 'Ellipsoid'
 			 * shape. By construction, it is not possible to have 'p<3'. */
 			if(long_slices_num>3) long_slices_num=long_slices_num-1;
 			else
