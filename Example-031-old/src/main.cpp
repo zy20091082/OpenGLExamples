@@ -96,7 +96,7 @@ int main(int argc,char **argv)
 	cout<<"radius 'rI' and 'rE', respectively. The disk of radius 'rE' is the 'outer' disk,"<<endl;
 	cout<<"\tand the disk of radius 'rI' is the 'inner' disk."<<endl<<endl;
 	cout<<"\tSpecifically, this test draws the following variants of the 'Circular Annulus' shape:"<<endl<<endl;
-	cout<<"\t\t0. the 'Variant #0' of the 'Circular Annulus' shape exploits '2' triangle fans, formed by 'n' vertices (including their 'reference vertices'). By ";
+	cout<<"\t\t0. the 'Variant #0' of the 'Circular Annulus' shape exploits '2' triangle fans, formed by 'n>4' vertices (including their 'reference vertices'). By ";
 	cout<<"construction, it is not possible to have 'n<5'. Broadly speaking, '2' triangle"<<endl;
 	cout<<"\t\t   fans describe, respectively, the 'inner' disk (in 'blue') and the 'outer' disk (in 'red') at different z-depths. These disks are described by the ";
 	cout<<"'Circle' shape, and are drawn by using the orthographic projection, such"<<endl;
@@ -109,12 +109,12 @@ int main(int argc,char **argv)
 	cout<<"'Variant #0' are not 'real' approximations of the 'Circular Annulus' shape."<<endl<<endl;
 	cout<<"\t\t1. The 'Variant #1' of the 'Circular Annulus' shape is defined in the same spirit of the 'Variant #0', but the z-buffer (depth test) technique is ";
 	cout<<"exploited here for rendering '2' disks of interest. Also in this case, each of"<<endl;
-	cout<<"\t\t   them is approximated by '2' triangle fans with 'n' vertices, including their 'reference vertices', and it is not possible to have 'n<5'. Thus, the ";
+	cout<<"\t\t   them is approximated by '2' triangle fans with 'n>4' vertices, including their 'reference vertices', and it is not possible to have 'n<5'. Thus, the ";
 	cout<<"resulting scene does not depend on the rendering order of '2' disks, and"<<endl;
 	cout<<"\t\t   is only 'the same as' the 'Configuration #0' for the 'Variant #0' of the 'Circular Annulus' shape."<<endl<<endl;
 	cout<<"\t\t2. The 'Variant #2' of the 'Circular Annulus' shape is defined by only one triangle strip, formed by 'm=n-1' pairs of the corresponding vertices (thus ";
 	cout<<"'2*n-2' vertices) in the 'inner' and the 'outer' circles, respectively."<<endl;
-	cout<<"\t\t   These curves approximate the boundary of the 'Circular Annulus' shape. Broadly speaking, we consider the orthographic projections of all 'n' ";
+	cout<<"\t\t   These curves approximate the boundary of the 'Circular Annulus' shape. Broadly speaking, we consider the orthographic projections of all 'n>4' ";
 	cout<<"vertices in the 'Variant #0' (or also in the 'Variant #1') of the 'Circular"<<endl;
 	cout<<"\t\t   Annulus' shape, excepting their 'reference vertices'. By construction, it is not possible to have 'n<5', thus to have 'm<4'. In any case, note ";
 	cout<<"that the triangle strip of interest is planar, and is a 'real' approximation"<<endl;
