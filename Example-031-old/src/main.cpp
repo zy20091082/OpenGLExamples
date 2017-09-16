@@ -64,7 +64,7 @@ GLenum mode=GL_FILL;
 /**
  * The value of this global variable indicates what rendering order of the triangle fans in the 'Variant #0' of the 'Circular Annulus' shape must be exploited. Recall
  * that the 'Variant #0' of interest is formed by '2' triangle fans with 'n>4' vertices (including the 'reference vertex'), that describe, respectively, the 'inner'
- * disk (in 'blue') and the 'outer' disk (in 'red') at different z-depths. Here, the rendering scene is modified by the rendering order of these disks, specified by the
+ * disk (in 'blue') and the 'outer' disk (in 'red') at different z-depth. Here, the rendering scene is modified by the rendering order of these disks, specified by the
  * value of this global variable as follows:
  *
  * 	-)  the value '0' enables the 'Configuration #0', where the 'inner' disk (in 'blue') is rendered after the 'outer' disk (in 'red'). Here, both the disks are visible.
@@ -98,7 +98,7 @@ int main(int argc,char **argv)
 	cout<<"\tSpecifically, this test draws the following variants of the 'Circular Annulus' shape:"<<endl<<endl;
 	cout<<"\t\t0. the 'Variant #0' of the 'Circular Annulus' shape exploits '2' triangle fans, formed by 'n>4' vertices (including their 'reference vertices'). By ";
 	cout<<"construction, it is not possible to have 'n<5'. Broadly speaking, '2' triangle"<<endl;
-	cout<<"\t\t   fans describe, respectively, the 'inner' disk (in 'blue') and the 'outer' disk (in 'red') at different z-depths. These disks are described by the ";
+	cout<<"\t\t   fans describe, respectively, the 'inner' disk (in 'blue') and the 'outer' disk (in 'red') at different z-depth. These disks are described by the ";
 	cout<<"'Circle' shape, and are drawn by using the orthographic projection, such"<<endl;
 	cout<<"\t\t   that their 'reference vertices' are projected on the same point. Here, the user can choose to modify the rendering order of the 'inner' and the ";
 	cout<<"'outer' disks by obtaining the following configurations:"<<endl<<endl;
@@ -316,7 +316,7 @@ void draw()
 	float d=(2*PI)/(num_samples-1);
 
 	/* Now, we draw the 'Variant #0' of the 'Circular Annulus' shape by using '2' triangle fans, formed by 'n>4' vertices (including their 'reference vertices'). Broadly
-	 * speaking, they describe '2' disks (described by the 'Circle' shape) at different depths, that are drawn by using the orthographic projection, and such that their
+	 * speaking, they describe '2' disks (described by the 'Circle' shape) at different depth, that are drawn by using the orthographic projection, and such that their
 	 * 'reference vertices' are projected on the same point. By construction, it is not possible to have 'n<5'. The value of 'n>4' can be increased and decreased upon
 	 * request by pressing, respectively, the '+' and the '-' keys.
 	 * 

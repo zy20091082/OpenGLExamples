@@ -38,13 +38,13 @@ using namespace std;
  */
 static long font = (long)GLUT_BITMAP_8_BY_13;
 
-/// The number of the samples in all approximations of interest for the <i>'Circular Annulus'</i> shape.
+/// The number <i>'n'</i> of the samples in all approximations of interest for the <i>'Circular Annulus'</i> shape.
 /**
- * This global variable contains the number 'n' of the samples in all approximations of interest for the 'Circular Annulus' shape. Here, the value of 'n' is the number
- * 'n' of the vertices in '2' triangle fans of interest (including the 'reference vertex'), that approximate the 'Variant #0' and the 'Variant #1' of the 'Circular
- * Annulus' shape. Moreover, recall that 'm=n-1' is the number of the vertices pairs in the triangle strip, approximating the 'Variant #3' of the 'Circular Annulus'
- * shape. By construction, it is not possible to have 'n<5', thus to have 'm<4'. The number 'n' of the samples (i.e., the content of this global variable) can be
- * increased and decreased upon request by pressing, respectively, the '+' and the '-' keys.
+ * This global variable contains the number 'n>4' of the samples in all approximations of interest for the 'Circular Annulus' shape. Here, the value of 'n>4' is the
+ * number 'n>4' of the vertices in '2' triangle fans of interest (including the 'reference vertex'), that approximate the 'Variant #0' and the 'Variant #1' of the
+ * 'Circular Annulus' shape. Moreover, recall that 'm=n-1' is the number of the vertices pairs in the triangle strip, approximating the 'Variant #3' of the 'Circular
+ * Annulus' shape. By construction, it is not possible to have 'n<5', thus to have 'm<4'. The number 'n>4' of the samples (i.e., the content of this global variable)
+ * can be increased and decreased upon request by pressing, respectively, the '+' and the '-' keys.
  */
 unsigned int num_samples=5;
 
@@ -81,21 +81,21 @@ int main(int argc,char **argv)
 	cout<<"radius 'rI' and 'rE', respectively. The disk of radius 'rE' is the 'outer' disk,"<<endl;
 	cout<<"\tand the disk of radius 'rI' is the 'inner' disk."<<endl<<endl;
 	cout<<"\tSpecifically, this test draws the following variants of the 'Circular Annulus' shape:"<<endl<<endl;
-	cout<<"\t\t0. the 'Variant #0' of the 'Circular Annulus' shape exploits '2' triangle fans, formed by 'n' vertices (including their 'reference vertices'). By ";
-	cout<<"construction, it is not possible to have 'n<5'. Broadly speaking, '2' triangle"<<endl;
-	cout<<"\t\t   fans describe, respectively, the 'inner' disk (in 'blue' ) and the 'outer' disk (in 'red') at different z-depths. These disks are described by the ";
-	cout<<"'Circle' shape, and are drawn by using the orthographic projection, such"<<endl;
-	cout<<"\t\t   that their 'reference vertices' are projected on the same point. Here, the 'outer' disk is rendered before than the 'inner' disk, and it is not ";
-	cout<<"possible to modify their rendering order. Thus, the 'Variant #0' seems to"<<endl;
-	cout<<"\t\t   coincide with the 'Circular Annulus' shape without being a 'real' approximation of this shape."<<endl<<endl;
+	cout<<"\t\t0. the 'Variant #0' of the 'Circular Annulus' shape exploits '2' triangle fans, formed by 'n>4' vertices (including their 'reference vertices'). By ";
+	cout<<"construction, it is not possible to have 'n<5'. Broadly speaking, '2'"<<endl;
+	cout<<"\t\t   triangle fans describe, respectively, the 'inner' disk (in 'blue') and the 'outer' disk (in 'red') at different z-depth. These disks are described";
+	cout<<" by the 'Circle' shape, and are drawn by using the orthographic projection,"<<endl;
+	cout<<"\t\t   such that their 'reference vertices' are projected on the same point. Here, the 'outer' disk is rendered before than the 'inner' disk, and it is ";
+	cout<<"not possible to modify their rendering order. Thus, the 'Variant #0' seems"<<endl;
+	cout<<"\t\t   to coincide with the 'Circular Annulus' shape without being a 'real' approximation of this shape."<<endl<<endl;
 	cout<<"\t\t1. The 'Variant #1' of the 'Circular Annulus' shape is defined in the same spirit of the 'Variant #0', but the z-buffer (depth test) technique is ";
 	cout<<"exploited here for rendering '2' disks of interest. Also in this case, each of"<<endl;
-	cout<<"\t\t   them is approximated by '2' triangle fans with 'n' vertices, including their 'reference vertices', and it is not possible to have 'n<5'. Thus, the ";
+	cout<<"\t\t   them is approximated by '2' triangle fans with 'n>4' vertices, including their 'reference vertices', and it is not possible to have 'n<5'. Thus, the ";
 	cout<<"resulting scene does not depend on the rendering order of '2' disks, and"<<endl;
 	cout<<"\t\t   is 'the same as' the 'Variant #0' of the 'Circular Annulus' shape."<<endl<<endl;
 	cout<<"\t\t2. The 'Variant #2' of the 'Circular Annulus' shape is defined by only one triangle strip, formed by 'm=n-1' pairs of the corresponding vertices (thus ";
 	cout<<"'2*n-2' vertices) in the 'inner' and the 'outer' circles, respectively."<<endl;
-	cout<<"\t\t   These curves approximate the boundary of the 'Circular Annulus' shape. Broadly speaking, we consider the orthographic projections of all 'n' ";
+	cout<<"\t\t   These curves approximate the boundary of the 'Circular Annulus' shape. Broadly speaking, we consider the orthographic projections of all 'n>4' ";
 	cout<<"vertices in the 'Variant #0' (or also in the 'Variant #1') of the 'Circular"<<endl;
 	cout<<"\t\t   Annulus' shape, excepting their 'reference vertices'. By construction, it is not possible to have 'n<5', thus to have 'm<4'. In any case, note ";
 	cout<<"that the triangle strip of interest is planar, and is a 'real' approximation"<<endl;
@@ -183,8 +183,8 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '+':
 		
-			/* The key is '+', thus we increase the number 'n' of the vertices in '2' triangle fans of interest (including the 'reference vertex'), that approximate the
-			 * 'Variant #0' and the 'Variant #1' of the 'Circular Annulus' shape. Moreover, recall that 'm=n-1' is the number of the vertices pairs in the triangle
+			/* The key is '+', thus we increase the number 'n>4' of the vertices in '2' triangle fans of interest (including the 'reference vertex'), that approximate
+			 * the 'Variant #0' and the 'Variant #1' of the 'Circular Annulus' shape. Moreover, recall that 'm=n-1' is the number of the vertices pairs in the triangle
 			 * strip, approximating the 'Variant #3' of the 'Circular Annulus' shape. By construction, it is not possible to have 'n<5', thus to have 'm<4'. */
 			num_samples=num_samples+1;
 			glutPostRedisplay();
@@ -192,7 +192,7 @@ void manageKeys(unsigned char key, int x, int y)
 
 		case '-':
 		
-			/* The key is '-', thus we decrease the number 'n' of the vertices (if possible) in '2' triangle fans of interest (including the 'reference vertex'), that
+			/* The key is '-', thus we decrease the number 'n>4' of the vertices (if possible) in '2' triangle fans of interest (including the 'reference vertex'), that
 			 * approximate the 'Variant #0' and the 'Variant #1' of the 'Circular Annulus' shape. Moreover, recall that 'm=n-1' is the number of the vertices pairs in
 			 * the triangle strip, approximating the 'Variant #3' of the 'Circular Annulus' shape. By construction, it is not possible to have 'n<5', thus to have
 		 	 * 'm<4'. */
@@ -242,7 +242,7 @@ void resize(int w, int h)
 /// This function draws a triangle fan, approximating a given <i>'Circle'</i> shape.
 void drawDisc(float R,float X,float Y,float Z)
 {
-	/* Now, we draw a triangle fan with radius 'R' and center '(X,Y,Z)'. Here, we consider 'n' vertices, including the 'reference vertex'. */
+	/* Now, we draw a triangle fan with radius 'R' and center '(X,Y,Z)'. Here, we consider 'n>4' vertices, including the 'reference vertex'. */
 	float d=(2*PI)/(num_samples-1);
 	glBegin(GL_TRIANGLE_FAN);
 	glVertex3f(X,Y,Z);
@@ -256,17 +256,17 @@ void drawDisc(float R,float X,float Y,float Z)
 	glEnd();
 }
 
-/// This function draws '3' different approximations of the <i>'Circular Annulus'</i> shape in the OpenGL window of interest by using the rendering settings, chosen by the user.
+/// This function draws <i>'3'</i> different approximations of the <i>'Circular Annulus'</i> shape in the OpenGL window of interest by using the rendering settings, chosen by the user.
 void draw()
 {
 	float d=(2*PI)/(num_samples-1);
 
-	/* Now, we draw the 'Variant #0' of the 'Circular Annulus' shape by using '2' triangle fans, formed by 'n' vertices (including their 'reference vertices'). Broadly
-	 * speaking, they describe '2' disks (described by the 'Circle' shape) at different depths, that are drawn by using the orthographic projection, and such that their
+	/* Now, we draw the 'Variant #0' of the 'Circular Annulus' shape by using '2' triangle fans, formed by 'n>4' vertices (including their 'reference vertices'). Broadly
+	 * speaking, they describe '2' disks (described by the 'Circle' shape) at different depth, that are drawn by using the orthographic projection, and such that their
 	 * 'reference vertices' are projected on the same point. The 'outer' disk in 'red' is rendered before than the 'inner' disk in 'blue', and is not possible to modify
 	 * their rendering order. Thus, the resulting scene seems to coincide with the 'Circular Annulus' shape, and is 'the same as' the 'Variant #1' of the 'Circular
-	 * Annulus' shape. By construction, it is not possible to have 'n<5', thus to have 'm<4'. The value of 'n' (thus also the value of 'm') can be increased and
-	 * decreased upon request by pressing, respectively, the '+' and the '-' keys. */
+	 * Annulus' shape. By construction, it is not possible to have 'n<5'. The value of 'n>4' can be increased and decreased upon request by pressing, respectively, the
+	 * '+' and the '-' keys. */
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 	glPolygonMode(GL_FRONT,mode);
 	glColor3f(1,0,0);
@@ -275,9 +275,9 @@ void draw()
 	drawDisc(10,25,75,0);
 	
 	/* Now, we draw the 'Variant #1' of the 'Circular Annulus' shape. This variant is defined in the same spirit of the 'Variant #0', but the z-buffer (depth test)
-	 * technique is exploited here for rendering '2' disks of interest (formed by 'n' vertices, including their 'reference vertices'). Thus, the resulting scene does
+	 * technique is exploited here for rendering '2' disks of interest (formed by 'n>4' vertices, including their 'reference vertices'). Thus, the resulting scene does
 	 * not depend on the rendering order of '2' disks, and is 'the same as' the 'Variant #0' of the 'Circular Annulus' shape. By construction, it is not possible to
-	 * have 'n<5', thus to have 'm<4'. The value of 'n' (thus also the value of 'm') can be increased and decreased upon request by pressing, respectively, the '+' and
+	 * have 'n<5'. The value of 'n>4' can be increased and decreased upon request by pressing, respectively, the '+' and
 	 * the '-' keys. */
 	glEnable(GL_DEPTH_TEST);
 	glColor3f(1,0,0);
@@ -290,8 +290,8 @@ void draw()
 	 * (thus '2*n-2' vertices) in the 'inner' and the 'outer' circles, respectively. These curves approximate the boundary of the 'Circular Annulus' shape. Broadly
 	 * speaking, we consider the orthographic projections of all vertices in the 'Variant #0' (or also in the 'Variant #1') of the 'Circular Annulus' shape, excepting
 	 * their 'reference vertices'. In any case, note that the triangle strip of interest is planar, and is a 'real' approximation of the 'Circular Annulus' shape. By
-	 * construction, it is not possible to have 'n<5', thus to have 'm<4'. The value of 'n' (thus also the value of 'n') can be increased and decreased upon request by
-	 * pressing, respectively, the '+' and the '-' keys. */
+	 * construction, it is not possible to have 'n<5'. The value of 'n>4' (thus also the value of 'm=n-1') can be increased and decreased upon request by pressing,
+	 * respectively, the '+' and the '-' keys. */
 	glColor3f(1,0,0);
 	glBegin(GL_TRIANGLE_STRIP);
 	for(int i=0;i<num_samples;i++)
