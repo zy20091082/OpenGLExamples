@@ -18,19 +18,18 @@ The <i>'Example-031 (Old Mode)'</i> Test draws <code>'3'</code> variants of the 
 <td>The <i>'wireframe versions'</i> of all triangles in the triangle fans (with <code><i>'n=5'</i></code> vertices) and in the triangle strip (with <code><i>'m=4'</i></code> vertices pairs) of interest are drawn by considering the <i>'Configuration #1'</i> for the <i>'Variant #0'</i>.</td></tr><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example031_old_conf2.png' border='1' width="800" height="500"></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example031_old_conf3.png' border='1' width="800" height="500"></td></tr>
-<tr><td>The <i>'wireframe versions'</i> of all triangles in the triangle fans (with <code><i>'n=30'</i></code> vertices) and in the triangle strip (with <code><i>'m=29'</i></code> vertices pairs) of interest are drawn. Here, the <i>'Configuration #0'</i> for the <i>'Variant #0'</i> is considered.</td>
-<td>The <i>'wireframe versions'</i> of all triangles in the triangle fans (with <code><i>'n=30'</i></code> vertices) and in the triangle strip (with <code><i>'m=29'</i></code> vertices pairs) of interest are drawn. Here, the <i>'Configuration #1'</i> for the <i>'Variant #0'</i> is considered.</td></tr>
+<tr><td>The <i>'wireframe versions'</i> of all triangles in the triangle fans (with <code><i>'n=30'</i></code> vertices) and in the triangle strip (with <code><i>'m=29'</i></code> vertices pairs) of interest are drawn by considering the <i>'Configuration #0'</i> for the <i>'Variant #0'</i>.</td>
+<td>The <i>'wireframe versions'</i> of all triangles in the triangle fans (with <code><i>'n=30'</i></code> vertices) and in the triangle strip (with <code><i>'m=29'</i></code> vertices pairs) of interest are drawn by considering the <i>'Configuration #1'</i> for the <i>'Variant #0'</i>.</td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example031_old_conf4.png' border='1' width="800" height="500"></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example031_old_conf5.png' border='1' width="800" height="500"></td></tr>
-<tr><td>The <i>'filled versions'</i> of all triangles in the triangle fans (with <code><i>'n=30'</i></code> vertices) and in the triangle strip (with <code><i>'m=29'</i></code> vertices pairs) of interest are drawn. Here, the <i>'Configuration #0'</i> for the <i>'Variant #0'</i> is considered.</td>
-<td>The <i>'filled versions'</i> of all triangles in the triangle fans (with <code><i>'n=30'</i></code> vertices) and in the triangle strip (with <code><i>'m=29'</i></code> vertices pairs) of interest are drawn. Here, the <i>'Configuration #1'</i> for the <i>'Variant #0'</i> is considered.</td></tr>
-<tr>
+<tr><td>The <i>'filled versions'</i> of all triangles in the triangle fans (with <code><i>'n=30'</i></code> vertices) and in the triangle strip (with <code><i>'m=29'</i></code> vertices pairs) of interest are drawn by considering the <i>'Configuration #0'</i> for the <i>'Variant #0'</i>.</td>
+<td>The <i>'filled versions'</i> of all triangles in the triangle fans (with <code><i>'n=30'</i></code> vertices) and in the triangle strip (with <code><i>'m=29'</i></code> vertices pairs) of interest are drawn by considering the <i>'Configuration #1'</i> for the <i>'Variant #0'</i>.</td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example031_old_conf6.png' border='1' width="800" height="500"></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example031_old_conf7.png' border='1' width="800" height="500"></td></tr>
-<tr><td>The <i>'filled versions'</i> of all triangles in the triangle fans (with <code><i>'n=30'</i></code> vertices) and in the triangle strip (with <code><i>'m=29'</i></code> vertices pairs) of interest are drawn. Here, the <i>'Configuration #0'</i> for the <i>'Variant #0'</i> is considered.</td>
-<td>The <i>'filled versions'</i> of all triangles in the triangle fans (with <code><i>'n=30'</i></code> vertices) and in the triangle strip (with <code><i>'m=29'</i></code> vertices pairs) of interest are drawn. Here, the <i>'Configuration #1'</i> for the <i>'Variant #0'</i> is considered.</td></tr><tr></table><p><hr><p>
+<tr><td>The <i>'filled versions'</i> of all triangles in the triangle fans (with <code><i>'n=30'</i></code> vertices) and in the triangle strip (with <code><i>'m=29'</i></code> vertices pairs) of interest are drawn by considering the <i>'Configuration #0'</i> for the <i>'Variant #0'</i>.</td>
+<td>The <i>'filled versions'</i> of all triangles in the triangle fans (with <code><i>'n=30'</i></code> vertices) and in the triangle strip (with <code><i>'m=29'</i></code> vertices pairs) of interest are drawn by considering the <i>'Configuration #1'</i> for the <i>'Variant #0'</i>.</td></tr><tr></table><p><hr><p>
 
 <h4>Dependencies</h4>
 
