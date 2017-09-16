@@ -45,15 +45,15 @@ float a,b,c;
 
 /// The number <i>'n'</i> of the vertices to be used for defining the (open) polyline, approximating the <i>'Parabola'</i> curve of interest.
 /**
- * The value of this global variable is the number 'n' of the vertices to be used for defining the (open) polyline, approximating the portion of interest for the
+ * The value of this global variable is the number 'n>2' of the vertices to be used for defining the (open) polyline, approximating the portion of interest for the
  * 'Parabola' curve of interest. The 'Parabola' curve of interest is described by the following equation:
  *
  * a x^2 + b x + c = 0
  *
  * where 'a' is not null (clearly). For the sake of the efficiency, only a portion of the 'Parabola' curve is drawn, centered with respect its vertex '(xv,yv)'. Here,
  * the x-range of the 'Parabola' curve is '[ xv - R, xv + R ]' for any given semi-length 'R>0', provided interactively by the user. This implies that the 'Parabola'
- * curve is approximated by a (open) polyline with 'n' vertices and 'm=n-1' edges. The value of 'n', initially set to 'n=3', can be increased and decreased by pressing
- * the '+' and the '-' keys, respectively. By construction, it is not possible to have 'n<3'.
+ * curve is approximated by a (open) polyline with 'n>2' vertices and 'm=n-1' edges. The value of 'n>2', initially set to 'n=3', can be increased and decreased by
+ * pressing the '+' and the '-' keys, respectively. By construction, it is not possible to have 'n<3'.
  */
 unsigned int num_samples=3;
 
@@ -313,14 +313,15 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '+':
 		
-			/* The key is '+', thus we increase the number 'n' of the vertices in the (open) polyline of interest. By construction, it is not possible to have 'n<3'. */
+			/* The key is '+', thus we increase the number 'n>2' of the vertices in the (open) polyline of interest. By construction, it is not possible to have 'n<3'.
+			 */
 			num_samples=num_samples+1;
 			glutPostRedisplay();
 			break;
 		
 		case '-':
 		
-			/* The key is '-', thus we decrease the number 'n' of the vertices (if possible) in the (open) polyline of interest. By construction, it is not possible to
+			/* The key is '-', thus we decrease the number 'n>2' of the vertices (if possible) in the (open) polyline of interest. By construction, it is not possible to
 			 * have 'n<3'. */
 			if(num_samples>3) num_samples=num_samples-1;
 			else

@@ -49,9 +49,9 @@ float xc,yc;
 
 /// The number <i>'n'</i> of the vertices (and also of the edges) to be used for defining the (closed) polyline, approximating the <i>'Circle'</i> curve of interest.
 /**
- * The value of this global variable is the number 'n' of the vertices (and also of the edges) to be used for defining the (closed) polyline, approximating the 'Circle'
- * curve of interest. The value of 'n', initially set to 'n=3', can be increased and decreased by pressing the '+' and the '-' keys, respectively. By construction, it
- * is not possible to have 'n<3'.
+ * The value of this global variable is the number 'n>2' of the vertices (and also of the edges) to be used for defining the (closed) polyline, approximating the
+ * 'Circle' curve of interest. The value of 'n>2', initially set to 'n=3', can be increased and decreased by pressing the '+' and the '-' keys, respectively. By
+ * construction, it is not possible to have 'n<3'.
  */
 unsigned int num_samples=3;
 
@@ -199,15 +199,15 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '+':
 		
-			/* The key is '+', thus we increase the number 'n' of the vertices and the edges in the (closed) polyline of interest. By construction, it is not possible to
-			 * have 'n<3'. */
+			/* The key is '+', thus we increase the number 'n>2' of the vertices and the edges in the (closed) polyline of interest. By construction, it is not possible
+			 * to have 'n<3'. */
 			num_samples=num_samples+1;
 			glutPostRedisplay();
 			break;
 		
 		case '-':
 		
-			/* The key is '-', thus we decrease the number 'n' of the vertices and the edges (if possible) in the (closed) polyline of interest. By construction, it is
+			/* The key is '-', thus we decrease the number 'n>2' of the vertices and the edges (if possible) in the (closed) polyline of interest. By construction, it is
 			 * not possible to have 'n<3'. */
 			if(num_samples>3) num_samples=num_samples-1;
 			else
