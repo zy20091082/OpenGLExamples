@@ -101,12 +101,12 @@ int main(int argc,char **argv)
 	cout<<"\t\t   fans describe, respectively, the 'inner' disk (in 'blue') and the 'outer' disk (in 'red') at different z-depths. These disks are described by the ";
 	cout<<"'Circle' shape, and are drawn by using the orthographic projection, such"<<endl;
 	cout<<"\t\t   that their 'reference vertices' are projected on the same point. Here, the user can choose to modify the rendering order of the 'inner' and the ";
-	cout<<"'outer' disks, obtaining the following configurations:"<<endl<<endl;
+	cout<<"'outer' disks by obtaining the following configurations:"<<endl<<endl;
 	cout<<"\t\t\t-) the 'Configuration #0', where the 'inner' disk is rendered after the 'outer' disk. Here, both the disks are visible."<<endl;
 	cout<<"\t\t\t-) The 'Configuration #1', where the 'inner' disk is rendered before the 'outer' disk. Here, only the 'outer' disk is visible, and hides the other ";
 	cout<<"disk."<<endl<<endl;
 	cout<<"\t\tIt is clear that only the 'Configuration #0' seems to coincide with the 'Circular Annulus' shape. In any case, any of these configurations for the ";
-	cout<<"'Variant #0' are not 'real' approximations of the 'Circular Annulus' shape."<<endl<<endl;
+	cout<<"'Variant #0' is not a 'real' approximation of the 'Circular Annulus' shape."<<endl<<endl;
 	cout<<"\t\t1. The 'Variant #1' of the 'Circular Annulus' shape is defined in the same spirit of the 'Variant #0', but the z-buffer (depth test) technique is ";
 	cout<<"exploited here for rendering '2' disks of interest. Also in this case, each of"<<endl;
 	cout<<"\t\t   them is approximated by '2' triangle fans with 'n>4' vertices, including their 'reference vertices', and it is not possible to have 'n<5'. Thus, the ";
@@ -297,7 +297,7 @@ void manageKeys(unsigned char key, int x, int y)
 			 *	   and hides the other disk.
 		 	 *
 			 * It is clear that only the 'Configuration #0' seems to coincide with the 'Circular Annulus' shape. In any case, any of these configurations for the
-		 	 * 'Variant #0' are not 'real' approximations of the 'Circular Annulus' shape.
+		 	 * 'Variant #0' is not a 'real' approximation of the 'Circular Annulus' shape.
 			 */
 			odmode=( (odmode+1)%2);
 			glutPostRedisplay();
@@ -327,7 +327,7 @@ void draw()
 	 * 	-) The 'Configuration #1', where the 'inner' disk is rendered before the 'outer' disk. Here, only the 'outer' disk is visible, and hides the other disk.
 	 *
  	 * It is clear that only the 'Configuration #0' seems to coincide with the 'Circular Annulus' shape. In any case, any of these configurations for the 'Variant #0'
-	 * are not 'real' approximations of the 'Circular Annulus' shape.
+	 * is not a 'real' approximation of the 'Circular Annulus' shape.
  	 */
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 	glPolygonMode(GL_FRONT,mode);
