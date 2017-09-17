@@ -3,14 +3,8 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: August 2017
+ * Last update: September 2017
  *
- * This program is Free Software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published
- * by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.                                       
- *                                                                         
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (http://www.gnu.org/licenses/gpl.txt) for more details.
- * 
  * main.cpp - the main function for the 'Example-027 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
 
@@ -18,6 +12,8 @@
 #include <cstdlib>
 #include <iostream>
 #include <cmath>
+#include <string>
+#include <climits>
 #include <limits>
 #define PI 3.14159265358979324
 using namespace std;
@@ -37,18 +33,30 @@ using namespace std;
 
 #endif
 
-/// The number <i>'n'</i> of the vertices and the edges in the polyline, used for approximating the <i>'Sine-like'</i> curve of interest.
+/// The number <i>'n'</i> of the vertices to be used for defining the (open) polyline, approximating the <i>'Sine-like'</i> curve of interest.
 /**
- * It is initially set to 'n=5', which is the minimum number 'n' of the vertices and the edges. It is interactively modified by pressing the '+' and the '-' keys.
+ * The value of this global variable is the number 'n>4' of the vertices to be used for defining the (open) polyline, approximating the portion of interest for the
+ * 'Sine-like' curve of exponent 'k'. The 'Sine-like' curve of exponent 'k' is described by the following equation:
+ *
+ * x(t) = t, y(t) = sin^k (t)
+ *
+ * for each t in [-pi,pi], and for any 'k>0' (provided interactively by the user). This implies that the 'Sine-like' curve is approximated by a (open) polyline with
+ * 'n>4' vertices and 'm=n-1' edges. The value of 'n>4', initially set to 'n=5', can be increased and decreased by pressing the '+' and the '-' keys, respectively. By
+ * construction, it is not possible to have 'n<5'.
  */
 unsigned int num_samples=5;
 
-/// The custom exponent <i>'k'</i> to be used for defining and drawing the polyline, approximating the <i>'Sine-like'</i> curve of interest.
+/// The exponent <i>'k'</i> to be used for defining the (open) polyline, approximating the <i>'Sine-like'</i> curve of interest.
 /**
- * In particular, any 'Sine-like' curve is defined in the same spirit of the 'Sine' curve, but it requires an exponent 'k' for computing sine function to the 'k'-th.
- * Clearly, it must be a positive and not null 'integer' value, provided interactively by the user.
+ * The value of this global variable is the exponent 'k>0' for defining the (open) polyline, approximating the portion of interest for the 'Sine-like' curve of exponent
+ * 'k'. The 'Sine-like' curve of exponent 'k' is described by the following equation:
+ *
+ * x(t) = t, y(t) = sin^k (t)
+ *
+ * for each t in [-pi,pi], and for any 'k>0', provided interactively by the user. In other words, the value of this global variable is a positive and not null integer
+ * value 'k'.
  */
-int k;
+int k=1;
 
 /* Prototypes for all functions of interest! */
 void draw();
@@ -62,17 +70,26 @@ int main(int argc,char **argv)
 {
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-027' Test, based on the (Old Mode) OpenGL."<<endl;
-	cout<<"\tIt draws a polyline (in 'red'), formed by an arbitrary number 'n' of the vertices and the edges, in an OpenGL window. The polyline of interest ";
-	cout<<"approximates the 'Sine-like' curve in '[-pi,+pi]'."<<endl;
-	cout<<"\tIn particular, any 'Sine-like' curve is defined in the same spirit of the 'Sine' curve, but it requires an exponent 'k' for computing the sine function ";
-	cout<<"to the 'k'-th. The 'Sine-like' curve is defined as follows:"<<endl<<endl;
+	cout<<"\tIt draws a (open) polyline (in 'red'), formed by an arbitrary number 'n>5' of the vertices (and thus by 'm=n-1' edges), in an OpenGL window. The (open) ";
+	cout<<"polyline of interest approximates the 'Sine-like' curve in '[-pi,+pi]'. In"<<endl;
+	cout<<"\tparticular, the 'Sine-like' curve is a generalization of the 'Sine' curve, and requires any given exponent 'k' for computing the sine function ";
+	cout<<"to the 'k'-th. Specifically, the 'Sine-like' curve is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = t, y(t) = sin ^ k (t)"<<endl<<endl<<"\tfor any 'k>0', and for every 't' in '[-pi,pi]'."<<endl<<endl;
-	cout<<"\tThis test also provides a very basic interaction mechanism with the user. In fact, this latter must provide the exponent 'k', and can also:"<<endl<<endl;
-	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the polyline of interest by pressing the '+' key;"<<endl;
-	cout<<"\t\t-) decrease the number 'n' of the vertices and the edges in the polyline of interest by pressing the '-' key."<<endl<<endl;
+	cout<<"\tFor the sake of the clarity, the scene, drawn by this test, includes also the coordinate axes (in 'blue')."<<endl<<endl;
+	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide interactively the exponent 'k' (as a not null and positive ";
+	cout<<"integer value), and can also:"<<endl<<endl;
+	cout<<"\t\t-) increase the number 'n' of the vertices (thus also the number 'm=n-1' of the edges) in the (open) polyline of interest by pressing the '+' key. By";
+	cout<<" construction, it is not possible to have 'n<5' and 'm<4'."<<endl;
+	cout<<"\t\t-) Decrease the number 'n' of the vertices (thus also the number 'm=n-1' of the edges) in the (open) polyline of interest by pressing the '-' key. By";
+	cout<<" construction, it is not possible to have 'n<5' and 'm<4'."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
-	cout<<"\tPlease, insert the exponent 'k' (thus, a positive and not null 'integer' value) for the 'Sine-like' curve of interest: ";
+
+	/* If we arrive here, the user must insert the exponent 'k' for defining the 'Sine-like' curve of interest! */
+	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
+	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
+	cout.flush();
+	cout<<"\tPlease, insert the exponent 'k' (thus, a positive and not null 'integer' value) for defining the 'Sine-like' curve of interest: ";
 	cin>>k;
 	if( (!cin) || (k<=0) )
 	{
@@ -82,8 +99,15 @@ int main(int argc,char **argv)
 		pause();
 		return EXIT_FAILURE;
 	}
-	
-	/* If we arrive here, then we can draw the polyline, approximating the 'Sine-like' curve! */
+
+	/* If we arrive here, then we can draw the (open) polyline, approximating the 'Sine-like' curve! */
+	cout<<endl;
+	cout<<"\tThe 'Sine-like' curve of interest has equation: "<<endl<<endl;
+	cout<<"\tx(t) = t , y(t) = sin ^ "<<k<<" (t)"<<endl<<endl;
+	cout<<"\tfor every 't' in '[-pi,pi]'."<<endl<<endl;
+	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
+	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
+	cout.flush();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
 	glutInitWindowPosition(0,0);
@@ -98,6 +122,82 @@ int main(int argc,char **argv)
    	initialize(); 
 	glutMainLoop();
 	return EXIT_SUCCESS;
+}
+
+/// This function simulates a pause while this test runs.
+void pause()
+{
+	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	cin.clear();
+	cout << "\tPress the RETURN key to finish ... ";
+	cout.flush();
+	cin.get();
+	#ifndef _MSC_VER
+		cout << endl;
+		cout.flush();
+	#endif
+}
+
+/// This function is the keyboard input processing routine for the OpenGL window of interest.
+void manageKeys(unsigned char key, int x, int y)
+{
+	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' keys. */
+	switch (key)
+	{
+		case 'q':
+	
+			/* The key is 'q', thus we can exit from this program. */
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			pause();
+			exit(EXIT_SUCCESS);
+			break;
+		
+		case 'Q':
+	
+			/* The key is 'Q', thus we can exit from this program. */
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			pause();
+			exit(EXIT_SUCCESS);
+			break;
+		
+		case 27:
+	
+			/* The key is 'Esc', thus we can exit from this program. */
+			cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
+			pause();
+			exit(EXIT_SUCCESS);
+			break;
+		
+		case '+':
+		
+			/* The key is '+', thus we increase the number 'n>4' of the vertices in the (open) polyline of interest. By construction, it is not possible to have 'n<5'.
+			 */
+			num_samples=num_samples+1;
+			glutPostRedisplay();
+			break;
+		
+		case '-':
+		
+			/* The key is '-', thus we decrease the number 'n>4' of the vertices (if possible) in the (open) polyline of interest. By construction, it is not possible to
+			 * have 'n<5'. */
+			if(num_samples>5) num_samples=num_samples-1;
+			else
+			{
+				/* Here, we have already 'n=5', and it is not possible to decrease again the value of 'n'. */
+				cout<<"\tThe minimum number 'n=5' of the vertices in the (open) polyline of interest is reached, and it is not possible to decrease ";
+				cout<<"again this number."<<endl;
+				cout.flush();
+			}
+
+			/* If we arrive here, then this case is finished! */
+			glutPostRedisplay();
+			break;
+
+		default:
+
+    		/* Other keys are not important for us! */
+    		break;
+	}
 }
 
 /// This function updates the viewport for the scene when it is resized. */
@@ -119,104 +219,52 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=5;
-	cout<<endl<<"\tAt the beginning, the polyline, approximating the 'Sine-like' curve with exponent 'k="<<k<<"', is formed by 'n="<<num_samples<<"' vertices and ";
-	cout<<"'n="<<num_samples<<"' edges (thus by the minimum number 'n' as possible)."<<endl<<endl;
+	cout<<"\tAt the beginning, the (open) polyline, approximating the 'Sine-like' curve with exponent 'k="<<k<<"', is formed by 'n="<<num_samples<<"' vertices and ";
+	cout<<"'m=n-1="<<(num_samples-1)<<"' edges (thus by the minimum number 'n' as possible)."<<endl<<endl;
 	cout.flush();
 }
 
-/// This function is the keyboard input processing routine for the OpenGL window of interest.
-void manageKeys(unsigned char key, int x, int y)
-{
-	/* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' keys. */
-	switch (key)
-	{
-		case 'q':
-	
-		/* The key is 'q', thus we can exit from this program. */
-		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-		pause();
-		exit(EXIT_SUCCESS);
-		break;
-		
-		case 'Q':
-	
-		/* The key is 'Q', thus we can exit from this program. */
-		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-		pause();
-		exit(EXIT_SUCCESS);
-		break;
-		
-		case 27:
-	
-		/* The key is 'Esc', thus we can exit from this program. */
-		cout<<endl<<"\tThis program is closing correctly ... "<<endl<<endl;
-		pause();
-		exit(EXIT_SUCCESS);
-		break;
-		
-		case '+':
-		
-		/* The key is '+', thus we increase the number 'n' of the vertices and the edges in the polyline of interest! */
-		num_samples=num_samples+1;
-		glutPostRedisplay();
-		break;
-		
-		case '-':
-		
-		/* The key is '-', thus we decrease the number 'n' of the vertices and the edges (if possible) in the polyline of interest. */
-		if(num_samples>5) num_samples=num_samples-1;
-		else
-		{
-			cout<<"\tThe minimum number 'n=5' of the vertices and the edges in the polyline of interest is reached, and it is not possible to decrease again this ";
-			cout<<"number."<<endl;
-			cout.flush();
-		}
-
-		/* If we arrive here, then this case is finished! */
-		glutPostRedisplay();
-		break;
-
-		default:
-
-    	/* Other keys are not important for us! */
-    	break;
-	}
-}
-
-/// This function draws the polyline (in <i>'red'</i>), approximating the <i>'Sine-like'</i> curve of interest, in the main OpenGL window.
+/// This function draws the (open) polyline (in <i>'red'</i>), approximating the <i>'Sine-like'</i> curve of interest, in the main OpenGL window.
 void draw()
 {
 	float d,t;
 
-	/* We draw the polyline (in 'red'), approximating the 'Sine-like' curve of interest, in the main OpenGL window. */
+	/* We draw the (open) polyline (in 'red'), approximating the 'Sine-like' curve of interest, in the main OpenGL window. For the sake of the clarity, we also the
+	 * coordinates axes (in 'blue'). */
 	d=(2*PI/(num_samples-1));
 	glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(1.0,0.0,0.0);
+	glColor3f(0.0f,0.0f,1.0f);
+	glLineWidth(1);
+
+	/* Now, we draw the x-axis (in 'blue'). */
 	glBegin(GL_LINE_STRIP);
-	for(unsigned int i=0;i<=num_samples;i++)
+	glVertex3f(-PI,0.0f,0.0f);
+	glVertex3f(0.0f,0.0f,0.0f);
+	glVertex3f(PI,0.0f,0.0f);
+	glEnd();
+
+	/* Now, we draw the y-axis (in 'blue'). */
+	glBegin(GL_LINE_STRIP);
+	glVertex3f(0.0f,-1.0f,0.0f);
+	glVertex3f(0.0f,0.0f,0.0f);
+	glVertex3f(0.0f,1.0f,0.0f);
+	glEnd();
+
+	/* If we arrive here, then we can draw the actual 'Sine-like' curve of exponent 'k'. */
+	glColor3f(1.0,0.0,0.0);
+	glLineWidth(2);
+	glBegin(GL_LINE_STRIP);
+	for(unsigned int i=0;i<num_samples;i++)
 	{
 		t=-PI+i*d;
 		glVertex3f(t,pow(sin(t),k),0);
 	}
-	
-	/* If we arrive here, all is ok */
+
+	/* Finally, we are ok! */
 	glEnd();
 	glFlush();
-	cout<<"\tThe 'Sine-like' curve of interest is currently approximated by a polyline with 'n="<<num_samples<<"' vertices and 'n="<<num_samples<<"' edges."<<endl;
+	cout<<"\tThe (open) polyline, approximating the 'Sine-like' curve with exponent 'k="<<k<<"', is currently formed by 'n="<<num_samples<<"' vertices and 'm=n-1=";
+	cout<<(num_samples-1)<<"' edges."<<endl;
 	cout.flush();
-}
-
-/// This function simulates a pause while this test runs.
-void pause()
-{
-	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	cin.clear();
-	cout << "\tPress the RETURN key to finish ... ";
-	cout.flush();
-	cin.get();
-	#ifndef _MSC_VER
-		cout << endl;
-		cout.flush();
-	#endif
 }
 
