@@ -36,7 +36,7 @@ using namespace std;
 /// The center coordinates <i>'(xc,yc)'</i> to be used for defining and drawing the (closed) polyline, approximating the <i>'Ellipse'</i> curve of interest.
 /**
  * The values of these global variables contain, respectively, the center coordinates '(xc,yc)' for the (closed) polyline, approximating the 'Ellipse' curve of interest.
- * Clearly, the center coordinates for the 'Ellipse' curve of interest consist of '2' floating-point values, that are provided interactively by the user.
+ * Clearly, the center coordinates for the 'Ellipse' curve consist of '2' floating-point values, that are provided interactively by the user.
  */
 float xc,yc;
 
@@ -51,16 +51,16 @@ unsigned int num_samples=3;
 /// The length of the principal x-axis <i>'Rx'</i> to be used for defining and drawing the (closed) polyline, approximating the <i>'Ellipse'</i> curve of interest.
 /**
  * The value of this global variable is the length of the principal x-axis 'Rx' to be used for defining and drawing the (closed) polyline, approximating the 'Ellipse'
- * curve of interest. Clearly, the principal x-axis for the 'Ellipse' curve of interest consists of a positive and not null floating-point value, that is provided
- * interactively by the user.
+ * curve of interest. Clearly, the principal x-axis for the 'Ellipse' curve consists of a positive and not null floating-point value, that is provided interactively by
+ * the user.
  */
 float Rx;
 
 /// The length of the principal y-axis <i>'Ry'</i> to be used for defining and drawing the (closed) polyline, approximating the <i>'Ellipse'</i> curve of interest.
 /**
  * The value of this global variable is the length of the principal y-axis 'Ry' to be used for defining and drawing the (closed) polyline, approximating the 'Ellipse'
- * curve of interest. Clearly, the principal y-axis for the 'Ellipse' curve of interest consists of a positive and not null floating-point value, that is provided
- * interactively by the user.
+ * curve of interest. Clearly, the principal y-axis for the 'Ellipse' curve consists of a positive and not null floating-point value, that is provided interactively by
+ * the user.
  */
 float Ry;
 

@@ -36,14 +36,14 @@ using namespace std;
 /// The radius <i>'R'</i> to be used for defining and drawing the (closed) polyline, approximating the <i>'Circle'</i> curve of interest.
 /**
  * The value of this global variable is the length of the radius 'R' to be used for defining and drawing the (closed) polyline, approximating the 'Circle' curve of
- * interest. Clearly, the radius for the 'Circle' curve of interest consists of a positive and not null floating-point value, that is provided interactively by the user.
+ * interest. Clearly, the radius for the 'Circle' curve consists of a positive and not null floating-point value, that is provided interactively by the user.
  */
 float radius;
 
 /// The center coordinates <i>'(xc,yc)'</i> to be used for defining and drawing the (closed) polyline, approximating the <i>'Circle'</i> curve of interest.
 /**
  * The values of these global variables contain, respectively, the center coordinates '(xc,yc)' for the (closed) polyline, approximating the 'Circle' curve of interest.
- * Clearly, the center coordinates for the 'Circle' curve of interest consist of '2' floating-point values, that are provided interactively by the user.
+ * Clearly, the center coordinates for the 'Circle' curve consist of '2' floating-point values, that are provided interactively by the user.
  */
 float xc,yc;
 

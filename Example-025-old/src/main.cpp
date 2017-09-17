@@ -46,7 +46,7 @@ float a,b,c;
 /// The number <i>'n'</i> of the vertices to be used for defining the (open) polyline, approximating the <i>'Parabola'</i> curve of interest.
 /**
  * The value of this global variable is the number 'n>2' of the vertices to be used for defining the (open) polyline, approximating the portion of interest for the
- * 'Parabola' curve of interest. The 'Parabola' curve of interest is described by the following equation:
+ * 'Parabola' curve. The 'Parabola' curve is described by the following equation:
  *
  * a x^2 + b x + c = 0
  *
