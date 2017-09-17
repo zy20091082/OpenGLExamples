@@ -97,10 +97,10 @@ int main(int argc,char **argv)
 	cout<<"\tand the disk of radius 'rI' is the 'inner' disk."<<endl<<endl;
 	cout<<"\tSpecifically, this test draws the following variants of the 'Circular Annulus' shape:"<<endl<<endl;
 	cout<<"\t\t0. the 'Variant #0' of the 'Circular Annulus' shape exploits '2' triangle fans, formed by 'n>4' vertices (including their 'reference vertices'). By ";
-	cout<<"construction, it is not possible to have 'n<5'. Broadly speaking, '2' triangle"<<endl;
-	cout<<"\t\t   fans describe, respectively, the 'inner' disk (in 'blue') and the 'outer' disk (in 'red') at different z-depth. These disks are described by the ";
-	cout<<"'Circle' shape, and are drawn by using the orthographic projection, such"<<endl;
-	cout<<"\t\t   that their 'reference vertices' are projected on the same point. Here, the user can choose to modify the rendering order of the 'inner' and the ";
+	cout<<"construction, it is not possible to have 'n<5'. Broadly speaking, '2'"<<endl;
+	cout<<"\t\t   triangle fans describe, respectively, the 'inner' disk (in 'blue') and the 'outer' disk (in 'red') at different z-depth. These disks are described";
+	cout<<" by the 'Circle' shape, and are drawn by using the orthographic projection,"<<endl;
+	cout<<"\t\t   such that their 'reference vertices' are projected on the same point. Here, the user can choose to modify the rendering order of the 'inner' and the ";
 	cout<<"'outer' disks by obtaining the following configurations:"<<endl<<endl;
 	cout<<"\t\t\t-) the 'Configuration #0', where the 'inner' disk is rendered after the 'outer' disk. Here, both the disks are visible."<<endl;
 	cout<<"\t\t\t-) The 'Configuration #1', where the 'inner' disk is rendered before the 'outer' disk. Here, only the 'outer' disk is visible, and hides the other ";
