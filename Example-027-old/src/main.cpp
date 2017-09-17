@@ -219,7 +219,7 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=5;
-	cout<<"\tAt the beginning, the (open) polyline, approximating the 'Sine-like' curve with exponent 'k="<<k<<"', is formed by 'n="<<num_samples<<"' vertices and ";
+	cout<<"\tAt the beginning, the (open) polyline, approximating the 'Sine-like' curve of exponent 'k="<<k<<"', is formed by 'n="<<num_samples<<"' vertices and ";
 	cout<<"'m=n-1="<<(num_samples-1)<<"' edges (thus by the minimum number 'n' as possible)."<<endl<<endl;
 	cout.flush();
 }
@@ -263,7 +263,7 @@ void draw()
 	/* Finally, we are ok! */
 	glEnd();
 	glFlush();
-	cout<<"\tThe (open) polyline, approximating the 'Sine-like' curve with exponent 'k="<<k<<"', is currently formed by 'n="<<num_samples<<"' vertices and 'm=n-1=";
+	cout<<"\tThe (open) polyline, approximating the 'Sine-like' curve of exponent 'k="<<k<<"', is currently formed by 'n="<<num_samples<<"' vertices and 'm=n-1=";
 	cout<<(num_samples-1)<<"' edges."<<endl;
 	cout.flush();
 }
