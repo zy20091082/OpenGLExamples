@@ -40,11 +40,11 @@ static long font = (long)GLUT_BITMAP_8_BY_13;
 
 /// The number <i>'n'</i> of the samples in all approximations of interest for the <i>'Circular Annulus'</i> shape.
 /**
- * This global variable contains the number 'n>4' of the samples in all approximations of interest for the 'Circular Annulus' shape. Here, the value of 'n>4' is the
- * number 'n>4' of the vertices in '2' triangle fans of interest (including the 'reference vertex'), that approximate the 'Variant #0' and the 'Variant #1' of the
- * 'Circular Annulus' shape. Moreover, recall that 'm=n-1' is the number of the vertices pairs in the triangle strip, approximating the 'Variant #3' of the 'Circular
- * Annulus' shape. By construction, it is not possible to have 'n<5', thus to have 'm<4'. The number 'n>4' of the samples (i.e., the content of this global variable)
- * can be increased and decreased upon request by pressing, respectively, the '+' and the '-' keys.
+ * This global variable contains the number 'n>4' of the samples in all approximations of the 'Circular Annulus' shape. Here, the value of 'n>4' is the number 'n>4' of
+ * the vertices in '2' triangle fans of interest (including the 'reference vertex'), that approximate the 'Variant #0' and the 'Variant #1' of the 'Circular Annulus'
+ * shape. Moreover, recall that 'm=n-1' is the number of the vertices pairs in the triangle strip, approximating the 'Variant #3' of the 'Circular Annulus' shape. By
+ * construction, it is not possible to have 'n<5', thus to have 'm<4'. The number 'n>4' of the samples (i.e., the content of this global variable) can be increased and
+ * decreased upon request by pressing, respectively, the '+' and the '-' keys.
  */
 unsigned int num_samples=5;
 
