@@ -36,7 +36,7 @@ using namespace std;
 /// The number <i>'n'</i> of the vertices to be used for defining the (open) polyline, approximating the <i>'Cosine-like'</i> curve of interest.
 /**
  * The value of this global variable is the number 'n>4' of the vertices to be used for defining the (open) polyline, approximating the portion of interest for the
- * 'Cosine-like' curve of exponent 'k'. The 'Cosine-like' curve of exponent 'k' is described by the following equation:
+ * 'Cosine-like' curve of exponent 'k>0'. The 'Cosine-like' curve of exponent 'k>0' is described by the following equation:
  *
  * x(t) = t, y(t) = cos^k (t)
  *
@@ -49,12 +49,12 @@ unsigned int num_samples=5;
 /// The exponent <i>'k'</i> to be used for defining the (open) polyline, approximating the <i>'Cosine-like'</i> curve of interest.
 /**
  * The value of this global variable is the exponent 'k>0' for defining the (open) polyline, approximating the portion of interest for the 'Cosine-like' curve of
- * exponent 'k'. The 'Cosine-like' curve of exponent 'k' is described by the following equation:
+ * exponent 'k>0'. The 'Cosine-like' curve of exponent 'k>0' is described by the following equation:
  *
  * x(t) = t, y(t) = cos^k (t)
  *
  * for each t in [-pi,pi], and for any 'k>0', provided interactively by the user. In other words, the value of this global variable is a positive and not null integer
- * value 'k'.
+ * value 'k>0'.
  */
 int k=1;
 
@@ -72,11 +72,11 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-028' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws a (open) polyline (in 'red'), formed by an arbitrary number 'n>5' of the vertices (and thus by 'm=n-1' edges), in an OpenGL window. The (open) ";
 	cout<<"polyline of interest approximates the 'Cosine-like' curve in '[-pi,+pi]'. In"<<endl;
-	cout<<"\tparticular, the 'Cosine-like' curve is a generalization of the 'Cosine' curve,and requires any given exponent 'k' for computing the cosine function ";
+	cout<<"\tparticular, the 'Cosine-like' curve is a generalization of the 'Cosine' curve, and requires any given exponent 'k>0' for computing the cosine function ";
 	cout<<"to the 'k'-th. Specifically, the 'Cosine-like' curve is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = t, y(t) = cos ^ k (t)"<<endl<<endl<<"\tfor any 'k>0', and for every 't' in '[-pi,pi]'."<<endl<<endl;
 	cout<<"\tFor the sake of the clarity, the scene, drawn by this test, includes also the coordinate axes (in 'blue')."<<endl<<endl;
-	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide interactively the exponent 'k' (as a not null and positive ";
+	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide interactively the exponent 'k>0' (as a not null and positive ";
 	cout<<"integer value), and can also:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of the vertices (thus also the number 'm=n-1' of the edges) in the (open) polyline of interest by pressing the '+' key. By";
 	cout<<" construction, it is not possible to have 'n<5' and 'm<4'."<<endl;
@@ -85,16 +85,16 @@ int main(int argc,char **argv)
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout.flush();
 
-	/* If we arrive here, the user must insert the exponent 'k' for defining the 'Cosine-like' curve of interest! */
+	/* If we arrive here, the user must insert the exponent 'k>0' for defining the 'Cosine-like' curve of interest! */
 	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
 	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
 	cout.flush();
-	cout<<"\tPlease, insert the exponent 'k' (thus, a positive and not null 'integer' value) for defining the 'Cosine-like' curve of interest: ";
+	cout<<"\tPlease, insert the exponent 'k>0' (thus, a positive and not null 'integer' value) for defining the 'Cosine-like' curve of interest: ";
 	cin>>k;
 	if( (!cin) || (k<=0) )
 	{
 		cin.clear();
-		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL 'INTEGER' VALUE) FOR THE EXPONENT 'k' OF INTEREST."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL 'INTEGER' VALUE) FOR THE EXPONENT 'k>0' OF INTEREST."<<endl<<endl;
 		cout<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		pause();
 		return EXIT_FAILURE;
@@ -219,7 +219,7 @@ void initialize()
 	/* We initialize the OpenGL window of interest! */
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	num_samples=5;
-	cout<<"\tAt the beginning, the (open) polyline, approximating the 'Cosine-like' curve with exponent 'k="<<k<<"', is formed by 'n="<<num_samples<<"' vertices and ";
+	cout<<"\tAt the beginning, the (open) polyline, approximating the 'Cosine-like' curve of exponent 'k="<<k<<"', is formed by 'n="<<num_samples<<"' vertices and ";
 	cout<<"'m=n-1="<<(num_samples-1)<<"' edges (thus by the minimum number 'n' as possible)."<<endl<<endl;
 	cout.flush();
 }
@@ -250,7 +250,7 @@ void draw()
 	glVertex3f(0.0f,1.0f,0.0f);
 	glEnd();
 
-	/* If we arrive here, then we can draw the actual 'Cosine-like' curve of exponent 'k'. */
+	/* If we arrive here, then we can draw the actual 'Cosine-like' curve of exponent 'k>0'. */
 	glColor3f(1.0,0.0,0.0);
 	glLineWidth(2);
 	glBegin(GL_LINE_STRIP);
@@ -263,7 +263,7 @@ void draw()
 	/* Finally, we are ok! */
 	glEnd();
 	glFlush();
-	cout<<"\tThe (open) polyline, approximating the 'Cosine-like' curve with exponent 'k="<<k<<"', is currently formed by 'n="<<num_samples<<"' vertices and 'm=n-1=";
+	cout<<"\tThe (open) polyline, approximating the 'Cosine-like' curve of exponent 'k="<<k<<"', is currently formed by 'n="<<num_samples<<"' vertices and 'm=n-1=";
 	cout<<(num_samples-1)<<"' edges."<<endl;
 	cout.flush();
 }
