@@ -13,9 +13,9 @@ The <i>'Example-029 (Old Mode)'</i> Test draws a (closed) polyline (in <i>'red'<
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example029_old_conf3.png' border='1' width="510" height="383"></td></tr>
 <tr><td>Here, the <i>'Lissajous-like'</i> with coefficients <code><i>'Kx=Rx=3'</i></code> and <code><i>'Ky=Ry=2'</i></code> is approximated by a (closed) polyline with <code><i>'n=51'</i></code> vertices and <code><i>'n=51'</i></code> edges.</td><td>Here, the <i>'Lissajous-like'</i> with coefficients <code><i>'Kx=Rx=3'</i></code> and <code><i>'Ky=Ry=2'</i></code> is approximated by a (closed) polyline with <code><i>'n=151'</i></code> vertices and <code><i>'n=151'</i></code> edges.</td></tr>
 <tr>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example029_old_conf2.png' border='1' width="510" height="383"></td>
-<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example029_old_conf3.png' border='1' width="510" height="383"></td></tr>
-<tr><td>Here, the <i>'Lissajous-like'</i> with coefficients <code><i>'Kx=Rx=Ky=Ry=1'</i></code> is approximated by a (closed) polyline with <code><i>'n=50'</i></code> vertices and <code><i>'n=50'</i></code> edges.</td><td>  </td></tr></table><p><hr><p>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example029_old_conf4.png' border='1' width="510" height="383"></td>
+<td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example029_old_conf5.png' border='1' width="510" height="383"></td></tr>
+<tr><td>Here, the <i>'Lissajous-like'</i> with coefficients <code><i>'Kx=Rx=1'</i></code> and <code><i>'Ky=Ry=1'</i></code> is approximated by a (closed) polyline with <code><i>'n=7'</i></code> vertices and <code><i>'n=7'</i></code> edges.</td><td>Here, the <i>'Lissajous-like'</i> with coefficients <code><i>'Kx=Rx=1'</i></code> and <code><i>'Ky=Ry=1'</i></code> is approximated by a (closed) polyline with <code><i>'n=101'</i></code> vertices and <code><i>'n=101'</i></code> edges.</td></tr></table><p><hr><p>
 
 <h4>Dependencies</h4>
 
