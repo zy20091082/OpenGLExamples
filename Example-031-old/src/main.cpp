@@ -170,6 +170,9 @@ void resize(int w, int h)
 }
 
 /// This function draws a triangle fan, approximating a given <i>'Circle'</i> shape.
+/**
+ * Here, the 'Circle' shape of interest has radius 'R', and center '(X,Y)'. This shape is also planar, and its supporting plane has equation 'z=Z'.
+ */
 void drawDisc(float R,float X,float Y,float Z)
 {
 	/* Now, we draw a triangle fan with radius 'R' and center '(X,Y,Z)'. Here, we consider 'n>4' vertices, including the 'reference vertex'. */
