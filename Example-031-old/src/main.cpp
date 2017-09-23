@@ -133,7 +133,7 @@ int main(int argc,char **argv)
 	cout<<"\t\t-) Decrease the number 'n' of the vertices in the triangle fans (including their 'reference vertices'), thus also the number 'm=n-1' of the vertices ";
 	cout<<"pairs in the triangle strip, by pressing the '-' key. By construction, it"<<endl;
 	cout<<"\t\t   is not possible to have 'n<5', thus to have 'm<4'."<<endl<<endl;
-	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
 	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
 	cout.flush();
