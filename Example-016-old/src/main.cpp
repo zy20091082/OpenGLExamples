@@ -85,7 +85,7 @@ int main(int argc,char **argv)
 	cout<<"user can choose separately what triangles sides must be drawn."<<endl;
 	cout<<"\t\t-) The 'filled versions' of the triangles sides in the triangle fans of interest to be drawn are rendered by pressing the 'i' or the 'I' key. The user ";
 	cout<<"can choose separately what triangles sides must be drawn."<<endl<<endl;
-	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
 	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
 	cout.flush();

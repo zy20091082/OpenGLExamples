@@ -70,7 +70,7 @@ int main(int argc,char **argv)
 	cout<<"\twhich can cycle the vertices order in the polygons of interest by pressing the '+' key. While performing these operations, there may be 'strange' ";
 	cout<<"situations, expecially when cycling the vertices order in the 'filled version' of the"<<endl;
 	cout<<"\tconcave 'Polygon #1'."<<endl<<endl;
-	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
 	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
 	cout.flush();

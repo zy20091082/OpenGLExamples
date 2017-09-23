@@ -78,7 +78,7 @@ int main(int argc,char **argv)
 	cout<<"separately what sides of the custom polygon must be drawn."<<endl;
 	cout<<"\t\t-) The 'filled versions' for the sides of the custom polygon to be drawn are rendered by pressing the 'i' or the 'I' key. The user can choose ";
 	cout<<"separately what sides of the custom polygon must be drawn."<<endl<<endl;
-	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
 	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
 	cout.flush();

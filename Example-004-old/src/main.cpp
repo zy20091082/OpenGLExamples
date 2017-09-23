@@ -67,7 +67,7 @@ int main(int argc,char **argv)
 	cout<<"only the 'Quadrilateral #0' is shown."<<endl;
 	cout<<"\t\t1. The ortographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' is activated by pressing the '1' key (the 'Viewing Configuration #1'). In this case, ";
 	cout<<"both the 'Quadrilateral #0' and the 'Quadrilateral #1' are shown."<<endl<<endl;
-	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl;
+	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
 	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
 	cout.flush();

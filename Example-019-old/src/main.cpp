@@ -50,7 +50,7 @@ int main(int argc,char **argv)
 	cout<<" test draws the 'filled' and the 'wireframe versions' of all triangles in"<<endl;
 	cout<<"\t'2' triangle strips, just mentioned."<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user. Here, the window of interest can be closed by pressing any among the 'Q', the ";
-	cout<<"'q', and the 'Esc' keys."<<endl;
+	cout<<"'q', and the 'Esc' keys."<<endl<<endl;
 	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
 	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
 	cout.flush();

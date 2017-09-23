@@ -44,7 +44,7 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-001' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt is similar to the classic 'Hello World' program for testing the correctness of the building infrastructure."<<endl;
 	cout<<"\tBroadly speaking, it creates an empty OpenGL window with the 'black' background, and provides no interaction mechanism with the user."<<endl<<endl;
-	cout<<"\tHere, the window of interest must be stopped through an enforced closure."<<endl;
+	cout<<"\tHere, the window of interest must be stopped through an enforced closure."<<endl<<endl;
 	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
 	cout<<"------------------------------------------------------------------------------"<<endl;
 	cout.flush();

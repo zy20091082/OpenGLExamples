@@ -41,7 +41,7 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-009' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws the 'filled version' of a square, such that a different color is associated with each of its vertices, in an OpenGL window."<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user."<<endl<<endl;
-	cout<<"\tHere, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl;
+	cout<<"\tHere, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
 	cout<<"------------------------------------------------------------------------------"<<endl;
 	cout.flush();
