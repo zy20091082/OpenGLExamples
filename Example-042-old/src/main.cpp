@@ -97,7 +97,7 @@ int main(int argc,char **argv)
 	cout<<" 'R=35'. The 'Cone' shape of interest is open, thus only the boundary of the"<<endl;
 	cout<<"\t'Circle' shape, described by the 'Circle' curve, is considered. In this case, the 'Cone' shape of interest is described by a triangle fan (in 'red') with ";
 	cout<<"'n>4' vertices (including the 'apex'), such that all triangles are incident at"<<endl;
-	cout<<"\tthe 'apex'. Thanks to its symmetry properties, it is interesting to analyze (upon request) '6' views of the 'Cone' shape, defined as follows:"<<endl<<endl;
+	cout<<"\tthe 'apex'. Due to its symmetry properties, it is interesting to analyze (upon request) '6' views of the 'Cone' shape, defined as follows:"<<endl<<endl;
 	cout<<"\t\t-) a view along the canonical plane 'xz' and the corresponding upturned version (indicated as the 'View #0' and the 'View #1', respectively);"<<endl;
 	cout<<"\t\t-) a view along the canonical plane 'yz' and the corresponding upturned version (indicated as the 'View #2' and the 'View #3', respectively);"<<endl;
 	cout<<"\t\t-) a view along the canonical plane 'xy' and the corresponding upturned version (indicated as the 'View #4' and the 'View #5', respectively);"<<endl;
@@ -110,13 +110,13 @@ int main(int argc,char **argv)
 	cout<<"\tHere, the user cannot modify the radius 'R=35', the apex '(0,70,0)', and the center for the basis of the 'Cone' shape, since they are fixed in advance. ";
 	cout<<"Instead, the user can:"<<endl<<endl;
 	cout<<"\t\t-) choose to render a specific view of the 'Cone' shape (among the views, mentioned above) by pressing cyclically the 'c' key;"<<endl;
-	cout<<"\t\t-) choose to apply either the orthographic or the perspective projection to the triangle fan, approximating the 'Cone' shape, by pressing cyclically ";
+	cout<<"\t\t-) choose to apply either the orthographic or the perspective projection to the triangle fan of interest by pressing cyclically ";
 	cout<<"the ' ' (space) key;"<<endl;
-	cout<<"\t\t-) choose to render either the 'wireframe' or the 'filled versions' of all triangles in the triangle fan, approximating the 'Cone' shape, by pressing ";
+	cout<<"\t\t-) choose to render either the 'wireframe' or the 'filled versions' of all triangles in the triangle fan of interest by pressing ";
 	cout<<"cyclically the 'r' key;"<<endl;
-	cout<<"\t\t-) increase the number 'n' of all vertices (including the 'apex') in the triangle fan, approximating the 'Cone' shape, by pressing the '+' key. By ";
+	cout<<"\t\t-) increase the number 'n' of all vertices (including the 'apex') in the triangle fan of interest by pressing the '+' key. By ";
 	cout<<"construction, it is not possible to have 'n<5'."<<endl;
-	cout<<"\t\t-) Decrease the number 'n' of all vertices (including the 'apex') in the triangle fan, approximating the 'Cone' shape, by pressing the '-' key. By ";
+	cout<<"\t\t-) Decrease the number 'n' of all vertices (including the 'apex') in the triangle fan of interest by pressing the '-' key. By ";
 	cout<<"construction, it is not possible to have 'n<5'."<<endl;
 	cout<<endl<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
