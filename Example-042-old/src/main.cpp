@@ -32,7 +32,7 @@ using namespace std;
 
 /// The custom settings for rendering all triangles in the triangle fan, used for approximating the <i>'Cone'</i> shape.
 /**
- * The value of this global variable indicates the rendering type of the triangles in the triangle fan of interest by following these conventions:
+ * The value of this global variable indicates the rendering type of all triangles in the triangle fan of interest by following these conventions:
  *
  * 	-) the 'GL_LINE' value, used for rendering the 'wireframe versions' of all triangles in the triangle fan of interest;
  * 	-) the 'GL_FILL' value, used for rendering the 'filled versions' of all triangles in the triangle fan of interest.
@@ -73,7 +73,7 @@ int configuration=0;
  * 	-) 1: it indicates to use the viewing perspective box.
  *
  * The user can choose what projection box must be used by pressing cyclically the ' ' (space) key. More specifically, it is possible to draw a specific view of the 
- * 'Cone' draw, which is chosen upon request by pressing the 'c' key.
+ * 'Cone' shape, which is chosen upon request by pressing the 'c' key.
  */
 int projection=0;
 
@@ -90,24 +90,23 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-042' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws several views of the 'Cone' shape in an OpenGL window by using the rendering settings, chosen interactively by the user. Broadly speaking, the ";
 	cout<<"'Cone' shape tapers smoothly from a flat base (not necessarily described by any"<<endl;
-	cout<<"\t'Circle' shape) to a given point, called the 'apex' or the 'vertex'. In other words, the 'Cone' shape is formed by a collection of lines, ";
-	cout<<"connecting the 'apex' to all of the points on a base, which does not contain the 'apex'. The"<<endl;
-	cout<<"\t'axis' of the 'Cone' shape is the line, passing through the 'apex', about which the 'Cone' shape has a circular symmetry."<<endl<<endl;
-	cout<<"\tHere, we limit our attention to the 'Cone' shape, where the basis is described by a 'Circle' shape of radius 'R=35', and the point '(0,70,0)' as the ";
-	cout<<"'apex' of the 'Cone' shape. The 'Cone' shape of interest is open, thus we consider"<<endl;
-	cout<<"\tonly the boundary of the 'Circle' shape, described by the 'Circle' curve. In this case, the 'Cone' shape of interest is described by a triangle fan (in ";
-	cout<<"'red') with 'n>4' vertices (including the 'apex'), such that its triangles are"<<endl;
-	cout<<"\tincident at the 'apex'. Thanks to its symmetry properties, it is interesting to analyze (upon request) '6' views of the 'Cone' shape, defined as follows:";
-	cout<<endl<<endl;
+	cout<<"\t'Circle' shape) to a given point, called the 'apex'. In other words, the 'Cone' shape is formed by a collection of lines, connecting the 'apex' to all ";
+	cout<<"points on the base, which does not contain the 'apex'. The 'axis' of the 'Cone'"<<endl;
+	cout<<"\tshape is the line, passing through the 'apex', around which the 'Cone' shape has a circular symmetry."<<endl<<endl;
+	cout<<"\tHere, we limit our attention to the 'Cone' shape, such that the point '(0,70,0)' is its 'apex', and its basis is described by the 'Circle' shape of radius";
+	cout<<" 'R=35'. The 'Cone' shape of interest is open, thus only the boundary of the"<<endl;
+	cout<<"\t'Circle' shape, described by the 'Circle' curve, is considered. In this case, the 'Cone' shape of interest is described by a triangle fan (in 'red') with ";
+	cout<<"'n>4' vertices (including the 'apex'), such that all triangles are incident at"<<endl;
+	cout<<"\tthe 'apex'. Thanks to its symmetry properties, it is interesting to analyze (upon request) '6' views of the 'Cone' shape, defined as follows:"<<endl<<endl;
 	cout<<"\t\t-) a view along the canonical plane 'xz' and the corresponding upturned version (indicated as the 'View #0' and the 'View #1', respectively);"<<endl;
 	cout<<"\t\t-) a view along the canonical plane 'yz' and the corresponding upturned version (indicated as the 'View #2' and the 'View #3', respectively);"<<endl;
 	cout<<"\t\t-) a view along the canonical plane 'xy' and the corresponding upturned version (indicated as the 'View #4' and the 'View #5', respectively);"<<endl;
 	cout<<endl<<"\tin order to give a more complete overview of its properties."<<endl<<endl;
 	cout<<"\tMeanwhile, it is also possible to apply (upon request) any between the orthographic and the perspective projection, since some portions of the 'Cone' ";
 	cout<<"shape may overlap and not be visible in a specific view."<<endl<<endl;
-	cout<<"\tFinally, it also possible to render (upon request) the 'wireframe' and the 'filled versions' of all triangles in the triangle fan, approximating the ";
-	cout<<"'Cone' shape. These aspects are orthogonal, and can be combined together in several"<<endl;
-	cout<<"\tways (upon request by the user)."<<endl<<endl;
+	cout<<"\tFinally, it also possible to render (upon request) either the 'wireframe' or the 'filled versions' of all triangles in the triangle fan, approximating ";
+	cout<<"the 'Cone' shape. These aspects are orthogonal, and can be combined together in"<<endl;
+	cout<<"\tseveral ways (upon request by the user)."<<endl<<endl;
 	cout<<"\tHere, the user cannot modify the radius 'R=35', the apex '(0,70,0)', and the center for the basis of the 'Cone' shape, since they are fixed in advance. ";
 	cout<<"Instead, the user can:"<<endl<<endl;
 	cout<<"\t\t-) choose to render a specific view of the 'Cone' shape (among the views, mentioned above) by pressing cyclically the 'c' key;"<<endl;
@@ -119,7 +118,7 @@ int main(int argc,char **argv)
 	cout<<"construction, it is not possible to have 'n<5'."<<endl;
 	cout<<"\t\t-) Decrease the number 'n' of all vertices (including the 'apex') in the triangle fan, approximating the 'Cone' shape, by pressing the '-' key. By ";
 	cout<<"construction, it is not possible to have 'n<5'."<<endl;
-	cout<<endl<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl;
+	cout<<endl<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
 	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
 	cout.flush();
@@ -151,41 +150,54 @@ void draw()
 	glColor3f(1,0,0);
 	glLineWidth(1);
 	glBegin(GL_TRIANGLE_FAN);
-	if(configuration==0)
+	switch(configuration)
 	{
-		/* We draw the 'View #0' of the 'Cone' shape along the 'xz' plane. */
-		glVertex3f(0,0,-25);
-		for(int k=0;k<=num_samples;k++) { glVertex3f(35*cos(-PI+k*d),35*sin(-PI+k*d),-95); }
-	}
-	else if(configuration==1)
-	{
-		/* We draw the 'View #1' of the 'Cone' shape along the 'xz' plane (upturned version of the 'View #0'). */
-		glVertex3f(0,0,-95);
-		for(int k=0;k<=num_samples;k++) { glVertex3f(35*cos(-PI+k*d),35*sin(-PI+k*d),-25); }
-	}
-	else if(configuration==2)
-	{
-		/* We draw the 'View #2' of the 'Cone' shape along the 'yz' plane. */
-		glVertex3f(70,0,-60);
-		for(int k=0;k<=num_samples;k++) { glVertex3f(0,35*sin(-PI+k*d),35*cos(-PI+k*d)-60); }
-	}
-	else if(configuration==3)
-	{
-		/* We draw the 'View #3' of the 'Cone' shape along the 'xz' plane (upturned version of the 'View #2'). */
-		glVertex3f(0,0,-60);
-		for(int k=0;k<=num_samples;k++) { glVertex3f(70,35*sin(-PI+k*d),35*cos(-PI+k*d)-60); }
-	}
-	else if(configuration==4)
-	{
-		/* We draw the 'View #4' of the 'Cone' shape along the 'xy' plane. */
-		glVertex3f(0,70.0,-60);
-		for(int k=0;k<=num_samples;k++) { glVertex3f(35*cos(-PI+k*d),0,35*sin(-PI+k*d)-60); }
-	}
-	else if(configuration==5)
-	{
-		/* We draw the 'View #5' of the 'Cone' shape along the 'xy' plane (upturned version of the 'View #4'). */
-		glVertex3f(0,0,-60);
-		for(int k=0;k<=num_samples;k++) { glVertex3f(35*cos(-PI+k*d),70,35*sin(-PI+k*d)-60); }
+		case 0:
+
+			/* We draw the 'View #0' of the 'Cone' shape along the 'xz' plane. */
+			glVertex3f(0,0,-25);
+			for(int k=0;k<=num_samples;k++) { glVertex3f(35*cos(-PI+k*d),35*sin(-PI+k*d),-95); }
+			break;
+
+		case 1:
+
+			/* We draw the 'View #1' of the 'Cone' shape along the 'xz' plane (upturned version of the 'View #0'). */
+			glVertex3f(0,0,-95);
+			for(int k=0;k<=num_samples;k++) { glVertex3f(35*cos(-PI+k*d),35*sin(-PI+k*d),-25); }
+			break;
+
+		case 2:
+
+			/* We draw the 'View #2' of the 'Cone' shape along the 'yz' plane. */
+			glVertex3f(70,0,-60);
+			for(int k=0;k<=num_samples;k++) { glVertex3f(0,35*sin(-PI+k*d),35*cos(-PI+k*d)-60); }
+			break;
+
+		case 3:
+
+			/* We draw the 'View #3' of the 'Cone' shape along the 'xz' plane (upturned version of the 'View #2'). */
+			glVertex3f(0,0,-60);
+			for(int k=0;k<=num_samples;k++) { glVertex3f(70,35*sin(-PI+k*d),35*cos(-PI+k*d)-60); }
+			break;
+
+		case 4:
+
+			/* We draw the 'View #4' of the 'Cone' shape along the 'xy' plane. */
+			glVertex3f(0,70.0,-60);
+			for(int k=0;k<=num_samples;k++) { glVertex3f(35*cos(-PI+k*d),0,35*sin(-PI+k*d)-60); }
+			break;
+
+		case 5:
+
+			/* We draw the 'View #5' of the 'Cone' shape along the 'xy' plane (upturned version of the 'View #4'). */
+			glVertex3f(0,0,-60);
+			for(int k=0;k<=num_samples;k++) { glVertex3f(35*cos(-PI+k*d),70,35*sin(-PI+k*d)-60); }
+			break;
+
+		default:
+
+			/* Nothing to do! */
+			break;
 	}
 	
 	/* If we arrive here, then the scene is complete! */
