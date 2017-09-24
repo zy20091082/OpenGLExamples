@@ -109,7 +109,7 @@ int main(int argc,char **argv)
 	cout<<"\tseveral ways (upon request by the user)."<<endl<<endl;
 	cout<<"\tHere, the user cannot modify the radius 'R=35', the apex '(0,70,0)', and the center for the basis of the 'Cone' shape, since they are fixed in advance. ";
 	cout<<"Instead, the user can:"<<endl<<endl;
-	cout<<"\t\t-) choose to render a specific view of the 'Cone' shape (among the views, mentioned above) by pressing cyclically the 'c' key;"<<endl;
+	cout<<"\t\t-) choose to render a specific view of the 'Cone' shape by pressing cyclically the 'c' key;"<<endl;
 	cout<<"\t\t-) choose to apply either the orthographic or the perspective projection to the triangle fan of interest by pressing cyclically ";
 	cout<<"the ' ' (space) key;"<<endl;
 	cout<<"\t\t-) choose to render either the 'wireframe' or the 'filled versions' of all triangles in the triangle fan of interest by pressing ";

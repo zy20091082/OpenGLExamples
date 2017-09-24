@@ -6,7 +6,7 @@ The <i>'Example-042 (Old Mode)'</i> Test draws several views of the <i>'Cone'</i
 <li>a view along the canonical plane <code><i>'xz'</i></code> and the corresponding upturned version (indicated as the <i>'View #0'</i> and the <i>'View #1'</i>, respectively);</li>
 <li>a view along the canonical plane <code><i>'yz'</i></code> and the corresponding upturned version (indicated as the <i>'View #2'</i> and the <i>'View #3'</i>, respectively);</li>
 <li>a view along the canonical plane <code><i>'xy'</i></code> and the corresponding upturned version (indicated as the <i>'View #4'</i> and the <i>'View #5'</i>, respectively);</li></ul><p>in order to give a more complete overview of its properties.<p>Meanwhile, it is also possible to apply (upon request) any between the orthographic and the perspective projection, since some portions of the <i>'Cone'</i> shape may overlap and not be visible in a specific view.<p>Finally, it also possible to render (upon request) either the <i>'wireframe'</i> or the 'filled versions'</i> of all triangles in the triangle fan, approximating the <i>'Cone'</i> shape. These aspects are orthogonal, and can be combined together in several ways (upon request by the user).<p>Here, the user cannot modify the radius <code><i>'R=35'</i></code>, the <i>'apex'</i> <code><i>'(0,70,0)'</i></code>, and the center for the basis of the <i>'Cone'</i> shape, since they are fixed in advance. Instead, the user can:<p><ul>
-<li>choose to render a specific view of the <i>'Cone'</i> shape (among the views, mentioned above) by pressing cyclically the <code><i>'c'</i></code> key;</li>
+<li>choose to render a specific view of the <i>'Cone'</i> shape by pressing cyclically the <code><i>'c'</i></code> key;</li>
 <li>choose to apply either the orthographic or the perspective projection to the triangle fan of interest by pressing cyclically the <code><i>' '</i></code> (space) key;</li>
 <li>choose to render either the <i>'wireframe'</i> or the <i>'filled versions'</i> of all triangles in the triangle fan of interest by pressing cyclically the <code><i>'r'</i></code> key;
 <li>increase the number <code><i>'n'</i></code> of all vertices (including the <i>'apex'</i>) in the triangle fan of interest by pressing the <code><i>'+'</i></code> key. By construction, it is not possible to have <code><i>'n<5'.</i></code></li>
@@ -19,7 +19,7 @@ The <i>'Example-042 (Old Mode)'</i> Test draws several views of the <i>'Cone'</i
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view0_wireframe_orthographic_0.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view0_wireframe_orthographic_50.png' border='0'></td></tr>
 <tr>
-<td width=50%>The <code><i>'n=5'</i></code> vertices (including the <i>'apex'</i>) in the <i>'wireframe versions'</i> of the triangles (with the orthographic projection).</td>
+<td width=50%>The <i>'wireframe versions'</i> of all triangles in the triangle fan of interest, formed by <code><i>'n=5'</i></code> vertices (including the <i>'apex'</i>), are drawn by using the orthographic projection.</td>
 <td width=50%>The <code><i>'n=50'</i></code> vertices (including the <i>'apex'</i>) in the <i>'wireframe versions'</i> of the triangles (with the orthographic projection).</td>
 </tr>
 <tr>
