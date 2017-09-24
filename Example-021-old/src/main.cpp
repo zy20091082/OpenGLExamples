@@ -35,7 +35,7 @@ using namespace std;
 
 /// The radius <i>'R'</i> to be used for defining and drawing the (closed) polyline, approximating the <i>'Circle'</i> curve of interest.
 /**
- * The value of this global variable is the length of the radius 'R' to be used for defining and drawing the (closed) polyline, approximating the 'Circle' curve of
+ * The value of this global variable is the length of the radius 'R>0' to be used for defining and drawing the (closed) polyline, approximating the 'Circle' curve of
  * interest. Clearly, the radius for the 'Circle' curve consists of a positive and not null floating-point value, that is provided interactively by the user.
  */
 float radius;
@@ -68,14 +68,14 @@ int main(int argc,char **argv)
 	/* We initialize everything, and create a very basic window! */
 	cout<<endl<<"\tThis is the 'Example-021' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws a (closed) polyline (in 'red'), which is formed by an arbitrary number 'n>2' of the vertices (and thus also of the edges), in an OpenGL window.";
-	cout<<" The (closed) polyline of interest approximates the 'Circle' curve of radius 'R'"<<endl;
-	cout<<"\tand center coordinates '(xc,yc)'. The 'Circle' curve is defined as follows:"<<endl<<endl;
+	cout<<" The (closed) polyline of interest approximates the 'Circle' curve of radius"<<endl;
+	cout<<"\t'R>0' and center coordinates '(xc,yc)'. The 'Circle' curve is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = xc + R * cos(t), y(t) = yc + R * sin(t)"<<endl<<endl<<"\tfor any 'R>0', and for every 't' in '[-pi,pi]'. Broadly speaking, the 'Circle' curve is ";
-	cout<<"the boundary of the 'Circle' shape, containing all points at distance at most 'R' from the center '(xc,yc)'."<<endl<<endl;
+	cout<<"the boundary of the 'Circle' shape, containing all points at distance at most 'R>0' from the center '(xc,yc)'."<<endl<<endl;
 	cout<<"\tThe center of the scene, drawn by this test, coincides with the center '(xc,yc)' of the 'Circle' shape/curve (in 'blue')."<<endl<<endl;
-	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide interactively the radius 'R' (as a positive and not null ";
-	cout<<"floating-point value) and the center coordinates '(xc,yc)' (as '2' floating-point"<<endl;
-	cout<<"\tvalues). In this context, the user can also:"<<endl<<endl;
+	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide interactively the radius 'R>0' (as a positive and not null ";
+	cout<<"floating-point value) and the center coordinates '(xc,yc)' (as a pair of '2'"<<endl;
+	cout<<"\tfloating-point values). In this context, the user can also:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the (closed) polyline of interest by pressing the '+' key. By construction, it is not ";
 	cout<<"possible to have 'n<3'."<<endl;
 	cout<<"\t\t-) Decrease the number 'n' of the vertices and the edges in the (closed) polyline of interest by pressing the '-' key. By construction, it is not ";
@@ -85,13 +85,13 @@ int main(int argc,char **argv)
 	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
 	cout.flush();
 
-	/* If we arrive here, then we can read the radius 'R' for the 'Circle' curve of interest. */
-	cout<<"\tPlease, insert the radius 'R' (thus, a positive and not null floating-point value) for the 'Circle' curve of interest: ";
+	/* If we arrive here, then we can read the radius 'R>0' for the 'Circle' curve of interest. */
+	cout<<"\tPlease, insert the radius 'R>0' (thus, a positive and not null floating-point value) for the 'Circle' curve of interest: ";
 	cin>>radius;
 	if( (!cin) || (radius<=0) )
 	{
 		cin.clear();
-		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE) FOR THE RADIUS 'R' OF INTEREST."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE) FOR THE RADIUS 'R>0' OF INTEREST."<<endl<<endl;
 		cout<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		pause();
 		return EXIT_FAILURE;
