@@ -21,11 +21,7 @@ The <i>'Example-022 (Old Mode)'</i> Test draws <code><i>'3'</i></code> different
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf2_case0.png' border='1' width='456' height='450'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf2_case1.png' border='1' width='456' height='450'></td></tr>
-<tr><td>The <i>'Version #2'</i> for the <i>'Circle'</i> shape of radius <code><i>'R=1'</i></code> and center coordinates <code><i>'(xc,yc)=(0.0,0.0)'</i></code>
-
-</td><td>The <i>'Version #2'</i> for the <i>'Circle'</i> shape of radius <code><i>'R=1'</i></code> and center coordinates <code><i>'(xc,yc)=(0.0,0.0)'</i></code>
-
-</td></tr></table><p><hr><p>
+<tr><td>The <i>'Version #2'</i> for the <i>'Circle'</i> shape of radius <code><i>'R=1'</i></code> and center coordinates <code><i>'(xc,yc)=(0.0,0.0)'</i></code> is approximated by only one polygon with <code><i>'n=3'</i></code> vertices and <code><i>'n=3'</i></code> edges.</td><td>The <i>'Version #2'</i> for the <i>'Circle'</i> shape of radius <code><i>'R=1'</i></code> and center coordinates <code><i>'(xc,yc)=(0.0,0.0)'</i></code> is approximated by only one polygon with <code><i>'n=50'</i></code> vertices and <code><i>'n=50'</i></code> edges.</td></tr></table><p><hr><p>
 
 <h4>Dependencies</h4>
 
