@@ -33,10 +33,10 @@ using namespace std;
 
 #endif
 
-/// The radius <i>'R'</i> to be used for defining and drawing the version of the <i>'Circle'</i> shape to be considered.
+/// The radius <i>'R'</i> to be used for defining and drawing the desired version of the <i>'Circle'</i> shape.
 /**
- * The value of this global variable is the length of the radius 'R>0' to be used for defining and drawing the version of the 'Circle' shape to be considered. Clearly,
- * the radius for the desired version of the 'Circle' shape consists of a positive and not null floating-point value, that is provided interactively by the user.
+ * The value of this global variable is the length of the radius 'R>0' to be used for defining and drawing the desired version of the 'Circle' shape. Clearly, the
+ * radius for the desired version of the 'Circle' shape consists of a positive and not null floating-point value, that is provided interactively by the user.
  */
 float radius;
 
@@ -302,7 +302,7 @@ void draw()
 	glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
 	if(choice=='l')
 	{
-		/* We must approximate the boundary of the 'Circle' shape by using a (closed) polyline (in 'red') with 'n>2' vertices and 'n>2' edges. We indicate this (closed)
+		/* We approximate the boundary of the 'Circle' shape by using a (closed) polyline (in 'red') with 'n>2' vertices and 'n>2' edges. We indicate this (closed)
 		 * polyline as the 'Version #0' of the 'Circle' shape. */
 		glColor3f(1.0,0.0,0.0);
 		glLineWidth(2);
@@ -315,9 +315,9 @@ void draw()
 	}
 	else if(choice=='f')
 	{
-		/* We must approximate the 'Circle' shape by using the 'filled versions' of 'n>2' triangles in a triangle fan, such that its 'reference vertex' is the center
-		 * '(xc,yc)'. Here, all triangles are shown in 'dark gray', and the 'reference vertex' is depicted in 'red' in order to be highlighted. We indicate this shape
-		 * as the 'Version #1' of the 'Circle' shape.
+		/* We approximate the 'Circle' shape by using the 'filled versions' of 'n>2' triangles in a triangle fan, such that its 'reference vertex' is the center
+		 * '(xc,yc)'. Here, all triangles are depicted in 'dark gray', and the 'reference vertex' is depicted in 'red'. We indicate this triangle fan as the 'Version
+		 * #1' of the 'Circle' shape.
 		 */
 		glColor3f(1.0,0.0,0.0);
 		glBegin(GL_TRIANGLE_FAN);
@@ -331,8 +331,8 @@ void draw()
 	}
 	else if(choice=='p')
 	{
-		/* We must approximate the 'Circle' shape by using the 'filled version' of only one polygon (in 'red') with 'n>2' vertices and 'n>2' edges. We indicate this
-		 * polygon as the 'Version #2' of the 'Circle' shape.
+		/* We approximate the 'Circle' shape by using the 'filled version' of only one polygon (in 'red') with 'n>2' vertices and 'n>2' edges. We indicate this polygon
+		 * as the 'Version #2' of the 'Circle' shape.
 		 */
 		glColor3f(1.0,0.0,0.0);
 		glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
