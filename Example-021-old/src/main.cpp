@@ -98,13 +98,13 @@ int main(int argc,char **argv)
 	}
 
 	/* Now, we read the center coordinates '(xc,yc)' for the 'Circle' curve of interest. */
-	cout<<"\tPlease, insert the center coordinates '(xc,yc)' for the 'Circle' curve of interest (thus, 2 floating-point values, separated by a space): ";
+	cout<<"\tPlease, insert the center coordinates '(xc,yc)' for the 'Circle' curve of interest (thus, '2' floating-point values, separated by a space): ";
 	cout.flush();
 	cin>>xc>>yc;
 	if(!cin)
 	{
 		cin.clear();
-		cout<<endl<<"\tPLEASE, INSERT THE CENTER COORDINATES '(xc,yc)' FOR THE 'CIRCLE' CURVE OF INTEREST (THUS, 2 FLOATING-POINT VALUES, SEPARATED BY A SPACE).";
+		cout<<endl<<"\tPLEASE, INSERT THE CENTER COORDINATES '(xc,yc)' FOR THE 'CIRCLE' CURVE OF INTEREST (THUS, '2' FLOATING-POINT VALUES, SEPARATED BY A SPACE).";
 		cout<<endl<<endl<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		pause();
 		return EXIT_FAILURE;
