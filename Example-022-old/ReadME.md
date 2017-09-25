@@ -13,21 +13,21 @@ The <i>'Example-022 (Old Mode)'</i> Test draws <code><i>'3'</i></code> different
 <li>Decrease the number <code><i>'n'</i></code> of the samples in the desired version of the <i>'Circle'</i> shape by pressing the <code><i>'-'</i></code> key. By construction, it is not possible to have <code><i>'n<3'.</i></code></li></ul><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf0_case0.png' border='1' width='456' height='450'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf0_case1.png' border='1' width='456' height='450'></td></tr>
-<tr><td>The <i>'Version #0'</i> for the <i>'Circle'</i> shape of radius <code><i>'R=1'</i></code> and center coordinates <i>'(xc,yc)=(0.0,0.0)'</i></code> is approximated by a (closed) polyline with <code><i>'n=3'</i></code> vertices and <code><i>'n=3'</i></code> edges.</td><td>The <i>'Version #0'</i> for the <i>'Circle'</i> shape of radius <code><i>'R=1'</i></code> and center coordinates <i>'(xc,yc)=(0.0,0.0)'</i></code> is approximated by a (closed) polyline with <code><i>'n=50'</i></code> vertices and <code><i>'n=50'</i></code> edges.</td></tr>
+<tr><td>The <i>'Version #0'</i> for the <i>'Circle'</i> shape of radius <code><i>'R=1'</i></code> and center coordinates <code><i>'(xc,yc)=(0.0,0.0)'</i></code> is approximated by a (closed) polyline with <code><i>'n=3'</i></code> vertices and <code><i>'n=3'</i></code> edges.</td><td>The <i>'Version #0'</i> for the <i>'Circle'</i> shape of radius <code><i>'R=1'</i></code> and center coordinates <code><i>'(xc,yc)=(0.0,0.0)'</i></code> is approximated by a (closed) polyline with <code><i>'n=50'</i></code> vertices and <code><i>'n=50'</i></code> edges.</td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf1_case0.png' border='1' width='456' height='450'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf1_case1.png' border='1' width='456' height='450'></td></tr>
-<tr><td>The <i>'Version #1'</i> for the <i>'Circle'</i> shape of radius <code><i>'R=1'</i></code> and center coordinates <i>'(xc,yc)=(0.0,0.0)'</i></code>
+<tr><td>The <i>'Version #1'</i> for the <i>'Circle'</i> shape of radius <code><i>'R=1'</i></code> and center coordinates <code><i>'(xc,yc)=(0.0,0.0)'</i></code>
 
-</td><td>The <i>'Version #1'</i> for the <i>'Circle'</i> shape of radius <code><i>'R=1'</i></code> and center coordinates <i>'(xc,yc)=(0.0,0.0)'</i></code>
+</td><td>The <i>'Version #1'</i> for the <i>'Circle'</i> shape of radius <code><i>'R=1'</i></code> and center coordinates <code><i>'(xc,yc)=(0.0,0.0)'</i></code>
 
 </td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf2_case0.png' border='1' width='456' height='450'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf2_case1.png' border='1' width='456' height='450'></td></tr>
-<tr><td>The <i>'Version #2'</i> for the <i>'Circle'</i> shape of radius <code><i>'R=1'</i></code> and center coordinates <i>'(xc,yc)=(0.0,0.0)'</i></code>
+<tr><td>The <i>'Version #2'</i> for the <i>'Circle'</i> shape of radius <code><i>'R=1'</i></code> and center coordinates <code><i>'(xc,yc)=(0.0,0.0)'</i></code>
 
-</td><td>The <i>'Version #2'</i> for the <i>'Circle'</i> shape of radius <code><i>'R=1'</i></code> and center coordinates <i>'(xc,yc)=(0.0,0.0)'</i></code>
+</td><td>The <i>'Version #2'</i> for the <i>'Circle'</i> shape of radius <code><i>'R=1'</i></code> and center coordinates <code><i>'(xc,yc)=(0.0,0.0)'</i></code>
 
 </td></tr></table><p><hr><p>
 
