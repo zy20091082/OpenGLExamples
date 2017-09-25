@@ -58,8 +58,8 @@ float xc,yc;
  *				triangles are incident at the 'reference vertex' (in 'red'), which coincides with the center '(xc,yc)' of the 'Circle' shape. We call this triangle fan 
  *				as the 'Version #1' of the 'Circle' shape, which is activated by pressing the 'f' key.
  *
- * 	-) 'p':		we choose to approximate the 'Circle' shape of interest by using only one polygon (in 'red') with an arbitrary number 'n>2' of the vertices and the
- * 				edges. We call this polygon as the 'Version #2' of the 'Circle' shape, which is activated by pressing the 'p' key.
+ * 	-) 'p':		we choose to approximate the 'Circle' shape of interest by using one polygon (in 'red') with an arbitrary number 'n>2' of the vertices and the edges. We
+ * 				call this polygon as the 'Version #2' of the 'Circle' shape, which is activated by pressing the 'p' key.
  */
 char choice;
 
@@ -100,8 +100,8 @@ int main(int argc,char **argv)
 	cout<<"an arbitrary number 'n>2' of the vertices and the edges."<<endl;
 	cout<<"\t\t1) The 'Version #1' of the 'Circle' shape describes the shape by using a triangle fan with an arbitrary number 'n>2' of the triangles (in 'dark gray')";
 	cout<<" and with 'm=n+1' vertices (including the 'reference vertex', in 'red')."<<endl;
-	cout<<"\t\t2) The 'Version #2' of the 'Circle' shape describes the shape by using only one polygon (in 'red') with an arbitrary number 'n>2' of the vertices";
-	cout<<" and the edges."<<endl<<endl;
+	cout<<"\t\t2) The 'Version #2' of the 'Circle' shape describes the shape by using one polygon (in 'red') with an arbitrary number 'n>2' of the vertices and the ";
+	cout<<"edges."<<endl<<endl;
 	cout<<"\tThe center of the scene, drawn by this test, coincides with the center '(xc,yc)' for the desired version of the 'Circle' shape (in 'blue')."<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide interactively the radius 'R>0' (as a positive and not null ";
 	cout<<"floating-point value) and the center coordinates '(xc,yc)' (as a pair of '2'"<<endl;
@@ -277,8 +277,8 @@ void manageKeys(unsigned char key, int x, int y)
 
 		case 'p':
 		
-			/* The key is 'p', thus we choose to approximate the 'Circle' shape of interest by using the 'filled version' of only one polygon (in 'red') with an
-			 * arbitrary number 'n>2' of the vertices and the edges (the 'Version #2'). */
+			/* The key is 'p', thus we choose to approximate the 'Circle' shape of interest by using the 'filled version' of one polygon (in 'red') with an arbitrary
+			 * number 'n>2' of the vertices and the edges (the 'Version #2'). */
 			choice='p';
 			glutPostRedisplay();
 			break;
@@ -331,8 +331,8 @@ void draw()
 	}
 	else if(choice=='p')
 	{
-		/* We approximate the 'Circle' shape by using the 'filled version' of only one polygon (in 'red') with 'n>2' vertices and 'n>2' edges. We indicate this polygon
-		 * as the 'Version #2' of the 'Circle' shape.
+		/* We approximate the 'Circle' shape by using the 'filled version' of one polygon (in 'red') with 'n>2' vertices and 'n>2' edges. We indicate this polygon as
+		 * the 'Version #2' of the 'Circle' shape.
 		 */
 		glColor3f(1.0,0.0,0.0);
 		glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
@@ -366,8 +366,8 @@ void draw()
 	}
 	else if(choice=='p')
 	{
-		cout<<"\tThe 'Version #2' for the 'Circle' shape of interest is currently approximated by only one polygon with 'n="<<num_samples<<"' vertices and 'n=";
-		cout<<num_samples<<"' edges."<<endl;
+		cout<<"\tThe 'Version #2' for the 'Circle' shape of interest is currently approximated by one polygon with 'n="<<num_samples<<"' vertices and 'n="<<num_samples;
+		cout<<"' edges."<<endl;
 		cout.flush();
 	}
 }
