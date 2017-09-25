@@ -98,11 +98,11 @@ int main(int argc,char **argv)
 	cout<<"\tSpecifically, the user can choose upon request any among the following versions of the 'Circle' shape:"<<endl<<endl;
 	cout<<"\t\t0) the 'Version #0' of the 'Circle' shape describes only the boundary for the 'Circle' shape of interest by using a (closed) polyline (in 'red') with ";
 	cout<<"an arbitrary number 'n>2' of the vertices and the edges."<<endl;
-	cout<<"\t\t1) The 'Version #1' of the 'Circle' shape describes the shape by using a triangle fan with an arbitrary number 'n>2' of triangles (in 'dark gray')";
+	cout<<"\t\t1) The 'Version #1' of the 'Circle' shape describes the shape by using a triangle fan with an arbitrary number 'n>2' of the triangles (in 'dark gray')";
 	cout<<" and with 'm=n+1' vertices (including the 'reference vertex', in 'red')."<<endl;
 	cout<<"\t\t2) The 'Version #2' of the 'Circle' shape describes the shape by using only one polygon (in 'red') with an arbitrary number 'n>2' of the vertices";
 	cout<<" and the edges."<<endl<<endl;
-	cout<<"\tThe center of the scene, drawn by this test, coincides with the center '(xc,yc)' of the 'Circle' shape (in 'blue')."<<endl<<endl;
+	cout<<"\tThe center of the scene, drawn by this test, coincides with the center '(xc,yc)' for the desired version of the 'Circle' shape (in 'blue')."<<endl<<endl;
 	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide interactively the radius 'R>0' (as a positive and not null ";
 	cout<<"floating-point value) and the center coordinates '(xc,yc)' (as a pair of '2'"<<endl;
 	cout<<"\tfloating-point values). In this context, the user can also:"<<endl<<endl;

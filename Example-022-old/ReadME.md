@@ -2,10 +2,10 @@
 
 <H3>The <i>'Example-022 (Old Mode)'</i> Test</H3>
 
-The <i>'Example-022 (Old Mode)'</i> Test draws <code><i>'3'</i></code> different versions of the <i>'Circle'</i> shape with radius <code><i>'R>0'</i></code> and center <code><i>'(xc,yc)'</i></code> in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. Intuitively, the <i>'Circle'</i> shape contains all points at distance at most <code><i>'R>0'</i></code> from the center <code><i>'(xc,yc)'</i></code>, is defined as follows:<p><pre>| x(t) - xc | <= R * cos(t), | y(t) - yc | <= R * sin(t)</pre><p>for any <code><i>'R>0'</i></code>, and for every <code><i>'t'</i></code> in <code><i>'[-pi,pi]'</i>.</code><p>Specifically, the user can choose upon request any among the following versions of the <i>'Circle'</i> shape:<ol start=0>
+The <i>'Example-022 (Old Mode)'</i> Test draws <code><i>'3'</i></code> different versions of the <i>'Circle'</i> shape with radius <code><i>'R>0'</i></code> and center coordinates <code><i>'(xc,yc)'</i></code> in an <A href="http://www.opengl.org"><i>OpenGL</i></A> window. Intuitively, the <i>'Circle'</i> shape contains all points at distance at most <code><i>'R>0'</i></code> from the center <code><i>'(xc,yc)'</i></code>, and is defined as follows:<p><pre>| x(t) - xc | <= R * cos(t), | y(t) - yc | <= R * sin(t)</pre><p>for any <code><i>'R>0'</i></code>, and for every <code><i>'t'</i></code> in <code><i>'[-pi,pi]'</i>.</code><p>Specifically, the user can choose upon request any among the following versions of the <i>'Circle'</i> shape:<ol start=0>
 <li>the <i>'Version #0'</i> of the <i>'Circle'</i> shape describes only the boundary for the <i>'Circle'</i> shape of interest by using a (closed) polyline (in <i>'red'</i>) with an arbitrary number <code><i>'n>2'</i></code> of the vertices and the edges.</li>
-<li>The <i>'Version #1'</i> of the <i>'Circle'</i> shape describes the shape by using a triangle fan with an arbitrary number <code><i>'n>2'</i></code> of triangles (in <i>'dark gray'</i>) and with <code><i>'m=n+1'</i></code> vertices (including the <i>'reference vertex'</i>, in <i>'red'</i>).</li>
-<li>The <i>'Version #2'</i> of the <i>'Circle'</i> shape describes the shape by using only one polygon (in <i>'red'</i>) with an arbitrary number <code><i>'n>2'</i></code> of the vertices and the edges.</li></ol><p>The center of the scene, drawn by this test, coincides with the center <code><i>'(xc,yc)'</i></code> of the <i>'Circle'</i> shape (in <i>'blue'</i>).<p>This test also provides a very basic interaction mechanism with the user, which must provide interactively the radius <code><i>'R>0'</code></i> (as a positive and not null floating-point value) and the center coordinates <code><i>'(xc,yc)'</i></code> (as a pair of <code><i>'2'</i></code> floating-point values). In this context, the user can also:<p><ul>
+<li>The <i>'Version #1'</i> of the <i>'Circle'</i> shape describes the shape by using a triangle fan with an arbitrary number <code><i>'n>2'</i></code> of the triangles (in <i>'dark gray'</i>) and with <code><i>'m=n+1'</i></code> vertices (including the <i>'reference vertex'</i>, in <i>'red'</i>).</li>
+<li>The <i>'Version #2'</i> of the <i>'Circle'</i> shape describes the shape by using only one polygon (in <i>'red'</i>) with an arbitrary number <code><i>'n>2'</i></code> of the vertices and the edges.</li></ol><p>The center of the scene, drawn by this test, coincides with the center <code><i>'(xc,yc)'</i></code> for the desired version of the <i>'Circle'</i> shape (in <i>'blue'</i>).<p>This test also provides a very basic interaction mechanism with the user, which must provide interactively the radius <code><i>'R>0'</code></i> (as a positive and not null floating-point value) and the center coordinates <code><i>'(xc,yc)'</i></code> (as a pair of <code><i>'2'</i></code> floating-point values). In this context, the user can also:<p><ul>
 <li>choose to draw the <i>'Version #0'</i> of the <i>'Circle'</i> shape by pressing the <code><i>'l'</i></code> key;</li>
 <li>choose to draw the <i>'Version #1'</i> of the <i>'Circle'</i> shape by pressing the <code><i>'f'</i></code> key;</li>
 <li>choose to draw the <i>'Version #2'</i> of the <i>'Circle'</i> shape by pressing the <code><i>'p'</i></code> key;</li>
@@ -13,15 +13,23 @@ The <i>'Example-022 (Old Mode)'</i> Test draws <code><i>'3'</i></code> different
 <li>Decrease the number <code><i>'n'</i></code> of the samples in the desired version of the <i>'Circle'</i> shape by pressing the <code><i>'-'</i></code> key. By construction, it is not possible to have <code><i>'n<3'.</i></code></li></ul><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><table border=0 width=100%><tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf0_case0.png' border='1' width='456' height='450'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf0_case1.png' border='1' width='456' height='450'></td></tr>
-<tr><td>Here, we consider the <i>'Approximation #0'</i> with <code><i>'R=1'</i>, <i>'(xc,yc)=(0,0)'</i></code>, and <code><i>'n=3'</i>.</code></td><td>Here, we consider the <i>'Approximation #0'</i> with <code><i>'R=1'</i>, <i>'(xc,yc)=(0,0)'</i></code>, and <code><i>'n=50'</i>.</code></td></tr>
+<tr><td>The <i>'Version #0'</i> for the <i>'Circle'</i> shape of radius <code><i>'R=1'</i> and center coordinates <i>'(xc,yc)=(0.0,0.0)'</i></code> is approximated by a (closed) polyline with <code><i>'n=3'</i></code> vertices and <code><i>'n=3'</i></code> edges.</td><td>The <i>'Version #0'</i> for the <i>'Circle'</i> shape of radius <code><i>'R=1'</i> and center coordinates <i>'(xc,yc)=(0.0,0.0)'</i></code> is approximated by a (closed) polyline with <code><i>'n=50'</i></code> vertices and <code><i>'n=50'</i></code> edges.</td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf1_case0.png' border='1' width='456' height='450'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf1_case1.png' border='1' width='456' height='450'></td></tr>
-<tr><td>Here, we consider the <i>'Approximation #1'</i> with <code><i>'R=1'</i>, <i>'(xc,yc)=(0,0)'</i></code>, and <code><i>'n=3'</i>.</code></td><td>Here, we consider the <i>'Approximation #1'</i> with <code><i>'R=1'</i>, <i>'(xc,yc)=(0,0)'</i></code>, and <code><i>'n=50'</i>.</code></td></tr>
+<tr><td>
+
+</td><td>
+
+</td></tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf2_case0.png' border='1' width='456' height='450'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example022_conf2_case1.png' border='1' width='456' height='450'></td></tr>
-<tr><td>Here, we consider the <i>'Approximation #2'</i> with <code><i>'R=1'</i>, <i>'(xc,yc)=(0,0)'</i></code>, and <code><i>'n=3'</i>.</code></td><td>Here, we consider the <i>'Approximation #2'</i> with <code><i>'R=1'</i>, <i>'(xc,yc)=(0,0)'</i></code>, and <code><i>'n=50'</i>.</code></td></tr></table><p><hr><p>
+<tr><td>
+
+</td><td>
+
+</td></tr></table><p><hr><p>
 
 <h4>Dependencies</h4>
 
