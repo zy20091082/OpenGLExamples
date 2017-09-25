@@ -52,7 +52,7 @@ The <i>'Example-042 (Old Mode)'</i> Test draws several views of the <i>'Cone'</i
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view1_wireframe_orthographic_50.png' border='0'></td></tr>
 <tr>
 <td width=50%>The <i>'wireframe versions'</i> of all triangles in the triangle fan of interest, formed by <code><i>'n=5'</i></code> vertices (including the <i>'apex'</i>), are drawn by using the orthographic projection.</td>
-<td width=50%>The <i>'wireframe versions'</i> of all triangles in the triangle fan of interest, formed by <code><i>'n=50'</i></code> vertices (including the <i>'apex'</i>), are drawn by using the ortographic projection.</td>
+<td width=50%>The <i>'wireframe versions'</i> of all triangles in the triangle fan of interest, formed by <code><i>'n=50'</i></code> vertices (including the <i>'apex'</i>), are drawn by using the orthographic projection.</td>
 </tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view1_filled_orthographic_0.png' border='0'></td>
@@ -83,29 +83,29 @@ The <i>'Example-042 (Old Mode)'</i> Test draws several views of the <i>'Cone'</i
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view2_wireframe_orthographic_0.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view2_wireframe_orthographic_50.png' border='0'></td></tr>
 <tr>
-<td width=50%>The <code><i>'n=5'</i></code> vertices (including the <i>'apex'</i>) in the <i>'wireframe versions'</i> of the triangles (with the orthographic projection).</td>
-<td width=50%>The <code><i>'n=50'</i></code> vertices (including the <i>'apex'</i>) in the <i>'wireframe versions'</i> of the triangles (with the orthographic projection).</td>
+<td width=50%>The <i>'wireframe versions'</i> of all triangles in the triangle fan of interest, formed by <code><i>'n=5'</i></code> vertices (including the <i>'apex'</i>), are drawn by using the orthographic projection.</td>
+<td width=50%>The <i>'wireframe versions'</i> of all triangles in the triangle fan of interest, formed by <code><i>'n=50'</i></code> vertices (including the <i>'apex'</i>), are drawn by using the orthographic projection.</td>
 </tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view2_filled_orthographic_0.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view2_filled_orthographic_50.png' border='0'></td></tr>
 <tr>
-<td width=50%>The <code><i>'n=5'</i></code> vertices (including the <i>'apex'</i>) in the <i>'filled versions'</i> of the triangles (with the orthographic projection).</td>
-<td width=50%>The <code><i>'n=50'</i></code> vertices (including the <i>'apex'</i>) in the <i>'filled versions'</i> of the triangles (with the orthographic projection).</td>
+<td width=50%>The <i>'filled versions'</i> of all triangles in the triangle fan of interest, formed by <code><i>'n=5'</i></code> vertices (including the <i>'apex'</i>), are drawn by using the orthographic projection.</td>
+<td width=50%>The <i>'filled versions'</i> of all triangles in the triangle fan of interest, formed by <code><i>'n=50'</i></code> vertices (including the <i>'apex'</i>), are drawn by using the orthographic projection.</td>
 </tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view2_wireframe_perspective_0.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view2_wireframe_perspective_50.png' border='0'></td></tr>
 <tr>
-<td width=50%>The <code><i>'n=5'</i></code> vertices (including the <i>'apex'</i>) in the <i>'wireframe versions'</i> of the triangles (with the perspective projection).</td>
-<td width=50%>The <code><i>'n=50'</i></code> vertices (including the <i>'apex'</i>) in the <i>'wireframe versions'</i> of the triangles (with the perspective projection).</td>
+<td width=50%>The <i>'wireframe versions'</i> of all triangles in the triangle fan of interest, formed by <code><i>'n=5'</i></code> vertices (including the <i>'apex'</i>), are drawn by using the perspective projection.</td>
+<td width=50%>The <i>'wireframe versions'</i> of all triangles in the triangle fan of interest, formed by <code><i>'n=50'</i></code> vertices (including the <i>'apex'</i>), are drawn by using the perspective projection.</td>
 </tr>
 <tr>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view2_filled_perspective_0.png' border='0'></td>
 <td width=50%><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example042_old_view2_filled_perspective_50.png' border='0'></td></tr>
 <tr>
-<td width=50%>The <code><i>'n=5'</i></code> vertices (including the <i>'apex'</i>) in the <i>'filled versions'</i> of the triangles (with the perspective projection).</td>
-<td width=50%>The <code><i>'n=50'</i></code> vertices (including the <i>'apex'</i>) in the <i>'filled versions'</i> of the triangles (with the perspective projection).</td>
+<td width=50%>The <i>'filled versions'</i> of all triangles in the triangle fan of interest, formed by <code><i>'n=5'</i></code> vertices (including the <i>'apex'</i>), are drawn by using the perspective projection.</td>
+<td width=50%>The <i>'filled versions'</i> of all triangles in the triangle fan of interest, formed by <code><i>'n=50'</i></code> vertices (including the <i>'apex'</i>), are drawn by using the perspective projection.</td>
 </tr></table>
 
 <p><h5>Rendering the <i>'View #3'</i></h5>
