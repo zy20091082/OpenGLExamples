@@ -50,7 +50,7 @@ unsigned int num_samples=3;
 
 /// The length of the principal x-axis <i>'Rx'</i> to be used for defining and drawing the (closed) polyline, approximating the <i>'Ellipse'</i> curve of interest.
 /**
- * The value of this global variable is the length of the principal x-axis 'Rx' to be used for defining and drawing the (closed) polyline, approximating the 'Ellipse'
+ * The value of this global variable is the length of the principal x-axis 'Rx>0' to be used for defining and drawing the (closed) polyline, approximating the 'Ellipse'
  * curve of interest. Clearly, the principal x-axis for the 'Ellipse' curve consists of a positive and not null floating-point value, that is provided interactively by
  * the user.
  */
@@ -58,7 +58,7 @@ float Rx;
 
 /// The length of the principal y-axis <i>'Ry'</i> to be used for defining and drawing the (closed) polyline, approximating the <i>'Ellipse'</i> curve of interest.
 /**
- * The value of this global variable is the length of the principal y-axis 'Ry' to be used for defining and drawing the (closed) polyline, approximating the 'Ellipse'
+ * The value of this global variable is the length of the principal y-axis 'Ry>0' to be used for defining and drawing the (closed) polyline, approximating the 'Ellipse'
  * curve of interest. Clearly, the principal y-axis for the 'Ellipse' curve consists of a positive and not null floating-point value, that is provided interactively by
  * the user.
  */
@@ -78,17 +78,17 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-023' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws a (closed) polyline (in 'red'), which is formed by an arbitrary number 'n>2' of the vertices (and thus also of the edges), in an OpenGL window.";
 	cout<<" The (closed) polyline of interest approximates the 'Ellipse' curve of principal"<<endl;
-	cout<<"\tx-axis 'Rx', principal y-axis 'Ry', and center coordinates '(xc,yc)'. The 'Ellipse' curve is defined as follows:"<<endl<<endl;
+	cout<<"\tx-axis 'Rx>0', principal y-axis 'Ry>0', and center coordinates '(xc,yc)'. The 'Ellipse' curve is defined as follows:"<<endl<<endl;
 	cout<<"\tx(t) = xc + Rx * cos(t), y(t) = yc + Ry * sin(t)"<<endl<<endl;
 	cout<<"\tfor any 'Rx>0', 'Ry>0', and for every 't' in '[-pi,pi]'. Broadly speaking, the 'Ellipse' curve is obtained from the 'Circle' curve through an affine ";
 	cout<<"transformation. Recall that the 'Circle' curve is the boundary of the 'Circle'"<<endl;
-	cout<<"\tshape, containing all points at distance at most 'R' from the center '(xc,yc)'. In fact, it is sufficient to scale independently the principal x- and ";
-	cout<<"y-axes of the 'Circle' shape in order to have lengths 'Rx' and 'Ry', respectively"<<endl;
-	cout<<"\t(not necessarily the same), thus to have an 'Ellipse' curve. Note that we obtain again the 'Circle' curve, if 'Rx=Ry'."<<endl<<endl;
-	cout<<"\tThe center of the scene, drawn by this test, coincides with the center '(xc,yc)' of the 'Ellipse' curve (in 'blue')."<<endl<<endl;
-	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide interactively the principal axes 'Rx' and 'Ry' (as ";
-	cout<<"'2' positive and not null floating-point values), as well as the center coordinates"<<endl;
-	cout<<"\t'(xc,yc)' (as '2' floating-point values). In this context, the user can also:"<<endl<<endl;
+	cout<<"\tshape, containing all points at distance at most any given distance 'R>0' from the center '(xc,yc)'. In fact, it is sufficient to scale independently ";
+	cout<<"the principal x- and y-axes of the 'Circle' shape in order to have lengths 'Rx>0'"<<endl;
+	cout<<"\tand 'Ry>0', respectively (not necessarily the same), thus to have an 'Ellipse' curve. Note that we obtain again the 'Circle' curve, if 'Rx=Ry'.";
+	cout<<endl<<endl<<"\tThe center of the scene, drawn by this test, coincides with the center '(xc,yc)' of the 'Ellipse' curve (in 'blue')."<<endl<<endl;
+	cout<<"\tThis test also provides a very basic interaction mechanism with the user, which must provide interactively the principal axes 'Rx>0' and 'Ry>0' (as a";
+	cout<<" pair of '2' positive and not null floating-point values), as well as the center "<<endl;
+	cout<<"\tcoordinates '(xc,yc)' (as a pair of '2' floating-point values). In this context, the user can also:"<<endl<<endl;
 	cout<<"\t\t-) increase the number 'n' of the vertices and the edges in the (closed) polyline of interest by pressing the '+' key. By construction, it is not ";
 	cout<<"possible to have 'n<3'."<<endl;
 	cout<<"\t\t-) Decrease the number 'n' of the vertices and the edges in the (closed) polyline of interest by pressing the '-' key. By construction, it is not ";
@@ -98,25 +98,25 @@ int main(int argc,char **argv)
 	cout<<"------------------------------------------------------------------------------"<<endl<<endl;
 	cout.flush();
 	
-	/* If we arrive here, then we can read the principal x-axis 'Rx' for the 'Ellipse' curve of interest. */
-	cout<<"\tPlease, insert the principal x-axis 'Rx' (thus, a positive and not null floating-point value) for the 'Ellipse' curve of interest: ";
+	/* If we arrive here, then we can read the principal x-axis 'Rx>0' for the 'Ellipse' curve of interest. */
+	cout<<"\tPlease, insert the principal x-axis 'Rx>0' (thus, a positive and not null floating-point value) for the 'Ellipse' curve of interest: ";
 	cin>>Rx;
 	if( (!cin) || (Rx<=0) )
 	{
 		cin.clear();
-		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE) FOR THE PRINCIPAL X-AXIS 'RX' OF INTEREST."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE) FOR THE PRINCIPAL X-AXIS 'RX>0' OF INTEREST."<<endl<<endl;
 		cout<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		pause();
 		return EXIT_FAILURE;
 	}
 
-	/* If we arrive here, then we can read the principal y-axis 'Ry' for the 'Ellipse' curve of interest. */
-	cout<<"\tPlease, insert the principal y-axis 'Ry' (thus, a positive and not null floating-point value) for the 'Ellipse' curve of interest: ";
+	/* If we arrive here, then we can read the principal y-axis 'Ry>0' for the 'Ellipse' curve of interest. */
+	cout<<"\tPlease, insert the principal y-axis 'Ry>0' (thus, a positive and not null floating-point value) for the 'Ellipse' curve of interest: ";
 	cin>>Ry;
 	if( (!cin) || (Ry<=0) )
 	{
 		cin.clear();
-		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE) FOR THE PRINCIPAL Y-AXIS 'RY' OF INTEREST."<<endl<<endl;
+		cout<<endl<<"\tPLEASE, INSERT A VALID VALUE (THUS, A POSITIVE AND NOT NULL FLOATING-POINT VALUE) FOR THE PRINCIPAL Y-AXIS 'RY>0' OF INTEREST."<<endl<<endl;
 		cout<<"\tTHIS PROGRAM IS CLOSING ..."<<endl<<endl;
 		pause();
 		return EXIT_FAILURE;
