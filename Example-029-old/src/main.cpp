@@ -43,13 +43,13 @@ unsigned int num_samples=7;
 
 /// The coefficients to be used for defining the (closed) polyline, approximating the <i>'Lissajous-like'</i> curve of interest.
 /**
- * The values of these global variables contain, respectively, the coefficients 'Kx', 'Ky', 'Rx', and 'Ry', that are used for defining the (closed) polyline, 
+ * The values of these global variables contain, respectively, the coefficients 'Kx>0', 'Ky>0', 'Rx>0', and 'Ry>0', that are used for defining the (closed) polyline, 
  * approximating the 'Lissajous-like' curve of interest (in 'red'). This latter is defined as follows:
  *
  * x(t) = Rx * cos( Kx * t ), y(t) = Ry * sin( Ky * t )
  *
  * for any 't' in '[0,2*pi]', and for any 'Kx>0', 'Ky>0', 'Rx>0', and 'Ry>0'. For the sake of the simplicity, these coefficients are described by positive and not null
- * integer values, provided interactively by the user. Their values imposes certain properties for the 'Lissajous-like' curve of interest.
+ * integer values, provided interactively by the user. Their values impose certain properties for the 'Lissajous-like' curve of interest.
  */
 int Kx,Ky,Rx,Ry;
 

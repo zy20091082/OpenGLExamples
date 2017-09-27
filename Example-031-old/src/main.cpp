@@ -169,13 +169,13 @@ void resize(int w, int h)
    	glLoadIdentity();
 }
 
-/// This function draws a triangle fan, approximating a given <i>'Circle'</i> shape.
+/// This function draws a triangle fan, which approximates a given <i>'Circle'</i> shape.
 /**
- * Here, the 'Circle' shape of interest has radius 'R', and center '(X,Y)'. This shape is also planar, and its supporting plane has equation 'z=Z'.
+ * Here, the 'Circle' shape of interest has radius 'R>0', and center '(X,Y)'. It is also planar, and its supporting plane has equation 'z=Z'.
  */
 void drawDisc(float R,float X,float Y,float Z)
 {
-	/* Now, we draw a triangle fan with radius 'R' and center '(X,Y,Z)'. Here, we consider 'n>4' vertices, including the 'reference vertex'. */
+	/* Now, we draw a triangle fan with radius 'R>0' and center '(X,Y,Z)'. Here, we consider 'n>4' vertices, including the 'reference vertex'. */
 	float d=(2*PI)/(num_samples-1);
 	glBegin(GL_TRIANGLE_FAN);
 	glVertex3f(X,Y,Z);

@@ -64,8 +64,8 @@ int main(int argc,char **argv)
 	cout<<endl<<"\tThis is the 'Example-032' Test, based on the (Old Mode) OpenGL."<<endl;
 	cout<<"\tIt draws a specific variant of the 'Bullseye' shape in an OpenGL window. A generic 'Bullseye' shape is defined by several concentric 'Circle' shapes ";
 	cout<<"(disks) of different colors, same center '(xc,yc)', and radii of different length."<<endl;
-	cout<<"\tRecall that the 'Circle' shape with radius 'R>0' and center '(xc,yc)' consists of all points, that are at distance at most 'R' from the center '(xc,yc)', ";
-	cout<<"and is defined as follows:"<<endl<<endl;
+	cout<<"\tRecall that the 'Circle' shape with radius 'R>0' and center '(xc,yc)' consists of all points, that are at distance at most 'R>0' from the center ";
+	cout<<"'(xc,yc)', and is defined as follows:"<<endl<<endl;
 	cout<<"\t| x(t) - xc | <= R * cos(t), | y(t) - yc | <= R * sin(t)"<<endl<<endl<<"\tfor any given 'R>0', and for every 't' in '[-pi,pi]'. In the remainder of this ";
 	cout<<"test, we consider the 'Circle' shapes as centered at the origin '(0.0,0.0)'."<<endl<<endl;
 	cout<<"\tIn other words, any 'Bullseye' shape is the union of all circular crowns, bounded by the 'Circle' curves, that are the boundary for the pairs of its ";
@@ -121,11 +121,11 @@ void resize(int w, int h)
 
 /// This function draws a triangle fan, which approximates a given <i>'Circle'</i> shape.
 /**
- * Here, the 'Circle' shape of interest has radius 'R', and center '(X,Y)'. It is also planar, and its supporting plane has equation 'z=Z'.
+ * Here, the 'Circle' shape of interest has radius 'R>0', and center '(X,Y)'. It is also planar, and its supporting plane has equation 'z=Z'.
  */
 void drawDisc(float R,float X,float Y,float Z)
 {
-	/* Now, we draw a triangle fan with radius 'R' and center '(X,Y,Z)'. */
+	/* Now, we draw a triangle fan with radius 'R>0' and center '(X,Y,Z)'. Here, we consider 'n>4' vertices, including the 'reference vertex'. */
 	float d=(2*PI)/(num_samples-1);
 	glBegin(GL_TRIANGLE_FAN);
 	glVertex3f(X,Y,Z);
