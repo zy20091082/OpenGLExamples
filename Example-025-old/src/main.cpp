@@ -239,14 +239,14 @@ void exportEquation()
 	cout<<"'";
 	if(a>0)
 	{
-		if(fabs(a)!=1.0) cout<<fabs(a);
-		cout<<" * x^2 ";
+		if(fabs(a)!=1.0) cout<<fabs(a)<<" * ";
+		cout<<"x^2 ";
 	}
 	else if(a<0)
 	{
-		cout<<"-";
-		if(fabs(a)!=1.0) cout<<fabs(a);
-		cout<<" * x^2 ";
+		cout<<"- ";
+		if(fabs(a)!=1.0) cout<<fabs(a)<<" * ";
+		cout<<"x^2 ";
 	}	
 	
 	/* Now, we check the 'b' value in the equation 'ax^2+bx+c=0'. */
