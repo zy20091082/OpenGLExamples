@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  *
- * Last update: September 2017
+ * Last update: October 2017
  *
  * main.cpp - the main function for the 'Example-003 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
@@ -66,22 +66,22 @@ int main(int argc, char **argv)
 	cout<<"\tIt draws the 'filled version' of the quadrilateral (in 'red') with vertices '(30,20,0)' - '(80,20,0)' - '(80,80,0)' - '(20,80,0)' in an OpenGL window, ";
 	cout<<"and provides a basic interaction mechanism with the user. In fact, the user can"<<endl;
 	cout<<"\tapply (upon request) the following orthographic projections to the scene:"<<endl<<endl;
-	cout<<"\t\t0. the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' is activated by pressing the '0' key (the 'Viewing Configuration #0'). This is the ";
+	cout<<"\t\t0. the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' (the 'Viewing Configuration #0') is activated by pressing the '0' key. This is the ";
 	cout<<"standard orthographic viewing box of the scene, and the quadrilateral is"<<endl;
 	cout<<"\t\t   completely rendered in the middle of the scene."<<endl<<endl;
-	cout<<"\t\t1. The orthographic viewing box '[-100,100]' x '[-100,100]' x '[-1,1]' is activated by pressing the '1' key (the 'Viewing Configuration #1'). The ";
+	cout<<"\t\t1. The orthographic viewing box '[-100,100]' x '[-100,100]' x '[-1,1]' (the 'Viewing Configuration #1') is activated by pressing the '1' key. The ";
 	cout<<"reduced and scaled quadrilateral is completely rendered in the top right"<<endl;
 	cout<<"\t\t   corner of the scene."<<endl<<endl;
-	cout<<"\t\t2. The orthographic viewing box '[20,80]' x '[20,80]' x '[-1,1]' is activated by pressing the '2' key (the 'Viewing Configuration #2'). This ";
+	cout<<"\t\t2. The orthographic viewing box '[20,80]' x '[20,80]' x '[-1,1]' (the 'Viewing Configuration #2') is activated by pressing the '2' key. This ";
 	cout<<"orthographic viewing box does not cover entirely the ortographic projection of"<<endl;
 	cout<<"\t\t   the quadrilateral, which is partially rendered in the middle of the scene."<<endl<<endl;
-	cout<<"\t\t3. The orthographic viewing box '[0,100]' x '[0,100]' x '[-2,5]' is activated by pressing the '3' key (the 'Viewing Configuration #3'). The ";
+	cout<<"\t\t3. The orthographic viewing box '[0,100]' x '[0,100]' x '[-2,5]' (the 'Viewing Configuration #3') is activated by pressing the '3' key. The ";
 	cout<<"quadrilateral is completely rendered in the middle of the scene as like as when"<<endl;
 	cout<<"\t\t   the standard orthographic viewing box is exploited, even if this ortographic viewing box is different."<<endl<<endl;
-	cout<<"\t\t4. The orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' is activated by pressing the '4' key (the 'Viewing Configuration #4'). The reduced and ";
+	cout<<"\t\t4. The orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' (the 'Viewing Configuration #4') is activated by pressing the '4' key. The reduced and ";
 	cout<<"scaled quadrilateral is completely rendered in the bottom left corner"<<endl;
 	cout<<"\t\t   of the scene."<<endl<<endl;
-	cout<<"\t\t5. The orthographic viewing box '[120,200]' x '[90,200]' x '[-1,3]' is activated by pressing the '5' key (the 'Viewing Configuration #5'). This ";
+	cout<<"\t\t5. The orthographic viewing box '[120,200]' x '[90,200]' x '[-1,3]' (the 'Viewing Configuration #5') is activated by pressing the '5' key. This ";
 	cout<<"orthographic viewing box does not intersect the orthographic projection of the"<<endl;
 	cout<<"\t\t   quadrilateral, which is not rendered at all."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
