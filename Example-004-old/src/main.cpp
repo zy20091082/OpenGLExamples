@@ -43,8 +43,8 @@ GLfloat left_value, right_value, bottom_value, top_value, near_value, far_value;
 /**
  * The value of this global variable indicates what orthographic view must be applied to the scene by following these conventions:
  *
- * -) 0: it corresponds to the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', activated by pressing the '0' key (the 'Viewing Configuration #0');
- * -) 1: it corresponds to the ortographic viewing box '[0,200]' x '[0,200]' x '[-1,1]', activated by pressing the '1' key (the 'Viewing Configuration #1').
+ * -) 0: it corresponds to the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' (the 'View #0'), activated by pressing the '0' key;
+ * -) 1: it corresponds to the ortographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' (the 'View #1'), activated by pressing the '1' key.
  */
 int scene=0;
 
@@ -63,9 +63,9 @@ int main(int argc,char **argv)
 	cout<<"\t\t0. the 'Quadrilateral #0' (in 'red') with vertices '(20,20,0)' - '(80,20,0)' - '(80,80,0)' - '(20,80,0)';"<<endl;
 	cout<<"\t\t1. the 'Quadrilateral #1' (in 'green') with vertices '(120,120,0)' - '(180,120,0)' - '(180,180,0)' - '(120,180,0)';"<<endl<<endl;
 	cout<<"\tby using the following orthographic projections (activated upon request by the user):"<<endl<<endl;
-	cout<<"\t\t0. the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' is activated by pressing the '0' key (the 'Viewing Configuration #0'). In this case, ";
+	cout<<"\t\t0. the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' (the 'View #0') is activated by pressing the '0' key. In this case, ";
 	cout<<"only the 'Quadrilateral #0' is shown."<<endl;
-	cout<<"\t\t1. The ortographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' is activated by pressing the '1' key (the 'Viewing Configuration #1'). In this case, ";
+	cout<<"\t\t1. The ortographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' (the 'View #1') is activated by pressing the '1' key. In this case, ";
 	cout<<"both the 'Quadrilateral #0' and the 'Quadrilateral #1' are shown."<<endl<<endl;
 	cout<<"\tLikewise, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
 	cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
@@ -127,15 +127,15 @@ void draw()
 	glFlush();
 	if(scene==0)
 	{
-		/* The 'Viewing Configuration #0' is currently applied to the scene! */
-		cout<<"\tThe 'Viewing Configuration #0', corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', is currently applied to the scene.";
+		/* The 'View #0' is currently applied to the scene! */
+		cout<<"\tThe 'View #0', corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', is currently applied to the scene.";
 		cout<<endl;
 		cout.flush();
 	}
 	else
 	{
-		/* The 'Viewing Configuration #1' is currently applied to the scene! */
-		cout<<"\tThe 'Viewing Configuration #1', corresponding to the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]', is currently applied to the scene.";
+		/* The 'View #1' is currently applied to the scene! */
+		cout<<"\tThe 'View #1', corresponding to the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]', is currently applied to the scene.";
 		cout<<endl;
 		cout.flush();
 	}
@@ -153,7 +153,7 @@ void initialize()
 	far_value=1.0;
 	scene=0;
 	glClearColor(1.0, 1.0, 1.0, 0.0);
-	cout<<"\tAt the beginning, the 'Viewing Configuration #0', corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', is applied to the scene.";
+	cout<<"\tAt the beginning, the 'View #0', corresponding to the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]', is applied to the scene.";
 	cout<<endl<<endl;
 	cout.flush();
 }
@@ -211,7 +211,7 @@ void manageKeys(unsigned char key, int x, int y)
 		
 		case '0':
 		
-			/* The key is '0', thus we exploit the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' (the 'Viewing Configuration #0'). */
+			/* The key is '0', thus we exploit the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' (the 'View #0'). */
 			scene=0;
 			left_value=0.0;
 			right_value=100.0;
@@ -224,7 +224,7 @@ void manageKeys(unsigned char key, int x, int y)
 
 		case '1':
 		
-			/* The key is '1', thus we exploit the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' (the 'Viewing Configuration #1'). */
+			/* The key is '1', thus we exploit the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' (the 'View #1'). */
 			scene=1;
 			left_value=0.0;
 			right_value=200.0;
