@@ -10,12 +10,12 @@ The <i>'Example-005 (Old Mode)'</i> Test draws the <i>'filled version'</i> of a 
 <li>reset the <code><i>'x'</i></code> coordinate for the triangle of interest to its initial value <code><i>'x=20.0'</i></code> by pressing the <code><i>'='</i></code> key.</li></ul><p>Likewise, the window of interest can be closed by pressing any among the <code><i>'Q'</i></code>, the <code><i>'q'</i></code>, and the <code><i>'Esc'</i></code> keys.<p><table border=0 width=100%><tr>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example005_old_config0.png' border='1' width='456' height='470'></td>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example005_old_config1.png' border='1' width='456' height='470'></td></tr>
-<tr><td>The <i>'Initial scene'</i> (press the <code><i>'='</i></code> key).</td><td>The resulting <i>'scene'</i>, if <code><i>'x=156'</i>.</code></td></tr>
+<tr><td>The resulting scene, if <code><i>'x=0.0'</i>.</code></td><td>The resulting scene, if <code><i>'x=156'</i>.</code></td></tr>
 <tr>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example005_old_config2.png' border='1' width='456' height='470'></td>
 <td><IMG style=float:middle src='http://davidcanino.github.io/img/shots_opengl/shot_example005_old_config3.png' border='1' width='456' height='470'></td>
 </tr>
-<tr><td>The resulting <i>'scene'</i>, if <code><i>'x=-93'</i>.</code></td><td>The resulting <i>'scene'</i>, if <code><i>'x=60'</i>.</code></td></tr>
+<tr><td>The resulting scene, if <code><i>'x=-93'</i>.</code></td><td>The resulting scene, if <code><i>'x=60'</i>.</code></td></tr>
 </table><hr><p>
 
 <h4>Dependencies</h4>

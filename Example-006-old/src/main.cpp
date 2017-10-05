@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  * 
- * Last update: September 2017
+ * Last update: October 2017
  *
  * main.cpp - the main function for the 'Example-006 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
