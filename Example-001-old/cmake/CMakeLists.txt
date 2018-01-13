@@ -1,4 +1,4 @@
-########################################################################################################################################################
+﻿########################################################################################################################################################
 # David Canino (canino.david@gmail.com)
 #
 # Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
@@ -13,10 +13,10 @@ message("")
 message(STATUS "We assume that the 'GLU' and the 'OpenGL' packages are stored in the same package (like in the recent distributions)")
 set(CMAKE_WARN_DEPRECATED,FALSE)
 set(CMAKE_ERROR_DEPRECATED,FALSE)
-set(CMAKE_CXX_FLAGS "-Wno-deprecated")
 if(APPLE OR CMAKE_HOST_APPLE)
 
 	# We are using a Macintosh Apple (MacOSX) platform. First, we look for the 'OpenGL' package
+	set(CMAKE_CXX_FLAGS "-Wno-deprecated")
 	message("")
 	find_package(OpenGL REQUIRED)
 	message(STATUS "The path of the 'include' folder for the 'OpenGL' package: " ${OPENGL_INCLUDE_DIR})
@@ -37,6 +37,7 @@ if(APPLE OR CMAKE_HOST_APPLE)
 elseif(UNIX OR CMAKE_HOST_UNIX)
 
 	# We are using a Unix-like platform, e.g., any GNU/Linux distribution. First, we look for the 'OpenGL' package
+	set(CMAKE_CXX_FLAGS "-Wno-deprecated")
 	message("")
 	find_package(OpenGL REQUIRED)
 	message(STATUS "The path of the 'include' folder for the 'OpenGL' package: " ${OPENGL_INCLUDE_DIR})
@@ -73,7 +74,6 @@ elseif(WIN32 OR CMAKE_HOST_WIN32)
 		message(STATUS "The (custom) path of the 'include' folder for the 'OpenGL' package: " ${OPENGL_INCLUDE_DIR})
 
 	endif()
-
 	if(OPENGL_LIBRARIES)
 		
 		# Here, it is possible to find the 'lib' path for the 'OpenGL' package (standard version).
@@ -86,6 +86,7 @@ elseif(WIN32 OR CMAKE_HOST_WIN32)
 		message(FATAL_ERROR "Please, add the 'OpenGL' library to your system!")
 
 	endif()
+	
 	# Now, we look for the 'GLUT' package.
 	message("")	
 	find_package(GLUT)
@@ -129,17 +130,16 @@ elseif(WIN32 OR CMAKE_HOST_WIN32)
 		message(STATUS "The (custom) path of the 'include' folder for the 'GLEW' package: " ${GLEW_INCLUDE_DIR})
 
 	endif()
-	if(GLEW_LIBRARY!=GLEW_LIBRARY-NOTFOUND)
+	if(GLEW_LIBRARIES)
 		
 		# Here, it is possible to find the 'lib' path for the 'GLEW' package (standard version).
-		message(STATUS "The (standard) libraries for the 'GLEW' package: " ${GLEW_LIBRARY})
-
+		message(STATUS "The (standard) library file(s) for the 'GLEW' package: " ${GLEW_LIBRARIES})
+	
 	else()
 		
 		# Here, it is not possible to find the 'lib' path for the 'GLEW' package, and we use its custom version in the ‘depends’ folder.
-		set(GLEW_LIBRARY "../../../depends/lib/glew32")
-		set(GLEW_LIBRARIES ${GLEW_LIBRARY})
-		message(STATUS "The (custom) library file(s) for the ‘GLEW’ package: " ${GLEW_LIBRARY})
+		set(GLEW_LIBRARIES "../../../depends/lib/glew32")
+		message(STATUS "The (custom) library file(s) for the ‘GLEW’ package: " ${GLEW_LIBRARIES})
 	endif()
 
 else()
@@ -148,8 +148,6 @@ else()
 	message(FATAL_ERROR "The current platform is not supported")
 
 endif()
-
-
 
 # If we arrive here, the we can finalize the building process.
 # At this point:
