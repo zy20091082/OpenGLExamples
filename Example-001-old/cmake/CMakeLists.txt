@@ -1,4 +1,4 @@
-﻿########################################################################################################################################################
+########################################################################################################################################################
 # David Canino (canino.david@gmail.com)
 #
 # Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
@@ -10,7 +10,7 @@
 cmake_minimum_required(VERSION 2.8.0 FATAL_ERROR)
 project(Example-001-old LANGUAGES CXX)
 message("")
-message(STATUS "We assume that the 'GLU' and the 'OpenGL' packages are stored in the same package (like in the recent distributions)")
+message(STATUS "We assume that the 'GLU' and the 'OpenGL' packages are stored in the same package (like in the recent distributions).")
 set(CMAKE_WARN_DEPRECATED,FALSE)
 set(CMAKE_ERROR_DEPRECATED,FALSE)
 if(APPLE OR CMAKE_HOST_APPLE)
@@ -19,20 +19,20 @@ if(APPLE OR CMAKE_HOST_APPLE)
 	set(CMAKE_CXX_FLAGS "-Wno-deprecated")
 	message("")
 	find_package(OpenGL REQUIRED)
-	message(STATUS "The path of the 'include' folder for the 'OpenGL' package: " ${OPENGL_INCLUDE_DIR})
-	message(STATUS "The library file(s) for the OpenGL package: " ${OPENGL_LIBRARIES})
+	message(STATUS "The path of the 'include' folder for the 'OpenGL' package: " ${OPENGL_INCLUDE_DIR} /.)
+	message(STATUS "The library file(s) for the OpenGL package: " ${OPENGL_LIBRARIES} /.)
 	message("")
 
 	# Now, we look for the 'GLUT' package.
 	find_package(GLUT REQUIRED)
-	message(STATUS "The path of the 'include' folder for the 'GLUT' package: " ${GLUT_INCLUDE_DIR})
-	message(STATUS "The library file(s) for the 'GLUT' package: " ${GLUT_LIBRARIES})
+	message(STATUS "The path of the 'include' folder for the 'GLUT' package: " ${GLUT_INCLUDE_DIR} /.)
+	message(STATUS "The library file(s) for the 'GLUT' package: " ${GLUT_LIBRARIES} /.)
 	message("")
 
 	# Finally, we look for the 'GLEW' package.	
 	find_package(GLEW REQUIRED)
-	message(STATUS "The path of the 'include' folder for the 'GLEW' package: " ${GLEW_INCLUDE_DIR})
-	message(STATUS "The library file(s) for the 'GLEW' package: " ${GLEW_LIBRARIES})
+	message(STATUS "The path of the 'include' folder for the 'GLEW' package: " ${GLEW_INCLUDE_DIR} /.)
+	message(STATUS "The library file(s) for the 'GLEW' package: " ${GLEW_LIBRARIES} /.)
 
 elseif(UNIX OR CMAKE_HOST_UNIX)
 
@@ -40,20 +40,20 @@ elseif(UNIX OR CMAKE_HOST_UNIX)
 	set(CMAKE_CXX_FLAGS "-Wno-deprecated")
 	message("")
 	find_package(OpenGL REQUIRED)
-	message(STATUS "The path of the 'include' folder for the 'OpenGL' package: " ${OPENGL_INCLUDE_DIR})
-	message(STATUS "The library file(s) for the OpenGL package: " ${OPENGL_LIBRARIES})
+	message(STATUS "The path of the 'include' folder for the 'OpenGL' package: " ${OPENGL_INCLUDE_DIR} /.)
+	message(STATUS "The library file(s) for the OpenGL package: " ${OPENGL_LIBRARIES}/.)
 	message("")
 
 	# Now, we look for the 'GLUT' package.
 	find_package(GLUT REQUIRED)
-	message(STATUS "The path of the 'include' folder for the 'GLUT' package: " ${GLUT_INCLUDE_DIR})
-	message(STATUS "The library file(s) for the 'GLUT' package: " ${GLUT_LIBRARIES})
+	message(STATUS "The path of the 'include' folder for the 'GLUT' package: " ${GLUT_INCLUDE_DIR} /.)
+	message(STATUS "The library file(s) for the 'GLUT' package: " ${GLUT_LIBRARIES}/.)
 	message("")
 
 	# Finally, we look for the 'GLEW' package.	
 	find_package(GLEW REQUIRED)
-	message(STATUS "The path of the 'include' folder for the 'GLEW' package: " ${GLEW_INCLUDE_DIR})
-	message(STATUS "The library file(s) for the 'GLEW' package: " ${GLEW_LIBRARIES})
+	message(STATUS "The path of the 'include' folder for the 'GLEW' package: " ${GLEW_INCLUDE_DIR} /.)
+	message(STATUS "The library file(s) for the 'GLEW' package: " ${GLEW_LIBRARIES}/.)
 
 elseif(WIN32 OR CMAKE_HOST_WIN32)
 
@@ -65,19 +65,19 @@ elseif(WIN32 OR CMAKE_HOST_WIN32)
 	if(OPENGL_INCLUDE_DIR)
 		
 		# Here, it is possible to find the 'include' path for the 'OpenGL' package (standard version).
-		message(STATUS "The (standard) path of the 'include' folder for the 'OpenGL' package: " ${OPENGL_INCLUDE_DIR})
+		message(STATUS "The (standard) path of the 'include' folder for the 'OpenGL' package: " ${OPENGL_INCLUDE_DIR} /.)
 
 	else()
 		
 		# Here, it is not possible to find the 'include' path for the 'OpenGL' package, and we use its custom version in the ‘depends’ folder.
 		set(OPENGL_INCLUDE_DIR "../../depends/include/")
-		message(STATUS "The (custom) path of the 'include' folder for the 'OpenGL' package: " ${OPENGL_INCLUDE_DIR})
+		message(STATUS "The (custom) path of the 'include' folder for the 'OpenGL' package: " ${OPENGL_INCLUDE_DIR} /.)
 
 	endif()
 	if(OPENGL_LIBRARIES)
 		
 		# Here, it is possible to find the 'lib' path for the 'OpenGL' package (standard version).
-		message(STATUS "The (standard) library file(s) for the OpenGL package: " ${OPENGL_LIBRARIES})
+		message(STATUS "The (standard) library file(s) for the OpenGL package: " ${OPENGL_LIBRARIES} /.)
 
 	else()
 		
@@ -93,59 +93,59 @@ elseif(WIN32 OR CMAKE_HOST_WIN32)
 	if(GLUT_INCLUDE_DIR)
 		
 		# Here, it is possible to find the 'include' path for the 'GLUT' package (standard version).
-		message(STATUS "The (standard) path of the 'include' folder for the 'GLUT' package: " ${GLUT_INCLUDE_DIR})
+		message(STATUS "The (standard) path of the 'include' folder for the 'GLUT' package: " ${GLUT_INCLUDE_DIR} /.)
 
 	else()
 		
 		# Here, it is not possible to find the 'include' path for the 'GLUT' package, and we use its custom version in the ‘depends’ folder.
 		set(GLUT_INCLUDE_DIR "../../depends/include/")
-		message(STATUS "The (custom) path of the 'include' folder for the 'GLUT' package: " ${GLUT_INCLUDE_DIR})
+		message(STATUS "The (custom) path of the 'include' folder for the 'GLUT' package: " ${GLUT_INCLUDE_DIR} /.)
 
 	endif()
 	if(GLUT_LIBRARIES)
 		
 		# Here, it is possible to find the 'lib' path for the 'GLUT' package (standard version).
-		message(STATUS "The (standard) library file(s) for the 'GLUT' package: " ${GLUT_LIBRARIES})
+		message(STATUS "The (standard) library file(s) for the 'GLUT' package: " ${GLUT_LIBRARIES} /.)
 
 	else()
 		
 		# Here, it is not possible to find the 'lib' path for the 'GLUT' package, and we use its custom version in the ‘depends’ folder.
 		set(GLUT_LIBRARIES "../../../depends/lib/freeglut")
-		message(STATUS "The (custom) library file(s) for the 'GLUT' package: " ${GLUT_LIBRARIES})
+		message(STATUS "The (custom) library file(s) for the 'GLUT' package: " ${GLUT_LIBRARIES} /.)
 
 	endif()
 
-	# Now, we look for the 'Glew' package.
+	# Now, we look for the ‘GLEW’ package.
 	message("")	
 	find_package(GLEW)
 	if(GLEW_INCLUDE_DIR)
 		
 		# Here, it is possible to find the 'include' path for the 'GLEW' package (standard version).
-		message(STATUS "The (standard) path of the 'include' folder for the 'GLEW' package: " ${GLEW_INCLUDE_DIR})
+		message(STATUS "The (standard) path of the 'include' folder for the 'GLEW' package: " ${GLEW_INCLUDE_DIR} /.)
 
 	else()
 		
 		# Here, it is not possible to find the 'include' path for the 'GLEW' package, and we use its custom version in the ‘depends’ folder.
 		set(GLEW_INCLUDE_DIR "../../depends/include/")
-		message(STATUS "The (custom) path of the 'include' folder for the 'GLEW' package: " ${GLEW_INCLUDE_DIR})
+		message(STATUS "The (custom) path of the 'include' folder for the 'GLEW' package: " ${GLEW_INCLUDE_DIR} /.)
 
 	endif()
 	if(GLEW_LIBRARIES)
 		
 		# Here, it is possible to find the 'lib' path for the 'GLEW' package (standard version).
-		message(STATUS "The (standard) library file(s) for the 'GLEW' package: " ${GLEW_LIBRARIES})
+		message(STATUS "The (standard) library file(s) for the 'GLEW' package: " ${GLEW_LIBRARIES} /.)
 	
 	else()
 		
 		# Here, it is not possible to find the 'lib' path for the 'GLEW' package, and we use its custom version in the ‘depends’ folder.
 		set(GLEW_LIBRARIES "../../../depends/lib/glew32")
-		message(STATUS "The (custom) library file(s) for the ‘GLEW’ package: " ${GLEW_LIBRARIES})
+		message(STATUS "The (custom) library file(s) for the ‘GLEW’ package: " ${GLEW_LIBRARIES} /.)
 	endif()
 
 else()
 	
 	# We are using a not supported platform (FATAL ERROR)!
-	message(FATAL_ERROR "The current platform is not supported")
+	message(FATAL_ERROR "The current platform is not supported!")
 
 endif()
 
@@ -169,4 +169,4 @@ set(LIBS ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${GLEW_LIBRARIES})
 add_executable(Example-001-old ../src/main.cpp)
 include_directories(${INCLUDES})
 target_link_libraries(Example-001-old ${LIBS})
-set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin/.)
