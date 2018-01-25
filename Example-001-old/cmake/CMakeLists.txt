@@ -1,4 +1,4 @@
-########################################################################################################################################################
+﻿########################################################################################################################################################
 # David Canino (canino.david@gmail.com)
 #
 # Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
@@ -70,7 +70,7 @@ elseif(WIN32 OR CMAKE_HOST_WIN32)
 	else()
 		
 		# Here, it is not possible to find the 'include' path for the 'OpenGL' package, and we use its custom version in the ‘depends’ folder.
-		set(OPENGL_INCLUDE_DIR "../../depends/include/")
+		set(OPENGL_INCLUDE_DIR "../../depends/include")
 		message(STATUS "The (custom) path of the 'include' folder for the 'OpenGL' package: " ${OPENGL_INCLUDE_DIR} /.)
 
 	endif()
@@ -98,7 +98,7 @@ elseif(WIN32 OR CMAKE_HOST_WIN32)
 	else()
 		
 		# Here, it is not possible to find the 'include' path for the 'GLUT' package, and we use its custom version in the ‘depends’ folder.
-		set(GLUT_INCLUDE_DIR "../../depends/include/")
+		set(GLUT_INCLUDE_DIR "../../depends/include")
 		message(STATUS "The (custom) path of the 'include' folder for the 'GLUT' package: " ${GLUT_INCLUDE_DIR} /.)
 
 	endif()
@@ -126,7 +126,7 @@ elseif(WIN32 OR CMAKE_HOST_WIN32)
 	else()
 		
 		# Here, it is not possible to find the 'include' path for the 'GLEW' package, and we use its custom version in the ‘depends’ folder.
-		set(GLEW_INCLUDE_DIR "../../depends/include/")
+		set(GLEW_INCLUDE_DIR "../../depends/include")
 		message(STATUS "The (custom) path of the 'include' folder for the 'GLEW' package: " ${GLEW_INCLUDE_DIR} /.)
 
 	endif()
