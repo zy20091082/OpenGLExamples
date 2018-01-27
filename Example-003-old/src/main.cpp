@@ -29,12 +29,12 @@ using namespace std;
 
 // These variables define the orthographic view of interest to be applied in the scene.
 /*
- * -) the 'left_value' global variable indicates the minimum value of the range along the 'x'-axis;
- * -) the 'right_value' global variable indicates the maximum value of the range along the 'x'-axis;
- * -) the 'bottom_value' global variable indicates the minimum value of the range along the 'y'-axis;
- * -) the 'top_value' global variable indicates the maximum value of the range along the 'y'-axis;
- * -) the '-far_value' global variable indicates the minimum value of the range along the 'z'-axis;
- * -) the '-near_value' global variable indicates the maximum value of the range along the 'z'-axis.
+ * -) the value of the ‘left_value' global variable indicates the minimum value of the range along the 'x'-axis;
+ * -) the value of the 'right_value' global variable indicates the maximum value of the range along the 'x'-axis;
+ * -) the value of the 'bottom_value' global variable indicates the minimum value of the range along the 'y'-axis;
+ * -) the value of the 'top_value' global variable indicates the maximum value of the range along the 'y'-axis;
+ * -) the negated value of the ’far_value' global variable indicates the minimum value of the range along the 'z'-axis;
+ * -) the negated value of the ‘near_value' global variable indicates the maximum value of the range along the 'z'-axis.
  */
 GLfloat left_value, right_value, bottom_value, top_value, near_value, far_value;
 
