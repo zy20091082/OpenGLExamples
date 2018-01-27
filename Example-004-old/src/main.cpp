@@ -53,7 +53,7 @@ void initialize();
 void resize(int w,int h);
 void manageKeys(unsigned char key, int x, int y);
 
-// The main function for the <i>'Example-004 (Old Mode)'</i> Test.
+/// The main function for the <i>'Example-004 (Old Mode)'</i> Test.
 int main(int argc,char **argv)
 {
     /* First, we export out an introductory message for this test on the standard output stream (cout)! */
@@ -87,7 +87,7 @@ int main(int argc,char **argv)
     return EXIT_SUCCESS;
 }
 
-// This function updates the viewport for the scene when it is resized. */
+/// This function updates the viewport for the scene when it is resized. */
 void resize(int w, int h)
 {
     /* We update the projection and the modeling matrices! */
@@ -99,7 +99,7 @@ void resize(int w, int h)
     glLoadIdentity();
 }
 
-// This function initializes the scene in the OpenGL window of interest.
+/// This function initializes the scene in the OpenGL window of interest.
 void initialize()
 {
     /* We initialize all global and local variables for drawing the scene in the OpenGL window of interest! */
@@ -116,7 +116,7 @@ void initialize()
     cout.flush();
 }
 
-// This function is the keyboard input processing routine for the OpenGL window of interest.
+/// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
     /* We are interested only in the 'q' - 'Q' - 'Esc' - '0' - '1' keys. */
@@ -200,7 +200,7 @@ void manageKeys(unsigned char key, int x, int y)
     }
 }
 
-// This function draws the <i>'filled versions'</i> of <i>'2'</i> quadrilaterals (respectively, in <i>'red'</i> and in <i>'green'</i>) in the OpenGL window of interest by using the orthographic projection, chosen by the user.
+/// This function draws the <i>'filled versions'</i> of <i>'2'</i> quadrilaterals (respectively, in <i>'red'</i> and in <i>'green'</i>) in the OpenGL window of interest by using the orthographic projection, chosen by the user.
 void draw()
 {
     /* We draw the 'filled versions' of '2' quadrilaterals (respectively, in 'red' and in 'green') in the OpenGL window of interest by using the orthographic projection, chosen by the user. */
