@@ -15,7 +15,7 @@ set(CMAKE_WARN_DEPRECATED,FALSE)
 set(CMAKE_ERROR_DEPRECATED,FALSE)
 if(APPLE OR CMAKE_HOST_APPLE)
 
-	# We are using a Macintosh Apple (MacOSX) platform. First, we look for the 'OpenGL' package
+	# We are using a Macintosh Apple (MacOSX) platform. First, we look for the 'OpenGL' package.
 	set(CMAKE_CXX_FLAGS "-Wno-deprecated")
 	message("")
 	find_package(OpenGL REQUIRED)
@@ -36,7 +36,7 @@ if(APPLE OR CMAKE_HOST_APPLE)
 
 elseif(UNIX OR CMAKE_HOST_UNIX)
 
-	# We are using a Unix-like platform, e.g., any GNU/Linux distribution. First, we look for the 'OpenGL' package
+	# We are using a Unix-like platform, e.g., any GNU/Linux distribution. First, we look for the 'OpenGL' package.
 	set(CMAKE_CXX_FLAGS "-Wno-deprecated")
 	message("")
 	find_package(OpenGL REQUIRED)
