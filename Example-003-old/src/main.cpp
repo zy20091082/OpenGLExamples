@@ -57,7 +57,7 @@ void initialize(void);
 void resize(int w,int h);
 void manageKeys(unsigned char key, int x, int y);
 
-// The main function for the <i>'Example-003 (Old Mode)'</i> Test.
+/// The main function for the <i>'Example-003 (Old Mode)'</i> Test.
 int main(int argc,char **argv)
 {
     /* First, we export out an introductory message for this test on the standard output stream (cout)! */
@@ -101,7 +101,7 @@ int main(int argc,char **argv)
     return EXIT_SUCCESS;
 }
 
-// This function initializes the scene in the OpenGL window of interest.
+/// This function initializes the scene in the OpenGL window of interest.
 void initialize()
 {
     /* We initialize all global and local variables for drawing the scene in the OpenGL window of interest! */
@@ -118,7 +118,7 @@ void initialize()
     cout.flush();
 }
 
-// This function updates the viewport for the scene when it is resized. */
+/// This function updates the viewport for the scene when it is resized. */
 void resize(int w, int h)
 {
     /* We update the projection and the modeling matrices! */
@@ -266,7 +266,7 @@ void manageKeys(unsigned char key, int x, int y)
     }
 }
 
-// This function draws the <i>'filled version'</i> of a quadrilateral (in <i>'red'</i>) in the OpenGL window of interest by using the orthographic projection, chosen by the user.
+/// This function draws the <i>'filled version'</i> of a quadrilateral (in <i>'red'</i>) in the OpenGL window of interest by using the orthographic projection, chosen by the user.
 void draw()
 {
     /* We draw the 'filled version' of a quadrilateral (in 'red') in the OpenGL window of interest by using the orthographic projection, chosen by the user. */
