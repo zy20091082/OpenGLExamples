@@ -1,12 +1,13 @@
 ########################################################################################################################################################
-# David Canino (canino.david@gmail.com)
+# David Canino (canino.david@gmail.com).
 #
 # Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
 #
 # Last update: March 2018.
 #                                                                    
-# CMakeLists.txt - the settings for constructing the makefile of interest for the 'Example-001 (Old Mode)'
+# CMakeLists.txt - the settings for constructing the makefile of interest for the 'Example-001 (Old Mode)' Test.
 ########################################################################################################################################################
+
 cmake_minimum_required(VERSION 2.8.0 FATAL_ERROR)
 project(Example-001-old LANGUAGES CXX)
 message("")

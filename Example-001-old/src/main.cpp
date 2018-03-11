@@ -1,5 +1,5 @@
 /*******************************************************************************************************************************************************
- * David Canino (canino.david@gmail.com)
+ * David Canino (canino.david@gmail.com).
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  *
