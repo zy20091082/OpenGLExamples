@@ -3,7 +3,7 @@
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  *
- * Last update: January 2018
+ * Last update: March 2018.
  *
  * main.cpp - the main function for the 'Example-001 (Old Mode)' Test.
  *******************************************************************************************************************************************************/
@@ -61,3 +61,4 @@ void draw(void)
     glClear(GL_COLOR_BUFFER_BIT);
     glFlush();
 }
+

@@ -3,7 +3,7 @@
 #
 # Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
 #
-# Last update: January 2018
+# Last update: March 2018.
 #                                                                    
 # CMakeLists.txt - the settings for constructing the makefile of interest for the 'Example-001 (Old Mode)'
 ########################################################################################################################################################
@@ -170,3 +170,4 @@ add_executable(Example-001-old ../src/main.cpp)
 include_directories(${INCLUDES})
 target_link_libraries(Example-001-old ${LIBS})
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin/.)
+
