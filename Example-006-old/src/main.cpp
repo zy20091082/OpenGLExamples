@@ -1,9 +1,9 @@
 /*********************************************************************************************************************************************************
- * David Canino (canino.david@gmail.com)
+ * David Canino (canino.david@gmail.com).
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  *
- * Last update: January 2018
+ * Last update: March 2018.
  *
  * main.cpp - the main function for the 'Example-006 (Old Mode)' Test.
  *********************************************************************************************************************************************************/
@@ -42,7 +42,7 @@ int main(int argc,char **argv)
     cout<<"\tThe polygon of interest is the intersection with the maximum number '7' of the edges and the vertices between the following elements:"<<endl<<endl;
     cout<<"\t\t-) the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]';"<<endl;
     cout<<"\t\t-) the triangle with vertices '(-50,-30,0)' - '(150,-50,0)' - '(50,150,0)'."<<endl<<endl;
-    cout<<"\tHere, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+    cout<<"\tHere, the window of interest can be closed by pressing any among the <Q>, the <q>, and the <Esc> keys."<<endl<<endl;
     cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
     cout<<"------------------------------------------------------------------------------"<<endl<<endl;
     cout.flush();
@@ -99,14 +99,14 @@ void draw()
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
-    /* We are interested only in the 'q' - 'Q' - 'Esc' keys. */
+    /* We are interested only in the <q> - <Q> - <Esc> keys. */
     switch (key)
     {
         case 'q':
             
-            /* The user presses the 'q' key, thus we can exit from this program! */
+            /* The user presses the <q> key, thus we can exit from this program! */
             cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-            cout<<"\tPress the RETURN key to finish ... ";
+            cout<<"\tPress the <RETURN> key to finish ... ";
             cout.flush();
             cin.get();
             #ifndef _MSC_VER
@@ -118,9 +118,9 @@ void manageKeys(unsigned char key, int x, int y)
             
         case 'Q':
             
-            /* The user presses the 'Q' key, thus we can exit from this program! */
+            /* The user presses the <Q> key, thus we can exit from this program! */
             cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-            cout<<"\tPress the RETURN key to finish ... ";
+            cout<<"\tPress the <RETURN> key to finish ... ";
             cout.flush();
             cin.get();
             #ifndef _MSC_VER
@@ -132,9 +132,9 @@ void manageKeys(unsigned char key, int x, int y)
             
         case 27:
             
-            /* The user presses the 'Esc' key, thus we can exit from this program! */
+            /* The user presses the <Esc> key, thus we can exit from this program! */
             cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-            cout<<"\tPress the RETURN key to finish ... ";
+            cout<<"\tPress the <RETURN> key to finish ... ";
             cout.flush();
             cin.get();
             #ifndef _MSC_VER
@@ -150,3 +150,4 @@ void manageKeys(unsigned char key, int x, int y)
             break;
     }
 }
+
