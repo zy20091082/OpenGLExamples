@@ -1,9 +1,9 @@
 /*********************************************************************************************************************************************************
- * David Canino (canino.david@gmail.com)
+ * David Canino (canino.david@gmail.com).
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  *
- * Last update: January 2018
+ * Last update: March 2018.
  *
  * main.cpp - the main function for the 'Example-004 (Old Mode)' Test.
  *********************************************************************************************************************************************************/
@@ -42,8 +42,8 @@ GLfloat left_value, right_value, bottom_value, top_value, near_value, far_value;
 /**
  * The value of this global variable indicates what orthographic viewing box must be applied to the scene by following these conventions:
  *
- * -) 0: it corresponds to the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' (the 'View #0'), activated by pressing the '0' key;
- * -) 1: it corresponds to the ortographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' (the 'View #1'), activated by pressing the '1' key.
+ * -) 0: it corresponds to the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' (the 'View #0'), activated by pressing the <0> key;
+ * -) 1: it corresponds to the ortographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' (the 'View #1'), activated by pressing the <1> key.
  */
 int scene=0;
 
@@ -62,11 +62,11 @@ int main(int argc,char **argv)
     cout<<"\t\t0. the 'Quadrilateral #0' (in 'red') with vertices '(20,20,0)' - '(80,20,0)' - '(80,80,0)' - '(20,80,0)';"<<endl;
     cout<<"\t\t1. the 'Quadrilateral #1' (in 'green') with vertices '(120,120,0)' - '(180,120,0)' - '(180,180,0)' - '(120,180,0)';"<<endl<<endl;
     cout<<"\tby using the following orthographic projections (activated upon request by the user):"<<endl<<endl;
-    cout<<"\t\t0. the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' (the 'View #0') is activated by pressing the '0' key. In this case, ";
+    cout<<"\t\t0. the ortographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' (the 'View #0') is activated by pressing the <0> key. In this case, ";
     cout<<"only the 'Quadrilateral #0' is shown."<<endl;
-    cout<<"\t\t1. The ortographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' (the 'View #1') is activated by pressing the '1' key. In this case, ";
+    cout<<"\t\t1. The ortographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' (the 'View #1') is activated by pressing the <1> key. In this case, ";
     cout<<"both the 'Quadrilateral #0' and the 'Quadrilateral #1' are shown."<<endl<<endl;
-    cout<<"\tHere, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+    cout<<"\tHere, the window of interest can be closed by pressing any among the <Q>, the <q>, and the <Esc> keys."<<endl<<endl;
     cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
     cout<<"------------------------------------------------------------------------------"<<endl<<endl;
     cout.flush();
@@ -119,15 +119,15 @@ void initialize()
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
-    /* We are interested only in the 'q' - 'Q' - 'Esc' - '0' - '1' keys. */
+    /* We are interested only in the <q> - <Q> - <Esc> - <0> - <1> keys. */
     switch (key)
     {
         case 'q':
             
-            /* The user presses the 'q' key, thus we can exit from this program! */
+            /* The user presses the <q> key, thus we can exit from this program! */
             cout<<endl<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"<<endl<<endl;
             cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-            cout<<"\tPress the RETURN key to finish ... ";
+            cout<<"\tPress the <RETURN> key to finish ... ";
             cout.flush();
             cin.get();
             #ifndef _MSC_VER
@@ -139,10 +139,10 @@ void manageKeys(unsigned char key, int x, int y)
             
         case 'Q':
             
-            /* The user presses the 'Q' key, thus we can exit from this program! */
+            /* The user presses the <Q> key, thus we can exit from this program! */
             cout<<endl<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"<<endl<<endl;
             cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-            cout<<"\tPress the RETURN key to finish ... ";
+            cout<<"\tPress the <RETURN> key to finish ... ";
             cout.flush();
             cin.get();
             #ifndef _MSC_VER
@@ -154,10 +154,10 @@ void manageKeys(unsigned char key, int x, int y)
             
         case 27:
             
-            /* The user presses the 'Esc' key, thus we can exit from this program! */
+            /* The user presses the <Esc> key, thus we can exit from this program! */
             cout<<endl<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"<<endl<<endl;
             cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-            cout<<"\tPress the RETURN key to finish ... ";
+            cout<<"\tPress the <RETURN> key to finish ... ";
             cout.flush();
             cin.get();
             #ifndef _MSC_VER
@@ -169,7 +169,7 @@ void manageKeys(unsigned char key, int x, int y)
             
         case '0':
             
-            /* The user presses the '0' key, thus we exploit the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' (thus, the 'View #0'). */
+            /* The user presses the <0> key, thus we exploit the orthographic viewing box '[0,100]' x '[0,100]' x '[-1,1]' (thus, the 'View #0'). */
             scene=0;
             left_value=0.0;
             right_value=100.0;
@@ -182,7 +182,7 @@ void manageKeys(unsigned char key, int x, int y)
 
         case '1':
             
-            /* The user presses the '1' key, thus we exploit the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' (thus, the 'View #1'). */
+            /* The user presses the <1> key, thus we exploit the orthographic viewing box '[0,200]' x '[0,200]' x '[-1,1]' (thus, the 'View #1'). */
             scene=1;
             left_value=0.0;
             right_value=200.0;
@@ -236,3 +236,4 @@ void draw()
         cout.flush();
     }
 }
+
