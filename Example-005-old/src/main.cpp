@@ -1,9 +1,9 @@
 /*********************************************************************************************************************************************************
- * David Canino (canino.david@gmail.com)
+ * David Canino (canino.david@gmail.com).
  *
  * Main website (GitHub): http://github.com/davidcanino/OpenGLExamples
  *
- * Last update: January 2018
+ * Last update: March 2018.
  *
  * main.cpp - the main function for the 'Example-005 (Old Mode)' Test.
  *********************************************************************************************************************************************************/
@@ -57,10 +57,10 @@ int main(int argc,char **argv)
     cout<<"\t\t-) the triangle with vertices '(x,20,0)' - '(80,20,0)' - '(80,80,0)', for any 'x' coordinate along the x-axis."<<endl<<endl;
     cout<<"\tIn this context the orthographic viewing box is not modified. Instead, the 'x' coordinate of the triangle, initially set to 'x=20.0', can be moved by the user along";
     cout<<" the x-axis."<<endl<<"\tSpecifically, the user can:"<<endl<<endl;
-    cout<<"\t\t-) increase the 'x' coordinate by '1.0' for the triangle of interest by pressing the '+' key;"<<endl;
-    cout<<"\t\t-) decrease the 'x' coordinate by '1.0' for the triangle of interest by pressing the '-' key;"<<endl;
-    cout<<"\t\t-) reset the 'x' coordinate for the triangle of interest to its initial value 'x=20.0' by pressing the '=' key."<<endl<<endl;
-    cout<<"\tHere, the window of interest can be closed by pressing any among the 'Q', the 'q', and the 'Esc' keys."<<endl<<endl;
+    cout<<"\t\t-) increase the 'x' coordinate by '1.0' for the triangle of interest by pressing the <+> key;"<<endl;
+    cout<<"\t\t-) decrease the 'x' coordinate by '1.0' for the triangle of interest by pressing the <-> key;"<<endl;
+    cout<<"\t\t-) reset the 'x' coordinate for the triangle of interest to its initial value 'x=20.0' by pressing the <=> key."<<endl<<endl;
+    cout<<"\tHere, the window of interest can be closed by pressing any among the <Q>, the <q>, and the <Esc> keys."<<endl<<endl;
     cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------";
     cout<<"------------------------------------------------------------------------------"<<endl<<endl;
     cout.flush();
@@ -125,16 +125,16 @@ void resize(int w, int h)
 /// This function is the keyboard input processing routine for the OpenGL window of interest.
 void manageKeys(unsigned char key, int x, int y)
 {
-    /* We are interested only in the 'q' - 'Q' - 'Esc' - '+' - '-' - "=" keys. */
+    /* We are interested only in the <q> - <Q> - <Esc> - <+> - <-> - <=> keys. */
     switch (key)
     {
         case 'q':
             
-            /* The user presses the 'q' key, thus we can exit from this program! */
+            /* The user presses the <q> key, thus we can exit from this program! */
             if(eol) cout<<endl;
             cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"<<endl<<endl;
             cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-            cout<<"\tPress the RETURN key to finish ... ";
+            cout<<"\tPress the <RETURN> key to finish ... ";
             cout.flush();
             cin.get();
             #ifndef _MSC_VER
@@ -146,11 +146,11 @@ void manageKeys(unsigned char key, int x, int y)
             
         case 'Q':
             
-            /* The user presses the 'Q' key, thus we can exit from this program! */
+            /* The user presses the <Q> key, thus we can exit from this program! */
             if(eol) cout<<endl;
             cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"<<endl<<endl;
             cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-            cout<<"\tPress the RETURN key to finish ... ";
+            cout<<"\tPress the <RETURN> key to finish ... ";
             cout.flush();
             cin.get();
             #ifndef _MSC_VER
@@ -162,11 +162,11 @@ void manageKeys(unsigned char key, int x, int y)
             
         case 27:
             
-            /* The user presses the 'Esc' key, thus we can exit from this program! */
+            /* The user presses the <Esc> key, thus we can exit from this program! */
             if(eol) cout<<endl;
             cout<<"\t----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"<<endl<<endl;
             cout<<"\tThis program is closing correctly ... "<<endl<<endl;
-            cout<<"\tPress the RETURN key to finish ... ";
+            cout<<"\tPress the <RETURN> key to finish ... ";
             cout.flush();
             cin.get();
             #ifndef _MSC_VER
@@ -178,7 +178,7 @@ void manageKeys(unsigned char key, int x, int y)
         
         case '+':
             
-            /* The user presses the '+ key, thus we increase the 'x' coordinate by '1.0' for the triangle of interest. */
+            /* The user presses the <+> key, thus we increase the 'x' coordinate by '1.0' for the triangle of interest. */
             xcoord=xcoord+(GLfloat)1.0;
             cout<<"\tThe 'x' coordinate for the triangle of interest is currently increased to 'x="<<xcoord<<"' in the scene."<<endl;
             cout.flush();
@@ -188,7 +188,7 @@ void manageKeys(unsigned char key, int x, int y)
             
         case '-':
             
-            /* The user presses the '-' key, thus we decrease the 'x' coordinate by '1.0' for the triangle of interest. */
+            /* The user presses the <-> key, thus we decrease the 'x' coordinate by '1.0' for the triangle of interest. */
             xcoord=xcoord-(GLfloat)1.0;
             cout<<"\tThe 'x' coordinate for the triangle of interest is currently decreased to 'x="<<xcoord<<"' in the scene."<<endl;
             cout.flush();
@@ -198,7 +198,7 @@ void manageKeys(unsigned char key, int x, int y)
      
         case '=':
             
-            /* The user presses the '-' key, thus we reinitialize the 'x' coordinate to 'x=20.0' for the triangle of interest. */
+            /* The user presses the <-> key, thus we reinitialize the 'x' coordinate to 'x=20.0' for the triangle of interest. */
             xcoord=20.0;
             eol=true;
             cout<<"\tThe 'x' coordinate for the triangle of interest is currently set to its default value 'x="<<xcoord<<"' in the scene."<<endl;
@@ -212,3 +212,4 @@ void manageKeys(unsigned char key, int x, int y)
             break;
     }
 }
+
